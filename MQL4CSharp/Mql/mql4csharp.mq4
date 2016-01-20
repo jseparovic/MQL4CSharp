@@ -18,7 +18,7 @@ string SetBoolCommandResponse(bool, int);
 int ratesSize;
 MqlRates rates[];
  
-input string CSharpFullTypeName = "Mql4CSharp.Strategies.TestStrategy"; 
+input string CSharpFullTypeName = "MQL4CSharp.Strategies.TestStrategy"; 
  
 char DELIM = 29;
 

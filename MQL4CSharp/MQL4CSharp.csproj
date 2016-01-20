@@ -59,6 +59,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\Enums\Color.cs" />
+    <Compile Include="Base\Enums\ObjectProperty.cs" />
     <Compile Include="Base\Expert.cs" />
     <Compile Include="Base\CommandManager.cs" />
     <Compile Include="Base\Enums\Error.cs" />

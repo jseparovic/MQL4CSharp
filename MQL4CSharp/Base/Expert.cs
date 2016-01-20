@@ -16,7 +16,7 @@ namespace MQL4CSharp.Base
         static Strategy strategy;
         static Int64 timerInterval = 1000;
         static DateTime timer = DateTime.Now;
-        static SmartThreadPool smartThreadPool;
+        static SmartThreadPool threadPool;
 
         public static void setTimerInterval(Int64 millis)
         {
@@ -43,6 +43,17 @@ namespace MQL4CSharp.Base
             strategy.OnTimer();
         }
 
+        private static SmartThreadPool getThreadPool()
+        {
+            if (threadPool == null)
+            {
+                threadPool = new SmartThreadPool();
+                threadPool.MinThreads = 1;
+                threadPool.MaxThreads = 1;
+            }
+            return threadPool;
+        }
+
         [DllExport("ExecOnInit", CallingConvention = CallingConvention.StdCall)]
         public static void ExecOnInit([In, Out, MarshalAs(UnmanagedType.LPWStr)] string CSharpFullTypeName)
         {
@@ -51,11 +62,7 @@ namespace MQL4CSharp.Base
                 Type type = Type.GetType(CSharpFullTypeName);
                 strategy = (Strategy)Activator.CreateInstance(type);
 
-                smartThreadPool = new SmartThreadPool();
-                smartThreadPool.MinThreads = 1;
-                smartThreadPool.MaxThreads = 1;
-
-                smartThreadPool.QueueWorkItem(OnInitThread);
+                getThreadPool().QueueWorkItem(OnInitThread);
             }
             catch (ArgumentNullException e)
             {
@@ -72,7 +79,7 @@ namespace MQL4CSharp.Base
         {
             try
             {
-                smartThreadPool.QueueWorkItem(OnDeinitThread);
+                getThreadPool().QueueWorkItem(OnDeinitThread);
             }
             catch (Exception e)
             {
@@ -85,7 +92,7 @@ namespace MQL4CSharp.Base
         {
             try
             {
-                smartThreadPool.QueueWorkItem(OnTickThread);
+                getThreadPool().QueueWorkItem(OnTickThread);
             }
             catch (Exception e)
             {
@@ -102,7 +109,7 @@ namespace MQL4CSharp.Base
                 if (now >= timer.AddMilliseconds(timerInterval)) // execute every timeout millis
                 {
                     timer = now;
-                    smartThreadPool.QueueWorkItem(OnTimerThread);
+                    getThreadPool().QueueWorkItem(OnTimerThread);
                 }
             }
             catch (Exception e)
