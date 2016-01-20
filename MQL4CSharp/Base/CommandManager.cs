@@ -31,7 +31,7 @@ namespace Mql4CSharp.Base
 
         private readonly object syncLock = new object();
 
-        static string DELIMITER = "|";
+        static char DELIMITER = (char)29;
 
 
         private CommandManager()
