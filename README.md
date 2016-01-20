@@ -39,3 +39,8 @@ Also, I will be adding the following abstract Types to try and keep logic for th
 - You need to copy log4net.dll. log4net.config and SmartThreadPool.dll to you metatrader root directory where the terminal.exe resides.
 - Grab the mq4 file from https://github.com/jseparovic/MQL4CSharp/blob/master/MQL4CSharp/Mql/mql4csharp.mq4
 - C# logging to file as per log4net.config
+ 
+
+## Check out here for adding to this project:
+https://github.com/jseparovic/MQL4CSharp/wiki/Adding-a-MQL4-Function-to-the-Framework
+
