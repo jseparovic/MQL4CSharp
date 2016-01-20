@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mql4CSharp.Base.Enums
+namespace MQL4CSharp.Base.Enums
 {
     public enum Error
     {

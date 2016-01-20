@@ -3,11 +3,11 @@ using System.Text;
 using RGiesecke.DllExport;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
-using Mql4CSharp.Base.Enums;
 using log4net;
 using System.Reflection;
+using MQL4CSharp.Base.Enums;
 
-namespace Mql4CSharp.Base
+namespace MQL4CSharp.Base
 {
     public class CommandManager
     {

@@ -1,5 +1,4 @@
 ﻿using log4net;
-using Mql4CSharp.Base.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +7,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using mqlsharp.Util;
+using MQL4CSharp.Base.Enums;
 
-namespace Mql4CSharp.Base
+namespace MQL4CSharp.Base
 {
     public abstract class Strategy
     {
@@ -61,6 +61,21 @@ namespace Mql4CSharp.Base
         }
 
 
+
+        ////
+        /// Order Functions
+        /// 
+
+        
+
+
+
+
+
+
+        ////
+        /// Object Functions
+        /// 
 
         /// <summary>
         /// The function creates an object with the specified name, type, and the initial coordinates in the specified chart subwindow of the specified chart.
@@ -193,9 +208,8 @@ namespace Mql4CSharp.Base
                 parameters.Add(price3);
             }
 
-            CommandManager.getInstance().ExecCommand(Command.objectCreate1, parameters);
+            CommandManager.getInstance().ExecCommand(Command.ObjectCreate, parameters);
             while (CommandManager.getInstance().IsCommandRunning()) Thread.Sleep(1);
-
             return (bool) CommandManager.getInstance().GetCommandResult();
         }
 
