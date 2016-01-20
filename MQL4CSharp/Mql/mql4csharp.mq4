@@ -20,7 +20,7 @@ MqlRates rates[];
  
 input string CSharpFullTypeName = "Mql4CSharp.Strategies.TestStrategy"; 
  
-string DELIM = "|";
+char DELIM = 29;
 
 void maintainRates()
 {
@@ -91,7 +91,7 @@ void executeCommands()
       
       // Parse the command
       string paramArray[];
-      StringSplit(params, StringGetCharacter(DELIM,0), paramArray);
+      StringSplit(params, DELIM, paramArray);
 
       int returnType = getCommandReturnType(id);
 
