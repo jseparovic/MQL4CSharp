@@ -1,6 +1,6 @@
 ﻿
 
-#import "mqlsharp.dll"
+#import "MQL4CSharp.dll"
 void InitLogging();
 void InitRates(MqlRates&[], int);
 void SetRatesSize(int);
