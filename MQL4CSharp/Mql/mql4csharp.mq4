@@ -31,6 +31,7 @@ void maintainRates()
    }
 }
 
+// TODO: add the rest of the objectTypes
 int getObjectType(string objectType)
 {
    if(objectType == "OBJ_TREND")
@@ -41,6 +42,7 @@ int getObjectType(string objectType)
    return -1;
 }
 
+// TODO: add the rest of the MQL functions that return bool
 bool executeBoolCommand(int id, string params[])
 {
    switch(id)
@@ -58,9 +60,14 @@ bool executeBoolCommand(int id, string params[])
    }
 }
 
+// TODO: add more "execute[ReturnType]Command" methods for other return types
 
+
+// TODO: Add more return types here
 int RETURN_TYPE_BOOL = 1;
 
+
+// TODO: and here
 int getCommandReturnType(int id)
 {
    switch(id)
@@ -87,7 +94,8 @@ void executeCommands()
       StringSplit(params, StringGetCharacter(DELIM,0), paramArray);
 
       int returnType = getCommandReturnType(id);
-      
+
+	  // TODO: add other return type method here      
       if(returnType == RETURN_TYPE_BOOL)
       {
          SetBoolCommandResponse(executeBoolCommand(id, paramArray), GetLastError());
