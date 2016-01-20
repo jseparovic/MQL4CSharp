@@ -7,8 +7,8 @@
     <ProjectGuid>{C2E17D18-6696-436A-BCB4-101F1BD53AF3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>mqlsharp</RootNamespace>
-    <AssemblyName>mqlsharp</AssemblyName>
+    <RootNamespace>MQL4CSharp</RootNamespace>
+    <AssemblyName>MQL4CSharp</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
