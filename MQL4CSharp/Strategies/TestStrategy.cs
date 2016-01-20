@@ -1,12 +1,12 @@
-﻿using Mql4CSharp.Base;
-using Mql4CSharp.Base.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MQL4CSharp.Base;
+using MQL4CSharp.Base.Enums;
 
-namespace Mql4CSharp.Strategies
+namespace MQL4CSharp.Strategies
 {
     class TestStrategy : Strategy
     {

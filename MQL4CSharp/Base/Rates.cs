@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using log4net;
 using mqlsharp.Util;
 
-namespace Mql4CSharp.Base
+namespace MQL4CSharp.Base
 {
     public class Rates
     {

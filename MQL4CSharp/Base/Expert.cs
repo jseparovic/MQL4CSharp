@@ -7,7 +7,7 @@ using System.Threading;
 using Amib.Threading;
 using log4net;
 
-namespace Mql4CSharp.Base
+namespace MQL4CSharp.Base
 {
     public class Expert
     {
