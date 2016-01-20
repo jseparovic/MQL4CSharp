@@ -1,5 +1,5 @@
 # MQL4CSharp
-CSharp Library for Metatrader 4
+##CSharp Library for Metatrader 4
 
 This library is not complete, however it demonstrates a framework for calling MQL4 commands from within a C# class.
 
@@ -33,3 +33,8 @@ Also, I will be adding the following abstract Types to try and keep logic for th
   - UserFilter
   - UserRiskProfile
   
+
+## Installation Notes:
+- Modify the build output path in MQL4CSharp properties in Visual Studio 2015 to match you metatrader terminal library directory (in mt4: file->open data folder)
+- You need to copy log4net.dll. log4net.xml and SmartThreadPool.dll to you metatrader root directory where the terminal.exe resides.
+- Grab the mq4 file from https://github.com/jseparovic/MQL4CSharp/blob/master/MQL4CSharp/Mql/mql4csharp.mq4
