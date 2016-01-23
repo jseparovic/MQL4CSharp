@@ -1,5 +1,5 @@
 # MQL4CSharp
-##CSharp Library for Metatrader 4
+##C# Library for Metatrader 4
 
 This library is currently a work in progress. 
 It demonstrates a framework for calling MQL4 commands from within a C# class.
