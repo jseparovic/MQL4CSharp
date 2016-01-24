@@ -24,7 +24,7 @@ namespace MQL4CSharp.Base
             return commandManager;
         }
 
-        Command command;
+        MQLCommand command;
         List<Object> parameters;
         Boolean commandWaiting;
         Object response;
@@ -40,7 +40,7 @@ namespace MQL4CSharp.Base
         }
 
 
-        public void ExecCommand(Command command, List<Object> parameters)
+        public void ExecCommand(MQLCommand command, List<Object> parameters)
         {
             this.command = command;
             this.parameters = parameters;

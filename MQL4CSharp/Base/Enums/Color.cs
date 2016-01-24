@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MQL4CSharp.Base.Enums
 {
-    public enum Color
+    public enum COLOR
     {
         NONE = -1,
         White = 16777215,
