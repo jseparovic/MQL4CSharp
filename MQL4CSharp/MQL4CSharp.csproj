@@ -59,13 +59,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\Enums\Color.cs" />
+    <Compile Include="Base\Enums\COLOR.cs" />
+    <Compile Include="Base\Enums\ENUM_ALIGN_MODE.cs" />
+    <Compile Include="Base\Enums\ENUM_SIGNAL_BASE_STRING.cs" />
+    <Compile Include="Base\Enums\ENUM_SIGNAL_INFO_DOUBLE.cs" />
+    <Compile Include="Base\Enums\ENUM_SIGNAL_INFO_STRING.cs" />
+    <Compile Include="Base\Enums\ENUM_SIGNAL_INFO_INTEGER.cs" />
+    <Compile Include="Base\Enums\ENUM_SIGNAL_BASE_INTEGER.cs" />
+    <Compile Include="Base\Enums\ENUM_SIGNAL_BASE_DOUBLE.cs" />
+    <Compile Include="Base\Enums\ENUM_TIMEFRAMES.cs" />
     <Compile Include="Base\Enums\ObjectProperty.cs" />
     <Compile Include="Base\Expert.cs" />
     <Compile Include="Base\CommandManager.cs" />
     <Compile Include="Base\Enums\Error.cs" />
-    <Compile Include="Base\Enums\Command.cs" />
-    <Compile Include="Base\Enums\ObjectType.cs" />
+    <Compile Include="Base\Enums\MQLCommand.cs" />
+    <Compile Include="Base\Enums\ENUM_OBJECT.cs" />
+    <Compile Include="Base\MQL.cs" />
     <Compile Include="Logging.cs" />
     <Compile Include="Strategies\TestStrategy.cs" />
     <Compile Include="Base\Strategy.cs" />
