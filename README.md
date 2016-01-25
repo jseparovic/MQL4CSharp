@@ -38,7 +38,7 @@ Also, I will be adding the following abstract Types to try and keep logic for th
   - UserFilter
   - UserRiskProfile
 
-You will also be able to extend the base MQL type which will just contain the metatrader functionality, if you do want to use the Strategy framework above.
+You will also be able to extend the base MQL type which will just contain the metatrader functionality, if you don't want to use the Strategy framework above.
 
 I'm using log4net for C# logging, and SmartThreadPool for concurrency.
 
