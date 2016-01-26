@@ -17,6 +17,6 @@ namespace MQL4CSharp.Base.Enums
         PERIOD_H4 = 240,
         PERIOD_D1 = 1440,
         PERIOD_W1 = 10080,
-        PERIOD_MN1 = 43200,
+        PERIOD_MN1 = 43200
     }
 }

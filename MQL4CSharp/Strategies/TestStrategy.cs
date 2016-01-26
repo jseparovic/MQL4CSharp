@@ -22,7 +22,13 @@ namespace MQL4CSharp.Strategies
 
         public override void OnInit()
         {
-            ObjectCreate(0, "test", ObjectType.OBJ_TREND, 0, DateTime.Now.AddDays(-1), 1.09, DateTime.Now.AddDays(+1), 1.09);
+            LOG.Info("AccountBalance: " + AccountBalance());
+            LOG.Info("AccountCompany: " + AccountCompany());
+            LOG.Info("AccountEquity: " + AccountEquity());
+            LOG.Info("AccountFreeMargin: " + AccountFreeMargin());
+            LOG.Info("AccountName: " + AccountName());
+            LOG.Info("AccountNumber: " + AccountNumber());
+            ObjectCreate(ChartID(), "test", ENUM_OBJECT.OBJ_TREND, 0, DateTime.Now.AddDays(-1), 1.0860, DateTime.Now.AddDays(+1), 1.086);
         }
 
         public override void OnTick()

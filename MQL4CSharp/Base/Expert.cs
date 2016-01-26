@@ -64,7 +64,7 @@ namespace MQL4CSharp.Base
 
                 getThreadPool().QueueWorkItem(OnInitThread);
             }
-            catch (ArgumentNullException e)
+            catch (ArgumentNullException)
             {
                 LOG.Error(String.Format("Strategy Class {0} not found", CSharpFullTypeName));
             }

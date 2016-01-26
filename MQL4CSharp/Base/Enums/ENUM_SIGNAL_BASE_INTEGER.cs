@@ -16,6 +16,6 @@ namespace MQL4CSharp.Base.Enums
         SIGNAL_BASE_RATING = 6,
         SIGNAL_BASE_SUBSCRIBERS = 7,
         SIGNAL_BASE_TRADES = 8,
-        SIGNAL_BASE_TRADE_MODE =9,
+        SIGNAL_BASE_TRADE_MODE = 9,
     }
 }

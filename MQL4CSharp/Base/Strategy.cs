@@ -11,7 +11,7 @@ using MQL4CSharp.Base.Enums;
 
 namespace MQL4CSharp.Base
 {
-    public abstract class Strategy
+    public abstract class Strategy : MQL
     {
         public ILog LOG;
 
