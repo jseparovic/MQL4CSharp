@@ -140,13 +140,20 @@ namespace MQL4CSharp.Base
                     String returnCommand = "";
                     foreach (Object p in parameters)
                     {
+                        Object param = p;
+                        if (param is DateTime)
+                        {
+                            // Convert DateTime to MT4 String
+                            param = DateUtil.ToMT4TimeString((DateTime) p);
+                        }
+
                         if(returnCommand.Equals(""))
                         {
-                            returnCommand = returnCommand + p;
+                            returnCommand = returnCommand + param;
                         }
                         else
                         {
-                            returnCommand = returnCommand + DELIMITER + p;
+                            returnCommand = returnCommand + DELIMITER + param;
                         }
                     }
                     return returnCommand;
