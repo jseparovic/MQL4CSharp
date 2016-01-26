@@ -12,7 +12,7 @@ The basic workflow => https://i.imgur.com/8yvFxz1.png
 
 I mainly started this project as a way to get decent backtesting performance in MT4 whilst using a mainstream language. I picked C# due to simplicity.
 
-Mql4CSharp.Strategies.TestStrategy shows as example of creating a trendline in the call to onInit. This is just to prove the concept.
+https://github.com/jseparovic/MQL4CSharp/blob/master/MQL4CSharp/Strategies/TestStrategy.cs shows as example of creating a trendline in the call to onInit. Alos, a few account functions are logged using log4net This is just to prove the concept.
 
 To implement a strategy, you just extend the Strategy class and implement the abstract methods.
 
