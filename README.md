@@ -14,11 +14,6 @@ I mainly started this project as a way to get decent backtesting performance in 
 
 Mql4CSharp.Strategies.TestStrategy shows as example of creating a trendline in the call to onInit. This is just to prove the concept.
 
-Currently the following methods are supported:
-  - ObjectCreate
-  
-I will be adding the rest of the MQL functions shortly. The code generation project is here => https://github.com/jseparovic/MQL4DocScraper
-
 To implement a strategy, you just extend the Strategy class and implement the abstract methods.
 
 I'll be adding trade functions to the strategy type shortly:
