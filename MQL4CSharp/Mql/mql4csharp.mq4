@@ -1,4 +1,7 @@
-﻿
+#include <mc_helpers.mqh>
+#include <mc_funcs.mqh>
+#include <mc_returns.mqh>
+
 
 #import "MQL4CSharp.dll"
 void InitLogging();
@@ -12,7 +15,15 @@ bool IsCommandWaiting();
 int GetCommandId();
 string GetCommandName();
 string GetCommandParams();
-string SetBoolCommandResponse(bool, int);
+void SetBoolCommandResponse(bool, int);
+void SetDoubleCommandResponse(double, int);
+void SetIntCommandResponse(int, int);
+void SetStringCommandResponse(string, int);
+void SetVoidCommandResponse(int);
+void SetLongCommandResponse(long, int);
+void SetDateTimeCommandResponse(datetime, int);
+void SetEnumCommandResponse(int, int);
+
 #import
  
 int ratesSize;
@@ -31,55 +42,6 @@ void maintainRates()
    }
 }
 
-// TODO: add the rest of the objectTypes
-int getObjectType(string objectType)
-{
-   if(objectType == "OBJ_TREND")
-   {
-      return OBJ_TREND;
-   }
-   
-   return -1;
-}
-
-// TODO: add the rest of the MQL functions that return bool
-bool executeBoolCommand(int id, string params[])
-{
-   switch(id)
-   {
-      case 1:
-         return ObjectCreate(
-                     StringToInteger(params[0]),
-                     params[1],
-                     getObjectType(params[2]),
-                     StringToInteger(params[3]),
-                     StringToTime(params[4]),
-                     StringToDouble(params[5]),
-                     StringToTime(params[6]),
-                     StringToDouble(params[7]));
-   }
-}
-
-// TODO: add more "execute[ReturnType]Command" methods for other return types
-
-
-// TODO: Add more return types here
-int RETURN_TYPE_BOOL = 1;
-
-
-// TODO: and here
-int getCommandReturnType(int id)
-{
-   switch(id)
-   {
-      case 1:
-         // ObjectCreate
-         return RETURN_TYPE_BOOL;
-
-      default:
-         return -1;         
-   }
-}
 
 void executeCommands()
 {
@@ -94,11 +56,35 @@ void executeCommands()
       StringSplit(params, DELIM, paramArray);
 
       int returnType = getCommandReturnType(id);
-
-	  // TODO: add other return type method here      
+      
       if(returnType == RETURN_TYPE_BOOL)
       {
          SetBoolCommandResponse(executeBoolCommand(id, paramArray), GetLastError());
+      }
+      else if(returnType == RETURN_TYPE_DOUBLE)
+      {
+         SetDoubleCommandResponse(executeDoubleCommand(id, paramArray), GetLastError());
+      }
+      else if(returnType == RETURN_TYPE_INT)
+      {
+         SetIntCommandResponse(executeIntCommand(id, paramArray), GetLastError());
+      }
+      else if(returnType == RETURN_TYPE_STRING)
+      {
+         SetStringCommandResponse(executeStringCommand(id, paramArray), GetLastError());
+      }
+      else if(returnType == RETURN_TYPE_VOID)
+      {
+         executeVoidCommand(id, paramArray);
+         SetVoidCommandResponse(GetLastError());
+      }
+      else if(returnType == RETURN_TYPE_LONG)
+      {
+         SetLongCommandResponse(executeLongCommand(id, paramArray), GetLastError());
+      }
+      else if(returnType == RETURN_TYPE_DATETIME)
+      {
+         SetDateTimeCommandResponse(executeDateTimeCommand(id, paramArray), GetLastError());
       }
    }
 }
@@ -144,3 +130,4 @@ void OnTimer()
    
    ExecOnTimer();
 }
+
