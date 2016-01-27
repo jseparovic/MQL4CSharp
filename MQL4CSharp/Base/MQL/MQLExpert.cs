@@ -7,13 +7,13 @@ using System.Threading;
 using Amib.Threading;
 using log4net;
 
-namespace MQL4CSharp.Base
+namespace MQL4CSharp.Base.MQL
 {
-    public class Expert
+    public class MQLExpert
     {
-        private static readonly ILog LOG = LogManager.GetLogger(typeof(Expert));
+        private static readonly ILog LOG = LogManager.GetLogger(typeof(MQLExpert));
 
-        static Strategy strategy;
+        static BaseStrategy strategy;
         static Int64 timerInterval = 1000;
         static DateTime timer = DateTime.Now;
         static SmartThreadPool threadPool;
@@ -60,7 +60,7 @@ namespace MQL4CSharp.Base
             try
             {
                 Type type = Type.GetType(CSharpFullTypeName);
-                strategy = (Strategy)Activator.CreateInstance(type);
+                strategy = (BaseStrategy)Activator.CreateInstance(type);
 
                 getThreadPool().QueueWorkItem(OnInitThread);
             }

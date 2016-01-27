@@ -6,11 +6,11 @@ using System.Collections.Generic;
 using log4net;
 using mqlsharp.Util;
 
-namespace MQL4CSharp.Base
+namespace MQL4CSharp.Base.MQL
 {
-    public class Rates
+    public class MQLRates
     {
-        private static readonly ILog LOG = LogManager.GetLogger(typeof(Rates));
+        private static readonly ILog LOG = LogManager.GetLogger(typeof(MQLRates));
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
         public struct RateInfo
@@ -25,19 +25,19 @@ namespace MQL4CSharp.Base
             public UInt64 real;     // trade volume
         }
 
-        private static Rates rates;
+        private static MQLRates rates;
 
-        public static Rates getInstance()
+        public static MQLRates getInstance()
         {
             if(rates == null)
             {
-                rates = new Rates();
+                rates = new MQLRates();
             }
             return rates;
         }
 
 
-        public Rates getRates()
+        public MQLRates getRates()
         {
             return rates;
         }

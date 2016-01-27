@@ -29,7 +29,7 @@ void SetEnumCommandResponse(int, int);
 int ratesSize;
 MqlRates rates[];
  
-input string CSharpFullTypeName = "MQL4CSharp.Strategies.TestStrategy"; 
+input string CSharpFullTypeName = "MQL4CSharp.UserDefined.Strategy.MaCrossStrategy"; 
  
 char DELIM = 29;
 
