@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using MQL4CSharp.Base;
 using MQL4CSharp.Base.Enums;
 
-namespace MQL4CSharp.Strategies
+namespace MQL4CSharp.UserDefined.Strategy
 {
-    class TestStrategy : Strategy
+    class TestStrategy : Base.BaseStrategy
     {
         public TestStrategy() : base()
         {
