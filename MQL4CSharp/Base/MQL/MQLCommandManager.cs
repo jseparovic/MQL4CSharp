@@ -9,19 +9,19 @@ using System.Web.Caching;
 using mqlsharp.Util;
 using MQL4CSharp.Base.Enums;
 
-namespace MQL4CSharp.Base
+namespace MQL4CSharp.Base.MQL
 {
-    public class CommandManager
+    public class MQLCommandManager
     {
-        private static readonly ILog LOG = LogManager.GetLogger(typeof(CommandManager));
+        private static readonly ILog LOG = LogManager.GetLogger(typeof(MQLCommandManager));
 
-        private static CommandManager commandManager;
+        private static MQLCommandManager commandManager;
 
-        public static CommandManager getInstance()
+        public static MQLCommandManager getInstance()
         {
             if (commandManager == null)
             {
-                commandManager = new CommandManager();
+                commandManager = new MQLCommandManager();
             }
             return commandManager;
         }
@@ -36,7 +36,7 @@ namespace MQL4CSharp.Base
         static char DELIMITER = (char)29;
 
 
-        private CommandManager()
+        private MQLCommandManager()
         {
             commandWaiting = false;
         }
@@ -51,7 +51,7 @@ namespace MQL4CSharp.Base
 
         public bool IsCommandRunning()
         {
-            return CommandManager.getInstance().commandWaiting;
+            return MQLCommandManager.getInstance().commandWaiting;
         }
 
         public Object GetCommandResult()
@@ -65,7 +65,7 @@ namespace MQL4CSharp.Base
         {
             try
             {
-                return CommandManager.getInstance().commandWaiting;
+                return MQLCommandManager.getInstance().commandWaiting;
             }
             catch (Exception e)
             {
@@ -80,7 +80,7 @@ namespace MQL4CSharp.Base
         {
             try
             {
-                CommandManager commandManager = CommandManager.getInstance();
+                MQLCommandManager commandManager = MQLCommandManager.getInstance();
 
                 if (commandManager.commandWaiting)
                 {
@@ -106,7 +106,7 @@ namespace MQL4CSharp.Base
         {
             try
             {
-                CommandManager commandManager = CommandManager.getInstance();
+                MQLCommandManager commandManager = MQLCommandManager.getInstance();
 
                 if (commandManager.commandWaiting)
                 {
@@ -131,7 +131,7 @@ namespace MQL4CSharp.Base
         {
             try
             {
-                CommandManager commandManager = CommandManager.getInstance();
+                MQLCommandManager commandManager = MQLCommandManager.getInstance();
 
                 if (commandManager.commandWaiting)
                 {
