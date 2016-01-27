@@ -30,8 +30,8 @@ namespace MQL4CSharp.UserDefined.RiskProfile
         {
 
             double accountEquity = strategy.AccountEquity() + cashAccountEquity;
-            double minLots = strategy.MarketInfo(symbol, (int)MarketInfo.MODE_MINLOT);
-            double stopPips = stopDistance / strategy.MarketInfo(symbol, (int)MarketInfo.MODE_TICKSIZE);
+            double minLots = strategy.MarketInfo(symbol, (int)MARKET_INFO.MODE_MINLOT);
+            double stopPips = stopDistance / strategy.MarketInfo(symbol, (int)MARKET_INFO.MODE_TICKSIZE);
             return Math.Min(maxLots, Math.Max(minLots, Math.Round(accountEquity* percentRisk / stopPips / 10, 2 )));
         }
 

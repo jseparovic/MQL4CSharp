@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MQL4CSharp.Base.Enums
 {
-    public enum ObjectProperty
+    public enum OBJECT_PROPERTY
     {
         OBJPROP_TIME1	=	0,
         OBJPROP_PRICE1	=	1,

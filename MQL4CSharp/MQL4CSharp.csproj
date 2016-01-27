@@ -68,17 +68,25 @@
     <Compile Include="Base\Common\BaseSignal.cs" />
     <Compile Include="Base\Common\BaseStopLoss.cs" />
     <Compile Include="Base\Common\BaseTakeProfit.cs" />
+    <Compile Include="Base\Common\SignalInfo.cs" />
+    <Compile Include="Base\Common\SignalInfoKey.cs" />
+    <Compile Include="Base\Common\SignalResult.cs" />
     <Compile Include="Base\Enums\COLOR.cs" />
     <Compile Include="Base\Enums\ENUM_ALIGN_MODE.cs" />
+    <Compile Include="Base\Enums\ENUM_APPLIED_PRICE.cs" />
+    <Compile Include="Base\Enums\ENUM_MA_METHOD.cs" />
     <Compile Include="Base\Enums\ENUM_SIGNAL_BASE_STRING.cs" />
     <Compile Include="Base\Enums\ENUM_SIGNAL_INFO_DOUBLE.cs" />
     <Compile Include="Base\Enums\ENUM_SIGNAL_INFO_STRING.cs" />
     <Compile Include="Base\Enums\ENUM_SIGNAL_INFO_INTEGER.cs" />
     <Compile Include="Base\Enums\ENUM_SIGNAL_BASE_INTEGER.cs" />
     <Compile Include="Base\Enums\ENUM_SIGNAL_BASE_DOUBLE.cs" />
-    <Compile Include="Base\Enums\Timeframe.cs" />
-    <Compile Include="Base\Enums\MarketInfo.cs" />
-    <Compile Include="Base\Enums\ObjectProperty.cs" />
+    <Compile Include="Base\Enums\SELECTION_POOL.cs" />
+    <Compile Include="Base\Enums\SELECTION_TYPE.cs" />
+    <Compile Include="Base\Enums\TIMEFRAME.cs" />
+    <Compile Include="Base\Enums\MARKET_INFO.cs" />
+    <Compile Include="Base\Enums\OBJECT_PROPERTY.cs" />
+    <Compile Include="Base\Enums\TRADE_OPERATION.cs" />
     <Compile Include="Base\MQL\MQLExpert.cs" />
     <Compile Include="Base\MQL\MQLCommandManager.cs" />
     <Compile Include="Base\Enums\Error.cs" />
@@ -89,12 +97,14 @@
     <Compile Include="UserDefined\Filter\TimeOfDayFilter.cs" />
     <Compile Include="UserDefined\RiskProfile\FixedLotsRiskProfile.cs" />
     <Compile Include="UserDefined\RiskProfile\PercentRiskProfile.cs" />
+    <Compile Include="UserDefined\Signal\MACross.cs" />
     <Compile Include="UserDefined\StopLoss\ATRStopLoss.cs" />
     <Compile Include="UserDefined\StopLoss\BreakEvenStopLoss.cs" />
     <Compile Include="UserDefined\StopLoss\SRStopLoss.cs" />
     <Compile Include="UserDefined\StopLoss\TrailingStopLoss.cs" />
-    <Compile Include="UserDefined\Strategy\TestStrategy.cs" />
+    <Compile Include="UserDefined\Strategy\MaCrossStrategy.cs" />
     <Compile Include="Base\Common\BaseStrategy.cs" />
+    <Compile Include="UserDefined\TakeProfit\FixedPipTakeProfit.cs" />
     <Compile Include="Util\DateUtil.cs" />
     <Compile Include="Util\JSONHelper.cs" />
     <Compile Include="Base\MQL\MQLRates.cs" />
@@ -107,10 +117,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UserDefined\Signal\" />
-    <Folder Include="UserDefined\TakeProfit\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="../packages/UnmanagedExports.1.2.7/tools/RGiesecke.DllExport.targets" Condition="Exists('../packages/UnmanagedExports.1.2.7/tools/RGiesecke.DllExport.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

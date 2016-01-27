@@ -3,35 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MQL4CSharp.Base;
+using MQL4CSharp.Base.Common;
+using MQL4CSharp.Base.Enums;
 
 namespace MQL4CSharp.UserDefined.StopLoss
 {
-    public class ATRStopLoss : StopLoss
+    public class ATRStopLoss : BaseStopLoss
     {
-        private final int atrPeriods;
-        private final int atrShift;
+        private int atrPeriods;
+        private int atrShift;
 
         // Default Constructor
-        public ATRStopLoss(JStrategy strategy, int atrPeriods, int atrShift)
+        public ATRStopLoss(BaseStrategy strategy, int atrPeriods, int atrShift) : base(strategy)
         {
-            super(strategy);
             this.atrPeriods = atrPeriods;
             this.atrShift = atrShift;
         }
 
-        public double getLevel(String symbol, Timeframe timeframe, int signal) throws Exception
+        public override double getLevel(String symbol, TIMEFRAME timeframe, int signal)
         {
-        if (signal == Signal.SHORT)
-        {
-                return strategy.marketInfo(symbol, MarketInfo.MODE_BID) + strategy.iATR(symbol, timeframe, atrPeriods, atrShift);
+            if (signal < 0)
+            {
+                return strategy.MarketInfo(symbol, (int)MARKET_INFO.MODE_BID) + strategy.iATR(symbol, (int)timeframe, atrPeriods, atrShift);
             }
-        else
-        {
-                return strategy.marketInfo(symbol, MarketInfo.MODE_ASK) - strategy.iATR(symbol, timeframe, atrPeriods, atrShift);
+            else
+            {
+                return strategy.MarketInfo(symbol, (int)MARKET_INFO.MODE_ASK) - strategy.iATR(symbol, (int)timeframe, atrPeriods, atrShift);
             }
         }
 
-    public void manage(int ticket) throws ErrUnknownSymbol
+        public override void manage(int ticket)
         {
             // Do nothing
         }

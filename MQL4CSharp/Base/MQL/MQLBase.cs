@@ -890,7 +890,7 @@ namespace MQL4CSharp.Base.MQL
         /// </summary>
         /// <param name="symbol_name">[in] Symbol name.</param>
         /// <param name="timeframe">[in] Period.</param>
-        public int Bars(string symbol_name, Timeframe timeframe)
+        public int Bars(string symbol_name, TIMEFRAME timeframe)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(symbol_name);
@@ -909,7 +909,7 @@ namespace MQL4CSharp.Base.MQL
         /// <param name="timeframe">[in] Period.</param>
         /// <param name="start_time">[in] Bar time corresponding to the first element.</param>
         /// <param name="stop_time">[in] Bar time corresponding to the last element.</param>
-        public int Bars(string symbol_name, Timeframe timeframe, DateTime start_time, DateTime stop_time)
+        public int Bars(string symbol_name, TIMEFRAME timeframe, DateTime start_time, DateTime stop_time)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(symbol_name);
@@ -1192,7 +1192,7 @@ namespace MQL4CSharp.Base.MQL
         /// </summary>
         /// <param name="symbol">[in] Chart symbol. means the symbol of the current chart (the Expert Advisor is attached to).</param>
         /// <param name="period">[in] Chart period (timeframe). Can be one of the values. 0 means the current chart period.</param>
-        public long ChartOpen(string symbol, Timeframe period)
+        public long ChartOpen(string symbol, TIMEFRAME period)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(symbol);
@@ -1518,7 +1518,7 @@ namespace MQL4CSharp.Base.MQL
         /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         /// <param name="symbol">[in] Chart symbol. value means the current chart symbol (Expert Advisor is attached to)</param>
         /// <param name="period">[in] Chart period (timeframe). Can be one of the values. 0 means the current chart period.</param>
-        public bool ChartSetSymbolPeriod(long chart_id, string symbol, Timeframe period)
+        public bool ChartSetSymbolPeriod(long chart_id, string symbol, TIMEFRAME period)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(chart_id);

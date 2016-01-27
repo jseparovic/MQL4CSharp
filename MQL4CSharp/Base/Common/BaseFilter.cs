@@ -9,13 +9,13 @@ namespace MQL4CSharp.Base.Common
 {
     public abstract class BaseFilter
     {
-        private BaseFilter strategy;
+        private BaseStrategy strategy;
 
-        public BaseFilter(BaseFilter strategy)
+        public BaseFilter(BaseStrategy strategy)
         {
             this.strategy = strategy;
         }
 
-        public abstract bool filter(String symbol, Timeframe timeframe);
+        public abstract bool filter(String symbol, TIMEFRAME timeframe);
     }
 }
