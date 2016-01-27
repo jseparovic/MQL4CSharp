@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MQL4CSharp.Base.Enums
 {
-    public enum Timeframe
+    public enum TIMEFRAME
     {
         PERIOD_CURRENT = 0,
         PERIOD_M1 = 1,

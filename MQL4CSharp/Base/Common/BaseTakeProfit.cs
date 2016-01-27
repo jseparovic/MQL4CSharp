@@ -17,9 +17,9 @@ namespace MQL4CSharp.Base.Common
         }
 
         // Method to return the Take Profit Level
-        public abstract double getLevel(String symbol, Timeframe timeframe, int signal);
+        public abstract double getLevel(String symbol, TIMEFRAME timeframe, int signal);
 
         // Method called onTick to manage the Take Profit Level
-        public abstract void manage(String symbol, Timeframe timeframe);
+        public abstract void manage(String symbol, TIMEFRAME timeframe);
     }
 }

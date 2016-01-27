@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using mqlsharp.Util;
+using MQL4CSharp.Base.Enums;
+using NodaTime;
 
 namespace MQL4CSharp.UserDefined.Filter
 {
@@ -12,7 +15,7 @@ namespace MQL4CSharp.UserDefined.Filter
     {
         private String timeStart;
         private String timeStop;
-        int lookBack;
+        private BaseStrategy strategy;
 
         /**
          *
@@ -20,29 +23,29 @@ namespace MQL4CSharp.UserDefined.Filter
          * @param timeStart : eg "07:30"
          * @param timeStop : eg "14:00"
          */
+
         public TimeOfDayFilter(BaseStrategy strategy, String timeStart, String timeStop) : base(strategy)
         {
-            this.lookBack = lookBack;
+            this.strategy = strategy;
             this.timeStart = timeStart;
             this.timeStop = timeStop;
         }
 
-        public override bool filter(String symbol, Timeframe timeframe)
+        public override bool filter(String symbol, TIMEFRAME timeframe)
         {
-            Date currentMarketTime = strategy.marketInfo_MODE_TIME(symbol);
-            Date startTrading = DateUtil.getDateFromCurrentAnd24HRTime(currentMarketTime, timeStart);
-            Date stopTrading = DateUtil.getDateFromCurrentAnd24HRTime(currentMarketTime, timeStop);
+            DateTime currentMarketTime = DateUtil.FromUnixTime((long) strategy.MarketInfo(symbol, (int) MARKET_INFO.MODE_TIME));
+            DateTime startTrading = DateUtil.getDateFromCurrentAnd24HRTime(currentMarketTime, timeStart);
+            DateTime stopTrading = DateUtil.getDateFromCurrentAnd24HRTime(currentMarketTime, timeStop);
 
-        // Trade Window
-        if (currentMarketTime.after(startTrading) && currentMarketTime.before(stopTrading))
-        {
+            // Trade Window
+            if (currentMarketTime > startTrading && currentMarketTime < stopTrading)
+            {
                 return true;
             }
-        else
-        {
+            else
+            {
                 return false;
             }
         }
-
     }
 }

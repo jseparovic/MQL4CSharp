@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MQL4CSharp.Base.Enums
 {
-    public enum MarketInfo
+    public enum MARKET_INFO
     {
         MODE_LOW	= 1, //	Low day price
         MODE_HIGH	= 2, //	High day price
