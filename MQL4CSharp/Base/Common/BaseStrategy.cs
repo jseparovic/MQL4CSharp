@@ -116,10 +116,10 @@ namespace MQL4CSharp.Base
                 stopDistance = stoploss - price;
             }
 
-            LOG.Info("stopDistance: " + stopDistance);
-            LOG.Info("price: " + price);
-            LOG.Info("stoploss: " + stoploss);
-            LOG.Info("takeprofit: " + takeprofit);
+            //LOG.Debug("stopDistance: " + stopDistance);
+            //LOG.Debug("price: " + price);
+            //LOG.Debug("stoploss: " + stoploss);
+            //LOG.Debug("takeprofit: " + takeprofit);
 
             // Calculate lots
             lots = this.getLotSize(symbol, stopDistance);
