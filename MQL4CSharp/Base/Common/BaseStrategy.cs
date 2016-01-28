@@ -71,12 +71,13 @@ namespace MQL4CSharp.Base
             double price, lots;
             int slippage = 5;
             double stoploss = this.getStopLoss(symbol, signal);
-
             double takeprofit = this.getTakeProfit(symbol, signal);
             String comment = this.getComment(symbol);
             int magic = this.getMagicNumber(symbol);
             DateTime expiration = new DateTime();
             COLOR arrowColor = COLOR.Aqua;
+
+            double stopDistance;
 
             DateTime lastBuyOpen, lastSellOpen;
             bool openBuyOrder = false, openSellOrder = false, openBuyStopOrder = false, openSellStopOrder = false;
@@ -106,8 +107,22 @@ namespace MQL4CSharp.Base
                 throw new Exception("Invalid Signal signal=" + signal);
             }
 
+            if (signal > 0)
+            {
+                stopDistance = price - stoploss;
+            }
+            else
+            {
+                stopDistance = stoploss - price;
+            }
+
+            LOG.Info("stopDistance: " + stopDistance);
+            LOG.Info("price: " + price);
+            LOG.Info("stoploss: " + stoploss);
+            LOG.Info("takeprofit: " + takeprofit);
+
             // Calculate lots
-            lots = this.getLotSize(symbol, price);
+            lots = this.getLotSize(symbol, stopDistance);
 
             // Check open trades on this symbol
             for (int i = 0; i < OrdersTotal(); i++)
