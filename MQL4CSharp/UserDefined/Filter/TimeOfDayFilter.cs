@@ -38,7 +38,7 @@ namespace MQL4CSharp.UserDefined.Filter
             DateTime stopTrading = DateUtil.getDateFromCurrentAnd24HRTime(currentMarketTime, timeStop);
 
             // Trade Window
-            if (currentMarketTime > startTrading && currentMarketTime < stopTrading)
+            if (currentMarketTime >= startTrading && currentMarketTime <= stopTrading)
             {
                 return true;
             }
