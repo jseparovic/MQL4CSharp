@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Text;
 using RGiesecke.DllExport;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using log4net;
-using System.Reflection;
-using System.Web.Caching;
 using mqlsharp.Util;
 using MQL4CSharp.Base.Enums;
 

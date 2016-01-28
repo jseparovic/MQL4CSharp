@@ -1,10 +1,4 @@
-﻿using NodaTime;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using mqlsharp.Util;
+﻿using System;
 using MQL4CSharp.Base.Enums;
 
 namespace MQL4CSharp.Base.Common

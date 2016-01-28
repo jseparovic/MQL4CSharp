@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using MQL4CSharp.Base.Enums;
-using MQL4CSharp.Base;
 using System.Threading;
 
 namespace MQL4CSharp.Base.MQL

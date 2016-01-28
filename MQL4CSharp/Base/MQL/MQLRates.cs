@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Text;
 using RGiesecke.DllExport;
 using System.Runtime.InteropServices;
-using System.Collections.Generic;
 using log4net;
 using mqlsharp.Util;
 

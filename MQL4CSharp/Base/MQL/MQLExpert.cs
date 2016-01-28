@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Text;
 using RGiesecke.DllExport;
 using System.Runtime.InteropServices;
-using System.Collections.Generic;
-using System.Threading;
 using Amib.Threading;
 using log4net;
 

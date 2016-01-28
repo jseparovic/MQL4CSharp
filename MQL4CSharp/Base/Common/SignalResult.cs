@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MQL4CSharp.Base.Enums;
+﻿using MQL4CSharp.Base.Enums;
 
 namespace MQL4CSharp.Base.Common
 {

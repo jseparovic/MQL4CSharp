@@ -1,13 +1,8 @@
 ﻿using MQL4CSharp.Base;
 using MQL4CSharp.Base.Common;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using mqlsharp.Util;
 using MQL4CSharp.Base.Enums;
-using NodaTime;
 
 namespace MQL4CSharp.UserDefined.Filter
 {
