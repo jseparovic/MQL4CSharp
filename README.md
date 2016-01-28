@@ -12,11 +12,11 @@ The basic workflow => https://i.imgur.com/8yvFxz1.png
 
 I mainly started this project as a way to get decent backtesting performance in MT4 whilst using a mainstream language. I picked C# due to simplicity.
 
-https://github.com/jseparovic/MQL4CSharp/blob/master/MQL4CSharp/Strategies/TestStrategy.cs shows as example of creating a trendline in the call to onInit. Alos, a few account functions are logged using log4net This is just to prove the concept.
+https://github.com/jseparovic/MQL4CSharp/blob/master/MQL4CSharp/UserDefined/Strategy/MaCrossStrategy.cs shows as example strategy using the framework.
 
 To implement a strategy, you just extend the Strategy class and implement the abstract methods.
 
-I'll be adding trade functions to the strategy type shortly:
+Methods like:
   - getStopLoss
   - getTakeProfit
   - getEntryPrice
@@ -26,14 +26,14 @@ I'll be adding trade functions to the strategy type shortly:
   - getMagicNumber
   - manageOpenTrades
   
-Also, I will be adding the following abstract Types to try and keep logic for the above methods, somewhat separate and reusable:
-  - UserSignal
-  - UserStopLoss
-  - UserTakeProfit
-  - UserFilter
-  - UserRiskProfile
+Also, abstract type should be extended for specific logic to keep things somewhat separate and reusable:
+  - BaseSignal
+  - BaseStopLoss
+  - BaseTakeProfit
+  - BaseFilter
+  - BaseRiskProfile
 
-You will also be able to extend the base MQL type which will just contain the metatrader functionality, if you don't want to use the Strategy framework above.
+You can also just extend the base MQL type which just contains the metatrader functionality, if you don't want to use the Strategy framework above.
 
 I'm using log4net for C# logging, and SmartThreadPool for concurrency.
 
@@ -46,10 +46,6 @@ Also, a websockets implementation for event processing will be implemented.
 - Modify the build output path in MQL4CSharp properties in Visual Studio 2015 to match you metatrader terminal library directory (in mt4: file->open data folder)
 - You need to copy log4net.dll. log4net.config and SmartThreadPool.dll to you metatrader root directory where the terminal.exe resides.
 - Grab the mq4 file from https://github.com/jseparovic/MQL4CSharp/blob/master/MQL4CSharp/Mql/mql4csharp.mq4
-- Grab the generated mqh files from https://github.com/jseparovic/MQL4CSharpGenerator/tree/master/out
+- Grab the generated mqh files from https://github.com/jseparovic/MQL4CSharpGenerator/tree/master/out and put them in your mql/include dir
 - C# logging to file as per log4net.config
  
-
-## Check out here for adding to this project:
-https://github.com/jseparovic/MQL4CSharp/wiki/Adding-a-MQL4-Function-to-the-Framework
-
