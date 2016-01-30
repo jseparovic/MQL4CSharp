@@ -28,9 +28,9 @@ namespace MQL4CSharp.UserDefined.Signal
 
         public override SignalResult evaluate(string symbol, TIMEFRAME timeframe)
         {
-            double maFast1 = strategy.iMA(symbol, (int) timeframe, maPeriodFast, maShift, (int)methodFast, (int)ENUM_APPLIED_PRICE.PRICE_CLOSE, 1);
-            double maSlow1 = strategy.iMA(symbol, (int)timeframe, maPeriodSlow, maShift, (int)methodSlow, (int)ENUM_APPLIED_PRICE.PRICE_CLOSE, 1);
+            double maFast1 = strategy.iMA(symbol, (int)timeframe, maPeriodFast, maShift, (int)methodFast, (int)ENUM_APPLIED_PRICE.PRICE_CLOSE, 1);
             double maFast2 = strategy.iMA(symbol, (int)timeframe, maPeriodFast, maShift, (int)methodFast, (int)ENUM_APPLIED_PRICE.PRICE_CLOSE, 2);
+            double maSlow1 = strategy.iMA(symbol, (int)timeframe, maPeriodSlow, maShift, (int)methodSlow, (int)ENUM_APPLIED_PRICE.PRICE_CLOSE, 1);
             double maSlow2 = strategy.iMA(symbol, (int)timeframe, maPeriodSlow, maShift, (int)methodSlow, (int)ENUM_APPLIED_PRICE.PRICE_CLOSE, 2);
 
             if (maFast1 < maSlow1 && maFast2 > maSlow2)

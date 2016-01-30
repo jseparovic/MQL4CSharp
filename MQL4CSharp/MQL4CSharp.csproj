@@ -71,6 +71,8 @@
     <Compile Include="Base\Common\SignalInfo.cs" />
     <Compile Include="Base\Common\SignalInfoKey.cs" />
     <Compile Include="Base\Common\SignalResult.cs" />
+    <Compile Include="Base\Common\StrategyMetaData.cs" />
+    <Compile Include="Base\Enums\Direction.cs" />
     <Compile Include="Base\Enums\COLOR.cs" />
     <Compile Include="Base\Enums\ENUM_ALIGN_MODE.cs" />
     <Compile Include="Base\Enums\ENUM_APPLIED_PRICE.cs" />

@@ -1,4 +1,6 @@
 ﻿using System;
+using MQL4CSharp.Base;
+using NodaTime;
 
 namespace mqlsharp.Util
 {
@@ -20,6 +22,11 @@ namespace mqlsharp.Util
             TimeSpan time = new TimeSpan(Int32.Parse(hr24Time.Split(':')[0]), Int32.Parse(hr24Time.Split(':')[1]), 0);
             DateTime date = current.Date;
             return date + time;
+        }
+
+        public static DateTime addDateAndTime(LocalDate date, LocalTime time)
+        {
+            return new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second);
         }
     }
 }

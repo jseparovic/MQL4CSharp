@@ -56,6 +56,16 @@ namespace MQL4CSharp.UserDefined.Strategy
             return timeOfDayFilter.filter(symbol, strategyTimeframe);
         }
 
+        public override void onNewDate(string symbol, TIMEFRAME timeframe)
+        {
+            
+        }
+
+        public override void onNewCandle(string symbol, TIMEFRAME timeframe)
+        {
+
+        }
+
         // returns signal direction or neutral
         public override int evaluate(string symbol)
         {
