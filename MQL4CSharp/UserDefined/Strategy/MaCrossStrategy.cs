@@ -29,7 +29,7 @@ namespace MQL4CSharp.UserDefined.Strategy
     {
         private int MAGIC_NUMBER = 1111;
 
-        private String COMMENT = "TestStrategy";
+        private String COMMENT = "MaCrossStrategy";
 
         private BaseStopLoss srStopLoss;
         private BaseTakeProfit fixedPipTakeProfit;
@@ -39,8 +39,9 @@ namespace MQL4CSharp.UserDefined.Strategy
         private BaseSignal maCross;
         private TIMEFRAME strategyTimeframe = TIMEFRAME.PERIOD_M15;
 
-        public MaCrossStrategy() : base()
+        public MaCrossStrategy() : base(false)
         {
+            LOG.Debug("MaCrossStrategy() called");
             srStopLoss = new SRStopLoss(this);
             fixedPipTakeProfit = new FixedPipTakeProfit(this, 40);
             percentRiskProfile = new PercentRiskProfile(this, 0, 0.02, 5);
@@ -68,8 +69,8 @@ namespace MQL4CSharp.UserDefined.Strategy
         // returns true if ok to take a trade
         public override bool filter(string symbol)
         {
-            //return true;
-            return timeOfDayFilter.filter(symbol, strategyTimeframe);
+            return true;
+            //return timeOfDayFilter.filter(symbol, strategyTimeframe);
         }
 
         public override void onNewDate(string symbol, TIMEFRAME timeframe)

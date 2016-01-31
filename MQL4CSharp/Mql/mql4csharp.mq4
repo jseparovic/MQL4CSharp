@@ -61,12 +61,14 @@ void maintainRates()
 
 void executeCommands()
 {
+   //Print("IsCommandWaiting(): " + IsCommandWaiting());      
    if(IsCommandWaiting())
    {
       int id = GetCommandId();
       string name = GetCommandName();
       string params = GetCommandParams();
-      
+
+      //Print("executing command: " + name);      
       // Parse the command
       string paramArray[];
       StringSplit(params, DELIM, paramArray);
@@ -119,11 +121,8 @@ int OnInit()
 
    EventSetMillisecondTimer(1);
 
-   // Call the DLL onInit
-   Print("Calling ExecOnInit(" + CSharpFullTypeName + ")");
    ExecOnInit(CSharpFullTypeName);
    
-   Print("OnInit Done");
    return(INIT_SUCCEEDED);
 }
  
@@ -135,6 +134,9 @@ void OnDeinit(const int reason)
  
 void OnTick()
 {
+   // execute commands that are waiting
+   executeCommands();
+
    // Keep the rates array size up to date
    maintainRates();
    

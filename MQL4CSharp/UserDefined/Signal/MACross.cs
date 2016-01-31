@@ -14,6 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using log4net.Appender;
 using MQL4CSharp.Base;
 using MQL4CSharp.Base.Common;
 using MQL4CSharp.Base.Enums;
@@ -51,14 +52,17 @@ namespace MQL4CSharp.UserDefined.Signal
 
             if (maFast1 < maSlow1 && maFast2 > maSlow2)
             {
+                strategy.LOG.Info("Signal Short: " + strategy.iTime(symbol, (int)timeframe, 0));
                 return SignalResult.newSELLMARKET();
             }
             else if (maFast1 > maSlow1 && maFast2 < maSlow2)
             {
+                strategy.LOG.Info("Signal Long: " + strategy.iTime(symbol, (int)timeframe, 0));
                 return SignalResult.newBUYMARKET();
             }
             else
             {
+                //strategy.LOG.Info("Signal Neutral: " + strategy.iTime(symbol, (int)timeframe, 0));
                 return SignalResult.newNEUTRAL();
             }
         }

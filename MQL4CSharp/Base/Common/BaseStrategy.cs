@@ -46,8 +46,11 @@ namespace MQL4CSharp.Base
         {
             LOG = LogManager.GetLogger(GetType());
             this.symbolList = new List<string>();
+            LOG.Info("call to Symbol()");
             this.symbolList.Add(Symbol());
+            LOG.Info("finished call to Symbol()");
             this.timeframe = TIMEFRAME.PERIOD_CURRENT;
+            strategyMetaDataMap = new Dictionary<KeyValuePair<string, TIMEFRAME>, StrategyMetaData>();
         }
 
         public BaseStrategy(bool evalOncePerCandle) : this()
@@ -156,18 +159,18 @@ namespace MQL4CSharp.Base
                 {
                     this.manageOpenTrades(symbol);
 
-                    if (this.isAsleep(symbol))
-                    {
-                        return;
-                    }
-
-                    if (!this.filter(symbol))
-                    {
-                        return;
-                    }
-
                     if (checkCandle(symbol, timeframe))
                     {
+                        if (this.isAsleep(symbol))
+                        {
+                            return;
+                        }
+
+                        if (!this.filter(symbol))
+                        {
+                            return;
+                        }
+
                         // Check for a signal
                         int signal = this.evaluate(symbol);
                         if (signal != SignalResult.NEUTRAL)
@@ -186,7 +189,14 @@ namespace MQL4CSharp.Base
 
         public StrategyMetaData getStrategyMetaDataMap(String symbol, TIMEFRAME timeframe)
         {
-            return strategyMetaDataMap[new KeyValuePair<String, TIMEFRAME>(symbol, timeframe)];
+            try
+            {
+                return strategyMetaDataMap[new KeyValuePair<String, TIMEFRAME>(symbol, timeframe)];
+            }
+            catch (KeyNotFoundException)
+            {
+                return null;
+            }
         }
 
         public StrategyMetaData putStrategyMetaDataMap(String symbol, TIMEFRAME timeframe)
@@ -272,6 +282,9 @@ namespace MQL4CSharp.Base
 
         private bool checkCandle(String symbol, TIMEFRAME timeframe)
         {
+            return true;
+            LOG.Info("Checking candle..");
+
             bool newCandle = false;
             StrategyMetaData strategyMetaData = getStrategyMetaDataMap(symbol, timeframe);
             if(strategyMetaData == null)
@@ -281,12 +294,16 @@ namespace MQL4CSharp.Base
 
             LocalDate localDate = getMarketLocalDate(symbol);
 
+            LOG.Info("localDate: " + localDate);
+
             // Get todays high/low:
             todaysHigh = iHigh(symbol, (int)TIMEFRAME.PERIOD_D1, 0);
             todaysLow = iLow(symbol, (int)TIMEFRAME.PERIOD_D1, 0);
 
+            LOG.Info("strategyMetaData.getCurrentLocalDate(): " + strategyMetaData.getCurrentLocalDate());
+
             // new day detected
-            if(!localDate.Equals(strategyMetaData.getCurrentLocalDate()))
+            if (!localDate.Equals(strategyMetaData.getCurrentLocalDate()))
             {
                 strategyMetaData.setCurrentLocalDate(localDate);
                 strategyMetaData.setSignalStartDateTime(DateUtil.addDateAndTime(strategyMetaData.getCurrentLocalDate(), signalStartTime));
@@ -502,6 +519,7 @@ namespace MQL4CSharp.Base
 
         public override void OnInit()
         {
+            LOG.Debug("OnInit() called");
             init();
         }
 

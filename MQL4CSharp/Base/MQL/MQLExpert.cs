@@ -26,59 +26,75 @@ namespace MQL4CSharp.Base.MQL
     {
         private static readonly ILog LOG = LogManager.GetLogger(typeof(MQLExpert));
 
-        static BaseStrategy strategy;
-        static Int64 timerInterval = 1000;
-        static DateTime timer = DateTime.Now;
-        static SmartThreadPool threadPool;
-        private static string typeName;
+        BaseStrategy strategy;
+        Int64 timerInterval = 1000;
+        DateTime timer = DateTime.Now;
+        SmartThreadPool threadPool;
+        private string typeName;
 
-        public static void setTimerInterval(Int64 millis)
+        private static MQLExpert mqlExpert;
+
+        public static MQLExpert getInstance()
+        {
+            if (mqlExpert == null)
+            {
+                mqlExpert = new MQLExpert();
+            }
+            return mqlExpert;
+        }
+
+        private MQLExpert()
+        {
+
+        }
+
+        public void setTimerInterval(Int64 millis)
         {
             timerInterval = millis;
         }
 
-        public static void OnInitThread()
+        static void OnInitThread()
         {
-            Type type = Type.GetType(typeName);
-            strategy = (BaseStrategy)Activator.CreateInstance(type);
-            strategy.OnInit();
+            Type type = Type.GetType(getInstance().typeName);
+            getInstance().strategy = (BaseStrategy)Activator.CreateInstance(type);
+            getInstance().strategy.OnInit();
         }
 
-        public static void OnDeinitThread()
+        static void OnDeinitThread()
         {
-            strategy.OnDeinit();
+            getInstance().strategy.OnDeinit();
         }
 
-        public static void OnTickThread()
+        static void OnTickThread()
         {
-            strategy.OnTick();
+            getInstance().strategy.OnTick();
         }
 
-        public static void OnTimerThread()
+        static void OnTimerThread()
         {
-            strategy.OnTimer();
+            getInstance().strategy.OnTimer();
         }
 
-        private static SmartThreadPool getThreadPool()
+        private SmartThreadPool getThreadPool()
         {
             if (threadPool == null)
             {
-                LOG.Debug(String.Format("threadPool == null"));
-                threadPool = new SmartThreadPool();
-                threadPool.MinThreads = 1;
-                threadPool.MaxThreads = 1;
+                LOG.Debug(String.Format("Initializing ThreadPool"));
+                getInstance().threadPool = new SmartThreadPool();
+                getInstance().threadPool.MinThreads = 1;
+                getInstance().threadPool.MaxThreads = 1;
             }
-            return threadPool;
+            return getInstance().threadPool;
         }
 
         [DllExport("ExecOnInit", CallingConvention = CallingConvention.StdCall)]
         public static void ExecOnInit([In, Out, MarshalAs(UnmanagedType.LPWStr)] string CSharpFullTypeName)
         {
             LOG.Debug(String.Format("Initializing: {0}", CSharpFullTypeName));
-            typeName = CSharpFullTypeName;
+            getInstance().typeName = CSharpFullTypeName;
             try
             {
-                getThreadPool().QueueWorkItem(OnInitThread);
+                getInstance().getThreadPool().QueueWorkItem(OnInitThread);
             }
             catch (ArgumentNullException)
             {
@@ -95,7 +111,7 @@ namespace MQL4CSharp.Base.MQL
         {
             try
             {
-                getThreadPool().QueueWorkItem(OnDeinitThread);
+                getInstance().getThreadPool().QueueWorkItem(OnDeinitThread);
             }
             catch (Exception e)
             {
@@ -108,7 +124,7 @@ namespace MQL4CSharp.Base.MQL
         {
             try
             {
-                getThreadPool().QueueWorkItem(OnTickThread);
+                getInstance().getThreadPool().QueueWorkItem(OnTickThread);
             }
             catch (Exception e)
             {
@@ -122,10 +138,10 @@ namespace MQL4CSharp.Base.MQL
             try
             {
                 DateTime now = DateTime.Now;
-                if (now >= timer.AddMilliseconds(timerInterval)) // execute every timeout millis
+                if (now >= getInstance().timer.AddMilliseconds(getInstance().timerInterval)) // execute every timeout millis
                 {
-                    timer = now;
-                    getThreadPool().QueueWorkItem(OnTimerThread);
+                    getInstance().timer = now;
+                    getInstance().getThreadPool().QueueWorkItem(OnTimerThread);
                 }
             }
             catch (Exception e)

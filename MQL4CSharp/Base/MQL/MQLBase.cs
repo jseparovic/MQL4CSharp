@@ -18,7 +18,7 @@ namespace MQL4CSharp.Base
 
         public void setTimerInterval(Int64 intervalMillis)
         {
-            MQLExpert.setTimerInterval(intervalMillis);
+            MQLExpert.getInstance().setTimerInterval(intervalMillis);
         }
 
         public abstract void OnInit();
