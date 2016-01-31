@@ -49,3 +49,7 @@ Also, a websockets implementation for event processing will be implemented.
 - Grab the generated mqh files from https://github.com/jseparovic/MQL4CSharpGenerator/tree/master/out and put them in your mql/include dir
 - C# logging to file as per log4net.config
  
+- If you just want to use the library or extend the BaseStrategy type: Nuget it: https://www.nuget.org/packages/MQL4CSharp/
+```
+PM> Install-Package MQL4CSharp
+```
