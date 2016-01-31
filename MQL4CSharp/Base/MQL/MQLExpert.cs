@@ -30,6 +30,7 @@ namespace MQL4CSharp.Base.MQL
         static Int64 timerInterval = 1000;
         static DateTime timer = DateTime.Now;
         static SmartThreadPool threadPool;
+        private static string typeName;
 
         public static void setTimerInterval(Int64 millis)
         {
@@ -38,6 +39,8 @@ namespace MQL4CSharp.Base.MQL
 
         public static void OnInitThread()
         {
+            Type type = Type.GetType(typeName);
+            strategy = (BaseStrategy)Activator.CreateInstance(type);
             strategy.OnInit();
         }
 
@@ -60,6 +63,7 @@ namespace MQL4CSharp.Base.MQL
         {
             if (threadPool == null)
             {
+                LOG.Debug(String.Format("threadPool == null"));
                 threadPool = new SmartThreadPool();
                 threadPool.MinThreads = 1;
                 threadPool.MaxThreads = 1;
@@ -70,11 +74,10 @@ namespace MQL4CSharp.Base.MQL
         [DllExport("ExecOnInit", CallingConvention = CallingConvention.StdCall)]
         public static void ExecOnInit([In, Out, MarshalAs(UnmanagedType.LPWStr)] string CSharpFullTypeName)
         {
+            LOG.Debug(String.Format("Initializing: {0}", CSharpFullTypeName));
+            typeName = CSharpFullTypeName;
             try
             {
-                Type type = Type.GetType(CSharpFullTypeName);
-                strategy = (BaseStrategy)Activator.CreateInstance(type);
-
                 getThreadPool().QueueWorkItem(OnInitThread);
             }
             catch (ArgumentNullException)

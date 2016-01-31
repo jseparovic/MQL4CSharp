@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using log4net;
 using mqlsharp.Util;
 using MQL4CSharp.Base.Enums;
+using MQL4CSharp.Base.Exceptions;
 
 namespace MQL4CSharp.Base.MQL
 {
@@ -39,10 +40,11 @@ namespace MQL4CSharp.Base.MQL
             return commandManager;
         }
 
-        MQLCommand command;
-        List<Object> parameters;
-        Boolean commandWaiting;
-        Object response;
+        private MQLCommand command;
+        private List<Object> parameters;
+        private Boolean commandWaiting;
+        private Object response;
+        private int error;
 
         private readonly object syncLock = new object();
 
@@ -51,7 +53,8 @@ namespace MQL4CSharp.Base.MQL
 
         private MQLCommandManager()
         {
-            commandWaiting = false;
+            this.commandWaiting = false;
+            this.error = 0;
         }
 
 
@@ -60,6 +63,7 @@ namespace MQL4CSharp.Base.MQL
             this.command = command;
             this.parameters = parameters;
             this.commandWaiting = true;
+            this.error = 0;
         }
 
         public bool IsCommandRunning()
@@ -184,17 +188,26 @@ namespace MQL4CSharp.Base.MQL
             }
         }
 
-        private void setCommandResponse(Object response, int error)
+        private void setCommandResponse(Object response, int errorCode)
         {
             try
             {
-                //LOG.Debug(String.Format("SetCommandResponse({0},{1})", response, error));
+                //LOG.Debug(String.Format("SetCommandResponse({0},{1})", response, errorCode));
                 this.response = response;
+                this.error = errorCode;
                 this.commandWaiting = false;
             }
             catch (Exception e)
             {
                 LOG.Error(e);
+            }
+        }
+
+        public void throwExceptionIfErrorResponse()
+        {
+            if (this.error > 0)
+            {
+                MQLExceptions.throwMQLException(error);
             }
         }
 

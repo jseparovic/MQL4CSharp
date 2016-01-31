@@ -108,9 +108,11 @@ void executeCommands()
 int OnInit()
 {
    // Initialize log4net
+   Print("Initializing logging");
    InitLogging();
    
    // Copy the rates array and pass it to the library
+   Print("Initializing rates");
    ArrayCopyRates(rates,NULL,0);
    ratesSize = ArraySize(rates);
    InitRates(rates, ratesSize);
@@ -118,8 +120,10 @@ int OnInit()
    EventSetMillisecondTimer(1);
 
    // Call the DLL onInit
+   Print("Calling ExecOnInit(" + CSharpFullTypeName + ")");
    ExecOnInit(CSharpFullTypeName);
    
+   Print("OnInit Done");
    return(INIT_SUCCEEDED);
 }
  
@@ -146,4 +150,3 @@ void OnTimer()
    
    ExecOnTimer();
 }
-

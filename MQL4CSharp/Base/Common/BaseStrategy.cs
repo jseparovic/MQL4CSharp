@@ -17,12 +17,9 @@ limitations under the License.
 using log4net;
 using System;
 using System.Collections.Generic;
-using System.Web.UI;
-using log4net.Repository.Hierarchy;
 using mqlsharp.Util;
 using MQL4CSharp.Base.Common;
 using MQL4CSharp.Base.Enums;
-using MQL4CSharp.Base.MQL;
 using NodaTime;
 
 namespace MQL4CSharp.Base
@@ -51,6 +48,21 @@ namespace MQL4CSharp.Base
             this.symbolList = new List<string>();
             this.symbolList.Add(Symbol());
             this.timeframe = TIMEFRAME.PERIOD_CURRENT;
+        }
+
+        public BaseStrategy(bool evalOncePerCandle) : this()
+        {
+            this.evalOncePerCandle = evalOncePerCandle;
+        }
+
+        public BaseStrategy(TIMEFRAME timeframe) : this()
+        {
+            this.timeframe = timeframe;
+        }
+
+        public BaseStrategy(TIMEFRAME timeframe, bool evalOncePerCandle) : this(evalOncePerCandle)
+        {
+            this.timeframe = timeframe;
         }
 
         public BaseStrategy(TIMEFRAME timeframe, String symbol) : this()

@@ -89,6 +89,7 @@
     <Compile Include="Base\Enums\MARKET_INFO.cs" />
     <Compile Include="Base\Enums\OBJECT_PROPERTY.cs" />
     <Compile Include="Base\Enums\TRADE_OPERATION.cs" />
+    <Compile Include="Base\Exceptions\MQLExceptions.cs" />
     <Compile Include="Base\MQL\MQLExpert.cs" />
     <Compile Include="Base\MQL\MQLCommandManager.cs" />
     <Compile Include="Base\Enums\Error.cs" />
