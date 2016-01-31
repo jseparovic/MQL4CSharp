@@ -23,9 +23,9 @@ namespace MQL4CSharp.UserDefined.Signal
 {
     public class MACross : BaseSignal
     {
-        private int maPeriodFast = 3;
-        private int maPeriodSlow = 14;
-        private ENUM_MA_METHOD methodFast = ENUM_MA_METHOD.MODE_SMA;
+        private int maPeriodFast = 1;
+        private int maPeriodSlow = 2;
+        private ENUM_MA_METHOD methodFast = ENUM_MA_METHOD.MODE_EMA;
         private ENUM_MA_METHOD methodSlow = ENUM_MA_METHOD.MODE_EMA;
         private int maShift = 0;
 
@@ -52,12 +52,12 @@ namespace MQL4CSharp.UserDefined.Signal
 
             if (maFast1 < maSlow1 && maFast2 > maSlow2)
             {
-                strategy.LOG.Info("Signal Short: " + strategy.iTime(symbol, (int)timeframe, 0));
+                //strategy.LOG.Info("Signal Short: " + strategy.iTime(symbol, (int)timeframe, 0));
                 return SignalResult.newSELLMARKET();
             }
             else if (maFast1 > maSlow1 && maFast2 < maSlow2)
             {
-                strategy.LOG.Info("Signal Long: " + strategy.iTime(symbol, (int)timeframe, 0));
+                //strategy.LOG.Info("Signal Long: " + strategy.iTime(symbol, (int)timeframe, 0));
                 return SignalResult.newBUYMARKET();
             }
             else

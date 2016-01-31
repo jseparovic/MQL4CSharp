@@ -363,6 +363,7 @@ namespace MQL4CSharp.Base
         
         private void closeOut(String symbol)
         {
+            return;
             if(closeOutTime != null)
             {
                 DateTime closeOutDateTime = DateUtil.addDateAndTime(getMarketLocalDate(symbol), closeOutTime);
@@ -414,7 +415,7 @@ namespace MQL4CSharp.Base
         {
             TRADE_OPERATION op;
             double price, lots;
-            int slippage = 5;
+            int slippage = 5000;
             double stoploss = this.getStopLoss(symbol, signal);
             double takeprofit = this.getTakeProfit(symbol, signal);
             String comment = this.getComment(symbol);
