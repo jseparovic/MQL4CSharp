@@ -27,6 +27,7 @@ void ExecOnInit(string);
 void ExecOnDeinit();
 void ExecOnTick();
 void ExecOnTimer();
+bool IsExecutingOnTick();
 bool IsCommandWaiting();
 int GetCommandId();
 string GetCommandName();
@@ -59,7 +60,7 @@ void maintainRates()
 }
 
 
-void executeCommands()
+bool executeCommands()
 {
    //Print("IsCommandWaiting(): " + IsCommandWaiting());      
    if(IsCommandWaiting())
@@ -68,12 +69,14 @@ void executeCommands()
       string name = GetCommandName();
       string params = GetCommandParams();
 
-      //Print("executing command: " + name);      
       // Parse the command
       string paramArray[];
       StringSplit(params, DELIM, paramArray);
 
       int returnType = getCommandReturnType(id);
+
+      // reset last error
+      ResetLastError();
       
       if(returnType == RETURN_TYPE_BOOL)
       {
@@ -93,7 +96,9 @@ void executeCommands()
       }
       else if(returnType == RETURN_TYPE_VOID)
       {
+         Print("executeVoidCommand: " + name);      
          executeVoidCommand(id, paramArray);
+         Print("SetVoidCommandResponse: " + name);      
          SetVoidCommandResponse(GetLastError());
       }
       else if(returnType == RETURN_TYPE_LONG)
@@ -104,7 +109,9 @@ void executeCommands()
       {
          SetDateTimeCommandResponse(executeDateTimeCommand(id, paramArray), GetLastError());
       }
+      return true;
    }
+   return false;
 }
 
 int OnInit()
@@ -122,6 +129,9 @@ int OnInit()
    EventSetMillisecondTimer(1);
 
    ExecOnInit(CSharpFullTypeName);
+
+   // execute commands that are waiting
+   executeCommands();
    
    return(INIT_SUCCEEDED);
 }
@@ -134,21 +144,24 @@ void OnDeinit(const int reason)
  
 void OnTick()
 {
-   // execute commands that are waiting
-   executeCommands();
-
-   // Keep the rates array size up to date
-   maintainRates();
-   
    // Call the DLL onTick
    ExecOnTick();
+
+   // execute commands that are waiting
+   while(IsExecutingOnTick())
+   {
+      executeCommands();
+   }
+      
+   // Keep the rates array size up to date
+   maintainRates();
 }
 
 
 void OnTimer()
 {
+   ExecOnTimer();
+
    // execute commands that are waiting
    executeCommands();
-   
-   ExecOnTimer();
 }

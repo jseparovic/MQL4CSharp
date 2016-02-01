@@ -29,12 +29,10 @@ namespace MQL4CSharp.Base
         public ILog LOG;
 
         private bool evalOncePerCandle = true;
+        private bool closeOnOpposingSignal = true;
         private Dictionary<KeyValuePair<String, TIMEFRAME>, StrategyMetaData> strategyMetaDataMap;
         private double yesterdaysHigh, yesterdaysLow, todaysHigh, todaysLow;
         private Dictionary<long, SignalResult> orderToSignalMap;
-        private LocalTime signalStartTime = LocalTime.Midnight;
-        private LocalTime signalStopTime = LocalTime.Midnight;
-        private LocalTime closeOutTime;
         public static DateTimeZone DATE_TZ = DateTimeZone.ForOffset(Offset.Zero);
         private String strategyName;
         private List<String> symbolList;
@@ -46,99 +44,32 @@ namespace MQL4CSharp.Base
         {
             LOG = LogManager.GetLogger(GetType());
             this.symbolList = new List<string>();
-            LOG.Info("call to Symbol()");
             this.symbolList.Add(Symbol());
-            LOG.Info("finished call to Symbol()");
             this.timeframe = TIMEFRAME.PERIOD_CURRENT;
             strategyMetaDataMap = new Dictionary<KeyValuePair<string, TIMEFRAME>, StrategyMetaData>();
         }
 
-        public BaseStrategy(bool evalOncePerCandle) : this()
+        public BaseStrategy(TIMEFRAME timeframe,
+                            List<String> symbolList,
+                            bool evalOncePerCandle = true,
+                            bool closeOnOpposingSignal = true) : this()
         {
+            this.timeframe = timeframe;
+            this.symbolList = symbolList;
             this.evalOncePerCandle = evalOncePerCandle;
+            this.closeOnOpposingSignal = closeOnOpposingSignal;
         }
 
-        public BaseStrategy(TIMEFRAME timeframe) : this()
-        {
-            this.timeframe = timeframe;
-        }
-
-        public BaseStrategy(TIMEFRAME timeframe, bool evalOncePerCandle) : this(evalOncePerCandle)
-        {
-            this.timeframe = timeframe;
-        }
-
-        public BaseStrategy(TIMEFRAME timeframe, String symbol) : this()
+        public BaseStrategy(TIMEFRAME timeframe,
+                            String symbol,
+                            bool evalOncePerCandle = true,
+                            bool closeOnOpposingSignal = true) : this()
         {
             this.symbolList = new List<string>();
             this.symbolList.Add(symbol);
             this.timeframe = timeframe;
-        }
-
-        public BaseStrategy(TIMEFRAME timeframe, List<String> symbolList) : this()
-        {
-            this.symbolList = symbolList;
-        }
-
-        public BaseStrategy(TIMEFRAME timeframe, String symbol, bool evalOncePerCandle) : this(timeframe, symbol)
-        {
             this.evalOncePerCandle = evalOncePerCandle;
-        }
-
-        public BaseStrategy(TIMEFRAME timeframe, List<String> symbolList, bool evalOncePerCandle) : this(timeframe, symbolList)
-        {
-            this.evalOncePerCandle = evalOncePerCandle;
-        }
-
-        public BaseStrategy(TIMEFRAME timeframe, String symbol, bool evalOncePerCandle, 
-                                LocalTime signalStartTime, LocalTime signalStopTime) : this(timeframe, symbol, evalOncePerCandle)
-        {
-            this.signalStartTime = signalStartTime;
-            this.signalStopTime = signalStopTime;
-        }
-
-        public BaseStrategy(TIMEFRAME timeframe, List<String> symbolList, bool evalOncePerCandle, 
-                                LocalTime signalStartTime, LocalTime signalStopTime) : this(timeframe, symbolList, evalOncePerCandle)
-        {
-            this.signalStartTime = signalStartTime;
-            this.signalStopTime = signalStopTime;
-        }
-
-        public BaseStrategy(TIMEFRAME timeframe, String symbol, bool evalOncePerCandle, LocalTime signalStartTime, 
-                                LocalTime signalStopTime, LocalTime closeOutTime) : this(timeframe, symbol, evalOncePerCandle, signalStartTime, signalStopTime)
-        {
-            this.closeOutTime = closeOutTime;
-        }
-
-        public BaseStrategy(TIMEFRAME timeframe, List<String> symbolList, bool evalOncePerCandle, LocalTime signalStartTime, 
-                                LocalTime signalStopTime, LocalTime closeOutTime) : this(timeframe, symbolList, evalOncePerCandle, signalStartTime, signalStopTime)
-        {
-            this.closeOutTime = closeOutTime;
-        }
-
-        public BaseStrategy(TIMEFRAME timeframe, String symbol, LocalTime signalStartTime, LocalTime signalStopTime) : this(timeframe, symbol, true)
-        {
-            this.signalStartTime = signalStartTime;
-            this.signalStopTime = signalStopTime;
-        }
-
-        public BaseStrategy(TIMEFRAME timeframe, List<String> symbolList,
-                                LocalTime signalStartTime, LocalTime signalStopTime) : this(timeframe, symbolList, true)
-        {
-            this.signalStartTime = signalStartTime;
-            this.signalStopTime = signalStopTime;
-        }
-
-        public BaseStrategy(TIMEFRAME timeframe, String symbol, LocalTime signalStartTime,
-                                LocalTime signalStopTime, LocalTime closeOutTime) : this(timeframe, symbol, true, signalStartTime, signalStopTime)
-        {
-            this.closeOutTime = closeOutTime;
-        }
-
-        public BaseStrategy(TIMEFRAME timeframe, List<String> symbolList, LocalTime signalStartTime,
-                                LocalTime signalStopTime, LocalTime closeOutTime) : this(timeframe, symbolList, true, signalStartTime, signalStopTime)
-        {
-            this.closeOutTime = closeOutTime;
+            this.closeOnOpposingSignal = closeOnOpposingSignal;
         }
 
 
@@ -146,15 +77,6 @@ namespace MQL4CSharp.Base
         {
             foreach (String symbol in symbolList)
             {
-                try
-                {
-                    closeOut(symbol);
-                }
-                catch (Exception ex)
-                {
-                    LOG.Error(null, ex);
-                }
-
                 try
                 {
                     this.manageOpenTrades(symbol);
@@ -204,21 +126,19 @@ namespace MQL4CSharp.Base
             return strategyMetaDataMap[new KeyValuePair<String, TIMEFRAME>(symbol, timeframe)] = new StrategyMetaData();
         }
 
-
-
         public long getMarketTime(String symbol)
         {
-            return (long)MarketInfo(symbol, (int)MARKET_INFO.MODE_TIME) * 1000;
+            return (long)MarketInfo(symbol, (int)MARKET_INFO.MODE_TIME);
         }
 
         public DateTime getMarketDateTime(String symbol)
         {
-            return new DateTime(getMarketTime(symbol));
+            return DateUtil.FromUnixTime(getMarketTime(symbol));
         }
 
         public LocalDate getMarketLocalDate(String symbol)
         {
-            DateTime date = getMarketDateTime(symbol).Date;
+            DateTime date = getMarketDateTime(symbol);
             return new LocalDate(date.Year, date.Month, date.Day);
         }
 
@@ -282,9 +202,6 @@ namespace MQL4CSharp.Base
 
         private bool checkCandle(String symbol, TIMEFRAME timeframe)
         {
-            return true;
-            LOG.Info("Checking candle..");
-
             bool newCandle = false;
             StrategyMetaData strategyMetaData = getStrategyMetaDataMap(symbol, timeframe);
             if(strategyMetaData == null)
@@ -294,18 +211,15 @@ namespace MQL4CSharp.Base
 
             LocalDate localDate = getMarketLocalDate(symbol);
 
-            LOG.Info("localDate: " + localDate);
-
             // Get todays high/low:
             todaysHigh = iHigh(symbol, (int)TIMEFRAME.PERIOD_D1, 0);
             todaysLow = iLow(symbol, (int)TIMEFRAME.PERIOD_D1, 0);
-
-            LOG.Info("strategyMetaData.getCurrentLocalDate(): " + strategyMetaData.getCurrentLocalDate());
 
             // new day detected
             if (!localDate.Equals(strategyMetaData.getCurrentLocalDate()))
             {
                 strategyMetaData.setCurrentLocalDate(localDate);
+                /*
                 strategyMetaData.setSignalStartDateTime(DateUtil.addDateAndTime(strategyMetaData.getCurrentLocalDate(), signalStartTime));
 
                 if (signalStopTime.Equals(LocalTime.Midnight))
@@ -317,14 +231,14 @@ namespace MQL4CSharp.Base
                 {
                     strategyMetaData.setSignalStopDateTime(DateUtil.addDateAndTime(strategyMetaData.getCurrentLocalDate(), signalStopTime));
                 }
+                */
 
                 LOG.Info("New Day Detected: " + strategyMetaData.getCurrentLocalDate());
-
                 LOG.Debug("Market Time: " + getMarketTime(symbol));
                 LOG.Debug("Market DateTime: " + getMarketDateTime(symbol));
                 LOG.Debug("Local Date: " + localDate);
-                LOG.Debug("Signal Start: " + strategyMetaData.getSignalStartDateTime());
-                LOG.Debug("Signal Stop: " + strategyMetaData.getSignalStopDateTime());
+                //LOG.Debug("Signal Start: " + strategyMetaData.getSignalStartDateTime());
+                //LOG.Debug("Signal Stop: " + strategyMetaData.getSignalStopDateTime());
 
                 // Get yesterdays high/low:
                 yesterdaysHigh = iHigh(symbol, (int)TIMEFRAME.PERIOD_D1, 1);
@@ -360,7 +274,8 @@ namespace MQL4CSharp.Base
             }
             return true;
         }
-        
+
+        /*
         private void closeOut(String symbol)
         {
             return;
@@ -384,6 +299,8 @@ namespace MQL4CSharp.Base
                 }
             }
         }
+
+        */
 
         public void closeOutThisOrder(String symbol)
         {
@@ -478,11 +395,20 @@ namespace MQL4CSharp.Base
                 {
                     lastBuyOpen = OrderOpenTime();
                     openBuyOrder = true;
+                    if (closeOnOpposingSignal && signal < 0)
+                    {
+                        closeOutThisOrder(symbol);
+                    }
                 }
                 else if (OrderType() == (int)TRADE_OPERATION.OP_SELL && OrderSymbol().Equals(symbol) && OrderMagicNumber() == magic)
                 {
                     lastSellOpen = OrderOpenTime();
                     openSellOrder = true;
+                    if (closeOnOpposingSignal && signal > 0)
+                    {
+                        closeOutThisOrder(symbol);
+                    }
+
                 }
                 else if (OrderType() == (int)TRADE_OPERATION.OP_BUYSTOP && OrderSymbol().Equals(symbol) && OrderMagicNumber() == magic)
                 {
@@ -493,6 +419,7 @@ namespace MQL4CSharp.Base
                     openSellStopOrder = true;
                 }
             }
+
 
             if ((signal == SignalResult.BUYMARKET && !openBuyOrder) || (signal == SignalResult.SELLMARKET && !openSellOrder) 
                     || (signal == SignalResult.BUYSTOP && !openBuyStopOrder) || (signal == SignalResult.SELLSTOP && !openSellStopOrder))

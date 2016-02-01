@@ -31,6 +31,7 @@ namespace MQL4CSharp.Base.MQL
         DateTime timer = DateTime.Now;
         SmartThreadPool threadPool;
         private string typeName;
+        private bool executingOnTick = false;
 
         private static MQLExpert mqlExpert;
 
@@ -68,6 +69,7 @@ namespace MQL4CSharp.Base.MQL
         static void OnTickThread()
         {
             getInstance().strategy.OnTick();
+            getInstance().executingOnTick = false;
         }
 
         static void OnTimerThread()
@@ -85,6 +87,21 @@ namespace MQL4CSharp.Base.MQL
                 getInstance().threadPool.MaxThreads = 1;
             }
             return getInstance().threadPool;
+        }
+
+
+        [DllExport("IsExecutingOnTick", CallingConvention = CallingConvention.StdCall)]
+        public static bool IsExecutingOnTick()
+        {
+            try
+            {
+                return getInstance().executingOnTick;
+            }
+            catch (Exception e)
+            {
+                LOG.Error(e);
+                return true;
+            }
         }
 
         [DllExport("ExecOnInit", CallingConvention = CallingConvention.StdCall)]
@@ -122,6 +139,7 @@ namespace MQL4CSharp.Base.MQL
         [DllExport("ExecOnTick", CallingConvention = CallingConvention.StdCall)]
         public static void ExecOnTick()
         {
+            getInstance().executingOnTick = true;
             try
             {
                 getInstance().getThreadPool().QueueWorkItem(OnTickThread);

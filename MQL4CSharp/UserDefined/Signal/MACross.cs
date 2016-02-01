@@ -23,8 +23,8 @@ namespace MQL4CSharp.UserDefined.Signal
 {
     public class MACross : BaseSignal
     {
-        private int maPeriodFast = 1;
-        private int maPeriodSlow = 2;
+        private int maPeriodFast = 13;
+        private int maPeriodSlow = 48;
         private ENUM_MA_METHOD methodFast = ENUM_MA_METHOD.MODE_EMA;
         private ENUM_MA_METHOD methodSlow = ENUM_MA_METHOD.MODE_EMA;
         private int maShift = 0;
