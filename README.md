@@ -55,8 +55,7 @@ PM> Install-Package MQL4CSharp
 ```
 
 ### Some Backtesting notes
-On initial backtests runs, it would seem that the onTimer function is not implemented in Metatrader. 
-As the key feature to running MQL commands from the strategy thread relies on the onTimer function, it simply would not work using ontimer.
-I've added it to onTick, so commands should get executed on the same tick as a signal or maybe the next tick. Using tick data this is probably ok. With 1 min data it may execute the trade a minute later.
+Backtesting now works by executing commands in the onTick() method (as well as onTimer()) as onTimer is not supported in Strategy Tester. The onTick method in MQL will now continue to process commands until it detects the IsExecutingOnTick() to be false, so that all commands are run within the same tick.
+This could probably do with some further optimisation.
 
 
