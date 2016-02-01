@@ -52,7 +52,7 @@ namespace MQL4CSharp.UserDefined.StopLoss
             }
         }
 
-        public override void manage(int ticket)
+        public override void manage(String symbol, int ticket)
         {
             // Do nothing
         }

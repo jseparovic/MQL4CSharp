@@ -79,7 +79,14 @@ namespace MQL4CSharp.Base
             {
                 try
                 {
-                    this.manageOpenTrades(symbol);
+                    for (int i = 0; i < this.OrdersTotal(); i++)
+                    {
+                        if (OrderSelect(i, (int)SELECTION_TYPE.SELECT_BY_POS, (int)SELECTION_POOL.MODE_TRADES) && OrderMagicNumber() == getMagicNumber(symbol))
+                        {
+                            this.manageOpenTrades(symbol, OrderTicket());
+                        }
+                    }
+
 
                     if (checkCandle(symbol, timeframe))
                     {
@@ -488,7 +495,7 @@ namespace MQL4CSharp.Base
         }
 
         // Method to manage the trade
-        public abstract void manageOpenTrades(String symbol);
+        public abstract void manageOpenTrades(String symbol, int ticket);
 
     }
 }

@@ -32,6 +32,6 @@ namespace MQL4CSharp.Base.Common
         public abstract double getLevel(String symbol, TIMEFRAME timeframe, int signal);
 
         // Method called onTick to manage the stop loss level
-        public abstract void manage(int ticket);
+        public abstract void manage(String symbol, int ticket);
     }
 }

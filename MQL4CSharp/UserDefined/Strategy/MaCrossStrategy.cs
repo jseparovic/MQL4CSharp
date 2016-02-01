@@ -118,11 +118,9 @@ namespace MQL4CSharp.UserDefined.Strategy
             return false;
         }
 
-        public override void manageOpenTrades(string symbol)
+        public override void manageOpenTrades(String symbol, int ticket)
         {
-            breakEvenStopLoss.manage(OrderTicket());
+            breakEvenStopLoss.manage(symbol, ticket);
         }
-
-
     }
 }

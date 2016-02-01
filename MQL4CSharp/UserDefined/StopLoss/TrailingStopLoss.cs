@@ -42,12 +42,11 @@ namespace MQL4CSharp.UserDefined.StopLoss
             return 0;
         }
 
-        public override void manage(int ticket)
+        public override void manage(String symbol, int ticket)
         { 
             // Select Open Trade
             strategy.OrderSelect(ticket, (int)SELECTION_TYPE.SELECT_BY_TICKET, (int)SELECTION_POOL.MODE_TRADES);
 
-            String symbol = strategy.OrderSymbol();
             double orderOpenPrice = strategy.OrderOpenPrice();
             double orderTakeProfit = strategy.OrderTakeProfit();
             double orderStopLoss = strategy.OrderStopLoss();
