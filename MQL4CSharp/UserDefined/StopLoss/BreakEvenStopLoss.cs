@@ -24,19 +24,19 @@ namespace MQL4CSharp.UserDefined.StopLoss
     public class BreakEvenStopLoss : BaseStopLoss
     {
         int stopPips = 20; // minimum break even stop distance from price
-        decimal commisionPips = new decimal(0.8);
+        double commisionPips = 0.8;
 
         public BreakEvenStopLoss(BaseStrategy strategy) : base(strategy)
         {
         }
 
-        public BreakEvenStopLoss(BaseStrategy strategy, int stopPips, decimal commisionPips) : base(strategy)
+        public BreakEvenStopLoss(BaseStrategy strategy, int stopPips, double commisionPips) : base(strategy)
         {
             this.stopPips = stopPips;
             this.commisionPips = commisionPips;
         }
 
-        public override double getLevel(String symbol, TIMEFRAME timeframe, int signal)
+        public override double getLevel(String symbol, TIMEFRAME timeframe, SignalResult signal)
         {
             return 0;
         }
@@ -53,7 +53,7 @@ namespace MQL4CSharp.UserDefined.StopLoss
 
             if (orderType == (int)TRADE_OPERATION.OP_BUY)
             {
-                newStop = orderOpenPrice + commisionPips* (decimal)strategy.pipToPoint(symbol);
+                newStop = orderOpenPrice + (decimal)commisionPips* (decimal)strategy.pipToPoint(symbol);
                 if (newStop != orderStopLoss)
                 {
                     decimal bid = (decimal) strategy.MarketInfo(symbol, (int)MARKET_INFO.MODE_BID);
@@ -65,7 +65,7 @@ namespace MQL4CSharp.UserDefined.StopLoss
             }
             else if (orderType == (int)TRADE_OPERATION.OP_SELL)
             {
-                newStop = orderOpenPrice - commisionPips* (decimal)strategy.pipToPoint(symbol);
+                newStop = orderOpenPrice - (decimal)commisionPips * (decimal)strategy.pipToPoint(symbol);
                 if (newStop != orderStopLoss)
                 {
                     decimal ask = (decimal) strategy.MarketInfo(symbol, (int)MARKET_INFO.MODE_ASK);

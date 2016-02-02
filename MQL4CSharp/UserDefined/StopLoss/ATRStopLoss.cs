@@ -33,9 +33,9 @@ namespace MQL4CSharp.UserDefined.StopLoss
             this.atrShift = atrShift;
         }
 
-        public override double getLevel(String symbol, TIMEFRAME timeframe, int signal)
+        public override double getLevel(String symbol, TIMEFRAME timeframe, SignalResult signal)
         {
-            if (signal < 0)
+            if (signal.getSignal() < 0)
             {
                 return strategy.MarketInfo(symbol, (int)MARKET_INFO.MODE_BID) + strategy.iATR(symbol, (int)timeframe, atrPeriods, atrShift);
             }

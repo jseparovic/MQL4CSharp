@@ -17,7 +17,7 @@ limitations under the License.
 namespace MQL4CSharp.Base.Enums
 
 {
-    public enum ENUM_OBJECT
+    public enum OBJECT_TYPE
     {
         OBJ_VLINE = 1,
         OBJ_HLINE = 2,

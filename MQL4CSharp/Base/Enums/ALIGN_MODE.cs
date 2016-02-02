@@ -16,7 +16,7 @@ limitations under the License.
 
 namespace MQL4CSharp.Base.Enums
 {
-    public enum ENUM_ALIGN_MODE
+    public enum ALIGN_MODE
     {
         ALIGN_LEFT = 1,
         ALIGN_CENTER = 2,

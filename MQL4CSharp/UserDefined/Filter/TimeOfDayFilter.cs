@@ -19,13 +19,14 @@ using MQL4CSharp.Base.Common;
 using System;
 using mqlsharp.Util;
 using MQL4CSharp.Base.Enums;
+using NodaTime;
 
 namespace MQL4CSharp.UserDefined.Filter
 {
     public class TimeOfDayFilter : BaseFilter
     {
-        private String timeStart;
-        private String timeStop;
+        private LocalTime timeStart;
+        private LocalTime timeStop;
         private BaseStrategy strategy;
 
         /**
@@ -35,7 +36,7 @@ namespace MQL4CSharp.UserDefined.Filter
          * @param timeStop : eg "14:00"
          */
 
-        public TimeOfDayFilter(BaseStrategy strategy, String timeStart, String timeStop) : base(strategy)
+        public TimeOfDayFilter(BaseStrategy strategy, LocalTime timeStart, LocalTime timeStop) : base(strategy)
         {
             this.strategy = strategy;
             this.timeStart = timeStart;

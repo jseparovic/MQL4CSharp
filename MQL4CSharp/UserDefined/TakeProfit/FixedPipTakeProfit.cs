@@ -31,11 +31,11 @@ namespace MQL4CSharp.UserDefined.TakeProfit
             this.pips = pips;
         }
 
-        public override double getLevel(String symbol, TIMEFRAME timeframe, int signal)
+        public override double getLevel(String symbol, TIMEFRAME timeframe, SignalResult signal)
         {
             double range = strategy.iHigh(symbol, (int)timeframe, 1) - strategy.iLow(symbol, (int)timeframe, 1);
 
-            if (signal == (int)SignalResult.SELLMARKET)
+            if (signal.getSignal() == (int)SignalResult.SELLMARKET)
             {
                 return strategy.MarketInfo(symbol, (int)MARKET_INFO.MODE_BID) - pips* strategy.pipToPoint(symbol);
             }

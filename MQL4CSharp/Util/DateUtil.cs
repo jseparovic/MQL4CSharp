@@ -40,6 +40,13 @@ namespace mqlsharp.Util
             return date + time;
         }
 
+        public static DateTime getDateFromCurrentAnd24HRTime(DateTime current, LocalTime hr24Time)
+        {
+            TimeSpan time = new TimeSpan(hr24Time.Hour, hr24Time.Minute, 0);
+            DateTime date = current.Date;
+            return date + time;
+        }
+
         public static DateTime addDateAndTime(LocalDate date, LocalTime time)
         {
             return new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second);

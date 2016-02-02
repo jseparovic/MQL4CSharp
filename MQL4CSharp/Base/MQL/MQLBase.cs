@@ -1891,7 +1891,7 @@ namespace MQL4CSharp.Base
         /// <param name="width">[in] Screenshot width in pixels.</param>
         /// <param name="height">[in] Screenshot height in pixels.</param>
         /// <param name="align_mode">[in] Output mode of a narrow screenshot. A value of the enumeration. ALIGN_RIGHT means align to the right margin (the output from the end). ALIGN_LEFT means Left justify.</param>
-        public bool ChartScreenShot(long chart_id, string filename, int width, int height, ENUM_ALIGN_MODE align_mode)
+        public bool ChartScreenShot(long chart_id, string filename, int width, int height, ALIGN_MODE align_mode)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(chart_id);
@@ -2693,7 +2693,7 @@ namespace MQL4CSharp.Base
         /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalbasegetdouble.html
         /// </summary>
         /// <param name="property_id">[in] Signal property identifier. The value can be one of the values of the enumeration.</param>
-        public double SignalBaseGetDouble(ENUM_SIGNAL_BASE_DOUBLE property_id)
+        public double SignalBaseGetDouble(SIGNAL_BASE_DOUBLE property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id.ToString());
@@ -2712,7 +2712,7 @@ namespace MQL4CSharp.Base
         /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalbasegetinteger.html
         /// </summary>
         /// <param name="property_id">[in] Signal property identifier. The value can be one of the values of the enumeration.</param>
-        public long SignalBaseGetInteger(ENUM_SIGNAL_BASE_INTEGER property_id)
+        public long SignalBaseGetInteger(SIGNAL_BASE_INTEGER property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id.ToString());
@@ -2731,7 +2731,7 @@ namespace MQL4CSharp.Base
         /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalbasegetstring.html
         /// </summary>
         /// <param name="property_id">[in] Signal property identifier. The value can be one of the values of the enumeration.</param>
-        public string SignalBaseGetString(ENUM_SIGNAL_BASE_STRING property_id)
+        public string SignalBaseGetString(SIGNAL_BASE_STRING property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id.ToString());
@@ -2786,7 +2786,7 @@ namespace MQL4CSharp.Base
         /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalinfogetdouble.html
         /// </summary>
         /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
-        public double SignalInfoGetDouble(ENUM_SIGNAL_INFO_DOUBLE property_id)
+        public double SignalInfoGetDouble(SIGNAL_INFO_DOUBLE property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id.ToString());
@@ -2805,7 +2805,7 @@ namespace MQL4CSharp.Base
         /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalinfogetinteger.html
         /// </summary>
         /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
-        public long SignalInfoGetInteger(ENUM_SIGNAL_INFO_INTEGER property_id)
+        public long SignalInfoGetInteger(SIGNAL_INFO_INTEGER property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id.ToString());
@@ -2824,7 +2824,7 @@ namespace MQL4CSharp.Base
         /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalinfogetstring.html
         /// </summary>
         /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
-        public string SignalInfoGetString(ENUM_SIGNAL_INFO_STRING property_id)
+        public string SignalInfoGetString(SIGNAL_INFO_STRING property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id.ToString());
@@ -2844,7 +2844,7 @@ namespace MQL4CSharp.Base
         /// </summary>
         /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
         /// <param name="value">[in] The value of signal copy settings property.</param>
-        public bool SignalInfoSetDouble(ENUM_SIGNAL_INFO_DOUBLE property_id, double value)
+        public bool SignalInfoSetDouble(SIGNAL_INFO_DOUBLE property_id, double value)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id.ToString());
@@ -2865,7 +2865,7 @@ namespace MQL4CSharp.Base
         /// </summary>
         /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
         /// <param name="value">[in] The value of signal copy settings property.</param>
-        public bool SignalInfoSetInteger(ENUM_SIGNAL_INFO_INTEGER property_id, long value)
+        public bool SignalInfoSetInteger(SIGNAL_INFO_INTEGER property_id, long value)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id.ToString());
@@ -3530,7 +3530,7 @@ namespace MQL4CSharp.Base
         /// <param name="price1">[in] The price coordinate of the first anchor point.</param>
         /// <param name="timeN">[in] The time coordinate of the N-th anchor point.</param>
         /// <param name="priceN">[in] The price coordinate of the N-th anchor point.</param>
-        public bool ObjectCreate(long chart_id, string object_name, ENUM_OBJECT object_type, int sub_window, DateTime time1, double price1, DateTime timeN, double priceN)
+        public bool ObjectCreate(long chart_id, string object_name, OBJECT_TYPE object_type, int sub_window, DateTime time1, double price1, DateTime timeN, double priceN)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(chart_id);
@@ -3564,7 +3564,7 @@ namespace MQL4CSharp.Base
         /// <param name="price2">[in] The price coordinate of the second anchor point.</param>
         /// <param name="time3">[in] The time coordinate of the third anchor point.</param>
         /// <param name="price3">[in] The price coordinate of the third anchor point.</param>
-        public bool ObjectCreate(string object_name, ENUM_OBJECT object_type, int sub_window, DateTime time1, double price1, DateTime time2, double price2, DateTime time3, double price3)
+        public bool ObjectCreate(string object_name, OBJECT_TYPE object_type, int sub_window, DateTime time1, double price1, DateTime time2, double price2, DateTime time3, double price3)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(object_name);

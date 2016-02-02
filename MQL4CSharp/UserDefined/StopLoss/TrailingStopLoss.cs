@@ -37,7 +37,7 @@ namespace MQL4CSharp.UserDefined.StopLoss
             this.step = step;
         }
 
-        public override  double getLevel(String symbol, TIMEFRAME timeframe, int signal)
+        public override  double getLevel(String symbol, TIMEFRAME timeframe, SignalResult signal)
         {
             return 0;
         }

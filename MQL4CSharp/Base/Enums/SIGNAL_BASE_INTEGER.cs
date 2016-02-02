@@ -16,7 +16,7 @@ limitations under the License.
 
 namespace MQL4CSharp.Base.Enums
 {
-    public enum ENUM_SIGNAL_BASE_INTEGER
+    public enum SIGNAL_BASE_INTEGER
     {
         SIGNAL_BASE_DATE_PUBLISHED = 1,
         SIGNAL_BASE_DATE_STARTED = 2,

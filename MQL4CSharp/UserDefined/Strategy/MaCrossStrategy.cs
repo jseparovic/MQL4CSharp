@@ -22,6 +22,7 @@ using MQL4CSharp.UserDefined.RiskProfile;
 using MQL4CSharp.UserDefined.Signal;
 using MQL4CSharp.UserDefined.StopLoss;
 using MQL4CSharp.UserDefined.TakeProfit;
+using NodaTime;
 
 namespace MQL4CSharp.UserDefined.Strategy
 {
@@ -46,7 +47,7 @@ namespace MQL4CSharp.UserDefined.Strategy
             fixedPipTakeProfit = new FixedPipTakeProfit(this, 100);
             percentRiskProfile = new PercentRiskProfile(this, 0, 0.02, 5);
             breakEvenStopLoss = new BreakEvenStopLoss(this, 50, 1);
-            timeOfDayFilter = new TimeOfDayFilter(this, "09:00", "23:00");
+            timeOfDayFilter = new TimeOfDayFilter(this, new LocalTime(9,0), new LocalTime(23,0));
             maCross = new MACross(this);
         }
 
@@ -58,7 +59,7 @@ namespace MQL4CSharp.UserDefined.Strategy
             LOG.Info("AccountFreeMargin: " + AccountFreeMargin());
             LOG.Info("AccountName: " + AccountName());
             LOG.Info("AccountNumber: " + AccountNumber());
-            ObjectCreate(ChartID(), "test", ENUM_OBJECT.OBJ_TREND, 0, DateTime.Now.AddDays(-1), 1.0860, DateTime.Now.AddDays(+1), 1.086);
+            ObjectCreate(ChartID(), "test", OBJECT_TYPE.OBJ_TREND, 0, DateTime.Now.AddDays(-1), 1.0860, DateTime.Now.AddDays(+1), 1.086);
         }
 
         public override void destroy()
@@ -88,19 +89,36 @@ namespace MQL4CSharp.UserDefined.Strategy
         }
 
         // returns signal direction or neutral
-        public override int evaluate(string symbol)
+        public override SignalResult evaluate(string symbol)
         {
-            return maCross.evaluate(symbol, strategyTimeframe).getSignal();
+            return maCross.evaluate(symbol, strategyTimeframe);
         }
 
-        public override double getStopLoss(string symbol, int signal)
+        public override double getStopLoss(string symbol, SignalResult signal)
         {
             return srStopLoss.getLevel(symbol, strategyTimeframe, signal);
         }
 
-        public override double getTakeProfit(string symbol, int signal)
+        public override double getTakeProfit(string symbol, SignalResult signal)
         {
             return fixedPipTakeProfit.getLevel(symbol, strategyTimeframe, signal);
+        }
+
+        public override double getEntryPrice(string symbol, SignalResult signal)
+        {
+            if (signal.getSignal() == SignalResult.BUYMARKET)
+            {
+                return this.MarketInfo(symbol, (int)MARKET_INFO.MODE_ASK);
+            }
+            else 
+            {
+                return this.MarketInfo(symbol, (int)MARKET_INFO.MODE_BID);
+            }
+        }
+
+        public override DateTime getExpiry(string symbol, SignalResult signal)
+        {
+            throw new NotImplementedException();
         }
 
         public override double getLotSize(string symbol, double stopDistance)

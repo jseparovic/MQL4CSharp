@@ -101,8 +101,8 @@ namespace MQL4CSharp.Base
                         }
 
                         // Check for a signal
-                        int signal = this.evaluate(symbol);
-                        if (signal != SignalResult.NEUTRAL)
+                        SignalResult signal = this.evaluate(symbol);
+                        if (signal.getSignal() != SignalResult.NEUTRAL)
                         {
                             this.executeTrade(symbol, signal);
                         }
@@ -336,7 +336,7 @@ namespace MQL4CSharp.Base
         }
 
         // Method to execute the trade
-        public void executeTrade(String symbol, int signal)
+        public void executeTrade(String symbol, SignalResult signal)
         {
             TRADE_OPERATION op;
             double price, lots;
@@ -353,47 +353,43 @@ namespace MQL4CSharp.Base
             DateTime lastBuyOpen, lastSellOpen;
             bool openBuyOrder = false, openSellOrder = false, openBuyStopOrder = false, openSellStopOrder = false;
 
-            if (signal == SignalResult.BUYMARKET)
+            if (signal.getSignal() == SignalResult.BUYMARKET)
             {
                 op = TRADE_OPERATION.OP_BUY;
-                price = MarketInfo(symbol, (int)MARKET_INFO.MODE_ASK);
             }
-            else if (signal == SignalResult.SELLMARKET)
+            else if (signal.getSignal() == SignalResult.SELLMARKET)
             {
                 op = TRADE_OPERATION.OP_SELL;
-                price = MarketInfo(symbol, (int)MARKET_INFO.MODE_BID);
             }
-            else if (signal == SignalResult.BUYSTOP)
+            else if (signal.getSignal() == SignalResult.BUYSTOP)
             {
                 op = TRADE_OPERATION.OP_BUYSTOP;
-                price = getStopEntry(symbol, signal);
             }
-            else if (signal == SignalResult.SELLSTOP)
+            else if (signal.getSignal() == SignalResult.SELLSTOP)
             {
                 op = TRADE_OPERATION.OP_SELLSTOP;
-                price = getStopEntry(symbol, signal);
+            }
+            else if (signal.getSignal() == SignalResult.BUYLIMIT)
+            {
+                op = TRADE_OPERATION.OP_BUYLIMIT;
+            }
+            else if (signal.getSignal() == SignalResult.SELLLIMIT)
+            {
+                op = TRADE_OPERATION.OP_SELLLIMIT;
             }
             else
             {
                 throw new Exception("Invalid Signal signal=" + signal);
             }
 
-            if (signal > 0)
-            {
-                stopDistance = price - stoploss;
-            }
-            else
-            {
-                stopDistance = stoploss - price;
-            }
+
+
 
             //LOG.Debug("stopDistance: " + stopDistance);
             //LOG.Debug("price: " + price);
             //LOG.Debug("stoploss: " + stoploss);
             //LOG.Debug("takeprofit: " + takeprofit);
 
-            // Calculate lots
-            lots = this.getLotSize(symbol, stopDistance);
 
             // Check open trades on this symbol
             for (int i = 0; i < OrdersTotal(); i++)
@@ -403,7 +399,7 @@ namespace MQL4CSharp.Base
                 {
                     lastBuyOpen = OrderOpenTime();
                     openBuyOrder = true;
-                    if (closeOnOpposingSignal && signal < 0)
+                    if (closeOnOpposingSignal && signal.getSignal() < 0)
                     {
                         closeOutThisOrder(symbol);
                     }
@@ -412,7 +408,7 @@ namespace MQL4CSharp.Base
                 {
                     lastSellOpen = OrderOpenTime();
                     openSellOrder = true;
-                    if (closeOnOpposingSignal && signal > 0)
+                    if (closeOnOpposingSignal && signal.getSignal() > 0)
                     {
                         closeOutThisOrder(symbol);
                     }
@@ -428,22 +424,26 @@ namespace MQL4CSharp.Base
                 }
             }
 
+            // Calculate lots
+            double entryPrice = this.getEntryPrice(symbol, signal);
 
-            if ((signal == SignalResult.BUYMARKET && !openBuyOrder) || (signal == SignalResult.SELLMARKET && !openSellOrder) 
-                    || (signal == SignalResult.BUYSTOP && !openBuyStopOrder) || (signal == SignalResult.SELLSTOP && !openSellStopOrder))
+            if (signal.getSignal() > 0)
+            {
+                stopDistance = entryPrice - stoploss;
+            }
+            else
+            {
+                stopDistance = stoploss - entryPrice;
+            }
+            lots = this.getLotSize(symbol, stopDistance);
+
+
+            if ((signal.getSignal() == SignalResult.BUYMARKET && !openBuyOrder) || (signal.getSignal() == SignalResult.SELLMARKET && !openSellOrder) 
+                    || (signal.getSignal() == SignalResult.BUYSTOP && !openBuyStopOrder) || (signal.getSignal() == SignalResult.SELLSTOP && !openSellStopOrder))
             {
                 LOG.Info(String.Format("Executing Trade on {0} at {1}", new Object[] { symbol, DateUtil.FromUnixTime((long)MarketInfo(symbol, (int)MARKET_INFO.MODE_TIME)) }));
-                RefreshRates();
-                if (signal == SignalResult.BUYMARKET)
-                {
-                    price = MarketInfo(symbol, (int)MARKET_INFO.MODE_ASK);
-                }
-                else if (signal == SignalResult.SELLMARKET)
-                {
-                    price = MarketInfo(symbol, (int)MARKET_INFO.MODE_BID);
-                }
 
-                int ticket = OrderSend(symbol, (int)op, lots, price, slippage, stoploss, takeprofit, comment, magic, expiration, arrowColor);
+                int ticket = OrderSend(symbol, (int)op, lots, entryPrice, slippage, stoploss, takeprofit, comment, magic, expiration, arrowColor);
                 int err = GetLastError();
             }
         }
@@ -470,11 +470,15 @@ namespace MQL4CSharp.Base
         public abstract void destroy();
 
         // Abstract method to evaluate the current tick and check whether or not a signal exists
-        public abstract int evaluate(String symbol);
+        public abstract SignalResult evaluate(String symbol);
 
-        public abstract double getStopLoss(String symbol, int signal);
+        public abstract double getStopLoss(String symbol, SignalResult signal);
 
-        public abstract double getTakeProfit(String symbol, int signal);
+        public abstract double getTakeProfit(String symbol, SignalResult signal);
+
+        public abstract double getEntryPrice(String symbol, SignalResult signal);
+
+        public abstract DateTime getExpiry(String symbol, SignalResult signal);
 
         public abstract double getLotSize(String symbol, double stopDistance);
 
@@ -491,7 +495,7 @@ namespace MQL4CSharp.Base
         public abstract void onNewCandle(String symbol, TIMEFRAME timeframe);
 
         // Non Abstract methods
-        public double getStopEntry(String symbol, int signal)
+        public double getStopEntry(String symbol, SignalResult signal)
         {
             return 0;
         }

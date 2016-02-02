@@ -25,8 +25,8 @@ namespace MQL4CSharp.UserDefined.Signal
     {
         private int maPeriodFast = 13;
         private int maPeriodSlow = 48;
-        private ENUM_MA_METHOD methodFast = ENUM_MA_METHOD.MODE_EMA;
-        private ENUM_MA_METHOD methodSlow = ENUM_MA_METHOD.MODE_EMA;
+        private MA_METHOD methodFast = MA_METHOD.MODE_EMA;
+        private MA_METHOD methodSlow = MA_METHOD.MODE_EMA;
         private int maShift = 0;
 
         public MACross(BaseStrategy strategy) : base(strategy)
@@ -34,7 +34,7 @@ namespace MQL4CSharp.UserDefined.Signal
 
         }
 
-        public MACross(BaseStrategy strategy, int maPeriodFast, int maPeriodSlow, ENUM_MA_METHOD methodFast, ENUM_MA_METHOD methodSlow, int maShift) : this(strategy)
+        public MACross(BaseStrategy strategy, int maPeriodFast, int maPeriodSlow, MA_METHOD methodFast, MA_METHOD methodSlow, int maShift) : this(strategy)
         {
             this.maPeriodFast = maPeriodFast;
             this.maPeriodSlow = maPeriodSlow;
@@ -45,10 +45,10 @@ namespace MQL4CSharp.UserDefined.Signal
 
         public override SignalResult evaluate(string symbol, TIMEFRAME timeframe)
         {
-            double maFast1 = strategy.iMA(symbol, (int)timeframe, maPeriodFast, maShift, (int)methodFast, (int)ENUM_APPLIED_PRICE.PRICE_CLOSE, 1);
-            double maFast2 = strategy.iMA(symbol, (int)timeframe, maPeriodFast, maShift, (int)methodFast, (int)ENUM_APPLIED_PRICE.PRICE_CLOSE, 2);
-            double maSlow1 = strategy.iMA(symbol, (int)timeframe, maPeriodSlow, maShift, (int)methodSlow, (int)ENUM_APPLIED_PRICE.PRICE_CLOSE, 1);
-            double maSlow2 = strategy.iMA(symbol, (int)timeframe, maPeriodSlow, maShift, (int)methodSlow, (int)ENUM_APPLIED_PRICE.PRICE_CLOSE, 2);
+            double maFast1 = strategy.iMA(symbol, (int)timeframe, maPeriodFast, maShift, (int)methodFast, (int)APPLIED_PRICE.PRICE_CLOSE, 1);
+            double maFast2 = strategy.iMA(symbol, (int)timeframe, maPeriodFast, maShift, (int)methodFast, (int)APPLIED_PRICE.PRICE_CLOSE, 2);
+            double maSlow1 = strategy.iMA(symbol, (int)timeframe, maPeriodSlow, maShift, (int)methodSlow, (int)APPLIED_PRICE.PRICE_CLOSE, 1);
+            double maSlow2 = strategy.iMA(symbol, (int)timeframe, maPeriodSlow, maShift, (int)methodSlow, (int)APPLIED_PRICE.PRICE_CLOSE, 2);
 
             if (maFast1 < maSlow1 && maFast2 > maSlow2)
             {

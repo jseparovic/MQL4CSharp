@@ -16,7 +16,7 @@ limitations under the License.
 
 namespace MQL4CSharp.Base.Enums
 {
-    public enum ENUM_MA_METHOD
+    public enum MA_METHOD
     {
         MODE_SMA	= 0, //	Simple averaging
         MODE_EMA	= 1, //	Exponential averaging

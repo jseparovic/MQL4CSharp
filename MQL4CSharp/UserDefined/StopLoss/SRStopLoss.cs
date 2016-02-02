@@ -30,9 +30,9 @@ namespace MQL4CSharp.UserDefined.StopLoss
         {
         }
 
-        public override double getLevel(String symbol, TIMEFRAME timeframe, int signal)
+        public override double getLevel(String symbol, TIMEFRAME timeframe, SignalResult signal)
         {
-            if (signal == SignalResult.SELLMARKET)
+            if (signal.getSignal() == SignalResult.SELLMARKET)
             {
                 double current_high = strategy.iHigh(symbol, (int)timeframe, 0);
                 for (int i = 1; strategy.iHigh(symbol, (int)timeframe, i) > current_high; i++)
