@@ -240,10 +240,10 @@ namespace MQL4CSharp.Base
                 }
                 */
 
-                LOG.Info("New Day Detected: " + strategyMetaData.getCurrentLocalDate());
-                LOG.Debug("Market Time: " + getMarketTime(symbol));
-                LOG.Debug("Market DateTime: " + getMarketDateTime(symbol));
-                LOG.Debug("Local Date: " + localDate);
+                //LOG.Info("New Day Detected: " + strategyMetaData.getCurrentLocalDate());
+                //LOG.Debug("Market Time: " + getMarketTime(symbol));
+                //LOG.Debug("Market DateTime: " + getMarketDateTime(symbol));
+                //LOG.Debug("Local Date: " + localDate);
                 //LOG.Debug("Signal Start: " + strategyMetaData.getSignalStartDateTime());
                 //LOG.Debug("Signal Stop: " + strategyMetaData.getSignalStopDateTime());
 
@@ -269,7 +269,7 @@ namespace MQL4CSharp.Base
                 }
                 strategyMetaData.setCandleDistanceToDayStart(i);
 
-                LOG.Info("New Candle Detected: " + newCurrentCandle + " : distance from day start: " + strategyMetaData.getCandleDistanceToDayStart());
+                //LOG.Info("New Candle Detected: " + newCurrentCandle + " : distance from day start: " + strategyMetaData.getCandleDistanceToDayStart());
 
                 newCandle = true;
                 onNewCandle(symbol, timeframe);
@@ -324,13 +324,14 @@ namespace MQL4CSharp.Base
 
         public double pipToPoint(String symbol)
         {
-            if (MarketInfo(symbol, (int)MARKET_INFO.MODE_DIGITS) == 3 || MarketInfo(symbol, (int)MARKET_INFO.MODE_DIGITS) == 5)
+            int digits = (int) MarketInfo(symbol, (int) MARKET_INFO.MODE_DIGITS);
+            if (digits == 3 || digits == 5)
             {
-                return 10 * MarketInfo(symbol, (int)MARKET_INFO.MODE_TICKSIZE);
+                return Math.Round(10 * MarketInfo(symbol, (int)MARKET_INFO.MODE_TICKSIZE), digits);
             }
             else
             {
-                return MarketInfo(symbol, (int)MARKET_INFO.MODE_TICKSIZE);
+                return Math.Round(MarketInfo(symbol, (int)MARKET_INFO.MODE_TICKSIZE), digits);
             }
         }
 
@@ -460,6 +461,7 @@ namespace MQL4CSharp.Base
 
         public override void OnDeinit()
         {
+            LOG.Debug("OnDeinit() called");
             destroy();
         }
 

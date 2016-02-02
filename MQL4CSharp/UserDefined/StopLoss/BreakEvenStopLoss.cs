@@ -24,13 +24,13 @@ namespace MQL4CSharp.UserDefined.StopLoss
     public class BreakEvenStopLoss : BaseStopLoss
     {
         int stopPips = 20; // minimum break even stop distance from price
-        double commisionPips = 0.8;
+        decimal commisionPips = new decimal(0.8);
 
         public BreakEvenStopLoss(BaseStrategy strategy) : base(strategy)
         {
         }
 
-        public BreakEvenStopLoss(BaseStrategy strategy, int stopPips, double commisionPips) : base(strategy)
+        public BreakEvenStopLoss(BaseStrategy strategy, int stopPips, decimal commisionPips) : base(strategy)
         {
             this.stopPips = stopPips;
             this.commisionPips = commisionPips;
@@ -46,34 +46,32 @@ namespace MQL4CSharp.UserDefined.StopLoss
             // Select Open Trade
             strategy.OrderSelect(ticket, (int)SELECTION_TYPE.SELECT_BY_TICKET, (int)SELECTION_POOL.MODE_TRADES);
 
-            double orderOpenPrice = strategy.OrderOpenPrice();
-            double orderTakeProfit = strategy.OrderTakeProfit();
-            double orderStopLoss = strategy.OrderStopLoss();
-            DateTime orderExpiration = strategy.OrderExpiration();
+            decimal orderStopLoss = (decimal) strategy.OrderStopLoss();
+            decimal orderOpenPrice = (decimal) strategy.OrderOpenPrice();
             int orderType = strategy.OrderType();
-            double newStop;
+            decimal newStop;
 
             if (orderType == (int)TRADE_OPERATION.OP_BUY)
             {
-                newStop = orderOpenPrice + commisionPips* strategy.pipToPoint(symbol);
+                newStop = orderOpenPrice + commisionPips* (decimal)strategy.pipToPoint(symbol);
                 if (newStop != orderStopLoss)
                 {
-                    double bid = strategy.MarketInfo(symbol, (int)MARKET_INFO.MODE_BID);
-                    if (bid > newStop + stopPips* strategy.pipToPoint(symbol))
+                    decimal bid = (decimal) strategy.MarketInfo(symbol, (int)MARKET_INFO.MODE_BID);
+                    if (bid > newStop + stopPips* (decimal)strategy.pipToPoint(symbol))
                     {
-                        strategy.OrderModify(ticket, orderOpenPrice, newStop, orderTakeProfit, orderExpiration, 0);
+                        strategy.OrderModify(ticket, (double)orderOpenPrice, (double)newStop, strategy.OrderTakeProfit(), strategy.OrderExpiration(), 0);
                     }
                 }
             }
             else if (orderType == (int)TRADE_OPERATION.OP_SELL)
             {
-                newStop = orderOpenPrice - commisionPips* strategy.pipToPoint(symbol);
+                newStop = orderOpenPrice - commisionPips* (decimal)strategy.pipToPoint(symbol);
                 if (newStop != orderStopLoss)
                 {
-                    double ask = strategy.MarketInfo(symbol, (int)MARKET_INFO.MODE_ASK);
-                    if (ask<newStop - stopPips* strategy.pipToPoint(symbol))
+                    decimal ask = (decimal) strategy.MarketInfo(symbol, (int)MARKET_INFO.MODE_ASK);
+                    if (ask<newStop - stopPips* (decimal)strategy.pipToPoint(symbol))
                     {
-                        strategy.OrderModify(ticket, orderOpenPrice, newStop, orderTakeProfit, orderExpiration, 0);
+                        strategy.OrderModify(ticket, (double)orderOpenPrice, (double)newStop, strategy.OrderTakeProfit(), strategy.OrderExpiration(), 0);
                     }
                 }
             }
