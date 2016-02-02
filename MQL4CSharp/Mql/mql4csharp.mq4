@@ -30,8 +30,8 @@ void ExecOnTimer();
 bool IsExecutingOnTick();
 bool IsCommandWaiting();
 int GetCommandId();
-string GetCommandName();
-string GetCommandParams();
+void GetCommandName(string &cmdName);
+void GetCommandParams(string &cmdParams);
 void SetBoolCommandResponse(bool, int);
 void SetDoubleCommandResponse(double, int);
 void SetIntCommandResponse(int, int);
@@ -43,21 +43,21 @@ void SetEnumCommandResponse(int, int);
 
 #import
  
-int ratesSize;
-MqlRates rates[];
+//int ratesSize;
+//MqlRates rates[];
  
 input string CSharpFullTypeName = "MQL4CSharp.UserDefined.Strategy.MaCrossStrategy"; 
  
 char DELIM = 29;
 
-void maintainRates()
-{
+//void maintainRates()
+//{
    // update rates array size
-   if(ratesSize != ArraySize(rates)) 
-   {
-      SetRatesSize(ArraySize(rates));
-   }
-}
+//   if(ratesSize != ArraySize(rates)) 
+//   {
+//      SetRatesSize(ArraySize(rates));
+//   }
+//}
 
 
 bool executeCommands()
@@ -66,8 +66,13 @@ bool executeCommands()
    if(IsCommandWaiting())
    {
       int id = GetCommandId();
-      string name = GetCommandName();
-      string params = GetCommandParams();
+      string name = "";
+      string params = "";
+      GetCommandName(name);
+      GetCommandParams(params);
+      
+      //Print("name: " +  name);
+      //Print("params: " +  params);
 
       // Parse the command
       string paramArray[];
@@ -96,9 +101,7 @@ bool executeCommands()
       }
       else if(returnType == RETURN_TYPE_VOID)
       {
-         Print("executeVoidCommand: " + name);      
          executeVoidCommand(id, paramArray);
-         Print("SetVoidCommandResponse: " + name);      
          SetVoidCommandResponse(GetLastError());
       }
       else if(returnType == RETURN_TYPE_LONG)
@@ -109,7 +112,10 @@ bool executeCommands()
       {
          SetDateTimeCommandResponse(executeDateTimeCommand(id, paramArray), GetLastError());
       }
-      return true;
+      
+      params = NULL;
+      name = NULL;
+      id = NULL;
    }
    return false;
 }
@@ -121,10 +127,10 @@ int OnInit()
    InitLogging();
    
    // Copy the rates array and pass it to the library
-   Print("Initializing rates");
-   ArrayCopyRates(rates,NULL,0);
-   ratesSize = ArraySize(rates);
-   InitRates(rates, ratesSize);
+   //Print("Initializing rates");
+   //ArrayCopyRates(rates,NULL,0);
+   //ratesSize = ArraySize(rates);
+   //InitRates(rates, ratesSize);
 
    EventSetMillisecondTimer(1);
 
@@ -154,7 +160,7 @@ void OnTick()
    }
       
    // Keep the rates array size up to date
-   maintainRates();
+   //maintainRates();
 }
 
 

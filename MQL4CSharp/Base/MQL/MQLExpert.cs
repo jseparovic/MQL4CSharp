@@ -64,6 +64,7 @@ namespace MQL4CSharp.Base.MQL
         static void OnDeinitThread()
         {
             getInstance().strategy.OnDeinit();
+            getInstance().strategy = null;
         }
 
         static void OnTickThread()
@@ -105,7 +106,7 @@ namespace MQL4CSharp.Base.MQL
         }
 
         [DllExport("ExecOnInit", CallingConvention = CallingConvention.StdCall)]
-        public static void ExecOnInit([In, Out, MarshalAs(UnmanagedType.LPWStr)] string CSharpFullTypeName)
+        public static void ExecOnInit([MarshalAs(UnmanagedType.LPWStr)] string CSharpFullTypeName)
         {
             LOG.Debug(String.Format("Initializing: {0}", CSharpFullTypeName));
             getInstance().typeName = CSharpFullTypeName;

@@ -63,7 +63,12 @@ namespace MQL4CSharp.UserDefined.Strategy
 
         public override void destroy()
         {
-            
+            srStopLoss = null;
+            fixedPipTakeProfit = null;
+            percentRiskProfile = null;
+            breakEvenStopLoss = null;
+            timeOfDayFilter = null;
+            maCross = null;
         }
 
         // returns true if ok to take a trade
