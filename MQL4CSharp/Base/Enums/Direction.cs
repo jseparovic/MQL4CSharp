@@ -24,7 +24,8 @@ namespace MQL4CSharp.Base.Enums
 {
     public enum Direction
     {
+        NEUTRAL,
         LONG,
-        SHORT
+        SHORT,
     }
 }

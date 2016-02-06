@@ -81,5 +81,14 @@ namespace MQL4CSharp.Base.Common
         {
             this.signalStopDateTime = signalStopDateTime;
         }
+
+        public override string ToString()
+        {
+            return "candleDistanceToDayStart=" + candleDistanceToDayStart + ", " +
+                   "currentLocalDate=" + currentLocalDate + ", " +
+                   "currentCandleDateTime=" + currentCandleDateTime + ", " +
+                   "signalStartDateTime=" + signalStartDateTime + ", " +
+                   "signalStopDateTime=" + signalStopDateTime;
+        }
     }
 }

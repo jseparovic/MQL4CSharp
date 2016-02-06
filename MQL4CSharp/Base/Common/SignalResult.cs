@@ -14,6 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using System;
+using System.Runtime.CompilerServices;
 using MQL4CSharp.Base.Enums;
 
 namespace MQL4CSharp.Base.Common
@@ -116,6 +118,12 @@ namespace MQL4CSharp.Base.Common
         public static SignalResult newBUYLIMIT()
         {
             return new SignalResult(BUYLIMIT);
+        }
+
+
+        public override string ToString()
+        {
+            return String.Format("signal={0}, signalInfo={1}", signal, signalInfo.ToString());
         }
 
     }

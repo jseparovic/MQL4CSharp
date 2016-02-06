@@ -26,11 +26,11 @@ namespace MQL4CSharp.Base
 {
     public abstract class BaseStrategy : MQLBase
     {
-        public ILog LOG;
+        public static readonly ILog LOG = LogManager.GetLogger(typeof(BaseStrategy));
 
         private bool evalOncePerCandle = true;
         private bool closeOnOpposingSignal = true;
-        private Dictionary<KeyValuePair<String, TIMEFRAME>, StrategyMetaData> strategyMetaDataMap;
+        private Dictionary<string, StrategyMetaData> strategyMetaDataMap;
         private double yesterdaysHigh, yesterdaysLow, todaysHigh, todaysLow;
         private Dictionary<long, SignalResult> orderToSignalMap;
         public static DateTimeZone DATE_TZ = DateTimeZone.ForOffset(Offset.Zero);
@@ -40,30 +40,36 @@ namespace MQL4CSharp.Base
 
         private Dictionary<String, String> logHashMap;
 
-        public BaseStrategy() : base()
+        public BaseStrategy(Int64 ix) : base(ix)
         {
-            LOG = LogManager.GetLogger(GetType());
             this.symbolList = new List<string>();
             this.symbolList.Add(Symbol());
             this.timeframe = TIMEFRAME.PERIOD_CURRENT;
-            strategyMetaDataMap = new Dictionary<KeyValuePair<string, TIMEFRAME>, StrategyMetaData>();
+            strategyMetaDataMap = new Dictionary<string, StrategyMetaData>();
+            logHashMap = new Dictionary<String, String>();
         }
 
-        public BaseStrategy(TIMEFRAME timeframe,
+        public BaseStrategy(int ix,
+                            TIMEFRAME timeframe,
                             List<String> symbolList,
                             bool evalOncePerCandle = true,
-                            bool closeOnOpposingSignal = true) : this()
+                            bool closeOnOpposingSignal = true) : base(ix)
         {
             this.timeframe = timeframe;
             this.symbolList = symbolList;
             this.evalOncePerCandle = evalOncePerCandle;
             this.closeOnOpposingSignal = closeOnOpposingSignal;
+            if (symbolList.Count == 0)
+            {
+                throw new Exception("SymbolList should not be empty in Strategy constructor");
+            }
         }
 
-        public BaseStrategy(TIMEFRAME timeframe,
+        public BaseStrategy(int ix,
+                            TIMEFRAME timeframe,
                             String symbol,
                             bool evalOncePerCandle = true,
-                            bool closeOnOpposingSignal = true) : this()
+                            bool closeOnOpposingSignal = true) : base(ix)
         {
             this.symbolList = new List<string>();
             this.symbolList.Add(symbol);
@@ -79,7 +85,8 @@ namespace MQL4CSharp.Base
             {
                 try
                 {
-                    for (int i = 0; i < this.OrdersTotal(); i++)
+                    int total = this.OrdersTotal();
+                    for (int i = 0; i < total; i++)
                     {
                         if (OrderSelect(i, (int)SELECTION_TYPE.SELECT_BY_POS, (int)SELECTION_POOL.MODE_TRADES) && OrderMagicNumber() == getMagicNumber(symbol))
                         {
@@ -104,6 +111,7 @@ namespace MQL4CSharp.Base
                         SignalResult signal = this.evaluate(symbol);
                         if (signal.getSignal() != SignalResult.NEUTRAL)
                         {
+                            LOG.Info("Executing...");
                             this.executeTrade(symbol, signal);
                         }
                     }
@@ -118,29 +126,22 @@ namespace MQL4CSharp.Base
 
         public StrategyMetaData getStrategyMetaDataMap(String symbol, TIMEFRAME timeframe)
         {
-            try
+            int tf = (int)timeframe;
+            if (tf == 0)
             {
-                return strategyMetaDataMap[new KeyValuePair<String, TIMEFRAME>(symbol, timeframe)];
+                tf = (int)Period();
             }
-            catch (KeyNotFoundException)
+            string key = symbol + "_" + tf;
+            if (!strategyMetaDataMap.ContainsKey(key))
             {
-                return null;
+                strategyMetaDataMap[key] = new StrategyMetaData();
             }
-        }
-
-        public StrategyMetaData putStrategyMetaDataMap(String symbol, TIMEFRAME timeframe)
-        {
-            return strategyMetaDataMap[new KeyValuePair<String, TIMEFRAME>(symbol, timeframe)] = new StrategyMetaData();
-        }
-
-        public long getMarketTime(String symbol)
-        {
-            return (long)MarketInfo(symbol, (int)MARKET_INFO.MODE_TIME);
+            return strategyMetaDataMap[key];
         }
 
         public DateTime getMarketDateTime(String symbol)
         {
-            return DateUtil.FromUnixTime(getMarketTime(symbol));
+            return MarketTime(symbol);
         }
 
         public LocalDate getMarketLocalDate(String symbol)
@@ -211,22 +212,18 @@ namespace MQL4CSharp.Base
         {
             bool newCandle = false;
             StrategyMetaData strategyMetaData = getStrategyMetaDataMap(symbol, timeframe);
-            if(strategyMetaData == null)
-            {
-                strategyMetaData = putStrategyMetaDataMap(symbol, timeframe);
-            }
-
             LocalDate localDate = getMarketLocalDate(symbol);
-
-            // Get todays high/low:
-            todaysHigh = iHigh(symbol, (int)TIMEFRAME.PERIOD_D1, 0);
-            todaysLow = iLow(symbol, (int)TIMEFRAME.PERIOD_D1, 0);
 
             // new day detected
             if (!localDate.Equals(strategyMetaData.getCurrentLocalDate()))
             {
                 strategyMetaData.setCurrentLocalDate(localDate);
+
+                // Get todays high/low:
                 /*
+                todaysHigh = iHigh(symbol, (int)TIMEFRAME.PERIOD_D1, 0);
+                todaysLow = iLow(symbol, (int)TIMEFRAME.PERIOD_D1, 0);
+
                 strategyMetaData.setSignalStartDateTime(DateUtil.addDateAndTime(strategyMetaData.getCurrentLocalDate(), signalStartTime));
 
                 if (signalStopTime.Equals(LocalTime.Midnight))
@@ -240,7 +237,7 @@ namespace MQL4CSharp.Base
                 }
                 */
 
-                //LOG.Info("New Day Detected: " + strategyMetaData.getCurrentLocalDate());
+                LOG.Info("New Day Detected: " + strategyMetaData.getCurrentLocalDate());
                 //LOG.Debug("Market Time: " + getMarketTime(symbol));
                 //LOG.Debug("Market DateTime: " + getMarketDateTime(symbol));
                 //LOG.Debug("Local Date: " + localDate);
@@ -248,8 +245,8 @@ namespace MQL4CSharp.Base
                 //LOG.Debug("Signal Stop: " + strategyMetaData.getSignalStopDateTime());
 
                 // Get yesterdays high/low:
-                yesterdaysHigh = iHigh(symbol, (int)TIMEFRAME.PERIOD_D1, 1);
-                yesterdaysLow = iLow(symbol, (int)TIMEFRAME.PERIOD_D1, 1);
+                //yesterdaysHigh = iHigh(symbol, (int)TIMEFRAME.PERIOD_D1, 1);
+                //yesterdaysLow = iLow(symbol, (int)TIMEFRAME.PERIOD_D1, 1);
 
                 onNewDate(symbol, timeframe);
             }
@@ -269,7 +266,7 @@ namespace MQL4CSharp.Base
                 }
                 strategyMetaData.setCandleDistanceToDayStart(i);
 
-                //LOG.Info("New Candle Detected: " + newCurrentCandle + " : distance from day start: " + strategyMetaData.getCandleDistanceToDayStart());
+                //LOG.Debug("New Candle Detected: " + newCurrentCandle + " : distance from day start: " + strategyMetaData.getCandleDistanceToDayStart());
 
                 newCandle = true;
                 onNewCandle(symbol, timeframe);
@@ -345,13 +342,13 @@ namespace MQL4CSharp.Base
             double takeprofit = this.getTakeProfit(symbol, signal);
             String comment = this.getComment(symbol);
             int magic = this.getMagicNumber(symbol);
-            DateTime expiration = new DateTime();
+            DateTime expiration = this.getExpiry(symbol, signal);
             COLOR arrowColor = COLOR.Aqua;
 
             double stopDistance;
 
             DateTime lastBuyOpen, lastSellOpen;
-            bool openBuyOrder = false, openSellOrder = false, openBuyStopOrder = false, openSellStopOrder = false;
+            bool openBuyOrder = false, openSellOrder = false, openBuyStopOrder = false, openSellStopOrder = false, openBuyLimitOrder = false, openSellLimitOrder = false;
 
             if (signal.getSignal() == SignalResult.BUYMARKET)
             {
@@ -381,9 +378,6 @@ namespace MQL4CSharp.Base
             {
                 throw new Exception("Invalid Signal signal=" + signal);
             }
-
-
-
 
             //LOG.Debug("stopDistance: " + stopDistance);
             //LOG.Debug("price: " + price);
@@ -422,6 +416,14 @@ namespace MQL4CSharp.Base
                 {
                     openSellStopOrder = true;
                 }
+                else if (OrderType() == (int)TRADE_OPERATION.OP_BUYLIMIT && OrderSymbol().Equals(symbol) && OrderMagicNumber() == magic)
+                {
+                    openBuyLimitOrder = true;
+                }
+                else if (OrderType() == (int)TRADE_OPERATION.OP_SELLLIMIT && OrderSymbol().Equals(symbol) && OrderMagicNumber() == magic)
+                {
+                    openSellLimitOrder = true;
+                }
             }
 
             // Calculate lots
@@ -438,13 +440,27 @@ namespace MQL4CSharp.Base
             lots = this.getLotSize(symbol, stopDistance);
 
 
-            if ((signal.getSignal() == SignalResult.BUYMARKET && !openBuyOrder) || (signal.getSignal() == SignalResult.SELLMARKET && !openSellOrder) 
-                    || (signal.getSignal() == SignalResult.BUYSTOP && !openBuyStopOrder) || (signal.getSignal() == SignalResult.SELLSTOP && !openSellStopOrder))
+            if ((signal.getSignal() == SignalResult.BUYMARKET && !openBuyOrder) 
+                    || (signal.getSignal() == SignalResult.SELLMARKET && !openSellOrder)
+                    || (signal.getSignal() == SignalResult.BUYLIMIT && !openBuyLimitOrder && !openBuyOrder)
+                    || (signal.getSignal() == SignalResult.SELLLIMIT && !openSellLimitOrder && !openSellOrder)
+                    || (signal.getSignal() == SignalResult.BUYSTOP && !openBuyStopOrder && !openBuyOrder) 
+                    || (signal.getSignal() == SignalResult.SELLSTOP && !openSellStopOrder && !openSellOrder))
             {
-                LOG.Info(String.Format("Executing Trade on {0} at {1}", new Object[] { symbol, DateUtil.FromUnixTime((long)MarketInfo(symbol, (int)MARKET_INFO.MODE_TIME)) }));
+                LOG.Info(String.Format("Executing Trade at " + DateUtil.FromUnixTime((long)MarketInfo(symbol, (int)MARKET_INFO.MODE_TIME)) +
+                                        "\n\tsymbol:\t{0}" +
+                                        "\n\top:\t\t{1}" +
+                                        "\n\tlots:\t\t{2}" +
+                                        "\n\tentryPrice:\t{3}" +
+                                        "\n\tslippage:\t{4}" +
+                                        "\n\tstoploss:\t{5}" +
+                                        "\n\ttakeprofit:\t{6}" +
+                                        "\n\tcomment:\t{7}" +
+                                        "\n\tmagic:\t\t{8}" +
+                                        "\n\texpiration:\t{9}" +
+                                        "\n\tarrowColor:\t{0}", symbol, (int) op, lots, entryPrice, slippage, stoploss, takeprofit, comment, magic, expiration, arrowColor));
 
-                int ticket = OrderSend(symbol, (int)op, lots, entryPrice, slippage, stoploss, takeprofit, comment, magic, expiration, arrowColor);
-                int err = GetLastError();
+                OrderSend(symbol, (int)op, lots, entryPrice, slippage, stoploss, takeprofit, comment, magic, expiration, arrowColor);
             }
         }
 

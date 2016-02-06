@@ -40,7 +40,7 @@ namespace MQL4CSharp.UserDefined.Strategy
         private BaseSignal maCross;
         private TIMEFRAME strategyTimeframe = TIMEFRAME.PERIOD_H1;
 
-        public MaCrossStrategy() : base()
+        public MaCrossStrategy(Int64 ix) : base(ix)
         {
             LOG.Debug("MaCrossStrategy() called");
             srStopLoss = new SRStopLoss(this);

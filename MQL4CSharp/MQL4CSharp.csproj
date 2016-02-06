@@ -90,13 +90,17 @@
     <Compile Include="Base\Enums\OBJECT_PROPERTY.cs" />
     <Compile Include="Base\Enums\TRADE_OPERATION.cs" />
     <Compile Include="Base\Exceptions\MQLExceptions.cs" />
+    <Compile Include="Base\MQL\DLLObjectWrapper.cs" />
     <Compile Include="Base\MQL\MQLExpert.cs" />
     <Compile Include="Base\MQL\MQLCommandManager.cs" />
     <Compile Include="Base\Enums\Error.cs" />
     <Compile Include="Base\Enums\MQLCommand.cs" />
     <Compile Include="Base\Enums\OBJECT_TYPE.cs" />
     <Compile Include="Base\MQL\MQLBase.cs" />
+    <Compile Include="Base\MQL\MQLThreadPool.cs" />
     <Compile Include="Logging.cs" />
+    <Compile Include="UserDefined\Filter\NewsCloseOutFilter.cs" />
+    <Compile Include="UserDefined\Filter\NewsInputFilter.cs" />
     <Compile Include="UserDefined\Filter\TimeOfDayFilter.cs" />
     <Compile Include="UserDefined\RiskProfile\FixedLotsRiskProfile.cs" />
     <Compile Include="UserDefined\RiskProfile\PercentRiskProfile.cs" />
@@ -110,8 +114,13 @@
     <Compile Include="UserDefined\TakeProfit\FixedPipTakeProfit.cs" />
     <Compile Include="Util\DateUtil.cs" />
     <Compile Include="Util\JSONHelper.cs" />
-    <Compile Include="Base\MQL\MQLRates.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XCustom\DTFL.cs" />
+    <Compile Include="XCustom\ManipulationPoint.cs" />
+    <Compile Include="UserDefined\Input\NewsReports.cs" />
+    <Compile Include="XCustom\ManipulationPoints.cs" />
+    <Compile Include="UserDefined\Input\NewsReport.cs" />
+    <Compile Include="XCustom\StopRun.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Mql\mql4csharp.mq4" />
