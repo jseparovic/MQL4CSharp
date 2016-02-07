@@ -59,3 +59,10 @@ Backtesting now works by executing commands in the onTick() method (as well as o
 This could probably do with some further optimisation.
 
 
+## Design Notes:
+
+I've put together a rough class diagram here. https://i.imgur.com/V2l2lQZ.png
+It shows what I plan to do to provide a REST api into MQL and Custom Strategies.
+I've found that debugging is impossible with the latest Metatrader (just crashes as soon as you attach), so I've decided that providing a REST interface and ability to JSONify data within the system, should help with debugging purposes. Also, it will be pretty neat to be able to write some JS fountend using this API.
+
+
