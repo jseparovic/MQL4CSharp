@@ -19,43 +19,43 @@ namespace MQL4CSharp.Base
         /// <summary>
         /// Function: Alert
         /// Description: Displays a message in a separate window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/common/alert.html
+        /// URL: http://docs.mql4.com/common/alert.html
         /// </summary>
         /// <param name="argument"></param>
         public void Alert(string argument)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(argument);
-            getCommandManager().ExecCommand(MQLCommand.Alert_1, parameters); // MQLCommand ENUM = 1
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.Alert_1, parameters); // MQLCommand ENUM = 1
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
+            getCommandManager().throwExceptionIfErrorResponse(id);
         }
 
         /// <summary>
         /// Function: Comment
         /// Description: This function outputs a comment defined by a user in the top left corner of a chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/common/comment.html
+        /// URL: http://docs.mql4.com/common/comment.html
         /// </summary>
         /// <param name="argument">[in] Any values, separated by commas. To delimit output information into several lines, a line break symbol "\n" or "\r\n" is used. Number of parameters cannot exceed 64. Total length of the input comment (including invisible symbols) cannot exceed 2045 characters (excess symbols will be cut out during output).</param>
         public void Comment(string argument)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(argument);
-            getCommandManager().ExecCommand(MQLCommand.Comment_1, parameters); // MQLCommand ENUM = 2
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.Comment_1, parameters); // MQLCommand ENUM = 2
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
+            getCommandManager().throwExceptionIfErrorResponse(id);
         }
 
         /// <summary>
         /// Function: SendFTP
         /// Description: Sends a file at the address, specified in the setting window of the "FTP" tab.
-        /// URL: http://mm.l/mql4/docs.mql4.com/common/sendftp.html
+        /// URL: http://docs.mql4.com/common/sendftp.html
         /// </summary>
         /// <param name="filename">[in] Name of sent file.</param>
         /// <param name="ftp_path">[in] FTP catalog. If a directory is not specified, directory described in settings is used.</param>
@@ -64,38 +64,38 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(filename);
             parameters.Add(ftp_path);
-            getCommandManager().ExecCommand(MQLCommand.SendFTP_1, parameters); // MQLCommand ENUM = 3
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SendFTP_1, parameters); // MQLCommand ENUM = 3
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: SendNotification
         /// Description: Sends push notifications to the mobile terminals, whose MetaQuotes IDs are specified in the "Notifications" tab.
-        /// URL: http://mm.l/mql4/docs.mql4.com/common/sendnotification.html
+        /// URL: http://docs.mql4.com/common/sendnotification.html
         /// </summary>
         /// <param name="text">[in] The text of the notification. The message length should not exceed 255 characters.</param>
         public bool SendNotification(string text)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(text);
-            getCommandManager().ExecCommand(MQLCommand.SendNotification_1, parameters); // MQLCommand ENUM = 4
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SendNotification_1, parameters); // MQLCommand ENUM = 4
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: SendMail
         /// Description: Sends an email at the address specified in the settings window of the "Email" tab.
-        /// URL: http://mm.l/mql4/docs.mql4.com/common/sendmail.html
+        /// URL: http://docs.mql4.com/common/sendmail.html
         /// </summary>
         /// <param name="subject">[in] Email header.</param>
         /// <param name="some_text">[in] Email body.</param>
@@ -104,178 +104,178 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(subject);
             parameters.Add(some_text);
-            getCommandManager().ExecCommand(MQLCommand.SendMail_1, parameters); // MQLCommand ENUM = 5
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SendMail_1, parameters); // MQLCommand ENUM = 5
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountInfoDouble
         /// Description: Returns the value of the corresponding account property.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountinfodouble.html
+        /// URL: http://docs.mql4.com/account/accountinfodouble.html
         /// </summary>
         /// <param name="property_id">[in] Identifier of the property. The value can be one of the values of .</param>
         public double AccountInfoDouble(int property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id);
-            getCommandManager().ExecCommand(MQLCommand.AccountInfoDouble_1, parameters); // MQLCommand ENUM = 6
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountInfoDouble_1, parameters); // MQLCommand ENUM = 6
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountInfoInteger
         /// Description: Returns the value of the properties of the account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountinfointeger.html
+        /// URL: http://docs.mql4.com/account/accountinfointeger.html
         /// </summary>
         /// <param name="property_id">[in] Identifier of the property. The value can be one of the values of .</param>
         public long AccountInfoInteger(int property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id);
-            getCommandManager().ExecCommand(MQLCommand.AccountInfoInteger_1, parameters); // MQLCommand ENUM = 7
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountInfoInteger_1, parameters); // MQLCommand ENUM = 7
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (long)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (long)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountInfoString
         /// Description: Returns the value of the corresponding account property.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountinfostring.html
+        /// URL: http://docs.mql4.com/account/accountinfostring.html
         /// </summary>
         /// <param name="property_id">[in] Identifier of the property. The value can be one of the values of .</param>
         public string AccountInfoString(int property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id);
-            getCommandManager().ExecCommand(MQLCommand.AccountInfoString_1, parameters); // MQLCommand ENUM = 8
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountInfoString_1, parameters); // MQLCommand ENUM = 8
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountBalance
         /// Description: Returns balance value of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountbalance.html
+        /// URL: http://docs.mql4.com/account/accountbalance.html
         /// </summary>
         public double AccountBalance()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.AccountBalance_1, parameters); // MQLCommand ENUM = 9
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountBalance_1, parameters); // MQLCommand ENUM = 9
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountCredit
         /// Description: Returns credit value of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountcredit.html
+        /// URL: http://docs.mql4.com/account/accountcredit.html
         /// </summary>
         public double AccountCredit()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.AccountCredit_1, parameters); // MQLCommand ENUM = 10
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountCredit_1, parameters); // MQLCommand ENUM = 10
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountCompany
         /// Description: Returns the brokerage company name where the current account was registered.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountcompany.html
+        /// URL: http://docs.mql4.com/account/accountcompany.html
         /// </summary>
         public string AccountCompany()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.AccountCompany_1, parameters); // MQLCommand ENUM = 11
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountCompany_1, parameters); // MQLCommand ENUM = 11
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountCurrency
         /// Description: Returns currency name of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountcurrency.html
+        /// URL: http://docs.mql4.com/account/accountcurrency.html
         /// </summary>
         public string AccountCurrency()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.AccountCurrency_1, parameters); // MQLCommand ENUM = 12
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountCurrency_1, parameters); // MQLCommand ENUM = 12
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountEquity
         /// Description: Returns equity value of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountequity.html
+        /// URL: http://docs.mql4.com/account/accountequity.html
         /// </summary>
         public double AccountEquity()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.AccountEquity_1, parameters); // MQLCommand ENUM = 13
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountEquity_1, parameters); // MQLCommand ENUM = 13
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountFreeMargin
         /// Description: Returns free margin value of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountfreemargin.html
+        /// URL: http://docs.mql4.com/account/accountfreemargin.html
         /// </summary>
         public double AccountFreeMargin()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.AccountFreeMargin_1, parameters); // MQLCommand ENUM = 14
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountFreeMargin_1, parameters); // MQLCommand ENUM = 14
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountFreeMarginCheck
         /// Description: Returns free margin that remains after the specified order has been opened at the current price on the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountfreemargincheck.html
+        /// URL: http://docs.mql4.com/account/accountfreemargincheck.html
         /// </summary>
         /// <param name="symbol">[in] Symbol for trading operation.</param>
         /// <param name="cmd">[in] Operation type. It can be either OP_BUY or OP_SELL.</param>
@@ -286,261 +286,261 @@ namespace MQL4CSharp.Base
             parameters.Add(symbol);
             parameters.Add(cmd);
             parameters.Add(volume);
-            getCommandManager().ExecCommand(MQLCommand.AccountFreeMarginCheck_1, parameters); // MQLCommand ENUM = 15
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountFreeMarginCheck_1, parameters); // MQLCommand ENUM = 15
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountFreeMarginMode
         /// Description: Returns the calculation mode of free margin allowed to open orders on the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountfreemarginmode.html
+        /// URL: http://docs.mql4.com/account/accountfreemarginmode.html
         /// </summary>
         public double AccountFreeMarginMode()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.AccountFreeMarginMode_1, parameters); // MQLCommand ENUM = 16
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountFreeMarginMode_1, parameters); // MQLCommand ENUM = 16
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountLeverage
         /// Description: Returns leverage of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountleverage.html
+        /// URL: http://docs.mql4.com/account/accountleverage.html
         /// </summary>
         public int AccountLeverage()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.AccountLeverage_1, parameters); // MQLCommand ENUM = 17
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountLeverage_1, parameters); // MQLCommand ENUM = 17
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountMargin
         /// Description: Returns margin value of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountmargin.html
+        /// URL: http://docs.mql4.com/account/accountmargin.html
         /// </summary>
         public double AccountMargin()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.AccountMargin_1, parameters); // MQLCommand ENUM = 18
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountMargin_1, parameters); // MQLCommand ENUM = 18
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountName
         /// Description: Returns the current account name.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountname.html
+        /// URL: http://docs.mql4.com/account/accountname.html
         /// </summary>
         public string AccountName()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.AccountName_1, parameters); // MQLCommand ENUM = 19
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountName_1, parameters); // MQLCommand ENUM = 19
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountNumber
         /// Description: Returns the current account number.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountnumber.html
+        /// URL: http://docs.mql4.com/account/accountnumber.html
         /// </summary>
         public int AccountNumber()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.AccountNumber_1, parameters); // MQLCommand ENUM = 20
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountNumber_1, parameters); // MQLCommand ENUM = 20
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountProfit
         /// Description: Returns profit value of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountprofit.html
+        /// URL: http://docs.mql4.com/account/accountprofit.html
         /// </summary>
         public double AccountProfit()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.AccountProfit_1, parameters); // MQLCommand ENUM = 21
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountProfit_1, parameters); // MQLCommand ENUM = 21
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountServer
         /// Description: Returns the connected server name.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountserver.html
+        /// URL: http://docs.mql4.com/account/accountserver.html
         /// </summary>
         public string AccountServer()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.AccountServer_1, parameters); // MQLCommand ENUM = 22
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountServer_1, parameters); // MQLCommand ENUM = 22
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountStopoutLevel
         /// Description: Returns the value of the Stop Out level.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountstopoutlevel.html
+        /// URL: http://docs.mql4.com/account/accountstopoutlevel.html
         /// </summary>
         public int AccountStopoutLevel()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.AccountStopoutLevel_1, parameters); // MQLCommand ENUM = 23
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountStopoutLevel_1, parameters); // MQLCommand ENUM = 23
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: AccountStopoutMode
         /// Description: Returns the calculation mode for the Stop Out level.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountstopoutmode.html
+        /// URL: http://docs.mql4.com/account/accountstopoutmode.html
         /// </summary>
         public int AccountStopoutMode()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.AccountStopoutMode_1, parameters); // MQLCommand ENUM = 24
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.AccountStopoutMode_1, parameters); // MQLCommand ENUM = 24
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: GetLastError
         /// Description: Returns the contents of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/getlasterror.html
+        /// URL: http://docs.mql4.com/check/getlasterror.html
         /// </summary>
         public int GetLastError()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.GetLastError_1, parameters); // MQLCommand ENUM = 25
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.GetLastError_1, parameters); // MQLCommand ENUM = 25
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IsStopped
         /// Description: Checks the forced shutdown of an mql4 program.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isstopped.html
+        /// URL: http://docs.mql4.com/check/isstopped.html
         /// </summary>
         public bool IsStopped()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.IsStopped_1, parameters); // MQLCommand ENUM = 26
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IsStopped_1, parameters); // MQLCommand ENUM = 26
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: UninitializeReason
         /// Description: Returns the code of a
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/uninitializereason.html
+        /// URL: http://docs.mql4.com/check/uninitializereason.html
         /// </summary>
         public int UninitializeReason()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.UninitializeReason_1, parameters); // MQLCommand ENUM = 27
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.UninitializeReason_1, parameters); // MQLCommand ENUM = 27
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: MQLInfoInteger
         /// Description: Returns the value of a corresponding property of a running mql4 program.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/mqlinfointeger.html
+        /// URL: http://docs.mql4.com/check/mqlinfointeger.html
         /// </summary>
         /// <param name="property_id">[in] Identifier of a property. Can be one of values of the enumeration.</param>
         public int MQLInfoInteger(int property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id);
-            getCommandManager().ExecCommand(MQLCommand.MQLInfoInteger_1, parameters); // MQLCommand ENUM = 28
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.MQLInfoInteger_1, parameters); // MQLCommand ENUM = 28
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: MQLInfoString
         /// Description: Returns the value of a corresponding property of a running MQL4 program.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/mqlinfostring.html
+        /// URL: http://docs.mql4.com/check/mqlinfostring.html
         /// </summary>
         /// <param name="property_id">[in] Identifier of a property. Can be one of the enumeration.</param>
         public string MQLInfoString(int property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id);
-            getCommandManager().ExecCommand(MQLCommand.MQLInfoString_1, parameters); // MQLCommand ENUM = 29
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.MQLInfoString_1, parameters); // MQLCommand ENUM = 29
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: MQLSetInteger
         /// Description: Sets the value of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/mqlsetinteger.html
+        /// URL: http://docs.mql4.com/check/mqlsetinteger.html
         /// </summary>
         /// <param name="property_id">[in] Identifier of a property. Only is supported, as other properties cannot be changed.</param>
         /// <param name="property_value">[in] Value of property. Can be one of the .</param>
@@ -549,283 +549,279 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id);
             parameters.Add(property_value);
-            getCommandManager().ExecCommand(MQLCommand.MQLSetInteger_1, parameters); // MQLCommand ENUM = 30
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.MQLSetInteger_1, parameters); // MQLCommand ENUM = 30
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
+            getCommandManager().throwExceptionIfErrorResponse(id);
         }
 
         /// <summary>
         /// Function: TerminalInfoInteger
         /// Description: Returns the value of a corresponding property of the mql4 program environment.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/terminalinfointeger.html
+        /// URL: http://docs.mql4.com/check/terminalinfointeger.html
         /// </summary>
         /// <param name="property_id">[in] Identifier of a property. Can be one of the values of the enumeration.</param>
         public int TerminalInfoInteger(int property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id);
-            getCommandManager().ExecCommand(MQLCommand.TerminalInfoInteger_1, parameters); // MQLCommand ENUM = 31
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.TerminalInfoInteger_1, parameters); // MQLCommand ENUM = 31
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: TerminalInfoDouble
         /// Description: Returns the value of a corresponding property of the mql4 program environment.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/terminalinfodouble.html
+        /// URL: http://docs.mql4.com/check/terminalinfodouble.html
         /// </summary>
         /// <param name="property_id">[in] Identifier of a property. Can be one of the values of the enumeration.</param>
         public double TerminalInfoDouble(int property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id);
-            getCommandManager().ExecCommand(MQLCommand.TerminalInfoDouble_1, parameters); // MQLCommand ENUM = 32
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.TerminalInfoDouble_1, parameters); // MQLCommand ENUM = 32
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: TerminalInfoString
         /// Description: Returns the value of a corresponding property of the mql4 program environment. The property must be of string type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/terminalinfostring.html
+        /// URL: http://docs.mql4.com/check/terminalinfostring.html
         /// </summary>
         /// <param name="property_id">[in] Identifier of a property. Can be one of the values of the enumeration.</param>
         public string TerminalInfoString(int property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id);
-            getCommandManager().ExecCommand(MQLCommand.TerminalInfoString_1, parameters); // MQLCommand ENUM = 33
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.TerminalInfoString_1, parameters); // MQLCommand ENUM = 33
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: Symbol
         /// Description: Returns the name of a symbol of the current chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/symbol.html
+        /// URL: http://docs.mql4.com/check/symbol.html
         /// </summary>
         public string Symbol()
         {
             List<Object> parameters = new List<Object>();
-            LOG.Info("1");
-            getCommandManager().ExecCommand(MQLCommand.Symbol_1, parameters); // MQLCommand ENUM = 34
-            LOG.Info("2");
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.Symbol_1, parameters); // MQLCommand ENUM = 34
+            while (getCommandManager().IsCommandRunning(id))
             {
-                Thread.Sleep(1000);
+                //Thread.Sleep(1);
             }
-            LOG.Info("3");
-            getCommandManager().throwExceptionIfErrorResponse();
-            LOG.Info("4");
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: Period
         /// Description: Returns the current chart timeframe.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/period.html
+        /// URL: http://docs.mql4.com/check/period.html
         /// </summary>
         public int Period()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.Period_1, parameters); // MQLCommand ENUM = 35
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.Period_1, parameters); // MQLCommand ENUM = 35
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: Digits
         /// Description: Returns the number of decimal digits determining the accuracy of price of the current chart symbol.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/digits.html
+        /// URL: http://docs.mql4.com/check/digits.html
         /// </summary>
         public int Digits()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.Digits_1, parameters); // MQLCommand ENUM = 36
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.Digits_1, parameters); // MQLCommand ENUM = 36
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: Point
         /// Description: Returns the point size of the current symbol in the quote currency.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/point.html
+        /// URL: http://docs.mql4.com/check/point.html
         /// </summary>
         public double Point()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.Point_1, parameters); // MQLCommand ENUM = 37
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.Point_1, parameters); // MQLCommand ENUM = 37
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IsConnected
         /// Description: Checks connection between client terminal and server.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isconnected.html
+        /// URL: http://docs.mql4.com/check/isconnected.html
         /// </summary>
         public bool IsConnected()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.IsConnected_1, parameters); // MQLCommand ENUM = 38
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IsConnected_1, parameters); // MQLCommand ENUM = 38
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IsDemo
         /// Description: Checks if the Expert Advisor runs on a demo account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isdemo.html
+        /// URL: http://docs.mql4.com/check/isdemo.html
         /// </summary>
         public bool IsDemo()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.IsDemo_1, parameters); // MQLCommand ENUM = 39
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IsDemo_1, parameters); // MQLCommand ENUM = 39
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IsDllsAllowed
         /// Description: Checks if the DLL function call is allowed for the Expert Advisor.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isdllsallowed.html
+        /// URL: http://docs.mql4.com/check/isdllsallowed.html
         /// </summary>
         public bool IsDllsAllowed()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.IsDllsAllowed_1, parameters); // MQLCommand ENUM = 40
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IsDllsAllowed_1, parameters); // MQLCommand ENUM = 40
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IsExpertEnabled
         /// Description: Checks if Expert Advisors are enabled for running.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isexpertenabled.html
+        /// URL: http://docs.mql4.com/check/isexpertenabled.html
         /// </summary>
         public bool IsExpertEnabled()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.IsExpertEnabled_1, parameters); // MQLCommand ENUM = 41
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IsExpertEnabled_1, parameters); // MQLCommand ENUM = 41
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IsLibrariesAllowed
         /// Description: Checks if the Expert Advisor can call library function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/islibrariesallowed.html
+        /// URL: http://docs.mql4.com/check/islibrariesallowed.html
         /// </summary>
         public bool IsLibrariesAllowed()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.IsLibrariesAllowed_1, parameters); // MQLCommand ENUM = 42
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IsLibrariesAllowed_1, parameters); // MQLCommand ENUM = 42
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IsOptimization
         /// Description: Checks if Expert Advisor runs in the Strategy Tester optimization mode.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isoptimization.html
+        /// URL: http://docs.mql4.com/check/isoptimization.html
         /// </summary>
         public bool IsOptimization()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.IsOptimization_1, parameters); // MQLCommand ENUM = 43
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IsOptimization_1, parameters); // MQLCommand ENUM = 43
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IsTesting
         /// Description: Checks
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/istesting.html
+        /// URL: http://docs.mql4.com/check/istesting.html
         /// </summary>
         public bool IsTesting()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.IsTesting_1, parameters); // MQLCommand ENUM = 44
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IsTesting_1, parameters); // MQLCommand ENUM = 44
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IsTradeAllowed
         /// Description: Checks
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/istradeallowed.html
+        /// URL: http://docs.mql4.com/check/istradeallowed.html
         /// </summary>
         public bool IsTradeAllowed()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.IsTradeAllowed_1, parameters); // MQLCommand ENUM = 45
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IsTradeAllowed_1, parameters); // MQLCommand ENUM = 45
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IsTradeAllowed
         /// Description: Checks
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/istradeallowed.html
+        /// URL: http://docs.mql4.com/check/istradeallowed.html
         /// </summary>
         /// <param name="symbol">[in] Symbol.</param>
         /// <param name="tested_time">[in] Time to check status.</param>
@@ -834,104 +830,104 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(symbol);
             parameters.Add(tested_time);
-            getCommandManager().ExecCommand(MQLCommand.IsTradeAllowed_2, parameters); // MQLCommand ENUM = 45
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IsTradeAllowed_2, parameters); // MQLCommand ENUM = 45
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IsTradeContextBusy
         /// Description: Returns the information about trade context.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/istradecontextbusy.html
+        /// URL: http://docs.mql4.com/check/istradecontextbusy.html
         /// </summary>
         public bool IsTradeContextBusy()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.IsTradeContextBusy_1, parameters); // MQLCommand ENUM = 46
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IsTradeContextBusy_1, parameters); // MQLCommand ENUM = 46
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IsVisualMode
         /// Description: Checks
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isvisualmode.html
+        /// URL: http://docs.mql4.com/check/isvisualmode.html
         /// </summary>
         public bool IsVisualMode()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.IsVisualMode_1, parameters); // MQLCommand ENUM = 47
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IsVisualMode_1, parameters); // MQLCommand ENUM = 47
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: TerminalCompany
         /// Description: Returns the name of company owning the client terminal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/terminalcompany.html
+        /// URL: http://docs.mql4.com/check/terminalcompany.html
         /// </summary>
         public string TerminalCompany()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.TerminalCompany_1, parameters); // MQLCommand ENUM = 48
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.TerminalCompany_1, parameters); // MQLCommand ENUM = 48
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: TerminalName
         /// Description: Returns client terminal name.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/terminalname.html
+        /// URL: http://docs.mql4.com/check/terminalname.html
         /// </summary>
         public string TerminalName()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.TerminalName_1, parameters); // MQLCommand ENUM = 49
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.TerminalName_1, parameters); // MQLCommand ENUM = 49
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: TerminalPath
         /// Description: Returns the directory, from which the client terminal was launched.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/terminalpath.html
+        /// URL: http://docs.mql4.com/check/terminalpath.html
         /// </summary>
         public string TerminalPath()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.TerminalPath_1, parameters); // MQLCommand ENUM = 50
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.TerminalPath_1, parameters); // MQLCommand ENUM = 50
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: MarketInfo
         /// Description: Returns various data about securities listed in the "Market Watch" window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/marketinformation/marketinfo.html
+        /// URL: http://docs.mql4.com/marketinformation/marketinfo.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name.</param>
         /// <param name="type">[in] Request of information to be returned. Can be any of values of request identifiers.</param>
@@ -940,38 +936,38 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(symbol);
             parameters.Add(type);
-            getCommandManager().ExecCommand(MQLCommand.MarketInfo_1, parameters); // MQLCommand ENUM = 51
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.MarketInfo_1, parameters); // MQLCommand ENUM = 51
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: SymbolsTotal
         /// Description: Returns the number of available (selected in Market Watch or all) symbols.
-        /// URL: http://mm.l/mql4/docs.mql4.com/marketinformation/symbolstotal.html
+        /// URL: http://docs.mql4.com/marketinformation/symbolstotal.html
         /// </summary>
         /// <param name="selected">[in] Request mode. Can be true or false.</param>
         public int SymbolsTotal(bool selected)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(selected);
-            getCommandManager().ExecCommand(MQLCommand.SymbolsTotal_1, parameters); // MQLCommand ENUM = 52
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SymbolsTotal_1, parameters); // MQLCommand ENUM = 52
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: SymbolName
         /// Description: Returns the name of a symbol.
-        /// URL: http://mm.l/mql4/docs.mql4.com/marketinformation/symbolname.html
+        /// URL: http://docs.mql4.com/marketinformation/symbolname.html
         /// </summary>
         /// <param name="pos">[in] Order number of a symbol.</param>
         /// <param name="selected">[in] Request mode. If the value is true, the symbol is taken from the list of symbols selected in MarketWatch. If the value is false, the symbol is taken from the general list.</param>
@@ -980,19 +976,19 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(pos);
             parameters.Add(selected);
-            getCommandManager().ExecCommand(MQLCommand.SymbolName_1, parameters); // MQLCommand ENUM = 53
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SymbolName_1, parameters); // MQLCommand ENUM = 53
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: SymbolSelect
         /// Description: Selects a symbol in the Market Watch window or removes a symbol from the window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/marketinformation/symbolselect.html
+        /// URL: http://docs.mql4.com/marketinformation/symbolselect.html
         /// </summary>
         /// <param name="name">[in] Symbol name.</param>
         /// <param name="select">[in] Switch. If the value is false, a symbol should be removed from MarketWatch, otherwise a symbol should be selected in this window. A symbol can't be removed if the symbol chart is open, or there are open orders for this symbol.</param>
@@ -1001,36 +997,36 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(name);
             parameters.Add(select);
-            getCommandManager().ExecCommand(MQLCommand.SymbolSelect_1, parameters); // MQLCommand ENUM = 54
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SymbolSelect_1, parameters); // MQLCommand ENUM = 54
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: RefreshRates
         /// Description: Refreshing of data in pre-defined variables and series arrays.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/refreshrates.html
+        /// URL: http://docs.mql4.com/series/refreshrates.html
         /// </summary>
         public bool RefreshRates()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.RefreshRates_1, parameters); // MQLCommand ENUM = 55
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.RefreshRates_1, parameters); // MQLCommand ENUM = 55
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: Bars
         /// Description: Returns the number of bars count in the history for a specified symbol and period. There are 2 variants of functions calls.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/barsfunction.html
+        /// URL: http://docs.mql4.com/series/barsfunction.html
         /// </summary>
         /// <param name="symbol_name">[in] Symbol name.</param>
         /// <param name="timeframe">[in] Period.</param>
@@ -1039,19 +1035,19 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(symbol_name);
             parameters.Add(timeframe.ToString());
-            getCommandManager().ExecCommand(MQLCommand.Bars_1, parameters); // MQLCommand ENUM = 56
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.Bars_1, parameters); // MQLCommand ENUM = 56
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: Bars
         /// Description: Returns the number of bars count in the history for a specified symbol and period. There are 2 variants of functions calls.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/barsfunction.html
+        /// URL: http://docs.mql4.com/series/barsfunction.html
         /// </summary>
         /// <param name="symbol_name">[in] Symbol name.</param>
         /// <param name="timeframe">[in] Period.</param>
@@ -1064,19 +1060,19 @@ namespace MQL4CSharp.Base
             parameters.Add(timeframe.ToString());
             parameters.Add(start_time);
             parameters.Add(stop_time);
-            getCommandManager().ExecCommand(MQLCommand.Bars_2, parameters); // MQLCommand ENUM = 56
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.Bars_2, parameters); // MQLCommand ENUM = 56
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iBars
         /// Description: Returns the number of bars on the specified chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ibars.html
+        /// URL: http://docs.mql4.com/series/ibars.html
         /// </summary>
         /// <param name="symbol">[in] Symbol the data of which should be used to calculate indicator. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -1085,19 +1081,19 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(symbol);
             parameters.Add(timeframe);
-            getCommandManager().ExecCommand(MQLCommand.iBars_1, parameters); // MQLCommand ENUM = 57
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iBars_1, parameters); // MQLCommand ENUM = 57
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iBarShift
         /// Description: Search for a bar by its time. The function returns the index of the bar which covers the specified time.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ibarshift.html
+        /// URL: http://docs.mql4.com/series/ibarshift.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -1110,19 +1106,19 @@ namespace MQL4CSharp.Base
             parameters.Add(timeframe);
             parameters.Add(time);
             parameters.Add(exact);
-            getCommandManager().ExecCommand(MQLCommand.iBarShift_1, parameters); // MQLCommand ENUM = 58
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iBarShift_1, parameters); // MQLCommand ENUM = 58
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iClose
         /// Description: Returns Close price value for the bar of specified symbol with timeframe and shift.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/iclose.html
+        /// URL: http://docs.mql4.com/series/iclose.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -1133,19 +1129,19 @@ namespace MQL4CSharp.Base
             parameters.Add(symbol);
             parameters.Add(timeframe);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iClose_1, parameters); // MQLCommand ENUM = 59
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iClose_1, parameters); // MQLCommand ENUM = 59
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iHigh
         /// Description: Returns High price value for the bar of specified symbol with timeframe and shift.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ihigh.html
+        /// URL: http://docs.mql4.com/series/ihigh.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -1156,19 +1152,19 @@ namespace MQL4CSharp.Base
             parameters.Add(symbol);
             parameters.Add(timeframe);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iHigh_1, parameters); // MQLCommand ENUM = 60
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iHigh_1, parameters); // MQLCommand ENUM = 60
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iHighest
         /// Description: Returns the shift of the maximum value over a specific number of bars depending on type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ihighest.html
+        /// URL: http://docs.mql4.com/series/ihighest.html
         /// </summary>
         /// <param name="symbol">[in] Symbol the data of which should be used for search. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -1183,19 +1179,19 @@ namespace MQL4CSharp.Base
             parameters.Add(type);
             parameters.Add(count);
             parameters.Add(start);
-            getCommandManager().ExecCommand(MQLCommand.iHighest_1, parameters); // MQLCommand ENUM = 61
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iHighest_1, parameters); // MQLCommand ENUM = 61
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iLow
         /// Description: Returns Low price value for the bar of indicated symbol with timeframe and shift.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ilow.html
+        /// URL: http://docs.mql4.com/series/ilow.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -1206,19 +1202,19 @@ namespace MQL4CSharp.Base
             parameters.Add(symbol);
             parameters.Add(timeframe);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iLow_1, parameters); // MQLCommand ENUM = 62
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iLow_1, parameters); // MQLCommand ENUM = 62
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iLowest
         /// Description: Returns the shift of the lowest value over a specific number of bars depending on type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ilowest.html
+        /// URL: http://docs.mql4.com/series/ilowest.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -1233,19 +1229,19 @@ namespace MQL4CSharp.Base
             parameters.Add(type);
             parameters.Add(count);
             parameters.Add(start);
-            getCommandManager().ExecCommand(MQLCommand.iLowest_1, parameters); // MQLCommand ENUM = 63
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iLowest_1, parameters); // MQLCommand ENUM = 63
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iOpen
         /// Description: Returns Open price value for the bar of specified symbol with timeframe and shift.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/iopen.html
+        /// URL: http://docs.mql4.com/series/iopen.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -1256,19 +1252,19 @@ namespace MQL4CSharp.Base
             parameters.Add(symbol);
             parameters.Add(timeframe);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iOpen_1, parameters); // MQLCommand ENUM = 64
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iOpen_1, parameters); // MQLCommand ENUM = 64
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iTime
         /// Description: Returns Time value for the bar of specified symbol with timeframe and shift.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/itime.html
+        /// URL: http://docs.mql4.com/series/itime.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -1279,19 +1275,19 @@ namespace MQL4CSharp.Base
             parameters.Add(symbol);
             parameters.Add(timeframe);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iTime_1, parameters); // MQLCommand ENUM = 65
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iTime_1, parameters); // MQLCommand ENUM = 65
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (DateTime)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (DateTime)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iVolume
         /// Description: Returns Tick Volume value for the bar of specified symbol with timeframe and shift.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ivolume.html
+        /// URL: http://docs.mql4.com/series/ivolume.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -1302,19 +1298,19 @@ namespace MQL4CSharp.Base
             parameters.Add(symbol);
             parameters.Add(timeframe);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iVolume_1, parameters); // MQLCommand ENUM = 66
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iVolume_1, parameters); // MQLCommand ENUM = 66
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (long)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (long)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartApplyTemplate
         /// Description: Applies a specific template from a specified file to the chart. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartapplytemplate.html
+        /// URL: http://docs.mql4.com/chart_operations/chartapplytemplate.html
         /// </summary>
         /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         /// <param name="filename">[in] The name of the file containing the template.</param>
@@ -1323,19 +1319,19 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(chart_id);
             parameters.Add(filename);
-            getCommandManager().ExecCommand(MQLCommand.ChartApplyTemplate_1, parameters); // MQLCommand ENUM = 67
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartApplyTemplate_1, parameters); // MQLCommand ENUM = 67
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartSaveTemplate
         /// Description: Saves current chart settings in a template with a specified name. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsavetemplate.html
+        /// URL: http://docs.mql4.com/chart_operations/chartsavetemplate.html
         /// </summary>
         /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         /// <param name="filename">[in] The filename to save the template. The ".tpl" extension will be added to the filename automatically; there is no need to specify it. The template is saved in terminal_directory\Profiles\Templates\ and can be used for manual application in the terminal. If a template with the same filename already exists, the contents of this file will be overwritten.</param>
@@ -1344,19 +1340,19 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(chart_id);
             parameters.Add(filename);
-            getCommandManager().ExecCommand(MQLCommand.ChartSaveTemplate_1, parameters); // MQLCommand ENUM = 68
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartSaveTemplate_1, parameters); // MQLCommand ENUM = 68
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartWindowFind
         /// Description: The function returns the number of a subwindow where an indicator is drawn. There are 2 variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowfind.html
+        /// URL: http://docs.mql4.com/chart_operations/chartwindowfind.html
         /// </summary>
         /// <param name="chart_id">[in] Chart ID. 0 denotes the current chart.</param>
         /// <param name="indicator_shortname">[in] Short name of the indicator.</param>
@@ -1365,36 +1361,36 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(chart_id);
             parameters.Add(indicator_shortname);
-            getCommandManager().ExecCommand(MQLCommand.ChartWindowFind_1, parameters); // MQLCommand ENUM = 69
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartWindowFind_1, parameters); // MQLCommand ENUM = 69
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartWindowFind
         /// Description: The function returns the number of a subwindow where an indicator is drawn. There are 2 variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowfind.html
+        /// URL: http://docs.mql4.com/chart_operations/chartwindowfind.html
         /// </summary>
         public int ChartWindowFind()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.ChartWindowFind_2, parameters); // MQLCommand ENUM = 69
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartWindowFind_2, parameters); // MQLCommand ENUM = 69
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartOpen
         /// Description: Opens a new chart with the specified symbol and period. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartopen.html
+        /// URL: http://docs.mql4.com/chart_operations/chartopen.html
         /// </summary>
         /// <param name="symbol">[in] Chart symbol. means the symbol of the current chart (the Expert Advisor is attached to).</param>
         /// <param name="period">[in] Chart period (timeframe). Can be one of the values. 0 means the current chart period.</param>
@@ -1403,111 +1399,111 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(symbol);
             parameters.Add(period.ToString());
-            getCommandManager().ExecCommand(MQLCommand.ChartOpen_1, parameters); // MQLCommand ENUM = 70
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartOpen_1, parameters); // MQLCommand ENUM = 70
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (long)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (long)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartFirst
         /// Description: Returns the ID of the first chart of the client terminal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartfirst.html
+        /// URL: http://docs.mql4.com/chart_operations/chartfirst.html
         /// </summary>
         public long ChartFirst()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.ChartFirst_1, parameters); // MQLCommand ENUM = 71
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartFirst_1, parameters); // MQLCommand ENUM = 71
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (long)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (long)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartNext
         /// Description: Returns the chart ID of the chart next to the specified one.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartnext.html
+        /// URL: http://docs.mql4.com/chart_operations/chartnext.html
         /// </summary>
         /// <param name="chart_id">[in] Chart ID. 0 does not mean the current chart. 0 means "return the first chart ID".</param>
         public long ChartNext(long chart_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(chart_id);
-            getCommandManager().ExecCommand(MQLCommand.ChartNext_1, parameters); // MQLCommand ENUM = 72
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartNext_1, parameters); // MQLCommand ENUM = 72
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (long)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (long)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartClose
         /// Description: Closes the specified chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartclose.html
+        /// URL: http://docs.mql4.com/chart_operations/chartclose.html
         /// </summary>
         /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         public bool ChartClose(long chart_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(chart_id);
-            getCommandManager().ExecCommand(MQLCommand.ChartClose_1, parameters); // MQLCommand ENUM = 73
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartClose_1, parameters); // MQLCommand ENUM = 73
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartSymbol
         /// Description: Returns the symbol name for the specified chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsymbol.html
+        /// URL: http://docs.mql4.com/chart_operations/chartsymbol.html
         /// </summary>
         /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         public string ChartSymbol(long chart_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(chart_id);
-            getCommandManager().ExecCommand(MQLCommand.ChartSymbol_1, parameters); // MQLCommand ENUM = 74
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartSymbol_1, parameters); // MQLCommand ENUM = 74
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartRedraw
         /// Description: This function calls a forced redrawing of a specified chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartredraw.html
+        /// URL: http://docs.mql4.com/chart_operations/chartredraw.html
         /// </summary>
         /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         public void ChartRedraw(long chart_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(chart_id);
-            getCommandManager().ExecCommand(MQLCommand.ChartRedraw_1, parameters); // MQLCommand ENUM = 75
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartRedraw_1, parameters); // MQLCommand ENUM = 75
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
+            getCommandManager().throwExceptionIfErrorResponse(id);
         }
 
         /// <summary>
         /// Function: ChartSetDouble
         /// Description: Sets a value for a corresponding property of the specified chart. Chart property should be of a
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetdouble.html
+        /// URL: http://docs.mql4.com/chart_operations/chartsetdouble.html
         /// </summary>
         /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         /// <param name="prop_id">[in] Chart property ID. Can be one of the values (except the read-only properties).</param>
@@ -1518,19 +1514,19 @@ namespace MQL4CSharp.Base
             parameters.Add(chart_id);
             parameters.Add(prop_id);
             parameters.Add(value);
-            getCommandManager().ExecCommand(MQLCommand.ChartSetDouble_1, parameters); // MQLCommand ENUM = 76
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartSetDouble_1, parameters); // MQLCommand ENUM = 76
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartSetInteger
         /// Description: Sets a value for a corresponding property of the specified chart. Chart property must be
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetinteger.html
+        /// URL: http://docs.mql4.com/chart_operations/chartsetinteger.html
         /// </summary>
         /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         /// <param name="prop_id">[in] Chart property ID. It can be one of the value (except the read-only properties).</param>
@@ -1541,19 +1537,19 @@ namespace MQL4CSharp.Base
             parameters.Add(chart_id);
             parameters.Add(prop_id);
             parameters.Add(value);
-            getCommandManager().ExecCommand(MQLCommand.ChartSetInteger_1, parameters); // MQLCommand ENUM = 77
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartSetInteger_1, parameters); // MQLCommand ENUM = 77
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartSetInteger
         /// Description: Sets a value for a corresponding property of the specified chart. Chart property must be
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetinteger.html
+        /// URL: http://docs.mql4.com/chart_operations/chartsetinteger.html
         /// </summary>
         /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         /// <param name="property_id"></param>
@@ -1566,19 +1562,19 @@ namespace MQL4CSharp.Base
             parameters.Add(property_id);
             parameters.Add(sub_window);
             parameters.Add(value);
-            getCommandManager().ExecCommand(MQLCommand.ChartSetInteger_2, parameters); // MQLCommand ENUM = 77
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartSetInteger_2, parameters); // MQLCommand ENUM = 77
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartSetString
         /// Description: Sets a value for a corresponding property of the specified chart. Chart property must be of the string type. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetstring.html
+        /// URL: http://docs.mql4.com/chart_operations/chartsetstring.html
         /// </summary>
         /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         /// <param name="prop_id">[in] Chart property ID. Its value can be one of the values (except the read-only properties).</param>
@@ -1589,19 +1585,19 @@ namespace MQL4CSharp.Base
             parameters.Add(chart_id);
             parameters.Add(prop_id);
             parameters.Add(str_value);
-            getCommandManager().ExecCommand(MQLCommand.ChartSetString_1, parameters); // MQLCommand ENUM = 78
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartSetString_1, parameters); // MQLCommand ENUM = 78
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartNavigate
         /// Description: Performs shift of the specified chart by the specified number of bars relative to the specified position in the chart. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartnavigate.html
+        /// URL: http://docs.mql4.com/chart_operations/chartnavigate.html
         /// </summary>
         /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         /// <param name="position">[in] Chart position to perform a shift. Can be one of the values.</param>
@@ -1612,36 +1608,36 @@ namespace MQL4CSharp.Base
             parameters.Add(chart_id);
             parameters.Add(position);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.ChartNavigate_1, parameters); // MQLCommand ENUM = 79
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartNavigate_1, parameters); // MQLCommand ENUM = 79
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartID
         /// Description: Returns the ID of the current chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartid.html
+        /// URL: http://docs.mql4.com/chart_operations/chartid.html
         /// </summary>
         public long ChartID()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.ChartID_1, parameters); // MQLCommand ENUM = 80
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartID_1, parameters); // MQLCommand ENUM = 80
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (long)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (long)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartIndicatorDelete
         /// Description: Removes an indicator with a specified name from the specified chart window. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatordelete.html
+        /// URL: http://docs.mql4.com/chart_operations/chartindicatordelete.html
         /// </summary>
         /// <param name="chart_id">[in] Chart ID. 0 denotes the current chart.</param>
         /// <param name="sub_window">[in] Number of the chart subwindow. 0 denotes the main chart subwindow.</param>
@@ -1652,19 +1648,19 @@ namespace MQL4CSharp.Base
             parameters.Add(chart_id);
             parameters.Add(sub_window);
             parameters.Add(indicator_shortname);
-            getCommandManager().ExecCommand(MQLCommand.ChartIndicatorDelete_1, parameters); // MQLCommand ENUM = 81
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartIndicatorDelete_1, parameters); // MQLCommand ENUM = 81
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartIndicatorName
         /// Description: Returns the short name of the indicator by the number in the indicators list on the specified chart window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatorname.html
+        /// URL: http://docs.mql4.com/chart_operations/chartindicatorname.html
         /// </summary>
         /// <param name="chart_id">[in] Chart ID. 0 denotes the current chart.</param>
         /// <param name="sub_window">[in] Number of the chart subwindow. 0 denotes the main chart subwindow.</param>
@@ -1675,19 +1671,19 @@ namespace MQL4CSharp.Base
             parameters.Add(chart_id);
             parameters.Add(sub_window);
             parameters.Add(index);
-            getCommandManager().ExecCommand(MQLCommand.ChartIndicatorName_1, parameters); // MQLCommand ENUM = 82
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartIndicatorName_1, parameters); // MQLCommand ENUM = 82
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartIndicatorsTotal
         /// Description: Returns the number of all indicators applied to the specified chart window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatorstotal.html
+        /// URL: http://docs.mql4.com/chart_operations/chartindicatorstotal.html
         /// </summary>
         /// <param name="chart_id">[in] Chart ID. 0 denotes the current chart.</param>
         /// <param name="sub_window">[in] Number of the chart subwindow. 0 denotes the main chart subwindow.</param>
@@ -1696,104 +1692,104 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(chart_id);
             parameters.Add(sub_window);
-            getCommandManager().ExecCommand(MQLCommand.ChartIndicatorsTotal_1, parameters); // MQLCommand ENUM = 83
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartIndicatorsTotal_1, parameters); // MQLCommand ENUM = 83
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartWindowOnDropped
         /// Description: Returns the number (index) of the chart subwindow the Expert Advisor or script has been dropped to. 0 means the main chart window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowondropped.html
+        /// URL: http://docs.mql4.com/chart_operations/chartwindowondropped.html
         /// </summary>
         public int ChartWindowOnDropped()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.ChartWindowOnDropped_1, parameters); // MQLCommand ENUM = 84
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartWindowOnDropped_1, parameters); // MQLCommand ENUM = 84
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartPriceOnDropped
         /// Description: Returns the price coordinate corresponding to the chart point the Expert Advisor or script has been dropped to.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartpriceondropped.html
+        /// URL: http://docs.mql4.com/chart_operations/chartpriceondropped.html
         /// </summary>
         public double ChartPriceOnDropped()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.ChartPriceOnDropped_1, parameters); // MQLCommand ENUM = 85
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartPriceOnDropped_1, parameters); // MQLCommand ENUM = 85
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartTimeOnDropped
         /// Description: Returns the time coordinate corresponding to the chart point the Expert Advisor or script has been dropped to.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/charttimeondropped.html
+        /// URL: http://docs.mql4.com/chart_operations/charttimeondropped.html
         /// </summary>
         public DateTime ChartTimeOnDropped()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.ChartTimeOnDropped_1, parameters); // MQLCommand ENUM = 86
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartTimeOnDropped_1, parameters); // MQLCommand ENUM = 86
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (DateTime)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (DateTime)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartXOnDropped
         /// Description: Returns the X coordinate of the chart point the Expert Advisor or script has been dropped to.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartxondropped.html
+        /// URL: http://docs.mql4.com/chart_operations/chartxondropped.html
         /// </summary>
         public int ChartXOnDropped()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.ChartXOnDropped_1, parameters); // MQLCommand ENUM = 87
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartXOnDropped_1, parameters); // MQLCommand ENUM = 87
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartYOnDropped
         /// Description: Returns the Y coordinateof the chart point the Expert Advisor or script has been dropped to.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartyondropped.html
+        /// URL: http://docs.mql4.com/chart_operations/chartyondropped.html
         /// </summary>
         public int ChartYOnDropped()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.ChartYOnDropped_1, parameters); // MQLCommand ENUM = 88
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartYOnDropped_1, parameters); // MQLCommand ENUM = 88
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartSetSymbolPeriod
         /// Description: Changes the symbol and period of the specified chart. The function is asynchronous, i.e. it sends the command and does not wait for its execution completion. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetsymbolperiod.html
+        /// URL: http://docs.mql4.com/chart_operations/chartsetsymbolperiod.html
         /// </summary>
         /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         /// <param name="symbol">[in] Chart symbol. value means the current chart symbol (Expert Advisor is attached to)</param>
@@ -1804,19 +1800,19 @@ namespace MQL4CSharp.Base
             parameters.Add(chart_id);
             parameters.Add(symbol);
             parameters.Add(period.ToString());
-            getCommandManager().ExecCommand(MQLCommand.ChartSetSymbolPeriod_1, parameters); // MQLCommand ENUM = 89
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartSetSymbolPeriod_1, parameters); // MQLCommand ENUM = 89
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ChartScreenShot
         /// Description: Saves current chart screen shot as a GIF, PNG or BMP file depending on specified extension. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartscreenshot.html
+        /// URL: http://docs.mql4.com/chart_operations/chartscreenshot.html
         /// </summary>
         /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         /// <param name="filename">[in] Screenshot file name. Cannot exceed 63 characters. Screenshot files are placed in the \Files directory.</param>
@@ -1831,89 +1827,89 @@ namespace MQL4CSharp.Base
             parameters.Add(width);
             parameters.Add(height);
             parameters.Add(align_mode.ToString());
-            getCommandManager().ExecCommand(MQLCommand.ChartScreenShot_1, parameters); // MQLCommand ENUM = 90
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ChartScreenShot_1, parameters); // MQLCommand ENUM = 90
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: WindowBarsPerChart
         /// Description: Returns the amount of bars visible on the chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowbarsperchart.html
+        /// URL: http://docs.mql4.com/chart_operations/windowbarsperchart.html
         /// </summary>
         public int WindowBarsPerChart()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.WindowBarsPerChart_1, parameters); // MQLCommand ENUM = 91
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.WindowBarsPerChart_1, parameters); // MQLCommand ENUM = 91
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: WindowExpertName
         /// Description: Returns the name of the executed Expert Advisor, script, custom indicator, or library.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowexpertname.html
+        /// URL: http://docs.mql4.com/chart_operations/windowexpertname.html
         /// </summary>
         public string WindowExpertName()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.WindowExpertName_1, parameters); // MQLCommand ENUM = 92
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.WindowExpertName_1, parameters); // MQLCommand ENUM = 92
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: WindowFind
         /// Description: Returns the window index containing this specified indicator.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowfind.html
+        /// URL: http://docs.mql4.com/chart_operations/windowfind.html
         /// </summary>
         /// <param name="name">[in] Indicator short name.</param>
         public int WindowFind(string name)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(name);
-            getCommandManager().ExecCommand(MQLCommand.WindowFind_1, parameters); // MQLCommand ENUM = 93
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.WindowFind_1, parameters); // MQLCommand ENUM = 93
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: WindowFirstVisibleBar
         /// Description: Returns index of the first visible bar in the current chart window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowfirstvisiblebar.html
+        /// URL: http://docs.mql4.com/chart_operations/windowfirstvisiblebar.html
         /// </summary>
         public int WindowFirstVisibleBar()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.WindowFirstVisibleBar_1, parameters); // MQLCommand ENUM = 94
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.WindowFirstVisibleBar_1, parameters); // MQLCommand ENUM = 94
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: WindowHandle
         /// Description: Returns the system handle of the chart window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowhandle.html
+        /// URL: http://docs.mql4.com/chart_operations/windowhandle.html
         /// </summary>
         /// <param name="symbol">[in] Symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -1922,126 +1918,126 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(symbol);
             parameters.Add(timeframe);
-            getCommandManager().ExecCommand(MQLCommand.WindowHandle_1, parameters); // MQLCommand ENUM = 95
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.WindowHandle_1, parameters); // MQLCommand ENUM = 95
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: WindowIsVisible
         /// Description: Returns the visibility flag of the chart subwindow.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowisvisible.html
+        /// URL: http://docs.mql4.com/chart_operations/windowisvisible.html
         /// </summary>
         /// <param name="index">[in] Subwindow index.</param>
         public int WindowIsVisible(int index)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(index);
-            getCommandManager().ExecCommand(MQLCommand.WindowIsVisible_1, parameters); // MQLCommand ENUM = 96
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.WindowIsVisible_1, parameters); // MQLCommand ENUM = 96
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: WindowOnDropped
         /// Description: Returns the window index where Expert Advisor, custom indicator or script was dropped.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowondropped.html
+        /// URL: http://docs.mql4.com/chart_operations/windowondropped.html
         /// </summary>
         public int WindowOnDropped()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.WindowOnDropped_1, parameters); // MQLCommand ENUM = 97
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.WindowOnDropped_1, parameters); // MQLCommand ENUM = 97
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: WindowPriceMax
         /// Description: Returns the maximal value of the vertical scale of the specified subwindow of the current chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowpricemax.html
+        /// URL: http://docs.mql4.com/chart_operations/windowpricemax.html
         /// </summary>
         /// <param name="index">[in] Chart subwindow index (0 - main chart window).</param>
         public int WindowPriceMax(int index)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(index);
-            getCommandManager().ExecCommand(MQLCommand.WindowPriceMax_1, parameters); // MQLCommand ENUM = 98
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.WindowPriceMax_1, parameters); // MQLCommand ENUM = 98
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: WindowPriceMin
         /// Description: Returns the minimal value of the vertical scale of the specified subwindow of the current chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowpricemin.html
+        /// URL: http://docs.mql4.com/chart_operations/windowpricemin.html
         /// </summary>
         /// <param name="index">[in] Chart subwindow index (0 - main chart window).</param>
         public int WindowPriceMin(int index)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(index);
-            getCommandManager().ExecCommand(MQLCommand.WindowPriceMin_1, parameters); // MQLCommand ENUM = 99
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.WindowPriceMin_1, parameters); // MQLCommand ENUM = 99
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: WindowPriceOnDropped
         /// Description: Returns the price of the chart point where Expert Advisor or script was dropped.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowpriceondropped.html
+        /// URL: http://docs.mql4.com/chart_operations/windowpriceondropped.html
         /// </summary>
         public double WindowPriceOnDropped()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.WindowPriceOnDropped_1, parameters); // MQLCommand ENUM = 100
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.WindowPriceOnDropped_1, parameters); // MQLCommand ENUM = 100
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: WindowRedraw
         /// Description: Redraws the current chart forcedly.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowredraw.html
+        /// URL: http://docs.mql4.com/chart_operations/windowredraw.html
         /// </summary>
         public void WindowRedraw()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.WindowRedraw_1, parameters); // MQLCommand ENUM = 101
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.WindowRedraw_1, parameters); // MQLCommand ENUM = 101
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
+            getCommandManager().throwExceptionIfErrorResponse(id);
         }
 
         /// <summary>
         /// Function: WindowScreenShot
         /// Description: Saves current chart screen shot as a GIF file.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowscreenshot.html
+        /// URL: http://docs.mql4.com/chart_operations/windowscreenshot.html
         /// </summary>
         /// <param name="filename">[in] Screen shot file name. Screenshot is saved to \Files folder.</param>
         /// <param name="size_x">[in] Screen shot width in pixels.</param>
@@ -2058,87 +2054,87 @@ namespace MQL4CSharp.Base
             parameters.Add(start_bar);
             parameters.Add(chart_scale);
             parameters.Add(chart_mode);
-            getCommandManager().ExecCommand(MQLCommand.WindowScreenShot_1, parameters); // MQLCommand ENUM = 102
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.WindowScreenShot_1, parameters); // MQLCommand ENUM = 102
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: WindowTimeOnDropped
         /// Description: Returns the time of the chart point where Expert Advisor or script was dropped.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowtimeondropped.html
+        /// URL: http://docs.mql4.com/chart_operations/windowtimeondropped.html
         /// </summary>
         public DateTime WindowTimeOnDropped()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.WindowTimeOnDropped_1, parameters); // MQLCommand ENUM = 103
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.WindowTimeOnDropped_1, parameters); // MQLCommand ENUM = 103
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (DateTime)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (DateTime)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: WindowsTotal
         /// Description: Returns total number of indicator windows on the chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowstotal.html
+        /// URL: http://docs.mql4.com/chart_operations/windowstotal.html
         /// </summary>
         public int WindowsTotal()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.WindowsTotal_1, parameters); // MQLCommand ENUM = 104
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.WindowsTotal_1, parameters); // MQLCommand ENUM = 104
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: WindowXOnDropped
         /// Description: Returns the value at X axis in pixels for the chart window client area point at which the Expert Advisor or script was dropped.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowxondropped.html
+        /// URL: http://docs.mql4.com/chart_operations/windowxondropped.html
         /// </summary>
         public int WindowXOnDropped()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.WindowXOnDropped_1, parameters); // MQLCommand ENUM = 105
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.WindowXOnDropped_1, parameters); // MQLCommand ENUM = 105
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: WindowYOnDropped
         /// Description: Returns the value at Y axis in pixels for the chart window client area point at which the Expert Advisor or script was dropped.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowyondropped.html
+        /// URL: http://docs.mql4.com/chart_operations/windowyondropped.html
         /// </summary>
         public int WindowYOnDropped()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.WindowYOnDropped_1, parameters); // MQLCommand ENUM = 106
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.WindowYOnDropped_1, parameters); // MQLCommand ENUM = 106
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderClose
         /// Description: Closes opened order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderclose.html
+        /// URL: http://docs.mql4.com/trading/orderclose.html
         /// </summary>
         /// <param name="ticket">[in] Unique number of the order ticket.</param>
         /// <param name="lots">[in] Number of lots.</param>
@@ -2153,19 +2149,19 @@ namespace MQL4CSharp.Base
             parameters.Add(price);
             parameters.Add(slippage);
             parameters.Add(arrow_color);
-            getCommandManager().ExecCommand(MQLCommand.OrderClose_1, parameters); // MQLCommand ENUM = 107
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderClose_1, parameters); // MQLCommand ENUM = 107
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderCloseBy
         /// Description: Closes an opened order by another opposite opened order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordercloseby.html
+        /// URL: http://docs.mql4.com/trading/ordercloseby.html
         /// </summary>
         /// <param name="ticket">[in] Unique number of the order ticket.</param>
         /// <param name="opposite">[in] Unique number of the opposite order ticket.</param>
@@ -2176,87 +2172,87 @@ namespace MQL4CSharp.Base
             parameters.Add(ticket);
             parameters.Add(opposite);
             parameters.Add(arrow_color);
-            getCommandManager().ExecCommand(MQLCommand.OrderCloseBy_1, parameters); // MQLCommand ENUM = 108
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderCloseBy_1, parameters); // MQLCommand ENUM = 108
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderClosePrice
         /// Description: Returns close price of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordercloseprice.html
+        /// URL: http://docs.mql4.com/trading/ordercloseprice.html
         /// </summary>
         public double OrderClosePrice()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrderClosePrice_1, parameters); // MQLCommand ENUM = 109
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderClosePrice_1, parameters); // MQLCommand ENUM = 109
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderCloseTime
         /// Description: Returns close time of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderclosetime.html
+        /// URL: http://docs.mql4.com/trading/orderclosetime.html
         /// </summary>
         public DateTime OrderCloseTime()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrderCloseTime_1, parameters); // MQLCommand ENUM = 110
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderCloseTime_1, parameters); // MQLCommand ENUM = 110
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (DateTime)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (DateTime)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderComment
         /// Description: Returns comment of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordercomment.html
+        /// URL: http://docs.mql4.com/trading/ordercomment.html
         /// </summary>
         public string OrderComment()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrderComment_1, parameters); // MQLCommand ENUM = 111
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderComment_1, parameters); // MQLCommand ENUM = 111
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderCommission
         /// Description: Returns calculated commission of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordercommission.html
+        /// URL: http://docs.mql4.com/trading/ordercommission.html
         /// </summary>
         public double OrderCommission()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrderCommission_1, parameters); // MQLCommand ENUM = 112
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderCommission_1, parameters); // MQLCommand ENUM = 112
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderDelete
         /// Description: Deletes previously opened pending order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderdelete.html
+        /// URL: http://docs.mql4.com/trading/orderdelete.html
         /// </summary>
         /// <param name="ticket">[in] Unique number of the order ticket.</param>
         /// <param name="arrow_color">[in] Color of the arrow on the chart. If the parameter is missing or has CLR_NONE value arrow will not be drawn on the chart.</param>
@@ -2265,70 +2261,70 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(ticket);
             parameters.Add(arrow_color);
-            getCommandManager().ExecCommand(MQLCommand.OrderDelete_1, parameters); // MQLCommand ENUM = 113
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderDelete_1, parameters); // MQLCommand ENUM = 113
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderExpiration
         /// Description: Returns expiration date of the selected pending order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderexpiration.html
+        /// URL: http://docs.mql4.com/trading/orderexpiration.html
         /// </summary>
         public DateTime OrderExpiration()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrderExpiration_1, parameters); // MQLCommand ENUM = 114
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderExpiration_1, parameters); // MQLCommand ENUM = 114
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (DateTime)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (DateTime)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderLots
         /// Description: Returns amount of lots of the selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderlots.html
+        /// URL: http://docs.mql4.com/trading/orderlots.html
         /// </summary>
         public double OrderLots()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrderLots_1, parameters); // MQLCommand ENUM = 115
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderLots_1, parameters); // MQLCommand ENUM = 115
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderMagicNumber
         /// Description: Returns an identifying (magic) number of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordermagicnumber.html
+        /// URL: http://docs.mql4.com/trading/ordermagicnumber.html
         /// </summary>
         public int OrderMagicNumber()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrderMagicNumber_1, parameters); // MQLCommand ENUM = 116
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderMagicNumber_1, parameters); // MQLCommand ENUM = 116
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderModify
         /// Description: Modification of characteristics of the previously opened or pending orders.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordermodify.html
+        /// URL: http://docs.mql4.com/trading/ordermodify.html
         /// </summary>
         /// <param name="ticket">[in] Unique number of the order ticket.</param>
         /// <param name="price">[in] New open price of the pending order.</param>
@@ -2345,86 +2341,86 @@ namespace MQL4CSharp.Base
             parameters.Add(takeprofit);
             parameters.Add(expiration);
             parameters.Add(arrow_color);
-            getCommandManager().ExecCommand(MQLCommand.OrderModify_1, parameters); // MQLCommand ENUM = 117
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderModify_1, parameters); // MQLCommand ENUM = 117
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderOpenPrice
         /// Description: Returns open price of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderopenprice.html
+        /// URL: http://docs.mql4.com/trading/orderopenprice.html
         /// </summary>
         public double OrderOpenPrice()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrderOpenPrice_1, parameters); // MQLCommand ENUM = 118
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderOpenPrice_1, parameters); // MQLCommand ENUM = 118
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderOpenTime
         /// Description: Returns open time of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderopentime.html
+        /// URL: http://docs.mql4.com/trading/orderopentime.html
         /// </summary>
         public DateTime OrderOpenTime()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrderOpenTime_1, parameters); // MQLCommand ENUM = 119
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderOpenTime_1, parameters); // MQLCommand ENUM = 119
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (DateTime)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (DateTime)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderPrint
         /// Description: Prints information about the selected order in the log.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderprint.html
+        /// URL: http://docs.mql4.com/trading/orderprint.html
         /// </summary>
         public void OrderPrint()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrderPrint_1, parameters); // MQLCommand ENUM = 120
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderPrint_1, parameters); // MQLCommand ENUM = 120
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
+            getCommandManager().throwExceptionIfErrorResponse(id);
         }
 
         /// <summary>
         /// Function: OrderProfit
         /// Description: Returns profit of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderprofit.html
+        /// URL: http://docs.mql4.com/trading/orderprofit.html
         /// </summary>
         public double OrderProfit()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrderProfit_1, parameters); // MQLCommand ENUM = 121
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderProfit_1, parameters); // MQLCommand ENUM = 121
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderSelect
         /// Description: The function selects an order for further processing.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderselect.html
+        /// URL: http://docs.mql4.com/trading/orderselect.html
         /// </summary>
         /// <param name="index"></param>
         /// <param name="select">[in] Selecting flags. It can be any of the following values:</param>
@@ -2435,19 +2431,19 @@ namespace MQL4CSharp.Base
             parameters.Add(index);
             parameters.Add(select);
             parameters.Add(pool);
-            getCommandManager().ExecCommand(MQLCommand.OrderSelect_1, parameters); // MQLCommand ENUM = 122
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderSelect_1, parameters); // MQLCommand ENUM = 122
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderSend
         /// Description: The main function used to open market or place a pending order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordersend.html
+        /// URL: http://docs.mql4.com/trading/ordersend.html
         /// </summary>
         /// <param name="symbol">[in] Symbol for trading.</param>
         /// <param name="cmd">[in] Operation type. It can be any of the enumeration.</param>
@@ -2474,305 +2470,305 @@ namespace MQL4CSharp.Base
             parameters.Add(magic);
             parameters.Add(expiration);
             parameters.Add(arrow_color);
-            getCommandManager().ExecCommand(MQLCommand.OrderSend_1, parameters); // MQLCommand ENUM = 123
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderSend_1, parameters); // MQLCommand ENUM = 123
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrdersHistoryTotal
         /// Description: Returns the number of closed orders in the account history loaded into the terminal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordershistorytotal.html
+        /// URL: http://docs.mql4.com/trading/ordershistorytotal.html
         /// </summary>
         public int OrdersHistoryTotal()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrdersHistoryTotal_1, parameters); // MQLCommand ENUM = 124
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrdersHistoryTotal_1, parameters); // MQLCommand ENUM = 124
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderStopLoss
         /// Description: Returns stop loss value of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderstoploss.html
+        /// URL: http://docs.mql4.com/trading/orderstoploss.html
         /// </summary>
         public double OrderStopLoss()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrderStopLoss_1, parameters); // MQLCommand ENUM = 125
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderStopLoss_1, parameters); // MQLCommand ENUM = 125
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrdersTotal
         /// Description: Returns the number of market and pending orders.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderstotal.html
+        /// URL: http://docs.mql4.com/trading/orderstotal.html
         /// </summary>
         public int OrdersTotal()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrdersTotal_1, parameters); // MQLCommand ENUM = 126
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrdersTotal_1, parameters); // MQLCommand ENUM = 126
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderSwap
         /// Description: Returns swap value of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderswap.html
+        /// URL: http://docs.mql4.com/trading/orderswap.html
         /// </summary>
         public double OrderSwap()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrderSwap_1, parameters); // MQLCommand ENUM = 127
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderSwap_1, parameters); // MQLCommand ENUM = 127
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderSymbol
         /// Description: Returns symbol name of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordersymbol.html
+        /// URL: http://docs.mql4.com/trading/ordersymbol.html
         /// </summary>
         public string OrderSymbol()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrderSymbol_1, parameters); // MQLCommand ENUM = 128
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderSymbol_1, parameters); // MQLCommand ENUM = 128
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderTakeProfit
         /// Description: Returns take profit value of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordertakeprofit.html
+        /// URL: http://docs.mql4.com/trading/ordertakeprofit.html
         /// </summary>
         public double OrderTakeProfit()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrderTakeProfit_1, parameters); // MQLCommand ENUM = 129
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderTakeProfit_1, parameters); // MQLCommand ENUM = 129
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderTicket
         /// Description: Returns ticket number of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderticket.html
+        /// URL: http://docs.mql4.com/trading/orderticket.html
         /// </summary>
         public int OrderTicket()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrderTicket_1, parameters); // MQLCommand ENUM = 130
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderTicket_1, parameters); // MQLCommand ENUM = 130
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: OrderType
         /// Description: Returns order operation type of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordertype.html
+        /// URL: http://docs.mql4.com/trading/ordertype.html
         /// </summary>
         public int OrderType()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.OrderType_1, parameters); // MQLCommand ENUM = 131
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.OrderType_1, parameters); // MQLCommand ENUM = 131
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: SignalBaseGetDouble
         /// Description: Returns the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalbasegetdouble.html
+        /// URL: http://docs.mql4.com/signals/signalbasegetdouble.html
         /// </summary>
         /// <param name="property_id">[in] Signal property identifier. The value can be one of the values of the enumeration.</param>
         public double SignalBaseGetDouble(SIGNAL_BASE_DOUBLE property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id.ToString());
-            getCommandManager().ExecCommand(MQLCommand.SignalBaseGetDouble_1, parameters); // MQLCommand ENUM = 132
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SignalBaseGetDouble_1, parameters); // MQLCommand ENUM = 132
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: SignalBaseGetInteger
         /// Description: Returns the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalbasegetinteger.html
+        /// URL: http://docs.mql4.com/signals/signalbasegetinteger.html
         /// </summary>
         /// <param name="property_id">[in] Signal property identifier. The value can be one of the values of the enumeration.</param>
         public long SignalBaseGetInteger(SIGNAL_BASE_INTEGER property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id.ToString());
-            getCommandManager().ExecCommand(MQLCommand.SignalBaseGetInteger_1, parameters); // MQLCommand ENUM = 133
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SignalBaseGetInteger_1, parameters); // MQLCommand ENUM = 133
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (long)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (long)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: SignalBaseGetString
         /// Description: Returns the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalbasegetstring.html
+        /// URL: http://docs.mql4.com/signals/signalbasegetstring.html
         /// </summary>
         /// <param name="property_id">[in] Signal property identifier. The value can be one of the values of the enumeration.</param>
         public string SignalBaseGetString(SIGNAL_BASE_STRING property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id.ToString());
-            getCommandManager().ExecCommand(MQLCommand.SignalBaseGetString_1, parameters); // MQLCommand ENUM = 134
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SignalBaseGetString_1, parameters); // MQLCommand ENUM = 134
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: SignalBaseSelect
         /// Description: Selects a signal from signals, available in terminal for further working with it.
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalbaseselect.html
+        /// URL: http://docs.mql4.com/signals/signalbaseselect.html
         /// </summary>
         /// <param name="index">[in] Signal index in base of trading signals.</param>
         public bool SignalBaseSelect(int index)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(index);
-            getCommandManager().ExecCommand(MQLCommand.SignalBaseSelect_1, parameters); // MQLCommand ENUM = 135
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SignalBaseSelect_1, parameters); // MQLCommand ENUM = 135
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: SignalBaseTotal
         /// Description: Returns the total amount of signals, available in terminal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalbasetotal.html
+        /// URL: http://docs.mql4.com/signals/signalbasetotal.html
         /// </summary>
         public int SignalBaseTotal()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.SignalBaseTotal_1, parameters); // MQLCommand ENUM = 136
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SignalBaseTotal_1, parameters); // MQLCommand ENUM = 136
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: SignalInfoGetDouble
         /// Description: Returns the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalinfogetdouble.html
+        /// URL: http://docs.mql4.com/signals/signalinfogetdouble.html
         /// </summary>
         /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
         public double SignalInfoGetDouble(SIGNAL_INFO_DOUBLE property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id.ToString());
-            getCommandManager().ExecCommand(MQLCommand.SignalInfoGetDouble_1, parameters); // MQLCommand ENUM = 137
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SignalInfoGetDouble_1, parameters); // MQLCommand ENUM = 137
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: SignalInfoGetInteger
         /// Description: Returns the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalinfogetinteger.html
+        /// URL: http://docs.mql4.com/signals/signalinfogetinteger.html
         /// </summary>
         /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
         public long SignalInfoGetInteger(SIGNAL_INFO_INTEGER property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id.ToString());
-            getCommandManager().ExecCommand(MQLCommand.SignalInfoGetInteger_1, parameters); // MQLCommand ENUM = 138
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SignalInfoGetInteger_1, parameters); // MQLCommand ENUM = 138
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (long)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (long)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: SignalInfoGetString
         /// Description: Returns the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalinfogetstring.html
+        /// URL: http://docs.mql4.com/signals/signalinfogetstring.html
         /// </summary>
         /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
         public string SignalInfoGetString(SIGNAL_INFO_STRING property_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id.ToString());
-            getCommandManager().ExecCommand(MQLCommand.SignalInfoGetString_1, parameters); // MQLCommand ENUM = 139
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SignalInfoGetString_1, parameters); // MQLCommand ENUM = 139
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: SignalInfoSetDouble
         /// Description: Sets the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalinfosetdouble.html
+        /// URL: http://docs.mql4.com/signals/signalinfosetdouble.html
         /// </summary>
         /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
         /// <param name="value">[in] The value of signal copy settings property.</param>
@@ -2781,19 +2777,19 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id.ToString());
             parameters.Add(value);
-            getCommandManager().ExecCommand(MQLCommand.SignalInfoSetDouble_1, parameters); // MQLCommand ENUM = 140
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SignalInfoSetDouble_1, parameters); // MQLCommand ENUM = 140
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: SignalInfoSetInteger
         /// Description: Sets the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalinfosetinteger.html
+        /// URL: http://docs.mql4.com/signals/signalinfosetinteger.html
         /// </summary>
         /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
         /// <param name="value">[in] The value of signal copy settings property.</param>
@@ -2802,150 +2798,150 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(property_id.ToString());
             parameters.Add(value);
-            getCommandManager().ExecCommand(MQLCommand.SignalInfoSetInteger_1, parameters); // MQLCommand ENUM = 141
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SignalInfoSetInteger_1, parameters); // MQLCommand ENUM = 141
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: SignalSubscribe
         /// Description: Subscribes to the trading signal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalsubscribe.html
+        /// URL: http://docs.mql4.com/signals/signalsubscribe.html
         /// </summary>
         /// <param name="signal_id">[in] Signal identifier.</param>
         public bool SignalSubscribe(long signal_id)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(signal_id);
-            getCommandManager().ExecCommand(MQLCommand.SignalSubscribe_1, parameters); // MQLCommand ENUM = 142
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SignalSubscribe_1, parameters); // MQLCommand ENUM = 142
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: SignalUnsubscribe
         /// Description: Cancels subscription.
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalunsubscribe.html
+        /// URL: http://docs.mql4.com/signals/signalunsubscribe.html
         /// </summary>
         public bool SignalUnsubscribe()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.SignalUnsubscribe_1, parameters); // MQLCommand ENUM = 143
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SignalUnsubscribe_1, parameters); // MQLCommand ENUM = 143
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: GlobalVariableCheck
         /// Description: Checks the existence of a global variable with the specified name
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariablecheck.html
+        /// URL: http://docs.mql4.com/globals/globalvariablecheck.html
         /// </summary>
         /// <param name="name">[in] Global variable name.</param>
         public bool GlobalVariableCheck(string name)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(name);
-            getCommandManager().ExecCommand(MQLCommand.GlobalVariableCheck_1, parameters); // MQLCommand ENUM = 144
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.GlobalVariableCheck_1, parameters); // MQLCommand ENUM = 144
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: GlobalVariableTime
         /// Description: Returns the time when the global variable was last accessed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariabletime.html
+        /// URL: http://docs.mql4.com/globals/globalvariabletime.html
         /// </summary>
         /// <param name="name">[in] Name of the global variable.</param>
         public DateTime GlobalVariableTime(string name)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(name);
-            getCommandManager().ExecCommand(MQLCommand.GlobalVariableTime_1, parameters); // MQLCommand ENUM = 145
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.GlobalVariableTime_1, parameters); // MQLCommand ENUM = 145
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (DateTime)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (DateTime)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: GlobalVariableDel
         /// Description: Deletes a global variable from the client terminal
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariabledel.html
+        /// URL: http://docs.mql4.com/globals/globalvariabledel.html
         /// </summary>
         /// <param name="name">[in] Global variable name.</param>
         public bool GlobalVariableDel(string name)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(name);
-            getCommandManager().ExecCommand(MQLCommand.GlobalVariableDel_1, parameters); // MQLCommand ENUM = 146
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.GlobalVariableDel_1, parameters); // MQLCommand ENUM = 146
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: GlobalVariableGet
         /// Description: Returns the value of an existing global variable of the client terminal. There are 2 variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariableget.html
+        /// URL: http://docs.mql4.com/globals/globalvariableget.html
         /// </summary>
         /// <param name="name">[in] Global variable name.</param>
         public double GlobalVariableGet(string name)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(name);
-            getCommandManager().ExecCommand(MQLCommand.GlobalVariableGet_1, parameters); // MQLCommand ENUM = 147
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.GlobalVariableGet_1, parameters); // MQLCommand ENUM = 147
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: GlobalVariableName
         /// Description: Returns the name of a global variable by its ordinal number.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariablename.html
+        /// URL: http://docs.mql4.com/globals/globalvariablename.html
         /// </summary>
         /// <param name="index">[in] Sequence number in the list of global variables. It should be greater than or equal to 0 and less than .</param>
         public string GlobalVariableName(int index)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(index);
-            getCommandManager().ExecCommand(MQLCommand.GlobalVariableName_1, parameters); // MQLCommand ENUM = 148
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.GlobalVariableName_1, parameters); // MQLCommand ENUM = 148
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: GlobalVariableSet
         /// Description: Sets a new value for a global variable. If the variable does not exist, the system creates a new global variable.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariableset.html
+        /// URL: http://docs.mql4.com/globals/globalvariableset.html
         /// </summary>
         /// <param name="name">[in] Global variable name.</param>
         /// <param name="value">[in] The new numerical value.</param>
@@ -2954,54 +2950,54 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(name);
             parameters.Add(value);
-            getCommandManager().ExecCommand(MQLCommand.GlobalVariableSet_1, parameters); // MQLCommand ENUM = 149
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.GlobalVariableSet_1, parameters); // MQLCommand ENUM = 149
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (DateTime)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (DateTime)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: GlobalVariablesFlush
         /// Description: Forcibly saves contents of all global variables to a disk.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariablesflush.html
+        /// URL: http://docs.mql4.com/globals/globalvariablesflush.html
         /// </summary>
         public void GlobalVariablesFlush()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.GlobalVariablesFlush_1, parameters); // MQLCommand ENUM = 150
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.GlobalVariablesFlush_1, parameters); // MQLCommand ENUM = 150
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
+            getCommandManager().throwExceptionIfErrorResponse(id);
         }
 
         /// <summary>
         /// Function: GlobalVariableTemp
         /// Description: The function attempts to create a temporary global variable. If the variable doesn't exist, the system creates a new temporary global variable.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariabletemp.html
+        /// URL: http://docs.mql4.com/globals/globalvariabletemp.html
         /// </summary>
         /// <param name="name">[in] The name of a temporary global variable.</param>
         public bool GlobalVariableTemp(string name)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(name);
-            getCommandManager().ExecCommand(MQLCommand.GlobalVariableTemp_1, parameters); // MQLCommand ENUM = 151
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.GlobalVariableTemp_1, parameters); // MQLCommand ENUM = 151
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: GlobalVariableSetOnCondition
         /// Description: Sets the new value of the existing global variable if the current value equals to the third parameter check_value. If there is no global variable, the function will generate an error ERR_GLOBALVARIABLE_NOT_FOUND (4501) and return false.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariablesetoncondition.html
+        /// URL: http://docs.mql4.com/globals/globalvariablesetoncondition.html
         /// </summary>
         /// <param name="name">[in] The name of a global variable.</param>
         /// <param name="value">[in] New value.</param>
@@ -3012,19 +3008,19 @@ namespace MQL4CSharp.Base
             parameters.Add(name);
             parameters.Add(value);
             parameters.Add(check_value);
-            getCommandManager().ExecCommand(MQLCommand.GlobalVariableSetOnCondition_1, parameters); // MQLCommand ENUM = 152
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.GlobalVariableSetOnCondition_1, parameters); // MQLCommand ENUM = 152
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: GlobalVariablesDeleteAll
         /// Description: Deletes global variables of the client terminal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariablesdeleteall.html
+        /// URL: http://docs.mql4.com/globals/globalvariablesdeleteall.html
         /// </summary>
         /// <param name="prefix_name">[in] Name prefix global variables to remove. If you specify a prefix NULL or empty string, then all variables that meet the data criterion will be deleted.</param>
         /// <param name="limit_data">[in] Optional parameter. Date to select global variables by the time of their last modification. The function removes global variables, which were changed before this date. If the parameter is zero, then all variables that meet the first criterion (prefix) are deleted.</param>
@@ -3033,54 +3029,54 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(prefix_name);
             parameters.Add(limit_data);
-            getCommandManager().ExecCommand(MQLCommand.GlobalVariablesDeleteAll_1, parameters); // MQLCommand ENUM = 153
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.GlobalVariablesDeleteAll_1, parameters); // MQLCommand ENUM = 153
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: GlobalVariablesTotal
         /// Description: Returns the total number of global variables of the client terminal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariablestotal.html
+        /// URL: http://docs.mql4.com/globals/globalvariablestotal.html
         /// </summary>
         public int GlobalVariablesTotal()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.GlobalVariablesTotal_1, parameters); // MQLCommand ENUM = 154
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.GlobalVariablesTotal_1, parameters); // MQLCommand ENUM = 154
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: HideTestIndicators
         /// Description: The function sets a flag hiding indicators called by the Expert Advisor.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/hidetestindicators.html
+        /// URL: http://docs.mql4.com/customind/hidetestindicators.html
         /// </summary>
         /// <param name="hide">[in] Hiding flag.</param>
         public void HideTestIndicators(bool hide)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(hide);
-            getCommandManager().ExecCommand(MQLCommand.HideTestIndicators_1, parameters); // MQLCommand ENUM = 155
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.HideTestIndicators_1, parameters); // MQLCommand ENUM = 155
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
+            getCommandManager().throwExceptionIfErrorResponse(id);
         }
 
         /// <summary>
         /// Function: IndicatorSetDouble
         /// Description: The function sets the value of the corresponding indicator property. Indicator property must be of the double type. There are two variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorsetdouble.html
+        /// URL: http://docs.mql4.com/customind/indicatorsetdouble.html
         /// </summary>
         /// <param name="prop_id">[in] Identifier of the indicator property. The value can be one of the values of the enumeration.</param>
         /// <param name="prop_value">[in] Value of property.</param>
@@ -3089,19 +3085,19 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(prop_id);
             parameters.Add(prop_value);
-            getCommandManager().ExecCommand(MQLCommand.IndicatorSetDouble_1, parameters); // MQLCommand ENUM = 156
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IndicatorSetDouble_1, parameters); // MQLCommand ENUM = 156
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IndicatorSetDouble
         /// Description: The function sets the value of the corresponding indicator property. Indicator property must be of the double type. There are two variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorsetdouble.html
+        /// URL: http://docs.mql4.com/customind/indicatorsetdouble.html
         /// </summary>
         /// <param name="prop_id">[in] Identifier of the indicator property. The value can be one of the values of the enumeration.</param>
         /// <param name="prop_modifier">[in] Modifier of the specified property. Only level properties require a modifier. Numbering of levels starts from 0. It means that in order to set property for the second level you need to specify 1 (1 less than when using ).</param>
@@ -3112,19 +3108,19 @@ namespace MQL4CSharp.Base
             parameters.Add(prop_id);
             parameters.Add(prop_modifier);
             parameters.Add(prop_value);
-            getCommandManager().ExecCommand(MQLCommand.IndicatorSetDouble_2, parameters); // MQLCommand ENUM = 156
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IndicatorSetDouble_2, parameters); // MQLCommand ENUM = 156
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IndicatorSetInteger
         /// Description: The function sets the value of the corresponding indicator property. Indicator property must be of the int or color type. There are two variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorsetinteger.html
+        /// URL: http://docs.mql4.com/customind/indicatorsetinteger.html
         /// </summary>
         /// <param name="prop_id">[in] Identifier of the indicator property. The value can be one of the values of the enumeration.</param>
         /// <param name="prop_value">[in] Value of property.</param>
@@ -3133,19 +3129,19 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(prop_id);
             parameters.Add(prop_value);
-            getCommandManager().ExecCommand(MQLCommand.IndicatorSetInteger_1, parameters); // MQLCommand ENUM = 157
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IndicatorSetInteger_1, parameters); // MQLCommand ENUM = 157
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IndicatorSetInteger
         /// Description: The function sets the value of the corresponding indicator property. Indicator property must be of the int or color type. There are two variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorsetinteger.html
+        /// URL: http://docs.mql4.com/customind/indicatorsetinteger.html
         /// </summary>
         /// <param name="prop_id">[in] Identifier of the indicator property. The value can be one of the values of the enumeration.</param>
         /// <param name="prop_modifier">[in] Modifier of the specified property. Only level properties require a modifier.</param>
@@ -3156,19 +3152,19 @@ namespace MQL4CSharp.Base
             parameters.Add(prop_id);
             parameters.Add(prop_modifier);
             parameters.Add(prop_value);
-            getCommandManager().ExecCommand(MQLCommand.IndicatorSetInteger_2, parameters); // MQLCommand ENUM = 157
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IndicatorSetInteger_2, parameters); // MQLCommand ENUM = 157
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IndicatorSetString
         /// Description: The function sets the value of the corresponding indicator property. Indicator property must be of the string type. There are two variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorsetstring.html
+        /// URL: http://docs.mql4.com/customind/indicatorsetstring.html
         /// </summary>
         /// <param name="prop_id">[in] Identifier of the indicator property. The value can be one of the values of the enumeration.</param>
         /// <param name="prop_value">[in] Value of property.</param>
@@ -3177,19 +3173,19 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(prop_id);
             parameters.Add(prop_value);
-            getCommandManager().ExecCommand(MQLCommand.IndicatorSetString_1, parameters); // MQLCommand ENUM = 158
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IndicatorSetString_1, parameters); // MQLCommand ENUM = 158
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IndicatorSetString
         /// Description: The function sets the value of the corresponding indicator property. Indicator property must be of the string type. There are two variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorsetstring.html
+        /// URL: http://docs.mql4.com/customind/indicatorsetstring.html
         /// </summary>
         /// <param name="prop_id">[in] Identifier of the indicator property. The value can be one of the values of the enumeration.</param>
         /// <param name="prop_modifier">[in] Modifier of the specified property. Only level properties require a modifier.</param>
@@ -3200,91 +3196,91 @@ namespace MQL4CSharp.Base
             parameters.Add(prop_id);
             parameters.Add(prop_modifier);
             parameters.Add(prop_value);
-            getCommandManager().ExecCommand(MQLCommand.IndicatorSetString_2, parameters); // MQLCommand ENUM = 158
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IndicatorSetString_2, parameters); // MQLCommand ENUM = 158
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IndicatorBuffers
         /// Description: Allocates memory for buffers used for custom indicator calculations.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorbuffers.html
+        /// URL: http://docs.mql4.com/customind/indicatorbuffers.html
         /// </summary>
         /// <param name="count">[in] Amount of buffers to be allocated. Should be within the range between indicator_buffers and 512 buffers.</param>
         public bool IndicatorBuffers(int count)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(count);
-            getCommandManager().ExecCommand(MQLCommand.IndicatorBuffers_1, parameters); // MQLCommand ENUM = 159
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IndicatorBuffers_1, parameters); // MQLCommand ENUM = 159
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IndicatorCounted
         /// Description: The function returns the amount of bars not changed after the indicator had been launched last.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorcounted.html
+        /// URL: http://docs.mql4.com/customind/indicatorcounted.html
         /// </summary>
         public int IndicatorCounted()
         {
             List<Object> parameters = new List<Object>();
-            getCommandManager().ExecCommand(MQLCommand.IndicatorCounted_1, parameters); // MQLCommand ENUM = 160
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IndicatorCounted_1, parameters); // MQLCommand ENUM = 160
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: IndicatorDigits
         /// Description: Sets precision format (the count of digits after decimal point) to visualize indicator values.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatordigits.html
+        /// URL: http://docs.mql4.com/customind/indicatordigits.html
         /// </summary>
         /// <param name="digits">[in] Precision format, the count of digits after decimal point.</param>
         public void IndicatorDigits(int digits)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(digits);
-            getCommandManager().ExecCommand(MQLCommand.IndicatorDigits_1, parameters); // MQLCommand ENUM = 161
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IndicatorDigits_1, parameters); // MQLCommand ENUM = 161
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
+            getCommandManager().throwExceptionIfErrorResponse(id);
         }
 
         /// <summary>
         /// Function: IndicatorShortName
         /// Description: Sets the "short" name of a custom indicator to be shown in the DataWindow and in the chart subwindow.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorshortname.html
+        /// URL: http://docs.mql4.com/customind/indicatorshortname.html
         /// </summary>
         /// <param name="name">[in] New short name.</param>
         public void IndicatorShortName(string name)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(name);
-            getCommandManager().ExecCommand(MQLCommand.IndicatorShortName_1, parameters); // MQLCommand ENUM = 162
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.IndicatorShortName_1, parameters); // MQLCommand ENUM = 162
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
+            getCommandManager().throwExceptionIfErrorResponse(id);
         }
 
         /// <summary>
         /// Function: SetIndexArrow
         /// Description: Sets an arrow symbol for indicators line of the DRAW_ARROW type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setindexarrow.html
+        /// URL: http://docs.mql4.com/customind/setindexarrow.html
         /// </summary>
         /// <param name="index">[in] Line index. Must lie between 0 and 7.</param>
         /// <param name="code">[in] Symbol code from or predefined .</param>
@@ -3293,18 +3289,18 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(index);
             parameters.Add(code);
-            getCommandManager().ExecCommand(MQLCommand.SetIndexArrow_1, parameters); // MQLCommand ENUM = 163
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SetIndexArrow_1, parameters); // MQLCommand ENUM = 163
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
+            getCommandManager().throwExceptionIfErrorResponse(id);
         }
 
         /// <summary>
         /// Function: SetIndexDrawBegin
         /// Description: Sets the bar number (from the data beginning) from which the drawing of the given indicator line must start.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setindexdrawbegin.html
+        /// URL: http://docs.mql4.com/customind/setindexdrawbegin.html
         /// </summary>
         /// <param name="index">[in] Line index. Must lie between 0 and 7.</param>
         /// <param name="begin">[in] First drawing bar position number.</param>
@@ -3313,18 +3309,18 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(index);
             parameters.Add(begin);
-            getCommandManager().ExecCommand(MQLCommand.SetIndexDrawBegin_1, parameters); // MQLCommand ENUM = 164
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SetIndexDrawBegin_1, parameters); // MQLCommand ENUM = 164
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
+            getCommandManager().throwExceptionIfErrorResponse(id);
         }
 
         /// <summary>
         /// Function: SetIndexEmptyValue
         /// Description: Sets drawing line empty value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setindexemptyvalue.html
+        /// URL: http://docs.mql4.com/customind/setindexemptyvalue.html
         /// </summary>
         /// <param name="index">[in] Line index. Must lie between 0 and 7.</param>
         /// <param name="value">[in] New "empty" value.</param>
@@ -3333,18 +3329,18 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(index);
             parameters.Add(value);
-            getCommandManager().ExecCommand(MQLCommand.SetIndexEmptyValue_1, parameters); // MQLCommand ENUM = 165
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SetIndexEmptyValue_1, parameters); // MQLCommand ENUM = 165
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
+            getCommandManager().throwExceptionIfErrorResponse(id);
         }
 
         /// <summary>
         /// Function: SetIndexLabel
         /// Description: Sets drawing line description for showing in the DataWindow and in the tooltip.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setindexlabel.html
+        /// URL: http://docs.mql4.com/customind/setindexlabel.html
         /// </summary>
         /// <param name="index">[in] Line index. Must lie between 0 and 7.</param>
         /// <param name="text">[in] Label text. NULL means that index value is not shown in the DataWindow.</param>
@@ -3353,18 +3349,18 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(index);
             parameters.Add(text);
-            getCommandManager().ExecCommand(MQLCommand.SetIndexLabel_1, parameters); // MQLCommand ENUM = 166
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SetIndexLabel_1, parameters); // MQLCommand ENUM = 166
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
+            getCommandManager().throwExceptionIfErrorResponse(id);
         }
 
         /// <summary>
         /// Function: SetIndexShift
         /// Description: Sets offset for the drawing line.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setindexshift.html
+        /// URL: http://docs.mql4.com/customind/setindexshift.html
         /// </summary>
         /// <param name="index">[in] Line index. Must lie between 0 and 7.</param>
         /// <param name="shift">[in] Shift value in bars.</param>
@@ -3373,18 +3369,18 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(index);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.SetIndexShift_1, parameters); // MQLCommand ENUM = 167
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SetIndexShift_1, parameters); // MQLCommand ENUM = 167
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
+            getCommandManager().throwExceptionIfErrorResponse(id);
         }
 
         /// <summary>
         /// Function: SetIndexStyle
         /// Description: Sets the new type, style, width and color for a given indicator line.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setindexstyle.html
+        /// URL: http://docs.mql4.com/customind/setindexstyle.html
         /// </summary>
         /// <param name="index">[in] Line index. Must lie between 0 and 7.</param>
         /// <param name="type">[in] Shape style. Can be one of listed.</param>
@@ -3399,18 +3395,18 @@ namespace MQL4CSharp.Base
             parameters.Add(style);
             parameters.Add(width);
             parameters.Add(clr);
-            getCommandManager().ExecCommand(MQLCommand.SetIndexStyle_1, parameters); // MQLCommand ENUM = 168
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SetIndexStyle_1, parameters); // MQLCommand ENUM = 168
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
+            getCommandManager().throwExceptionIfErrorResponse(id);
         }
 
         /// <summary>
         /// Function: SetLevelStyle
         /// Description: The function sets a new style, width and color of horizontal levels of indicator to be output in a separate window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setlevelstyle.html
+        /// URL: http://docs.mql4.com/customind/setlevelstyle.html
         /// </summary>
         /// <param name="draw_style">[in] Drawing style. Can be one of the listed. EMPTY value means that the style will not be changed.</param>
         /// <param name="line_width">[in] Line width. Valid values are 1,2,3,4,5. EMPTY value indicates that the width will not be changed.</param>
@@ -3421,18 +3417,18 @@ namespace MQL4CSharp.Base
             parameters.Add(draw_style);
             parameters.Add(line_width);
             parameters.Add(clr);
-            getCommandManager().ExecCommand(MQLCommand.SetLevelStyle_1, parameters); // MQLCommand ENUM = 169
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SetLevelStyle_1, parameters); // MQLCommand ENUM = 169
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
+            getCommandManager().throwExceptionIfErrorResponse(id);
         }
 
         /// <summary>
         /// Function: SetLevelValue
         /// Description: The function sets a value for a given horizontal level of the indicator to be output in a separate window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setlevelvalue.html
+        /// URL: http://docs.mql4.com/customind/setlevelvalue.html
         /// </summary>
         /// <param name="level">[in] Level index (0-31).</param>
         /// <param name="value">[in] Value for the given indicator level.</param>
@@ -3441,12 +3437,12 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(level);
             parameters.Add(value);
-            getCommandManager().ExecCommand(MQLCommand.SetLevelValue_1, parameters); // MQLCommand ENUM = 170
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.SetLevelValue_1, parameters); // MQLCommand ENUM = 170
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
+            getCommandManager().throwExceptionIfErrorResponse(id);
         }
 
 
@@ -3455,7 +3451,7 @@ namespace MQL4CSharp.Base
         /// <summary>
         /// Function: ObjectCreate
         /// Description: The function creates an object with the specified name, type, and the initial coordinates in the specified chart subwindow of the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectcreate.html
+        /// URL: http://docs.mql4.com/objects/objectcreate.html
         /// </summary>
         /// <param name="chart_id">[in] Chart identifier.</param>
         /// <param name="object_name">[in] Name of the object. The name must be unique within a chart, including its subwindows.</param>
@@ -3476,19 +3472,19 @@ namespace MQL4CSharp.Base
             parameters.Add(price1);
             parameters.Add(timeN);
             parameters.Add(priceN);
-            getCommandManager().ExecCommand(MQLCommand.ObjectCreate_1, parameters); // MQLCommand ENUM = 171
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectCreate_1, parameters); // MQLCommand ENUM = 171
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectCreate
         /// Description: The function creates an object with the specified name, type, and the initial coordinates in the specified chart subwindow of the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectcreate.html
+        /// URL: http://docs.mql4.com/objects/objectcreate.html
         /// </summary>
         /// <param name="object_name">[in] Name of the object. The name must be unique within a chart, including its subwindows.</param>
         /// <param name="object_type">[in] Object type. The value can be one of the values of the enumeration.</param>
@@ -3511,38 +3507,38 @@ namespace MQL4CSharp.Base
             parameters.Add(price2);
             parameters.Add(time3);
             parameters.Add(price3);
-            getCommandManager().ExecCommand(MQLCommand.ObjectCreate_2, parameters); // MQLCommand ENUM = 171
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectCreate_2, parameters); // MQLCommand ENUM = 171
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectName
         /// Description: The function returns the name of the corresponding object by its index in the objects list.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectname.html
+        /// URL: http://docs.mql4.com/objects/objectname.html
         /// </summary>
         /// <param name="object_index">[in] Object index. This value must be greater or equal to 0 and less than .</param>
         public string ObjectName(int object_index)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(object_index);
-            getCommandManager().ExecCommand(MQLCommand.ObjectName_1, parameters); // MQLCommand ENUM = 172
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectName_1, parameters); // MQLCommand ENUM = 172
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectDelete
         /// Description: The function removes the object with the specified name at the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectdelete.html
+        /// URL: http://docs.mql4.com/objects/objectdelete.html
         /// </summary>
         /// <param name="chart_id">[in] Chart identifier.</param>
         /// <param name="object_name">[in] Name of object to be deleted.</param>
@@ -3551,38 +3547,38 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(chart_id);
             parameters.Add(object_name);
-            getCommandManager().ExecCommand(MQLCommand.ObjectDelete_1, parameters); // MQLCommand ENUM = 173
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectDelete_1, parameters); // MQLCommand ENUM = 173
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectDelete
         /// Description: The function removes the object with the specified name at the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectdelete.html
+        /// URL: http://docs.mql4.com/objects/objectdelete.html
         /// </summary>
         /// <param name="object_name">[in] Name of object to be deleted.</param>
         public bool ObjectDelete(string object_name)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(object_name);
-            getCommandManager().ExecCommand(MQLCommand.ObjectDelete_2, parameters); // MQLCommand ENUM = 173
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectDelete_2, parameters); // MQLCommand ENUM = 173
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectsDeleteAll
         /// Description: Removes all objects from the specified chart, specified chart subwindow, of the specified type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html
+        /// URL: http://docs.mql4.com/objects/objectsdeleteall.html
         /// </summary>
         /// <param name="chart_id">[in] Chart identifier.</param>
         /// <param name="sub_window">[in] Number of the chart window. Must be greater or equal to -1 (-1 mean all subwindows, 0 means the main chart window) and less than .</param>
@@ -3593,19 +3589,19 @@ namespace MQL4CSharp.Base
             parameters.Add(chart_id);
             parameters.Add(sub_window);
             parameters.Add(object_type);
-            getCommandManager().ExecCommand(MQLCommand.ObjectsDeleteAll_1, parameters); // MQLCommand ENUM = 174
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectsDeleteAll_1, parameters); // MQLCommand ENUM = 174
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectsDeleteAll
         /// Description: Removes all objects from the specified chart, specified chart subwindow, of the specified type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html
+        /// URL: http://docs.mql4.com/objects/objectsdeleteall.html
         /// </summary>
         /// <param name="sub_window">[in] Number of the chart window. Must be greater or equal to -1 (-1 mean all subwindows, 0 means the main chart window) and less than .</param>
         /// <param name="object_type">[in] Type of the object. The value can be one of the values of the enumeration. EMPTY (-1) means all types.</param>
@@ -3614,19 +3610,19 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(sub_window);
             parameters.Add(object_type);
-            getCommandManager().ExecCommand(MQLCommand.ObjectsDeleteAll_2, parameters); // MQLCommand ENUM = 174
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectsDeleteAll_2, parameters); // MQLCommand ENUM = 174
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectsDeleteAll
         /// Description: Removes all objects from the specified chart, specified chart subwindow, of the specified type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html
+        /// URL: http://docs.mql4.com/objects/objectsdeleteall.html
         /// </summary>
         /// <param name="chart_id">[in] Chart identifier.</param>
         /// <param name="prefix">[in] Prefix in object names. All objects whose names start with this set of characters will be removed from chart. You can specify prefix as 'name' or 'name*' both variants will work the same. If an empty string is specified as the prefix, objects with all possible names will be removed.</param>
@@ -3639,19 +3635,19 @@ namespace MQL4CSharp.Base
             parameters.Add(prefix);
             parameters.Add(sub_window);
             parameters.Add(object_type);
-            getCommandManager().ExecCommand(MQLCommand.ObjectsDeleteAll_3, parameters); // MQLCommand ENUM = 174
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectsDeleteAll_3, parameters); // MQLCommand ENUM = 174
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectFind
         /// Description: The function searches for an object having the specified name. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectfind.html
+        /// URL: http://docs.mql4.com/objects/objectfind.html
         /// </summary>
         /// <param name="chart_id">[in] Chart identifier.</param>
         /// <param name="object_name">[in] The name of the object to find.</param>
@@ -3660,38 +3656,38 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(chart_id);
             parameters.Add(object_name);
-            getCommandManager().ExecCommand(MQLCommand.ObjectFind_1, parameters); // MQLCommand ENUM = 175
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectFind_1, parameters); // MQLCommand ENUM = 175
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectFind
         /// Description: The function searches for an object having the specified name. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectfind.html
+        /// URL: http://docs.mql4.com/objects/objectfind.html
         /// </summary>
         /// <param name="object_name">[in] The name of the object to find.</param>
         public int ObjectFind(string object_name)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(object_name);
-            getCommandManager().ExecCommand(MQLCommand.ObjectFind_2, parameters); // MQLCommand ENUM = 175
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectFind_2, parameters); // MQLCommand ENUM = 175
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectGetTimeByValue
         /// Description: The function returns the time value for the specified price value of the specified object.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgettimebyvalue.html
+        /// URL: http://docs.mql4.com/objects/objectgettimebyvalue.html
         /// </summary>
         /// <param name="object_name">[in] Name of the object.</param>
         /// <param name="value">[in] Price value.</param>
@@ -3702,19 +3698,19 @@ namespace MQL4CSharp.Base
             parameters.Add(object_name);
             parameters.Add(value);
             parameters.Add(line_id);
-            getCommandManager().ExecCommand(MQLCommand.ObjectGetTimeByValue_1, parameters); // MQLCommand ENUM = 176
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectGetTimeByValue_1, parameters); // MQLCommand ENUM = 176
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (DateTime)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (DateTime)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectGetValueByTime
         /// Description: The function returns the price value for the specified time value of the specified object.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetvaluebytime.html
+        /// URL: http://docs.mql4.com/objects/objectgetvaluebytime.html
         /// </summary>
         /// <param name="chart_id">[in] Chart identifier.</param>
         /// <param name="object_name">[in] Name of the object.</param>
@@ -3727,19 +3723,19 @@ namespace MQL4CSharp.Base
             parameters.Add(object_name);
             parameters.Add(time);
             parameters.Add(line_id);
-            getCommandManager().ExecCommand(MQLCommand.ObjectGetValueByTime_1, parameters); // MQLCommand ENUM = 177
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectGetValueByTime_1, parameters); // MQLCommand ENUM = 177
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectMove
         /// Description: The function changes coordinates of the specified anchor point of the object at the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectmove.html
+        /// URL: http://docs.mql4.com/objects/objectmove.html
         /// </summary>
         /// <param name="object_name">[in] Name of the object.</param>
         /// <param name="point_index">[in] Index of the anchor point. The number of anchor points depends on the .</param>
@@ -3752,19 +3748,19 @@ namespace MQL4CSharp.Base
             parameters.Add(point_index);
             parameters.Add(time);
             parameters.Add(price);
-            getCommandManager().ExecCommand(MQLCommand.ObjectMove_1, parameters); // MQLCommand ENUM = 178
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectMove_1, parameters); // MQLCommand ENUM = 178
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectsTotal
         /// Description: The function returns the number of objects of the specified type in the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectstotal.html
+        /// URL: http://docs.mql4.com/objects/objectstotal.html
         /// </summary>
         /// <param name="chart_id">[in] Chart identifier.</param>
         /// <param name="sub_window">[in] Number of the chart subwindow. 0 means the main chart window, -1 means all the subwindows of the chart, including the main window.</param>
@@ -3775,38 +3771,38 @@ namespace MQL4CSharp.Base
             parameters.Add(chart_id);
             parameters.Add(sub_window);
             parameters.Add(type);
-            getCommandManager().ExecCommand(MQLCommand.ObjectsTotal_1, parameters); // MQLCommand ENUM = 179
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectsTotal_1, parameters); // MQLCommand ENUM = 179
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectsTotal
         /// Description: The function returns the number of objects of the specified type in the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectstotal.html
+        /// URL: http://docs.mql4.com/objects/objectstotal.html
         /// </summary>
         /// <param name="type">[in] Type of the object. The value can be one of the values of the enumeration. EMPTY(-1) means all types.</param>
         public int ObjectsTotal(int type)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(type);
-            getCommandManager().ExecCommand(MQLCommand.ObjectsTotal_2, parameters); // MQLCommand ENUM = 179
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectsTotal_2, parameters); // MQLCommand ENUM = 179
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectGetDouble
         /// Description: The function returns the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetdouble.html
+        /// URL: http://docs.mql4.com/objects/objectgetdouble.html
         /// </summary>
         /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
         /// <param name="object_name">[in] Name of the object.</param>
@@ -3819,19 +3815,19 @@ namespace MQL4CSharp.Base
             parameters.Add(object_name);
             parameters.Add(prop_id);
             parameters.Add(prop_modifier);
-            getCommandManager().ExecCommand(MQLCommand.ObjectGetDouble_1, parameters); // MQLCommand ENUM = 180
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectGetDouble_1, parameters); // MQLCommand ENUM = 180
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectGetInteger
         /// Description: The function returns the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetinteger.html
+        /// URL: http://docs.mql4.com/objects/objectgetinteger.html
         /// </summary>
         /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
         /// <param name="object_name">[in] Name of the object.</param>
@@ -3844,19 +3840,19 @@ namespace MQL4CSharp.Base
             parameters.Add(object_name);
             parameters.Add(prop_id);
             parameters.Add(prop_modifier);
-            getCommandManager().ExecCommand(MQLCommand.ObjectGetInteger_1, parameters); // MQLCommand ENUM = 181
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectGetInteger_1, parameters); // MQLCommand ENUM = 181
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (long)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (long)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectGetString
         /// Description: The function returns the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetstring.html
+        /// URL: http://docs.mql4.com/objects/objectgetstring.html
         /// </summary>
         /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
         /// <param name="object_name">[in] Name of the object.</param>
@@ -3869,19 +3865,19 @@ namespace MQL4CSharp.Base
             parameters.Add(object_name);
             parameters.Add(prop_id);
             parameters.Add(prop_modifier);
-            getCommandManager().ExecCommand(MQLCommand.ObjectGetString_1, parameters); // MQLCommand ENUM = 182
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectGetString_1, parameters); // MQLCommand ENUM = 182
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectSetDouble
         /// Description: The function sets the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetdouble.html
+        /// URL: http://docs.mql4.com/objects/objectsetdouble.html
         /// </summary>
         /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
         /// <param name="object_name">[in] Name of the object.</param>
@@ -3894,19 +3890,19 @@ namespace MQL4CSharp.Base
             parameters.Add(object_name);
             parameters.Add(prop_id);
             parameters.Add(prop_value);
-            getCommandManager().ExecCommand(MQLCommand.ObjectSetDouble_1, parameters); // MQLCommand ENUM = 183
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectSetDouble_1, parameters); // MQLCommand ENUM = 183
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectSetDouble
         /// Description: The function sets the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetdouble.html
+        /// URL: http://docs.mql4.com/objects/objectsetdouble.html
         /// </summary>
         /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
         /// <param name="object_name">[in] Name of the object.</param>
@@ -3921,19 +3917,19 @@ namespace MQL4CSharp.Base
             parameters.Add(prop_id);
             parameters.Add(prop_modifier);
             parameters.Add(prop_value);
-            getCommandManager().ExecCommand(MQLCommand.ObjectSetDouble_2, parameters); // MQLCommand ENUM = 183
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectSetDouble_2, parameters); // MQLCommand ENUM = 183
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectSetInteger
         /// Description: The function sets the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetinteger.html
+        /// URL: http://docs.mql4.com/objects/objectsetinteger.html
         /// </summary>
         /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
         /// <param name="object_name">[in] Name of the object.</param>
@@ -3946,19 +3942,19 @@ namespace MQL4CSharp.Base
             parameters.Add(object_name);
             parameters.Add(prop_id);
             parameters.Add(prop_value);
-            getCommandManager().ExecCommand(MQLCommand.ObjectSetInteger_1, parameters); // MQLCommand ENUM = 184
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectSetInteger_1, parameters); // MQLCommand ENUM = 184
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectSetInteger
         /// Description: The function sets the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetinteger.html
+        /// URL: http://docs.mql4.com/objects/objectsetinteger.html
         /// </summary>
         /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
         /// <param name="object_name">[in] Name of the object.</param>
@@ -3973,19 +3969,19 @@ namespace MQL4CSharp.Base
             parameters.Add(prop_id);
             parameters.Add(prop_modifier);
             parameters.Add(prop_value);
-            getCommandManager().ExecCommand(MQLCommand.ObjectSetInteger_2, parameters); // MQLCommand ENUM = 184
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectSetInteger_2, parameters); // MQLCommand ENUM = 184
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectSetString
         /// Description: The function sets the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetstring.html
+        /// URL: http://docs.mql4.com/objects/objectsetstring.html
         /// </summary>
         /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
         /// <param name="object_name">[in] Name of the object.</param>
@@ -3998,19 +3994,19 @@ namespace MQL4CSharp.Base
             parameters.Add(object_name);
             parameters.Add(prop_id);
             parameters.Add(prop_value);
-            getCommandManager().ExecCommand(MQLCommand.ObjectSetString_1, parameters); // MQLCommand ENUM = 185
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectSetString_1, parameters); // MQLCommand ENUM = 185
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectSetString
         /// Description: The function sets the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetstring.html
+        /// URL: http://docs.mql4.com/objects/objectsetstring.html
         /// </summary>
         /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
         /// <param name="object_name">[in] Name of the object.</param>
@@ -4025,19 +4021,19 @@ namespace MQL4CSharp.Base
             parameters.Add(prop_id);
             parameters.Add(prop_modifier);
             parameters.Add(prop_value);
-            getCommandManager().ExecCommand(MQLCommand.ObjectSetString_2, parameters); // MQLCommand ENUM = 185
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectSetString_2, parameters); // MQLCommand ENUM = 185
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: TextSetFont
         /// Description: The function sets the font for displaying the text using drawing methods and returns the result of that operation. Arial font with the size -120 (12 pt) is used by default.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/textsetfont.html
+        /// URL: http://docs.mql4.com/objects/textsetfont.html
         /// </summary>
         /// <param name="name">[in] Font name in the system or the name of the resource containing the font or the path to font file on the disk.</param>
         /// <param name="size">[in] The font size that can be set using positive and negative values. In case of positive values, the size of a displayed text does not depend on the operating system's font size settings. In case of negative values, the value is set in tenths of a point and the text size depends on the operating system settings ("standard scale" or "large scale"). See the Note below for more information about the differences between the modes.</param>
@@ -4050,38 +4046,38 @@ namespace MQL4CSharp.Base
             parameters.Add(size);
             parameters.Add(flags);
             parameters.Add(orientation);
-            getCommandManager().ExecCommand(MQLCommand.TextSetFont_1, parameters); // MQLCommand ENUM = 186
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.TextSetFont_1, parameters); // MQLCommand ENUM = 186
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectDescription
         /// Description: Returns the object description.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectdescription.html
+        /// URL: http://docs.mql4.com/objects/objectdescription.html
         /// </summary>
         /// <param name="object_name">[in] Object name.</param>
         public string ObjectDescription(string object_name)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(object_name);
-            getCommandManager().ExecCommand(MQLCommand.ObjectDescription_1, parameters); // MQLCommand ENUM = 187
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectDescription_1, parameters); // MQLCommand ENUM = 187
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectGet
         /// Description: Returns the value of the specified object property.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectget.html
+        /// URL: http://docs.mql4.com/objects/objectget.html
         /// </summary>
         /// <param name="object_name">[in] Object name.</param>
         /// <param name="index">[in] Object property index. It can be any of the enumeration values.</param>
@@ -4090,19 +4086,19 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(object_name);
             parameters.Add(index);
-            getCommandManager().ExecCommand(MQLCommand.ObjectGet_1, parameters); // MQLCommand ENUM = 188
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectGet_1, parameters); // MQLCommand ENUM = 188
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectGetFiboDescription
         /// Description: Returns the level description of a Fibonacci object.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetfibodescription.html
+        /// URL: http://docs.mql4.com/objects/objectgetfibodescription.html
         /// </summary>
         /// <param name="object_name">[in] Fibonacci object name.</param>
         /// <param name="index">[in] Index of the Fibonacci level (0-31).</param>
@@ -4111,19 +4107,19 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(object_name);
             parameters.Add(index);
-            getCommandManager().ExecCommand(MQLCommand.ObjectGetFiboDescription_1, parameters); // MQLCommand ENUM = 189
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectGetFiboDescription_1, parameters); // MQLCommand ENUM = 189
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (string)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (string)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectGetShiftByValue
         /// Description: The function calculates and returns bar index (shift related to the current bar) for the given price.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetshiftbyvalue.html
+        /// URL: http://docs.mql4.com/objects/objectgetshiftbyvalue.html
         /// </summary>
         /// <param name="object_name">[in] Object name.</param>
         /// <param name="value">[in] Price value.</param>
@@ -4132,19 +4128,19 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(object_name);
             parameters.Add(value);
-            getCommandManager().ExecCommand(MQLCommand.ObjectGetShiftByValue_1, parameters); // MQLCommand ENUM = 190
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectGetShiftByValue_1, parameters); // MQLCommand ENUM = 190
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectGetValueByShift
         /// Description: The function calculates and returns the price value for the specified bar (shift related to the current bar).
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetvaluebyshift.html
+        /// URL: http://docs.mql4.com/objects/objectgetvaluebyshift.html
         /// </summary>
         /// <param name="object_name">[in] Object name.</param>
         /// <param name="shift">[in] Bar index.</param>
@@ -4153,19 +4149,19 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(object_name);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.ObjectGetValueByShift_1, parameters); // MQLCommand ENUM = 191
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectGetValueByShift_1, parameters); // MQLCommand ENUM = 191
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectSet
         /// Description: Changes the value of the specified object property.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectset.html
+        /// URL: http://docs.mql4.com/objects/objectset.html
         /// </summary>
         /// <param name="object_name">[in] Object name.</param>
         /// <param name="index">[in] Object property index. It can be any of enumeration values.</param>
@@ -4176,19 +4172,19 @@ namespace MQL4CSharp.Base
             parameters.Add(object_name);
             parameters.Add(index);
             parameters.Add(value);
-            getCommandManager().ExecCommand(MQLCommand.ObjectSet_1, parameters); // MQLCommand ENUM = 192
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectSet_1, parameters); // MQLCommand ENUM = 192
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectSetFiboDescription
         /// Description: The function sets a new description to a level of a Fibonacci object.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetfibodescription.html
+        /// URL: http://docs.mql4.com/objects/objectsetfibodescription.html
         /// </summary>
         /// <param name="object_name">[in] Object name.</param>
         /// <param name="index">[in] Index of the Fibonacci level (0-31).</param>
@@ -4199,19 +4195,19 @@ namespace MQL4CSharp.Base
             parameters.Add(object_name);
             parameters.Add(index);
             parameters.Add(text);
-            getCommandManager().ExecCommand(MQLCommand.ObjectSetFiboDescription_1, parameters); // MQLCommand ENUM = 193
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectSetFiboDescription_1, parameters); // MQLCommand ENUM = 193
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectSetText
         /// Description: The function c
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsettext.html
+        /// URL: http://docs.mql4.com/objects/objectsettext.html
         /// </summary>
         /// <param name="object_name">[in] Object name.</param>
         /// <param name="text">[in] A text describing the object.</param>
@@ -4226,38 +4222,38 @@ namespace MQL4CSharp.Base
             parameters.Add(font_size);
             parameters.Add(font_name);
             parameters.Add(text_color);
-            getCommandManager().ExecCommand(MQLCommand.ObjectSetText_1, parameters); // MQLCommand ENUM = 194
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectSetText_1, parameters); // MQLCommand ENUM = 194
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: ObjectType
         /// Description: The function returns the object type value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objecttype.html
+        /// URL: http://docs.mql4.com/objects/objecttype.html
         /// </summary>
         /// <param name="object_name">[in] Object name.</param>
         public int ObjectType(string object_name)
         {
             List<Object> parameters = new List<Object>();
             parameters.Add(object_name);
-            getCommandManager().ExecCommand(MQLCommand.ObjectType_1, parameters); // MQLCommand ENUM = 195
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectType_1, parameters); // MQLCommand ENUM = 195
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (int)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (int)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iAC
         /// Description: Calculates the Bill Williams' Accelerator/Decelerator oscillator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iac.html
+        /// URL: http://docs.mql4.com/indicators/iac.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4268,19 +4264,19 @@ namespace MQL4CSharp.Base
             parameters.Add(symbol);
             parameters.Add(timeframe);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iAC_1, parameters); // MQLCommand ENUM = 196
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iAC_1, parameters); // MQLCommand ENUM = 196
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iAD
         /// Description: Calculates the Accumulation/Distribution indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iad.html
+        /// URL: http://docs.mql4.com/indicators/iad.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4291,19 +4287,19 @@ namespace MQL4CSharp.Base
             parameters.Add(symbol);
             parameters.Add(timeframe);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iAD_1, parameters); // MQLCommand ENUM = 197
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iAD_1, parameters); // MQLCommand ENUM = 197
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iADX
         /// Description: Calculates the Average Directional Movement Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iadx.html
+        /// URL: http://docs.mql4.com/indicators/iadx.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4320,19 +4316,19 @@ namespace MQL4CSharp.Base
             parameters.Add(applied_price);
             parameters.Add(mode);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iADX_1, parameters); // MQLCommand ENUM = 198
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iADX_1, parameters); // MQLCommand ENUM = 198
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iAlligator
         /// Description: Calculates the Alligator indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ialligator.html
+        /// URL: http://docs.mql4.com/indicators/ialligator.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4361,19 +4357,19 @@ namespace MQL4CSharp.Base
             parameters.Add(applied_price);
             parameters.Add(mode);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iAlligator_1, parameters); // MQLCommand ENUM = 199
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iAlligator_1, parameters); // MQLCommand ENUM = 199
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iAO
         /// Description: Calculates the Awesome oscillator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iao.html
+        /// URL: http://docs.mql4.com/indicators/iao.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4384,19 +4380,19 @@ namespace MQL4CSharp.Base
             parameters.Add(symbol);
             parameters.Add(timeframe);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iAO_1, parameters); // MQLCommand ENUM = 200
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iAO_1, parameters); // MQLCommand ENUM = 200
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iATR
         /// Description: Calculates the Average True Range indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iatr.html
+        /// URL: http://docs.mql4.com/indicators/iatr.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4409,19 +4405,19 @@ namespace MQL4CSharp.Base
             parameters.Add(timeframe);
             parameters.Add(period);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iATR_1, parameters); // MQLCommand ENUM = 201
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iATR_1, parameters); // MQLCommand ENUM = 201
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iBearsPower
         /// Description: Calculates the Bears Power indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ibearspower.html
+        /// URL: http://docs.mql4.com/indicators/ibearspower.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4436,19 +4432,19 @@ namespace MQL4CSharp.Base
             parameters.Add(period);
             parameters.Add(applied_price);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iBearsPower_1, parameters); // MQLCommand ENUM = 202
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iBearsPower_1, parameters); // MQLCommand ENUM = 202
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iBands
         /// Description: Calculates the Bollinger Bands indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ibands.html
+        /// URL: http://docs.mql4.com/indicators/ibands.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4469,19 +4465,19 @@ namespace MQL4CSharp.Base
             parameters.Add(applied_price);
             parameters.Add(mode);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iBands_1, parameters); // MQLCommand ENUM = 203
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iBands_1, parameters); // MQLCommand ENUM = 203
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iBullsPower
         /// Description: Calculates the Bulls Power indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ibullspower.html
+        /// URL: http://docs.mql4.com/indicators/ibullspower.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4496,19 +4492,19 @@ namespace MQL4CSharp.Base
             parameters.Add(period);
             parameters.Add(applied_price);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iBullsPower_1, parameters); // MQLCommand ENUM = 204
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iBullsPower_1, parameters); // MQLCommand ENUM = 204
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iCCI
         /// Description: Calculates the Commodity Channel Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/icci.html
+        /// URL: http://docs.mql4.com/indicators/icci.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4523,19 +4519,19 @@ namespace MQL4CSharp.Base
             parameters.Add(period);
             parameters.Add(applied_price);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iCCI_1, parameters); // MQLCommand ENUM = 205
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iCCI_1, parameters); // MQLCommand ENUM = 205
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iDeMarker
         /// Description: Calculates the DeMarker indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/idemarker.html
+        /// URL: http://docs.mql4.com/indicators/idemarker.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4548,19 +4544,19 @@ namespace MQL4CSharp.Base
             parameters.Add(timeframe);
             parameters.Add(period);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iDeMarker_1, parameters); // MQLCommand ENUM = 206
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iDeMarker_1, parameters); // MQLCommand ENUM = 206
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iEnvelopes
         /// Description: Calculates the Envelopes indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ienvelopes.html
+        /// URL: http://docs.mql4.com/indicators/ienvelopes.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4583,19 +4579,19 @@ namespace MQL4CSharp.Base
             parameters.Add(deviation);
             parameters.Add(mode);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iEnvelopes_1, parameters); // MQLCommand ENUM = 207
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iEnvelopes_1, parameters); // MQLCommand ENUM = 207
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iForce
         /// Description: Calculates the Force Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iforce.html
+        /// URL: http://docs.mql4.com/indicators/iforce.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4612,19 +4608,19 @@ namespace MQL4CSharp.Base
             parameters.Add(ma_method);
             parameters.Add(applied_price);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iForce_1, parameters); // MQLCommand ENUM = 208
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iForce_1, parameters); // MQLCommand ENUM = 208
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iFractals
         /// Description: Calculates the Fractals indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ifractals.html
+        /// URL: http://docs.mql4.com/indicators/ifractals.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4637,19 +4633,19 @@ namespace MQL4CSharp.Base
             parameters.Add(timeframe);
             parameters.Add(mode);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iFractals_1, parameters); // MQLCommand ENUM = 209
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iFractals_1, parameters); // MQLCommand ENUM = 209
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iGator
         /// Description: Calculates the Gator oscillator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/igator.html
+        /// URL: http://docs.mql4.com/indicators/igator.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4678,19 +4674,19 @@ namespace MQL4CSharp.Base
             parameters.Add(applied_price);
             parameters.Add(mode);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iGator_1, parameters); // MQLCommand ENUM = 210
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iGator_1, parameters); // MQLCommand ENUM = 210
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iIchimoku
         /// Description: Calculates the Ichimoku Kinko Hyo indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iichimoku.html
+        /// URL: http://docs.mql4.com/indicators/iichimoku.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4709,19 +4705,19 @@ namespace MQL4CSharp.Base
             parameters.Add(senkou_span_b);
             parameters.Add(mode);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iIchimoku_1, parameters); // MQLCommand ENUM = 211
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iIchimoku_1, parameters); // MQLCommand ENUM = 211
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iBWMFI
         /// Description: Calculates the Market Facilitation Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ibwmfi.html
+        /// URL: http://docs.mql4.com/indicators/ibwmfi.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4732,19 +4728,19 @@ namespace MQL4CSharp.Base
             parameters.Add(symbol);
             parameters.Add(timeframe);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iBWMFI_1, parameters); // MQLCommand ENUM = 212
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iBWMFI_1, parameters); // MQLCommand ENUM = 212
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iMomentum
         /// Description: Calculates the Momentum indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/imomentum.html
+        /// URL: http://docs.mql4.com/indicators/imomentum.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4759,19 +4755,19 @@ namespace MQL4CSharp.Base
             parameters.Add(period);
             parameters.Add(applied_price);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iMomentum_1, parameters); // MQLCommand ENUM = 213
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iMomentum_1, parameters); // MQLCommand ENUM = 213
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iMFI
         /// Description: Calculates the Money Flow Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/imfi.html
+        /// URL: http://docs.mql4.com/indicators/imfi.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4784,19 +4780,19 @@ namespace MQL4CSharp.Base
             parameters.Add(timeframe);
             parameters.Add(period);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iMFI_1, parameters); // MQLCommand ENUM = 214
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iMFI_1, parameters); // MQLCommand ENUM = 214
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iMA
         /// Description: Calculates the Moving Average indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ima.html
+        /// URL: http://docs.mql4.com/indicators/ima.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4815,19 +4811,19 @@ namespace MQL4CSharp.Base
             parameters.Add(ma_method);
             parameters.Add(applied_price);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iMA_1, parameters); // MQLCommand ENUM = 215
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iMA_1, parameters); // MQLCommand ENUM = 215
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iOsMA
         /// Description: iOsMA
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iosma.html
+        /// URL: http://docs.mql4.com/indicators/iosma.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4846,19 +4842,19 @@ namespace MQL4CSharp.Base
             parameters.Add(signal_period);
             parameters.Add(applied_price);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iOsMA_1, parameters); // MQLCommand ENUM = 216
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iOsMA_1, parameters); // MQLCommand ENUM = 216
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iMACD
         /// Description: Calculates the Moving Averages Convergence/Divergence indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/imacd.html
+        /// URL: http://docs.mql4.com/indicators/imacd.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4879,19 +4875,19 @@ namespace MQL4CSharp.Base
             parameters.Add(applied_price);
             parameters.Add(mode);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iMACD_1, parameters); // MQLCommand ENUM = 217
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iMACD_1, parameters); // MQLCommand ENUM = 217
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iOBV
         /// Description: Calculates the On Balance Volume indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iobv.html
+        /// URL: http://docs.mql4.com/indicators/iobv.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4904,19 +4900,19 @@ namespace MQL4CSharp.Base
             parameters.Add(timeframe);
             parameters.Add(applied_price);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iOBV_1, parameters); // MQLCommand ENUM = 218
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iOBV_1, parameters); // MQLCommand ENUM = 218
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iSAR
         /// Description: Calculates the Parabolic Stop and Reverse system indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/isar.html
+        /// URL: http://docs.mql4.com/indicators/isar.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4931,19 +4927,19 @@ namespace MQL4CSharp.Base
             parameters.Add(step);
             parameters.Add(maximum);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iSAR_1, parameters); // MQLCommand ENUM = 219
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iSAR_1, parameters); // MQLCommand ENUM = 219
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iRSI
         /// Description: Calculates the Relative Strength Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/irsi.html
+        /// URL: http://docs.mql4.com/indicators/irsi.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4958,19 +4954,19 @@ namespace MQL4CSharp.Base
             parameters.Add(period);
             parameters.Add(applied_price);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iRSI_1, parameters); // MQLCommand ENUM = 220
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iRSI_1, parameters); // MQLCommand ENUM = 220
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iRVI
         /// Description: Calculates the Relative Vigor Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/irvi.html
+        /// URL: http://docs.mql4.com/indicators/irvi.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -4985,19 +4981,19 @@ namespace MQL4CSharp.Base
             parameters.Add(period);
             parameters.Add(mode);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iRVI_1, parameters); // MQLCommand ENUM = 221
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iRVI_1, parameters); // MQLCommand ENUM = 221
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iStdDev
         /// Description: Calculates the Standard Deviation indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/istddev.html
+        /// URL: http://docs.mql4.com/indicators/istddev.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -5016,19 +5012,19 @@ namespace MQL4CSharp.Base
             parameters.Add(ma_method);
             parameters.Add(applied_price);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iStdDev_1, parameters); // MQLCommand ENUM = 222
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iStdDev_1, parameters); // MQLCommand ENUM = 222
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iStochastic
         /// Description: Calculates the Stochastic Oscillator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/istochastic.html
+        /// URL: http://docs.mql4.com/indicators/istochastic.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -5051,19 +5047,19 @@ namespace MQL4CSharp.Base
             parameters.Add(price_field);
             parameters.Add(mode);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iStochastic_1, parameters); // MQLCommand ENUM = 223
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iStochastic_1, parameters); // MQLCommand ENUM = 223
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
         /// <summary>
         /// Function: iWPR
         /// Description: Calculates the Larry Williams' Percent Range and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iwpr.html
+        /// URL: http://docs.mql4.com/indicators/iwpr.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -5076,13 +5072,13 @@ namespace MQL4CSharp.Base
             parameters.Add(timeframe);
             parameters.Add(period);
             parameters.Add(shift);
-            getCommandManager().ExecCommand(MQLCommand.iWPR_1, parameters); // MQLCommand ENUM = 224
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.iWPR_1, parameters); // MQLCommand ENUM = 224
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double)getCommandManager().GetCommandResult(id);
         }
 
 
@@ -5090,7 +5086,7 @@ namespace MQL4CSharp.Base
         /// <summary>
         /// Function: ObjectCreate
         /// Description: The function creates an object with the specified name, type, and the initial coordinates in the specified chart subwindow of the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectcreate.html
+        /// URL: http://docs.mql4.com/objects/objectcreate.html
         /// </summary>
         /// <param name="object_name">[in] Name of the object. The name must be unique within a chart, including its subwindows.</param>
         /// <param name="object_type">[in] Object type. The value can be one of the values of the enumeration.</param>
@@ -5107,20 +5103,20 @@ namespace MQL4CSharp.Base
             parameters.Add(sub_window);
             parameters.Add(time1);
             parameters.Add(price1);
-            getCommandManager().ExecCommand(MQLCommand.ObjectCreate_3, parameters); // MQLCommand ENUM = 1001
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.ObjectCreate_3, parameters); // MQLCommand ENUM = 1001
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (bool)getCommandManager().GetCommandResult();
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (bool)getCommandManager().GetCommandResult(id);
         }
 
 
         /// <summary>
         /// Function: MarketInfo
         /// Description: Returns various data about securities listed in the "Market Watch" window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/marketinformation/marketinfo.html
+        /// URL: http://docs.mql4.com/marketinformation/marketinfo.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name.</param>
         /// <param name="type">[in] Request of information to be returned. Can be any of values of request identifiers.</param>
@@ -5129,13 +5125,13 @@ namespace MQL4CSharp.Base
             List<Object> parameters = new List<Object>();
             parameters.Add(symbol);
             parameters.Add((int)MARKET_INFO.MODE_TIME);
-            getCommandManager().ExecCommand(MQLCommand.MarketInfo_1, parameters); // MQLCommand ENUM = 1002
-            while (getCommandManager().IsCommandRunning())
+            int id = getCommandManager().ExecCommand(MQLCommand.MarketInfo_1, parameters); // MQLCommand ENUM = 1002
+            while (getCommandManager().IsCommandRunning(id))
             {
                 //Thread.Sleep(1);
             }
-            getCommandManager().throwExceptionIfErrorResponse();
-            return DateUtil.FromUnixTime(Convert.ToInt64(getCommandManager().GetCommandResult()));
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return DateUtil.FromUnixTime(Convert.ToInt64(getCommandManager().GetCommandResult(id)));
         }
 
 
@@ -5143,7 +5139,7 @@ namespace MQL4CSharp.Base
         /// <summary>
         /// Function: iCustom
         /// Description: Calculates the specified custom indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/icustom.html
+        /// URL: http://docs.mql4.com/indicators/icustom.html
         /// </summary>
         /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
         /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
@@ -5159,10 +5155,10 @@ namespace MQL4CSharp.Base
             parameters.Add(mode);
             parameters.Add(shift);
 
-            getCommandManager().ExecCommand(MQLCommand.iCustom_1, parameters); // MQLCommand ENUM = 1000
-            while (getCommandManager().IsCommandRunning()) Thread.Sleep(1);
-            getCommandManager().throwExceptionIfErrorResponse();
-            return (double) getCommandManager().GetCommandResult();
+            int id = getCommandManager().ExecCommand(MQLCommand.iCustom_1, parameters); // MQLCommand ENUM = 1000
+            while (getCommandManager().IsCommandRunning(id)) Thread.Sleep(1);
+            getCommandManager().throwExceptionIfErrorResponse(id);
+            return (double) getCommandManager().GetCommandResult(id);
         }*/
 
     }

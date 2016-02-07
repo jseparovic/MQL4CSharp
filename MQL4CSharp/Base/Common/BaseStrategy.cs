@@ -111,7 +111,7 @@ namespace MQL4CSharp.Base
                         SignalResult signal = this.evaluate(symbol);
                         if (signal.getSignal() != SignalResult.NEUTRAL)
                         {
-                            LOG.Info("Executing...");
+                            //LOG.Info("Executing...");
                             this.executeTrade(symbol, signal);
                         }
                     }

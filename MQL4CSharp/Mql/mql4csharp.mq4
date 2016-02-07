@@ -21,41 +21,39 @@ limitations under the License.
 
 #import "MQL4CSharp.dll"
 void InitLogging();
-int InitRates(MqlRates&[], int);
-int InitCommandManager();
-int ExecOnInit(string);
-
-void SetRatesSize(int, int);
-void ExecOnDeinit(int);
-void ExecOnTick(int);
-void ExecOnTimer(int);
-bool IsExecutingOnTick(int);
-bool IsCommandWaiting(int);
-int GetCommandId(int);
-void GetCommandName(int, string &cmdName);
-void GetCommandParams(int, string &cmdParams);
-void SetBoolCommandResponse(int, bool, int);
-void SetDoubleCommandResponse(int, double, int);
-void SetIntCommandResponse(int, int, int);
-void SetStringCommandResponse(int, string, int);
-void SetVoidCommandResponse(int, int);
-void SetLongCommandResponse(int, long, int);
-void SetDateTimeCommandResponse(int, datetime, int);
-void SetEnumCommandResponse(int, int, int);
+int ExecOnInit(long, string);
+int InitRates(long, MqlRates&[], int);
+void SetRatesSize(long, int);
+void ExecOnDeinit(long);
+void ExecOnTick(long);
+void ExecOnTimer(long);
+bool IsExecutingOnInit(long);
+bool IsExecutingOnTick(long);
+bool IsCommandManagerReady(long);
+int IsCommandWaiting(long);
+int GetCommandId(long, int);
+void GetCommandName(long, int, string &cmdName);
+void GetCommandParams(long, int, string &cmdParams);
+void SetBoolCommandResponse(long, int, bool, int);
+void SetDoubleCommandResponse(long, int, double, int);
+void SetIntCommandResponse(long, int, int, int);
+void SetStringCommandResponse(long, int, string, int);
+void SetVoidCommandResponse(long, int, int);
+void SetLongCommandResponse(long, int, long, int);
+void SetDateTimeCommandResponse(long, int, datetime, int);
+void SetEnumCommandResponse(long, int, int, int);
 #import
 
  
 int ratesSize;
 MqlRates rates[];
-int ratesIx;
-int expertIx;
-int commandManagerIx;
+long index;
  
 input string CSharpFullTypeName = "MQL4CSharp.UserDefined.Strategy.MaCrossStrategy"; 
  
 char DELIM = 29;
 
-void maintainRates(int ix)
+void maintainRates(long ix)
 {
    // update rates array size
    if(ratesSize != ArraySize(rates)) 
@@ -65,16 +63,17 @@ void maintainRates(int ix)
 }
 
 
-bool executeCommands(int ix)
+bool executeCommands(long ix)
 {
-   //Print("IsCommandWaiting(): " + IsCommandWaiting());      
-   if(IsCommandWaiting(ix))
+   //Print("IsCommandWaiting(): " + IsCommandWaiting(ix, requestId));
+   int requestId;
+   while((requestId = IsCommandWaiting(ix)) != -1)
    {
-      int id = GetCommandId(ix);
+      int id = GetCommandId(ix, requestId);
       string name = "";
       string params = "";
-      GetCommandName(ix, name);
-      GetCommandParams(ix, params);
+      GetCommandName(ix, requestId, name);
+      GetCommandParams(ix, requestId, params);
       
       //Print("name: " +  name);
       //Print("params: " +  params);
@@ -94,56 +93,52 @@ bool executeCommands(int ix)
          bool boolresult = executeBoolCommand(id, paramArray);
          error = GetLastError();
          //Print ("command: " + name + ", params" + params + ", result: " + boolresult + ", error: " + error);
-         SetBoolCommandResponse(ix, boolresult, error);
+         SetBoolCommandResponse(ix, requestId, boolresult, error);
       }
       else if(returnType == RETURN_TYPE_DOUBLE)
       {
          double doubleresult = executeDoubleCommand(id, paramArray);
          error = GetLastError();
          //Print ("command: " + name + ", params" + params + ", result: " + doubleresult + ", error: " + error);
-         SetDoubleCommandResponse(ix, doubleresult, error);
+         SetDoubleCommandResponse(ix, requestId, doubleresult, error);
       }
       else if(returnType == RETURN_TYPE_INT)
       {
          int intresult = executeIntCommand(id, paramArray);
          error = GetLastError();
-         if(StringCompare(name, "OrdersTotal") == 0)
-         {
-            Print ("command: " + name + ", params" + params + ", result: " + intresult + ", error: " + error);
-         }
-         SetIntCommandResponse(ix, intresult, error);
+         //if(StringCompare(name, "OrdersTotal") == 0)
+         //{
+         //   Print ("command: " + name + ", params" + params + ", result: " + intresult + ", error: " + error);
+         //}
+         SetIntCommandResponse(ix, requestId, intresult, error);
       }
       else if(returnType == RETURN_TYPE_STRING)
       {
          string stringresult = executeStringCommand(id, paramArray);
          error = GetLastError();
          //Print ("command: " + name + ", params" + params + ", result: " + stringresult + ", error: " + error);
-         SetStringCommandResponse(ix, stringresult, error);
+         SetStringCommandResponse(ix, requestId, stringresult, error);
       }
       else if(returnType == RETURN_TYPE_VOID)
       {
          executeVoidCommand(id, paramArray);
          //Print ("command: " + name + ", params" + params + ", error: " + error);
-         SetVoidCommandResponse(ix, GetLastError());
+         SetVoidCommandResponse(ix, requestId, GetLastError());
       }
       else if(returnType == RETURN_TYPE_LONG)
       {
          long longresult = executeLongCommand(id, paramArray);
          error = GetLastError();
          //Print ("command: " + name + ", params" + params + ", result: " + longresult + ", error: " + error);
-         SetLongCommandResponse(ix, longresult, error);
+         SetLongCommandResponse(ix, requestId, longresult, error);
       }
       else if(returnType == RETURN_TYPE_DATETIME)
       {
          datetime datetimeresult = executeDateTimeCommand(id, paramArray);
          error = GetLastError();
          //Print ("command: " + name + ", params" + params + ", result: " + datetimeresult + ", error: " + error);
-         SetDateTimeCommandResponse(ix, datetimeresult, error);
+         SetDateTimeCommandResponse(ix, requestId, datetimeresult, error);
       }
-      
-      params = NULL;
-      name = NULL;
-      id = NULL;
    }
    return false;
 }
@@ -153,51 +148,61 @@ int OnInit()
    EventSetMillisecondTimer(1);
 
    // Initialize log4net
-   //Print("Initializing logging");
+   Print("Initializing logging");
    InitLogging();
    
    // Copy the rates array and pass it to the library
-   //Print("Initializing rates");
-   ArrayCopyRates(rates,NULL,0);
+   ArrayCopyRates(rates, NULL, 0);
    ratesSize = ArraySize(rates);
-   ratesIx = InitRates(rates, ratesSize);
-
-   expertIx = ExecOnInit(CSharpFullTypeName);
+   index = ChartID();
+   Print("ExecOnInit: " + index + ", " + CSharpFullTypeName);
+   ExecOnInit(index, CSharpFullTypeName);
    
-   commandManagerIx = InitCommandManager();
-
-   // execute commands that are waiting
-   executeCommands(commandManagerIx);
+   Print("Waiting for Command Manager");
+   while(!IsCommandManagerReady(index))
+   {
    
+   }
+   
+   Print("executeCommands");
+   while(IsExecutingOnInit(index))
+   {
+      executeCommands(index);
+   }
+
+   Print("Initializing rates");
+   InitRates(index, rates, ratesSize);
+
+   Print("OnInit complete");
    return(INIT_SUCCEEDED);
 }
  
 void OnDeinit(const int reason)
 {
    // Call the DLL onDeinit
-   ExecOnDeinit(expertIx);
+   ExecOnDeinit(index);
 }
  
 void OnTick()
 {
    // Call the DLL onTick
-   ExecOnTick(expertIx);
+   ExecOnTick(index);
 
    // execute commands that are waiting
-   while(IsExecutingOnTick(commandManagerIx))
+   while(IsExecutingOnTick(index))
    {
-      executeCommands(commandManagerIx);
+      executeCommands(index);
    }
       
    // Keep the rates array size up to date
-   maintainRates(ratesIx);
+   maintainRates(index);
 }
 
 
 void OnTimer()
 {
-   ExecOnTimer(expertIx);
+   ExecOnTimer(index);
 
    // execute commands that are waiting
-   executeCommands(commandManagerIx);
+   executeCommands(index);
 }

@@ -18,6 +18,7 @@ using System;
 using RGiesecke.DllExport;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using log4net;
 using mqlsharp.Util;
@@ -30,54 +31,61 @@ namespace MQL4CSharp.Base.MQL
     {
         private static readonly ILog LOG = LogManager.GetLogger(typeof(MQLCommandManager));
 
-        private MQLCommand command;
-        private List<Object> parameters;
-        private Boolean commandWaiting;
-        private Object response;
-        private int error;
         private Int64 ix;
 
+        private Dictionary<int, MQLCommandRequest> commandRequests;
+
+        private static readonly object syncLock = new object();
+
         static char DELIMITER = (char)29;
+
+        private int counter;
 
         public MQLCommandManager(Int64 ix)
         {
             LOG.Debug(String.Format("Initializing MQLCommandManager: {0}", ix));
-
-            this.commandWaiting = false;
-            this.error = 0;
+            this.commandRequests = new Dictionary<int, MQLCommandRequest>();
             this.ix = ix;
+            counter = 0;
         }
 
-        public void ExecCommand(MQLCommand command, List<Object> parameters)
+        public int ExecCommand(MQLCommand command, List<Object> parameters)
         {
-            this.command = command;
-            this.parameters = parameters;
-            this.commandWaiting = true;
-            this.error = 0;
+            int id;
+            lock (syncLock)
+            {
+                id = counter++;
+                commandRequests[id] = new MQLCommandRequest(id, command, parameters);
+            }
+            return id;
         }
 
-        public bool IsCommandRunning()
+        public bool IsCommandRunning(int id)
         {
-            return commandWaiting;
+            return commandRequests[id].CommandWaiting;
         }
 
-        public Object GetCommandResult()
+        public Object GetCommandResult(int id)
         {
-            return response;
+            lock (syncLock)
+            {
+                Object response = commandRequests[id].Response;
+                commandRequests.Remove(id);
+                return response;
+            }
         }
-
 
         public static MQLCommandManager getInstance(Int64 ix)
         {
             return DLLObjectWrapper.getInstance().getMQLCommandManager(ix);
         }
 
-        public String getCommandParams()
+        public String getCommandParams(int id)
         {
             StringBuilder commandParams = new StringBuilder();
 
             string returnCommand = "";
-            foreach (Object p in parameters)
+            foreach (Object p in commandRequests[id].Parameters)
             {
                 Object param = p;
                 if (param is DateTime)
@@ -96,14 +104,14 @@ namespace MQL4CSharp.Base.MQL
         }
 
 
-        private void setCommandResponse(object response, int errorCode)
+        private void setCommandResponse(int id, object response, int errorCode)
         {
             try
             {
-                //LOG.Debug(String.Format("SetCommandResponse({0},{1})", response, errorCode));
-                this.response = response;
-                this.error = errorCode;
-                this.commandWaiting = false;
+                //LOG.Debug(String.Format("SetCommandResponse({0},{1},{2})", id, response, errorCode));
+                commandRequests[id].Response = response;
+                commandRequests[id].Error = errorCode;
+                commandRequests[id].CommandWaiting = false;
             }
             catch (Exception e)
             {
@@ -111,38 +119,49 @@ namespace MQL4CSharp.Base.MQL
             }
         }
 
-        public void throwExceptionIfErrorResponse()
+        public void throwExceptionIfErrorResponse(int id)
         {
-            if (this.error > 0)
+            if (commandRequests[id].Error > 0)
             {
-                MQLExceptions.throwMQLException(error, command.ToString() + "(" + getCommandParams() + ")");
+                MQLExceptions.throwMQLException(commandRequests[id].Error, commandRequests[id].Command.ToString() 
+                                                    + "(" + getCommandParams(id) + ")");
             }
         }
 
 
         [DllExport("IsCommandWaiting", CallingConvention = CallingConvention.StdCall)]
-        public static bool IsCommandWaiting(Int64 ix)
+        public static int IsCommandWaiting(Int64 ix)
         {
             try
             {
-                return getInstance(ix).commandWaiting;
+                lock (syncLock)
+                {
+                    foreach (KeyValuePair<int, MQLCommandRequest> commandRequest in getInstance(ix).commandRequests)
+                    {
+                        if (commandRequest.Value.CommandWaiting)
+                        {
+                            return commandRequest.Key;
+                        }
+                    }
+                }
+                return -1;
             }
             catch (Exception e)
             {
                 LOG.Error(e);
-                return false;
+                return -1;
             }
         }
 
 
         [DllExport("GetCommandId", CallingConvention = CallingConvention.StdCall)]
-        public static int GetCommandId(Int64 ix)
+        public static int GetCommandId(Int64 ix, int id)
         {
             try
             {
-                if (getInstance(ix).commandWaiting)
+                if (getInstance(ix).commandRequests[id].CommandWaiting)
                 {
-                    return (int)getInstance(ix).command;
+                    return (int) getInstance(ix).commandRequests[id].Command;
                 }
                 else
                 {
@@ -159,13 +178,13 @@ namespace MQL4CSharp.Base.MQL
 
 
         [DllExport("GetCommandName", CallingConvention = CallingConvention.StdCall)]
-        public static void GetCommandName(Int64 ix, [In, Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder commandName)
+        public static void GetCommandName(Int64 ix, int id, [In, Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder commandName)
         {
             try
             {
-                if (getInstance(ix).commandWaiting)
+                if (getInstance(ix).commandRequests[id].CommandWaiting)
                 {
-                    commandName.Append(getInstance(ix).command.ToString());
+                    commandName.Append(getInstance(ix).commandRequests[id].Command.ToString());
                 }
                 else
                 {
@@ -180,13 +199,13 @@ namespace MQL4CSharp.Base.MQL
         }
 
         [DllExport("GetCommandParams", CallingConvention = CallingConvention.StdCall)]
-        public static void GetCommandParams(Int64 ix, [In, Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder commandParams)
+        public static void GetCommandParams(Int64 ix, int id, [In, Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder commandParams)
         {
             try
             {
-                if (getInstance(ix).commandWaiting)
+                if (getInstance(ix).commandRequests[id].CommandWaiting)
                 {
-                    commandParams.Append(getInstance(ix).getCommandParams());
+                    commandParams.Append(getInstance(ix).getCommandParams(id));
                 }
                 else
                 {
@@ -202,51 +221,51 @@ namespace MQL4CSharp.Base.MQL
         }
 
         [DllExport("SetBoolCommandResponse", CallingConvention = CallingConvention.StdCall)]
-        public static void SetBoolCommandResponse(Int64 ix, bool response, int error)
+        public static void SetBoolCommandResponse(Int64 ix, int id, bool response, int error)
         {
-            getInstance(ix).setCommandResponse(response, error);
+            getInstance(ix).setCommandResponse(id, response, error);
         }
 
         [DllExport("SetDoubleCommandResponse", CallingConvention = CallingConvention.StdCall)]
-        public static void SetDoubleCommandResponse(Int64 ix, double response, int error)
+        public static void SetDoubleCommandResponse(Int64 ix, int id, double response, int error)
         {
-            getInstance(ix).setCommandResponse(response, error);
+            getInstance(ix).setCommandResponse(id, response, error);
         }
 
         [DllExport("SetIntCommandResponse", CallingConvention = CallingConvention.StdCall)]
-        public static void SetIntCommandResponse(Int64 ix, int response, int error)
+        public static void SetIntCommandResponse(Int64 ix, int id, int response, int error)
         {
-            getInstance(ix).setCommandResponse(response, error);
+            getInstance(ix).setCommandResponse(id, response, error);
         }
 
         [DllExport("SetStringCommandResponse", CallingConvention = CallingConvention.StdCall)]
-        public static void SetStringCommandResponse(Int64 ix, [MarshalAs(UnmanagedType.LPWStr)] string response, int error)
+        public static void SetStringCommandResponse(Int64 ix, int id, [MarshalAs(UnmanagedType.LPWStr)] string response, int error)
         {
-            getInstance(ix).setCommandResponse(response, error);
+            getInstance(ix).setCommandResponse(id, response, error);
         }
 
         [DllExport("SetVoidCommandResponse", CallingConvention = CallingConvention.StdCall)]
-        public static void SetVoidCommandResponse(Int64 ix, int error)
+        public static void SetVoidCommandResponse(Int64 ix, int id, int error)
         {
-            getInstance(ix).setCommandResponse(null, error);
+            getInstance(ix).setCommandResponse(id, null, error);
         }
 
         [DllExport("SetLongCommandResponse", CallingConvention = CallingConvention.StdCall)]
-        public static void SetLongCommandResponse(Int64 ix, long response, int error)
+        public static void SetLongCommandResponse(Int64 ix, int id, long response, int error)
         {
-            getInstance(ix).setCommandResponse(response, error);
+            getInstance(ix).setCommandResponse(id, response, error);
         }
 
         [DllExport("SetDateTimeCommandResponse", CallingConvention = CallingConvention.StdCall)]
-        public static void SetDateTimeCommandResponse(Int64 ix, Int64 response, int error)
+        public static void SetDateTimeCommandResponse(Int64 ix, int id, Int64 response, int error)
         {
-            getInstance(ix).setCommandResponse(DateUtil.FromUnixTime(response), error);
+            getInstance(ix).setCommandResponse(id, DateUtil.FromUnixTime(response), error);
         }
 
         [DllExport("SetEnumCommandResponse", CallingConvention = CallingConvention.StdCall)]
-        public static void SetEnumCommandResponse(Int64 ix, int response, int error)
+        public static void SetEnumCommandResponse(Int64 ix, int id, int response, int error)
         {
-            getInstance(ix).setCommandResponse(response, error);
+            getInstance(ix).setCommandResponse(id, response, error);
         }
     }
 }

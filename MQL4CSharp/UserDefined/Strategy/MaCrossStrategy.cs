@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 using System;
+using mqlsharp.Util;
 using MQL4CSharp.Base.Common;
 using MQL4CSharp.Base.Enums;
 using MQL4CSharp.UserDefined.Filter;
@@ -118,7 +119,7 @@ namespace MQL4CSharp.UserDefined.Strategy
 
         public override DateTime getExpiry(string symbol, SignalResult signal)
         {
-            throw new NotImplementedException();
+            return DateUtil.FromUnixTime(0); //epoch
         }
 
         public override double getLotSize(string symbol, double stopDistance)
