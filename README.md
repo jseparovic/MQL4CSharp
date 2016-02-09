@@ -37,13 +37,22 @@ You can also just extend the base MQL type which just contains the metatrader fu
 
 I'm using log4net for C# logging, and SmartThreadPool for concurrency.
 
+## REST API
 I've tested https://github.com/scottoffen/Grapevine and it works nicely.
-Currently you need to run Metatrader as administrator if you want to attach to an outside interface. Loopback works for unpriveleged user. Have manually implemented /accountbalance, and will add the rest in the next commit
+Currently you need to run Metatrader as administrator if you want to attach to an outside interface. Loopback works for unpriveleged user.
+By default you can connect to http://localhost:1234/
+Check it out in action: http://screencast.com/t/L99aBY9LiRU
 
-Next I will add https://github.com/sta/websocket-sharp implementation to provide onTick events such as Rates unpdates
+While I'm still building, there's not much in the way of Docs, but you can checkout https://github.com/jseparovic/MQL4CSharp/blob/master/MQL4CSharp/Base/REST/MQLRESTResource.cs for the full API implementation.
+It supports the same as the MQLBase class.
+
+There's 2 ways of building REST URIs, either use the global one when you don't care which chart the command will run on, or you can specify the chartid in the URI http://localhost:1234/{chartid}/ (for objectcreate, etc)
+
+I'll also add a websockets implementation possibly using https://github.com/sta/websocket-sharp to provide onTick events such as Rates unpdates
 And also events for Order Open/Modify/Close operations.
 
-Both REST and Websocket implementations will be able to leveraged from Custom Strategies you create. So if you want to tell your pretty JS frontend that something has happened in the terminal, then use the events api, and if you want to drive commands from your pretty JS frontend you can make REST requests to the terminal.
+Both REST and Websocket implementations will be able to leveraged from Custom Strategies you create. So if you want to tell your frontend that something has happened in the terminal, then use the events api, and if you want to drive commands from your frontend you can make REST requests to the terminal.
+
 
 ## Installation Notes:
 - Modify the build output path in MQL4CSharp properties in Visual Studio 2015 to match you metatrader terminal library directory (in mt4: file->open data folder)
