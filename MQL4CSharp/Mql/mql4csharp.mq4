@@ -42,6 +42,8 @@ void SetVoidCommandResponse(long, int, int);
 void SetLongCommandResponse(long, int, long, int);
 void SetDateTimeCommandResponse(long, int, datetime, int);
 void SetEnumCommandResponse(long, int, int, int);
+bool CommandLock(long);
+bool CommandUnlock(long);
 #import
 
  
@@ -53,6 +55,8 @@ input string CSharpFullTypeName = "MQL4CSharp.UserDefined.Strategy.MaCrossStrate
  
 char DELIM = 29;
 
+int DEFAULT_CHART_ID = 0;
+
 void maintainRates(long ix)
 {
    // update rates array size
@@ -62,86 +66,97 @@ void maintainRates(long ix)
    }
 }
 
-
 bool executeCommands(long ix)
 {
-   //Print("IsCommandWaiting(): " + IsCommandWaiting(ix, requestId));
+   //Print("IsCommandWaiting(): " + IsCommandWaiting(ix));
    int requestId;
    while((requestId = IsCommandWaiting(ix)) != -1)
    {
-      int id = GetCommandId(ix, requestId);
-      string name = "";
-      string params = "";
-      GetCommandName(ix, requestId, name);
-      GetCommandParams(ix, requestId, params);
+      //Print("Executing Commands");
+      if(CommandLock(ix))
+      {
+         //Print("Locked");
+         int id = GetCommandId(ix, requestId);
+         string name = "";
+         string params = "";
+         GetCommandName(ix, requestId, name);
+         GetCommandParams(ix, requestId, params);
+         
+         //Print("name: " +  name);
+         //Print("params: " +  params);
+   
+         // Parse the command
+         string paramArray[];
+         StringSplit(params, DELIM, paramArray);
+   
+         int returnType = getCommandReturnType(id);
+   
+         // reset last error
+         ResetLastError();
+         
+         int error;
+         if(returnType == RETURN_TYPE_BOOL)
+         {
+            bool boolresult = executeBoolCommand(id, paramArray);
+            error = GetLastError();
+            //Print ("command: " + name + ", params" + params + ", result: " + boolresult + ", error: " + error);
+            SetBoolCommandResponse(ix, requestId, boolresult, error);
+         }
+         else if(returnType == RETURN_TYPE_DOUBLE)
+         {
+            double doubleresult = executeDoubleCommand(id, paramArray);
+            error = GetLastError();
+            //Print ("command: " + name + ", params" + params + ", result: " + doubleresult + ", error: " + error);
+            SetDoubleCommandResponse(ix, requestId, doubleresult, error);
+         }
+         else if(returnType == RETURN_TYPE_INT)
+         {
+            int intresult = executeIntCommand(id, paramArray);
+            error = GetLastError();
+            //if(StringCompare(name, "OrdersTotal") == 0)
+            //{
+            //   Print ("command: " + name + ", params" + params + ", result: " + intresult + ", error: " + error);
+            //}
+            SetIntCommandResponse(ix, requestId, intresult, error);
+         }
+         else if(returnType == RETURN_TYPE_STRING)
+         {
+            string stringresult = executeStringCommand(id, paramArray);
+            error = GetLastError();
+            //Print ("command: " + name + ", params" + params + ", result: " + stringresult + ", error: " + error);
+            SetStringCommandResponse(ix, requestId, stringresult, error);
+         }
+         else if(returnType == RETURN_TYPE_VOID)
+         {
+            executeVoidCommand(id, paramArray);
+            //Print ("command: " + name + ", params" + params + ", error: " + error);
+            SetVoidCommandResponse(ix, requestId, GetLastError());
+         }
+         else if(returnType == RETURN_TYPE_LONG)
+         {
+            long longresult = executeLongCommand(id, paramArray);
+            error = GetLastError();
+            //Print ("command: " + name + ", params" + params + ", result: " + longresult + ", error: " + error);
+            SetLongCommandResponse(ix, requestId, longresult, error);
+         }
+         else if(returnType == RETURN_TYPE_DATETIME)
+         {
+            datetime datetimeresult = executeDateTimeCommand(id, paramArray);
+            error = GetLastError();
+            //Print ("command: " + name + ", params" + params + ", result: " + datetimeresult + ", error: " + error);
+            SetDateTimeCommandResponse(ix, requestId, datetimeresult, error);
+         }
       
-      //Print("name: " +  name);
-      //Print("params: " +  params);
+         //Print("Unlocking");
+         CommandUnlock(ix);
+         //Print("Unlocked");
+      }   
 
-      // Parse the command
-      string paramArray[];
-      StringSplit(params, DELIM, paramArray);
-
-      int returnType = getCommandReturnType(id);
-
-      // reset last error
-      ResetLastError();
-      
-      int error;
-      if(returnType == RETURN_TYPE_BOOL)
-      {
-         bool boolresult = executeBoolCommand(id, paramArray);
-         error = GetLastError();
-         //Print ("command: " + name + ", params" + params + ", result: " + boolresult + ", error: " + error);
-         SetBoolCommandResponse(ix, requestId, boolresult, error);
-      }
-      else if(returnType == RETURN_TYPE_DOUBLE)
-      {
-         double doubleresult = executeDoubleCommand(id, paramArray);
-         error = GetLastError();
-         //Print ("command: " + name + ", params" + params + ", result: " + doubleresult + ", error: " + error);
-         SetDoubleCommandResponse(ix, requestId, doubleresult, error);
-      }
-      else if(returnType == RETURN_TYPE_INT)
-      {
-         int intresult = executeIntCommand(id, paramArray);
-         error = GetLastError();
-         //if(StringCompare(name, "OrdersTotal") == 0)
-         //{
-         //   Print ("command: " + name + ", params" + params + ", result: " + intresult + ", error: " + error);
-         //}
-         SetIntCommandResponse(ix, requestId, intresult, error);
-      }
-      else if(returnType == RETURN_TYPE_STRING)
-      {
-         string stringresult = executeStringCommand(id, paramArray);
-         error = GetLastError();
-         //Print ("command: " + name + ", params" + params + ", result: " + stringresult + ", error: " + error);
-         SetStringCommandResponse(ix, requestId, stringresult, error);
-      }
-      else if(returnType == RETURN_TYPE_VOID)
-      {
-         executeVoidCommand(id, paramArray);
-         //Print ("command: " + name + ", params" + params + ", error: " + error);
-         SetVoidCommandResponse(ix, requestId, GetLastError());
-      }
-      else if(returnType == RETURN_TYPE_LONG)
-      {
-         long longresult = executeLongCommand(id, paramArray);
-         error = GetLastError();
-         //Print ("command: " + name + ", params" + params + ", result: " + longresult + ", error: " + error);
-         SetLongCommandResponse(ix, requestId, longresult, error);
-      }
-      else if(returnType == RETURN_TYPE_DATETIME)
-      {
-         datetime datetimeresult = executeDateTimeCommand(id, paramArray);
-         error = GetLastError();
-         //Print ("command: " + name + ", params" + params + ", result: " + datetimeresult + ", error: " + error);
-         SetDateTimeCommandResponse(ix, requestId, datetimeresult, error);
-      }
    }
    return false;
 }
+
+
 
 int OnInit()
 {
@@ -169,7 +184,10 @@ int OnInit()
    {
       executeCommands(index);
    }
-
+   
+   // execute default REST commands
+   executeCommands(DEFAULT_CHART_ID);
+   
    Print("Initializing rates");
    InitRates(index, rates, ratesSize);
 
@@ -182,6 +200,7 @@ void OnDeinit(const int reason)
    // Call the DLL onDeinit
    ExecOnDeinit(index);
 }
+
  
 void OnTick()
 {
@@ -193,6 +212,9 @@ void OnTick()
    {
       executeCommands(index);
    }
+
+   // execute default REST commands
+   executeCommands(DEFAULT_CHART_ID);
       
    // Keep the rates array size up to date
    maintainRates(index);
@@ -205,4 +227,7 @@ void OnTimer()
 
    // execute commands that are waiting
    executeCommands(index);
+   
+   // execute default REST commands
+   executeCommands(DEFAULT_CHART_ID);
 }
