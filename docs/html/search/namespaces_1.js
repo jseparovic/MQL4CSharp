@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['base',['Base',['../namespace_m_q_l4_c_sharp_1_1_base.html',1,'MQL4CSharp']]],
+  ['common',['Common',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_common.html',1,'MQL4CSharp::Base']]],
+  ['enums',['Enums',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html',1,'MQL4CSharp::Base']]],
+  ['exceptions',['Exceptions',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_exceptions.html',1,'MQL4CSharp::Base']]],
+  ['filter',['Filter',['../namespace_m_q_l4_c_sharp_1_1_user_defined_1_1_filter.html',1,'MQL4CSharp::UserDefined']]],
+  ['helpers',['helpers',['../namespacemql4sharp_1_1helpers.html',1,'mql4sharp']]],
+  ['input',['Input',['../namespace_m_q_l4_c_sharp_1_1_user_defined_1_1_input.html',1,'MQL4CSharp::UserDefined']]],
+  ['mql',['MQL',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_m_q_l.html',1,'MQL4CSharp::Base']]],
+  ['mql4csharp',['mql4csharp',['../namespacemql4csharp.html',1,'mql4csharp'],['../namespace_m_q_l4_c_sharp.html',1,'MQL4CSharp']]],
+  ['mql4sharp',['mql4sharp',['../namespacemql4sharp.html',1,'']]],
+  ['mqlsharp',['mqlsharp',['../namespacemqlsharp.html',1,'']]],
+  ['rest',['REST',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_r_e_s_t.html',1,'MQL4CSharp::Base']]],
+  ['riskprofile',['RiskProfile',['../namespace_m_q_l4_c_sharp_1_1_user_defined_1_1_risk_profile.html',1,'MQL4CSharp::UserDefined']]],
+  ['signal',['Signal',['../namespace_m_q_l4_c_sharp_1_1_user_defined_1_1_signal.html',1,'MQL4CSharp::UserDefined']]],
+  ['stoploss',['StopLoss',['../namespace_m_q_l4_c_sharp_1_1_user_defined_1_1_stop_loss.html',1,'MQL4CSharp::UserDefined']]],
+  ['strategy',['Strategy',['../namespace_m_q_l4_c_sharp_1_1_user_defined_1_1_strategy.html',1,'MQL4CSharp::UserDefined']]],
+  ['takeprofit',['TakeProfit',['../namespace_m_q_l4_c_sharp_1_1_user_defined_1_1_take_profit.html',1,'MQL4CSharp::UserDefined']]],
+  ['userdefined',['UserDefined',['../namespace_m_q_l4_c_sharp_1_1_user_defined.html',1,'MQL4CSharp']]],
+  ['util',['Util',['../namespacemqlsharp_1_1_util.html',1,'mqlsharp']]]
+];

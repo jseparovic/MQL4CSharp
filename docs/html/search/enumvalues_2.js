@@ -1,6 +1,7 @@
 var searchData=
 [
   ['cadetblue',['CadetBlue',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aaebb9498dab66c3619530d634c1e95b34',1,'MQL4CSharp::Base::Enums']]],
+  ['candle_5fdid_5fnot_5fclose_5fin_5fthird',['CANDLE_DID_NOT_CLOSE_IN_THIRD',['../namespace_d_t_f_l_1_1strategy.html#a2e9c5b33f52ebf74eaa38a23af10120ea82f68cb290e6eb908fc1d83f050ce976',1,'DTFL::strategy']]],
   ['chartapplytemplate_5f1',['ChartApplyTemplate_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439acf8a784bed923f7a2cdcbfed3071eb77',1,'MQL4CSharp::Base::Enums']]],
   ['chartclose_5f1',['ChartClose_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439a0b7a0d553e1c4c87cee887d13d070ec3',1,'MQL4CSharp::Base::Enums']]],
   ['chartfirst_5f1',['ChartFirst_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439a9d09d03ead2f91f48dfcf2a40d645c46',1,'MQL4CSharp::Base::Enums']]],
@@ -30,6 +31,7 @@ var searchData=
   ['chartyondropped_5f1',['ChartYOnDropped_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439a08ed4c599179c3fee36c1e104c8ef8a5',1,'MQL4CSharp::Base::Enums']]],
   ['chocolate',['Chocolate',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa6ea408ea56e8b710aa240004af7580c1',1,'MQL4CSharp::Base::Enums']]],
   ['comment_5f1',['Comment_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439aa31c7737fc1df0120d2751ca7d6ebb4e',1,'MQL4CSharp::Base::Enums']]],
+  ['confirming_5fcandle',['CONFIRMING_CANDLE',['../namespace_d_t_f_l_1_1strategy.html#a2e9c5b33f52ebf74eaa38a23af10120eacf589a60b4a17b263842cc0c2fc87cd2',1,'DTFL::strategy']]],
   ['coral',['Coral',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa61db47dac8aefe03fc67ee1b65ecd8f6',1,'MQL4CSharp::Base::Enums']]],
   ['cornflowerblue',['CornflowerBlue',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa8caa8a2c27e9d60b3894bac4e6859129',1,'MQL4CSharp::Base::Enums']]],
   ['cornsilk',['Cornsilk',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa490a0db9793cd8cfae191676bbb860e5',1,'MQL4CSharp::Base::Enums']]],

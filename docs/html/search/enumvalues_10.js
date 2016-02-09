@@ -70,6 +70,7 @@ var searchData=
   ['springgreen',['SpringGreen',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa15f6c548bb8353c5d3723be54cb331c0',1,'MQL4CSharp::Base::Enums']]],
   ['steelblue',['SteelBlue',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa9d401521ca1cbaec75f45370f866db72',1,'MQL4CSharp::Base::Enums']]],
   ['stop_5flevel',['STOP_LEVEL',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_common.html#a7f4b5e1e5eb42605189fc27133264d58a744c06ba3d7ad9fb46e4bec491441902',1,'MQL4CSharp::Base::Common']]],
+  ['stop_5frun',['STOP_RUN',['../namespace_d_t_f_l_1_1strategy.html#a2e9c5b33f52ebf74eaa38a23af10120eabc84b43e2f0d6acd5b2ff09d5433243f',1,'DTFL::strategy']]],
   ['symbol_5f1',['Symbol_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439af534245d017996cc86a0cb887b1cf238',1,'MQL4CSharp::Base::Enums']]],
   ['symbolname_5f1',['SymbolName_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439a3986816832eb5beff925e4cf75f8ce2d',1,'MQL4CSharp::Base::Enums']]],
   ['symbolselect_5f1',['SymbolSelect_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439a192c391f0a57dc536e92c8c11b246f70',1,'MQL4CSharp::Base::Enums']]],

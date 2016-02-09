@@ -12,5 +12,6 @@ var searchData=
   ['signalinfokey_2ecs',['SignalInfoKey.cs',['../_signal_info_key_8cs.html',1,'']]],
   ['signalresult_2ecs',['SignalResult.cs',['../_signal_result_8cs.html',1,'']]],
   ['srstoploss_2ecs',['SRStopLoss.cs',['../_s_r_stop_loss_8cs.html',1,'']]],
+  ['stoprun_2ecs',['StopRun.cs',['../_stop_run_8cs.html',1,'']]],
   ['strategymetadata_2ecs',['StrategyMetaData.cs',['../_strategy_meta_data_8cs.html',1,'']]]
 ];

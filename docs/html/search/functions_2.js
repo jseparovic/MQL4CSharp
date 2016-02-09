@@ -37,5 +37,6 @@ var searchData=
   ['commandunlock',['CommandUnLock',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager.html#a6fc347a1fb08fd1e7bba86cbdb4ccfc6',1,'MQL4CSharp::Base::MQL::MQLCommandManager']]],
   ['comment',['Comment',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#a98d25d72cdf45f8031d017b0c9dcd440',1,'MQL4CSharp::Base::MQLBase']]],
   ['commonerrorexception',['CommonErrorException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_common_error_exception.html#a9491adc1196da57752a70c47001324e4',1,'MQL4CSharp::Base::Exceptions::CommonErrorException']]],
+  ['csvorder',['CSVOrder',['../class_m_q_l4_c_sharp_1_1_user_defined_1_1_input_1_1_c_s_v_order.html#a153f1a5eff358b8967fc721687697907',1,'MQL4CSharp::UserDefined::Input::CSVOrder']]],
   ['customindicatorerrorexception',['CustomIndicatorErrorException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_custom_indicator_error_exception.html#ab947253e5e371e6c44f795ad8eb48ffb',1,'MQL4CSharp::Base::Exceptions::CustomIndicatorErrorException']]]
 ];

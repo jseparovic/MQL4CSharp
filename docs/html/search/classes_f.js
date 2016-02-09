@@ -9,6 +9,7 @@ var searchData=
   ['somefileerrorexception',['SomeFileErrorException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_some_file_error_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
   ['someobjecterrorexception',['SomeObjectErrorException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_some_object_error_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
   ['srstoploss',['SRStopLoss',['../class_m_q_l4_c_sharp_1_1_user_defined_1_1_stop_loss_1_1_s_r_stop_loss.html',1,'MQL4CSharp::UserDefined::StopLoss']]],
+  ['stoprun',['StopRun',['../class_d_t_f_l_1_1signal_1_1_stop_run.html',1,'DTFL::signal']]],
   ['strategymetadata',['StrategyMetaData',['../class_m_q_l4_c_sharp_1_1_base_1_1_common_1_1_strategy_meta_data.html',1,'MQL4CSharp::Base::Common']]],
   ['stringfunctioninternalexception',['StringFunctionInternalException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_string_function_internal_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
   ['stringparameterexpectedexception',['StringParameterExpectedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_string_parameter_expected_exception.html',1,'MQL4CSharp::Base::Exceptions']]],

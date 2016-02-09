@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['pair',['Pair',['../class_m_q_l4_c_sharp_1_1_user_defined_1_1_input_1_1_c_s_v_order.html#a082b6c01f6fcd6c86461c2cc2e1b82b2',1,'MQL4CSharp::UserDefined::Input::CSVOrder']]],
   ['palegoldenrod',['PaleGoldenrod',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa55b52c258db6fe87d82f04a731b83d87',1,'MQL4CSharp::Base::Enums']]],
   ['palegreen',['PaleGreen',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa3fbb08ae4be82929c27ecff536355b74',1,'MQL4CSharp::Base::Enums']]],
   ['paleturquoise',['PaleTurquoise',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa9095043a612367ccc8c1ee356b1b0c77',1,'MQL4CSharp::Base::Enums']]],
@@ -39,7 +40,7 @@ var searchData=
   ['price_5fopen',['PRICE_OPEN',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#ab234b380de76951cafea3164c80b3d1ba00d03d286cd594e56c2822771e22da29',1,'MQL4CSharp::Base::Enums']]],
   ['price_5ftypical',['PRICE_TYPICAL',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#ab234b380de76951cafea3164c80b3d1ba7f843c0e9d0a3c8945ffa769cbf8ade3',1,'MQL4CSharp::Base::Enums']]],
   ['price_5fweighted',['PRICE_WEIGHTED',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#ab234b380de76951cafea3164c80b3d1bafe21982ac57999d229af5001b7704826',1,'MQL4CSharp::Base::Enums']]],
-  ['pricechangedexception',['PriceChangedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_price_changed_exception.html#a6996b97ec1f198e3feed6e4938d5aca3',1,'MQL4CSharp::Base::Exceptions::PriceChangedException']]],
   ['pricechangedexception',['PriceChangedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_price_changed_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['pricechangedexception',['PriceChangedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_price_changed_exception.html#a6996b97ec1f198e3feed6e4938d5aca3',1,'MQL4CSharp::Base::Exceptions::PriceChangedException']]],
   ['purple',['Purple',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aab9ba865fec061c9706d2fd7ce49c0cc7',1,'MQL4CSharp::Base::Enums']]]
 ];

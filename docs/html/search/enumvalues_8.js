@@ -41,6 +41,7 @@ var searchData=
   ['indicatorsetstring_5f2',['IndicatorSetString_2',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439a654461a656cdf0661144a45fe31e59f1',1,'MQL4CSharp::Base::Enums']]],
   ['indicatorshortname_5f1',['IndicatorShortName_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439adc52914203cd4d313ae5b4bfb862df17',1,'MQL4CSharp::Base::Enums']]],
   ['indigo',['Indigo',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa8b7b9806e715b01b9021912e0f86935f',1,'MQL4CSharp::Base::Enums']]],
+  ['invalidate',['INVALIDATE',['../namespace_d_t_f_l_1_1strategy.html#a2e9c5b33f52ebf74eaa38a23af10120eac7ba4bde5fe21a5ad38e8ddb71e2ae2a',1,'DTFL::strategy']]],
   ['iobv_5f1',['iOBV_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439aade0c2d676a5858c45b3776cd9265c16',1,'MQL4CSharp::Base::Enums']]],
   ['iopen_5f1',['iOpen_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439aefade792252866cfeb673ea09245f686',1,'MQL4CSharp::Base::Enums']]],
   ['iosma_5f1',['iOsMA_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439a0507623ddc9647d98a67facd98123919',1,'MQL4CSharp::Base::Enums']]],

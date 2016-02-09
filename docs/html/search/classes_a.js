@@ -3,6 +3,8 @@ var searchData=
   ['macross',['MACross',['../class_m_q_l4_c_sharp_1_1_user_defined_1_1_signal_1_1_m_a_cross.html',1,'MQL4CSharp::UserDefined::Signal']]],
   ['macrossstrategy',['MaCrossStrategy',['../class_m_q_l4_c_sharp_1_1_user_defined_1_1_strategy_1_1_ma_cross_strategy.html',1,'MQL4CSharp::UserDefined::Strategy']]],
   ['malfunctionaltradeexception',['MalfunctionalTradeException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_malfunctional_trade_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['manipulationpoint',['ManipulationPoint',['../class_d_t_f_l_1_1input_1_1_manipulation_point.html',1,'DTFL::input']]],
+  ['manipulationpoints',['ManipulationPoints',['../class_d_t_f_l_1_1input_1_1_manipulation_points.html',1,'DTFL::input']]],
   ['marketclosedexception',['MarketClosedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_market_closed_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
   ['mqlbase',['MQLBase',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html',1,'MQL4CSharp::Base']]],
   ['mqlcommandmanager',['MQLCommandManager',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager.html',1,'MQL4CSharp::Base::MQL']]],

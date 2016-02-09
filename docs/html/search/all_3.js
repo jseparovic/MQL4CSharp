@@ -20,7 +20,7 @@ var searchData=
   ['deeppink',['DeepPink',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aab4fe342f44f5359f9ee0a3a4319e239f',1,'MQL4CSharp::Base::Enums']]],
   ['deepskyblue',['DeepSkyBlue',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa13fc0b1c9f0187ed4eb2f99508626207',1,'MQL4CSharp::Base::Enums']]],
   ['default_5fchart_5fid',['DEFAULT_CHART_ID',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_d_l_l_object_wrapper.html#a8326e544edd70aca0fa5f0f597505711',1,'MQL4CSharp::Base::MQL::DLLObjectWrapper']]],
-  ['destroy',['destroy',['../class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy.html#a9ab6a2f7e5af2ce3c15664f7b23fbc65',1,'MQL4CSharp.Base.BaseStrategy.destroy()'],['../class_m_q_l4_c_sharp_1_1_user_defined_1_1_strategy_1_1_ma_cross_strategy.html#aaffd8074c2a2ac779dba660fa93ac98a',1,'MQL4CSharp.UserDefined.Strategy.MaCrossStrategy.destroy()']]],
+  ['destroy',['destroy',['../class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy.html#a9ab6a2f7e5af2ce3c15664f7b23fbc65',1,'MQL4CSharp.Base.BaseStrategy.destroy()'],['../class_m_q_l4_c_sharp_1_1_user_defined_1_1_strategy_1_1_ma_cross_strategy.html#aaffd8074c2a2ac779dba660fa93ac98a',1,'MQL4CSharp.UserDefined.Strategy.MaCrossStrategy.destroy()'],['../class_d_t_f_l_1_1strategy_1_1_d_t_f_l.html#ac402224e2e4a8a122f08a6644750098d',1,'DTFL.strategy.DTFL.destroy()']]],
   ['digits',['Digits',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#a33263c9e81165a5d6eba0a4cc95a35cc',1,'MQL4CSharp::Base::MQLBase']]],
   ['digits_5f1',['Digits_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439abe24969da91a338fadea743efb6b1647',1,'MQL4CSharp::Base::Enums']]],
   ['dimgray',['DimGray',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa9d024493843d7e31bee420476aaafb9a',1,'MQL4CSharp::Base::Enums']]],
@@ -33,6 +33,13 @@ var searchData=
   ['dllobjectwrapper',['DLLObjectWrapper',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_d_l_l_object_wrapper.html',1,'MQL4CSharp::Base::MQL']]],
   ['dllobjectwrapper_2ecs',['DLLObjectWrapper.cs',['../_d_l_l_object_wrapper_8cs.html',1,'']]],
   ['dodgerblue',['DodgerBlue',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa14c99de4b8f6ed71efd50e28fab3eeca',1,'MQL4CSharp::Base::Enums']]],
+  ['doubleparameterexpectedexception',['DoubleParameterExpectedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_double_parameter_expected_exception.html#a9d73215f4fe9d21e29d1576c3b2c7452',1,'MQL4CSharp::Base::Exceptions::DoubleParameterExpectedException']]],
   ['doubleparameterexpectedexception',['DoubleParameterExpectedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_double_parameter_expected_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
-  ['doubleparameterexpectedexception',['DoubleParameterExpectedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_double_parameter_expected_exception.html#a9d73215f4fe9d21e29d1576c3b2c7452',1,'MQL4CSharp::Base::Exceptions::DoubleParameterExpectedException']]]
+  ['dtfl',['DTFL',['../namespace_d_t_f_l.html',1,'DTFL'],['../class_d_t_f_l_1_1strategy_1_1_d_t_f_l.html#abe1c34e0e10243b4097b208fd44a8b0d',1,'DTFL.strategy.DTFL.DTFL()']]],
+  ['dtfl',['DTFL',['../class_d_t_f_l_1_1strategy_1_1_d_t_f_l.html',1,'DTFL::strategy']]],
+  ['dtfl_2ecs',['DTFL.cs',['../_d_t_f_l_8cs.html',1,'']]],
+  ['dtflaction',['DTFLAction',['../namespace_d_t_f_l_1_1strategy.html#a2e9c5b33f52ebf74eaa38a23af10120e',1,'DTFL::strategy']]],
+  ['input',['input',['../namespace_d_t_f_l_1_1input.html',1,'DTFL']]],
+  ['signal',['signal',['../namespace_d_t_f_l_1_1signal.html',1,'DTFL']]],
+  ['strategy',['strategy',['../namespace_d_t_f_l_1_1strategy.html',1,'DTFL']]]
 ];

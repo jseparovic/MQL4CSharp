@@ -12,5 +12,6 @@ var searchData=
   ['textsetfont_5f1',['TextSetFont_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439ade26e41788c801c67a7174850b4560ba',1,'MQL4CSharp::Base::Enums']]],
   ['thistle',['Thistle',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa58849bbd6b4fb8844f01c2ebf7e59c36',1,'MQL4CSharp::Base::Enums']]],
   ['tomato',['Tomato',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa77bd79b3dca1f49815655b6f2df760ba',1,'MQL4CSharp::Base::Enums']]],
-  ['turquoise',['Turquoise',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aada3a4f0a911cebe3bc75f6e39c324696',1,'MQL4CSharp::Base::Enums']]]
+  ['turquoise',['Turquoise',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aada3a4f0a911cebe3bc75f6e39c324696',1,'MQL4CSharp::Base::Enums']]],
+  ['two_5fopens_5fcloses_5fbeyond',['TWO_OPENS_CLOSES_BEYOND',['../namespace_d_t_f_l_1_1strategy.html#a2e9c5b33f52ebf74eaa38a23af10120ea32052dbc5bc67c6281341f52f28e8a82',1,'DTFL::strategy']]]
 ];
