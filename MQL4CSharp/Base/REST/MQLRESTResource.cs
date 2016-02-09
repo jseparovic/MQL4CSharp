@@ -19,7 +19,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> Alert<br>
         /// <b>Description:</b> Displays a message in a separate window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/alert.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/common/alert.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>argument</b> :  </li>
@@ -35,7 +35,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> Alert<br>
         /// <b>Description:</b> Displays a message in a separate window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/alert.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/common/alert.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>argument</b> :  </li>
@@ -70,7 +70,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> Comment<br>
         /// <b>Description:</b> This function outputs a comment defined by a user in the top left corner of a chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/comment.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/common/comment.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>argument</b> :  [in] Any values, separated by commas. To delimit output information into several lines, a line break symbol "\n" or "\r\n" is used. Number of parameters cannot exceed 64. Total length of the input comment (including invisible symbols) cannot exceed 2045 characters (excess symbols will be cut out during output).</li>
@@ -86,7 +86,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> Comment<br>
         /// <b>Description:</b> This function outputs a comment defined by a user in the top left corner of a chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/comment.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/common/comment.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>argument</b> :  [in] Any values, separated by commas. To delimit output information into several lines, a line break symbol "\n" or "\r\n" is used. Number of parameters cannot exceed 64. Total length of the input comment (including invisible symbols) cannot exceed 2045 characters (excess symbols will be cut out during output).</li>
@@ -121,7 +121,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SendFTP<br>
         /// <b>Description:</b> Sends a file at the address, specified in the setting window of the "FTP" tab.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/sendftp.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/common/sendftp.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>filename</b> :  [in] Name of sent file.</li>
@@ -138,7 +138,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SendFTP<br>
         /// <b>Description:</b> Sends a file at the address, specified in the setting window of the "FTP" tab.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/sendftp.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/common/sendftp.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>filename</b> :  [in] Name of sent file.</li>
@@ -175,7 +175,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SendNotification<br>
         /// <b>Description:</b> Sends push notifications to the mobile terminals, whose MetaQuotes IDs are specified in the "Notifications" tab.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/sendnotification.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/common/sendnotification.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>text</b> :  [in] The text of the notification. The message length should not exceed 255 characters.</li>
@@ -191,7 +191,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SendNotification<br>
         /// <b>Description:</b> Sends push notifications to the mobile terminals, whose MetaQuotes IDs are specified in the "Notifications" tab.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/sendnotification.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/common/sendnotification.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>text</b> :  [in] The text of the notification. The message length should not exceed 255 characters.</li>
@@ -226,7 +226,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SendMail<br>
         /// <b>Description:</b> Sends an email at the address specified in the settings window of the "Email" tab.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/sendmail.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/common/sendmail.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>subject</b> :  [in] Email header.</li>
@@ -243,7 +243,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SendMail<br>
         /// <b>Description:</b> Sends an email at the address specified in the settings window of the "Email" tab.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/sendmail.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/common/sendmail.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>subject</b> :  [in] Email header.</li>
@@ -280,7 +280,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountInfoDouble<br>
         /// <b>Description:</b> Returns the value of the corresponding account property.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountinfodouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountinfodouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Identifier of the property. The value can be one of the values of .</li>
@@ -296,7 +296,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountInfoDouble<br>
         /// <b>Description:</b> Returns the value of the corresponding account property.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountinfodouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountinfodouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Identifier of the property. The value can be one of the values of .</li>
@@ -331,7 +331,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountInfoInteger<br>
         /// <b>Description:</b> Returns the value of the properties of the account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountinfointeger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountinfointeger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Identifier of the property. The value can be one of the values of .</li>
@@ -347,7 +347,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountInfoInteger<br>
         /// <b>Description:</b> Returns the value of the properties of the account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountinfointeger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountinfointeger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Identifier of the property. The value can be one of the values of .</li>
@@ -382,7 +382,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountInfoString<br>
         /// <b>Description:</b> Returns the value of the corresponding account property.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountinfostring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountinfostring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Identifier of the property. The value can be one of the values of .</li>
@@ -398,7 +398,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountInfoString<br>
         /// <b>Description:</b> Returns the value of the corresponding account property.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountinfostring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountinfostring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Identifier of the property. The value can be one of the values of .</li>
@@ -433,7 +433,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountBalance<br>
         /// <b>Description:</b> Returns balance value of the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountbalance.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountbalance.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -448,7 +448,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountBalance<br>
         /// <b>Description:</b> Returns balance value of the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountbalance.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountbalance.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -481,7 +481,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountCredit<br>
         /// <b>Description:</b> Returns credit value of the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountcredit.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountcredit.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -496,7 +496,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountCredit<br>
         /// <b>Description:</b> Returns credit value of the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountcredit.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountcredit.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -529,7 +529,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountCompany<br>
         /// <b>Description:</b> Returns the brokerage company name where the current account was registered.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountcompany.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountcompany.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -544,7 +544,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountCompany<br>
         /// <b>Description:</b> Returns the brokerage company name where the current account was registered.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountcompany.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountcompany.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -577,7 +577,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountCurrency<br>
         /// <b>Description:</b> Returns currency name of the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountcurrency.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountcurrency.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -592,7 +592,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountCurrency<br>
         /// <b>Description:</b> Returns currency name of the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountcurrency.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountcurrency.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -625,7 +625,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountEquity<br>
         /// <b>Description:</b> Returns equity value of the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountequity.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountequity.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -640,7 +640,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountEquity<br>
         /// <b>Description:</b> Returns equity value of the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountequity.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountequity.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -673,7 +673,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountFreeMargin<br>
         /// <b>Description:</b> Returns free margin value of the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountfreemargin.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountfreemargin.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -688,7 +688,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountFreeMargin<br>
         /// <b>Description:</b> Returns free margin value of the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountfreemargin.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountfreemargin.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -721,7 +721,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountFreeMarginCheck<br>
         /// <b>Description:</b> Returns free margin that remains after the specified order has been opened at the current price on the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountfreemargincheck.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountfreemargincheck.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol for trading operation.</li>
@@ -739,7 +739,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountFreeMarginCheck<br>
         /// <b>Description:</b> Returns free margin that remains after the specified order has been opened at the current price on the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountfreemargincheck.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountfreemargincheck.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol for trading operation.</li>
@@ -778,7 +778,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountFreeMarginMode<br>
         /// <b>Description:</b> Returns the calculation mode of free margin allowed to open orders on the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountfreemarginmode.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountfreemarginmode.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -793,7 +793,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountFreeMarginMode<br>
         /// <b>Description:</b> Returns the calculation mode of free margin allowed to open orders on the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountfreemarginmode.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountfreemarginmode.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -826,7 +826,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountLeverage<br>
         /// <b>Description:</b> Returns leverage of the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountleverage.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountleverage.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -841,7 +841,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountLeverage<br>
         /// <b>Description:</b> Returns leverage of the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountleverage.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountleverage.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -874,7 +874,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountMargin<br>
         /// <b>Description:</b> Returns margin value of the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountmargin.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountmargin.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -889,7 +889,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountMargin<br>
         /// <b>Description:</b> Returns margin value of the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountmargin.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountmargin.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -922,7 +922,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountName<br>
         /// <b>Description:</b> Returns the current account name.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountname.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountname.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -937,7 +937,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountName<br>
         /// <b>Description:</b> Returns the current account name.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountname.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountname.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -970,7 +970,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountNumber<br>
         /// <b>Description:</b> Returns the current account number.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountnumber.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountnumber.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -985,7 +985,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountNumber<br>
         /// <b>Description:</b> Returns the current account number.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountnumber.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountnumber.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1018,7 +1018,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountProfit<br>
         /// <b>Description:</b> Returns profit value of the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountprofit.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountprofit.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1033,7 +1033,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountProfit<br>
         /// <b>Description:</b> Returns profit value of the current account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountprofit.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountprofit.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1066,7 +1066,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountServer<br>
         /// <b>Description:</b> Returns the connected server name.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountserver.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountserver.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1081,7 +1081,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountServer<br>
         /// <b>Description:</b> Returns the connected server name.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountserver.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountserver.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1114,7 +1114,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountStopoutLevel<br>
         /// <b>Description:</b> Returns the value of the Stop Out level.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountstopoutlevel.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountstopoutlevel.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1129,7 +1129,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountStopoutLevel<br>
         /// <b>Description:</b> Returns the value of the Stop Out level.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountstopoutlevel.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountstopoutlevel.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1162,7 +1162,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountStopoutMode<br>
         /// <b>Description:</b> Returns the calculation mode for the Stop Out level.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountstopoutmode.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountstopoutmode.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1177,7 +1177,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> AccountStopoutMode<br>
         /// <b>Description:</b> Returns the calculation mode for the Stop Out level.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountstopoutmode.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/account/accountstopoutmode.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1210,7 +1210,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GetLastError<br>
         /// <b>Description:</b> Returns the contents of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/getlasterror.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/getlasterror.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1225,7 +1225,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GetLastError<br>
         /// <b>Description:</b> Returns the contents of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/getlasterror.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/getlasterror.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1258,7 +1258,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsStopped<br>
         /// <b>Description:</b> Checks the forced shutdown of an mql4 program.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isstopped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/isstopped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1273,7 +1273,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsStopped<br>
         /// <b>Description:</b> Checks the forced shutdown of an mql4 program.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isstopped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/isstopped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1306,7 +1306,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> UninitializeReason<br>
         /// <b>Description:</b> Returns the code of a<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/uninitializereason.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/uninitializereason.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1321,7 +1321,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> UninitializeReason<br>
         /// <b>Description:</b> Returns the code of a<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/uninitializereason.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/uninitializereason.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1354,7 +1354,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> MQLInfoInteger<br>
         /// <b>Description:</b> Returns the value of a corresponding property of a running mql4 program.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/mqlinfointeger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/mqlinfointeger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of values of the enumeration.</li>
@@ -1370,7 +1370,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> MQLInfoInteger<br>
         /// <b>Description:</b> Returns the value of a corresponding property of a running mql4 program.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/mqlinfointeger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/mqlinfointeger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of values of the enumeration.</li>
@@ -1405,7 +1405,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> MQLInfoString<br>
         /// <b>Description:</b> Returns the value of a corresponding property of a running MQL4 program.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/mqlinfostring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/mqlinfostring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of the enumeration.</li>
@@ -1421,7 +1421,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> MQLInfoString<br>
         /// <b>Description:</b> Returns the value of a corresponding property of a running MQL4 program.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/mqlinfostring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/mqlinfostring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of the enumeration.</li>
@@ -1456,7 +1456,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> MQLSetInteger<br>
         /// <b>Description:</b> Sets the value of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/mqlsetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/mqlsetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Identifier of a property. Only is supported, as other properties cannot be changed.</li>
@@ -1473,7 +1473,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> MQLSetInteger<br>
         /// <b>Description:</b> Sets the value of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/mqlsetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/mqlsetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Identifier of a property. Only is supported, as other properties cannot be changed.</li>
@@ -1510,7 +1510,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> TerminalInfoInteger<br>
         /// <b>Description:</b> Returns the value of a corresponding property of the mql4 program environment.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalinfointeger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/terminalinfointeger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of the values of the enumeration.</li>
@@ -1526,7 +1526,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> TerminalInfoInteger<br>
         /// <b>Description:</b> Returns the value of a corresponding property of the mql4 program environment.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalinfointeger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/terminalinfointeger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of the values of the enumeration.</li>
@@ -1561,7 +1561,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> TerminalInfoDouble<br>
         /// <b>Description:</b> Returns the value of a corresponding property of the mql4 program environment.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalinfodouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/terminalinfodouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of the values of the enumeration.</li>
@@ -1577,7 +1577,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> TerminalInfoDouble<br>
         /// <b>Description:</b> Returns the value of a corresponding property of the mql4 program environment.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalinfodouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/terminalinfodouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of the values of the enumeration.</li>
@@ -1612,7 +1612,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> TerminalInfoString<br>
         /// <b>Description:</b> Returns the value of a corresponding property of the mql4 program environment. The property must be of string type.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalinfostring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/terminalinfostring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of the values of the enumeration.</li>
@@ -1628,7 +1628,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> TerminalInfoString<br>
         /// <b>Description:</b> Returns the value of a corresponding property of the mql4 program environment. The property must be of string type.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalinfostring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/terminalinfostring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of the values of the enumeration.</li>
@@ -1663,7 +1663,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> Symbol<br>
         /// <b>Description:</b> Returns the name of a symbol of the current chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/symbol.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/symbol.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1678,7 +1678,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> Symbol<br>
         /// <b>Description:</b> Returns the name of a symbol of the current chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/symbol.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/symbol.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1711,7 +1711,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> Period<br>
         /// <b>Description:</b> Returns the current chart timeframe.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/period.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/period.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1726,7 +1726,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> Period<br>
         /// <b>Description:</b> Returns the current chart timeframe.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/period.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/period.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1759,7 +1759,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> Digits<br>
         /// <b>Description:</b> Returns the number of decimal digits determining the accuracy of price of the current chart symbol.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/digits.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/digits.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1774,7 +1774,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> Digits<br>
         /// <b>Description:</b> Returns the number of decimal digits determining the accuracy of price of the current chart symbol.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/digits.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/digits.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1807,7 +1807,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> Point<br>
         /// <b>Description:</b> Returns the point size of the current symbol in the quote currency.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/point.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/point.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1822,7 +1822,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> Point<br>
         /// <b>Description:</b> Returns the point size of the current symbol in the quote currency.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/point.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/point.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1855,7 +1855,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsConnected<br>
         /// <b>Description:</b> Checks connection between client terminal and server.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isconnected.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/isconnected.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1870,7 +1870,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsConnected<br>
         /// <b>Description:</b> Checks connection between client terminal and server.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isconnected.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/isconnected.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1903,7 +1903,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsDemo<br>
         /// <b>Description:</b> Checks if the Expert Advisor runs on a demo account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isdemo.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/isdemo.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1918,7 +1918,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsDemo<br>
         /// <b>Description:</b> Checks if the Expert Advisor runs on a demo account.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isdemo.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/isdemo.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1951,7 +1951,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsDllsAllowed<br>
         /// <b>Description:</b> Checks if the DLL function call is allowed for the Expert Advisor.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isdllsallowed.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/isdllsallowed.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1966,7 +1966,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsDllsAllowed<br>
         /// <b>Description:</b> Checks if the DLL function call is allowed for the Expert Advisor.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isdllsallowed.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/isdllsallowed.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -1999,7 +1999,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsExpertEnabled<br>
         /// <b>Description:</b> Checks if Expert Advisors are enabled for running.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isexpertenabled.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/isexpertenabled.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2014,7 +2014,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsExpertEnabled<br>
         /// <b>Description:</b> Checks if Expert Advisors are enabled for running.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isexpertenabled.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/isexpertenabled.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2047,7 +2047,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsLibrariesAllowed<br>
         /// <b>Description:</b> Checks if the Expert Advisor can call library function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/islibrariesallowed.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/islibrariesallowed.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2062,7 +2062,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsLibrariesAllowed<br>
         /// <b>Description:</b> Checks if the Expert Advisor can call library function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/islibrariesallowed.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/islibrariesallowed.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2095,7 +2095,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsOptimization<br>
         /// <b>Description:</b> Checks if Expert Advisor runs in the Strategy Tester optimization mode.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isoptimization.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/isoptimization.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2110,7 +2110,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsOptimization<br>
         /// <b>Description:</b> Checks if Expert Advisor runs in the Strategy Tester optimization mode.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isoptimization.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/isoptimization.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2143,7 +2143,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsTesting<br>
         /// <b>Description:</b> Checks<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/istesting.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/istesting.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2158,7 +2158,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsTesting<br>
         /// <b>Description:</b> Checks<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/istesting.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/istesting.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2191,7 +2191,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsTradeAllowed<br>
         /// <b>Description:</b> Checks<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/istradeallowed.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/istradeallowed.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2206,7 +2206,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsTradeAllowed<br>
         /// <b>Description:</b> Checks<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/istradeallowed.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/istradeallowed.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2239,7 +2239,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsTradeAllowed<br>
         /// <b>Description:</b> Checks<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/istradeallowed.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/istradeallowed.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol.</li>
@@ -2256,7 +2256,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsTradeAllowed<br>
         /// <b>Description:</b> Checks<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/istradeallowed.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/istradeallowed.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol.</li>
@@ -2293,7 +2293,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsTradeContextBusy<br>
         /// <b>Description:</b> Returns the information about trade context.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/istradecontextbusy.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/istradecontextbusy.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2308,7 +2308,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsTradeContextBusy<br>
         /// <b>Description:</b> Returns the information about trade context.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/istradecontextbusy.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/istradecontextbusy.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2341,7 +2341,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsVisualMode<br>
         /// <b>Description:</b> Checks<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isvisualmode.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/isvisualmode.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2356,7 +2356,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IsVisualMode<br>
         /// <b>Description:</b> Checks<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isvisualmode.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/isvisualmode.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2389,7 +2389,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> TerminalCompany<br>
         /// <b>Description:</b> Returns the name of company owning the client terminal.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalcompany.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/terminalcompany.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2404,7 +2404,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> TerminalCompany<br>
         /// <b>Description:</b> Returns the name of company owning the client terminal.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalcompany.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/terminalcompany.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2437,7 +2437,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> TerminalName<br>
         /// <b>Description:</b> Returns client terminal name.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalname.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/terminalname.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2452,7 +2452,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> TerminalName<br>
         /// <b>Description:</b> Returns client terminal name.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalname.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/terminalname.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2485,7 +2485,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> TerminalPath<br>
         /// <b>Description:</b> Returns the directory, from which the client terminal was launched.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalpath.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/terminalpath.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2500,7 +2500,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> TerminalPath<br>
         /// <b>Description:</b> Returns the directory, from which the client terminal was launched.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalpath.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/check/terminalpath.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2533,7 +2533,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> MarketInfo<br>
         /// <b>Description:</b> Returns various data about securities listed in the "Market Watch" window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/marketinformation/marketinfo.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/marketinformation/marketinfo.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name.</li>
@@ -2550,7 +2550,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> MarketInfo<br>
         /// <b>Description:</b> Returns various data about securities listed in the "Market Watch" window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/marketinformation/marketinfo.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/marketinformation/marketinfo.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name.</li>
@@ -2587,7 +2587,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SymbolsTotal<br>
         /// <b>Description:</b> Returns the number of available (selected in Market Watch or all) symbols.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/marketinformation/symbolstotal.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/marketinformation/symbolstotal.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>selected</b> :  [in] Request mode. Can be true or false.</li>
@@ -2603,7 +2603,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SymbolsTotal<br>
         /// <b>Description:</b> Returns the number of available (selected in Market Watch or all) symbols.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/marketinformation/symbolstotal.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/marketinformation/symbolstotal.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>selected</b> :  [in] Request mode. Can be true or false.</li>
@@ -2638,7 +2638,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SymbolName<br>
         /// <b>Description:</b> Returns the name of a symbol.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/marketinformation/symbolname.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/marketinformation/symbolname.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>pos</b> :  [in] Order number of a symbol.</li>
@@ -2655,7 +2655,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SymbolName<br>
         /// <b>Description:</b> Returns the name of a symbol.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/marketinformation/symbolname.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/marketinformation/symbolname.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>pos</b> :  [in] Order number of a symbol.</li>
@@ -2692,7 +2692,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SymbolSelect<br>
         /// <b>Description:</b> Selects a symbol in the Market Watch window or removes a symbol from the window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/marketinformation/symbolselect.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/marketinformation/symbolselect.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] Symbol name.</li>
@@ -2709,7 +2709,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SymbolSelect<br>
         /// <b>Description:</b> Selects a symbol in the Market Watch window or removes a symbol from the window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/marketinformation/symbolselect.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/marketinformation/symbolselect.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] Symbol name.</li>
@@ -2746,7 +2746,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> RefreshRates<br>
         /// <b>Description:</b> Refreshing of data in pre-defined variables and series arrays.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/refreshrates.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/refreshrates.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2761,7 +2761,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> RefreshRates<br>
         /// <b>Description:</b> Refreshing of data in pre-defined variables and series arrays.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/refreshrates.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/refreshrates.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -2794,7 +2794,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> Bars<br>
         /// <b>Description:</b> Returns the number of bars count in the history for a specified symbol and period. There are 2 variants of functions calls.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/barsfunction.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/barsfunction.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol_name</b> :  [in] Symbol name.</li>
@@ -2811,7 +2811,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> Bars<br>
         /// <b>Description:</b> Returns the number of bars count in the history for a specified symbol and period. There are 2 variants of functions calls.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/barsfunction.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/barsfunction.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol_name</b> :  [in] Symbol name.</li>
@@ -2848,7 +2848,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> Bars<br>
         /// <b>Description:</b> Returns the number of bars count in the history for a specified symbol and period. There are 2 variants of functions calls.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/barsfunction.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/barsfunction.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol_name</b> :  [in] Symbol name.</li>
@@ -2867,7 +2867,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> Bars<br>
         /// <b>Description:</b> Returns the number of bars count in the history for a specified symbol and period. There are 2 variants of functions calls.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/barsfunction.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/barsfunction.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol_name</b> :  [in] Symbol name.</li>
@@ -2908,7 +2908,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iBars<br>
         /// <b>Description:</b> Returns the number of bars on the specified chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ibars.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/ibars.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol the data of which should be used to calculate indicator. means the current symbol.</li>
@@ -2925,7 +2925,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iBars<br>
         /// <b>Description:</b> Returns the number of bars on the specified chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ibars.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/ibars.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol the data of which should be used to calculate indicator. means the current symbol.</li>
@@ -2962,7 +2962,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iBarShift<br>
         /// <b>Description:</b> Search for a bar by its time. The function returns the index of the bar which covers the specified time.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ibarshift.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/ibarshift.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
@@ -2981,7 +2981,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iBarShift<br>
         /// <b>Description:</b> Search for a bar by its time. The function returns the index of the bar which covers the specified time.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ibarshift.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/ibarshift.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
@@ -3022,7 +3022,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iClose<br>
         /// <b>Description:</b> Returns Close price value for the bar of specified symbol with timeframe and shift.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/iclose.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/iclose.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
@@ -3040,7 +3040,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iClose<br>
         /// <b>Description:</b> Returns Close price value for the bar of specified symbol with timeframe and shift.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/iclose.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/iclose.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
@@ -3079,7 +3079,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iHigh<br>
         /// <b>Description:</b> Returns High price value for the bar of specified symbol with timeframe and shift.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ihigh.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/ihigh.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
@@ -3097,7 +3097,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iHigh<br>
         /// <b>Description:</b> Returns High price value for the bar of specified symbol with timeframe and shift.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ihigh.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/ihigh.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
@@ -3136,7 +3136,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iHighest<br>
         /// <b>Description:</b> Returns the shift of the maximum value over a specific number of bars depending on type.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ihighest.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/ihighest.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol the data of which should be used for search. means the current symbol.</li>
@@ -3156,7 +3156,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iHighest<br>
         /// <b>Description:</b> Returns the shift of the maximum value over a specific number of bars depending on type.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ihighest.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/ihighest.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol the data of which should be used for search. means the current symbol.</li>
@@ -3199,7 +3199,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iLow<br>
         /// <b>Description:</b> Returns Low price value for the bar of indicated symbol with timeframe and shift.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ilow.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/ilow.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
@@ -3217,7 +3217,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iLow<br>
         /// <b>Description:</b> Returns Low price value for the bar of indicated symbol with timeframe and shift.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ilow.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/ilow.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
@@ -3256,7 +3256,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iLowest<br>
         /// <b>Description:</b> Returns the shift of the lowest value over a specific number of bars depending on type.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ilowest.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/ilowest.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
@@ -3276,7 +3276,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iLowest<br>
         /// <b>Description:</b> Returns the shift of the lowest value over a specific number of bars depending on type.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ilowest.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/ilowest.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
@@ -3319,7 +3319,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iOpen<br>
         /// <b>Description:</b> Returns Open price value for the bar of specified symbol with timeframe and shift.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/iopen.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/iopen.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
@@ -3337,7 +3337,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iOpen<br>
         /// <b>Description:</b> Returns Open price value for the bar of specified symbol with timeframe and shift.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/iopen.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/iopen.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
@@ -3376,7 +3376,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iTime<br>
         /// <b>Description:</b> Returns Time value for the bar of specified symbol with timeframe and shift.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/itime.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/itime.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
@@ -3394,7 +3394,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iTime<br>
         /// <b>Description:</b> Returns Time value for the bar of specified symbol with timeframe and shift.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/itime.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/itime.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
@@ -3433,7 +3433,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iVolume<br>
         /// <b>Description:</b> Returns Tick Volume value for the bar of specified symbol with timeframe and shift.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ivolume.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/ivolume.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
@@ -3451,7 +3451,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iVolume<br>
         /// <b>Description:</b> Returns Tick Volume value for the bar of specified symbol with timeframe and shift.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ivolume.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/series/ivolume.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
@@ -3490,7 +3490,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartApplyTemplate<br>
         /// <b>Description:</b> Applies a specific template from a specified file to the chart. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartapplytemplate.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartapplytemplate.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -3507,7 +3507,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartApplyTemplate<br>
         /// <b>Description:</b> Applies a specific template from a specified file to the chart. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartapplytemplate.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartapplytemplate.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -3544,7 +3544,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartSaveTemplate<br>
         /// <b>Description:</b> Saves current chart settings in a template with a specified name. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsavetemplate.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartsavetemplate.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -3561,7 +3561,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartSaveTemplate<br>
         /// <b>Description:</b> Saves current chart settings in a template with a specified name. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsavetemplate.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartsavetemplate.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -3598,7 +3598,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartWindowFind<br>
         /// <b>Description:</b> The function returns the number of a subwindow where an indicator is drawn. There are 2 variants of the function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowfind.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartwindowfind.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 denotes the current chart.</li>
@@ -3615,7 +3615,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartWindowFind<br>
         /// <b>Description:</b> The function returns the number of a subwindow where an indicator is drawn. There are 2 variants of the function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowfind.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartwindowfind.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 denotes the current chart.</li>
@@ -3652,7 +3652,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartWindowFind<br>
         /// <b>Description:</b> The function returns the number of a subwindow where an indicator is drawn. There are 2 variants of the function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowfind.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartwindowfind.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -3667,7 +3667,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartWindowFind<br>
         /// <b>Description:</b> The function returns the number of a subwindow where an indicator is drawn. There are 2 variants of the function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowfind.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartwindowfind.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -3700,7 +3700,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartOpen<br>
         /// <b>Description:</b> Opens a new chart with the specified symbol and period. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartopen.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartopen.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Chart symbol. means the symbol of the current chart (the Expert Advisor is attached to).</li>
@@ -3717,7 +3717,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartOpen<br>
         /// <b>Description:</b> Opens a new chart with the specified symbol and period. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartopen.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartopen.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Chart symbol. means the symbol of the current chart (the Expert Advisor is attached to).</li>
@@ -3754,7 +3754,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartFirst<br>
         /// <b>Description:</b> Returns the ID of the first chart of the client terminal.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartfirst.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartfirst.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -3769,7 +3769,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartFirst<br>
         /// <b>Description:</b> Returns the ID of the first chart of the client terminal.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartfirst.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartfirst.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -3802,7 +3802,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartNext<br>
         /// <b>Description:</b> Returns the chart ID of the chart next to the specified one.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartnext.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartnext.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 does not mean the current chart. 0 means "return the first chart ID".</li>
@@ -3818,7 +3818,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartNext<br>
         /// <b>Description:</b> Returns the chart ID of the chart next to the specified one.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartnext.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartnext.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 does not mean the current chart. 0 means "return the first chart ID".</li>
@@ -3853,7 +3853,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartClose<br>
         /// <b>Description:</b> Closes the specified chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartclose.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartclose.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -3869,7 +3869,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartClose<br>
         /// <b>Description:</b> Closes the specified chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartclose.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartclose.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -3904,7 +3904,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartSymbol<br>
         /// <b>Description:</b> Returns the symbol name for the specified chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsymbol.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartsymbol.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -3920,7 +3920,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartSymbol<br>
         /// <b>Description:</b> Returns the symbol name for the specified chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsymbol.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartsymbol.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -3955,7 +3955,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartRedraw<br>
         /// <b>Description:</b> This function calls a forced redrawing of a specified chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartredraw.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartredraw.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -3971,7 +3971,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartRedraw<br>
         /// <b>Description:</b> This function calls a forced redrawing of a specified chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartredraw.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartredraw.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -4006,7 +4006,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartSetDouble<br>
         /// <b>Description:</b> Sets a value for a corresponding property of the specified chart. Chart property should be of a<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetdouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartsetdouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -4024,7 +4024,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartSetDouble<br>
         /// <b>Description:</b> Sets a value for a corresponding property of the specified chart. Chart property should be of a<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetdouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartsetdouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -4063,7 +4063,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartSetInteger<br>
         /// <b>Description:</b> Sets a value for a corresponding property of the specified chart. Chart property must be<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartsetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -4081,7 +4081,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartSetInteger<br>
         /// <b>Description:</b> Sets a value for a corresponding property of the specified chart. Chart property must be<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartsetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -4120,7 +4120,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartSetInteger<br>
         /// <b>Description:</b> Sets a value for a corresponding property of the specified chart. Chart property must be<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartsetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -4139,7 +4139,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartSetInteger<br>
         /// <b>Description:</b> Sets a value for a corresponding property of the specified chart. Chart property must be<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartsetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -4180,7 +4180,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartSetString<br>
         /// <b>Description:</b> Sets a value for a corresponding property of the specified chart. Chart property must be of the string type. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetstring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartsetstring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -4198,7 +4198,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartSetString<br>
         /// <b>Description:</b> Sets a value for a corresponding property of the specified chart. Chart property must be of the string type. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetstring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartsetstring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -4237,7 +4237,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartNavigate<br>
         /// <b>Description:</b> Performs shift of the specified chart by the specified number of bars relative to the specified position in the chart. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartnavigate.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartnavigate.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -4255,7 +4255,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartNavigate<br>
         /// <b>Description:</b> Performs shift of the specified chart by the specified number of bars relative to the specified position in the chart. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartnavigate.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartnavigate.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -4294,7 +4294,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartID<br>
         /// <b>Description:</b> Returns the ID of the current chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartid.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartid.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -4309,7 +4309,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartID<br>
         /// <b>Description:</b> Returns the ID of the current chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartid.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartid.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -4342,7 +4342,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartIndicatorDelete<br>
         /// <b>Description:</b> Removes an indicator with a specified name from the specified chart window. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatordelete.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartindicatordelete.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 denotes the current chart.</li>
@@ -4360,7 +4360,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartIndicatorDelete<br>
         /// <b>Description:</b> Removes an indicator with a specified name from the specified chart window. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatordelete.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartindicatordelete.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 denotes the current chart.</li>
@@ -4399,7 +4399,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartIndicatorName<br>
         /// <b>Description:</b> Returns the short name of the indicator by the number in the indicators list on the specified chart window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatorname.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartindicatorname.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 denotes the current chart.</li>
@@ -4417,7 +4417,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartIndicatorName<br>
         /// <b>Description:</b> Returns the short name of the indicator by the number in the indicators list on the specified chart window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatorname.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartindicatorname.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 denotes the current chart.</li>
@@ -4456,7 +4456,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartIndicatorsTotal<br>
         /// <b>Description:</b> Returns the number of all indicators applied to the specified chart window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatorstotal.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartindicatorstotal.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 denotes the current chart.</li>
@@ -4473,7 +4473,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartIndicatorsTotal<br>
         /// <b>Description:</b> Returns the number of all indicators applied to the specified chart window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatorstotal.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartindicatorstotal.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 denotes the current chart.</li>
@@ -4510,7 +4510,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartWindowOnDropped<br>
         /// <b>Description:</b> Returns the number (index) of the chart subwindow the Expert Advisor or script has been dropped to. 0 means the main chart window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartwindowondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -4525,7 +4525,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartWindowOnDropped<br>
         /// <b>Description:</b> Returns the number (index) of the chart subwindow the Expert Advisor or script has been dropped to. 0 means the main chart window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartwindowondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -4558,7 +4558,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartPriceOnDropped<br>
         /// <b>Description:</b> Returns the price coordinate corresponding to the chart point the Expert Advisor or script has been dropped to.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartpriceondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartpriceondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -4573,7 +4573,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartPriceOnDropped<br>
         /// <b>Description:</b> Returns the price coordinate corresponding to the chart point the Expert Advisor or script has been dropped to.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartpriceondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartpriceondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -4606,7 +4606,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartTimeOnDropped<br>
         /// <b>Description:</b> Returns the time coordinate corresponding to the chart point the Expert Advisor or script has been dropped to.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/charttimeondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/charttimeondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -4621,7 +4621,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartTimeOnDropped<br>
         /// <b>Description:</b> Returns the time coordinate corresponding to the chart point the Expert Advisor or script has been dropped to.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/charttimeondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/charttimeondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -4654,7 +4654,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartXOnDropped<br>
         /// <b>Description:</b> Returns the X coordinate of the chart point the Expert Advisor or script has been dropped to.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartxondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartxondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -4669,7 +4669,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartXOnDropped<br>
         /// <b>Description:</b> Returns the X coordinate of the chart point the Expert Advisor or script has been dropped to.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartxondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartxondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -4702,7 +4702,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartYOnDropped<br>
         /// <b>Description:</b> Returns the Y coordinateof the chart point the Expert Advisor or script has been dropped to.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartyondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartyondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -4717,7 +4717,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartYOnDropped<br>
         /// <b>Description:</b> Returns the Y coordinateof the chart point the Expert Advisor or script has been dropped to.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartyondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartyondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -4750,7 +4750,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartSetSymbolPeriod<br>
         /// <b>Description:</b> Changes the symbol and period of the specified chart. The function is asynchronous, i.e. it sends the command and does not wait for its execution completion. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetsymbolperiod.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartsetsymbolperiod.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -4768,7 +4768,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartSetSymbolPeriod<br>
         /// <b>Description:</b> Changes the symbol and period of the specified chart. The function is asynchronous, i.e. it sends the command and does not wait for its execution completion. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetsymbolperiod.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartsetsymbolperiod.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -4807,7 +4807,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartScreenShot<br>
         /// <b>Description:</b> Saves current chart screen shot as a GIF, PNG or BMP file depending on specified extension. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartscreenshot.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartscreenshot.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -4827,7 +4827,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ChartScreenShot<br>
         /// <b>Description:</b> Saves current chart screen shot as a GIF, PNG or BMP file depending on specified extension. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartscreenshot.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/chartscreenshot.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
@@ -4870,7 +4870,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowBarsPerChart<br>
         /// <b>Description:</b> Returns the amount of bars visible on the chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowbarsperchart.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowbarsperchart.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -4885,7 +4885,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowBarsPerChart<br>
         /// <b>Description:</b> Returns the amount of bars visible on the chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowbarsperchart.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowbarsperchart.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -4918,7 +4918,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowExpertName<br>
         /// <b>Description:</b> Returns the name of the executed Expert Advisor, script, custom indicator, or library.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowexpertname.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowexpertname.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -4933,7 +4933,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowExpertName<br>
         /// <b>Description:</b> Returns the name of the executed Expert Advisor, script, custom indicator, or library.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowexpertname.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowexpertname.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -4966,7 +4966,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowFind<br>
         /// <b>Description:</b> Returns the window index containing this specified indicator.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowfind.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowfind.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] Indicator short name.</li>
@@ -4982,7 +4982,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowFind<br>
         /// <b>Description:</b> Returns the window index containing this specified indicator.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowfind.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowfind.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] Indicator short name.</li>
@@ -5017,7 +5017,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowFirstVisibleBar<br>
         /// <b>Description:</b> Returns index of the first visible bar in the current chart window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowfirstvisiblebar.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowfirstvisiblebar.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5032,7 +5032,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowFirstVisibleBar<br>
         /// <b>Description:</b> Returns index of the first visible bar in the current chart window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowfirstvisiblebar.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowfirstvisiblebar.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5065,7 +5065,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowHandle<br>
         /// <b>Description:</b> Returns the system handle of the chart window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowhandle.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowhandle.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol.</li>
@@ -5082,7 +5082,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowHandle<br>
         /// <b>Description:</b> Returns the system handle of the chart window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowhandle.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowhandle.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol.</li>
@@ -5119,7 +5119,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowIsVisible<br>
         /// <b>Description:</b> Returns the visibility flag of the chart subwindow.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowisvisible.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowisvisible.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Subwindow index.</li>
@@ -5135,7 +5135,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowIsVisible<br>
         /// <b>Description:</b> Returns the visibility flag of the chart subwindow.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowisvisible.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowisvisible.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Subwindow index.</li>
@@ -5170,7 +5170,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowOnDropped<br>
         /// <b>Description:</b> Returns the window index where Expert Advisor, custom indicator or script was dropped.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5185,7 +5185,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowOnDropped<br>
         /// <b>Description:</b> Returns the window index where Expert Advisor, custom indicator or script was dropped.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5218,7 +5218,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowPriceMax<br>
         /// <b>Description:</b> Returns the maximal value of the vertical scale of the specified subwindow of the current chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowpricemax.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowpricemax.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Chart subwindow index (0 - main chart window).</li>
@@ -5234,7 +5234,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowPriceMax<br>
         /// <b>Description:</b> Returns the maximal value of the vertical scale of the specified subwindow of the current chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowpricemax.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowpricemax.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Chart subwindow index (0 - main chart window).</li>
@@ -5269,7 +5269,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowPriceMin<br>
         /// <b>Description:</b> Returns the minimal value of the vertical scale of the specified subwindow of the current chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowpricemin.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowpricemin.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Chart subwindow index (0 - main chart window).</li>
@@ -5285,7 +5285,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowPriceMin<br>
         /// <b>Description:</b> Returns the minimal value of the vertical scale of the specified subwindow of the current chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowpricemin.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowpricemin.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Chart subwindow index (0 - main chart window).</li>
@@ -5320,7 +5320,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowPriceOnDropped<br>
         /// <b>Description:</b> Returns the price of the chart point where Expert Advisor or script was dropped.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowpriceondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowpriceondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5335,7 +5335,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowPriceOnDropped<br>
         /// <b>Description:</b> Returns the price of the chart point where Expert Advisor or script was dropped.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowpriceondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowpriceondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5368,7 +5368,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowRedraw<br>
         /// <b>Description:</b> Redraws the current chart forcedly.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowredraw.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowredraw.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5383,7 +5383,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowRedraw<br>
         /// <b>Description:</b> Redraws the current chart forcedly.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowredraw.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowredraw.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5416,7 +5416,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowScreenShot<br>
         /// <b>Description:</b> Saves current chart screen shot as a GIF file.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowscreenshot.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowscreenshot.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>filename</b> :  [in] Screen shot file name. Screenshot is saved to \Files folder.</li>
@@ -5437,7 +5437,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowScreenShot<br>
         /// <b>Description:</b> Saves current chart screen shot as a GIF file.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowscreenshot.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowscreenshot.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>filename</b> :  [in] Screen shot file name. Screenshot is saved to \Files folder.</li>
@@ -5482,7 +5482,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowTimeOnDropped<br>
         /// <b>Description:</b> Returns the time of the chart point where Expert Advisor or script was dropped.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowtimeondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowtimeondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5497,7 +5497,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowTimeOnDropped<br>
         /// <b>Description:</b> Returns the time of the chart point where Expert Advisor or script was dropped.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowtimeondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowtimeondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5530,7 +5530,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowsTotal<br>
         /// <b>Description:</b> Returns total number of indicator windows on the chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowstotal.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowstotal.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5545,7 +5545,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowsTotal<br>
         /// <b>Description:</b> Returns total number of indicator windows on the chart.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowstotal.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowstotal.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5578,7 +5578,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowXOnDropped<br>
         /// <b>Description:</b> Returns the value at X axis in pixels for the chart window client area point at which the Expert Advisor or script was dropped.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowxondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowxondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5593,7 +5593,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowXOnDropped<br>
         /// <b>Description:</b> Returns the value at X axis in pixels for the chart window client area point at which the Expert Advisor or script was dropped.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowxondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowxondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5626,7 +5626,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowYOnDropped<br>
         /// <b>Description:</b> Returns the value at Y axis in pixels for the chart window client area point at which the Expert Advisor or script was dropped.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowyondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowyondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5641,7 +5641,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> WindowYOnDropped<br>
         /// <b>Description:</b> Returns the value at Y axis in pixels for the chart window client area point at which the Expert Advisor or script was dropped.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowyondropped.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/chart_operations/windowyondropped.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5674,7 +5674,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderClose<br>
         /// <b>Description:</b> Closes opened order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderclose.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderclose.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>ticket</b> :  [in] Unique number of the order ticket.</li>
@@ -5694,7 +5694,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderClose<br>
         /// <b>Description:</b> Closes opened order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderclose.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderclose.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>ticket</b> :  [in] Unique number of the order ticket.</li>
@@ -5737,7 +5737,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderCloseBy<br>
         /// <b>Description:</b> Closes an opened order by another opposite opened order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordercloseby.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordercloseby.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>ticket</b> :  [in] Unique number of the order ticket.</li>
@@ -5755,7 +5755,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderCloseBy<br>
         /// <b>Description:</b> Closes an opened order by another opposite opened order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordercloseby.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordercloseby.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>ticket</b> :  [in] Unique number of the order ticket.</li>
@@ -5794,7 +5794,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderClosePrice<br>
         /// <b>Description:</b> Returns close price of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordercloseprice.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordercloseprice.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5809,7 +5809,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderClosePrice<br>
         /// <b>Description:</b> Returns close price of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordercloseprice.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordercloseprice.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5842,7 +5842,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderCloseTime<br>
         /// <b>Description:</b> Returns close time of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderclosetime.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderclosetime.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5857,7 +5857,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderCloseTime<br>
         /// <b>Description:</b> Returns close time of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderclosetime.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderclosetime.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5890,7 +5890,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderComment<br>
         /// <b>Description:</b> Returns comment of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordercomment.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordercomment.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5905,7 +5905,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderComment<br>
         /// <b>Description:</b> Returns comment of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordercomment.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordercomment.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5938,7 +5938,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderCommission<br>
         /// <b>Description:</b> Returns calculated commission of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordercommission.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordercommission.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5953,7 +5953,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderCommission<br>
         /// <b>Description:</b> Returns calculated commission of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordercommission.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordercommission.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -5986,7 +5986,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderDelete<br>
         /// <b>Description:</b> Deletes previously opened pending order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderdelete.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderdelete.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>ticket</b> :  [in] Unique number of the order ticket.</li>
@@ -6003,7 +6003,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderDelete<br>
         /// <b>Description:</b> Deletes previously opened pending order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderdelete.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderdelete.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>ticket</b> :  [in] Unique number of the order ticket.</li>
@@ -6040,7 +6040,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderExpiration<br>
         /// <b>Description:</b> Returns expiration date of the selected pending order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderexpiration.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderexpiration.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6055,7 +6055,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderExpiration<br>
         /// <b>Description:</b> Returns expiration date of the selected pending order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderexpiration.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderexpiration.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6088,7 +6088,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderLots<br>
         /// <b>Description:</b> Returns amount of lots of the selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderlots.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderlots.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6103,7 +6103,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderLots<br>
         /// <b>Description:</b> Returns amount of lots of the selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderlots.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderlots.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6136,7 +6136,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderMagicNumber<br>
         /// <b>Description:</b> Returns an identifying (magic) number of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordermagicnumber.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordermagicnumber.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6151,7 +6151,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderMagicNumber<br>
         /// <b>Description:</b> Returns an identifying (magic) number of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordermagicnumber.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordermagicnumber.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6184,7 +6184,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderModify<br>
         /// <b>Description:</b> Modification of characteristics of the previously opened or pending orders.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordermodify.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordermodify.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>ticket</b> :  [in] Unique number of the order ticket.</li>
@@ -6205,7 +6205,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderModify<br>
         /// <b>Description:</b> Modification of characteristics of the previously opened or pending orders.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordermodify.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordermodify.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>ticket</b> :  [in] Unique number of the order ticket.</li>
@@ -6250,7 +6250,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderOpenPrice<br>
         /// <b>Description:</b> Returns open price of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderopenprice.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderopenprice.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6265,7 +6265,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderOpenPrice<br>
         /// <b>Description:</b> Returns open price of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderopenprice.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderopenprice.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6298,7 +6298,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderOpenTime<br>
         /// <b>Description:</b> Returns open time of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderopentime.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderopentime.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6313,7 +6313,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderOpenTime<br>
         /// <b>Description:</b> Returns open time of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderopentime.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderopentime.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6346,7 +6346,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderPrint<br>
         /// <b>Description:</b> Prints information about the selected order in the log.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderprint.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderprint.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6361,7 +6361,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderPrint<br>
         /// <b>Description:</b> Prints information about the selected order in the log.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderprint.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderprint.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6394,7 +6394,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderProfit<br>
         /// <b>Description:</b> Returns profit of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderprofit.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderprofit.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6409,7 +6409,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderProfit<br>
         /// <b>Description:</b> Returns profit of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderprofit.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderprofit.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6442,7 +6442,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderSelect<br>
         /// <b>Description:</b> The function selects an order for further processing.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderselect.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderselect.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  </li>
@@ -6460,7 +6460,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderSelect<br>
         /// <b>Description:</b> The function selects an order for further processing.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderselect.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderselect.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  </li>
@@ -6499,7 +6499,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderSend<br>
         /// <b>Description:</b> The main function used to open market or place a pending order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordersend.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordersend.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol for trading.</li>
@@ -6525,7 +6525,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderSend<br>
         /// <b>Description:</b> The main function used to open market or place a pending order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordersend.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordersend.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol for trading.</li>
@@ -6580,7 +6580,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrdersHistoryTotal<br>
         /// <b>Description:</b> Returns the number of closed orders in the account history loaded into the terminal.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordershistorytotal.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordershistorytotal.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6595,7 +6595,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrdersHistoryTotal<br>
         /// <b>Description:</b> Returns the number of closed orders in the account history loaded into the terminal.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordershistorytotal.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordershistorytotal.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6628,7 +6628,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderStopLoss<br>
         /// <b>Description:</b> Returns stop loss value of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderstoploss.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderstoploss.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6643,7 +6643,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderStopLoss<br>
         /// <b>Description:</b> Returns stop loss value of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderstoploss.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderstoploss.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6676,7 +6676,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrdersTotal<br>
         /// <b>Description:</b> Returns the number of market and pending orders.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderstotal.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderstotal.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6691,7 +6691,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrdersTotal<br>
         /// <b>Description:</b> Returns the number of market and pending orders.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderstotal.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderstotal.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6724,7 +6724,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderSwap<br>
         /// <b>Description:</b> Returns swap value of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderswap.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderswap.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6739,7 +6739,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderSwap<br>
         /// <b>Description:</b> Returns swap value of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderswap.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderswap.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6772,7 +6772,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderSymbol<br>
         /// <b>Description:</b> Returns symbol name of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordersymbol.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordersymbol.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6787,7 +6787,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderSymbol<br>
         /// <b>Description:</b> Returns symbol name of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordersymbol.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordersymbol.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6820,7 +6820,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderTakeProfit<br>
         /// <b>Description:</b> Returns take profit value of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordertakeprofit.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordertakeprofit.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6835,7 +6835,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderTakeProfit<br>
         /// <b>Description:</b> Returns take profit value of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordertakeprofit.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordertakeprofit.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6868,7 +6868,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderTicket<br>
         /// <b>Description:</b> Returns ticket number of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderticket.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderticket.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6883,7 +6883,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderTicket<br>
         /// <b>Description:</b> Returns ticket number of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderticket.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/orderticket.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6916,7 +6916,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderType<br>
         /// <b>Description:</b> Returns order operation type of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordertype.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordertype.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6931,7 +6931,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> OrderType<br>
         /// <b>Description:</b> Returns order operation type of the currently selected order.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordertype.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/trading/ordertype.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -6964,7 +6964,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalBaseGetDouble<br>
         /// <b>Description:</b> Returns the value of<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbasegetdouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalbasegetdouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Signal property identifier. The value can be one of the values of the enumeration.</li>
@@ -6980,7 +6980,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalBaseGetDouble<br>
         /// <b>Description:</b> Returns the value of<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbasegetdouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalbasegetdouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Signal property identifier. The value can be one of the values of the enumeration.</li>
@@ -7015,7 +7015,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalBaseGetInteger<br>
         /// <b>Description:</b> Returns the value of<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbasegetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalbasegetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Signal property identifier. The value can be one of the values of the enumeration.</li>
@@ -7031,7 +7031,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalBaseGetInteger<br>
         /// <b>Description:</b> Returns the value of<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbasegetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalbasegetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Signal property identifier. The value can be one of the values of the enumeration.</li>
@@ -7066,7 +7066,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalBaseGetString<br>
         /// <b>Description:</b> Returns the value of<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbasegetstring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalbasegetstring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Signal property identifier. The value can be one of the values of the enumeration.</li>
@@ -7082,7 +7082,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalBaseGetString<br>
         /// <b>Description:</b> Returns the value of<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbasegetstring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalbasegetstring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Signal property identifier. The value can be one of the values of the enumeration.</li>
@@ -7117,7 +7117,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalBaseSelect<br>
         /// <b>Description:</b> Selects a signal from signals, available in terminal for further working with it.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbaseselect.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalbaseselect.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Signal index in base of trading signals.</li>
@@ -7133,7 +7133,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalBaseSelect<br>
         /// <b>Description:</b> Selects a signal from signals, available in terminal for further working with it.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbaseselect.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalbaseselect.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Signal index in base of trading signals.</li>
@@ -7168,7 +7168,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalBaseTotal<br>
         /// <b>Description:</b> Returns the total amount of signals, available in terminal.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbasetotal.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalbasetotal.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -7183,7 +7183,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalBaseTotal<br>
         /// <b>Description:</b> Returns the total amount of signals, available in terminal.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbasetotal.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalbasetotal.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -7216,7 +7216,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalInfoGetDouble<br>
         /// <b>Description:</b> Returns the value of<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfogetdouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalinfogetdouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
@@ -7232,7 +7232,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalInfoGetDouble<br>
         /// <b>Description:</b> Returns the value of<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfogetdouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalinfogetdouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
@@ -7267,7 +7267,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalInfoGetInteger<br>
         /// <b>Description:</b> Returns the value of<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfogetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalinfogetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
@@ -7283,7 +7283,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalInfoGetInteger<br>
         /// <b>Description:</b> Returns the value of<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfogetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalinfogetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
@@ -7318,7 +7318,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalInfoGetString<br>
         /// <b>Description:</b> Returns the value of<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfogetstring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalinfogetstring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
@@ -7334,7 +7334,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalInfoGetString<br>
         /// <b>Description:</b> Returns the value of<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfogetstring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalinfogetstring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
@@ -7369,7 +7369,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalInfoSetDouble<br>
         /// <b>Description:</b> Sets the value of<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfosetdouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalinfosetdouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
@@ -7386,7 +7386,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalInfoSetDouble<br>
         /// <b>Description:</b> Sets the value of<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfosetdouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalinfosetdouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
@@ -7423,7 +7423,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalInfoSetInteger<br>
         /// <b>Description:</b> Sets the value of<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfosetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalinfosetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
@@ -7440,7 +7440,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalInfoSetInteger<br>
         /// <b>Description:</b> Sets the value of<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfosetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalinfosetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
@@ -7477,7 +7477,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalSubscribe<br>
         /// <b>Description:</b> Subscribes to the trading signal.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalsubscribe.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalsubscribe.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>signal_id</b> :  [in] Signal identifier.</li>
@@ -7493,7 +7493,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalSubscribe<br>
         /// <b>Description:</b> Subscribes to the trading signal.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalsubscribe.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalsubscribe.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>signal_id</b> :  [in] Signal identifier.</li>
@@ -7528,7 +7528,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalUnsubscribe<br>
         /// <b>Description:</b> Cancels subscription.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalunsubscribe.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalunsubscribe.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -7543,7 +7543,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SignalUnsubscribe<br>
         /// <b>Description:</b> Cancels subscription.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalunsubscribe.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/signals/signalunsubscribe.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -7576,7 +7576,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariableCheck<br>
         /// <b>Description:</b> Checks the existence of a global variable with the specified name<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablecheck.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariablecheck.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] Global variable name.</li>
@@ -7592,7 +7592,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariableCheck<br>
         /// <b>Description:</b> Checks the existence of a global variable with the specified name<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablecheck.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariablecheck.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] Global variable name.</li>
@@ -7627,7 +7627,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariableTime<br>
         /// <b>Description:</b> Returns the time when the global variable was last accessed.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariabletime.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariabletime.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] Name of the global variable.</li>
@@ -7643,7 +7643,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariableTime<br>
         /// <b>Description:</b> Returns the time when the global variable was last accessed.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariabletime.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariabletime.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] Name of the global variable.</li>
@@ -7678,7 +7678,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariableDel<br>
         /// <b>Description:</b> Deletes a global variable from the client terminal<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariabledel.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariabledel.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] Global variable name.</li>
@@ -7694,7 +7694,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariableDel<br>
         /// <b>Description:</b> Deletes a global variable from the client terminal<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariabledel.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariabledel.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] Global variable name.</li>
@@ -7729,7 +7729,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariableGet<br>
         /// <b>Description:</b> Returns the value of an existing global variable of the client terminal. There are 2 variants of the function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariableget.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariableget.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] Global variable name.</li>
@@ -7745,7 +7745,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariableGet<br>
         /// <b>Description:</b> Returns the value of an existing global variable of the client terminal. There are 2 variants of the function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariableget.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariableget.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] Global variable name.</li>
@@ -7780,7 +7780,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariableName<br>
         /// <b>Description:</b> Returns the name of a global variable by its ordinal number.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablename.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariablename.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Sequence number in the list of global variables. It should be greater than or equal to 0 and less than .</li>
@@ -7796,7 +7796,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariableName<br>
         /// <b>Description:</b> Returns the name of a global variable by its ordinal number.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablename.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariablename.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Sequence number in the list of global variables. It should be greater than or equal to 0 and less than .</li>
@@ -7831,7 +7831,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariableSet<br>
         /// <b>Description:</b> Sets a new value for a global variable. If the variable does not exist, the system creates a new global variable.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariableset.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariableset.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] Global variable name.</li>
@@ -7848,7 +7848,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariableSet<br>
         /// <b>Description:</b> Sets a new value for a global variable. If the variable does not exist, the system creates a new global variable.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariableset.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariableset.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] Global variable name.</li>
@@ -7885,7 +7885,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariablesFlush<br>
         /// <b>Description:</b> Forcibly saves contents of all global variables to a disk.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablesflush.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariablesflush.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -7900,7 +7900,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariablesFlush<br>
         /// <b>Description:</b> Forcibly saves contents of all global variables to a disk.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablesflush.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariablesflush.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -7933,7 +7933,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariableTemp<br>
         /// <b>Description:</b> The function attempts to create a temporary global variable. If the variable doesn't exist, the system creates a new temporary global variable.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariabletemp.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariabletemp.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] The name of a temporary global variable.</li>
@@ -7949,7 +7949,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariableTemp<br>
         /// <b>Description:</b> The function attempts to create a temporary global variable. If the variable doesn't exist, the system creates a new temporary global variable.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariabletemp.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariabletemp.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] The name of a temporary global variable.</li>
@@ -7984,7 +7984,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariableSetOnCondition<br>
         /// <b>Description:</b> Sets the new value of the existing global variable if the current value equals to the third parameter check_value. If there is no global variable, the function will generate an error ERR_GLOBALVARIABLE_NOT_FOUND (4501) and return false.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablesetoncondition.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariablesetoncondition.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] The name of a global variable.</li>
@@ -8002,7 +8002,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariableSetOnCondition<br>
         /// <b>Description:</b> Sets the new value of the existing global variable if the current value equals to the third parameter check_value. If there is no global variable, the function will generate an error ERR_GLOBALVARIABLE_NOT_FOUND (4501) and return false.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablesetoncondition.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariablesetoncondition.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] The name of a global variable.</li>
@@ -8041,7 +8041,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariablesDeleteAll<br>
         /// <b>Description:</b> Deletes global variables of the client terminal.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablesdeleteall.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariablesdeleteall.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>prefix_name</b> :  [in] Name prefix global variables to remove. If you specify a prefix NULL or empty string, then all variables that meet the data criterion will be deleted.</li>
@@ -8058,7 +8058,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariablesDeleteAll<br>
         /// <b>Description:</b> Deletes global variables of the client terminal.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablesdeleteall.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariablesdeleteall.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>prefix_name</b> :  [in] Name prefix global variables to remove. If you specify a prefix NULL or empty string, then all variables that meet the data criterion will be deleted.</li>
@@ -8095,7 +8095,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariablesTotal<br>
         /// <b>Description:</b> Returns the total number of global variables of the client terminal.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablestotal.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariablestotal.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -8110,7 +8110,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> GlobalVariablesTotal<br>
         /// <b>Description:</b> Returns the total number of global variables of the client terminal.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablestotal.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/globals/globalvariablestotal.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -8143,7 +8143,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> HideTestIndicators<br>
         /// <b>Description:</b> The function sets a flag hiding indicators called by the Expert Advisor.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/hidetestindicators.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/hidetestindicators.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>hide</b> :  [in] Hiding flag.</li>
@@ -8159,7 +8159,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> HideTestIndicators<br>
         /// <b>Description:</b> The function sets a flag hiding indicators called by the Expert Advisor.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/hidetestindicators.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/hidetestindicators.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>hide</b> :  [in] Hiding flag.</li>
@@ -8194,7 +8194,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorSetDouble<br>
         /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the double type. There are two variants of the function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetdouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatorsetdouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
@@ -8211,7 +8211,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorSetDouble<br>
         /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the double type. There are two variants of the function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetdouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatorsetdouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
@@ -8248,7 +8248,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorSetDouble<br>
         /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the double type. There are two variants of the function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetdouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatorsetdouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
@@ -8266,7 +8266,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorSetDouble<br>
         /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the double type. There are two variants of the function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetdouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatorsetdouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
@@ -8305,7 +8305,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorSetInteger<br>
         /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the int or color type. There are two variants of the function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatorsetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
@@ -8322,7 +8322,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorSetInteger<br>
         /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the int or color type. There are two variants of the function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatorsetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
@@ -8359,7 +8359,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorSetInteger<br>
         /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the int or color type. There are two variants of the function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatorsetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
@@ -8377,7 +8377,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorSetInteger<br>
         /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the int or color type. There are two variants of the function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatorsetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
@@ -8416,7 +8416,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorSetString<br>
         /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the string type. There are two variants of the function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetstring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatorsetstring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
@@ -8433,7 +8433,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorSetString<br>
         /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the string type. There are two variants of the function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetstring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatorsetstring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
@@ -8470,7 +8470,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorSetString<br>
         /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the string type. There are two variants of the function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetstring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatorsetstring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
@@ -8488,7 +8488,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorSetString<br>
         /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the string type. There are two variants of the function.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetstring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatorsetstring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
@@ -8527,7 +8527,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorBuffers<br>
         /// <b>Description:</b> Allocates memory for buffers used for custom indicator calculations.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorbuffers.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatorbuffers.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>count</b> :  [in] Amount of buffers to be allocated. Should be within the range between indicator_buffers and 512 buffers.</li>
@@ -8543,7 +8543,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorBuffers<br>
         /// <b>Description:</b> Allocates memory for buffers used for custom indicator calculations.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorbuffers.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatorbuffers.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>count</b> :  [in] Amount of buffers to be allocated. Should be within the range between indicator_buffers and 512 buffers.</li>
@@ -8578,7 +8578,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorCounted<br>
         /// <b>Description:</b> The function returns the amount of bars not changed after the indicator had been launched last.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorcounted.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatorcounted.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -8593,7 +8593,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorCounted<br>
         /// <b>Description:</b> The function returns the amount of bars not changed after the indicator had been launched last.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorcounted.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatorcounted.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// </ul>
@@ -8626,7 +8626,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorDigits<br>
         /// <b>Description:</b> Sets precision format (the count of digits after decimal point) to visualize indicator values.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatordigits.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatordigits.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>digits</b> :  [in] Precision format, the count of digits after decimal point.</li>
@@ -8642,7 +8642,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorDigits<br>
         /// <b>Description:</b> Sets precision format (the count of digits after decimal point) to visualize indicator values.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatordigits.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatordigits.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>digits</b> :  [in] Precision format, the count of digits after decimal point.</li>
@@ -8677,7 +8677,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorShortName<br>
         /// <b>Description:</b> Sets the "short" name of a custom indicator to be shown in the DataWindow and in the chart subwindow.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorshortname.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatorshortname.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] New short name.</li>
@@ -8693,7 +8693,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> IndicatorShortName<br>
         /// <b>Description:</b> Sets the "short" name of a custom indicator to be shown in the DataWindow and in the chart subwindow.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorshortname.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/indicatorshortname.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] New short name.</li>
@@ -8728,7 +8728,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SetIndexArrow<br>
         /// <b>Description:</b> Sets an arrow symbol for indicators line of the DRAW_ARROW type.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexarrow.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/setindexarrow.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
@@ -8745,7 +8745,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SetIndexArrow<br>
         /// <b>Description:</b> Sets an arrow symbol for indicators line of the DRAW_ARROW type.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexarrow.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/setindexarrow.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
@@ -8782,7 +8782,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SetIndexDrawBegin<br>
         /// <b>Description:</b> Sets the bar number (from the data beginning) from which the drawing of the given indicator line must start.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexdrawbegin.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/setindexdrawbegin.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
@@ -8799,7 +8799,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SetIndexDrawBegin<br>
         /// <b>Description:</b> Sets the bar number (from the data beginning) from which the drawing of the given indicator line must start.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexdrawbegin.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/setindexdrawbegin.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
@@ -8836,7 +8836,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SetIndexEmptyValue<br>
         /// <b>Description:</b> Sets drawing line empty value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexemptyvalue.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/setindexemptyvalue.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
@@ -8853,7 +8853,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SetIndexEmptyValue<br>
         /// <b>Description:</b> Sets drawing line empty value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexemptyvalue.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/setindexemptyvalue.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
@@ -8890,7 +8890,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SetIndexLabel<br>
         /// <b>Description:</b> Sets drawing line description for showing in the DataWindow and in the tooltip.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexlabel.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/setindexlabel.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
@@ -8907,7 +8907,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SetIndexLabel<br>
         /// <b>Description:</b> Sets drawing line description for showing in the DataWindow and in the tooltip.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexlabel.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/setindexlabel.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
@@ -8944,7 +8944,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SetIndexShift<br>
         /// <b>Description:</b> Sets offset for the drawing line.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexshift.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/setindexshift.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
@@ -8961,7 +8961,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SetIndexShift<br>
         /// <b>Description:</b> Sets offset for the drawing line.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexshift.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/setindexshift.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
@@ -8998,7 +8998,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SetIndexStyle<br>
         /// <b>Description:</b> Sets the new type, style, width and color for a given indicator line.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexstyle.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/setindexstyle.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
@@ -9018,7 +9018,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SetIndexStyle<br>
         /// <b>Description:</b> Sets the new type, style, width and color for a given indicator line.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexstyle.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/setindexstyle.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
@@ -9061,7 +9061,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SetLevelStyle<br>
         /// <b>Description:</b> The function sets a new style, width and color of horizontal levels of indicator to be output in a separate window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setlevelstyle.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/setlevelstyle.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>draw_style</b> :  [in] Drawing style. Can be one of the listed. EMPTY value means that the style will not be changed.</li>
@@ -9079,7 +9079,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SetLevelStyle<br>
         /// <b>Description:</b> The function sets a new style, width and color of horizontal levels of indicator to be output in a separate window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setlevelstyle.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/setlevelstyle.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>draw_style</b> :  [in] Drawing style. Can be one of the listed. EMPTY value means that the style will not be changed.</li>
@@ -9118,7 +9118,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SetLevelValue<br>
         /// <b>Description:</b> The function sets a value for a given horizontal level of the indicator to be output in a separate window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setlevelvalue.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/setlevelvalue.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>level</b> :  [in] Level index (0-31).</li>
@@ -9135,7 +9135,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> SetLevelValue<br>
         /// <b>Description:</b> The function sets a value for a given horizontal level of the indicator to be output in a separate window.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setlevelvalue.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/customind/setlevelvalue.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>level</b> :  [in] Level index (0-31).</li>
@@ -9172,7 +9172,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectCreate<br>
         /// <b>Description:</b> The function creates an object with the specified name, type, and the initial coordinates in the specified chart subwindow of the specified chart. There are two variants of the function:<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectcreate.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectcreate.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
@@ -9195,7 +9195,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectCreate<br>
         /// <b>Description:</b> The function creates an object with the specified name, type, and the initial coordinates in the specified chart subwindow of the specified chart. There are two variants of the function:<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectcreate.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectcreate.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
@@ -9244,7 +9244,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectCreate<br>
         /// <b>Description:</b> The function creates an object with the specified name, type, and the initial coordinates in the specified chart subwindow of the specified chart. There are two variants of the function:<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectcreate.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectcreate.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Name of the object. The name must be unique within a chart, including its subwindows.</li>
@@ -9268,7 +9268,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectCreate<br>
         /// <b>Description:</b> The function creates an object with the specified name, type, and the initial coordinates in the specified chart subwindow of the specified chart. There are two variants of the function:<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectcreate.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectcreate.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Name of the object. The name must be unique within a chart, including its subwindows.</li>
@@ -9319,7 +9319,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectName<br>
         /// <b>Description:</b> The function returns the name of the corresponding object by its index in the objects list.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectname.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectname.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_index</b> :  [in] Object index. This value must be greater or equal to 0 and less than .</li>
@@ -9335,7 +9335,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectName<br>
         /// <b>Description:</b> The function returns the name of the corresponding object by its index in the objects list.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectname.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectname.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_index</b> :  [in] Object index. This value must be greater or equal to 0 and less than .</li>
@@ -9370,7 +9370,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectDelete<br>
         /// <b>Description:</b> The function removes the object with the specified name at the specified chart. There are two variants of the function:<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectdelete.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectdelete.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
@@ -9387,7 +9387,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectDelete<br>
         /// <b>Description:</b> The function removes the object with the specified name at the specified chart. There are two variants of the function:<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectdelete.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectdelete.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
@@ -9424,7 +9424,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectDelete<br>
         /// <b>Description:</b> The function removes the object with the specified name at the specified chart. There are two variants of the function:<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectdelete.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectdelete.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Name of object to be deleted.</li>
@@ -9440,7 +9440,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectDelete<br>
         /// <b>Description:</b> The function removes the object with the specified name at the specified chart. There are two variants of the function:<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectdelete.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectdelete.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Name of object to be deleted.</li>
@@ -9475,7 +9475,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectsDeleteAll<br>
         /// <b>Description:</b> Removes all objects from the specified chart, specified chart subwindow, of the specified type.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsdeleteall.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
@@ -9493,7 +9493,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectsDeleteAll<br>
         /// <b>Description:</b> Removes all objects from the specified chart, specified chart subwindow, of the specified type.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsdeleteall.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
@@ -9532,7 +9532,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectsDeleteAll<br>
         /// <b>Description:</b> Removes all objects from the specified chart, specified chart subwindow, of the specified type.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsdeleteall.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>sub_window</b> :  [in] Number of the chart window. Must be greater or equal to -1 (-1 mean all subwindows, 0 means the main chart window) and less than .</li>
@@ -9549,7 +9549,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectsDeleteAll<br>
         /// <b>Description:</b> Removes all objects from the specified chart, specified chart subwindow, of the specified type.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsdeleteall.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>sub_window</b> :  [in] Number of the chart window. Must be greater or equal to -1 (-1 mean all subwindows, 0 means the main chart window) and less than .</li>
@@ -9586,7 +9586,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectsDeleteAll<br>
         /// <b>Description:</b> Removes all objects from the specified chart, specified chart subwindow, of the specified type.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsdeleteall.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
@@ -9605,7 +9605,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectsDeleteAll<br>
         /// <b>Description:</b> Removes all objects from the specified chart, specified chart subwindow, of the specified type.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsdeleteall.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
@@ -9646,7 +9646,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectFind<br>
         /// <b>Description:</b> The function searches for an object having the specified name. There are two variants of the function:<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectfind.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectfind.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
@@ -9663,7 +9663,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectFind<br>
         /// <b>Description:</b> The function searches for an object having the specified name. There are two variants of the function:<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectfind.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectfind.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
@@ -9700,7 +9700,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectFind<br>
         /// <b>Description:</b> The function searches for an object having the specified name. There are two variants of the function:<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectfind.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectfind.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] The name of the object to find.</li>
@@ -9716,7 +9716,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectFind<br>
         /// <b>Description:</b> The function searches for an object having the specified name. There are two variants of the function:<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectfind.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectfind.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] The name of the object to find.</li>
@@ -9751,7 +9751,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectGetTimeByValue<br>
         /// <b>Description:</b> The function returns the time value for the specified price value of the specified object.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgettimebyvalue.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectgettimebyvalue.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Name of the object.</li>
@@ -9769,7 +9769,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectGetTimeByValue<br>
         /// <b>Description:</b> The function returns the time value for the specified price value of the specified object.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgettimebyvalue.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectgettimebyvalue.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Name of the object.</li>
@@ -9808,7 +9808,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectGetValueByTime<br>
         /// <b>Description:</b> The function returns the price value for the specified time value of the specified object.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetvaluebytime.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectgetvaluebytime.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
@@ -9827,7 +9827,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectGetValueByTime<br>
         /// <b>Description:</b> The function returns the price value for the specified time value of the specified object.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetvaluebytime.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectgetvaluebytime.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
@@ -9868,7 +9868,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectMove<br>
         /// <b>Description:</b> The function changes coordinates of the specified anchor point of the object at the specified chart. There are two variants of the function:<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectmove.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectmove.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Name of the object.</li>
@@ -9887,7 +9887,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectMove<br>
         /// <b>Description:</b> The function changes coordinates of the specified anchor point of the object at the specified chart. There are two variants of the function:<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectmove.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectmove.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Name of the object.</li>
@@ -9928,7 +9928,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectsTotal<br>
         /// <b>Description:</b> The function returns the number of objects of the specified type in the specified chart. There are two variants of the function:<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectstotal.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectstotal.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
@@ -9946,7 +9946,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectsTotal<br>
         /// <b>Description:</b> The function returns the number of objects of the specified type in the specified chart. There are two variants of the function:<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectstotal.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectstotal.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
@@ -9985,7 +9985,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectsTotal<br>
         /// <b>Description:</b> The function returns the number of objects of the specified type in the specified chart. There are two variants of the function:<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectstotal.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectstotal.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>type</b> :  [in] Type of the object. The value can be one of the values of the enumeration. EMPTY(-1) means all types.</li>
@@ -10001,7 +10001,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectsTotal<br>
         /// <b>Description:</b> The function returns the number of objects of the specified type in the specified chart. There are two variants of the function:<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectstotal.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectstotal.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>type</b> :  [in] Type of the object. The value can be one of the values of the enumeration. EMPTY(-1) means all types.</li>
@@ -10036,7 +10036,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectGetDouble<br>
         /// <b>Description:</b> The function returns the value of the corresponding object property. The object property must be of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetdouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectgetdouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
@@ -10055,7 +10055,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectGetDouble<br>
         /// <b>Description:</b> The function returns the value of the corresponding object property. The object property must be of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetdouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectgetdouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
@@ -10096,7 +10096,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectGetInteger<br>
         /// <b>Description:</b> The function returns the value of the corresponding object property. The object property must be of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectgetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
@@ -10115,7 +10115,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectGetInteger<br>
         /// <b>Description:</b> The function returns the value of the corresponding object property. The object property must be of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectgetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
@@ -10156,7 +10156,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectGetString<br>
         /// <b>Description:</b> The function returns the value of the corresponding object property. The object property must be of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetstring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectgetstring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
@@ -10175,7 +10175,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectGetString<br>
         /// <b>Description:</b> The function returns the value of the corresponding object property. The object property must be of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetstring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectgetstring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
@@ -10216,7 +10216,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectSetDouble<br>
         /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetdouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsetdouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
@@ -10235,7 +10235,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectSetDouble<br>
         /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetdouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsetdouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
@@ -10276,7 +10276,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectSetDouble<br>
         /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetdouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsetdouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
@@ -10296,7 +10296,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectSetDouble<br>
         /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetdouble.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsetdouble.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
@@ -10339,7 +10339,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectSetInteger<br>
         /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
@@ -10358,7 +10358,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectSetInteger<br>
         /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
@@ -10399,7 +10399,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectSetInteger<br>
         /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
@@ -10419,7 +10419,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectSetInteger<br>
         /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetinteger.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsetinteger.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
@@ -10462,7 +10462,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectSetString<br>
         /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetstring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsetstring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
@@ -10481,7 +10481,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectSetString<br>
         /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetstring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsetstring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
@@ -10522,7 +10522,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectSetString<br>
         /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetstring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsetstring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
@@ -10542,7 +10542,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectSetString<br>
         /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetstring.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsetstring.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
@@ -10585,7 +10585,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> TextSetFont<br>
         /// <b>Description:</b> The function sets the font for displaying the text using drawing methods and returns the result of that operation. Arial font with the size -120 (12 pt) is used by default.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/textsetfont.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/textsetfont.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] Font name in the system or the name of the resource containing the font or the path to font file on the disk.</li>
@@ -10604,7 +10604,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> TextSetFont<br>
         /// <b>Description:</b> The function sets the font for displaying the text using drawing methods and returns the result of that operation. Arial font with the size -120 (12 pt) is used by default.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/textsetfont.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/textsetfont.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>name</b> :  [in] Font name in the system or the name of the resource containing the font or the path to font file on the disk.</li>
@@ -10645,7 +10645,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectDescription<br>
         /// <b>Description:</b> Returns the object description.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectdescription.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectdescription.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Object name.</li>
@@ -10661,7 +10661,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectDescription<br>
         /// <b>Description:</b> Returns the object description.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectdescription.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectdescription.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Object name.</li>
@@ -10696,7 +10696,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectGet<br>
         /// <b>Description:</b> Returns the value of the specified object property.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectget.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectget.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Object name.</li>
@@ -10713,7 +10713,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectGet<br>
         /// <b>Description:</b> Returns the value of the specified object property.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectget.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectget.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Object name.</li>
@@ -10750,7 +10750,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectGetFiboDescription<br>
         /// <b>Description:</b> Returns the level description of a Fibonacci object.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetfibodescription.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectgetfibodescription.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Fibonacci object name.</li>
@@ -10767,7 +10767,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectGetFiboDescription<br>
         /// <b>Description:</b> Returns the level description of a Fibonacci object.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetfibodescription.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectgetfibodescription.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Fibonacci object name.</li>
@@ -10804,7 +10804,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectGetShiftByValue<br>
         /// <b>Description:</b> The function calculates and returns bar index (shift related to the current bar) for the given price.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetshiftbyvalue.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectgetshiftbyvalue.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Object name.</li>
@@ -10821,7 +10821,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectGetShiftByValue<br>
         /// <b>Description:</b> The function calculates and returns bar index (shift related to the current bar) for the given price.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetshiftbyvalue.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectgetshiftbyvalue.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Object name.</li>
@@ -10858,7 +10858,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectGetValueByShift<br>
         /// <b>Description:</b> The function calculates and returns the price value for the specified bar (shift related to the current bar).<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetvaluebyshift.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectgetvaluebyshift.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Object name.</li>
@@ -10875,7 +10875,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectGetValueByShift<br>
         /// <b>Description:</b> The function calculates and returns the price value for the specified bar (shift related to the current bar).<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetvaluebyshift.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectgetvaluebyshift.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Object name.</li>
@@ -10912,7 +10912,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectSet<br>
         /// <b>Description:</b> Changes the value of the specified object property.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectset.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectset.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Object name.</li>
@@ -10930,7 +10930,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectSet<br>
         /// <b>Description:</b> Changes the value of the specified object property.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectset.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectset.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Object name.</li>
@@ -10969,7 +10969,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectSetFiboDescription<br>
         /// <b>Description:</b> The function sets a new description to a level of a Fibonacci object.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetfibodescription.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsetfibodescription.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Object name.</li>
@@ -10987,7 +10987,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectSetFiboDescription<br>
         /// <b>Description:</b> The function sets a new description to a level of a Fibonacci object.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetfibodescription.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsetfibodescription.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Object name.</li>
@@ -11026,7 +11026,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectSetText<br>
         /// <b>Description:</b> The function c<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsettext.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsettext.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Object name.</li>
@@ -11046,7 +11046,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectSetText<br>
         /// <b>Description:</b> The function c<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsettext.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objectsettext.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Object name.</li>
@@ -11089,7 +11089,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectType<br>
         /// <b>Description:</b> The function returns the object type value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objecttype.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objecttype.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Object name.</li>
@@ -11105,7 +11105,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> ObjectType<br>
         /// <b>Description:</b> The function returns the object type value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objecttype.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/objects/objecttype.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>object_name</b> :  [in] Object name.</li>
@@ -11140,7 +11140,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iAC<br>
         /// <b>Description:</b> Calculates the Bill Williams' Accelerator/Decelerator oscillator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iac.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iac.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11158,7 +11158,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iAC<br>
         /// <b>Description:</b> Calculates the Bill Williams' Accelerator/Decelerator oscillator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iac.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iac.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11197,7 +11197,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iAD<br>
         /// <b>Description:</b> Calculates the Accumulation/Distribution indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iad.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iad.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11215,7 +11215,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iAD<br>
         /// <b>Description:</b> Calculates the Accumulation/Distribution indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iad.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iad.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11254,7 +11254,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iADX<br>
         /// <b>Description:</b> Calculates the Average Directional Movement Index indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iadx.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iadx.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11275,7 +11275,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iADX<br>
         /// <b>Description:</b> Calculates the Average Directional Movement Index indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iadx.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iadx.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11320,7 +11320,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iAlligator<br>
         /// <b>Description:</b> Calculates the Alligator indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ialligator.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/ialligator.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11347,7 +11347,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iAlligator<br>
         /// <b>Description:</b> Calculates the Alligator indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ialligator.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/ialligator.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11404,7 +11404,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iAO<br>
         /// <b>Description:</b> Calculates the Awesome oscillator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iao.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iao.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11422,7 +11422,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iAO<br>
         /// <b>Description:</b> Calculates the Awesome oscillator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iao.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iao.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11461,7 +11461,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iATR<br>
         /// <b>Description:</b> Calculates the Average True Range indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iatr.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iatr.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11480,7 +11480,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iATR<br>
         /// <b>Description:</b> Calculates the Average True Range indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iatr.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iatr.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11521,7 +11521,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iBearsPower<br>
         /// <b>Description:</b> Calculates the Bears Power indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ibearspower.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/ibearspower.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11541,7 +11541,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iBearsPower<br>
         /// <b>Description:</b> Calculates the Bears Power indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ibearspower.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/ibearspower.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11584,7 +11584,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iBands<br>
         /// <b>Description:</b> Calculates the Bollinger Bands indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ibands.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/ibands.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11607,7 +11607,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iBands<br>
         /// <b>Description:</b> Calculates the Bollinger Bands indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ibands.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/ibands.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11656,7 +11656,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iBullsPower<br>
         /// <b>Description:</b> Calculates the Bulls Power indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ibullspower.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/ibullspower.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11676,7 +11676,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iBullsPower<br>
         /// <b>Description:</b> Calculates the Bulls Power indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ibullspower.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/ibullspower.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11719,7 +11719,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iCCI<br>
         /// <b>Description:</b> Calculates the Commodity Channel Index indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/icci.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/icci.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11739,7 +11739,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iCCI<br>
         /// <b>Description:</b> Calculates the Commodity Channel Index indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/icci.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/icci.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11782,7 +11782,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iDeMarker<br>
         /// <b>Description:</b> Calculates the DeMarker indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/idemarker.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/idemarker.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11801,7 +11801,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iDeMarker<br>
         /// <b>Description:</b> Calculates the DeMarker indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/idemarker.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/idemarker.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11842,7 +11842,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iEnvelopes<br>
         /// <b>Description:</b> Calculates the Envelopes indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ienvelopes.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/ienvelopes.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11866,7 +11866,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iEnvelopes<br>
         /// <b>Description:</b> Calculates the Envelopes indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ienvelopes.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/ienvelopes.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11917,7 +11917,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iForce<br>
         /// <b>Description:</b> Calculates the Force Index indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iforce.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iforce.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11938,7 +11938,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iForce<br>
         /// <b>Description:</b> Calculates the Force Index indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iforce.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iforce.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -11983,7 +11983,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iFractals<br>
         /// <b>Description:</b> Calculates the Fractals indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ifractals.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/ifractals.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12002,7 +12002,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iFractals<br>
         /// <b>Description:</b> Calculates the Fractals indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ifractals.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/ifractals.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12043,7 +12043,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iGator<br>
         /// <b>Description:</b> Calculates the Gator oscillator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/igator.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/igator.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12070,7 +12070,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iGator<br>
         /// <b>Description:</b> Calculates the Gator oscillator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/igator.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/igator.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12127,7 +12127,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iIchimoku<br>
         /// <b>Description:</b> Calculates the Ichimoku Kinko Hyo indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iichimoku.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iichimoku.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12149,7 +12149,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iIchimoku<br>
         /// <b>Description:</b> Calculates the Ichimoku Kinko Hyo indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iichimoku.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iichimoku.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12196,7 +12196,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iBWMFI<br>
         /// <b>Description:</b> Calculates the Market Facilitation Index indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ibwmfi.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/ibwmfi.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12214,7 +12214,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iBWMFI<br>
         /// <b>Description:</b> Calculates the Market Facilitation Index indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ibwmfi.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/ibwmfi.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12253,7 +12253,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iMomentum<br>
         /// <b>Description:</b> Calculates the Momentum indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/imomentum.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/imomentum.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12273,7 +12273,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iMomentum<br>
         /// <b>Description:</b> Calculates the Momentum indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/imomentum.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/imomentum.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12316,7 +12316,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iMFI<br>
         /// <b>Description:</b> Calculates the Money Flow Index indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/imfi.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/imfi.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12335,7 +12335,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iMFI<br>
         /// <b>Description:</b> Calculates the Money Flow Index indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/imfi.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/imfi.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12376,7 +12376,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iMA<br>
         /// <b>Description:</b> Calculates the Moving Average indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ima.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/ima.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12398,7 +12398,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iMA<br>
         /// <b>Description:</b> Calculates the Moving Average indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ima.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/ima.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12445,7 +12445,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iOsMA<br>
         /// <b>Description:</b> iOsMA<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iosma.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iosma.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12467,7 +12467,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iOsMA<br>
         /// <b>Description:</b> iOsMA<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iosma.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iosma.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12514,7 +12514,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iMACD<br>
         /// <b>Description:</b> Calculates the Moving Averages Convergence/Divergence indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/imacd.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/imacd.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12537,7 +12537,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iMACD<br>
         /// <b>Description:</b> Calculates the Moving Averages Convergence/Divergence indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/imacd.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/imacd.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12586,7 +12586,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iOBV<br>
         /// <b>Description:</b> Calculates the On Balance Volume indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iobv.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iobv.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12605,7 +12605,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iOBV<br>
         /// <b>Description:</b> Calculates the On Balance Volume indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iobv.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iobv.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12646,7 +12646,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iSAR<br>
         /// <b>Description:</b> Calculates the Parabolic Stop and Reverse system indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/isar.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/isar.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12666,7 +12666,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iSAR<br>
         /// <b>Description:</b> Calculates the Parabolic Stop and Reverse system indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/isar.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/isar.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12709,7 +12709,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iRSI<br>
         /// <b>Description:</b> Calculates the Relative Strength Index indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/irsi.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/irsi.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12729,7 +12729,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iRSI<br>
         /// <b>Description:</b> Calculates the Relative Strength Index indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/irsi.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/irsi.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12772,7 +12772,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iRVI<br>
         /// <b>Description:</b> Calculates the Relative Vigor Index indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/irvi.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/irvi.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12792,7 +12792,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iRVI<br>
         /// <b>Description:</b> Calculates the Relative Vigor Index indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/irvi.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/irvi.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12835,7 +12835,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iStdDev<br>
         /// <b>Description:</b> Calculates the Standard Deviation indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/istddev.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/istddev.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12857,7 +12857,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iStdDev<br>
         /// <b>Description:</b> Calculates the Standard Deviation indicator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/istddev.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/istddev.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12904,7 +12904,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iStochastic<br>
         /// <b>Description:</b> Calculates the Stochastic Oscillator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/istochastic.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/istochastic.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12928,7 +12928,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iStochastic<br>
         /// <b>Description:</b> Calculates the Stochastic Oscillator and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/istochastic.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/istochastic.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12979,7 +12979,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iWPR<br>
         /// <b>Description:</b> Calculates the Larry Williams' Percent Range and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iwpr.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iwpr.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
@@ -12998,7 +12998,7 @@ namespace MQL4CSharp.Base.REST
         /// <summary>
         /// <b>Function:</b> iWPR<br>
         /// <b>Description:</b> Calculates the Larry Williams' Percent Range and returns its value.<br>
-        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iwpr.html<br>
+        /// <b>URL:</b> http://docs.mql4.com/indicators/iwpr.html<br>
         /// <b>JSON Input Parameters:</b><br>
         /// <ul>
         /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
