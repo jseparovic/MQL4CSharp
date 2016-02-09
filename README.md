@@ -56,7 +56,7 @@ Both REST and Websocket implementations will be able to leveraged from Custom St
 
 ## Installation Notes:
 - Modify the build output path in MQL4CSharp properties in Visual Studio 2015 to match you metatrader terminal library directory (in mt4: file->open data folder)
-- You need to copy log4net.dll. log4net.config SmartThreadPool.dll NodaTime.dll and NodaTime.xml to you metatrader root directory where the terminal.exe resides.
+- You need to copy: log4net.dll. log4net.config SmartThreadPool.dll NodaTime.dll NodaTime.xml GrapevinePlus.dll Newtonsoft.Json.dll to you metatrader root directory where the terminal.exe resides.
 - Grab the mq4 file from https://github.com/jseparovic/MQL4CSharp/blob/master/MQL4CSharp/Mql/mql4csharp.mq4
 - Grab the generated mqh files from https://github.com/jseparovic/MQL4CSharpGenerator/tree/master/out and put them in your mql/include dir
 - C# logging to file as per log4net.config
