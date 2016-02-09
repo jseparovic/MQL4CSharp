@@ -17,6 +17,7 @@ limitations under the License.
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using Grapevine.Server;
 using log4net;
 using MQL4CSharp.Base.REST;
 using RGiesecke.DllExport;
@@ -60,7 +61,7 @@ namespace MQL4CSharp.Base.MQL
         private readonly object mqlCommandManagersLock;
         private readonly object mqlExpertsLock;
 
-        private MQLRESTServer restServer;
+        private RESTServer restServer;
 
         private DLLObjectWrapper()
         {
@@ -69,7 +70,8 @@ namespace MQL4CSharp.Base.MQL
             mqlCommandManagers = new Dictionary<Int64, MQLCommandManager>();
             mqlThreadPools = new Dictionary<Int64, MQLThreadPool>();
             mqlExpertsLock = new object();
-            restServer = new MQLRESTServer();
+            restServer = new RESTServer();
+            restServer.Start();
 
             // create the default command manager for REST
             // Only need to use chart specific one for ChartObjects
@@ -154,62 +156,6 @@ namespace MQL4CSharp.Base.MQL
                 {
                     LOG.Error(e);
                 }
-            }
-        }
-
-
-        [DllExport("RESTCommandLock", CallingConvention = CallingConvention.StdCall)]
-        public static bool RestCommandLock(Int64 ix)
-        {
-            LOG.Info("lock requested: " + ix);
-            try
-            {
-                lock (syncLock)
-                {
-                    if (getInstance().restCommandLock == 0)
-                    {
-                        LOG.Info("lock succeeded: " + ix);
-                        getInstance().restCommandLock = ix;
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                LOG.Error(e);
-                return false;
-            }
-        }
-
-
-        [DllExport("RESTCommandUnlock", CallingConvention = CallingConvention.StdCall)]
-        public static bool RestCommandUnLock(Int64 ix)
-        {
-            LOG.Info("unlock requested: " + ix);
-            try
-            {
-                lock (syncLock)
-                {
-                    if (getInstance().restCommandLock == ix)
-                    {
-                        getInstance().restCommandLock = 0;
-                        LOG.Info("unlock succeeded: " + ix);
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                LOG.Error(e);
-                return false;
             }
         }
 

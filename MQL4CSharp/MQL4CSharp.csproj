@@ -109,7 +109,6 @@
     <Compile Include="Base\MQL\MQLBase.cs" />
     <Compile Include="Base\MQL\MQLThreadPool.cs" />
     <Compile Include="Base\REST\MQLRESTResource.cs" />
-    <Compile Include="Base\REST\MQLRESTServer.cs" />
     <Compile Include="Logging.cs" />
     <Compile Include="UserDefined\Filter\NewsCloseOutFilter.cs" />
     <Compile Include="UserDefined\Filter\NewsInputFilter.cs" />

@@ -39,15 +39,15 @@ namespace MQL4CSharp.UserDefined.Strategy
         private BaseStopLoss breakEvenStopLoss;
         private BaseFilter timeOfDayFilter;
         private BaseSignal maCross;
-        private TIMEFRAME strategyTimeframe = TIMEFRAME.PERIOD_H1;
+        private TIMEFRAME strategyTimeframe = TIMEFRAME.PERIOD_M1;
 
         public MaCrossStrategy(Int64 ix) : base(ix)
         {
             LOG.Debug("MaCrossStrategy() called");
             srStopLoss = new SRStopLoss(this);
-            fixedPipTakeProfit = new FixedPipTakeProfit(this, 100);
+            fixedPipTakeProfit = new FixedPipTakeProfit(this, 10);
             percentRiskProfile = new PercentRiskProfile(this, 0, 0.02, 5);
-            breakEvenStopLoss = new BreakEvenStopLoss(this, 50, 1);
+            breakEvenStopLoss = new BreakEvenStopLoss(this, 5, 1);
             timeOfDayFilter = new TimeOfDayFilter(this, new LocalTime(9,0), new LocalTime(23,0));
             maCross = new MACross(this);
         }
@@ -76,6 +76,7 @@ namespace MQL4CSharp.UserDefined.Strategy
         // returns true if ok to take a trade
         public override bool filter(string symbol)
         {
+            return true;
             return timeOfDayFilter.filter(symbol, strategyTimeframe);
         }
 

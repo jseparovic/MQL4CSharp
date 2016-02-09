@@ -35,7 +35,12 @@ namespace MQL4CSharp.Base.MQL
 
         private Dictionary<int, MQLCommandRequest> commandRequests;
 
-        private static readonly object syncLock = new object();
+        private static readonly object globalSyncLock = new object();
+
+        private static long UNLOCKED = -1;
+
+        private readonly object syncLock;
+        private long commandLock;
 
         static char DELIMITER = (char)29;
 
@@ -47,6 +52,9 @@ namespace MQL4CSharp.Base.MQL
             this.commandRequests = new Dictionary<int, MQLCommandRequest>();
             this.ix = ix;
             counter = 0;
+            syncLock = new object();
+            commandLock = UNLOCKED;
+
         }
 
         public int ExecCommand(MQLCommand command, List<Object> parameters)
@@ -134,7 +142,7 @@ namespace MQL4CSharp.Base.MQL
         {
             try
             {
-                lock (syncLock)
+                lock (getInstance(ix).syncLock)
                 {
                     foreach (KeyValuePair<int, MQLCommandRequest> commandRequest in getInstance(ix).commandRequests)
                     {
@@ -267,6 +275,62 @@ namespace MQL4CSharp.Base.MQL
         {
             getInstance(ix).setCommandResponse(id, response, error);
         }
+
+        [DllExport("CommandLock", CallingConvention = CallingConvention.StdCall)]
+        public static bool CommandLock(Int64 ix)
+        {
+            try
+            {
+                lock (getInstance(ix).syncLock)
+                {
+                    if (getInstance(ix).commandLock == UNLOCKED)
+                    {
+                        //LOG.Info("lock succeeded: " + ix);
+                        getInstance(ix).commandLock = ix;
+                        return true;
+                    }
+                    else
+                    {
+                        //LOG.Info("lock failed: " + ix);
+                        return false;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                LOG.Error(e);
+                return false;
+            }
+        }
+
+
+        [DllExport("CommandUnlock", CallingConvention = CallingConvention.StdCall)]
+        public static bool CommandUnLock(Int64 ix)
+        {
+            try
+            {
+                lock (getInstance(ix).syncLock)
+                {
+                    if (getInstance(ix).commandLock == ix)
+                    {
+                        getInstance(ix).commandLock = UNLOCKED;
+                        //LOG.Info("unlock succeeded: " + ix);
+                        return true;
+                    }
+                    else
+                    {
+                        //LOG.Info("unlock failed: " + ix);
+                        return false;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                LOG.Error(e);
+                return false;
+            }
+        }
+
     }
 }
 
