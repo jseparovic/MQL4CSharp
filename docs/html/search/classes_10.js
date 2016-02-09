@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['timeofdayfilter',['TimeOfDayFilter',['../class_m_q_l4_c_sharp_1_1_user_defined_1_1_filter_1_1_time_of_day_filter.html',1,'MQL4CSharp::UserDefined::Filter']]],
+  ['toofrequentrequestsexception',['TooFrequentRequestsException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_too_frequent_requests_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['toolongstringexception',['TooLongStringException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_too_long_string_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['toomanyopenedfilesexception',['TooManyOpenedFilesException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_too_many_opened_files_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['toomanyrequestsexception',['TooManyRequestsException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_too_many_requests_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['tradecontextbusyexception',['TradeContextBusyException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_trade_context_busy_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['tradedisabledexception',['TradeDisabledException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_trade_disabled_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['tradeerrorexception',['TradeErrorException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_trade_error_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['tradeexpertdisabledbyserverexception',['TradeExpertDisabledByServerException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_trade_expert_disabled_by_server_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['tradeexpirationdeniedexception',['TradeExpirationDeniedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_trade_expiration_denied_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['tradehedgeprohibitedexception',['TradeHedgeProhibitedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_trade_hedge_prohibited_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['trademodifydeniedexception',['TradeModifyDeniedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_trade_modify_denied_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['tradenotallowedexception',['TradeNotAllowedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_trade_not_allowed_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['tradeprohibitedbyfifoexception',['TradeProhibitedByFifoException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_trade_prohibited_by_fifo_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['tradetimeoutexception',['TradeTimeoutException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_trade_timeout_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['tradetoomanyordersexception',['TradeTooManyOrdersException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_trade_too_many_orders_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['trailingstoploss',['TrailingStopLoss',['../class_m_q_l4_c_sharp_1_1_user_defined_1_1_stop_loss_1_1_trailing_stop_loss.html',1,'MQL4CSharp::UserDefined::StopLoss']]]
+];

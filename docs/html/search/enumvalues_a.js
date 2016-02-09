@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['lavender',['Lavender',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aae346c232ce72c429ea0995de9f63f551',1,'MQL4CSharp::Base::Enums']]],
+  ['lavenderblush',['LavenderBlush',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aad04fe567a3ee55722222049368102579',1,'MQL4CSharp::Base::Enums']]],
+  ['lawngreen',['LawnGreen',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa0ce8a892203a9fd903090778f58f5db7',1,'MQL4CSharp::Base::Enums']]],
+  ['lemonchiffon',['LemonChiffon',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa6081384d87d33e652f812efb0ed780e6',1,'MQL4CSharp::Base::Enums']]],
+  ['lightblue',['LightBlue',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa4d7ff7393a484a7b9ed2e381f5cdeaf7',1,'MQL4CSharp::Base::Enums']]],
+  ['lightcoral',['LightCoral',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa43b0fe01a682337f451d53616525e395',1,'MQL4CSharp::Base::Enums']]],
+  ['lightcyan',['LightCyan',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aac37b5ce4ba80a097d82726ae74d34b13',1,'MQL4CSharp::Base::Enums']]],
+  ['lightgoldenrod',['LightGoldenrod',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa5301a1bc973dd82671db5bd5e9ddfcaf',1,'MQL4CSharp::Base::Enums']]],
+  ['lightgreen',['LightGreen',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa7a6a38bec67cbc2a39ce22f34e4ed8e2',1,'MQL4CSharp::Base::Enums']]],
+  ['lightsalmon',['LightSalmon',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa11dcd919bca32b454901f464e2a91cca',1,'MQL4CSharp::Base::Enums']]],
+  ['lightseagreen',['LightSeaGreen',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa37cf7970e7976f3f0f926f4e7141fc1c',1,'MQL4CSharp::Base::Enums']]],
+  ['lightskyblue',['LightSkyBlue',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aae122479df3330e1682ead68841094033',1,'MQL4CSharp::Base::Enums']]],
+  ['lightslategray',['LightSlateGray',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aaa879367c5692bcfdb353332cb5b16ccd',1,'MQL4CSharp::Base::Enums']]],
+  ['lightsteelblue',['LightSteelBlue',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aaaa88feafc512a95f9419eb107f991827',1,'MQL4CSharp::Base::Enums']]],
+  ['lightyellow',['LightYellow',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aafaf948b65bda38f44b17d156177d1728',1,'MQL4CSharp::Base::Enums']]],
+  ['lime',['Lime',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aafc1cebf02dc2ee68655f3e7bf1b84230',1,'MQL4CSharp::Base::Enums']]],
+  ['limegreen',['LimeGreen',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa188400fdd90b5a730ff7cd842ade6873',1,'MQL4CSharp::Base::Enums']]],
+  ['linen',['Linen',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa5ab518fc894c7438e44d9a035c2e970e',1,'MQL4CSharp::Base::Enums']]],
+  ['long',['LONG',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a8bd45b58389fa72ba1d4e8a192f17510ac1fabfea54ec6011e694f211f3ffebf3',1,'MQL4CSharp::Base::Enums']]]
+];

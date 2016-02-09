@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['incompatiblearraysexception',['IncompatibleArraysException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_incompatible_arrays_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['incompatiblefileaccessexception',['IncompatibleFileaccessException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_incompatible_fileaccess_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['incorrectseriesarrayusingexception',['IncorrectSeriesarrayUsingException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_incorrect_seriesarray_using_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['indicatorcannotinitexception',['IndicatorCannotInitException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_indicator_cannot_init_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['indicatorcannotloadexception',['IndicatorCannotLoadException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_indicator_cannot_load_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['integerparameterexpectedexception',['IntegerParameterExpectedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_integer_parameter_expected_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['internalerrorexception',['InternalErrorException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_internal_error_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['invalidaccountexception',['InvalidAccountException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_invalid_account_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['invalidfunctionparamscntexception',['InvalidFunctionParamscntException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_invalid_function_paramscnt_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['invalidfunctionparamvalueexception',['InvalidFunctionParamvalueException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_invalid_function_paramvalue_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['invalidpointerexception',['InvalidPointerException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_invalid_pointer_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['invalidpriceexception',['InvalidPriceException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_invalid_price_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['invalidpriceparamexception',['InvalidPriceParamException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_invalid_price_param_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['invalidstopsexception',['InvalidStopsException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_invalid_stops_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['invalidticketexception',['InvalidTicketException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_invalid_ticket_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['invalidtradeparametersexception',['InvalidTradeParametersException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_invalid_trade_parameters_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['invalidtradevolumeexception',['InvalidTradeVolumeException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_invalid_trade_volume_exception.html',1,'MQL4CSharp::Base::Exceptions']]]
+];

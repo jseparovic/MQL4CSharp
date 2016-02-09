@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['webrequestconnectfailedexception',['WebrequestConnectFailedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_webrequest_connect_failed_exception.html#aebea770fdd4f5c62eb9be95f41a0bcc5',1,'MQL4CSharp::Base::Exceptions::WebrequestConnectFailedException']]],
+  ['webrequestinvalidaddressexception',['WebrequestInvalidAddressException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_webrequest_invalid_address_exception.html#acbc4497ce6a7a78d31d61ddb2059fa40',1,'MQL4CSharp::Base::Exceptions::WebrequestInvalidAddressException']]],
+  ['webrequestrequestfailedexception',['WebrequestRequestFailedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_webrequest_request_failed_exception.html#a6c5b84368565729801ef5c785156f72c',1,'MQL4CSharp::Base::Exceptions::WebrequestRequestFailedException']]],
+  ['webrequesttimeoutexception',['WebrequestTimeoutException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_webrequest_timeout_exception.html#ac1338f5cd43b2bbc23b353f2c7ffd50c',1,'MQL4CSharp::Base::Exceptions::WebrequestTimeoutException']]],
+  ['windowbarsperchart',['WindowBarsPerChart',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#a24f8ac19e1722104025e23d2910fcb4d',1,'MQL4CSharp::Base::MQLBase']]],
+  ['windowexpertname',['WindowExpertName',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#ac9d1a306904d6fcff432271b5e5dfa34',1,'MQL4CSharp::Base::MQLBase']]],
+  ['windowfind',['WindowFind',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#af3d70e6dc184efc783bfc3246c2eaf41',1,'MQL4CSharp::Base::MQLBase']]],
+  ['windowfirstvisiblebar',['WindowFirstVisibleBar',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#aeea7c8cb00b915bd973af70023f12599',1,'MQL4CSharp::Base::MQLBase']]],
+  ['windowhandle',['WindowHandle',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#ad73ae87b25c66caa29c434ca956c9e30',1,'MQL4CSharp::Base::MQLBase']]],
+  ['windowisvisible',['WindowIsVisible',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#a429343f1dd9293216fbbcbd64259b780',1,'MQL4CSharp::Base::MQLBase']]],
+  ['windowondropped',['WindowOnDropped',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#aed0e3d99c39abd16d9bfee8dd0638c56',1,'MQL4CSharp::Base::MQLBase']]],
+  ['windowpricemax',['WindowPriceMax',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#a987d9a71b14d978ad04b9e04e7fe5eae',1,'MQL4CSharp::Base::MQLBase']]],
+  ['windowpricemin',['WindowPriceMin',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#a5eaae413a3d2794805f9c6cedd1ba0a1',1,'MQL4CSharp::Base::MQLBase']]],
+  ['windowpriceondropped',['WindowPriceOnDropped',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#a15e8b73413eb5f10f2951ab80b038b9e',1,'MQL4CSharp::Base::MQLBase']]],
+  ['windowredraw',['WindowRedraw',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#a19a9633c3ebd59dd8c7e4ab98607059d',1,'MQL4CSharp::Base::MQLBase']]],
+  ['windowscreenshot',['WindowScreenShot',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#a82a4afc1317b32a3495eead5840d1fed',1,'MQL4CSharp::Base::MQLBase']]],
+  ['windowstotal',['WindowsTotal',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#a20999e4055161184647e3571f7df30a2',1,'MQL4CSharp::Base::MQLBase']]],
+  ['windowtimeondropped',['WindowTimeOnDropped',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#a28b660fd45998a1e6cfeaec2caa5f67a',1,'MQL4CSharp::Base::MQLBase']]],
+  ['windowxondropped',['WindowXOnDropped',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#afe73f3f69b3a09805553509b930b3d4d',1,'MQL4CSharp::Base::MQLBase']]],
+  ['windowyondropped',['WindowYOnDropped',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#a118d5dec92579d423c86b5f6b99323af',1,'MQL4CSharp::Base::MQLBase']]],
+  ['wrongfilenameexception',['WrongFileNameException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_wrong_file_name_exception.html#a5a5e9ee6640d9ea59aeb3612947f5ec9',1,'MQL4CSharp::Base::Exceptions::WrongFileNameException']]],
+  ['wrongfunctionpointerexception',['WrongFunctionPointerException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_wrong_function_pointer_exception.html#a4f4631d7c07018a777233933da3efc1c',1,'MQL4CSharp::Base::Exceptions::WrongFunctionPointerException']]],
+  ['wrongjumpexception',['WrongJumpException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_wrong_jump_exception.html#a8a435a5578f99fd628deb6fe2eb737ce',1,'MQL4CSharp::Base::Exceptions::WrongJumpException']]]
+];

@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['wheat',['Wheat',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa966d953817980d045a3538d3b8bbb468',1,'MQL4CSharp::Base::Enums']]],
+  ['white',['White',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa25a81701fbfa4a1efdf660a950c1d006',1,'MQL4CSharp::Base::Enums']]],
+  ['whitesmoke',['WhiteSmoke',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa877db63f7c8ac1eea50cf8ba00d01a77',1,'MQL4CSharp::Base::Enums']]],
+  ['windowbarsperchart_5f1',['WindowBarsPerChart_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439a4d6947abeb03a9e2e9f04054af73429f',1,'MQL4CSharp::Base::Enums']]],
+  ['windowexpertname_5f1',['WindowExpertName_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439a33b44be4b255fe9e1b9abe9b67374d8a',1,'MQL4CSharp::Base::Enums']]],
+  ['windowfind_5f1',['WindowFind_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439a9953b3d24c271568890ed00cca49e3b6',1,'MQL4CSharp::Base::Enums']]],
+  ['windowfirstvisiblebar_5f1',['WindowFirstVisibleBar_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439aa7d30c4d4f995b2b4224ddeed868f1a8',1,'MQL4CSharp::Base::Enums']]],
+  ['windowhandle_5f1',['WindowHandle_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439ae40bb1d753eac70e97d71673381df098',1,'MQL4CSharp::Base::Enums']]],
+  ['windowisvisible_5f1',['WindowIsVisible_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439abf323b13543f6f6e26373ef72d593c87',1,'MQL4CSharp::Base::Enums']]],
+  ['windowondropped_5f1',['WindowOnDropped_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439aac5f83bad68a96bfe68993fa2304ffa8',1,'MQL4CSharp::Base::Enums']]],
+  ['windowpricemax_5f1',['WindowPriceMax_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439a7e0cf80a96c11160538b0f2acf490f99',1,'MQL4CSharp::Base::Enums']]],
+  ['windowpricemin_5f1',['WindowPriceMin_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439ae06019285bc881050d7d79863be47f7b',1,'MQL4CSharp::Base::Enums']]],
+  ['windowpriceondropped_5f1',['WindowPriceOnDropped_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439a3ee2439923b2bb623ab0782911cb1070',1,'MQL4CSharp::Base::Enums']]],
+  ['windowredraw_5f1',['WindowRedraw_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439af08869faa9ddb10b454a00594514be3c',1,'MQL4CSharp::Base::Enums']]],
+  ['windowscreenshot_5f1',['WindowScreenShot_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439a6d46eb08e37320d5767626e8790c8a30',1,'MQL4CSharp::Base::Enums']]],
+  ['windowstotal_5f1',['WindowsTotal_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439a3d3f1dd8295c22ae3ee2a55664050f91',1,'MQL4CSharp::Base::Enums']]],
+  ['windowtimeondropped_5f1',['WindowTimeOnDropped_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439a7f38cc7db68b119959c03cf7f785c83a',1,'MQL4CSharp::Base::Enums']]],
+  ['windowxondropped_5f1',['WindowXOnDropped_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439a0c9d61bf668705b1fcbc7166ee518fa8',1,'MQL4CSharp::Base::Enums']]],
+  ['windowyondropped_5f1',['WindowYOnDropped_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439a86f9aa4516d75f6e29b4985a3bcf4502',1,'MQL4CSharp::Base::Enums']]]
+];

@@ -17,11 +17,14 @@ namespace MQL4CSharp.Base.REST
         int DEFAULT_CHART_ID = 0;
 
         /// <summary>
-        /// Function: Alert
-        /// Description: Displays a message in a separate window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/common/alert.html
+        /// <b>Function:</b> Alert<br>
+        /// <b>Description:</b> Displays a message in a separate window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/alert.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>argument</b> :  </li>
+        /// </ul>
         /// </summary>
-        /// <param name="argument"></param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/alert")]
         public void Handle_Alert_1(HttpListenerContext context)
         {
@@ -30,11 +33,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: Alert
-        /// Description: Displays a message in a separate window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/common/alert.html
+        /// <b>Function:</b> Alert<br>
+        /// <b>Description:</b> Displays a message in a separate window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/alert.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>argument</b> :  </li>
+        /// </ul>
         /// </summary>
-        /// <param name="argument"></param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/alert")]
         public void Handle_Alert_1_Default(HttpListenerContext context)
         {
@@ -62,11 +68,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: Comment
-        /// Description: This function outputs a comment defined by a user in the top left corner of a chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/common/comment.html
+        /// <b>Function:</b> Comment<br>
+        /// <b>Description:</b> This function outputs a comment defined by a user in the top left corner of a chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/comment.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>argument</b> :  [in] Any values, separated by commas. To delimit output information into several lines, a line break symbol "\n" or "\r\n" is used. Number of parameters cannot exceed 64. Total length of the input comment (including invisible symbols) cannot exceed 2045 characters (excess symbols will be cut out during output).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="argument">[in] Any values, separated by commas. To delimit output information into several lines, a line break symbol "\n" or "\r\n" is used. Number of parameters cannot exceed 64. Total length of the input comment (including invisible symbols) cannot exceed 2045 characters (excess symbols will be cut out during output).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/comment")]
         public void Handle_Comment_1(HttpListenerContext context)
         {
@@ -75,11 +84,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: Comment
-        /// Description: This function outputs a comment defined by a user in the top left corner of a chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/common/comment.html
+        /// <b>Function:</b> Comment<br>
+        /// <b>Description:</b> This function outputs a comment defined by a user in the top left corner of a chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/comment.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>argument</b> :  [in] Any values, separated by commas. To delimit output information into several lines, a line break symbol "\n" or "\r\n" is used. Number of parameters cannot exceed 64. Total length of the input comment (including invisible symbols) cannot exceed 2045 characters (excess symbols will be cut out during output).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="argument">[in] Any values, separated by commas. To delimit output information into several lines, a line break symbol "\n" or "\r\n" is used. Number of parameters cannot exceed 64. Total length of the input comment (including invisible symbols) cannot exceed 2045 characters (excess symbols will be cut out during output).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/comment")]
         public void Handle_Comment_1_Default(HttpListenerContext context)
         {
@@ -107,12 +119,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SendFTP
-        /// Description: Sends a file at the address, specified in the setting window of the "FTP" tab.
-        /// URL: http://mm.l/mql4/docs.mql4.com/common/sendftp.html
+        /// <b>Function:</b> SendFTP<br>
+        /// <b>Description:</b> Sends a file at the address, specified in the setting window of the "FTP" tab.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/sendftp.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>filename</b> :  [in] Name of sent file.</li>
+        /// <li><b>ftp_path</b> :  [in] FTP catalog. If a directory is not specified, directory described in settings is used.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="filename">[in] Name of sent file.</param>
-        /// <param name="ftp_path">[in] FTP catalog. If a directory is not specified, directory described in settings is used.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/sendftp")]
         public void Handle_SendFTP_1(HttpListenerContext context)
         {
@@ -121,12 +136,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SendFTP
-        /// Description: Sends a file at the address, specified in the setting window of the "FTP" tab.
-        /// URL: http://mm.l/mql4/docs.mql4.com/common/sendftp.html
+        /// <b>Function:</b> SendFTP<br>
+        /// <b>Description:</b> Sends a file at the address, specified in the setting window of the "FTP" tab.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/sendftp.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>filename</b> :  [in] Name of sent file.</li>
+        /// <li><b>ftp_path</b> :  [in] FTP catalog. If a directory is not specified, directory described in settings is used.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="filename">[in] Name of sent file.</param>
-        /// <param name="ftp_path">[in] FTP catalog. If a directory is not specified, directory described in settings is used.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/sendftp")]
         public void Handle_SendFTP_1_Default(HttpListenerContext context)
         {
@@ -155,11 +173,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SendNotification
-        /// Description: Sends push notifications to the mobile terminals, whose MetaQuotes IDs are specified in the "Notifications" tab.
-        /// URL: http://mm.l/mql4/docs.mql4.com/common/sendnotification.html
+        /// <b>Function:</b> SendNotification<br>
+        /// <b>Description:</b> Sends push notifications to the mobile terminals, whose MetaQuotes IDs are specified in the "Notifications" tab.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/sendnotification.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>text</b> :  [in] The text of the notification. The message length should not exceed 255 characters.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="text">[in] The text of the notification. The message length should not exceed 255 characters.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/sendnotification")]
         public void Handle_SendNotification_1(HttpListenerContext context)
         {
@@ -168,11 +189,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SendNotification
-        /// Description: Sends push notifications to the mobile terminals, whose MetaQuotes IDs are specified in the "Notifications" tab.
-        /// URL: http://mm.l/mql4/docs.mql4.com/common/sendnotification.html
+        /// <b>Function:</b> SendNotification<br>
+        /// <b>Description:</b> Sends push notifications to the mobile terminals, whose MetaQuotes IDs are specified in the "Notifications" tab.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/sendnotification.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>text</b> :  [in] The text of the notification. The message length should not exceed 255 characters.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="text">[in] The text of the notification. The message length should not exceed 255 characters.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/sendnotification")]
         public void Handle_SendNotification_1_Default(HttpListenerContext context)
         {
@@ -200,12 +224,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SendMail
-        /// Description: Sends an email at the address specified in the settings window of the "Email" tab.
-        /// URL: http://mm.l/mql4/docs.mql4.com/common/sendmail.html
+        /// <b>Function:</b> SendMail<br>
+        /// <b>Description:</b> Sends an email at the address specified in the settings window of the "Email" tab.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/sendmail.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>subject</b> :  [in] Email header.</li>
+        /// <li><b>some_text</b> :  [in] Email body.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="subject">[in] Email header.</param>
-        /// <param name="some_text">[in] Email body.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/sendmail")]
         public void Handle_SendMail_1(HttpListenerContext context)
         {
@@ -214,12 +241,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SendMail
-        /// Description: Sends an email at the address specified in the settings window of the "Email" tab.
-        /// URL: http://mm.l/mql4/docs.mql4.com/common/sendmail.html
+        /// <b>Function:</b> SendMail<br>
+        /// <b>Description:</b> Sends an email at the address specified in the settings window of the "Email" tab.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/common/sendmail.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>subject</b> :  [in] Email header.</li>
+        /// <li><b>some_text</b> :  [in] Email body.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="subject">[in] Email header.</param>
-        /// <param name="some_text">[in] Email body.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/sendmail")]
         public void Handle_SendMail_1_Default(HttpListenerContext context)
         {
@@ -248,11 +278,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountInfoDouble
-        /// Description: Returns the value of the corresponding account property.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountinfodouble.html
+        /// <b>Function:</b> AccountInfoDouble<br>
+        /// <b>Description:</b> Returns the value of the corresponding account property.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountinfodouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Identifier of the property. The value can be one of the values of .</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Identifier of the property. The value can be one of the values of .</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountinfodouble")]
         public void Handle_AccountInfoDouble_1(HttpListenerContext context)
         {
@@ -261,11 +294,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountInfoDouble
-        /// Description: Returns the value of the corresponding account property.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountinfodouble.html
+        /// <b>Function:</b> AccountInfoDouble<br>
+        /// <b>Description:</b> Returns the value of the corresponding account property.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountinfodouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Identifier of the property. The value can be one of the values of .</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Identifier of the property. The value can be one of the values of .</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountinfodouble")]
         public void Handle_AccountInfoDouble_1_Default(HttpListenerContext context)
         {
@@ -293,11 +329,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountInfoInteger
-        /// Description: Returns the value of the properties of the account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountinfointeger.html
+        /// <b>Function:</b> AccountInfoInteger<br>
+        /// <b>Description:</b> Returns the value of the properties of the account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountinfointeger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Identifier of the property. The value can be one of the values of .</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Identifier of the property. The value can be one of the values of .</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountinfointeger")]
         public void Handle_AccountInfoInteger_1(HttpListenerContext context)
         {
@@ -306,11 +345,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountInfoInteger
-        /// Description: Returns the value of the properties of the account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountinfointeger.html
+        /// <b>Function:</b> AccountInfoInteger<br>
+        /// <b>Description:</b> Returns the value of the properties of the account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountinfointeger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Identifier of the property. The value can be one of the values of .</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Identifier of the property. The value can be one of the values of .</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountinfointeger")]
         public void Handle_AccountInfoInteger_1_Default(HttpListenerContext context)
         {
@@ -338,11 +380,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountInfoString
-        /// Description: Returns the value of the corresponding account property.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountinfostring.html
+        /// <b>Function:</b> AccountInfoString<br>
+        /// <b>Description:</b> Returns the value of the corresponding account property.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountinfostring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Identifier of the property. The value can be one of the values of .</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Identifier of the property. The value can be one of the values of .</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountinfostring")]
         public void Handle_AccountInfoString_1(HttpListenerContext context)
         {
@@ -351,11 +396,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountInfoString
-        /// Description: Returns the value of the corresponding account property.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountinfostring.html
+        /// <b>Function:</b> AccountInfoString<br>
+        /// <b>Description:</b> Returns the value of the corresponding account property.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountinfostring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Identifier of the property. The value can be one of the values of .</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Identifier of the property. The value can be one of the values of .</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountinfostring")]
         public void Handle_AccountInfoString_1_Default(HttpListenerContext context)
         {
@@ -383,9 +431,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountBalance
-        /// Description: Returns balance value of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountbalance.html
+        /// <b>Function:</b> AccountBalance<br>
+        /// <b>Description:</b> Returns balance value of the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountbalance.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountbalance")]
         public void Handle_AccountBalance_1(HttpListenerContext context)
@@ -395,9 +446,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountBalance
-        /// Description: Returns balance value of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountbalance.html
+        /// <b>Function:</b> AccountBalance<br>
+        /// <b>Description:</b> Returns balance value of the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountbalance.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountbalance")]
         public void Handle_AccountBalance_1_Default(HttpListenerContext context)
@@ -425,9 +479,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountCredit
-        /// Description: Returns credit value of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountcredit.html
+        /// <b>Function:</b> AccountCredit<br>
+        /// <b>Description:</b> Returns credit value of the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountcredit.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountcredit")]
         public void Handle_AccountCredit_1(HttpListenerContext context)
@@ -437,9 +494,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountCredit
-        /// Description: Returns credit value of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountcredit.html
+        /// <b>Function:</b> AccountCredit<br>
+        /// <b>Description:</b> Returns credit value of the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountcredit.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountcredit")]
         public void Handle_AccountCredit_1_Default(HttpListenerContext context)
@@ -467,9 +527,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountCompany
-        /// Description: Returns the brokerage company name where the current account was registered.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountcompany.html
+        /// <b>Function:</b> AccountCompany<br>
+        /// <b>Description:</b> Returns the brokerage company name where the current account was registered.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountcompany.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountcompany")]
         public void Handle_AccountCompany_1(HttpListenerContext context)
@@ -479,9 +542,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountCompany
-        /// Description: Returns the brokerage company name where the current account was registered.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountcompany.html
+        /// <b>Function:</b> AccountCompany<br>
+        /// <b>Description:</b> Returns the brokerage company name where the current account was registered.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountcompany.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountcompany")]
         public void Handle_AccountCompany_1_Default(HttpListenerContext context)
@@ -509,9 +575,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountCurrency
-        /// Description: Returns currency name of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountcurrency.html
+        /// <b>Function:</b> AccountCurrency<br>
+        /// <b>Description:</b> Returns currency name of the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountcurrency.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountcurrency")]
         public void Handle_AccountCurrency_1(HttpListenerContext context)
@@ -521,9 +590,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountCurrency
-        /// Description: Returns currency name of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountcurrency.html
+        /// <b>Function:</b> AccountCurrency<br>
+        /// <b>Description:</b> Returns currency name of the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountcurrency.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountcurrency")]
         public void Handle_AccountCurrency_1_Default(HttpListenerContext context)
@@ -551,9 +623,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountEquity
-        /// Description: Returns equity value of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountequity.html
+        /// <b>Function:</b> AccountEquity<br>
+        /// <b>Description:</b> Returns equity value of the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountequity.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountequity")]
         public void Handle_AccountEquity_1(HttpListenerContext context)
@@ -563,9 +638,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountEquity
-        /// Description: Returns equity value of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountequity.html
+        /// <b>Function:</b> AccountEquity<br>
+        /// <b>Description:</b> Returns equity value of the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountequity.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountequity")]
         public void Handle_AccountEquity_1_Default(HttpListenerContext context)
@@ -593,9 +671,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountFreeMargin
-        /// Description: Returns free margin value of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountfreemargin.html
+        /// <b>Function:</b> AccountFreeMargin<br>
+        /// <b>Description:</b> Returns free margin value of the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountfreemargin.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountfreemargin")]
         public void Handle_AccountFreeMargin_1(HttpListenerContext context)
@@ -605,9 +686,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountFreeMargin
-        /// Description: Returns free margin value of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountfreemargin.html
+        /// <b>Function:</b> AccountFreeMargin<br>
+        /// <b>Description:</b> Returns free margin value of the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountfreemargin.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountfreemargin")]
         public void Handle_AccountFreeMargin_1_Default(HttpListenerContext context)
@@ -635,13 +719,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountFreeMarginCheck
-        /// Description: Returns free margin that remains after the specified order has been opened at the current price on the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountfreemargincheck.html
+        /// <b>Function:</b> AccountFreeMarginCheck<br>
+        /// <b>Description:</b> Returns free margin that remains after the specified order has been opened at the current price on the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountfreemargincheck.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol for trading operation.</li>
+        /// <li><b>cmd</b> :  [in] Operation type. It can be either OP_BUY or OP_SELL.</li>
+        /// <li><b>volume</b> :  [in] Number of lots.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol for trading operation.</param>
-        /// <param name="cmd">[in] Operation type. It can be either OP_BUY or OP_SELL.</param>
-        /// <param name="volume">[in] Number of lots.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountfreemargincheck")]
         public void Handle_AccountFreeMarginCheck_1(HttpListenerContext context)
         {
@@ -650,13 +737,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountFreeMarginCheck
-        /// Description: Returns free margin that remains after the specified order has been opened at the current price on the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountfreemargincheck.html
+        /// <b>Function:</b> AccountFreeMarginCheck<br>
+        /// <b>Description:</b> Returns free margin that remains after the specified order has been opened at the current price on the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountfreemargincheck.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol for trading operation.</li>
+        /// <li><b>cmd</b> :  [in] Operation type. It can be either OP_BUY or OP_SELL.</li>
+        /// <li><b>volume</b> :  [in] Number of lots.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol for trading operation.</param>
-        /// <param name="cmd">[in] Operation type. It can be either OP_BUY or OP_SELL.</param>
-        /// <param name="volume">[in] Number of lots.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountfreemargincheck")]
         public void Handle_AccountFreeMarginCheck_1_Default(HttpListenerContext context)
         {
@@ -686,9 +776,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountFreeMarginMode
-        /// Description: Returns the calculation mode of free margin allowed to open orders on the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountfreemarginmode.html
+        /// <b>Function:</b> AccountFreeMarginMode<br>
+        /// <b>Description:</b> Returns the calculation mode of free margin allowed to open orders on the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountfreemarginmode.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountfreemarginmode")]
         public void Handle_AccountFreeMarginMode_1(HttpListenerContext context)
@@ -698,9 +791,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountFreeMarginMode
-        /// Description: Returns the calculation mode of free margin allowed to open orders on the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountfreemarginmode.html
+        /// <b>Function:</b> AccountFreeMarginMode<br>
+        /// <b>Description:</b> Returns the calculation mode of free margin allowed to open orders on the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountfreemarginmode.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountfreemarginmode")]
         public void Handle_AccountFreeMarginMode_1_Default(HttpListenerContext context)
@@ -728,9 +824,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountLeverage
-        /// Description: Returns leverage of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountleverage.html
+        /// <b>Function:</b> AccountLeverage<br>
+        /// <b>Description:</b> Returns leverage of the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountleverage.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountleverage")]
         public void Handle_AccountLeverage_1(HttpListenerContext context)
@@ -740,9 +839,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountLeverage
-        /// Description: Returns leverage of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountleverage.html
+        /// <b>Function:</b> AccountLeverage<br>
+        /// <b>Description:</b> Returns leverage of the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountleverage.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountleverage")]
         public void Handle_AccountLeverage_1_Default(HttpListenerContext context)
@@ -770,9 +872,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountMargin
-        /// Description: Returns margin value of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountmargin.html
+        /// <b>Function:</b> AccountMargin<br>
+        /// <b>Description:</b> Returns margin value of the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountmargin.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountmargin")]
         public void Handle_AccountMargin_1(HttpListenerContext context)
@@ -782,9 +887,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountMargin
-        /// Description: Returns margin value of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountmargin.html
+        /// <b>Function:</b> AccountMargin<br>
+        /// <b>Description:</b> Returns margin value of the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountmargin.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountmargin")]
         public void Handle_AccountMargin_1_Default(HttpListenerContext context)
@@ -812,9 +920,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountName
-        /// Description: Returns the current account name.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountname.html
+        /// <b>Function:</b> AccountName<br>
+        /// <b>Description:</b> Returns the current account name.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountname.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountname")]
         public void Handle_AccountName_1(HttpListenerContext context)
@@ -824,9 +935,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountName
-        /// Description: Returns the current account name.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountname.html
+        /// <b>Function:</b> AccountName<br>
+        /// <b>Description:</b> Returns the current account name.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountname.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountname")]
         public void Handle_AccountName_1_Default(HttpListenerContext context)
@@ -854,9 +968,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountNumber
-        /// Description: Returns the current account number.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountnumber.html
+        /// <b>Function:</b> AccountNumber<br>
+        /// <b>Description:</b> Returns the current account number.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountnumber.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountnumber")]
         public void Handle_AccountNumber_1(HttpListenerContext context)
@@ -866,9 +983,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountNumber
-        /// Description: Returns the current account number.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountnumber.html
+        /// <b>Function:</b> AccountNumber<br>
+        /// <b>Description:</b> Returns the current account number.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountnumber.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountnumber")]
         public void Handle_AccountNumber_1_Default(HttpListenerContext context)
@@ -896,9 +1016,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountProfit
-        /// Description: Returns profit value of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountprofit.html
+        /// <b>Function:</b> AccountProfit<br>
+        /// <b>Description:</b> Returns profit value of the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountprofit.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountprofit")]
         public void Handle_AccountProfit_1(HttpListenerContext context)
@@ -908,9 +1031,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountProfit
-        /// Description: Returns profit value of the current account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountprofit.html
+        /// <b>Function:</b> AccountProfit<br>
+        /// <b>Description:</b> Returns profit value of the current account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountprofit.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountprofit")]
         public void Handle_AccountProfit_1_Default(HttpListenerContext context)
@@ -938,9 +1064,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountServer
-        /// Description: Returns the connected server name.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountserver.html
+        /// <b>Function:</b> AccountServer<br>
+        /// <b>Description:</b> Returns the connected server name.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountserver.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountserver")]
         public void Handle_AccountServer_1(HttpListenerContext context)
@@ -950,9 +1079,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountServer
-        /// Description: Returns the connected server name.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountserver.html
+        /// <b>Function:</b> AccountServer<br>
+        /// <b>Description:</b> Returns the connected server name.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountserver.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountserver")]
         public void Handle_AccountServer_1_Default(HttpListenerContext context)
@@ -980,9 +1112,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountStopoutLevel
-        /// Description: Returns the value of the Stop Out level.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountstopoutlevel.html
+        /// <b>Function:</b> AccountStopoutLevel<br>
+        /// <b>Description:</b> Returns the value of the Stop Out level.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountstopoutlevel.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountstopoutlevel")]
         public void Handle_AccountStopoutLevel_1(HttpListenerContext context)
@@ -992,9 +1127,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountStopoutLevel
-        /// Description: Returns the value of the Stop Out level.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountstopoutlevel.html
+        /// <b>Function:</b> AccountStopoutLevel<br>
+        /// <b>Description:</b> Returns the value of the Stop Out level.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountstopoutlevel.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountstopoutlevel")]
         public void Handle_AccountStopoutLevel_1_Default(HttpListenerContext context)
@@ -1022,9 +1160,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: AccountStopoutMode
-        /// Description: Returns the calculation mode for the Stop Out level.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountstopoutmode.html
+        /// <b>Function:</b> AccountStopoutMode<br>
+        /// <b>Description:</b> Returns the calculation mode for the Stop Out level.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountstopoutmode.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/accountstopoutmode")]
         public void Handle_AccountStopoutMode_1(HttpListenerContext context)
@@ -1034,9 +1175,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: AccountStopoutMode
-        /// Description: Returns the calculation mode for the Stop Out level.
-        /// URL: http://mm.l/mql4/docs.mql4.com/account/accountstopoutmode.html
+        /// <b>Function:</b> AccountStopoutMode<br>
+        /// <b>Description:</b> Returns the calculation mode for the Stop Out level.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/account/accountstopoutmode.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/accountstopoutmode")]
         public void Handle_AccountStopoutMode_1_Default(HttpListenerContext context)
@@ -1064,9 +1208,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: GetLastError
-        /// Description: Returns the contents of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/getlasterror.html
+        /// <b>Function:</b> GetLastError<br>
+        /// <b>Description:</b> Returns the contents of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/getlasterror.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/getlasterror")]
         public void Handle_GetLastError_1(HttpListenerContext context)
@@ -1076,9 +1223,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: GetLastError
-        /// Description: Returns the contents of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/getlasterror.html
+        /// <b>Function:</b> GetLastError<br>
+        /// <b>Description:</b> Returns the contents of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/getlasterror.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/getlasterror")]
         public void Handle_GetLastError_1_Default(HttpListenerContext context)
@@ -1106,9 +1256,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IsStopped
-        /// Description: Checks the forced shutdown of an mql4 program.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isstopped.html
+        /// <b>Function:</b> IsStopped<br>
+        /// <b>Description:</b> Checks the forced shutdown of an mql4 program.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isstopped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/isstopped")]
         public void Handle_IsStopped_1(HttpListenerContext context)
@@ -1118,9 +1271,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IsStopped
-        /// Description: Checks the forced shutdown of an mql4 program.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isstopped.html
+        /// <b>Function:</b> IsStopped<br>
+        /// <b>Description:</b> Checks the forced shutdown of an mql4 program.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isstopped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/isstopped")]
         public void Handle_IsStopped_1_Default(HttpListenerContext context)
@@ -1148,9 +1304,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: UninitializeReason
-        /// Description: Returns the code of a
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/uninitializereason.html
+        /// <b>Function:</b> UninitializeReason<br>
+        /// <b>Description:</b> Returns the code of a<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/uninitializereason.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/uninitializereason")]
         public void Handle_UninitializeReason_1(HttpListenerContext context)
@@ -1160,9 +1319,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: UninitializeReason
-        /// Description: Returns the code of a
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/uninitializereason.html
+        /// <b>Function:</b> UninitializeReason<br>
+        /// <b>Description:</b> Returns the code of a<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/uninitializereason.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/uninitializereason")]
         public void Handle_UninitializeReason_1_Default(HttpListenerContext context)
@@ -1190,11 +1352,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: MQLInfoInteger
-        /// Description: Returns the value of a corresponding property of a running mql4 program.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/mqlinfointeger.html
+        /// <b>Function:</b> MQLInfoInteger<br>
+        /// <b>Description:</b> Returns the value of a corresponding property of a running mql4 program.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/mqlinfointeger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Identifier of a property. Can be one of values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/mqlinfointeger")]
         public void Handle_MQLInfoInteger_1(HttpListenerContext context)
         {
@@ -1203,11 +1368,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: MQLInfoInteger
-        /// Description: Returns the value of a corresponding property of a running mql4 program.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/mqlinfointeger.html
+        /// <b>Function:</b> MQLInfoInteger<br>
+        /// <b>Description:</b> Returns the value of a corresponding property of a running mql4 program.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/mqlinfointeger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Identifier of a property. Can be one of values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/mqlinfointeger")]
         public void Handle_MQLInfoInteger_1_Default(HttpListenerContext context)
         {
@@ -1235,11 +1403,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: MQLInfoString
-        /// Description: Returns the value of a corresponding property of a running MQL4 program.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/mqlinfostring.html
+        /// <b>Function:</b> MQLInfoString<br>
+        /// <b>Description:</b> Returns the value of a corresponding property of a running MQL4 program.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/mqlinfostring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Identifier of a property. Can be one of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/mqlinfostring")]
         public void Handle_MQLInfoString_1(HttpListenerContext context)
         {
@@ -1248,11 +1419,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: MQLInfoString
-        /// Description: Returns the value of a corresponding property of a running MQL4 program.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/mqlinfostring.html
+        /// <b>Function:</b> MQLInfoString<br>
+        /// <b>Description:</b> Returns the value of a corresponding property of a running MQL4 program.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/mqlinfostring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Identifier of a property. Can be one of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/mqlinfostring")]
         public void Handle_MQLInfoString_1_Default(HttpListenerContext context)
         {
@@ -1280,12 +1454,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: MQLSetInteger
-        /// Description: Sets the value of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/mqlsetinteger.html
+        /// <b>Function:</b> MQLSetInteger<br>
+        /// <b>Description:</b> Sets the value of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/mqlsetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Identifier of a property. Only is supported, as other properties cannot be changed.</li>
+        /// <li><b>property_value</b> :  [in] Value of property. Can be one of the .</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Identifier of a property. Only is supported, as other properties cannot be changed.</param>
-        /// <param name="property_value">[in] Value of property. Can be one of the .</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/mqlsetinteger")]
         public void Handle_MQLSetInteger_1(HttpListenerContext context)
         {
@@ -1294,12 +1471,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: MQLSetInteger
-        /// Description: Sets the value of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/mqlsetinteger.html
+        /// <b>Function:</b> MQLSetInteger<br>
+        /// <b>Description:</b> Sets the value of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/mqlsetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Identifier of a property. Only is supported, as other properties cannot be changed.</li>
+        /// <li><b>property_value</b> :  [in] Value of property. Can be one of the .</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Identifier of a property. Only is supported, as other properties cannot be changed.</param>
-        /// <param name="property_value">[in] Value of property. Can be one of the .</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/mqlsetinteger")]
         public void Handle_MQLSetInteger_1_Default(HttpListenerContext context)
         {
@@ -1328,11 +1508,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: TerminalInfoInteger
-        /// Description: Returns the value of a corresponding property of the mql4 program environment.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/terminalinfointeger.html
+        /// <b>Function:</b> TerminalInfoInteger<br>
+        /// <b>Description:</b> Returns the value of a corresponding property of the mql4 program environment.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalinfointeger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of the values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Identifier of a property. Can be one of the values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/terminalinfointeger")]
         public void Handle_TerminalInfoInteger_1(HttpListenerContext context)
         {
@@ -1341,11 +1524,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: TerminalInfoInteger
-        /// Description: Returns the value of a corresponding property of the mql4 program environment.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/terminalinfointeger.html
+        /// <b>Function:</b> TerminalInfoInteger<br>
+        /// <b>Description:</b> Returns the value of a corresponding property of the mql4 program environment.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalinfointeger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of the values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Identifier of a property. Can be one of the values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/terminalinfointeger")]
         public void Handle_TerminalInfoInteger_1_Default(HttpListenerContext context)
         {
@@ -1373,11 +1559,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: TerminalInfoDouble
-        /// Description: Returns the value of a corresponding property of the mql4 program environment.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/terminalinfodouble.html
+        /// <b>Function:</b> TerminalInfoDouble<br>
+        /// <b>Description:</b> Returns the value of a corresponding property of the mql4 program environment.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalinfodouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of the values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Identifier of a property. Can be one of the values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/terminalinfodouble")]
         public void Handle_TerminalInfoDouble_1(HttpListenerContext context)
         {
@@ -1386,11 +1575,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: TerminalInfoDouble
-        /// Description: Returns the value of a corresponding property of the mql4 program environment.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/terminalinfodouble.html
+        /// <b>Function:</b> TerminalInfoDouble<br>
+        /// <b>Description:</b> Returns the value of a corresponding property of the mql4 program environment.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalinfodouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of the values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Identifier of a property. Can be one of the values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/terminalinfodouble")]
         public void Handle_TerminalInfoDouble_1_Default(HttpListenerContext context)
         {
@@ -1418,11 +1610,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: TerminalInfoString
-        /// Description: Returns the value of a corresponding property of the mql4 program environment. The property must be of string type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/terminalinfostring.html
+        /// <b>Function:</b> TerminalInfoString<br>
+        /// <b>Description:</b> Returns the value of a corresponding property of the mql4 program environment. The property must be of string type.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalinfostring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of the values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Identifier of a property. Can be one of the values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/terminalinfostring")]
         public void Handle_TerminalInfoString_1(HttpListenerContext context)
         {
@@ -1431,11 +1626,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: TerminalInfoString
-        /// Description: Returns the value of a corresponding property of the mql4 program environment. The property must be of string type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/terminalinfostring.html
+        /// <b>Function:</b> TerminalInfoString<br>
+        /// <b>Description:</b> Returns the value of a corresponding property of the mql4 program environment. The property must be of string type.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalinfostring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Identifier of a property. Can be one of the values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Identifier of a property. Can be one of the values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/terminalinfostring")]
         public void Handle_TerminalInfoString_1_Default(HttpListenerContext context)
         {
@@ -1463,9 +1661,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: Symbol
-        /// Description: Returns the name of a symbol of the current chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/symbol.html
+        /// <b>Function:</b> Symbol<br>
+        /// <b>Description:</b> Returns the name of a symbol of the current chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/symbol.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/symbol")]
         public void Handle_Symbol_1(HttpListenerContext context)
@@ -1475,9 +1676,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: Symbol
-        /// Description: Returns the name of a symbol of the current chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/symbol.html
+        /// <b>Function:</b> Symbol<br>
+        /// <b>Description:</b> Returns the name of a symbol of the current chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/symbol.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/symbol")]
         public void Handle_Symbol_1_Default(HttpListenerContext context)
@@ -1505,9 +1709,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: Period
-        /// Description: Returns the current chart timeframe.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/period.html
+        /// <b>Function:</b> Period<br>
+        /// <b>Description:</b> Returns the current chart timeframe.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/period.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/period")]
         public void Handle_Period_1(HttpListenerContext context)
@@ -1517,9 +1724,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: Period
-        /// Description: Returns the current chart timeframe.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/period.html
+        /// <b>Function:</b> Period<br>
+        /// <b>Description:</b> Returns the current chart timeframe.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/period.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/period")]
         public void Handle_Period_1_Default(HttpListenerContext context)
@@ -1547,9 +1757,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: Digits
-        /// Description: Returns the number of decimal digits determining the accuracy of price of the current chart symbol.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/digits.html
+        /// <b>Function:</b> Digits<br>
+        /// <b>Description:</b> Returns the number of decimal digits determining the accuracy of price of the current chart symbol.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/digits.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/digits")]
         public void Handle_Digits_1(HttpListenerContext context)
@@ -1559,9 +1772,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: Digits
-        /// Description: Returns the number of decimal digits determining the accuracy of price of the current chart symbol.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/digits.html
+        /// <b>Function:</b> Digits<br>
+        /// <b>Description:</b> Returns the number of decimal digits determining the accuracy of price of the current chart symbol.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/digits.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/digits")]
         public void Handle_Digits_1_Default(HttpListenerContext context)
@@ -1589,9 +1805,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: Point
-        /// Description: Returns the point size of the current symbol in the quote currency.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/point.html
+        /// <b>Function:</b> Point<br>
+        /// <b>Description:</b> Returns the point size of the current symbol in the quote currency.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/point.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/point")]
         public void Handle_Point_1(HttpListenerContext context)
@@ -1601,9 +1820,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: Point
-        /// Description: Returns the point size of the current symbol in the quote currency.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/point.html
+        /// <b>Function:</b> Point<br>
+        /// <b>Description:</b> Returns the point size of the current symbol in the quote currency.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/point.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/point")]
         public void Handle_Point_1_Default(HttpListenerContext context)
@@ -1631,9 +1853,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IsConnected
-        /// Description: Checks connection between client terminal and server.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isconnected.html
+        /// <b>Function:</b> IsConnected<br>
+        /// <b>Description:</b> Checks connection between client terminal and server.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isconnected.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/isconnected")]
         public void Handle_IsConnected_1(HttpListenerContext context)
@@ -1643,9 +1868,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IsConnected
-        /// Description: Checks connection between client terminal and server.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isconnected.html
+        /// <b>Function:</b> IsConnected<br>
+        /// <b>Description:</b> Checks connection between client terminal and server.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isconnected.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/isconnected")]
         public void Handle_IsConnected_1_Default(HttpListenerContext context)
@@ -1673,9 +1901,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IsDemo
-        /// Description: Checks if the Expert Advisor runs on a demo account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isdemo.html
+        /// <b>Function:</b> IsDemo<br>
+        /// <b>Description:</b> Checks if the Expert Advisor runs on a demo account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isdemo.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/isdemo")]
         public void Handle_IsDemo_1(HttpListenerContext context)
@@ -1685,9 +1916,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IsDemo
-        /// Description: Checks if the Expert Advisor runs on a demo account.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isdemo.html
+        /// <b>Function:</b> IsDemo<br>
+        /// <b>Description:</b> Checks if the Expert Advisor runs on a demo account.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isdemo.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/isdemo")]
         public void Handle_IsDemo_1_Default(HttpListenerContext context)
@@ -1715,9 +1949,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IsDllsAllowed
-        /// Description: Checks if the DLL function call is allowed for the Expert Advisor.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isdllsallowed.html
+        /// <b>Function:</b> IsDllsAllowed<br>
+        /// <b>Description:</b> Checks if the DLL function call is allowed for the Expert Advisor.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isdllsallowed.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/isdllsallowed")]
         public void Handle_IsDllsAllowed_1(HttpListenerContext context)
@@ -1727,9 +1964,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IsDllsAllowed
-        /// Description: Checks if the DLL function call is allowed for the Expert Advisor.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isdllsallowed.html
+        /// <b>Function:</b> IsDllsAllowed<br>
+        /// <b>Description:</b> Checks if the DLL function call is allowed for the Expert Advisor.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isdllsallowed.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/isdllsallowed")]
         public void Handle_IsDllsAllowed_1_Default(HttpListenerContext context)
@@ -1757,9 +1997,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IsExpertEnabled
-        /// Description: Checks if Expert Advisors are enabled for running.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isexpertenabled.html
+        /// <b>Function:</b> IsExpertEnabled<br>
+        /// <b>Description:</b> Checks if Expert Advisors are enabled for running.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isexpertenabled.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/isexpertenabled")]
         public void Handle_IsExpertEnabled_1(HttpListenerContext context)
@@ -1769,9 +2012,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IsExpertEnabled
-        /// Description: Checks if Expert Advisors are enabled for running.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isexpertenabled.html
+        /// <b>Function:</b> IsExpertEnabled<br>
+        /// <b>Description:</b> Checks if Expert Advisors are enabled for running.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isexpertenabled.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/isexpertenabled")]
         public void Handle_IsExpertEnabled_1_Default(HttpListenerContext context)
@@ -1799,9 +2045,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IsLibrariesAllowed
-        /// Description: Checks if the Expert Advisor can call library function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/islibrariesallowed.html
+        /// <b>Function:</b> IsLibrariesAllowed<br>
+        /// <b>Description:</b> Checks if the Expert Advisor can call library function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/islibrariesallowed.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/islibrariesallowed")]
         public void Handle_IsLibrariesAllowed_1(HttpListenerContext context)
@@ -1811,9 +2060,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IsLibrariesAllowed
-        /// Description: Checks if the Expert Advisor can call library function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/islibrariesallowed.html
+        /// <b>Function:</b> IsLibrariesAllowed<br>
+        /// <b>Description:</b> Checks if the Expert Advisor can call library function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/islibrariesallowed.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/islibrariesallowed")]
         public void Handle_IsLibrariesAllowed_1_Default(HttpListenerContext context)
@@ -1841,9 +2093,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IsOptimization
-        /// Description: Checks if Expert Advisor runs in the Strategy Tester optimization mode.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isoptimization.html
+        /// <b>Function:</b> IsOptimization<br>
+        /// <b>Description:</b> Checks if Expert Advisor runs in the Strategy Tester optimization mode.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isoptimization.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/isoptimization")]
         public void Handle_IsOptimization_1(HttpListenerContext context)
@@ -1853,9 +2108,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IsOptimization
-        /// Description: Checks if Expert Advisor runs in the Strategy Tester optimization mode.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isoptimization.html
+        /// <b>Function:</b> IsOptimization<br>
+        /// <b>Description:</b> Checks if Expert Advisor runs in the Strategy Tester optimization mode.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isoptimization.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/isoptimization")]
         public void Handle_IsOptimization_1_Default(HttpListenerContext context)
@@ -1883,9 +2141,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IsTesting
-        /// Description: Checks
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/istesting.html
+        /// <b>Function:</b> IsTesting<br>
+        /// <b>Description:</b> Checks<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/istesting.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/istesting")]
         public void Handle_IsTesting_1(HttpListenerContext context)
@@ -1895,9 +2156,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IsTesting
-        /// Description: Checks
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/istesting.html
+        /// <b>Function:</b> IsTesting<br>
+        /// <b>Description:</b> Checks<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/istesting.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/istesting")]
         public void Handle_IsTesting_1_Default(HttpListenerContext context)
@@ -1925,9 +2189,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IsTradeAllowed
-        /// Description: Checks
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/istradeallowed.html
+        /// <b>Function:</b> IsTradeAllowed<br>
+        /// <b>Description:</b> Checks<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/istradeallowed.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/istradeallowed")]
         public void Handle_IsTradeAllowed_1(HttpListenerContext context)
@@ -1937,9 +2204,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IsTradeAllowed
-        /// Description: Checks
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/istradeallowed.html
+        /// <b>Function:</b> IsTradeAllowed<br>
+        /// <b>Description:</b> Checks<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/istradeallowed.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/istradeallowed")]
         public void Handle_IsTradeAllowed_1_Default(HttpListenerContext context)
@@ -1967,12 +2237,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IsTradeAllowed
-        /// Description: Checks
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/istradeallowed.html
+        /// <b>Function:</b> IsTradeAllowed<br>
+        /// <b>Description:</b> Checks<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/istradeallowed.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol.</li>
+        /// <li><b>tested_time</b> :  [in] Time to check status.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol.</param>
-        /// <param name="tested_time">[in] Time to check status.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/istradeallowed")]
         public void Handle_IsTradeAllowed_2(HttpListenerContext context)
         {
@@ -1981,12 +2254,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IsTradeAllowed
-        /// Description: Checks
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/istradeallowed.html
+        /// <b>Function:</b> IsTradeAllowed<br>
+        /// <b>Description:</b> Checks<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/istradeallowed.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol.</li>
+        /// <li><b>tested_time</b> :  [in] Time to check status.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol.</param>
-        /// <param name="tested_time">[in] Time to check status.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/istradeallowed")]
         public void Handle_IsTradeAllowed_2_Default(HttpListenerContext context)
         {
@@ -2015,9 +2291,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IsTradeContextBusy
-        /// Description: Returns the information about trade context.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/istradecontextbusy.html
+        /// <b>Function:</b> IsTradeContextBusy<br>
+        /// <b>Description:</b> Returns the information about trade context.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/istradecontextbusy.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/istradecontextbusy")]
         public void Handle_IsTradeContextBusy_1(HttpListenerContext context)
@@ -2027,9 +2306,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IsTradeContextBusy
-        /// Description: Returns the information about trade context.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/istradecontextbusy.html
+        /// <b>Function:</b> IsTradeContextBusy<br>
+        /// <b>Description:</b> Returns the information about trade context.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/istradecontextbusy.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/istradecontextbusy")]
         public void Handle_IsTradeContextBusy_1_Default(HttpListenerContext context)
@@ -2057,9 +2339,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IsVisualMode
-        /// Description: Checks
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isvisualmode.html
+        /// <b>Function:</b> IsVisualMode<br>
+        /// <b>Description:</b> Checks<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isvisualmode.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/isvisualmode")]
         public void Handle_IsVisualMode_1(HttpListenerContext context)
@@ -2069,9 +2354,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IsVisualMode
-        /// Description: Checks
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/isvisualmode.html
+        /// <b>Function:</b> IsVisualMode<br>
+        /// <b>Description:</b> Checks<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/isvisualmode.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/isvisualmode")]
         public void Handle_IsVisualMode_1_Default(HttpListenerContext context)
@@ -2099,9 +2387,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: TerminalCompany
-        /// Description: Returns the name of company owning the client terminal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/terminalcompany.html
+        /// <b>Function:</b> TerminalCompany<br>
+        /// <b>Description:</b> Returns the name of company owning the client terminal.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalcompany.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/terminalcompany")]
         public void Handle_TerminalCompany_1(HttpListenerContext context)
@@ -2111,9 +2402,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: TerminalCompany
-        /// Description: Returns the name of company owning the client terminal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/terminalcompany.html
+        /// <b>Function:</b> TerminalCompany<br>
+        /// <b>Description:</b> Returns the name of company owning the client terminal.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalcompany.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/terminalcompany")]
         public void Handle_TerminalCompany_1_Default(HttpListenerContext context)
@@ -2141,9 +2435,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: TerminalName
-        /// Description: Returns client terminal name.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/terminalname.html
+        /// <b>Function:</b> TerminalName<br>
+        /// <b>Description:</b> Returns client terminal name.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalname.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/terminalname")]
         public void Handle_TerminalName_1(HttpListenerContext context)
@@ -2153,9 +2450,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: TerminalName
-        /// Description: Returns client terminal name.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/terminalname.html
+        /// <b>Function:</b> TerminalName<br>
+        /// <b>Description:</b> Returns client terminal name.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalname.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/terminalname")]
         public void Handle_TerminalName_1_Default(HttpListenerContext context)
@@ -2183,9 +2483,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: TerminalPath
-        /// Description: Returns the directory, from which the client terminal was launched.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/terminalpath.html
+        /// <b>Function:</b> TerminalPath<br>
+        /// <b>Description:</b> Returns the directory, from which the client terminal was launched.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalpath.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/terminalpath")]
         public void Handle_TerminalPath_1(HttpListenerContext context)
@@ -2195,9 +2498,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: TerminalPath
-        /// Description: Returns the directory, from which the client terminal was launched.
-        /// URL: http://mm.l/mql4/docs.mql4.com/check/terminalpath.html
+        /// <b>Function:</b> TerminalPath<br>
+        /// <b>Description:</b> Returns the directory, from which the client terminal was launched.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/check/terminalpath.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/terminalpath")]
         public void Handle_TerminalPath_1_Default(HttpListenerContext context)
@@ -2225,12 +2531,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: MarketInfo
-        /// Description: Returns various data about securities listed in the "Market Watch" window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/marketinformation/marketinfo.html
+        /// <b>Function:</b> MarketInfo<br>
+        /// <b>Description:</b> Returns various data about securities listed in the "Market Watch" window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/marketinformation/marketinfo.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name.</li>
+        /// <li><b>type</b> :  [in] Request of information to be returned. Can be any of values of request identifiers.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name.</param>
-        /// <param name="type">[in] Request of information to be returned. Can be any of values of request identifiers.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/marketinfo")]
         public void Handle_MarketInfo_1(HttpListenerContext context)
         {
@@ -2239,12 +2548,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: MarketInfo
-        /// Description: Returns various data about securities listed in the "Market Watch" window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/marketinformation/marketinfo.html
+        /// <b>Function:</b> MarketInfo<br>
+        /// <b>Description:</b> Returns various data about securities listed in the "Market Watch" window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/marketinformation/marketinfo.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name.</li>
+        /// <li><b>type</b> :  [in] Request of information to be returned. Can be any of values of request identifiers.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name.</param>
-        /// <param name="type">[in] Request of information to be returned. Can be any of values of request identifiers.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/marketinfo")]
         public void Handle_MarketInfo_1_Default(HttpListenerContext context)
         {
@@ -2273,11 +2585,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SymbolsTotal
-        /// Description: Returns the number of available (selected in Market Watch or all) symbols.
-        /// URL: http://mm.l/mql4/docs.mql4.com/marketinformation/symbolstotal.html
+        /// <b>Function:</b> SymbolsTotal<br>
+        /// <b>Description:</b> Returns the number of available (selected in Market Watch or all) symbols.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/marketinformation/symbolstotal.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>selected</b> :  [in] Request mode. Can be true or false.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="selected">[in] Request mode. Can be true or false.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/symbolstotal")]
         public void Handle_SymbolsTotal_1(HttpListenerContext context)
         {
@@ -2286,11 +2601,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SymbolsTotal
-        /// Description: Returns the number of available (selected in Market Watch or all) symbols.
-        /// URL: http://mm.l/mql4/docs.mql4.com/marketinformation/symbolstotal.html
+        /// <b>Function:</b> SymbolsTotal<br>
+        /// <b>Description:</b> Returns the number of available (selected in Market Watch or all) symbols.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/marketinformation/symbolstotal.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>selected</b> :  [in] Request mode. Can be true or false.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="selected">[in] Request mode. Can be true or false.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/symbolstotal")]
         public void Handle_SymbolsTotal_1_Default(HttpListenerContext context)
         {
@@ -2318,12 +2636,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SymbolName
-        /// Description: Returns the name of a symbol.
-        /// URL: http://mm.l/mql4/docs.mql4.com/marketinformation/symbolname.html
+        /// <b>Function:</b> SymbolName<br>
+        /// <b>Description:</b> Returns the name of a symbol.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/marketinformation/symbolname.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>pos</b> :  [in] Order number of a symbol.</li>
+        /// <li><b>selected</b> :  [in] Request mode. If the value is true, the symbol is taken from the list of symbols selected in MarketWatch. If the value is false, the symbol is taken from the general list.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="pos">[in] Order number of a symbol.</param>
-        /// <param name="selected">[in] Request mode. If the value is true, the symbol is taken from the list of symbols selected in MarketWatch. If the value is false, the symbol is taken from the general list.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/symbolname")]
         public void Handle_SymbolName_1(HttpListenerContext context)
         {
@@ -2332,12 +2653,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SymbolName
-        /// Description: Returns the name of a symbol.
-        /// URL: http://mm.l/mql4/docs.mql4.com/marketinformation/symbolname.html
+        /// <b>Function:</b> SymbolName<br>
+        /// <b>Description:</b> Returns the name of a symbol.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/marketinformation/symbolname.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>pos</b> :  [in] Order number of a symbol.</li>
+        /// <li><b>selected</b> :  [in] Request mode. If the value is true, the symbol is taken from the list of symbols selected in MarketWatch. If the value is false, the symbol is taken from the general list.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="pos">[in] Order number of a symbol.</param>
-        /// <param name="selected">[in] Request mode. If the value is true, the symbol is taken from the list of symbols selected in MarketWatch. If the value is false, the symbol is taken from the general list.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/symbolname")]
         public void Handle_SymbolName_1_Default(HttpListenerContext context)
         {
@@ -2366,12 +2690,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SymbolSelect
-        /// Description: Selects a symbol in the Market Watch window or removes a symbol from the window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/marketinformation/symbolselect.html
+        /// <b>Function:</b> SymbolSelect<br>
+        /// <b>Description:</b> Selects a symbol in the Market Watch window or removes a symbol from the window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/marketinformation/symbolselect.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] Symbol name.</li>
+        /// <li><b>select</b> :  [in] Switch. If the value is false, a symbol should be removed from MarketWatch, otherwise a symbol should be selected in this window. A symbol can't be removed if the symbol chart is open, or there are open orders for this symbol.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] Symbol name.</param>
-        /// <param name="select">[in] Switch. If the value is false, a symbol should be removed from MarketWatch, otherwise a symbol should be selected in this window. A symbol can't be removed if the symbol chart is open, or there are open orders for this symbol.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/symbolselect")]
         public void Handle_SymbolSelect_1(HttpListenerContext context)
         {
@@ -2380,12 +2707,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SymbolSelect
-        /// Description: Selects a symbol in the Market Watch window or removes a symbol from the window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/marketinformation/symbolselect.html
+        /// <b>Function:</b> SymbolSelect<br>
+        /// <b>Description:</b> Selects a symbol in the Market Watch window or removes a symbol from the window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/marketinformation/symbolselect.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] Symbol name.</li>
+        /// <li><b>select</b> :  [in] Switch. If the value is false, a symbol should be removed from MarketWatch, otherwise a symbol should be selected in this window. A symbol can't be removed if the symbol chart is open, or there are open orders for this symbol.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] Symbol name.</param>
-        /// <param name="select">[in] Switch. If the value is false, a symbol should be removed from MarketWatch, otherwise a symbol should be selected in this window. A symbol can't be removed if the symbol chart is open, or there are open orders for this symbol.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/symbolselect")]
         public void Handle_SymbolSelect_1_Default(HttpListenerContext context)
         {
@@ -2414,9 +2744,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: RefreshRates
-        /// Description: Refreshing of data in pre-defined variables and series arrays.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/refreshrates.html
+        /// <b>Function:</b> RefreshRates<br>
+        /// <b>Description:</b> Refreshing of data in pre-defined variables and series arrays.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/refreshrates.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/refreshrates")]
         public void Handle_RefreshRates_1(HttpListenerContext context)
@@ -2426,9 +2759,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: RefreshRates
-        /// Description: Refreshing of data in pre-defined variables and series arrays.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/refreshrates.html
+        /// <b>Function:</b> RefreshRates<br>
+        /// <b>Description:</b> Refreshing of data in pre-defined variables and series arrays.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/refreshrates.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/refreshrates")]
         public void Handle_RefreshRates_1_Default(HttpListenerContext context)
@@ -2456,12 +2792,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: Bars
-        /// Description: Returns the number of bars count in the history for a specified symbol and period. There are 2 variants of functions calls.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/barsfunction.html
+        /// <b>Function:</b> Bars<br>
+        /// <b>Description:</b> Returns the number of bars count in the history for a specified symbol and period. There are 2 variants of functions calls.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/barsfunction.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol_name</b> :  [in] Symbol name.</li>
+        /// <li><b>timeframe</b> :  [in] Period.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol_name">[in] Symbol name.</param>
-        /// <param name="timeframe">[in] Period.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/bars")]
         public void Handle_Bars_1(HttpListenerContext context)
         {
@@ -2470,12 +2809,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: Bars
-        /// Description: Returns the number of bars count in the history for a specified symbol and period. There are 2 variants of functions calls.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/barsfunction.html
+        /// <b>Function:</b> Bars<br>
+        /// <b>Description:</b> Returns the number of bars count in the history for a specified symbol and period. There are 2 variants of functions calls.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/barsfunction.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol_name</b> :  [in] Symbol name.</li>
+        /// <li><b>timeframe</b> :  [in] Period.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol_name">[in] Symbol name.</param>
-        /// <param name="timeframe">[in] Period.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/bars")]
         public void Handle_Bars_1_Default(HttpListenerContext context)
         {
@@ -2504,14 +2846,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: Bars
-        /// Description: Returns the number of bars count in the history for a specified symbol and period. There are 2 variants of functions calls.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/barsfunction.html
+        /// <b>Function:</b> Bars<br>
+        /// <b>Description:</b> Returns the number of bars count in the history for a specified symbol and period. There are 2 variants of functions calls.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/barsfunction.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol_name</b> :  [in] Symbol name.</li>
+        /// <li><b>timeframe</b> :  [in] Period.</li>
+        /// <li><b>start_time</b> :  [in] Bar time corresponding to the first element.</li>
+        /// <li><b>stop_time</b> :  [in] Bar time corresponding to the last element.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol_name">[in] Symbol name.</param>
-        /// <param name="timeframe">[in] Period.</param>
-        /// <param name="start_time">[in] Bar time corresponding to the first element.</param>
-        /// <param name="stop_time">[in] Bar time corresponding to the last element.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/bars")]
         public void Handle_Bars_2(HttpListenerContext context)
         {
@@ -2520,14 +2865,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: Bars
-        /// Description: Returns the number of bars count in the history for a specified symbol and period. There are 2 variants of functions calls.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/barsfunction.html
+        /// <b>Function:</b> Bars<br>
+        /// <b>Description:</b> Returns the number of bars count in the history for a specified symbol and period. There are 2 variants of functions calls.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/barsfunction.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol_name</b> :  [in] Symbol name.</li>
+        /// <li><b>timeframe</b> :  [in] Period.</li>
+        /// <li><b>start_time</b> :  [in] Bar time corresponding to the first element.</li>
+        /// <li><b>stop_time</b> :  [in] Bar time corresponding to the last element.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol_name">[in] Symbol name.</param>
-        /// <param name="timeframe">[in] Period.</param>
-        /// <param name="start_time">[in] Bar time corresponding to the first element.</param>
-        /// <param name="stop_time">[in] Bar time corresponding to the last element.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/bars")]
         public void Handle_Bars_2_Default(HttpListenerContext context)
         {
@@ -2558,12 +2906,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iBars
-        /// Description: Returns the number of bars on the specified chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ibars.html
+        /// <b>Function:</b> iBars<br>
+        /// <b>Description:</b> Returns the number of bars on the specified chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ibars.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol the data of which should be used to calculate indicator. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol the data of which should be used to calculate indicator. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ibars")]
         public void Handle_iBars_1(HttpListenerContext context)
         {
@@ -2572,12 +2923,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iBars
-        /// Description: Returns the number of bars on the specified chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ibars.html
+        /// <b>Function:</b> iBars<br>
+        /// <b>Description:</b> Returns the number of bars on the specified chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ibars.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol the data of which should be used to calculate indicator. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol the data of which should be used to calculate indicator. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ibars")]
         public void Handle_iBars_1_Default(HttpListenerContext context)
         {
@@ -2606,14 +2960,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iBarShift
-        /// Description: Search for a bar by its time. The function returns the index of the bar which covers the specified time.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ibarshift.html
+        /// <b>Function:</b> iBarShift<br>
+        /// <b>Description:</b> Search for a bar by its time. The function returns the index of the bar which covers the specified time.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ibarshift.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>time</b> :  [in] Time value for searching.</li>
+        /// <li><b>exact</b> :  [in] Return mode when the bar is not found (false - iBarShift returns the nearest, true - iBarShift returns -1).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="time">[in] Time value for searching.</param>
-        /// <param name="exact">[in] Return mode when the bar is not found (false - iBarShift returns the nearest, true - iBarShift returns -1).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ibarshift")]
         public void Handle_iBarShift_1(HttpListenerContext context)
         {
@@ -2622,14 +2979,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iBarShift
-        /// Description: Search for a bar by its time. The function returns the index of the bar which covers the specified time.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ibarshift.html
+        /// <b>Function:</b> iBarShift<br>
+        /// <b>Description:</b> Search for a bar by its time. The function returns the index of the bar which covers the specified time.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ibarshift.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>time</b> :  [in] Time value for searching.</li>
+        /// <li><b>exact</b> :  [in] Return mode when the bar is not found (false - iBarShift returns the nearest, true - iBarShift returns -1).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="time">[in] Time value for searching.</param>
-        /// <param name="exact">[in] Return mode when the bar is not found (false - iBarShift returns the nearest, true - iBarShift returns -1).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ibarshift")]
         public void Handle_iBarShift_1_Default(HttpListenerContext context)
         {
@@ -2660,13 +3020,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iClose
-        /// Description: Returns Close price value for the bar of specified symbol with timeframe and shift.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/iclose.html
+        /// <b>Function:</b> iClose<br>
+        /// <b>Description:</b> Returns Close price value for the bar of specified symbol with timeframe and shift.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/iclose.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/iclose")]
         public void Handle_iClose_1(HttpListenerContext context)
         {
@@ -2675,13 +3038,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iClose
-        /// Description: Returns Close price value for the bar of specified symbol with timeframe and shift.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/iclose.html
+        /// <b>Function:</b> iClose<br>
+        /// <b>Description:</b> Returns Close price value for the bar of specified symbol with timeframe and shift.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/iclose.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/iclose")]
         public void Handle_iClose_1_Default(HttpListenerContext context)
         {
@@ -2711,13 +3077,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iHigh
-        /// Description: Returns High price value for the bar of specified symbol with timeframe and shift.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ihigh.html
+        /// <b>Function:</b> iHigh<br>
+        /// <b>Description:</b> Returns High price value for the bar of specified symbol with timeframe and shift.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ihigh.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ihigh")]
         public void Handle_iHigh_1(HttpListenerContext context)
         {
@@ -2726,13 +3095,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iHigh
-        /// Description: Returns High price value for the bar of specified symbol with timeframe and shift.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ihigh.html
+        /// <b>Function:</b> iHigh<br>
+        /// <b>Description:</b> Returns High price value for the bar of specified symbol with timeframe and shift.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ihigh.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ihigh")]
         public void Handle_iHigh_1_Default(HttpListenerContext context)
         {
@@ -2762,15 +3134,18 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iHighest
-        /// Description: Returns the shift of the maximum value over a specific number of bars depending on type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ihighest.html
+        /// <b>Function:</b> iHighest<br>
+        /// <b>Description:</b> Returns the shift of the maximum value over a specific number of bars depending on type.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ihighest.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol the data of which should be used for search. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>type</b> :  [in] Series array identifier. It can be any of the enumeration values.</li>
+        /// <li><b>count</b> :  [in] Number of bars (in direction from the start bar to the back one) on which the search is carried out.</li>
+        /// <li><b>start</b> :  [in] Shift showing the bar, relative to the current bar, that the data should be taken from.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol the data of which should be used for search. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="type">[in] Series array identifier. It can be any of the enumeration values.</param>
-        /// <param name="count">[in] Number of bars (in direction from the start bar to the back one) on which the search is carried out.</param>
-        /// <param name="start">[in] Shift showing the bar, relative to the current bar, that the data should be taken from.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ihighest")]
         public void Handle_iHighest_1(HttpListenerContext context)
         {
@@ -2779,15 +3154,18 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iHighest
-        /// Description: Returns the shift of the maximum value over a specific number of bars depending on type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ihighest.html
+        /// <b>Function:</b> iHighest<br>
+        /// <b>Description:</b> Returns the shift of the maximum value over a specific number of bars depending on type.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ihighest.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol the data of which should be used for search. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>type</b> :  [in] Series array identifier. It can be any of the enumeration values.</li>
+        /// <li><b>count</b> :  [in] Number of bars (in direction from the start bar to the back one) on which the search is carried out.</li>
+        /// <li><b>start</b> :  [in] Shift showing the bar, relative to the current bar, that the data should be taken from.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol the data of which should be used for search. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="type">[in] Series array identifier. It can be any of the enumeration values.</param>
-        /// <param name="count">[in] Number of bars (in direction from the start bar to the back one) on which the search is carried out.</param>
-        /// <param name="start">[in] Shift showing the bar, relative to the current bar, that the data should be taken from.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ihighest")]
         public void Handle_iHighest_1_Default(HttpListenerContext context)
         {
@@ -2819,13 +3197,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iLow
-        /// Description: Returns Low price value for the bar of indicated symbol with timeframe and shift.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ilow.html
+        /// <b>Function:</b> iLow<br>
+        /// <b>Description:</b> Returns Low price value for the bar of indicated symbol with timeframe and shift.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ilow.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ilow")]
         public void Handle_iLow_1(HttpListenerContext context)
         {
@@ -2834,13 +3215,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iLow
-        /// Description: Returns Low price value for the bar of indicated symbol with timeframe and shift.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ilow.html
+        /// <b>Function:</b> iLow<br>
+        /// <b>Description:</b> Returns Low price value for the bar of indicated symbol with timeframe and shift.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ilow.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ilow")]
         public void Handle_iLow_1_Default(HttpListenerContext context)
         {
@@ -2870,15 +3254,18 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iLowest
-        /// Description: Returns the shift of the lowest value over a specific number of bars depending on type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ilowest.html
+        /// <b>Function:</b> iLowest<br>
+        /// <b>Description:</b> Returns the shift of the lowest value over a specific number of bars depending on type.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ilowest.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>type</b> :  [in] Series array identifier. It can be any of the enumeration values.</li>
+        /// <li><b>count</b> :  [in] Number of bars (in direction from the start bar to the back one) on which the search is carried out.</li>
+        /// <li><b>start</b> :  [in] Shift showing the bar, relative to the current bar, that the data should be taken from.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="type">[in] Series array identifier. It can be any of the enumeration values.</param>
-        /// <param name="count">[in] Number of bars (in direction from the start bar to the back one) on which the search is carried out.</param>
-        /// <param name="start">[in] Shift showing the bar, relative to the current bar, that the data should be taken from.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ilowest")]
         public void Handle_iLowest_1(HttpListenerContext context)
         {
@@ -2887,15 +3274,18 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iLowest
-        /// Description: Returns the shift of the lowest value over a specific number of bars depending on type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ilowest.html
+        /// <b>Function:</b> iLowest<br>
+        /// <b>Description:</b> Returns the shift of the lowest value over a specific number of bars depending on type.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ilowest.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>type</b> :  [in] Series array identifier. It can be any of the enumeration values.</li>
+        /// <li><b>count</b> :  [in] Number of bars (in direction from the start bar to the back one) on which the search is carried out.</li>
+        /// <li><b>start</b> :  [in] Shift showing the bar, relative to the current bar, that the data should be taken from.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="type">[in] Series array identifier. It can be any of the enumeration values.</param>
-        /// <param name="count">[in] Number of bars (in direction from the start bar to the back one) on which the search is carried out.</param>
-        /// <param name="start">[in] Shift showing the bar, relative to the current bar, that the data should be taken from.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ilowest")]
         public void Handle_iLowest_1_Default(HttpListenerContext context)
         {
@@ -2927,13 +3317,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iOpen
-        /// Description: Returns Open price value for the bar of specified symbol with timeframe and shift.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/iopen.html
+        /// <b>Function:</b> iOpen<br>
+        /// <b>Description:</b> Returns Open price value for the bar of specified symbol with timeframe and shift.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/iopen.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/iopen")]
         public void Handle_iOpen_1(HttpListenerContext context)
         {
@@ -2942,13 +3335,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iOpen
-        /// Description: Returns Open price value for the bar of specified symbol with timeframe and shift.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/iopen.html
+        /// <b>Function:</b> iOpen<br>
+        /// <b>Description:</b> Returns Open price value for the bar of specified symbol with timeframe and shift.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/iopen.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/iopen")]
         public void Handle_iOpen_1_Default(HttpListenerContext context)
         {
@@ -2978,13 +3374,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iTime
-        /// Description: Returns Time value for the bar of specified symbol with timeframe and shift.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/itime.html
+        /// <b>Function:</b> iTime<br>
+        /// <b>Description:</b> Returns Time value for the bar of specified symbol with timeframe and shift.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/itime.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/itime")]
         public void Handle_iTime_1(HttpListenerContext context)
         {
@@ -2993,13 +3392,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iTime
-        /// Description: Returns Time value for the bar of specified symbol with timeframe and shift.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/itime.html
+        /// <b>Function:</b> iTime<br>
+        /// <b>Description:</b> Returns Time value for the bar of specified symbol with timeframe and shift.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/itime.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/itime")]
         public void Handle_iTime_1_Default(HttpListenerContext context)
         {
@@ -3029,13 +3431,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iVolume
-        /// Description: Returns Tick Volume value for the bar of specified symbol with timeframe and shift.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ivolume.html
+        /// <b>Function:</b> iVolume<br>
+        /// <b>Description:</b> Returns Tick Volume value for the bar of specified symbol with timeframe and shift.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ivolume.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ivolume")]
         public void Handle_iVolume_1(HttpListenerContext context)
         {
@@ -3044,13 +3449,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iVolume
-        /// Description: Returns Tick Volume value for the bar of specified symbol with timeframe and shift.
-        /// URL: http://mm.l/mql4/docs.mql4.com/series/ivolume.html
+        /// <b>Function:</b> iVolume<br>
+        /// <b>Description:</b> Returns Tick Volume value for the bar of specified symbol with timeframe and shift.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/series/ivolume.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ivolume")]
         public void Handle_iVolume_1_Default(HttpListenerContext context)
         {
@@ -3080,12 +3488,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartApplyTemplate
-        /// Description: Applies a specific template from a specified file to the chart. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartapplytemplate.html
+        /// <b>Function:</b> ChartApplyTemplate<br>
+        /// <b>Description:</b> Applies a specific template from a specified file to the chart. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartapplytemplate.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// <li><b>filename</b> :  [in] The name of the file containing the template.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
-        /// <param name="filename">[in] The name of the file containing the template.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartapplytemplate")]
         public void Handle_ChartApplyTemplate_1(HttpListenerContext context)
         {
@@ -3094,12 +3505,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartApplyTemplate
-        /// Description: Applies a specific template from a specified file to the chart. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartapplytemplate.html
+        /// <b>Function:</b> ChartApplyTemplate<br>
+        /// <b>Description:</b> Applies a specific template from a specified file to the chart. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartapplytemplate.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// <li><b>filename</b> :  [in] The name of the file containing the template.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
-        /// <param name="filename">[in] The name of the file containing the template.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartapplytemplate")]
         public void Handle_ChartApplyTemplate_1_Default(HttpListenerContext context)
         {
@@ -3128,12 +3542,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartSaveTemplate
-        /// Description: Saves current chart settings in a template with a specified name. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsavetemplate.html
+        /// <b>Function:</b> ChartSaveTemplate<br>
+        /// <b>Description:</b> Saves current chart settings in a template with a specified name. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsavetemplate.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// <li><b>filename</b> :  [in] The filename to save the template. The ".tpl" extension will be added to the filename automatically; there is no need to specify it. The template is saved in terminal_directory\Profiles\Templates\ and can be used for manual application in the terminal. If a template with the same filename already exists, the contents of this file will be overwritten.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
-        /// <param name="filename">[in] The filename to save the template. The ".tpl" extension will be added to the filename automatically; there is no need to specify it. The template is saved in terminal_directory\Profiles\Templates\ and can be used for manual application in the terminal. If a template with the same filename already exists, the contents of this file will be overwritten.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartsavetemplate")]
         public void Handle_ChartSaveTemplate_1(HttpListenerContext context)
         {
@@ -3142,12 +3559,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartSaveTemplate
-        /// Description: Saves current chart settings in a template with a specified name. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsavetemplate.html
+        /// <b>Function:</b> ChartSaveTemplate<br>
+        /// <b>Description:</b> Saves current chart settings in a template with a specified name. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsavetemplate.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// <li><b>filename</b> :  [in] The filename to save the template. The ".tpl" extension will be added to the filename automatically; there is no need to specify it. The template is saved in terminal_directory\Profiles\Templates\ and can be used for manual application in the terminal. If a template with the same filename already exists, the contents of this file will be overwritten.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
-        /// <param name="filename">[in] The filename to save the template. The ".tpl" extension will be added to the filename automatically; there is no need to specify it. The template is saved in terminal_directory\Profiles\Templates\ and can be used for manual application in the terminal. If a template with the same filename already exists, the contents of this file will be overwritten.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartsavetemplate")]
         public void Handle_ChartSaveTemplate_1_Default(HttpListenerContext context)
         {
@@ -3176,12 +3596,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartWindowFind
-        /// Description: The function returns the number of a subwindow where an indicator is drawn. There are 2 variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowfind.html
+        /// <b>Function:</b> ChartWindowFind<br>
+        /// <b>Description:</b> The function returns the number of a subwindow where an indicator is drawn. There are 2 variants of the function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowfind.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 denotes the current chart.</li>
+        /// <li><b>indicator_shortname</b> :  [in] Short name of the indicator.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 denotes the current chart.</param>
-        /// <param name="indicator_shortname">[in] Short name of the indicator.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartwindowfind")]
         public void Handle_ChartWindowFind_1(HttpListenerContext context)
         {
@@ -3190,12 +3613,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartWindowFind
-        /// Description: The function returns the number of a subwindow where an indicator is drawn. There are 2 variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowfind.html
+        /// <b>Function:</b> ChartWindowFind<br>
+        /// <b>Description:</b> The function returns the number of a subwindow where an indicator is drawn. There are 2 variants of the function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowfind.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 denotes the current chart.</li>
+        /// <li><b>indicator_shortname</b> :  [in] Short name of the indicator.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 denotes the current chart.</param>
-        /// <param name="indicator_shortname">[in] Short name of the indicator.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartwindowfind")]
         public void Handle_ChartWindowFind_1_Default(HttpListenerContext context)
         {
@@ -3224,9 +3650,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartWindowFind
-        /// Description: The function returns the number of a subwindow where an indicator is drawn. There are 2 variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowfind.html
+        /// <b>Function:</b> ChartWindowFind<br>
+        /// <b>Description:</b> The function returns the number of a subwindow where an indicator is drawn. There are 2 variants of the function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowfind.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartwindowfind")]
         public void Handle_ChartWindowFind_2(HttpListenerContext context)
@@ -3236,9 +3665,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartWindowFind
-        /// Description: The function returns the number of a subwindow where an indicator is drawn. There are 2 variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowfind.html
+        /// <b>Function:</b> ChartWindowFind<br>
+        /// <b>Description:</b> The function returns the number of a subwindow where an indicator is drawn. There are 2 variants of the function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowfind.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartwindowfind")]
         public void Handle_ChartWindowFind_2_Default(HttpListenerContext context)
@@ -3266,12 +3698,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartOpen
-        /// Description: Opens a new chart with the specified symbol and period. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartopen.html
+        /// <b>Function:</b> ChartOpen<br>
+        /// <b>Description:</b> Opens a new chart with the specified symbol and period. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartopen.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Chart symbol. means the symbol of the current chart (the Expert Advisor is attached to).</li>
+        /// <li><b>period</b> :  [in] Chart period (timeframe). Can be one of the values. 0 means the current chart period.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Chart symbol. means the symbol of the current chart (the Expert Advisor is attached to).</param>
-        /// <param name="period">[in] Chart period (timeframe). Can be one of the values. 0 means the current chart period.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartopen")]
         public void Handle_ChartOpen_1(HttpListenerContext context)
         {
@@ -3280,12 +3715,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartOpen
-        /// Description: Opens a new chart with the specified symbol and period. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartopen.html
+        /// <b>Function:</b> ChartOpen<br>
+        /// <b>Description:</b> Opens a new chart with the specified symbol and period. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartopen.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Chart symbol. means the symbol of the current chart (the Expert Advisor is attached to).</li>
+        /// <li><b>period</b> :  [in] Chart period (timeframe). Can be one of the values. 0 means the current chart period.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Chart symbol. means the symbol of the current chart (the Expert Advisor is attached to).</param>
-        /// <param name="period">[in] Chart period (timeframe). Can be one of the values. 0 means the current chart period.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartopen")]
         public void Handle_ChartOpen_1_Default(HttpListenerContext context)
         {
@@ -3314,9 +3752,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartFirst
-        /// Description: Returns the ID of the first chart of the client terminal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartfirst.html
+        /// <b>Function:</b> ChartFirst<br>
+        /// <b>Description:</b> Returns the ID of the first chart of the client terminal.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartfirst.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartfirst")]
         public void Handle_ChartFirst_1(HttpListenerContext context)
@@ -3326,9 +3767,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartFirst
-        /// Description: Returns the ID of the first chart of the client terminal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartfirst.html
+        /// <b>Function:</b> ChartFirst<br>
+        /// <b>Description:</b> Returns the ID of the first chart of the client terminal.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartfirst.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartfirst")]
         public void Handle_ChartFirst_1_Default(HttpListenerContext context)
@@ -3356,11 +3800,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartNext
-        /// Description: Returns the chart ID of the chart next to the specified one.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartnext.html
+        /// <b>Function:</b> ChartNext<br>
+        /// <b>Description:</b> Returns the chart ID of the chart next to the specified one.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartnext.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 does not mean the current chart. 0 means "return the first chart ID".</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 does not mean the current chart. 0 means "return the first chart ID".</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartnext")]
         public void Handle_ChartNext_1(HttpListenerContext context)
         {
@@ -3369,11 +3816,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartNext
-        /// Description: Returns the chart ID of the chart next to the specified one.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartnext.html
+        /// <b>Function:</b> ChartNext<br>
+        /// <b>Description:</b> Returns the chart ID of the chart next to the specified one.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartnext.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 does not mean the current chart. 0 means "return the first chart ID".</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 does not mean the current chart. 0 means "return the first chart ID".</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartnext")]
         public void Handle_ChartNext_1_Default(HttpListenerContext context)
         {
@@ -3401,11 +3851,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartClose
-        /// Description: Closes the specified chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartclose.html
+        /// <b>Function:</b> ChartClose<br>
+        /// <b>Description:</b> Closes the specified chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartclose.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartclose")]
         public void Handle_ChartClose_1(HttpListenerContext context)
         {
@@ -3414,11 +3867,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartClose
-        /// Description: Closes the specified chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartclose.html
+        /// <b>Function:</b> ChartClose<br>
+        /// <b>Description:</b> Closes the specified chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartclose.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartclose")]
         public void Handle_ChartClose_1_Default(HttpListenerContext context)
         {
@@ -3446,11 +3902,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartSymbol
-        /// Description: Returns the symbol name for the specified chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsymbol.html
+        /// <b>Function:</b> ChartSymbol<br>
+        /// <b>Description:</b> Returns the symbol name for the specified chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsymbol.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartsymbol")]
         public void Handle_ChartSymbol_1(HttpListenerContext context)
         {
@@ -3459,11 +3918,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartSymbol
-        /// Description: Returns the symbol name for the specified chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsymbol.html
+        /// <b>Function:</b> ChartSymbol<br>
+        /// <b>Description:</b> Returns the symbol name for the specified chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsymbol.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartsymbol")]
         public void Handle_ChartSymbol_1_Default(HttpListenerContext context)
         {
@@ -3491,11 +3953,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartRedraw
-        /// Description: This function calls a forced redrawing of a specified chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartredraw.html
+        /// <b>Function:</b> ChartRedraw<br>
+        /// <b>Description:</b> This function calls a forced redrawing of a specified chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartredraw.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartredraw")]
         public void Handle_ChartRedraw_1(HttpListenerContext context)
         {
@@ -3504,11 +3969,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartRedraw
-        /// Description: This function calls a forced redrawing of a specified chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartredraw.html
+        /// <b>Function:</b> ChartRedraw<br>
+        /// <b>Description:</b> This function calls a forced redrawing of a specified chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartredraw.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartredraw")]
         public void Handle_ChartRedraw_1_Default(HttpListenerContext context)
         {
@@ -3536,13 +4004,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartSetDouble
-        /// Description: Sets a value for a corresponding property of the specified chart. Chart property should be of a
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetdouble.html
+        /// <b>Function:</b> ChartSetDouble<br>
+        /// <b>Description:</b> Sets a value for a corresponding property of the specified chart. Chart property should be of a<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetdouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// <li><b>prop_id</b> :  [in] Chart property ID. Can be one of the values (except the read-only properties).</li>
+        /// <li><b>value</b> :  [in] Property value.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
-        /// <param name="prop_id">[in] Chart property ID. Can be one of the values (except the read-only properties).</param>
-        /// <param name="value">[in] Property value.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartsetdouble")]
         public void Handle_ChartSetDouble_1(HttpListenerContext context)
         {
@@ -3551,13 +4022,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartSetDouble
-        /// Description: Sets a value for a corresponding property of the specified chart. Chart property should be of a
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetdouble.html
+        /// <b>Function:</b> ChartSetDouble<br>
+        /// <b>Description:</b> Sets a value for a corresponding property of the specified chart. Chart property should be of a<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetdouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// <li><b>prop_id</b> :  [in] Chart property ID. Can be one of the values (except the read-only properties).</li>
+        /// <li><b>value</b> :  [in] Property value.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
-        /// <param name="prop_id">[in] Chart property ID. Can be one of the values (except the read-only properties).</param>
-        /// <param name="value">[in] Property value.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartsetdouble")]
         public void Handle_ChartSetDouble_1_Default(HttpListenerContext context)
         {
@@ -3587,13 +4061,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartSetInteger
-        /// Description: Sets a value for a corresponding property of the specified chart. Chart property must be
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetinteger.html
+        /// <b>Function:</b> ChartSetInteger<br>
+        /// <b>Description:</b> Sets a value for a corresponding property of the specified chart. Chart property must be<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// <li><b>prop_id</b> :  [in] Chart property ID. It can be one of the value (except the read-only properties).</li>
+        /// <li><b>value</b> :  [in] Property value.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
-        /// <param name="prop_id">[in] Chart property ID. It can be one of the value (except the read-only properties).</param>
-        /// <param name="value">[in] Property value.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartsetinteger")]
         public void Handle_ChartSetInteger_1(HttpListenerContext context)
         {
@@ -3602,13 +4079,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartSetInteger
-        /// Description: Sets a value for a corresponding property of the specified chart. Chart property must be
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetinteger.html
+        /// <b>Function:</b> ChartSetInteger<br>
+        /// <b>Description:</b> Sets a value for a corresponding property of the specified chart. Chart property must be<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// <li><b>prop_id</b> :  [in] Chart property ID. It can be one of the value (except the read-only properties).</li>
+        /// <li><b>value</b> :  [in] Property value.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
-        /// <param name="prop_id">[in] Chart property ID. It can be one of the value (except the read-only properties).</param>
-        /// <param name="value">[in] Property value.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartsetinteger")]
         public void Handle_ChartSetInteger_1_Default(HttpListenerContext context)
         {
@@ -3638,14 +4118,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartSetInteger
-        /// Description: Sets a value for a corresponding property of the specified chart. Chart property must be
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetinteger.html
+        /// <b>Function:</b> ChartSetInteger<br>
+        /// <b>Description:</b> Sets a value for a corresponding property of the specified chart. Chart property must be<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// <li><b>property_id</b> :  </li>
+        /// <li><b>sub_window</b> :  [in] Chart subwindow.</li>
+        /// <li><b>value</b> :  [in] Property value.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
-        /// <param name="property_id"></param>
-        /// <param name="sub_window">[in] Chart subwindow.</param>
-        /// <param name="value">[in] Property value.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartsetinteger")]
         public void Handle_ChartSetInteger_2(HttpListenerContext context)
         {
@@ -3654,14 +4137,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartSetInteger
-        /// Description: Sets a value for a corresponding property of the specified chart. Chart property must be
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetinteger.html
+        /// <b>Function:</b> ChartSetInteger<br>
+        /// <b>Description:</b> Sets a value for a corresponding property of the specified chart. Chart property must be<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// <li><b>property_id</b> :  </li>
+        /// <li><b>sub_window</b> :  [in] Chart subwindow.</li>
+        /// <li><b>value</b> :  [in] Property value.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
-        /// <param name="property_id"></param>
-        /// <param name="sub_window">[in] Chart subwindow.</param>
-        /// <param name="value">[in] Property value.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartsetinteger")]
         public void Handle_ChartSetInteger_2_Default(HttpListenerContext context)
         {
@@ -3692,13 +4178,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartSetString
-        /// Description: Sets a value for a corresponding property of the specified chart. Chart property must be of the string type. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetstring.html
+        /// <b>Function:</b> ChartSetString<br>
+        /// <b>Description:</b> Sets a value for a corresponding property of the specified chart. Chart property must be of the string type. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetstring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// <li><b>prop_id</b> :  [in] Chart property ID. Its value can be one of the values (except the read-only properties).</li>
+        /// <li><b>str_value</b> :  [in] Property value string. String length cannot exceed 2045 characters (extra characters will be truncated).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
-        /// <param name="prop_id">[in] Chart property ID. Its value can be one of the values (except the read-only properties).</param>
-        /// <param name="str_value">[in] Property value string. String length cannot exceed 2045 characters (extra characters will be truncated).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartsetstring")]
         public void Handle_ChartSetString_1(HttpListenerContext context)
         {
@@ -3707,13 +4196,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartSetString
-        /// Description: Sets a value for a corresponding property of the specified chart. Chart property must be of the string type. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetstring.html
+        /// <b>Function:</b> ChartSetString<br>
+        /// <b>Description:</b> Sets a value for a corresponding property of the specified chart. Chart property must be of the string type. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetstring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// <li><b>prop_id</b> :  [in] Chart property ID. Its value can be one of the values (except the read-only properties).</li>
+        /// <li><b>str_value</b> :  [in] Property value string. String length cannot exceed 2045 characters (extra characters will be truncated).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
-        /// <param name="prop_id">[in] Chart property ID. Its value can be one of the values (except the read-only properties).</param>
-        /// <param name="str_value">[in] Property value string. String length cannot exceed 2045 characters (extra characters will be truncated).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartsetstring")]
         public void Handle_ChartSetString_1_Default(HttpListenerContext context)
         {
@@ -3743,13 +4235,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartNavigate
-        /// Description: Performs shift of the specified chart by the specified number of bars relative to the specified position in the chart. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartnavigate.html
+        /// <b>Function:</b> ChartNavigate<br>
+        /// <b>Description:</b> Performs shift of the specified chart by the specified number of bars relative to the specified position in the chart. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartnavigate.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// <li><b>position</b> :  [in] Chart position to perform a shift. Can be one of the values.</li>
+        /// <li><b>shift</b> :  [in] Number of bars to shift the chart. Positive value means the right shift (to the end of chart), negative value means the left shift (to the beginning of chart). The zero shift can be used to navigate to the beginning or end of chart.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
-        /// <param name="position">[in] Chart position to perform a shift. Can be one of the values.</param>
-        /// <param name="shift">[in] Number of bars to shift the chart. Positive value means the right shift (to the end of chart), negative value means the left shift (to the beginning of chart). The zero shift can be used to navigate to the beginning or end of chart.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartnavigate")]
         public void Handle_ChartNavigate_1(HttpListenerContext context)
         {
@@ -3758,13 +4253,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartNavigate
-        /// Description: Performs shift of the specified chart by the specified number of bars relative to the specified position in the chart. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartnavigate.html
+        /// <b>Function:</b> ChartNavigate<br>
+        /// <b>Description:</b> Performs shift of the specified chart by the specified number of bars relative to the specified position in the chart. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartnavigate.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// <li><b>position</b> :  [in] Chart position to perform a shift. Can be one of the values.</li>
+        /// <li><b>shift</b> :  [in] Number of bars to shift the chart. Positive value means the right shift (to the end of chart), negative value means the left shift (to the beginning of chart). The zero shift can be used to navigate to the beginning or end of chart.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
-        /// <param name="position">[in] Chart position to perform a shift. Can be one of the values.</param>
-        /// <param name="shift">[in] Number of bars to shift the chart. Positive value means the right shift (to the end of chart), negative value means the left shift (to the beginning of chart). The zero shift can be used to navigate to the beginning or end of chart.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartnavigate")]
         public void Handle_ChartNavigate_1_Default(HttpListenerContext context)
         {
@@ -3794,9 +4292,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartID
-        /// Description: Returns the ID of the current chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartid.html
+        /// <b>Function:</b> ChartID<br>
+        /// <b>Description:</b> Returns the ID of the current chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartid.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartid")]
         public void Handle_ChartID_1(HttpListenerContext context)
@@ -3806,9 +4307,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartID
-        /// Description: Returns the ID of the current chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartid.html
+        /// <b>Function:</b> ChartID<br>
+        /// <b>Description:</b> Returns the ID of the current chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartid.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartid")]
         public void Handle_ChartID_1_Default(HttpListenerContext context)
@@ -3836,13 +4340,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartIndicatorDelete
-        /// Description: Removes an indicator with a specified name from the specified chart window. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatordelete.html
+        /// <b>Function:</b> ChartIndicatorDelete<br>
+        /// <b>Description:</b> Removes an indicator with a specified name from the specified chart window. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatordelete.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 denotes the current chart.</li>
+        /// <li><b>sub_window</b> :  [in] Number of the chart subwindow. 0 denotes the main chart subwindow.</li>
+        /// <li><b>indicator_shortname</b> :  </li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 denotes the current chart.</param>
-        /// <param name="sub_window">[in] Number of the chart subwindow. 0 denotes the main chart subwindow.</param>
-        /// <param name="indicator_shortname"></param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartindicatordelete")]
         public void Handle_ChartIndicatorDelete_1(HttpListenerContext context)
         {
@@ -3851,13 +4358,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartIndicatorDelete
-        /// Description: Removes an indicator with a specified name from the specified chart window. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatordelete.html
+        /// <b>Function:</b> ChartIndicatorDelete<br>
+        /// <b>Description:</b> Removes an indicator with a specified name from the specified chart window. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatordelete.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 denotes the current chart.</li>
+        /// <li><b>sub_window</b> :  [in] Number of the chart subwindow. 0 denotes the main chart subwindow.</li>
+        /// <li><b>indicator_shortname</b> :  </li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 denotes the current chart.</param>
-        /// <param name="sub_window">[in] Number of the chart subwindow. 0 denotes the main chart subwindow.</param>
-        /// <param name="indicator_shortname"></param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartindicatordelete")]
         public void Handle_ChartIndicatorDelete_1_Default(HttpListenerContext context)
         {
@@ -3887,13 +4397,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartIndicatorName
-        /// Description: Returns the short name of the indicator by the number in the indicators list on the specified chart window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatorname.html
+        /// <b>Function:</b> ChartIndicatorName<br>
+        /// <b>Description:</b> Returns the short name of the indicator by the number in the indicators list on the specified chart window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatorname.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 denotes the current chart.</li>
+        /// <li><b>sub_window</b> :  [in] Number of the chart subwindow. 0 denotes the main chart subwindow.</li>
+        /// <li><b>index</b> :  [in] the index of the indicator in the list of indicators. The numeration of indicators start with zero, i.e. the first indicator in the list has the 0 index. To obtain the number of indicators in the list use the function.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 denotes the current chart.</param>
-        /// <param name="sub_window">[in] Number of the chart subwindow. 0 denotes the main chart subwindow.</param>
-        /// <param name="index">[in] the index of the indicator in the list of indicators. The numeration of indicators start with zero, i.e. the first indicator in the list has the 0 index. To obtain the number of indicators in the list use the function.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartindicatorname")]
         public void Handle_ChartIndicatorName_1(HttpListenerContext context)
         {
@@ -3902,13 +4415,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartIndicatorName
-        /// Description: Returns the short name of the indicator by the number in the indicators list on the specified chart window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatorname.html
+        /// <b>Function:</b> ChartIndicatorName<br>
+        /// <b>Description:</b> Returns the short name of the indicator by the number in the indicators list on the specified chart window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatorname.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 denotes the current chart.</li>
+        /// <li><b>sub_window</b> :  [in] Number of the chart subwindow. 0 denotes the main chart subwindow.</li>
+        /// <li><b>index</b> :  [in] the index of the indicator in the list of indicators. The numeration of indicators start with zero, i.e. the first indicator in the list has the 0 index. To obtain the number of indicators in the list use the function.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 denotes the current chart.</param>
-        /// <param name="sub_window">[in] Number of the chart subwindow. 0 denotes the main chart subwindow.</param>
-        /// <param name="index">[in] the index of the indicator in the list of indicators. The numeration of indicators start with zero, i.e. the first indicator in the list has the 0 index. To obtain the number of indicators in the list use the function.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartindicatorname")]
         public void Handle_ChartIndicatorName_1_Default(HttpListenerContext context)
         {
@@ -3938,12 +4454,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartIndicatorsTotal
-        /// Description: Returns the number of all indicators applied to the specified chart window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatorstotal.html
+        /// <b>Function:</b> ChartIndicatorsTotal<br>
+        /// <b>Description:</b> Returns the number of all indicators applied to the specified chart window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatorstotal.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 denotes the current chart.</li>
+        /// <li><b>sub_window</b> :  [in] Number of the chart subwindow. 0 denotes the main chart subwindow.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 denotes the current chart.</param>
-        /// <param name="sub_window">[in] Number of the chart subwindow. 0 denotes the main chart subwindow.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartindicatorstotal")]
         public void Handle_ChartIndicatorsTotal_1(HttpListenerContext context)
         {
@@ -3952,12 +4471,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartIndicatorsTotal
-        /// Description: Returns the number of all indicators applied to the specified chart window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatorstotal.html
+        /// <b>Function:</b> ChartIndicatorsTotal<br>
+        /// <b>Description:</b> Returns the number of all indicators applied to the specified chart window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartindicatorstotal.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 denotes the current chart.</li>
+        /// <li><b>sub_window</b> :  [in] Number of the chart subwindow. 0 denotes the main chart subwindow.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 denotes the current chart.</param>
-        /// <param name="sub_window">[in] Number of the chart subwindow. 0 denotes the main chart subwindow.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartindicatorstotal")]
         public void Handle_ChartIndicatorsTotal_1_Default(HttpListenerContext context)
         {
@@ -3986,9 +4508,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartWindowOnDropped
-        /// Description: Returns the number (index) of the chart subwindow the Expert Advisor or script has been dropped to. 0 means the main chart window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowondropped.html
+        /// <b>Function:</b> ChartWindowOnDropped<br>
+        /// <b>Description:</b> Returns the number (index) of the chart subwindow the Expert Advisor or script has been dropped to. 0 means the main chart window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartwindowondropped")]
         public void Handle_ChartWindowOnDropped_1(HttpListenerContext context)
@@ -3998,9 +4523,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartWindowOnDropped
-        /// Description: Returns the number (index) of the chart subwindow the Expert Advisor or script has been dropped to. 0 means the main chart window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowondropped.html
+        /// <b>Function:</b> ChartWindowOnDropped<br>
+        /// <b>Description:</b> Returns the number (index) of the chart subwindow the Expert Advisor or script has been dropped to. 0 means the main chart window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartwindowondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartwindowondropped")]
         public void Handle_ChartWindowOnDropped_1_Default(HttpListenerContext context)
@@ -4028,9 +4556,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartPriceOnDropped
-        /// Description: Returns the price coordinate corresponding to the chart point the Expert Advisor or script has been dropped to.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartpriceondropped.html
+        /// <b>Function:</b> ChartPriceOnDropped<br>
+        /// <b>Description:</b> Returns the price coordinate corresponding to the chart point the Expert Advisor or script has been dropped to.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartpriceondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartpriceondropped")]
         public void Handle_ChartPriceOnDropped_1(HttpListenerContext context)
@@ -4040,9 +4571,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartPriceOnDropped
-        /// Description: Returns the price coordinate corresponding to the chart point the Expert Advisor or script has been dropped to.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartpriceondropped.html
+        /// <b>Function:</b> ChartPriceOnDropped<br>
+        /// <b>Description:</b> Returns the price coordinate corresponding to the chart point the Expert Advisor or script has been dropped to.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartpriceondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartpriceondropped")]
         public void Handle_ChartPriceOnDropped_1_Default(HttpListenerContext context)
@@ -4070,9 +4604,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartTimeOnDropped
-        /// Description: Returns the time coordinate corresponding to the chart point the Expert Advisor or script has been dropped to.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/charttimeondropped.html
+        /// <b>Function:</b> ChartTimeOnDropped<br>
+        /// <b>Description:</b> Returns the time coordinate corresponding to the chart point the Expert Advisor or script has been dropped to.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/charttimeondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/charttimeondropped")]
         public void Handle_ChartTimeOnDropped_1(HttpListenerContext context)
@@ -4082,9 +4619,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartTimeOnDropped
-        /// Description: Returns the time coordinate corresponding to the chart point the Expert Advisor or script has been dropped to.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/charttimeondropped.html
+        /// <b>Function:</b> ChartTimeOnDropped<br>
+        /// <b>Description:</b> Returns the time coordinate corresponding to the chart point the Expert Advisor or script has been dropped to.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/charttimeondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/charttimeondropped")]
         public void Handle_ChartTimeOnDropped_1_Default(HttpListenerContext context)
@@ -4112,9 +4652,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartXOnDropped
-        /// Description: Returns the X coordinate of the chart point the Expert Advisor or script has been dropped to.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartxondropped.html
+        /// <b>Function:</b> ChartXOnDropped<br>
+        /// <b>Description:</b> Returns the X coordinate of the chart point the Expert Advisor or script has been dropped to.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartxondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartxondropped")]
         public void Handle_ChartXOnDropped_1(HttpListenerContext context)
@@ -4124,9 +4667,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartXOnDropped
-        /// Description: Returns the X coordinate of the chart point the Expert Advisor or script has been dropped to.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartxondropped.html
+        /// <b>Function:</b> ChartXOnDropped<br>
+        /// <b>Description:</b> Returns the X coordinate of the chart point the Expert Advisor or script has been dropped to.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartxondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartxondropped")]
         public void Handle_ChartXOnDropped_1_Default(HttpListenerContext context)
@@ -4154,9 +4700,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartYOnDropped
-        /// Description: Returns the Y coordinateof the chart point the Expert Advisor or script has been dropped to.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartyondropped.html
+        /// <b>Function:</b> ChartYOnDropped<br>
+        /// <b>Description:</b> Returns the Y coordinateof the chart point the Expert Advisor or script has been dropped to.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartyondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartyondropped")]
         public void Handle_ChartYOnDropped_1(HttpListenerContext context)
@@ -4166,9 +4715,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartYOnDropped
-        /// Description: Returns the Y coordinateof the chart point the Expert Advisor or script has been dropped to.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartyondropped.html
+        /// <b>Function:</b> ChartYOnDropped<br>
+        /// <b>Description:</b> Returns the Y coordinateof the chart point the Expert Advisor or script has been dropped to.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartyondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartyondropped")]
         public void Handle_ChartYOnDropped_1_Default(HttpListenerContext context)
@@ -4196,13 +4748,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartSetSymbolPeriod
-        /// Description: Changes the symbol and period of the specified chart. The function is asynchronous, i.e. it sends the command and does not wait for its execution completion. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetsymbolperiod.html
+        /// <b>Function:</b> ChartSetSymbolPeriod<br>
+        /// <b>Description:</b> Changes the symbol and period of the specified chart. The function is asynchronous, i.e. it sends the command and does not wait for its execution completion. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetsymbolperiod.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// <li><b>symbol</b> :  [in] Chart symbol. value means the current chart symbol (Expert Advisor is attached to)</li>
+        /// <li><b>period</b> :  [in] Chart period (timeframe). Can be one of the values. 0 means the current chart period.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
-        /// <param name="symbol">[in] Chart symbol. value means the current chart symbol (Expert Advisor is attached to)</param>
-        /// <param name="period">[in] Chart period (timeframe). Can be one of the values. 0 means the current chart period.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartsetsymbolperiod")]
         public void Handle_ChartSetSymbolPeriod_1(HttpListenerContext context)
         {
@@ -4211,13 +4766,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartSetSymbolPeriod
-        /// Description: Changes the symbol and period of the specified chart. The function is asynchronous, i.e. it sends the command and does not wait for its execution completion. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetsymbolperiod.html
+        /// <b>Function:</b> ChartSetSymbolPeriod<br>
+        /// <b>Description:</b> Changes the symbol and period of the specified chart. The function is asynchronous, i.e. it sends the command and does not wait for its execution completion. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartsetsymbolperiod.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// <li><b>symbol</b> :  [in] Chart symbol. value means the current chart symbol (Expert Advisor is attached to)</li>
+        /// <li><b>period</b> :  [in] Chart period (timeframe). Can be one of the values. 0 means the current chart period.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
-        /// <param name="symbol">[in] Chart symbol. value means the current chart symbol (Expert Advisor is attached to)</param>
-        /// <param name="period">[in] Chart period (timeframe). Can be one of the values. 0 means the current chart period.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartsetsymbolperiod")]
         public void Handle_ChartSetSymbolPeriod_1_Default(HttpListenerContext context)
         {
@@ -4247,15 +4805,18 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ChartScreenShot
-        /// Description: Saves current chart screen shot as a GIF, PNG or BMP file depending on specified extension. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartscreenshot.html
+        /// <b>Function:</b> ChartScreenShot<br>
+        /// <b>Description:</b> Saves current chart screen shot as a GIF, PNG or BMP file depending on specified extension. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartscreenshot.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// <li><b>filename</b> :  [in] Screenshot file name. Cannot exceed 63 characters. Screenshot files are placed in the \Files directory.</li>
+        /// <li><b>width</b> :  [in] Screenshot width in pixels.</li>
+        /// <li><b>height</b> :  [in] Screenshot height in pixels.</li>
+        /// <li><b>align_mode</b> :  [in] Output mode of a narrow screenshot. A value of the enumeration. ALIGN_RIGHT means align to the right margin (the output from the end). ALIGN_LEFT means Left justify.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
-        /// <param name="filename">[in] Screenshot file name. Cannot exceed 63 characters. Screenshot files are placed in the \Files directory.</param>
-        /// <param name="width">[in] Screenshot width in pixels.</param>
-        /// <param name="height">[in] Screenshot height in pixels.</param>
-        /// <param name="align_mode">[in] Output mode of a narrow screenshot. A value of the enumeration. ALIGN_RIGHT means align to the right margin (the output from the end). ALIGN_LEFT means Left justify.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/chartscreenshot")]
         public void Handle_ChartScreenShot_1(HttpListenerContext context)
         {
@@ -4264,15 +4825,18 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ChartScreenShot
-        /// Description: Saves current chart screen shot as a GIF, PNG or BMP file depending on specified extension. The command is added to chart message queue and executed only after all previous commands have been processed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/chartscreenshot.html
+        /// <b>Function:</b> ChartScreenShot<br>
+        /// <b>Description:</b> Saves current chart screen shot as a GIF, PNG or BMP file depending on specified extension. The command is added to chart message queue and executed only after all previous commands have been processed.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/chartscreenshot.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart ID. 0 means the current chart.</li>
+        /// <li><b>filename</b> :  [in] Screenshot file name. Cannot exceed 63 characters. Screenshot files are placed in the \Files directory.</li>
+        /// <li><b>width</b> :  [in] Screenshot width in pixels.</li>
+        /// <li><b>height</b> :  [in] Screenshot height in pixels.</li>
+        /// <li><b>align_mode</b> :  [in] Output mode of a narrow screenshot. A value of the enumeration. ALIGN_RIGHT means align to the right margin (the output from the end). ALIGN_LEFT means Left justify.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart ID. 0 means the current chart.</param>
-        /// <param name="filename">[in] Screenshot file name. Cannot exceed 63 characters. Screenshot files are placed in the \Files directory.</param>
-        /// <param name="width">[in] Screenshot width in pixels.</param>
-        /// <param name="height">[in] Screenshot height in pixels.</param>
-        /// <param name="align_mode">[in] Output mode of a narrow screenshot. A value of the enumeration. ALIGN_RIGHT means align to the right margin (the output from the end). ALIGN_LEFT means Left justify.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/chartscreenshot")]
         public void Handle_ChartScreenShot_1_Default(HttpListenerContext context)
         {
@@ -4304,9 +4868,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: WindowBarsPerChart
-        /// Description: Returns the amount of bars visible on the chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowbarsperchart.html
+        /// <b>Function:</b> WindowBarsPerChart<br>
+        /// <b>Description:</b> Returns the amount of bars visible on the chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowbarsperchart.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/windowbarsperchart")]
         public void Handle_WindowBarsPerChart_1(HttpListenerContext context)
@@ -4316,9 +4883,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: WindowBarsPerChart
-        /// Description: Returns the amount of bars visible on the chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowbarsperchart.html
+        /// <b>Function:</b> WindowBarsPerChart<br>
+        /// <b>Description:</b> Returns the amount of bars visible on the chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowbarsperchart.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/windowbarsperchart")]
         public void Handle_WindowBarsPerChart_1_Default(HttpListenerContext context)
@@ -4346,9 +4916,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: WindowExpertName
-        /// Description: Returns the name of the executed Expert Advisor, script, custom indicator, or library.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowexpertname.html
+        /// <b>Function:</b> WindowExpertName<br>
+        /// <b>Description:</b> Returns the name of the executed Expert Advisor, script, custom indicator, or library.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowexpertname.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/windowexpertname")]
         public void Handle_WindowExpertName_1(HttpListenerContext context)
@@ -4358,9 +4931,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: WindowExpertName
-        /// Description: Returns the name of the executed Expert Advisor, script, custom indicator, or library.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowexpertname.html
+        /// <b>Function:</b> WindowExpertName<br>
+        /// <b>Description:</b> Returns the name of the executed Expert Advisor, script, custom indicator, or library.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowexpertname.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/windowexpertname")]
         public void Handle_WindowExpertName_1_Default(HttpListenerContext context)
@@ -4388,11 +4964,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: WindowFind
-        /// Description: Returns the window index containing this specified indicator.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowfind.html
+        /// <b>Function:</b> WindowFind<br>
+        /// <b>Description:</b> Returns the window index containing this specified indicator.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowfind.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] Indicator short name.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] Indicator short name.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/windowfind")]
         public void Handle_WindowFind_1(HttpListenerContext context)
         {
@@ -4401,11 +4980,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: WindowFind
-        /// Description: Returns the window index containing this specified indicator.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowfind.html
+        /// <b>Function:</b> WindowFind<br>
+        /// <b>Description:</b> Returns the window index containing this specified indicator.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowfind.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] Indicator short name.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] Indicator short name.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/windowfind")]
         public void Handle_WindowFind_1_Default(HttpListenerContext context)
         {
@@ -4433,9 +5015,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: WindowFirstVisibleBar
-        /// Description: Returns index of the first visible bar in the current chart window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowfirstvisiblebar.html
+        /// <b>Function:</b> WindowFirstVisibleBar<br>
+        /// <b>Description:</b> Returns index of the first visible bar in the current chart window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowfirstvisiblebar.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/windowfirstvisiblebar")]
         public void Handle_WindowFirstVisibleBar_1(HttpListenerContext context)
@@ -4445,9 +5030,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: WindowFirstVisibleBar
-        /// Description: Returns index of the first visible bar in the current chart window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowfirstvisiblebar.html
+        /// <b>Function:</b> WindowFirstVisibleBar<br>
+        /// <b>Description:</b> Returns index of the first visible bar in the current chart window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowfirstvisiblebar.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/windowfirstvisiblebar")]
         public void Handle_WindowFirstVisibleBar_1_Default(HttpListenerContext context)
@@ -4475,12 +5063,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: WindowHandle
-        /// Description: Returns the system handle of the chart window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowhandle.html
+        /// <b>Function:</b> WindowHandle<br>
+        /// <b>Description:</b> Returns the system handle of the chart window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowhandle.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/windowhandle")]
         public void Handle_WindowHandle_1(HttpListenerContext context)
         {
@@ -4489,12 +5080,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: WindowHandle
-        /// Description: Returns the system handle of the chart window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowhandle.html
+        /// <b>Function:</b> WindowHandle<br>
+        /// <b>Description:</b> Returns the system handle of the chart window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowhandle.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/windowhandle")]
         public void Handle_WindowHandle_1_Default(HttpListenerContext context)
         {
@@ -4523,11 +5117,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: WindowIsVisible
-        /// Description: Returns the visibility flag of the chart subwindow.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowisvisible.html
+        /// <b>Function:</b> WindowIsVisible<br>
+        /// <b>Description:</b> Returns the visibility flag of the chart subwindow.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowisvisible.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Subwindow index.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Subwindow index.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/windowisvisible")]
         public void Handle_WindowIsVisible_1(HttpListenerContext context)
         {
@@ -4536,11 +5133,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: WindowIsVisible
-        /// Description: Returns the visibility flag of the chart subwindow.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowisvisible.html
+        /// <b>Function:</b> WindowIsVisible<br>
+        /// <b>Description:</b> Returns the visibility flag of the chart subwindow.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowisvisible.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Subwindow index.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Subwindow index.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/windowisvisible")]
         public void Handle_WindowIsVisible_1_Default(HttpListenerContext context)
         {
@@ -4568,9 +5168,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: WindowOnDropped
-        /// Description: Returns the window index where Expert Advisor, custom indicator or script was dropped.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowondropped.html
+        /// <b>Function:</b> WindowOnDropped<br>
+        /// <b>Description:</b> Returns the window index where Expert Advisor, custom indicator or script was dropped.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/windowondropped")]
         public void Handle_WindowOnDropped_1(HttpListenerContext context)
@@ -4580,9 +5183,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: WindowOnDropped
-        /// Description: Returns the window index where Expert Advisor, custom indicator or script was dropped.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowondropped.html
+        /// <b>Function:</b> WindowOnDropped<br>
+        /// <b>Description:</b> Returns the window index where Expert Advisor, custom indicator or script was dropped.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/windowondropped")]
         public void Handle_WindowOnDropped_1_Default(HttpListenerContext context)
@@ -4610,11 +5216,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: WindowPriceMax
-        /// Description: Returns the maximal value of the vertical scale of the specified subwindow of the current chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowpricemax.html
+        /// <b>Function:</b> WindowPriceMax<br>
+        /// <b>Description:</b> Returns the maximal value of the vertical scale of the specified subwindow of the current chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowpricemax.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Chart subwindow index (0 - main chart window).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Chart subwindow index (0 - main chart window).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/windowpricemax")]
         public void Handle_WindowPriceMax_1(HttpListenerContext context)
         {
@@ -4623,11 +5232,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: WindowPriceMax
-        /// Description: Returns the maximal value of the vertical scale of the specified subwindow of the current chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowpricemax.html
+        /// <b>Function:</b> WindowPriceMax<br>
+        /// <b>Description:</b> Returns the maximal value of the vertical scale of the specified subwindow of the current chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowpricemax.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Chart subwindow index (0 - main chart window).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Chart subwindow index (0 - main chart window).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/windowpricemax")]
         public void Handle_WindowPriceMax_1_Default(HttpListenerContext context)
         {
@@ -4655,11 +5267,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: WindowPriceMin
-        /// Description: Returns the minimal value of the vertical scale of the specified subwindow of the current chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowpricemin.html
+        /// <b>Function:</b> WindowPriceMin<br>
+        /// <b>Description:</b> Returns the minimal value of the vertical scale of the specified subwindow of the current chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowpricemin.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Chart subwindow index (0 - main chart window).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Chart subwindow index (0 - main chart window).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/windowpricemin")]
         public void Handle_WindowPriceMin_1(HttpListenerContext context)
         {
@@ -4668,11 +5283,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: WindowPriceMin
-        /// Description: Returns the minimal value of the vertical scale of the specified subwindow of the current chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowpricemin.html
+        /// <b>Function:</b> WindowPriceMin<br>
+        /// <b>Description:</b> Returns the minimal value of the vertical scale of the specified subwindow of the current chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowpricemin.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Chart subwindow index (0 - main chart window).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Chart subwindow index (0 - main chart window).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/windowpricemin")]
         public void Handle_WindowPriceMin_1_Default(HttpListenerContext context)
         {
@@ -4700,9 +5318,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: WindowPriceOnDropped
-        /// Description: Returns the price of the chart point where Expert Advisor or script was dropped.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowpriceondropped.html
+        /// <b>Function:</b> WindowPriceOnDropped<br>
+        /// <b>Description:</b> Returns the price of the chart point where Expert Advisor or script was dropped.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowpriceondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/windowpriceondropped")]
         public void Handle_WindowPriceOnDropped_1(HttpListenerContext context)
@@ -4712,9 +5333,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: WindowPriceOnDropped
-        /// Description: Returns the price of the chart point where Expert Advisor or script was dropped.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowpriceondropped.html
+        /// <b>Function:</b> WindowPriceOnDropped<br>
+        /// <b>Description:</b> Returns the price of the chart point where Expert Advisor or script was dropped.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowpriceondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/windowpriceondropped")]
         public void Handle_WindowPriceOnDropped_1_Default(HttpListenerContext context)
@@ -4742,9 +5366,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: WindowRedraw
-        /// Description: Redraws the current chart forcedly.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowredraw.html
+        /// <b>Function:</b> WindowRedraw<br>
+        /// <b>Description:</b> Redraws the current chart forcedly.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowredraw.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/windowredraw")]
         public void Handle_WindowRedraw_1(HttpListenerContext context)
@@ -4754,9 +5381,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: WindowRedraw
-        /// Description: Redraws the current chart forcedly.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowredraw.html
+        /// <b>Function:</b> WindowRedraw<br>
+        /// <b>Description:</b> Redraws the current chart forcedly.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowredraw.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/windowredraw")]
         public void Handle_WindowRedraw_1_Default(HttpListenerContext context)
@@ -4784,16 +5414,19 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: WindowScreenShot
-        /// Description: Saves current chart screen shot as a GIF file.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowscreenshot.html
+        /// <b>Function:</b> WindowScreenShot<br>
+        /// <b>Description:</b> Saves current chart screen shot as a GIF file.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowscreenshot.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>filename</b> :  [in] Screen shot file name. Screenshot is saved to \Files folder.</li>
+        /// <li><b>size_x</b> :  [in] Screen shot width in pixels.</li>
+        /// <li><b>size_y</b> :  [in] Screen shot height in pixels.</li>
+        /// <li><b>start_bar</b> :  [in] Index of the first visible bar in the screen shot. If 0 value is set, the current first visible bar will be shot. If no value or negative value has been set, the end-of-chart screen shot will be produced, indent being taken into consideration.</li>
+        /// <li><b>chart_scale</b> :  [in] Horizontal chart scale for screen shot. Can be in the range from 0 to 5. If no value or negative value has been set, the current chart scale will be used.</li>
+        /// <li><b>chart_mode</b> :  [in] Chart displaying mode. It can take the following values: CHART_BAR (0 is a sequence of bars), CHART_CANDLE (1 is a sequence of candlesticks), CHART_LINE (2 is a close prices line). If no value or negative value has been set, the chart will be shown in its current mode.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="filename">[in] Screen shot file name. Screenshot is saved to \Files folder.</param>
-        /// <param name="size_x">[in] Screen shot width in pixels.</param>
-        /// <param name="size_y">[in] Screen shot height in pixels.</param>
-        /// <param name="start_bar">[in] Index of the first visible bar in the screen shot. If 0 value is set, the current first visible bar will be shot. If no value or negative value has been set, the end-of-chart screen shot will be produced, indent being taken into consideration.</param>
-        /// <param name="chart_scale">[in] Horizontal chart scale for screen shot. Can be in the range from 0 to 5. If no value or negative value has been set, the current chart scale will be used.</param>
-        /// <param name="chart_mode">[in] Chart displaying mode. It can take the following values: CHART_BAR (0 is a sequence of bars), CHART_CANDLE (1 is a sequence of candlesticks), CHART_LINE (2 is a close prices line). If no value or negative value has been set, the chart will be shown in its current mode.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/windowscreenshot")]
         public void Handle_WindowScreenShot_1(HttpListenerContext context)
         {
@@ -4802,16 +5435,19 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: WindowScreenShot
-        /// Description: Saves current chart screen shot as a GIF file.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowscreenshot.html
+        /// <b>Function:</b> WindowScreenShot<br>
+        /// <b>Description:</b> Saves current chart screen shot as a GIF file.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowscreenshot.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>filename</b> :  [in] Screen shot file name. Screenshot is saved to \Files folder.</li>
+        /// <li><b>size_x</b> :  [in] Screen shot width in pixels.</li>
+        /// <li><b>size_y</b> :  [in] Screen shot height in pixels.</li>
+        /// <li><b>start_bar</b> :  [in] Index of the first visible bar in the screen shot. If 0 value is set, the current first visible bar will be shot. If no value or negative value has been set, the end-of-chart screen shot will be produced, indent being taken into consideration.</li>
+        /// <li><b>chart_scale</b> :  [in] Horizontal chart scale for screen shot. Can be in the range from 0 to 5. If no value or negative value has been set, the current chart scale will be used.</li>
+        /// <li><b>chart_mode</b> :  [in] Chart displaying mode. It can take the following values: CHART_BAR (0 is a sequence of bars), CHART_CANDLE (1 is a sequence of candlesticks), CHART_LINE (2 is a close prices line). If no value or negative value has been set, the chart will be shown in its current mode.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="filename">[in] Screen shot file name. Screenshot is saved to \Files folder.</param>
-        /// <param name="size_x">[in] Screen shot width in pixels.</param>
-        /// <param name="size_y">[in] Screen shot height in pixels.</param>
-        /// <param name="start_bar">[in] Index of the first visible bar in the screen shot. If 0 value is set, the current first visible bar will be shot. If no value or negative value has been set, the end-of-chart screen shot will be produced, indent being taken into consideration.</param>
-        /// <param name="chart_scale">[in] Horizontal chart scale for screen shot. Can be in the range from 0 to 5. If no value or negative value has been set, the current chart scale will be used.</param>
-        /// <param name="chart_mode">[in] Chart displaying mode. It can take the following values: CHART_BAR (0 is a sequence of bars), CHART_CANDLE (1 is a sequence of candlesticks), CHART_LINE (2 is a close prices line). If no value or negative value has been set, the chart will be shown in its current mode.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/windowscreenshot")]
         public void Handle_WindowScreenShot_1_Default(HttpListenerContext context)
         {
@@ -4844,9 +5480,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: WindowTimeOnDropped
-        /// Description: Returns the time of the chart point where Expert Advisor or script was dropped.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowtimeondropped.html
+        /// <b>Function:</b> WindowTimeOnDropped<br>
+        /// <b>Description:</b> Returns the time of the chart point where Expert Advisor or script was dropped.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowtimeondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/windowtimeondropped")]
         public void Handle_WindowTimeOnDropped_1(HttpListenerContext context)
@@ -4856,9 +5495,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: WindowTimeOnDropped
-        /// Description: Returns the time of the chart point where Expert Advisor or script was dropped.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowtimeondropped.html
+        /// <b>Function:</b> WindowTimeOnDropped<br>
+        /// <b>Description:</b> Returns the time of the chart point where Expert Advisor or script was dropped.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowtimeondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/windowtimeondropped")]
         public void Handle_WindowTimeOnDropped_1_Default(HttpListenerContext context)
@@ -4886,9 +5528,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: WindowsTotal
-        /// Description: Returns total number of indicator windows on the chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowstotal.html
+        /// <b>Function:</b> WindowsTotal<br>
+        /// <b>Description:</b> Returns total number of indicator windows on the chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowstotal.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/windowstotal")]
         public void Handle_WindowsTotal_1(HttpListenerContext context)
@@ -4898,9 +5543,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: WindowsTotal
-        /// Description: Returns total number of indicator windows on the chart.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowstotal.html
+        /// <b>Function:</b> WindowsTotal<br>
+        /// <b>Description:</b> Returns total number of indicator windows on the chart.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowstotal.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/windowstotal")]
         public void Handle_WindowsTotal_1_Default(HttpListenerContext context)
@@ -4928,9 +5576,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: WindowXOnDropped
-        /// Description: Returns the value at X axis in pixels for the chart window client area point at which the Expert Advisor or script was dropped.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowxondropped.html
+        /// <b>Function:</b> WindowXOnDropped<br>
+        /// <b>Description:</b> Returns the value at X axis in pixels for the chart window client area point at which the Expert Advisor or script was dropped.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowxondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/windowxondropped")]
         public void Handle_WindowXOnDropped_1(HttpListenerContext context)
@@ -4940,9 +5591,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: WindowXOnDropped
-        /// Description: Returns the value at X axis in pixels for the chart window client area point at which the Expert Advisor or script was dropped.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowxondropped.html
+        /// <b>Function:</b> WindowXOnDropped<br>
+        /// <b>Description:</b> Returns the value at X axis in pixels for the chart window client area point at which the Expert Advisor or script was dropped.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowxondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/windowxondropped")]
         public void Handle_WindowXOnDropped_1_Default(HttpListenerContext context)
@@ -4970,9 +5624,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: WindowYOnDropped
-        /// Description: Returns the value at Y axis in pixels for the chart window client area point at which the Expert Advisor or script was dropped.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowyondropped.html
+        /// <b>Function:</b> WindowYOnDropped<br>
+        /// <b>Description:</b> Returns the value at Y axis in pixels for the chart window client area point at which the Expert Advisor or script was dropped.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowyondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/windowyondropped")]
         public void Handle_WindowYOnDropped_1(HttpListenerContext context)
@@ -4982,9 +5639,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: WindowYOnDropped
-        /// Description: Returns the value at Y axis in pixels for the chart window client area point at which the Expert Advisor or script was dropped.
-        /// URL: http://mm.l/mql4/docs.mql4.com/chart_operations/windowyondropped.html
+        /// <b>Function:</b> WindowYOnDropped<br>
+        /// <b>Description:</b> Returns the value at Y axis in pixels for the chart window client area point at which the Expert Advisor or script was dropped.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/chart_operations/windowyondropped.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/windowyondropped")]
         public void Handle_WindowYOnDropped_1_Default(HttpListenerContext context)
@@ -5012,15 +5672,18 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderClose
-        /// Description: Closes opened order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderclose.html
+        /// <b>Function:</b> OrderClose<br>
+        /// <b>Description:</b> Closes opened order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderclose.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>ticket</b> :  [in] Unique number of the order ticket.</li>
+        /// <li><b>lots</b> :  [in] Number of lots.</li>
+        /// <li><b>price</b> :  [in] Closing price.</li>
+        /// <li><b>slippage</b> :  [in] Value of the maximum price slippage in points.</li>
+        /// <li><b>arrow_color</b> :  [in] Color of the closing arrow on the chart. If the parameter is missing or has CLR_NONE value closing arrow will not be drawn on the chart.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="ticket">[in] Unique number of the order ticket.</param>
-        /// <param name="lots">[in] Number of lots.</param>
-        /// <param name="price">[in] Closing price.</param>
-        /// <param name="slippage">[in] Value of the maximum price slippage in points.</param>
-        /// <param name="arrow_color">[in] Color of the closing arrow on the chart. If the parameter is missing or has CLR_NONE value closing arrow will not be drawn on the chart.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/orderclose")]
         public void Handle_OrderClose_1(HttpListenerContext context)
         {
@@ -5029,15 +5692,18 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderClose
-        /// Description: Closes opened order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderclose.html
+        /// <b>Function:</b> OrderClose<br>
+        /// <b>Description:</b> Closes opened order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderclose.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>ticket</b> :  [in] Unique number of the order ticket.</li>
+        /// <li><b>lots</b> :  [in] Number of lots.</li>
+        /// <li><b>price</b> :  [in] Closing price.</li>
+        /// <li><b>slippage</b> :  [in] Value of the maximum price slippage in points.</li>
+        /// <li><b>arrow_color</b> :  [in] Color of the closing arrow on the chart. If the parameter is missing or has CLR_NONE value closing arrow will not be drawn on the chart.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="ticket">[in] Unique number of the order ticket.</param>
-        /// <param name="lots">[in] Number of lots.</param>
-        /// <param name="price">[in] Closing price.</param>
-        /// <param name="slippage">[in] Value of the maximum price slippage in points.</param>
-        /// <param name="arrow_color">[in] Color of the closing arrow on the chart. If the parameter is missing or has CLR_NONE value closing arrow will not be drawn on the chart.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/orderclose")]
         public void Handle_OrderClose_1_Default(HttpListenerContext context)
         {
@@ -5069,13 +5735,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderCloseBy
-        /// Description: Closes an opened order by another opposite opened order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordercloseby.html
+        /// <b>Function:</b> OrderCloseBy<br>
+        /// <b>Description:</b> Closes an opened order by another opposite opened order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordercloseby.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>ticket</b> :  [in] Unique number of the order ticket.</li>
+        /// <li><b>opposite</b> :  [in] Unique number of the opposite order ticket.</li>
+        /// <li><b>arrow_color</b> :  [in] Color of the closing arrow on the chart. If the parameter is missing or has CLR_NONE value closing arrow will not be drawn on the chart.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="ticket">[in] Unique number of the order ticket.</param>
-        /// <param name="opposite">[in] Unique number of the opposite order ticket.</param>
-        /// <param name="arrow_color">[in] Color of the closing arrow on the chart. If the parameter is missing or has CLR_NONE value closing arrow will not be drawn on the chart.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ordercloseby")]
         public void Handle_OrderCloseBy_1(HttpListenerContext context)
         {
@@ -5084,13 +5753,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderCloseBy
-        /// Description: Closes an opened order by another opposite opened order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordercloseby.html
+        /// <b>Function:</b> OrderCloseBy<br>
+        /// <b>Description:</b> Closes an opened order by another opposite opened order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordercloseby.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>ticket</b> :  [in] Unique number of the order ticket.</li>
+        /// <li><b>opposite</b> :  [in] Unique number of the opposite order ticket.</li>
+        /// <li><b>arrow_color</b> :  [in] Color of the closing arrow on the chart. If the parameter is missing or has CLR_NONE value closing arrow will not be drawn on the chart.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="ticket">[in] Unique number of the order ticket.</param>
-        /// <param name="opposite">[in] Unique number of the opposite order ticket.</param>
-        /// <param name="arrow_color">[in] Color of the closing arrow on the chart. If the parameter is missing or has CLR_NONE value closing arrow will not be drawn on the chart.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ordercloseby")]
         public void Handle_OrderCloseBy_1_Default(HttpListenerContext context)
         {
@@ -5120,9 +5792,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderClosePrice
-        /// Description: Returns close price of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordercloseprice.html
+        /// <b>Function:</b> OrderClosePrice<br>
+        /// <b>Description:</b> Returns close price of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordercloseprice.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ordercloseprice")]
         public void Handle_OrderClosePrice_1(HttpListenerContext context)
@@ -5132,9 +5807,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderClosePrice
-        /// Description: Returns close price of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordercloseprice.html
+        /// <b>Function:</b> OrderClosePrice<br>
+        /// <b>Description:</b> Returns close price of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordercloseprice.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ordercloseprice")]
         public void Handle_OrderClosePrice_1_Default(HttpListenerContext context)
@@ -5162,9 +5840,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderCloseTime
-        /// Description: Returns close time of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderclosetime.html
+        /// <b>Function:</b> OrderCloseTime<br>
+        /// <b>Description:</b> Returns close time of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderclosetime.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/orderclosetime")]
         public void Handle_OrderCloseTime_1(HttpListenerContext context)
@@ -5174,9 +5855,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderCloseTime
-        /// Description: Returns close time of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderclosetime.html
+        /// <b>Function:</b> OrderCloseTime<br>
+        /// <b>Description:</b> Returns close time of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderclosetime.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/orderclosetime")]
         public void Handle_OrderCloseTime_1_Default(HttpListenerContext context)
@@ -5204,9 +5888,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderComment
-        /// Description: Returns comment of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordercomment.html
+        /// <b>Function:</b> OrderComment<br>
+        /// <b>Description:</b> Returns comment of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordercomment.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ordercomment")]
         public void Handle_OrderComment_1(HttpListenerContext context)
@@ -5216,9 +5903,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderComment
-        /// Description: Returns comment of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordercomment.html
+        /// <b>Function:</b> OrderComment<br>
+        /// <b>Description:</b> Returns comment of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordercomment.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ordercomment")]
         public void Handle_OrderComment_1_Default(HttpListenerContext context)
@@ -5246,9 +5936,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderCommission
-        /// Description: Returns calculated commission of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordercommission.html
+        /// <b>Function:</b> OrderCommission<br>
+        /// <b>Description:</b> Returns calculated commission of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordercommission.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ordercommission")]
         public void Handle_OrderCommission_1(HttpListenerContext context)
@@ -5258,9 +5951,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderCommission
-        /// Description: Returns calculated commission of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordercommission.html
+        /// <b>Function:</b> OrderCommission<br>
+        /// <b>Description:</b> Returns calculated commission of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordercommission.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ordercommission")]
         public void Handle_OrderCommission_1_Default(HttpListenerContext context)
@@ -5288,12 +5984,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderDelete
-        /// Description: Deletes previously opened pending order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderdelete.html
+        /// <b>Function:</b> OrderDelete<br>
+        /// <b>Description:</b> Deletes previously opened pending order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderdelete.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>ticket</b> :  [in] Unique number of the order ticket.</li>
+        /// <li><b>arrow_color</b> :  [in] Color of the arrow on the chart. If the parameter is missing or has CLR_NONE value arrow will not be drawn on the chart.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="ticket">[in] Unique number of the order ticket.</param>
-        /// <param name="arrow_color">[in] Color of the arrow on the chart. If the parameter is missing or has CLR_NONE value arrow will not be drawn on the chart.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/orderdelete")]
         public void Handle_OrderDelete_1(HttpListenerContext context)
         {
@@ -5302,12 +6001,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderDelete
-        /// Description: Deletes previously opened pending order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderdelete.html
+        /// <b>Function:</b> OrderDelete<br>
+        /// <b>Description:</b> Deletes previously opened pending order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderdelete.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>ticket</b> :  [in] Unique number of the order ticket.</li>
+        /// <li><b>arrow_color</b> :  [in] Color of the arrow on the chart. If the parameter is missing or has CLR_NONE value arrow will not be drawn on the chart.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="ticket">[in] Unique number of the order ticket.</param>
-        /// <param name="arrow_color">[in] Color of the arrow on the chart. If the parameter is missing or has CLR_NONE value arrow will not be drawn on the chart.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/orderdelete")]
         public void Handle_OrderDelete_1_Default(HttpListenerContext context)
         {
@@ -5336,9 +6038,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderExpiration
-        /// Description: Returns expiration date of the selected pending order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderexpiration.html
+        /// <b>Function:</b> OrderExpiration<br>
+        /// <b>Description:</b> Returns expiration date of the selected pending order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderexpiration.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/orderexpiration")]
         public void Handle_OrderExpiration_1(HttpListenerContext context)
@@ -5348,9 +6053,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderExpiration
-        /// Description: Returns expiration date of the selected pending order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderexpiration.html
+        /// <b>Function:</b> OrderExpiration<br>
+        /// <b>Description:</b> Returns expiration date of the selected pending order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderexpiration.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/orderexpiration")]
         public void Handle_OrderExpiration_1_Default(HttpListenerContext context)
@@ -5378,9 +6086,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderLots
-        /// Description: Returns amount of lots of the selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderlots.html
+        /// <b>Function:</b> OrderLots<br>
+        /// <b>Description:</b> Returns amount of lots of the selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderlots.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/orderlots")]
         public void Handle_OrderLots_1(HttpListenerContext context)
@@ -5390,9 +6101,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderLots
-        /// Description: Returns amount of lots of the selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderlots.html
+        /// <b>Function:</b> OrderLots<br>
+        /// <b>Description:</b> Returns amount of lots of the selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderlots.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/orderlots")]
         public void Handle_OrderLots_1_Default(HttpListenerContext context)
@@ -5420,9 +6134,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderMagicNumber
-        /// Description: Returns an identifying (magic) number of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordermagicnumber.html
+        /// <b>Function:</b> OrderMagicNumber<br>
+        /// <b>Description:</b> Returns an identifying (magic) number of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordermagicnumber.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ordermagicnumber")]
         public void Handle_OrderMagicNumber_1(HttpListenerContext context)
@@ -5432,9 +6149,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderMagicNumber
-        /// Description: Returns an identifying (magic) number of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordermagicnumber.html
+        /// <b>Function:</b> OrderMagicNumber<br>
+        /// <b>Description:</b> Returns an identifying (magic) number of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordermagicnumber.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ordermagicnumber")]
         public void Handle_OrderMagicNumber_1_Default(HttpListenerContext context)
@@ -5462,16 +6182,19 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderModify
-        /// Description: Modification of characteristics of the previously opened or pending orders.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordermodify.html
+        /// <b>Function:</b> OrderModify<br>
+        /// <b>Description:</b> Modification of characteristics of the previously opened or pending orders.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordermodify.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>ticket</b> :  [in] Unique number of the order ticket.</li>
+        /// <li><b>price</b> :  [in] New open price of the pending order.</li>
+        /// <li><b>stoploss</b> :  [in] New StopLoss level.</li>
+        /// <li><b>takeprofit</b> :  [in] New TakeProfit level.</li>
+        /// <li><b>expiration</b> :  [in] Pending order expiration time.</li>
+        /// <li><b>arrow_color</b> :  [in] Arrow color for StopLoss/TakeProfit modifications in the chart. If the parameter is missing or has CLR_NONE value, the arrows will not be shown in the chart.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="ticket">[in] Unique number of the order ticket.</param>
-        /// <param name="price">[in] New open price of the pending order.</param>
-        /// <param name="stoploss">[in] New StopLoss level.</param>
-        /// <param name="takeprofit">[in] New TakeProfit level.</param>
-        /// <param name="expiration">[in] Pending order expiration time.</param>
-        /// <param name="arrow_color">[in] Arrow color for StopLoss/TakeProfit modifications in the chart. If the parameter is missing or has CLR_NONE value, the arrows will not be shown in the chart.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ordermodify")]
         public void Handle_OrderModify_1(HttpListenerContext context)
         {
@@ -5480,16 +6203,19 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderModify
-        /// Description: Modification of characteristics of the previously opened or pending orders.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordermodify.html
+        /// <b>Function:</b> OrderModify<br>
+        /// <b>Description:</b> Modification of characteristics of the previously opened or pending orders.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordermodify.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>ticket</b> :  [in] Unique number of the order ticket.</li>
+        /// <li><b>price</b> :  [in] New open price of the pending order.</li>
+        /// <li><b>stoploss</b> :  [in] New StopLoss level.</li>
+        /// <li><b>takeprofit</b> :  [in] New TakeProfit level.</li>
+        /// <li><b>expiration</b> :  [in] Pending order expiration time.</li>
+        /// <li><b>arrow_color</b> :  [in] Arrow color for StopLoss/TakeProfit modifications in the chart. If the parameter is missing or has CLR_NONE value, the arrows will not be shown in the chart.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="ticket">[in] Unique number of the order ticket.</param>
-        /// <param name="price">[in] New open price of the pending order.</param>
-        /// <param name="stoploss">[in] New StopLoss level.</param>
-        /// <param name="takeprofit">[in] New TakeProfit level.</param>
-        /// <param name="expiration">[in] Pending order expiration time.</param>
-        /// <param name="arrow_color">[in] Arrow color for StopLoss/TakeProfit modifications in the chart. If the parameter is missing or has CLR_NONE value, the arrows will not be shown in the chart.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ordermodify")]
         public void Handle_OrderModify_1_Default(HttpListenerContext context)
         {
@@ -5522,9 +6248,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderOpenPrice
-        /// Description: Returns open price of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderopenprice.html
+        /// <b>Function:</b> OrderOpenPrice<br>
+        /// <b>Description:</b> Returns open price of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderopenprice.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/orderopenprice")]
         public void Handle_OrderOpenPrice_1(HttpListenerContext context)
@@ -5534,9 +6263,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderOpenPrice
-        /// Description: Returns open price of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderopenprice.html
+        /// <b>Function:</b> OrderOpenPrice<br>
+        /// <b>Description:</b> Returns open price of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderopenprice.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/orderopenprice")]
         public void Handle_OrderOpenPrice_1_Default(HttpListenerContext context)
@@ -5564,9 +6296,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderOpenTime
-        /// Description: Returns open time of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderopentime.html
+        /// <b>Function:</b> OrderOpenTime<br>
+        /// <b>Description:</b> Returns open time of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderopentime.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/orderopentime")]
         public void Handle_OrderOpenTime_1(HttpListenerContext context)
@@ -5576,9 +6311,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderOpenTime
-        /// Description: Returns open time of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderopentime.html
+        /// <b>Function:</b> OrderOpenTime<br>
+        /// <b>Description:</b> Returns open time of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderopentime.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/orderopentime")]
         public void Handle_OrderOpenTime_1_Default(HttpListenerContext context)
@@ -5606,9 +6344,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderPrint
-        /// Description: Prints information about the selected order in the log.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderprint.html
+        /// <b>Function:</b> OrderPrint<br>
+        /// <b>Description:</b> Prints information about the selected order in the log.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderprint.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/orderprint")]
         public void Handle_OrderPrint_1(HttpListenerContext context)
@@ -5618,9 +6359,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderPrint
-        /// Description: Prints information about the selected order in the log.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderprint.html
+        /// <b>Function:</b> OrderPrint<br>
+        /// <b>Description:</b> Prints information about the selected order in the log.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderprint.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/orderprint")]
         public void Handle_OrderPrint_1_Default(HttpListenerContext context)
@@ -5648,9 +6392,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderProfit
-        /// Description: Returns profit of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderprofit.html
+        /// <b>Function:</b> OrderProfit<br>
+        /// <b>Description:</b> Returns profit of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderprofit.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/orderprofit")]
         public void Handle_OrderProfit_1(HttpListenerContext context)
@@ -5660,9 +6407,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderProfit
-        /// Description: Returns profit of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderprofit.html
+        /// <b>Function:</b> OrderProfit<br>
+        /// <b>Description:</b> Returns profit of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderprofit.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/orderprofit")]
         public void Handle_OrderProfit_1_Default(HttpListenerContext context)
@@ -5690,13 +6440,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderSelect
-        /// Description: The function selects an order for further processing.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderselect.html
+        /// <b>Function:</b> OrderSelect<br>
+        /// <b>Description:</b> The function selects an order for further processing.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderselect.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  </li>
+        /// <li><b>select</b> :  [in] Selecting flags. It can be any of the following values:</li>
+        /// <li><b>pool</b> :  SELECT_BY_POS - index in the order pool, SELECT_BY_TICKET - index is order ticket.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index"></param>
-        /// <param name="select">[in] Selecting flags. It can be any of the following values:</param>
-        /// <param name="pool">SELECT_BY_POS - index in the order pool, SELECT_BY_TICKET - index is order ticket.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/orderselect")]
         public void Handle_OrderSelect_1(HttpListenerContext context)
         {
@@ -5705,13 +6458,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderSelect
-        /// Description: The function selects an order for further processing.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderselect.html
+        /// <b>Function:</b> OrderSelect<br>
+        /// <b>Description:</b> The function selects an order for further processing.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderselect.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  </li>
+        /// <li><b>select</b> :  [in] Selecting flags. It can be any of the following values:</li>
+        /// <li><b>pool</b> :  SELECT_BY_POS - index in the order pool, SELECT_BY_TICKET - index is order ticket.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index"></param>
-        /// <param name="select">[in] Selecting flags. It can be any of the following values:</param>
-        /// <param name="pool">SELECT_BY_POS - index in the order pool, SELECT_BY_TICKET - index is order ticket.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/orderselect")]
         public void Handle_OrderSelect_1_Default(HttpListenerContext context)
         {
@@ -5741,21 +6497,24 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderSend
-        /// Description: The main function used to open market or place a pending order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordersend.html
+        /// <b>Function:</b> OrderSend<br>
+        /// <b>Description:</b> The main function used to open market or place a pending order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordersend.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol for trading.</li>
+        /// <li><b>cmd</b> :  [in] Operation type. It can be any of the enumeration.</li>
+        /// <li><b>volume</b> :  [in] Number of lots.</li>
+        /// <li><b>price</b> :  [in] Order price.</li>
+        /// <li><b>slippage</b> :  [in] Maximum price slippage for buy or sell orders.</li>
+        /// <li><b>stoploss</b> :  [in] Stop loss level.</li>
+        /// <li><b>takeprofit</b> :  [in] Take profit level.</li>
+        /// <li><b>comment</b> :  [in] Order comment text. Last part of the comment may be changed by server.</li>
+        /// <li><b>magic</b> :  [in] Order magic number. May be used as user defined identifier.</li>
+        /// <li><b>expiration</b> :  [in] Order expiration time (for pending orders only).</li>
+        /// <li><b>arrow_color</b> :  [in] Color of the opening arrow on the chart. If parameter is missing or has CLR_NONE value opening arrow is not drawn on the chart.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol for trading.</param>
-        /// <param name="cmd">[in] Operation type. It can be any of the enumeration.</param>
-        /// <param name="volume">[in] Number of lots.</param>
-        /// <param name="price">[in] Order price.</param>
-        /// <param name="slippage">[in] Maximum price slippage for buy or sell orders.</param>
-        /// <param name="stoploss">[in] Stop loss level.</param>
-        /// <param name="takeprofit">[in] Take profit level.</param>
-        /// <param name="comment">[in] Order comment text. Last part of the comment may be changed by server.</param>
-        /// <param name="magic">[in] Order magic number. May be used as user defined identifier.</param>
-        /// <param name="expiration">[in] Order expiration time (for pending orders only).</param>
-        /// <param name="arrow_color">[in] Color of the opening arrow on the chart. If parameter is missing or has CLR_NONE value opening arrow is not drawn on the chart.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ordersend")]
         public void Handle_OrderSend_1(HttpListenerContext context)
         {
@@ -5764,21 +6523,24 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderSend
-        /// Description: The main function used to open market or place a pending order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordersend.html
+        /// <b>Function:</b> OrderSend<br>
+        /// <b>Description:</b> The main function used to open market or place a pending order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordersend.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol for trading.</li>
+        /// <li><b>cmd</b> :  [in] Operation type. It can be any of the enumeration.</li>
+        /// <li><b>volume</b> :  [in] Number of lots.</li>
+        /// <li><b>price</b> :  [in] Order price.</li>
+        /// <li><b>slippage</b> :  [in] Maximum price slippage for buy or sell orders.</li>
+        /// <li><b>stoploss</b> :  [in] Stop loss level.</li>
+        /// <li><b>takeprofit</b> :  [in] Take profit level.</li>
+        /// <li><b>comment</b> :  [in] Order comment text. Last part of the comment may be changed by server.</li>
+        /// <li><b>magic</b> :  [in] Order magic number. May be used as user defined identifier.</li>
+        /// <li><b>expiration</b> :  [in] Order expiration time (for pending orders only).</li>
+        /// <li><b>arrow_color</b> :  [in] Color of the opening arrow on the chart. If parameter is missing or has CLR_NONE value opening arrow is not drawn on the chart.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol for trading.</param>
-        /// <param name="cmd">[in] Operation type. It can be any of the enumeration.</param>
-        /// <param name="volume">[in] Number of lots.</param>
-        /// <param name="price">[in] Order price.</param>
-        /// <param name="slippage">[in] Maximum price slippage for buy or sell orders.</param>
-        /// <param name="stoploss">[in] Stop loss level.</param>
-        /// <param name="takeprofit">[in] Take profit level.</param>
-        /// <param name="comment">[in] Order comment text. Last part of the comment may be changed by server.</param>
-        /// <param name="magic">[in] Order magic number. May be used as user defined identifier.</param>
-        /// <param name="expiration">[in] Order expiration time (for pending orders only).</param>
-        /// <param name="arrow_color">[in] Color of the opening arrow on the chart. If parameter is missing or has CLR_NONE value opening arrow is not drawn on the chart.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ordersend")]
         public void Handle_OrderSend_1_Default(HttpListenerContext context)
         {
@@ -5816,9 +6578,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrdersHistoryTotal
-        /// Description: Returns the number of closed orders in the account history loaded into the terminal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordershistorytotal.html
+        /// <b>Function:</b> OrdersHistoryTotal<br>
+        /// <b>Description:</b> Returns the number of closed orders in the account history loaded into the terminal.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordershistorytotal.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ordershistorytotal")]
         public void Handle_OrdersHistoryTotal_1(HttpListenerContext context)
@@ -5828,9 +6593,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrdersHistoryTotal
-        /// Description: Returns the number of closed orders in the account history loaded into the terminal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordershistorytotal.html
+        /// <b>Function:</b> OrdersHistoryTotal<br>
+        /// <b>Description:</b> Returns the number of closed orders in the account history loaded into the terminal.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordershistorytotal.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ordershistorytotal")]
         public void Handle_OrdersHistoryTotal_1_Default(HttpListenerContext context)
@@ -5858,9 +6626,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderStopLoss
-        /// Description: Returns stop loss value of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderstoploss.html
+        /// <b>Function:</b> OrderStopLoss<br>
+        /// <b>Description:</b> Returns stop loss value of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderstoploss.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/orderstoploss")]
         public void Handle_OrderStopLoss_1(HttpListenerContext context)
@@ -5870,9 +6641,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderStopLoss
-        /// Description: Returns stop loss value of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderstoploss.html
+        /// <b>Function:</b> OrderStopLoss<br>
+        /// <b>Description:</b> Returns stop loss value of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderstoploss.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/orderstoploss")]
         public void Handle_OrderStopLoss_1_Default(HttpListenerContext context)
@@ -5900,9 +6674,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrdersTotal
-        /// Description: Returns the number of market and pending orders.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderstotal.html
+        /// <b>Function:</b> OrdersTotal<br>
+        /// <b>Description:</b> Returns the number of market and pending orders.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderstotal.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/orderstotal")]
         public void Handle_OrdersTotal_1(HttpListenerContext context)
@@ -5912,9 +6689,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrdersTotal
-        /// Description: Returns the number of market and pending orders.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderstotal.html
+        /// <b>Function:</b> OrdersTotal<br>
+        /// <b>Description:</b> Returns the number of market and pending orders.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderstotal.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/orderstotal")]
         public void Handle_OrdersTotal_1_Default(HttpListenerContext context)
@@ -5942,9 +6722,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderSwap
-        /// Description: Returns swap value of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderswap.html
+        /// <b>Function:</b> OrderSwap<br>
+        /// <b>Description:</b> Returns swap value of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderswap.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/orderswap")]
         public void Handle_OrderSwap_1(HttpListenerContext context)
@@ -5954,9 +6737,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderSwap
-        /// Description: Returns swap value of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderswap.html
+        /// <b>Function:</b> OrderSwap<br>
+        /// <b>Description:</b> Returns swap value of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderswap.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/orderswap")]
         public void Handle_OrderSwap_1_Default(HttpListenerContext context)
@@ -5984,9 +6770,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderSymbol
-        /// Description: Returns symbol name of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordersymbol.html
+        /// <b>Function:</b> OrderSymbol<br>
+        /// <b>Description:</b> Returns symbol name of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordersymbol.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ordersymbol")]
         public void Handle_OrderSymbol_1(HttpListenerContext context)
@@ -5996,9 +6785,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderSymbol
-        /// Description: Returns symbol name of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordersymbol.html
+        /// <b>Function:</b> OrderSymbol<br>
+        /// <b>Description:</b> Returns symbol name of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordersymbol.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ordersymbol")]
         public void Handle_OrderSymbol_1_Default(HttpListenerContext context)
@@ -6026,9 +6818,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderTakeProfit
-        /// Description: Returns take profit value of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordertakeprofit.html
+        /// <b>Function:</b> OrderTakeProfit<br>
+        /// <b>Description:</b> Returns take profit value of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordertakeprofit.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ordertakeprofit")]
         public void Handle_OrderTakeProfit_1(HttpListenerContext context)
@@ -6038,9 +6833,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderTakeProfit
-        /// Description: Returns take profit value of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordertakeprofit.html
+        /// <b>Function:</b> OrderTakeProfit<br>
+        /// <b>Description:</b> Returns take profit value of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordertakeprofit.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ordertakeprofit")]
         public void Handle_OrderTakeProfit_1_Default(HttpListenerContext context)
@@ -6068,9 +6866,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderTicket
-        /// Description: Returns ticket number of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderticket.html
+        /// <b>Function:</b> OrderTicket<br>
+        /// <b>Description:</b> Returns ticket number of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderticket.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/orderticket")]
         public void Handle_OrderTicket_1(HttpListenerContext context)
@@ -6080,9 +6881,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderTicket
-        /// Description: Returns ticket number of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/orderticket.html
+        /// <b>Function:</b> OrderTicket<br>
+        /// <b>Description:</b> Returns ticket number of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/orderticket.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/orderticket")]
         public void Handle_OrderTicket_1_Default(HttpListenerContext context)
@@ -6110,9 +6914,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: OrderType
-        /// Description: Returns order operation type of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordertype.html
+        /// <b>Function:</b> OrderType<br>
+        /// <b>Description:</b> Returns order operation type of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordertype.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ordertype")]
         public void Handle_OrderType_1(HttpListenerContext context)
@@ -6122,9 +6929,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: OrderType
-        /// Description: Returns order operation type of the currently selected order.
-        /// URL: http://mm.l/mql4/docs.mql4.com/trading/ordertype.html
+        /// <b>Function:</b> OrderType<br>
+        /// <b>Description:</b> Returns order operation type of the currently selected order.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/trading/ordertype.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ordertype")]
         public void Handle_OrderType_1_Default(HttpListenerContext context)
@@ -6152,11 +6962,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SignalBaseGetDouble
-        /// Description: Returns the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalbasegetdouble.html
+        /// <b>Function:</b> SignalBaseGetDouble<br>
+        /// <b>Description:</b> Returns the value of<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbasegetdouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Signal property identifier. The value can be one of the values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Signal property identifier. The value can be one of the values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/signalbasegetdouble")]
         public void Handle_SignalBaseGetDouble_1(HttpListenerContext context)
         {
@@ -6165,11 +6978,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SignalBaseGetDouble
-        /// Description: Returns the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalbasegetdouble.html
+        /// <b>Function:</b> SignalBaseGetDouble<br>
+        /// <b>Description:</b> Returns the value of<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbasegetdouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Signal property identifier. The value can be one of the values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Signal property identifier. The value can be one of the values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/signalbasegetdouble")]
         public void Handle_SignalBaseGetDouble_1_Default(HttpListenerContext context)
         {
@@ -6197,11 +7013,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SignalBaseGetInteger
-        /// Description: Returns the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalbasegetinteger.html
+        /// <b>Function:</b> SignalBaseGetInteger<br>
+        /// <b>Description:</b> Returns the value of<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbasegetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Signal property identifier. The value can be one of the values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Signal property identifier. The value can be one of the values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/signalbasegetinteger")]
         public void Handle_SignalBaseGetInteger_1(HttpListenerContext context)
         {
@@ -6210,11 +7029,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SignalBaseGetInteger
-        /// Description: Returns the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalbasegetinteger.html
+        /// <b>Function:</b> SignalBaseGetInteger<br>
+        /// <b>Description:</b> Returns the value of<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbasegetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Signal property identifier. The value can be one of the values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Signal property identifier. The value can be one of the values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/signalbasegetinteger")]
         public void Handle_SignalBaseGetInteger_1_Default(HttpListenerContext context)
         {
@@ -6242,11 +7064,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SignalBaseGetString
-        /// Description: Returns the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalbasegetstring.html
+        /// <b>Function:</b> SignalBaseGetString<br>
+        /// <b>Description:</b> Returns the value of<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbasegetstring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Signal property identifier. The value can be one of the values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Signal property identifier. The value can be one of the values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/signalbasegetstring")]
         public void Handle_SignalBaseGetString_1(HttpListenerContext context)
         {
@@ -6255,11 +7080,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SignalBaseGetString
-        /// Description: Returns the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalbasegetstring.html
+        /// <b>Function:</b> SignalBaseGetString<br>
+        /// <b>Description:</b> Returns the value of<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbasegetstring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Signal property identifier. The value can be one of the values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Signal property identifier. The value can be one of the values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/signalbasegetstring")]
         public void Handle_SignalBaseGetString_1_Default(HttpListenerContext context)
         {
@@ -6287,11 +7115,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SignalBaseSelect
-        /// Description: Selects a signal from signals, available in terminal for further working with it.
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalbaseselect.html
+        /// <b>Function:</b> SignalBaseSelect<br>
+        /// <b>Description:</b> Selects a signal from signals, available in terminal for further working with it.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbaseselect.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Signal index in base of trading signals.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Signal index in base of trading signals.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/signalbaseselect")]
         public void Handle_SignalBaseSelect_1(HttpListenerContext context)
         {
@@ -6300,11 +7131,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SignalBaseSelect
-        /// Description: Selects a signal from signals, available in terminal for further working with it.
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalbaseselect.html
+        /// <b>Function:</b> SignalBaseSelect<br>
+        /// <b>Description:</b> Selects a signal from signals, available in terminal for further working with it.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbaseselect.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Signal index in base of trading signals.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Signal index in base of trading signals.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/signalbaseselect")]
         public void Handle_SignalBaseSelect_1_Default(HttpListenerContext context)
         {
@@ -6332,9 +7166,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SignalBaseTotal
-        /// Description: Returns the total amount of signals, available in terminal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalbasetotal.html
+        /// <b>Function:</b> SignalBaseTotal<br>
+        /// <b>Description:</b> Returns the total amount of signals, available in terminal.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbasetotal.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/signalbasetotal")]
         public void Handle_SignalBaseTotal_1(HttpListenerContext context)
@@ -6344,9 +7181,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SignalBaseTotal
-        /// Description: Returns the total amount of signals, available in terminal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalbasetotal.html
+        /// <b>Function:</b> SignalBaseTotal<br>
+        /// <b>Description:</b> Returns the total amount of signals, available in terminal.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalbasetotal.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/signalbasetotal")]
         public void Handle_SignalBaseTotal_1_Default(HttpListenerContext context)
@@ -6374,11 +7214,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SignalInfoGetDouble
-        /// Description: Returns the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalinfogetdouble.html
+        /// <b>Function:</b> SignalInfoGetDouble<br>
+        /// <b>Description:</b> Returns the value of<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfogetdouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/signalinfogetdouble")]
         public void Handle_SignalInfoGetDouble_1(HttpListenerContext context)
         {
@@ -6387,11 +7230,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SignalInfoGetDouble
-        /// Description: Returns the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalinfogetdouble.html
+        /// <b>Function:</b> SignalInfoGetDouble<br>
+        /// <b>Description:</b> Returns the value of<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfogetdouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/signalinfogetdouble")]
         public void Handle_SignalInfoGetDouble_1_Default(HttpListenerContext context)
         {
@@ -6419,11 +7265,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SignalInfoGetInteger
-        /// Description: Returns the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalinfogetinteger.html
+        /// <b>Function:</b> SignalInfoGetInteger<br>
+        /// <b>Description:</b> Returns the value of<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfogetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/signalinfogetinteger")]
         public void Handle_SignalInfoGetInteger_1(HttpListenerContext context)
         {
@@ -6432,11 +7281,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SignalInfoGetInteger
-        /// Description: Returns the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalinfogetinteger.html
+        /// <b>Function:</b> SignalInfoGetInteger<br>
+        /// <b>Description:</b> Returns the value of<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfogetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/signalinfogetinteger")]
         public void Handle_SignalInfoGetInteger_1_Default(HttpListenerContext context)
         {
@@ -6464,11 +7316,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SignalInfoGetString
-        /// Description: Returns the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalinfogetstring.html
+        /// <b>Function:</b> SignalInfoGetString<br>
+        /// <b>Description:</b> Returns the value of<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfogetstring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/signalinfogetstring")]
         public void Handle_SignalInfoGetString_1(HttpListenerContext context)
         {
@@ -6477,11 +7332,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SignalInfoGetString
-        /// Description: Returns the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalinfogetstring.html
+        /// <b>Function:</b> SignalInfoGetString<br>
+        /// <b>Description:</b> Returns the value of<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfogetstring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/signalinfogetstring")]
         public void Handle_SignalInfoGetString_1_Default(HttpListenerContext context)
         {
@@ -6509,12 +7367,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SignalInfoSetDouble
-        /// Description: Sets the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalinfosetdouble.html
+        /// <b>Function:</b> SignalInfoSetDouble<br>
+        /// <b>Description:</b> Sets the value of<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfosetdouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
+        /// <li><b>value</b> :  [in] The value of signal copy settings property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
-        /// <param name="value">[in] The value of signal copy settings property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/signalinfosetdouble")]
         public void Handle_SignalInfoSetDouble_1(HttpListenerContext context)
         {
@@ -6523,12 +7384,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SignalInfoSetDouble
-        /// Description: Sets the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalinfosetdouble.html
+        /// <b>Function:</b> SignalInfoSetDouble<br>
+        /// <b>Description:</b> Sets the value of<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfosetdouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
+        /// <li><b>value</b> :  [in] The value of signal copy settings property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
-        /// <param name="value">[in] The value of signal copy settings property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/signalinfosetdouble")]
         public void Handle_SignalInfoSetDouble_1_Default(HttpListenerContext context)
         {
@@ -6557,12 +7421,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SignalInfoSetInteger
-        /// Description: Sets the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalinfosetinteger.html
+        /// <b>Function:</b> SignalInfoSetInteger<br>
+        /// <b>Description:</b> Sets the value of<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfosetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
+        /// <li><b>value</b> :  [in] The value of signal copy settings property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
-        /// <param name="value">[in] The value of signal copy settings property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/signalinfosetinteger")]
         public void Handle_SignalInfoSetInteger_1(HttpListenerContext context)
         {
@@ -6571,12 +7438,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SignalInfoSetInteger
-        /// Description: Sets the value of
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalinfosetinteger.html
+        /// <b>Function:</b> SignalInfoSetInteger<br>
+        /// <b>Description:</b> Sets the value of<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalinfosetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>property_id</b> :  [in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</li>
+        /// <li><b>value</b> :  [in] The value of signal copy settings property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="property_id">[in] Signal copy settings property identifier. The value can be one of the values of the enumeration.</param>
-        /// <param name="value">[in] The value of signal copy settings property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/signalinfosetinteger")]
         public void Handle_SignalInfoSetInteger_1_Default(HttpListenerContext context)
         {
@@ -6605,11 +7475,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SignalSubscribe
-        /// Description: Subscribes to the trading signal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalsubscribe.html
+        /// <b>Function:</b> SignalSubscribe<br>
+        /// <b>Description:</b> Subscribes to the trading signal.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalsubscribe.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>signal_id</b> :  [in] Signal identifier.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="signal_id">[in] Signal identifier.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/signalsubscribe")]
         public void Handle_SignalSubscribe_1(HttpListenerContext context)
         {
@@ -6618,11 +7491,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SignalSubscribe
-        /// Description: Subscribes to the trading signal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalsubscribe.html
+        /// <b>Function:</b> SignalSubscribe<br>
+        /// <b>Description:</b> Subscribes to the trading signal.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalsubscribe.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>signal_id</b> :  [in] Signal identifier.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="signal_id">[in] Signal identifier.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/signalsubscribe")]
         public void Handle_SignalSubscribe_1_Default(HttpListenerContext context)
         {
@@ -6650,9 +7526,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SignalUnsubscribe
-        /// Description: Cancels subscription.
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalunsubscribe.html
+        /// <b>Function:</b> SignalUnsubscribe<br>
+        /// <b>Description:</b> Cancels subscription.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalunsubscribe.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/signalunsubscribe")]
         public void Handle_SignalUnsubscribe_1(HttpListenerContext context)
@@ -6662,9 +7541,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SignalUnsubscribe
-        /// Description: Cancels subscription.
-        /// URL: http://mm.l/mql4/docs.mql4.com/signals/signalunsubscribe.html
+        /// <b>Function:</b> SignalUnsubscribe<br>
+        /// <b>Description:</b> Cancels subscription.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/signals/signalunsubscribe.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/signalunsubscribe")]
         public void Handle_SignalUnsubscribe_1_Default(HttpListenerContext context)
@@ -6692,11 +7574,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: GlobalVariableCheck
-        /// Description: Checks the existence of a global variable with the specified name
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariablecheck.html
+        /// <b>Function:</b> GlobalVariableCheck<br>
+        /// <b>Description:</b> Checks the existence of a global variable with the specified name<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablecheck.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] Global variable name.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] Global variable name.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/globalvariablecheck")]
         public void Handle_GlobalVariableCheck_1(HttpListenerContext context)
         {
@@ -6705,11 +7590,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: GlobalVariableCheck
-        /// Description: Checks the existence of a global variable with the specified name
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariablecheck.html
+        /// <b>Function:</b> GlobalVariableCheck<br>
+        /// <b>Description:</b> Checks the existence of a global variable with the specified name<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablecheck.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] Global variable name.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] Global variable name.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/globalvariablecheck")]
         public void Handle_GlobalVariableCheck_1_Default(HttpListenerContext context)
         {
@@ -6737,11 +7625,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: GlobalVariableTime
-        /// Description: Returns the time when the global variable was last accessed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariabletime.html
+        /// <b>Function:</b> GlobalVariableTime<br>
+        /// <b>Description:</b> Returns the time when the global variable was last accessed.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariabletime.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] Name of the global variable.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] Name of the global variable.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/globalvariabletime")]
         public void Handle_GlobalVariableTime_1(HttpListenerContext context)
         {
@@ -6750,11 +7641,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: GlobalVariableTime
-        /// Description: Returns the time when the global variable was last accessed.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariabletime.html
+        /// <b>Function:</b> GlobalVariableTime<br>
+        /// <b>Description:</b> Returns the time when the global variable was last accessed.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariabletime.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] Name of the global variable.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] Name of the global variable.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/globalvariabletime")]
         public void Handle_GlobalVariableTime_1_Default(HttpListenerContext context)
         {
@@ -6782,11 +7676,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: GlobalVariableDel
-        /// Description: Deletes a global variable from the client terminal
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariabledel.html
+        /// <b>Function:</b> GlobalVariableDel<br>
+        /// <b>Description:</b> Deletes a global variable from the client terminal<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariabledel.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] Global variable name.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] Global variable name.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/globalvariabledel")]
         public void Handle_GlobalVariableDel_1(HttpListenerContext context)
         {
@@ -6795,11 +7692,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: GlobalVariableDel
-        /// Description: Deletes a global variable from the client terminal
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariabledel.html
+        /// <b>Function:</b> GlobalVariableDel<br>
+        /// <b>Description:</b> Deletes a global variable from the client terminal<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariabledel.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] Global variable name.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] Global variable name.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/globalvariabledel")]
         public void Handle_GlobalVariableDel_1_Default(HttpListenerContext context)
         {
@@ -6827,11 +7727,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: GlobalVariableGet
-        /// Description: Returns the value of an existing global variable of the client terminal. There are 2 variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariableget.html
+        /// <b>Function:</b> GlobalVariableGet<br>
+        /// <b>Description:</b> Returns the value of an existing global variable of the client terminal. There are 2 variants of the function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariableget.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] Global variable name.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] Global variable name.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/globalvariableget")]
         public void Handle_GlobalVariableGet_1(HttpListenerContext context)
         {
@@ -6840,11 +7743,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: GlobalVariableGet
-        /// Description: Returns the value of an existing global variable of the client terminal. There are 2 variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariableget.html
+        /// <b>Function:</b> GlobalVariableGet<br>
+        /// <b>Description:</b> Returns the value of an existing global variable of the client terminal. There are 2 variants of the function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariableget.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] Global variable name.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] Global variable name.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/globalvariableget")]
         public void Handle_GlobalVariableGet_1_Default(HttpListenerContext context)
         {
@@ -6872,11 +7778,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: GlobalVariableName
-        /// Description: Returns the name of a global variable by its ordinal number.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariablename.html
+        /// <b>Function:</b> GlobalVariableName<br>
+        /// <b>Description:</b> Returns the name of a global variable by its ordinal number.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablename.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Sequence number in the list of global variables. It should be greater than or equal to 0 and less than .</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Sequence number in the list of global variables. It should be greater than or equal to 0 and less than .</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/globalvariablename")]
         public void Handle_GlobalVariableName_1(HttpListenerContext context)
         {
@@ -6885,11 +7794,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: GlobalVariableName
-        /// Description: Returns the name of a global variable by its ordinal number.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariablename.html
+        /// <b>Function:</b> GlobalVariableName<br>
+        /// <b>Description:</b> Returns the name of a global variable by its ordinal number.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablename.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Sequence number in the list of global variables. It should be greater than or equal to 0 and less than .</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Sequence number in the list of global variables. It should be greater than or equal to 0 and less than .</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/globalvariablename")]
         public void Handle_GlobalVariableName_1_Default(HttpListenerContext context)
         {
@@ -6917,12 +7829,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: GlobalVariableSet
-        /// Description: Sets a new value for a global variable. If the variable does not exist, the system creates a new global variable.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariableset.html
+        /// <b>Function:</b> GlobalVariableSet<br>
+        /// <b>Description:</b> Sets a new value for a global variable. If the variable does not exist, the system creates a new global variable.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariableset.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] Global variable name.</li>
+        /// <li><b>value</b> :  [in] The new numerical value.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] Global variable name.</param>
-        /// <param name="value">[in] The new numerical value.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/globalvariableset")]
         public void Handle_GlobalVariableSet_1(HttpListenerContext context)
         {
@@ -6931,12 +7846,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: GlobalVariableSet
-        /// Description: Sets a new value for a global variable. If the variable does not exist, the system creates a new global variable.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariableset.html
+        /// <b>Function:</b> GlobalVariableSet<br>
+        /// <b>Description:</b> Sets a new value for a global variable. If the variable does not exist, the system creates a new global variable.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariableset.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] Global variable name.</li>
+        /// <li><b>value</b> :  [in] The new numerical value.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] Global variable name.</param>
-        /// <param name="value">[in] The new numerical value.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/globalvariableset")]
         public void Handle_GlobalVariableSet_1_Default(HttpListenerContext context)
         {
@@ -6965,9 +7883,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: GlobalVariablesFlush
-        /// Description: Forcibly saves contents of all global variables to a disk.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariablesflush.html
+        /// <b>Function:</b> GlobalVariablesFlush<br>
+        /// <b>Description:</b> Forcibly saves contents of all global variables to a disk.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablesflush.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/globalvariablesflush")]
         public void Handle_GlobalVariablesFlush_1(HttpListenerContext context)
@@ -6977,9 +7898,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: GlobalVariablesFlush
-        /// Description: Forcibly saves contents of all global variables to a disk.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariablesflush.html
+        /// <b>Function:</b> GlobalVariablesFlush<br>
+        /// <b>Description:</b> Forcibly saves contents of all global variables to a disk.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablesflush.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/globalvariablesflush")]
         public void Handle_GlobalVariablesFlush_1_Default(HttpListenerContext context)
@@ -7007,11 +7931,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: GlobalVariableTemp
-        /// Description: The function attempts to create a temporary global variable. If the variable doesn't exist, the system creates a new temporary global variable.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariabletemp.html
+        /// <b>Function:</b> GlobalVariableTemp<br>
+        /// <b>Description:</b> The function attempts to create a temporary global variable. If the variable doesn't exist, the system creates a new temporary global variable.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariabletemp.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] The name of a temporary global variable.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] The name of a temporary global variable.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/globalvariabletemp")]
         public void Handle_GlobalVariableTemp_1(HttpListenerContext context)
         {
@@ -7020,11 +7947,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: GlobalVariableTemp
-        /// Description: The function attempts to create a temporary global variable. If the variable doesn't exist, the system creates a new temporary global variable.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariabletemp.html
+        /// <b>Function:</b> GlobalVariableTemp<br>
+        /// <b>Description:</b> The function attempts to create a temporary global variable. If the variable doesn't exist, the system creates a new temporary global variable.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariabletemp.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] The name of a temporary global variable.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] The name of a temporary global variable.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/globalvariabletemp")]
         public void Handle_GlobalVariableTemp_1_Default(HttpListenerContext context)
         {
@@ -7052,13 +7982,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: GlobalVariableSetOnCondition
-        /// Description: Sets the new value of the existing global variable if the current value equals to the third parameter check_value. If there is no global variable, the function will generate an error ERR_GLOBALVARIABLE_NOT_FOUND (4501) and return false.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariablesetoncondition.html
+        /// <b>Function:</b> GlobalVariableSetOnCondition<br>
+        /// <b>Description:</b> Sets the new value of the existing global variable if the current value equals to the third parameter check_value. If there is no global variable, the function will generate an error ERR_GLOBALVARIABLE_NOT_FOUND (4501) and return false.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablesetoncondition.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] The name of a global variable.</li>
+        /// <li><b>value</b> :  [in] New value.</li>
+        /// <li><b>check_value</b> :  [in] The value to check the current value of the global variable.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] The name of a global variable.</param>
-        /// <param name="value">[in] New value.</param>
-        /// <param name="check_value">[in] The value to check the current value of the global variable.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/globalvariablesetoncondition")]
         public void Handle_GlobalVariableSetOnCondition_1(HttpListenerContext context)
         {
@@ -7067,13 +8000,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: GlobalVariableSetOnCondition
-        /// Description: Sets the new value of the existing global variable if the current value equals to the third parameter check_value. If there is no global variable, the function will generate an error ERR_GLOBALVARIABLE_NOT_FOUND (4501) and return false.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariablesetoncondition.html
+        /// <b>Function:</b> GlobalVariableSetOnCondition<br>
+        /// <b>Description:</b> Sets the new value of the existing global variable if the current value equals to the third parameter check_value. If there is no global variable, the function will generate an error ERR_GLOBALVARIABLE_NOT_FOUND (4501) and return false.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablesetoncondition.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] The name of a global variable.</li>
+        /// <li><b>value</b> :  [in] New value.</li>
+        /// <li><b>check_value</b> :  [in] The value to check the current value of the global variable.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] The name of a global variable.</param>
-        /// <param name="value">[in] New value.</param>
-        /// <param name="check_value">[in] The value to check the current value of the global variable.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/globalvariablesetoncondition")]
         public void Handle_GlobalVariableSetOnCondition_1_Default(HttpListenerContext context)
         {
@@ -7103,12 +8039,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: GlobalVariablesDeleteAll
-        /// Description: Deletes global variables of the client terminal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariablesdeleteall.html
+        /// <b>Function:</b> GlobalVariablesDeleteAll<br>
+        /// <b>Description:</b> Deletes global variables of the client terminal.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablesdeleteall.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>prefix_name</b> :  [in] Name prefix global variables to remove. If you specify a prefix NULL or empty string, then all variables that meet the data criterion will be deleted.</li>
+        /// <li><b>limit_data</b> :  [in] Optional parameter. Date to select global variables by the time of their last modification. The function removes global variables, which were changed before this date. If the parameter is zero, then all variables that meet the first criterion (prefix) are deleted.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="prefix_name">[in] Name prefix global variables to remove. If you specify a prefix NULL or empty string, then all variables that meet the data criterion will be deleted.</param>
-        /// <param name="limit_data">[in] Optional parameter. Date to select global variables by the time of their last modification. The function removes global variables, which were changed before this date. If the parameter is zero, then all variables that meet the first criterion (prefix) are deleted.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/globalvariablesdeleteall")]
         public void Handle_GlobalVariablesDeleteAll_1(HttpListenerContext context)
         {
@@ -7117,12 +8056,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: GlobalVariablesDeleteAll
-        /// Description: Deletes global variables of the client terminal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariablesdeleteall.html
+        /// <b>Function:</b> GlobalVariablesDeleteAll<br>
+        /// <b>Description:</b> Deletes global variables of the client terminal.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablesdeleteall.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>prefix_name</b> :  [in] Name prefix global variables to remove. If you specify a prefix NULL or empty string, then all variables that meet the data criterion will be deleted.</li>
+        /// <li><b>limit_data</b> :  [in] Optional parameter. Date to select global variables by the time of their last modification. The function removes global variables, which were changed before this date. If the parameter is zero, then all variables that meet the first criterion (prefix) are deleted.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="prefix_name">[in] Name prefix global variables to remove. If you specify a prefix NULL or empty string, then all variables that meet the data criterion will be deleted.</param>
-        /// <param name="limit_data">[in] Optional parameter. Date to select global variables by the time of their last modification. The function removes global variables, which were changed before this date. If the parameter is zero, then all variables that meet the first criterion (prefix) are deleted.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/globalvariablesdeleteall")]
         public void Handle_GlobalVariablesDeleteAll_1_Default(HttpListenerContext context)
         {
@@ -7151,9 +8093,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: GlobalVariablesTotal
-        /// Description: Returns the total number of global variables of the client terminal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariablestotal.html
+        /// <b>Function:</b> GlobalVariablesTotal<br>
+        /// <b>Description:</b> Returns the total number of global variables of the client terminal.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablestotal.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/globalvariablestotal")]
         public void Handle_GlobalVariablesTotal_1(HttpListenerContext context)
@@ -7163,9 +8108,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: GlobalVariablesTotal
-        /// Description: Returns the total number of global variables of the client terminal.
-        /// URL: http://mm.l/mql4/docs.mql4.com/globals/globalvariablestotal.html
+        /// <b>Function:</b> GlobalVariablesTotal<br>
+        /// <b>Description:</b> Returns the total number of global variables of the client terminal.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/globals/globalvariablestotal.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/globalvariablestotal")]
         public void Handle_GlobalVariablesTotal_1_Default(HttpListenerContext context)
@@ -7193,11 +8141,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: HideTestIndicators
-        /// Description: The function sets a flag hiding indicators called by the Expert Advisor.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/hidetestindicators.html
+        /// <b>Function:</b> HideTestIndicators<br>
+        /// <b>Description:</b> The function sets a flag hiding indicators called by the Expert Advisor.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/hidetestindicators.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>hide</b> :  [in] Hiding flag.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="hide">[in] Hiding flag.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/hidetestindicators")]
         public void Handle_HideTestIndicators_1(HttpListenerContext context)
         {
@@ -7206,11 +8157,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: HideTestIndicators
-        /// Description: The function sets a flag hiding indicators called by the Expert Advisor.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/hidetestindicators.html
+        /// <b>Function:</b> HideTestIndicators<br>
+        /// <b>Description:</b> The function sets a flag hiding indicators called by the Expert Advisor.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/hidetestindicators.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>hide</b> :  [in] Hiding flag.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="hide">[in] Hiding flag.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/hidetestindicators")]
         public void Handle_HideTestIndicators_1_Default(HttpListenerContext context)
         {
@@ -7238,12 +8192,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IndicatorSetDouble
-        /// Description: The function sets the value of the corresponding indicator property. Indicator property must be of the double type. There are two variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorsetdouble.html
+        /// <b>Function:</b> IndicatorSetDouble<br>
+        /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the double type. There are two variants of the function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetdouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_value</b> :  [in] Value of property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="prop_id">[in] Identifier of the indicator property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_value">[in] Value of property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/indicatorsetdouble")]
         public void Handle_IndicatorSetDouble_1(HttpListenerContext context)
         {
@@ -7252,12 +8209,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IndicatorSetDouble
-        /// Description: The function sets the value of the corresponding indicator property. Indicator property must be of the double type. There are two variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorsetdouble.html
+        /// <b>Function:</b> IndicatorSetDouble<br>
+        /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the double type. There are two variants of the function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetdouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_value</b> :  [in] Value of property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="prop_id">[in] Identifier of the indicator property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_value">[in] Value of property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/indicatorsetdouble")]
         public void Handle_IndicatorSetDouble_1_Default(HttpListenerContext context)
         {
@@ -7286,13 +8246,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IndicatorSetDouble
-        /// Description: The function sets the value of the corresponding indicator property. Indicator property must be of the double type. There are two variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorsetdouble.html
+        /// <b>Function:</b> IndicatorSetDouble<br>
+        /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the double type. There are two variants of the function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetdouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_modifier</b> :  [in] Modifier of the specified property. Only level properties require a modifier. Numbering of levels starts from 0. It means that in order to set property for the second level you need to specify 1 (1 less than when using ).</li>
+        /// <li><b>prop_value</b> :  [in] Value of property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="prop_id">[in] Identifier of the indicator property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_modifier">[in] Modifier of the specified property. Only level properties require a modifier. Numbering of levels starts from 0. It means that in order to set property for the second level you need to specify 1 (1 less than when using ).</param>
-        /// <param name="prop_value">[in] Value of property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/indicatorsetdouble")]
         public void Handle_IndicatorSetDouble_2(HttpListenerContext context)
         {
@@ -7301,13 +8264,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IndicatorSetDouble
-        /// Description: The function sets the value of the corresponding indicator property. Indicator property must be of the double type. There are two variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorsetdouble.html
+        /// <b>Function:</b> IndicatorSetDouble<br>
+        /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the double type. There are two variants of the function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetdouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_modifier</b> :  [in] Modifier of the specified property. Only level properties require a modifier. Numbering of levels starts from 0. It means that in order to set property for the second level you need to specify 1 (1 less than when using ).</li>
+        /// <li><b>prop_value</b> :  [in] Value of property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="prop_id">[in] Identifier of the indicator property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_modifier">[in] Modifier of the specified property. Only level properties require a modifier. Numbering of levels starts from 0. It means that in order to set property for the second level you need to specify 1 (1 less than when using ).</param>
-        /// <param name="prop_value">[in] Value of property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/indicatorsetdouble")]
         public void Handle_IndicatorSetDouble_2_Default(HttpListenerContext context)
         {
@@ -7337,12 +8303,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IndicatorSetInteger
-        /// Description: The function sets the value of the corresponding indicator property. Indicator property must be of the int or color type. There are two variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorsetinteger.html
+        /// <b>Function:</b> IndicatorSetInteger<br>
+        /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the int or color type. There are two variants of the function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_value</b> :  [in] Value of property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="prop_id">[in] Identifier of the indicator property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_value">[in] Value of property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/indicatorsetinteger")]
         public void Handle_IndicatorSetInteger_1(HttpListenerContext context)
         {
@@ -7351,12 +8320,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IndicatorSetInteger
-        /// Description: The function sets the value of the corresponding indicator property. Indicator property must be of the int or color type. There are two variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorsetinteger.html
+        /// <b>Function:</b> IndicatorSetInteger<br>
+        /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the int or color type. There are two variants of the function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_value</b> :  [in] Value of property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="prop_id">[in] Identifier of the indicator property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_value">[in] Value of property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/indicatorsetinteger")]
         public void Handle_IndicatorSetInteger_1_Default(HttpListenerContext context)
         {
@@ -7385,13 +8357,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IndicatorSetInteger
-        /// Description: The function sets the value of the corresponding indicator property. Indicator property must be of the int or color type. There are two variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorsetinteger.html
+        /// <b>Function:</b> IndicatorSetInteger<br>
+        /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the int or color type. There are two variants of the function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_modifier</b> :  [in] Modifier of the specified property. Only level properties require a modifier.</li>
+        /// <li><b>prop_value</b> :  [in] Value of property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="prop_id">[in] Identifier of the indicator property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_modifier">[in] Modifier of the specified property. Only level properties require a modifier.</param>
-        /// <param name="prop_value">[in] Value of property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/indicatorsetinteger")]
         public void Handle_IndicatorSetInteger_2(HttpListenerContext context)
         {
@@ -7400,13 +8375,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IndicatorSetInteger
-        /// Description: The function sets the value of the corresponding indicator property. Indicator property must be of the int or color type. There are two variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorsetinteger.html
+        /// <b>Function:</b> IndicatorSetInteger<br>
+        /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the int or color type. There are two variants of the function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_modifier</b> :  [in] Modifier of the specified property. Only level properties require a modifier.</li>
+        /// <li><b>prop_value</b> :  [in] Value of property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="prop_id">[in] Identifier of the indicator property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_modifier">[in] Modifier of the specified property. Only level properties require a modifier.</param>
-        /// <param name="prop_value">[in] Value of property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/indicatorsetinteger")]
         public void Handle_IndicatorSetInteger_2_Default(HttpListenerContext context)
         {
@@ -7436,12 +8414,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IndicatorSetString
-        /// Description: The function sets the value of the corresponding indicator property. Indicator property must be of the string type. There are two variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorsetstring.html
+        /// <b>Function:</b> IndicatorSetString<br>
+        /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the string type. There are two variants of the function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetstring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_value</b> :  [in] Value of property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="prop_id">[in] Identifier of the indicator property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_value">[in] Value of property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/indicatorsetstring")]
         public void Handle_IndicatorSetString_1(HttpListenerContext context)
         {
@@ -7450,12 +8431,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IndicatorSetString
-        /// Description: The function sets the value of the corresponding indicator property. Indicator property must be of the string type. There are two variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorsetstring.html
+        /// <b>Function:</b> IndicatorSetString<br>
+        /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the string type. There are two variants of the function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetstring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_value</b> :  [in] Value of property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="prop_id">[in] Identifier of the indicator property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_value">[in] Value of property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/indicatorsetstring")]
         public void Handle_IndicatorSetString_1_Default(HttpListenerContext context)
         {
@@ -7484,13 +8468,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IndicatorSetString
-        /// Description: The function sets the value of the corresponding indicator property. Indicator property must be of the string type. There are two variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorsetstring.html
+        /// <b>Function:</b> IndicatorSetString<br>
+        /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the string type. There are two variants of the function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetstring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_modifier</b> :  [in] Modifier of the specified property. Only level properties require a modifier.</li>
+        /// <li><b>prop_value</b> :  [in] Value of property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="prop_id">[in] Identifier of the indicator property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_modifier">[in] Modifier of the specified property. Only level properties require a modifier.</param>
-        /// <param name="prop_value">[in] Value of property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/indicatorsetstring")]
         public void Handle_IndicatorSetString_2(HttpListenerContext context)
         {
@@ -7499,13 +8486,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IndicatorSetString
-        /// Description: The function sets the value of the corresponding indicator property. Indicator property must be of the string type. There are two variants of the function.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorsetstring.html
+        /// <b>Function:</b> IndicatorSetString<br>
+        /// <b>Description:</b> The function sets the value of the corresponding indicator property. Indicator property must be of the string type. There are two variants of the function.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorsetstring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>prop_id</b> :  [in] Identifier of the indicator property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_modifier</b> :  [in] Modifier of the specified property. Only level properties require a modifier.</li>
+        /// <li><b>prop_value</b> :  [in] Value of property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="prop_id">[in] Identifier of the indicator property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_modifier">[in] Modifier of the specified property. Only level properties require a modifier.</param>
-        /// <param name="prop_value">[in] Value of property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/indicatorsetstring")]
         public void Handle_IndicatorSetString_2_Default(HttpListenerContext context)
         {
@@ -7535,11 +8525,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IndicatorBuffers
-        /// Description: Allocates memory for buffers used for custom indicator calculations.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorbuffers.html
+        /// <b>Function:</b> IndicatorBuffers<br>
+        /// <b>Description:</b> Allocates memory for buffers used for custom indicator calculations.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorbuffers.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>count</b> :  [in] Amount of buffers to be allocated. Should be within the range between indicator_buffers and 512 buffers.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="count">[in] Amount of buffers to be allocated. Should be within the range between indicator_buffers and 512 buffers.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/indicatorbuffers")]
         public void Handle_IndicatorBuffers_1(HttpListenerContext context)
         {
@@ -7548,11 +8541,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IndicatorBuffers
-        /// Description: Allocates memory for buffers used for custom indicator calculations.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorbuffers.html
+        /// <b>Function:</b> IndicatorBuffers<br>
+        /// <b>Description:</b> Allocates memory for buffers used for custom indicator calculations.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorbuffers.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>count</b> :  [in] Amount of buffers to be allocated. Should be within the range between indicator_buffers and 512 buffers.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="count">[in] Amount of buffers to be allocated. Should be within the range between indicator_buffers and 512 buffers.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/indicatorbuffers")]
         public void Handle_IndicatorBuffers_1_Default(HttpListenerContext context)
         {
@@ -7580,9 +8576,12 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IndicatorCounted
-        /// Description: The function returns the amount of bars not changed after the indicator had been launched last.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorcounted.html
+        /// <b>Function:</b> IndicatorCounted<br>
+        /// <b>Description:</b> The function returns the amount of bars not changed after the indicator had been launched last.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorcounted.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/indicatorcounted")]
         public void Handle_IndicatorCounted_1(HttpListenerContext context)
@@ -7592,9 +8591,12 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IndicatorCounted
-        /// Description: The function returns the amount of bars not changed after the indicator had been launched last.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorcounted.html
+        /// <b>Function:</b> IndicatorCounted<br>
+        /// <b>Description:</b> The function returns the amount of bars not changed after the indicator had been launched last.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorcounted.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// </ul>
         /// </summary>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/indicatorcounted")]
         public void Handle_IndicatorCounted_1_Default(HttpListenerContext context)
@@ -7622,11 +8624,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IndicatorDigits
-        /// Description: Sets precision format (the count of digits after decimal point) to visualize indicator values.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatordigits.html
+        /// <b>Function:</b> IndicatorDigits<br>
+        /// <b>Description:</b> Sets precision format (the count of digits after decimal point) to visualize indicator values.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatordigits.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>digits</b> :  [in] Precision format, the count of digits after decimal point.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="digits">[in] Precision format, the count of digits after decimal point.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/indicatordigits")]
         public void Handle_IndicatorDigits_1(HttpListenerContext context)
         {
@@ -7635,11 +8640,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IndicatorDigits
-        /// Description: Sets precision format (the count of digits after decimal point) to visualize indicator values.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatordigits.html
+        /// <b>Function:</b> IndicatorDigits<br>
+        /// <b>Description:</b> Sets precision format (the count of digits after decimal point) to visualize indicator values.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatordigits.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>digits</b> :  [in] Precision format, the count of digits after decimal point.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="digits">[in] Precision format, the count of digits after decimal point.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/indicatordigits")]
         public void Handle_IndicatorDigits_1_Default(HttpListenerContext context)
         {
@@ -7667,11 +8675,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: IndicatorShortName
-        /// Description: Sets the "short" name of a custom indicator to be shown in the DataWindow and in the chart subwindow.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorshortname.html
+        /// <b>Function:</b> IndicatorShortName<br>
+        /// <b>Description:</b> Sets the "short" name of a custom indicator to be shown in the DataWindow and in the chart subwindow.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorshortname.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] New short name.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] New short name.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/indicatorshortname")]
         public void Handle_IndicatorShortName_1(HttpListenerContext context)
         {
@@ -7680,11 +8691,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: IndicatorShortName
-        /// Description: Sets the "short" name of a custom indicator to be shown in the DataWindow and in the chart subwindow.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/indicatorshortname.html
+        /// <b>Function:</b> IndicatorShortName<br>
+        /// <b>Description:</b> Sets the "short" name of a custom indicator to be shown in the DataWindow and in the chart subwindow.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/indicatorshortname.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] New short name.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] New short name.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/indicatorshortname")]
         public void Handle_IndicatorShortName_1_Default(HttpListenerContext context)
         {
@@ -7712,12 +8726,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SetIndexArrow
-        /// Description: Sets an arrow symbol for indicators line of the DRAW_ARROW type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setindexarrow.html
+        /// <b>Function:</b> SetIndexArrow<br>
+        /// <b>Description:</b> Sets an arrow symbol for indicators line of the DRAW_ARROW type.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexarrow.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
+        /// <li><b>code</b> :  [in] Symbol code from or predefined .</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Line index. Must lie between 0 and 7.</param>
-        /// <param name="code">[in] Symbol code from or predefined .</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/setindexarrow")]
         public void Handle_SetIndexArrow_1(HttpListenerContext context)
         {
@@ -7726,12 +8743,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SetIndexArrow
-        /// Description: Sets an arrow symbol for indicators line of the DRAW_ARROW type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setindexarrow.html
+        /// <b>Function:</b> SetIndexArrow<br>
+        /// <b>Description:</b> Sets an arrow symbol for indicators line of the DRAW_ARROW type.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexarrow.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
+        /// <li><b>code</b> :  [in] Symbol code from or predefined .</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Line index. Must lie between 0 and 7.</param>
-        /// <param name="code">[in] Symbol code from or predefined .</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/setindexarrow")]
         public void Handle_SetIndexArrow_1_Default(HttpListenerContext context)
         {
@@ -7760,12 +8780,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SetIndexDrawBegin
-        /// Description: Sets the bar number (from the data beginning) from which the drawing of the given indicator line must start.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setindexdrawbegin.html
+        /// <b>Function:</b> SetIndexDrawBegin<br>
+        /// <b>Description:</b> Sets the bar number (from the data beginning) from which the drawing of the given indicator line must start.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexdrawbegin.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
+        /// <li><b>begin</b> :  [in] First drawing bar position number.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Line index. Must lie between 0 and 7.</param>
-        /// <param name="begin">[in] First drawing bar position number.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/setindexdrawbegin")]
         public void Handle_SetIndexDrawBegin_1(HttpListenerContext context)
         {
@@ -7774,12 +8797,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SetIndexDrawBegin
-        /// Description: Sets the bar number (from the data beginning) from which the drawing of the given indicator line must start.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setindexdrawbegin.html
+        /// <b>Function:</b> SetIndexDrawBegin<br>
+        /// <b>Description:</b> Sets the bar number (from the data beginning) from which the drawing of the given indicator line must start.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexdrawbegin.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
+        /// <li><b>begin</b> :  [in] First drawing bar position number.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Line index. Must lie between 0 and 7.</param>
-        /// <param name="begin">[in] First drawing bar position number.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/setindexdrawbegin")]
         public void Handle_SetIndexDrawBegin_1_Default(HttpListenerContext context)
         {
@@ -7808,12 +8834,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SetIndexEmptyValue
-        /// Description: Sets drawing line empty value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setindexemptyvalue.html
+        /// <b>Function:</b> SetIndexEmptyValue<br>
+        /// <b>Description:</b> Sets drawing line empty value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexemptyvalue.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
+        /// <li><b>value</b> :  [in] New "empty" value.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Line index. Must lie between 0 and 7.</param>
-        /// <param name="value">[in] New "empty" value.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/setindexemptyvalue")]
         public void Handle_SetIndexEmptyValue_1(HttpListenerContext context)
         {
@@ -7822,12 +8851,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SetIndexEmptyValue
-        /// Description: Sets drawing line empty value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setindexemptyvalue.html
+        /// <b>Function:</b> SetIndexEmptyValue<br>
+        /// <b>Description:</b> Sets drawing line empty value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexemptyvalue.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
+        /// <li><b>value</b> :  [in] New "empty" value.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Line index. Must lie between 0 and 7.</param>
-        /// <param name="value">[in] New "empty" value.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/setindexemptyvalue")]
         public void Handle_SetIndexEmptyValue_1_Default(HttpListenerContext context)
         {
@@ -7856,12 +8888,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SetIndexLabel
-        /// Description: Sets drawing line description for showing in the DataWindow and in the tooltip.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setindexlabel.html
+        /// <b>Function:</b> SetIndexLabel<br>
+        /// <b>Description:</b> Sets drawing line description for showing in the DataWindow and in the tooltip.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexlabel.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
+        /// <li><b>text</b> :  [in] Label text. NULL means that index value is not shown in the DataWindow.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Line index. Must lie between 0 and 7.</param>
-        /// <param name="text">[in] Label text. NULL means that index value is not shown in the DataWindow.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/setindexlabel")]
         public void Handle_SetIndexLabel_1(HttpListenerContext context)
         {
@@ -7870,12 +8905,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SetIndexLabel
-        /// Description: Sets drawing line description for showing in the DataWindow and in the tooltip.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setindexlabel.html
+        /// <b>Function:</b> SetIndexLabel<br>
+        /// <b>Description:</b> Sets drawing line description for showing in the DataWindow and in the tooltip.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexlabel.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
+        /// <li><b>text</b> :  [in] Label text. NULL means that index value is not shown in the DataWindow.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Line index. Must lie between 0 and 7.</param>
-        /// <param name="text">[in] Label text. NULL means that index value is not shown in the DataWindow.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/setindexlabel")]
         public void Handle_SetIndexLabel_1_Default(HttpListenerContext context)
         {
@@ -7904,12 +8942,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SetIndexShift
-        /// Description: Sets offset for the drawing line.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setindexshift.html
+        /// <b>Function:</b> SetIndexShift<br>
+        /// <b>Description:</b> Sets offset for the drawing line.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexshift.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
+        /// <li><b>shift</b> :  [in] Shift value in bars.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Line index. Must lie between 0 and 7.</param>
-        /// <param name="shift">[in] Shift value in bars.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/setindexshift")]
         public void Handle_SetIndexShift_1(HttpListenerContext context)
         {
@@ -7918,12 +8959,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SetIndexShift
-        /// Description: Sets offset for the drawing line.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setindexshift.html
+        /// <b>Function:</b> SetIndexShift<br>
+        /// <b>Description:</b> Sets offset for the drawing line.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexshift.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
+        /// <li><b>shift</b> :  [in] Shift value in bars.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Line index. Must lie between 0 and 7.</param>
-        /// <param name="shift">[in] Shift value in bars.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/setindexshift")]
         public void Handle_SetIndexShift_1_Default(HttpListenerContext context)
         {
@@ -7952,15 +8996,18 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SetIndexStyle
-        /// Description: Sets the new type, style, width and color for a given indicator line.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setindexstyle.html
+        /// <b>Function:</b> SetIndexStyle<br>
+        /// <b>Description:</b> Sets the new type, style, width and color for a given indicator line.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexstyle.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
+        /// <li><b>type</b> :  [in] Shape style. Can be one of listed.</li>
+        /// <li><b>style</b> :  [in] Drawing style. It is used for one-pixel thick lines. It can be one of the listed. EMPTY value means that the style will not be changed.</li>
+        /// <li><b>width</b> :  [in] Line width. Valid values are: 1,2,3,4,5. EMPTY value means that width will not be changed.</li>
+        /// <li><b>clr</b> :  [in] Line color. Absence of this parameter means that the color will not be changed.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Line index. Must lie between 0 and 7.</param>
-        /// <param name="type">[in] Shape style. Can be one of listed.</param>
-        /// <param name="style">[in] Drawing style. It is used for one-pixel thick lines. It can be one of the listed. EMPTY value means that the style will not be changed.</param>
-        /// <param name="width">[in] Line width. Valid values are: 1,2,3,4,5. EMPTY value means that width will not be changed.</param>
-        /// <param name="clr">[in] Line color. Absence of this parameter means that the color will not be changed.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/setindexstyle")]
         public void Handle_SetIndexStyle_1(HttpListenerContext context)
         {
@@ -7969,15 +9016,18 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SetIndexStyle
-        /// Description: Sets the new type, style, width and color for a given indicator line.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setindexstyle.html
+        /// <b>Function:</b> SetIndexStyle<br>
+        /// <b>Description:</b> Sets the new type, style, width and color for a given indicator line.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setindexstyle.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>index</b> :  [in] Line index. Must lie between 0 and 7.</li>
+        /// <li><b>type</b> :  [in] Shape style. Can be one of listed.</li>
+        /// <li><b>style</b> :  [in] Drawing style. It is used for one-pixel thick lines. It can be one of the listed. EMPTY value means that the style will not be changed.</li>
+        /// <li><b>width</b> :  [in] Line width. Valid values are: 1,2,3,4,5. EMPTY value means that width will not be changed.</li>
+        /// <li><b>clr</b> :  [in] Line color. Absence of this parameter means that the color will not be changed.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="index">[in] Line index. Must lie between 0 and 7.</param>
-        /// <param name="type">[in] Shape style. Can be one of listed.</param>
-        /// <param name="style">[in] Drawing style. It is used for one-pixel thick lines. It can be one of the listed. EMPTY value means that the style will not be changed.</param>
-        /// <param name="width">[in] Line width. Valid values are: 1,2,3,4,5. EMPTY value means that width will not be changed.</param>
-        /// <param name="clr">[in] Line color. Absence of this parameter means that the color will not be changed.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/setindexstyle")]
         public void Handle_SetIndexStyle_1_Default(HttpListenerContext context)
         {
@@ -8009,13 +9059,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SetLevelStyle
-        /// Description: The function sets a new style, width and color of horizontal levels of indicator to be output in a separate window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setlevelstyle.html
+        /// <b>Function:</b> SetLevelStyle<br>
+        /// <b>Description:</b> The function sets a new style, width and color of horizontal levels of indicator to be output in a separate window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setlevelstyle.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>draw_style</b> :  [in] Drawing style. Can be one of the listed. EMPTY value means that the style will not be changed.</li>
+        /// <li><b>line_width</b> :  [in] Line width. Valid values are 1,2,3,4,5. EMPTY value indicates that the width will not be changed.</li>
+        /// <li><b>clr</b> :  [in] Line color. Empty value CLR_NONE means that the color will not be changed.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="draw_style">[in] Drawing style. Can be one of the listed. EMPTY value means that the style will not be changed.</param>
-        /// <param name="line_width">[in] Line width. Valid values are 1,2,3,4,5. EMPTY value indicates that the width will not be changed.</param>
-        /// <param name="clr">[in] Line color. Empty value CLR_NONE means that the color will not be changed.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/setlevelstyle")]
         public void Handle_SetLevelStyle_1(HttpListenerContext context)
         {
@@ -8024,13 +9077,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SetLevelStyle
-        /// Description: The function sets a new style, width and color of horizontal levels of indicator to be output in a separate window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setlevelstyle.html
+        /// <b>Function:</b> SetLevelStyle<br>
+        /// <b>Description:</b> The function sets a new style, width and color of horizontal levels of indicator to be output in a separate window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setlevelstyle.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>draw_style</b> :  [in] Drawing style. Can be one of the listed. EMPTY value means that the style will not be changed.</li>
+        /// <li><b>line_width</b> :  [in] Line width. Valid values are 1,2,3,4,5. EMPTY value indicates that the width will not be changed.</li>
+        /// <li><b>clr</b> :  [in] Line color. Empty value CLR_NONE means that the color will not be changed.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="draw_style">[in] Drawing style. Can be one of the listed. EMPTY value means that the style will not be changed.</param>
-        /// <param name="line_width">[in] Line width. Valid values are 1,2,3,4,5. EMPTY value indicates that the width will not be changed.</param>
-        /// <param name="clr">[in] Line color. Empty value CLR_NONE means that the color will not be changed.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/setlevelstyle")]
         public void Handle_SetLevelStyle_1_Default(HttpListenerContext context)
         {
@@ -8060,12 +9116,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: SetLevelValue
-        /// Description: The function sets a value for a given horizontal level of the indicator to be output in a separate window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setlevelvalue.html
+        /// <b>Function:</b> SetLevelValue<br>
+        /// <b>Description:</b> The function sets a value for a given horizontal level of the indicator to be output in a separate window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setlevelvalue.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>level</b> :  [in] Level index (0-31).</li>
+        /// <li><b>value</b> :  [in] Value for the given indicator level.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="level">[in] Level index (0-31).</param>
-        /// <param name="value">[in] Value for the given indicator level.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/setlevelvalue")]
         public void Handle_SetLevelValue_1(HttpListenerContext context)
         {
@@ -8074,12 +9133,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: SetLevelValue
-        /// Description: The function sets a value for a given horizontal level of the indicator to be output in a separate window.
-        /// URL: http://mm.l/mql4/docs.mql4.com/customind/setlevelvalue.html
+        /// <b>Function:</b> SetLevelValue<br>
+        /// <b>Description:</b> The function sets a value for a given horizontal level of the indicator to be output in a separate window.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/customind/setlevelvalue.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>level</b> :  [in] Level index (0-31).</li>
+        /// <li><b>value</b> :  [in] Value for the given indicator level.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="level">[in] Level index (0-31).</param>
-        /// <param name="value">[in] Value for the given indicator level.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/setlevelvalue")]
         public void Handle_SetLevelValue_1_Default(HttpListenerContext context)
         {
@@ -8108,18 +9170,21 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectCreate
-        /// Description: The function creates an object with the specified name, type, and the initial coordinates in the specified chart subwindow of the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectcreate.html
+        /// <b>Function:</b> ObjectCreate<br>
+        /// <b>Description:</b> The function creates an object with the specified name, type, and the initial coordinates in the specified chart subwindow of the specified chart. There are two variants of the function:<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectcreate.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object. The name must be unique within a chart, including its subwindows.</li>
+        /// <li><b>object_type</b> :  [in] Object type. The value can be one of the values of the enumeration.</li>
+        /// <li><b>sub_window</b> :  [in] Number of the chart subwindow. 0 means the main chart window. The specified subwindow must exist (window index must be greater or equal to 0 and less than ), otherwise the function returns false.</li>
+        /// <li><b>time1</b> :  [in] The time coordinate of the first anchor point.</li>
+        /// <li><b>price1</b> :  [in] The price coordinate of the first anchor point.</li>
+        /// <li><b>timeN</b> :  [in] The time coordinate of the N-th anchor point.</li>
+        /// <li><b>priceN</b> :  [in] The price coordinate of the N-th anchor point.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier.</param>
-        /// <param name="object_name">[in] Name of the object. The name must be unique within a chart, including its subwindows.</param>
-        /// <param name="object_type">[in] Object type. The value can be one of the values of the enumeration.</param>
-        /// <param name="sub_window">[in] Number of the chart subwindow. 0 means the main chart window. The specified subwindow must exist (window index must be greater or equal to 0 and less than ), otherwise the function returns false.</param>
-        /// <param name="time1">[in] The time coordinate of the first anchor point.</param>
-        /// <param name="price1">[in] The price coordinate of the first anchor point.</param>
-        /// <param name="timeN">[in] The time coordinate of the N-th anchor point.</param>
-        /// <param name="priceN">[in] The price coordinate of the N-th anchor point.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectcreate")]
         public void Handle_ObjectCreate_1(HttpListenerContext context)
         {
@@ -8128,18 +9193,21 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectCreate
-        /// Description: The function creates an object with the specified name, type, and the initial coordinates in the specified chart subwindow of the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectcreate.html
+        /// <b>Function:</b> ObjectCreate<br>
+        /// <b>Description:</b> The function creates an object with the specified name, type, and the initial coordinates in the specified chart subwindow of the specified chart. There are two variants of the function:<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectcreate.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object. The name must be unique within a chart, including its subwindows.</li>
+        /// <li><b>object_type</b> :  [in] Object type. The value can be one of the values of the enumeration.</li>
+        /// <li><b>sub_window</b> :  [in] Number of the chart subwindow. 0 means the main chart window. The specified subwindow must exist (window index must be greater or equal to 0 and less than ), otherwise the function returns false.</li>
+        /// <li><b>time1</b> :  [in] The time coordinate of the first anchor point.</li>
+        /// <li><b>price1</b> :  [in] The price coordinate of the first anchor point.</li>
+        /// <li><b>timeN</b> :  [in] The time coordinate of the N-th anchor point.</li>
+        /// <li><b>priceN</b> :  [in] The price coordinate of the N-th anchor point.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier.</param>
-        /// <param name="object_name">[in] Name of the object. The name must be unique within a chart, including its subwindows.</param>
-        /// <param name="object_type">[in] Object type. The value can be one of the values of the enumeration.</param>
-        /// <param name="sub_window">[in] Number of the chart subwindow. 0 means the main chart window. The specified subwindow must exist (window index must be greater or equal to 0 and less than ), otherwise the function returns false.</param>
-        /// <param name="time1">[in] The time coordinate of the first anchor point.</param>
-        /// <param name="price1">[in] The price coordinate of the first anchor point.</param>
-        /// <param name="timeN">[in] The time coordinate of the N-th anchor point.</param>
-        /// <param name="priceN">[in] The price coordinate of the N-th anchor point.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectcreate")]
         public void Handle_ObjectCreate_1_Default(HttpListenerContext context)
         {
@@ -8174,19 +9242,22 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectCreate
-        /// Description: The function creates an object with the specified name, type, and the initial coordinates in the specified chart subwindow of the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectcreate.html
+        /// <b>Function:</b> ObjectCreate<br>
+        /// <b>Description:</b> The function creates an object with the specified name, type, and the initial coordinates in the specified chart subwindow of the specified chart. There are two variants of the function:<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectcreate.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Name of the object. The name must be unique within a chart, including its subwindows.</li>
+        /// <li><b>object_type</b> :  [in] Object type. The value can be one of the values of the enumeration.</li>
+        /// <li><b>sub_window</b> :  [in] Number of the chart subwindow. 0 means the main chart window. The specified subwindow must exist (window index must be greater or equal to 0 and less than ), otherwise the function returns false.</li>
+        /// <li><b>time1</b> :  [in] The time coordinate of the first anchor point.</li>
+        /// <li><b>price1</b> :  [in] The price coordinate of the first anchor point.</li>
+        /// <li><b>time2</b> :  [in] The time coordinate of the second anchor point.</li>
+        /// <li><b>price2</b> :  [in] The price coordinate of the second anchor point.</li>
+        /// <li><b>time3</b> :  [in] The time coordinate of the third anchor point.</li>
+        /// <li><b>price3</b> :  [in] The price coordinate of the third anchor point.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Name of the object. The name must be unique within a chart, including its subwindows.</param>
-        /// <param name="object_type">[in] Object type. The value can be one of the values of the enumeration.</param>
-        /// <param name="sub_window">[in] Number of the chart subwindow. 0 means the main chart window. The specified subwindow must exist (window index must be greater or equal to 0 and less than ), otherwise the function returns false.</param>
-        /// <param name="time1">[in] The time coordinate of the first anchor point.</param>
-        /// <param name="price1">[in] The price coordinate of the first anchor point.</param>
-        /// <param name="time2">[in] The time coordinate of the second anchor point.</param>
-        /// <param name="price2">[in] The price coordinate of the second anchor point.</param>
-        /// <param name="time3">[in] The time coordinate of the third anchor point.</param>
-        /// <param name="price3">[in] The price coordinate of the third anchor point.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectcreate")]
         public void Handle_ObjectCreate_2(HttpListenerContext context)
         {
@@ -8195,19 +9266,22 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectCreate
-        /// Description: The function creates an object with the specified name, type, and the initial coordinates in the specified chart subwindow of the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectcreate.html
+        /// <b>Function:</b> ObjectCreate<br>
+        /// <b>Description:</b> The function creates an object with the specified name, type, and the initial coordinates in the specified chart subwindow of the specified chart. There are two variants of the function:<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectcreate.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Name of the object. The name must be unique within a chart, including its subwindows.</li>
+        /// <li><b>object_type</b> :  [in] Object type. The value can be one of the values of the enumeration.</li>
+        /// <li><b>sub_window</b> :  [in] Number of the chart subwindow. 0 means the main chart window. The specified subwindow must exist (window index must be greater or equal to 0 and less than ), otherwise the function returns false.</li>
+        /// <li><b>time1</b> :  [in] The time coordinate of the first anchor point.</li>
+        /// <li><b>price1</b> :  [in] The price coordinate of the first anchor point.</li>
+        /// <li><b>time2</b> :  [in] The time coordinate of the second anchor point.</li>
+        /// <li><b>price2</b> :  [in] The price coordinate of the second anchor point.</li>
+        /// <li><b>time3</b> :  [in] The time coordinate of the third anchor point.</li>
+        /// <li><b>price3</b> :  [in] The price coordinate of the third anchor point.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Name of the object. The name must be unique within a chart, including its subwindows.</param>
-        /// <param name="object_type">[in] Object type. The value can be one of the values of the enumeration.</param>
-        /// <param name="sub_window">[in] Number of the chart subwindow. 0 means the main chart window. The specified subwindow must exist (window index must be greater or equal to 0 and less than ), otherwise the function returns false.</param>
-        /// <param name="time1">[in] The time coordinate of the first anchor point.</param>
-        /// <param name="price1">[in] The price coordinate of the first anchor point.</param>
-        /// <param name="time2">[in] The time coordinate of the second anchor point.</param>
-        /// <param name="price2">[in] The price coordinate of the second anchor point.</param>
-        /// <param name="time3">[in] The time coordinate of the third anchor point.</param>
-        /// <param name="price3">[in] The price coordinate of the third anchor point.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectcreate")]
         public void Handle_ObjectCreate_2_Default(HttpListenerContext context)
         {
@@ -8243,11 +9317,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectName
-        /// Description: The function returns the name of the corresponding object by its index in the objects list.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectname.html
+        /// <b>Function:</b> ObjectName<br>
+        /// <b>Description:</b> The function returns the name of the corresponding object by its index in the objects list.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectname.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_index</b> :  [in] Object index. This value must be greater or equal to 0 and less than .</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_index">[in] Object index. This value must be greater or equal to 0 and less than .</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectname")]
         public void Handle_ObjectName_1(HttpListenerContext context)
         {
@@ -8256,11 +9333,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectName
-        /// Description: The function returns the name of the corresponding object by its index in the objects list.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectname.html
+        /// <b>Function:</b> ObjectName<br>
+        /// <b>Description:</b> The function returns the name of the corresponding object by its index in the objects list.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectname.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_index</b> :  [in] Object index. This value must be greater or equal to 0 and less than .</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_index">[in] Object index. This value must be greater or equal to 0 and less than .</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectname")]
         public void Handle_ObjectName_1_Default(HttpListenerContext context)
         {
@@ -8288,12 +9368,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectDelete
-        /// Description: The function removes the object with the specified name at the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectdelete.html
+        /// <b>Function:</b> ObjectDelete<br>
+        /// <b>Description:</b> The function removes the object with the specified name at the specified chart. There are two variants of the function:<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectdelete.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
+        /// <li><b>object_name</b> :  [in] Name of object to be deleted.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier.</param>
-        /// <param name="object_name">[in] Name of object to be deleted.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectdelete")]
         public void Handle_ObjectDelete_1(HttpListenerContext context)
         {
@@ -8302,12 +9385,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectDelete
-        /// Description: The function removes the object with the specified name at the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectdelete.html
+        /// <b>Function:</b> ObjectDelete<br>
+        /// <b>Description:</b> The function removes the object with the specified name at the specified chart. There are two variants of the function:<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectdelete.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
+        /// <li><b>object_name</b> :  [in] Name of object to be deleted.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier.</param>
-        /// <param name="object_name">[in] Name of object to be deleted.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectdelete")]
         public void Handle_ObjectDelete_1_Default(HttpListenerContext context)
         {
@@ -8336,11 +9422,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectDelete
-        /// Description: The function removes the object with the specified name at the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectdelete.html
+        /// <b>Function:</b> ObjectDelete<br>
+        /// <b>Description:</b> The function removes the object with the specified name at the specified chart. There are two variants of the function:<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectdelete.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Name of object to be deleted.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Name of object to be deleted.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectdelete")]
         public void Handle_ObjectDelete_2(HttpListenerContext context)
         {
@@ -8349,11 +9438,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectDelete
-        /// Description: The function removes the object with the specified name at the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectdelete.html
+        /// <b>Function:</b> ObjectDelete<br>
+        /// <b>Description:</b> The function removes the object with the specified name at the specified chart. There are two variants of the function:<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectdelete.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Name of object to be deleted.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Name of object to be deleted.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectdelete")]
         public void Handle_ObjectDelete_2_Default(HttpListenerContext context)
         {
@@ -8381,13 +9473,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectsDeleteAll
-        /// Description: Removes all objects from the specified chart, specified chart subwindow, of the specified type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html
+        /// <b>Function:</b> ObjectsDeleteAll<br>
+        /// <b>Description:</b> Removes all objects from the specified chart, specified chart subwindow, of the specified type.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
+        /// <li><b>sub_window</b> :  [in] Number of the chart window. Must be greater or equal to -1 (-1 mean all subwindows, 0 means the main chart window) and less than .</li>
+        /// <li><b>object_type</b> :  [in] Type of the object. The value can be one of the values of the enumeration. EMPTY (-1) means all types.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier.</param>
-        /// <param name="sub_window">[in] Number of the chart window. Must be greater or equal to -1 (-1 mean all subwindows, 0 means the main chart window) and less than .</param>
-        /// <param name="object_type">[in] Type of the object. The value can be one of the values of the enumeration. EMPTY (-1) means all types.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectsdeleteall")]
         public void Handle_ObjectsDeleteAll_1(HttpListenerContext context)
         {
@@ -8396,13 +9491,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectsDeleteAll
-        /// Description: Removes all objects from the specified chart, specified chart subwindow, of the specified type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html
+        /// <b>Function:</b> ObjectsDeleteAll<br>
+        /// <b>Description:</b> Removes all objects from the specified chart, specified chart subwindow, of the specified type.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
+        /// <li><b>sub_window</b> :  [in] Number of the chart window. Must be greater or equal to -1 (-1 mean all subwindows, 0 means the main chart window) and less than .</li>
+        /// <li><b>object_type</b> :  [in] Type of the object. The value can be one of the values of the enumeration. EMPTY (-1) means all types.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier.</param>
-        /// <param name="sub_window">[in] Number of the chart window. Must be greater or equal to -1 (-1 mean all subwindows, 0 means the main chart window) and less than .</param>
-        /// <param name="object_type">[in] Type of the object. The value can be one of the values of the enumeration. EMPTY (-1) means all types.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectsdeleteall")]
         public void Handle_ObjectsDeleteAll_1_Default(HttpListenerContext context)
         {
@@ -8432,12 +9530,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectsDeleteAll
-        /// Description: Removes all objects from the specified chart, specified chart subwindow, of the specified type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html
+        /// <b>Function:</b> ObjectsDeleteAll<br>
+        /// <b>Description:</b> Removes all objects from the specified chart, specified chart subwindow, of the specified type.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>sub_window</b> :  [in] Number of the chart window. Must be greater or equal to -1 (-1 mean all subwindows, 0 means the main chart window) and less than .</li>
+        /// <li><b>object_type</b> :  [in] Type of the object. The value can be one of the values of the enumeration. EMPTY (-1) means all types.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="sub_window">[in] Number of the chart window. Must be greater or equal to -1 (-1 mean all subwindows, 0 means the main chart window) and less than .</param>
-        /// <param name="object_type">[in] Type of the object. The value can be one of the values of the enumeration. EMPTY (-1) means all types.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectsdeleteall")]
         public void Handle_ObjectsDeleteAll_2(HttpListenerContext context)
         {
@@ -8446,12 +9547,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectsDeleteAll
-        /// Description: Removes all objects from the specified chart, specified chart subwindow, of the specified type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html
+        /// <b>Function:</b> ObjectsDeleteAll<br>
+        /// <b>Description:</b> Removes all objects from the specified chart, specified chart subwindow, of the specified type.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>sub_window</b> :  [in] Number of the chart window. Must be greater or equal to -1 (-1 mean all subwindows, 0 means the main chart window) and less than .</li>
+        /// <li><b>object_type</b> :  [in] Type of the object. The value can be one of the values of the enumeration. EMPTY (-1) means all types.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="sub_window">[in] Number of the chart window. Must be greater or equal to -1 (-1 mean all subwindows, 0 means the main chart window) and less than .</param>
-        /// <param name="object_type">[in] Type of the object. The value can be one of the values of the enumeration. EMPTY (-1) means all types.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectsdeleteall")]
         public void Handle_ObjectsDeleteAll_2_Default(HttpListenerContext context)
         {
@@ -8480,14 +9584,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectsDeleteAll
-        /// Description: Removes all objects from the specified chart, specified chart subwindow, of the specified type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html
+        /// <b>Function:</b> ObjectsDeleteAll<br>
+        /// <b>Description:</b> Removes all objects from the specified chart, specified chart subwindow, of the specified type.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
+        /// <li><b>prefix</b> :  [in] Prefix in object names. All objects whose names start with this set of characters will be removed from chart. You can specify prefix as 'name' or 'name*' both variants will work the same. If an empty string is specified as the prefix, objects with all possible names will be removed.</li>
+        /// <li><b>sub_window</b> :  [in] Number of the chart window. Must be greater or equal to -1 (-1 mean all subwindows, 0 means the main chart window) and less than .</li>
+        /// <li><b>object_type</b> :  [in] Type of the object. The value can be one of the values of the enumeration. EMPTY (-1) means all types.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier.</param>
-        /// <param name="prefix">[in] Prefix in object names. All objects whose names start with this set of characters will be removed from chart. You can specify prefix as 'name' or 'name*' both variants will work the same. If an empty string is specified as the prefix, objects with all possible names will be removed.</param>
-        /// <param name="sub_window">[in] Number of the chart window. Must be greater or equal to -1 (-1 mean all subwindows, 0 means the main chart window) and less than .</param>
-        /// <param name="object_type">[in] Type of the object. The value can be one of the values of the enumeration. EMPTY (-1) means all types.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectsdeleteall")]
         public void Handle_ObjectsDeleteAll_3(HttpListenerContext context)
         {
@@ -8496,14 +9603,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectsDeleteAll
-        /// Description: Removes all objects from the specified chart, specified chart subwindow, of the specified type.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html
+        /// <b>Function:</b> ObjectsDeleteAll<br>
+        /// <b>Description:</b> Removes all objects from the specified chart, specified chart subwindow, of the specified type.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsdeleteall.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
+        /// <li><b>prefix</b> :  [in] Prefix in object names. All objects whose names start with this set of characters will be removed from chart. You can specify prefix as 'name' or 'name*' both variants will work the same. If an empty string is specified as the prefix, objects with all possible names will be removed.</li>
+        /// <li><b>sub_window</b> :  [in] Number of the chart window. Must be greater or equal to -1 (-1 mean all subwindows, 0 means the main chart window) and less than .</li>
+        /// <li><b>object_type</b> :  [in] Type of the object. The value can be one of the values of the enumeration. EMPTY (-1) means all types.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier.</param>
-        /// <param name="prefix">[in] Prefix in object names. All objects whose names start with this set of characters will be removed from chart. You can specify prefix as 'name' or 'name*' both variants will work the same. If an empty string is specified as the prefix, objects with all possible names will be removed.</param>
-        /// <param name="sub_window">[in] Number of the chart window. Must be greater or equal to -1 (-1 mean all subwindows, 0 means the main chart window) and less than .</param>
-        /// <param name="object_type">[in] Type of the object. The value can be one of the values of the enumeration. EMPTY (-1) means all types.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectsdeleteall")]
         public void Handle_ObjectsDeleteAll_3_Default(HttpListenerContext context)
         {
@@ -8534,12 +9644,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectFind
-        /// Description: The function searches for an object having the specified name. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectfind.html
+        /// <b>Function:</b> ObjectFind<br>
+        /// <b>Description:</b> The function searches for an object having the specified name. There are two variants of the function:<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectfind.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
+        /// <li><b>object_name</b> :  [in] The name of the object to find.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier.</param>
-        /// <param name="object_name">[in] The name of the object to find.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectfind")]
         public void Handle_ObjectFind_1(HttpListenerContext context)
         {
@@ -8548,12 +9661,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectFind
-        /// Description: The function searches for an object having the specified name. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectfind.html
+        /// <b>Function:</b> ObjectFind<br>
+        /// <b>Description:</b> The function searches for an object having the specified name. There are two variants of the function:<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectfind.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
+        /// <li><b>object_name</b> :  [in] The name of the object to find.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier.</param>
-        /// <param name="object_name">[in] The name of the object to find.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectfind")]
         public void Handle_ObjectFind_1_Default(HttpListenerContext context)
         {
@@ -8582,11 +9698,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectFind
-        /// Description: The function searches for an object having the specified name. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectfind.html
+        /// <b>Function:</b> ObjectFind<br>
+        /// <b>Description:</b> The function searches for an object having the specified name. There are two variants of the function:<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectfind.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] The name of the object to find.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] The name of the object to find.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectfind")]
         public void Handle_ObjectFind_2(HttpListenerContext context)
         {
@@ -8595,11 +9714,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectFind
-        /// Description: The function searches for an object having the specified name. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectfind.html
+        /// <b>Function:</b> ObjectFind<br>
+        /// <b>Description:</b> The function searches for an object having the specified name. There are two variants of the function:<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectfind.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] The name of the object to find.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] The name of the object to find.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectfind")]
         public void Handle_ObjectFind_2_Default(HttpListenerContext context)
         {
@@ -8627,13 +9749,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectGetTimeByValue
-        /// Description: The function returns the time value for the specified price value of the specified object.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgettimebyvalue.html
+        /// <b>Function:</b> ObjectGetTimeByValue<br>
+        /// <b>Description:</b> The function returns the time value for the specified price value of the specified object.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgettimebyvalue.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>value</b> :  [in] Price value.</li>
+        /// <li><b>line_id</b> :  [in] Line identifier.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="value">[in] Price value.</param>
-        /// <param name="line_id">[in] Line identifier.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectgettimebyvalue")]
         public void Handle_ObjectGetTimeByValue_1(HttpListenerContext context)
         {
@@ -8642,13 +9767,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectGetTimeByValue
-        /// Description: The function returns the time value for the specified price value of the specified object.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgettimebyvalue.html
+        /// <b>Function:</b> ObjectGetTimeByValue<br>
+        /// <b>Description:</b> The function returns the time value for the specified price value of the specified object.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgettimebyvalue.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>value</b> :  [in] Price value.</li>
+        /// <li><b>line_id</b> :  [in] Line identifier.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="value">[in] Price value.</param>
-        /// <param name="line_id">[in] Line identifier.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectgettimebyvalue")]
         public void Handle_ObjectGetTimeByValue_1_Default(HttpListenerContext context)
         {
@@ -8678,14 +9806,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectGetValueByTime
-        /// Description: The function returns the price value for the specified time value of the specified object.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetvaluebytime.html
+        /// <b>Function:</b> ObjectGetValueByTime<br>
+        /// <b>Description:</b> The function returns the price value for the specified time value of the specified object.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetvaluebytime.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>time</b> :  [in] Time value.</li>
+        /// <li><b>line_id</b> :  [in] Line identifier.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="time">[in] Time value.</param>
-        /// <param name="line_id">[in] Line identifier.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectgetvaluebytime")]
         public void Handle_ObjectGetValueByTime_1(HttpListenerContext context)
         {
@@ -8694,14 +9825,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectGetValueByTime
-        /// Description: The function returns the price value for the specified time value of the specified object.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetvaluebytime.html
+        /// <b>Function:</b> ObjectGetValueByTime<br>
+        /// <b>Description:</b> The function returns the price value for the specified time value of the specified object.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetvaluebytime.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>time</b> :  [in] Time value.</li>
+        /// <li><b>line_id</b> :  [in] Line identifier.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="time">[in] Time value.</param>
-        /// <param name="line_id">[in] Line identifier.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectgetvaluebytime")]
         public void Handle_ObjectGetValueByTime_1_Default(HttpListenerContext context)
         {
@@ -8732,14 +9866,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectMove
-        /// Description: The function changes coordinates of the specified anchor point of the object at the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectmove.html
+        /// <b>Function:</b> ObjectMove<br>
+        /// <b>Description:</b> The function changes coordinates of the specified anchor point of the object at the specified chart. There are two variants of the function:<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectmove.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>point_index</b> :  [in] Index of the anchor point. The number of anchor points depends on the .</li>
+        /// <li><b>time</b> :  [in] Time coordinate of the selected anchor point.</li>
+        /// <li><b>price</b> :  [in] Price coordinate of the selected anchor point.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="point_index">[in] Index of the anchor point. The number of anchor points depends on the .</param>
-        /// <param name="time">[in] Time coordinate of the selected anchor point.</param>
-        /// <param name="price">[in] Price coordinate of the selected anchor point.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectmove")]
         public void Handle_ObjectMove_1(HttpListenerContext context)
         {
@@ -8748,14 +9885,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectMove
-        /// Description: The function changes coordinates of the specified anchor point of the object at the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectmove.html
+        /// <b>Function:</b> ObjectMove<br>
+        /// <b>Description:</b> The function changes coordinates of the specified anchor point of the object at the specified chart. There are two variants of the function:<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectmove.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>point_index</b> :  [in] Index of the anchor point. The number of anchor points depends on the .</li>
+        /// <li><b>time</b> :  [in] Time coordinate of the selected anchor point.</li>
+        /// <li><b>price</b> :  [in] Price coordinate of the selected anchor point.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="point_index">[in] Index of the anchor point. The number of anchor points depends on the .</param>
-        /// <param name="time">[in] Time coordinate of the selected anchor point.</param>
-        /// <param name="price">[in] Price coordinate of the selected anchor point.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectmove")]
         public void Handle_ObjectMove_1_Default(HttpListenerContext context)
         {
@@ -8786,13 +9926,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectsTotal
-        /// Description: The function returns the number of objects of the specified type in the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectstotal.html
+        /// <b>Function:</b> ObjectsTotal<br>
+        /// <b>Description:</b> The function returns the number of objects of the specified type in the specified chart. There are two variants of the function:<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectstotal.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
+        /// <li><b>sub_window</b> :  [in] Number of the chart subwindow. 0 means the main chart window, -1 means all the subwindows of the chart, including the main window.</li>
+        /// <li><b>type</b> :  [in] Type of the object. The value can be one of the values of the enumeration. EMPTY(-1) means all types.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier.</param>
-        /// <param name="sub_window">[in] Number of the chart subwindow. 0 means the main chart window, -1 means all the subwindows of the chart, including the main window.</param>
-        /// <param name="type">[in] Type of the object. The value can be one of the values of the enumeration. EMPTY(-1) means all types.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectstotal")]
         public void Handle_ObjectsTotal_1(HttpListenerContext context)
         {
@@ -8801,13 +9944,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectsTotal
-        /// Description: The function returns the number of objects of the specified type in the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectstotal.html
+        /// <b>Function:</b> ObjectsTotal<br>
+        /// <b>Description:</b> The function returns the number of objects of the specified type in the specified chart. There are two variants of the function:<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectstotal.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier.</li>
+        /// <li><b>sub_window</b> :  [in] Number of the chart subwindow. 0 means the main chart window, -1 means all the subwindows of the chart, including the main window.</li>
+        /// <li><b>type</b> :  [in] Type of the object. The value can be one of the values of the enumeration. EMPTY(-1) means all types.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier.</param>
-        /// <param name="sub_window">[in] Number of the chart subwindow. 0 means the main chart window, -1 means all the subwindows of the chart, including the main window.</param>
-        /// <param name="type">[in] Type of the object. The value can be one of the values of the enumeration. EMPTY(-1) means all types.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectstotal")]
         public void Handle_ObjectsTotal_1_Default(HttpListenerContext context)
         {
@@ -8837,11 +9983,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectsTotal
-        /// Description: The function returns the number of objects of the specified type in the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectstotal.html
+        /// <b>Function:</b> ObjectsTotal<br>
+        /// <b>Description:</b> The function returns the number of objects of the specified type in the specified chart. There are two variants of the function:<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectstotal.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>type</b> :  [in] Type of the object. The value can be one of the values of the enumeration. EMPTY(-1) means all types.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="type">[in] Type of the object. The value can be one of the values of the enumeration. EMPTY(-1) means all types.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectstotal")]
         public void Handle_ObjectsTotal_2(HttpListenerContext context)
         {
@@ -8850,11 +9999,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectsTotal
-        /// Description: The function returns the number of objects of the specified type in the specified chart. There are two variants of the function:
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectstotal.html
+        /// <b>Function:</b> ObjectsTotal<br>
+        /// <b>Description:</b> The function returns the number of objects of the specified type in the specified chart. There are two variants of the function:<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectstotal.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>type</b> :  [in] Type of the object. The value can be one of the values of the enumeration. EMPTY(-1) means all types.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="type">[in] Type of the object. The value can be one of the values of the enumeration. EMPTY(-1) means all types.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectstotal")]
         public void Handle_ObjectsTotal_2_Default(HttpListenerContext context)
         {
@@ -8882,14 +10034,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectGetDouble
-        /// Description: The function returns the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetdouble.html
+        /// <b>Function:</b> ObjectGetDouble<br>
+        /// <b>Description:</b> The function returns the value of the corresponding object property. The object property must be of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetdouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>prop_id</b> :  [in] ID of the object property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_modifier</b> :  [in] Modifier of the specified property. For the first variant, the default modifier value is equal to 0. Most properties do not require a modifier. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="prop_id">[in] ID of the object property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_modifier">[in] Modifier of the specified property. For the first variant, the default modifier value is equal to 0. Most properties do not require a modifier. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectgetdouble")]
         public void Handle_ObjectGetDouble_1(HttpListenerContext context)
         {
@@ -8898,14 +10053,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectGetDouble
-        /// Description: The function returns the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetdouble.html
+        /// <b>Function:</b> ObjectGetDouble<br>
+        /// <b>Description:</b> The function returns the value of the corresponding object property. The object property must be of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetdouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>prop_id</b> :  [in] ID of the object property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_modifier</b> :  [in] Modifier of the specified property. For the first variant, the default modifier value is equal to 0. Most properties do not require a modifier. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="prop_id">[in] ID of the object property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_modifier">[in] Modifier of the specified property. For the first variant, the default modifier value is equal to 0. Most properties do not require a modifier. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectgetdouble")]
         public void Handle_ObjectGetDouble_1_Default(HttpListenerContext context)
         {
@@ -8936,14 +10094,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectGetInteger
-        /// Description: The function returns the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetinteger.html
+        /// <b>Function:</b> ObjectGetInteger<br>
+        /// <b>Description:</b> The function returns the value of the corresponding object property. The object property must be of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>prop_id</b> :  [in] ID of the object property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_modifier</b> :  [in] Modifier of the specified property. For the first variant, the default modifier value is equal to 0. Most properties do not require a modifier. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="prop_id">[in] ID of the object property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_modifier">[in] Modifier of the specified property. For the first variant, the default modifier value is equal to 0. Most properties do not require a modifier. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectgetinteger")]
         public void Handle_ObjectGetInteger_1(HttpListenerContext context)
         {
@@ -8952,14 +10113,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectGetInteger
-        /// Description: The function returns the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetinteger.html
+        /// <b>Function:</b> ObjectGetInteger<br>
+        /// <b>Description:</b> The function returns the value of the corresponding object property. The object property must be of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>prop_id</b> :  [in] ID of the object property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_modifier</b> :  [in] Modifier of the specified property. For the first variant, the default modifier value is equal to 0. Most properties do not require a modifier. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="prop_id">[in] ID of the object property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_modifier">[in] Modifier of the specified property. For the first variant, the default modifier value is equal to 0. Most properties do not require a modifier. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectgetinteger")]
         public void Handle_ObjectGetInteger_1_Default(HttpListenerContext context)
         {
@@ -8990,14 +10154,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectGetString
-        /// Description: The function returns the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetstring.html
+        /// <b>Function:</b> ObjectGetString<br>
+        /// <b>Description:</b> The function returns the value of the corresponding object property. The object property must be of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetstring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>prop_id</b> :  [in] ID of the object property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_modifier</b> :  [in] Modifier of the specified property. For the first variant, the default modifier value is equal to 0. Most properties do not require a modifier. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="prop_id">[in] ID of the object property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_modifier">[in] Modifier of the specified property. For the first variant, the default modifier value is equal to 0. Most properties do not require a modifier. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectgetstring")]
         public void Handle_ObjectGetString_1(HttpListenerContext context)
         {
@@ -9006,14 +10173,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectGetString
-        /// Description: The function returns the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetstring.html
+        /// <b>Function:</b> ObjectGetString<br>
+        /// <b>Description:</b> The function returns the value of the corresponding object property. The object property must be of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetstring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>prop_id</b> :  [in] ID of the object property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_modifier</b> :  [in] Modifier of the specified property. For the first variant, the default modifier value is equal to 0. Most properties do not require a modifier. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="prop_id">[in] ID of the object property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_modifier">[in] Modifier of the specified property. For the first variant, the default modifier value is equal to 0. Most properties do not require a modifier. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectgetstring")]
         public void Handle_ObjectGetString_1_Default(HttpListenerContext context)
         {
@@ -9044,14 +10214,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectSetDouble
-        /// Description: The function sets the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetdouble.html
+        /// <b>Function:</b> ObjectSetDouble<br>
+        /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetdouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>prop_id</b> :  [in] ID of the object property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_value</b> :  [in] The value of the property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="prop_id">[in] ID of the object property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_value">[in] The value of the property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectsetdouble")]
         public void Handle_ObjectSetDouble_1(HttpListenerContext context)
         {
@@ -9060,14 +10233,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectSetDouble
-        /// Description: The function sets the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetdouble.html
+        /// <b>Function:</b> ObjectSetDouble<br>
+        /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetdouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>prop_id</b> :  [in] ID of the object property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_value</b> :  [in] The value of the property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="prop_id">[in] ID of the object property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_value">[in] The value of the property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectsetdouble")]
         public void Handle_ObjectSetDouble_1_Default(HttpListenerContext context)
         {
@@ -9098,15 +10274,18 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectSetDouble
-        /// Description: The function sets the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetdouble.html
+        /// <b>Function:</b> ObjectSetDouble<br>
+        /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetdouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>prop_id</b> :  [in] ID of the object property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_modifier</b> :  [in] Modifier of the specified property. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</li>
+        /// <li><b>prop_value</b> :  [in] The value of the property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="prop_id">[in] ID of the object property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_modifier">[in] Modifier of the specified property. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</param>
-        /// <param name="prop_value">[in] The value of the property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectsetdouble")]
         public void Handle_ObjectSetDouble_2(HttpListenerContext context)
         {
@@ -9115,15 +10294,18 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectSetDouble
-        /// Description: The function sets the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetdouble.html
+        /// <b>Function:</b> ObjectSetDouble<br>
+        /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetdouble.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>prop_id</b> :  [in] ID of the object property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_modifier</b> :  [in] Modifier of the specified property. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</li>
+        /// <li><b>prop_value</b> :  [in] The value of the property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="prop_id">[in] ID of the object property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_modifier">[in] Modifier of the specified property. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</param>
-        /// <param name="prop_value">[in] The value of the property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectsetdouble")]
         public void Handle_ObjectSetDouble_2_Default(HttpListenerContext context)
         {
@@ -9155,14 +10337,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectSetInteger
-        /// Description: The function sets the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetinteger.html
+        /// <b>Function:</b> ObjectSetInteger<br>
+        /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>prop_id</b> :  [in] ID of the object property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_value</b> :  [in] The value of the property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="prop_id">[in] ID of the object property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_value">[in] The value of the property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectsetinteger")]
         public void Handle_ObjectSetInteger_1(HttpListenerContext context)
         {
@@ -9171,14 +10356,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectSetInteger
-        /// Description: The function sets the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetinteger.html
+        /// <b>Function:</b> ObjectSetInteger<br>
+        /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>prop_id</b> :  [in] ID of the object property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_value</b> :  [in] The value of the property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="prop_id">[in] ID of the object property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_value">[in] The value of the property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectsetinteger")]
         public void Handle_ObjectSetInteger_1_Default(HttpListenerContext context)
         {
@@ -9209,15 +10397,18 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectSetInteger
-        /// Description: The function sets the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetinteger.html
+        /// <b>Function:</b> ObjectSetInteger<br>
+        /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>prop_id</b> :  [in] ID of the object property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_modifier</b> :  [in] Modifier of the specified property. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</li>
+        /// <li><b>prop_value</b> :  [in] The value of the property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="prop_id">[in] ID of the object property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_modifier">[in] Modifier of the specified property. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</param>
-        /// <param name="prop_value">[in] The value of the property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectsetinteger")]
         public void Handle_ObjectSetInteger_2(HttpListenerContext context)
         {
@@ -9226,15 +10417,18 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectSetInteger
-        /// Description: The function sets the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetinteger.html
+        /// <b>Function:</b> ObjectSetInteger<br>
+        /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetinteger.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>prop_id</b> :  [in] ID of the object property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_modifier</b> :  [in] Modifier of the specified property. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</li>
+        /// <li><b>prop_value</b> :  [in] The value of the property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="prop_id">[in] ID of the object property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_modifier">[in] Modifier of the specified property. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</param>
-        /// <param name="prop_value">[in] The value of the property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectsetinteger")]
         public void Handle_ObjectSetInteger_2_Default(HttpListenerContext context)
         {
@@ -9266,14 +10460,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectSetString
-        /// Description: The function sets the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetstring.html
+        /// <b>Function:</b> ObjectSetString<br>
+        /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetstring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>prop_id</b> :  [in] ID of the object property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_value</b> :  [in] The value of the property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="prop_id">[in] ID of the object property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_value">[in] The value of the property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectsetstring")]
         public void Handle_ObjectSetString_1(HttpListenerContext context)
         {
@@ -9282,14 +10479,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectSetString
-        /// Description: The function sets the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetstring.html
+        /// <b>Function:</b> ObjectSetString<br>
+        /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetstring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>prop_id</b> :  [in] ID of the object property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_value</b> :  [in] The value of the property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="prop_id">[in] ID of the object property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_value">[in] The value of the property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectsetstring")]
         public void Handle_ObjectSetString_1_Default(HttpListenerContext context)
         {
@@ -9320,15 +10520,18 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectSetString
-        /// Description: The function sets the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetstring.html
+        /// <b>Function:</b> ObjectSetString<br>
+        /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetstring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>prop_id</b> :  [in] ID of the object property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_modifier</b> :  [in] Modifier of the specified property. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</li>
+        /// <li><b>prop_value</b> :  [in] The value of the property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="prop_id">[in] ID of the object property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_modifier">[in] Modifier of the specified property. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</param>
-        /// <param name="prop_value">[in] The value of the property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectsetstring")]
         public void Handle_ObjectSetString_2(HttpListenerContext context)
         {
@@ -9337,15 +10540,18 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectSetString
-        /// Description: The function sets the value of the corresponding object property. The object property must be of the
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetstring.html
+        /// <b>Function:</b> ObjectSetString<br>
+        /// <b>Description:</b> The function sets the value of the corresponding object property. The object property must be of the<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetstring.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>chart_id</b> :  [in] Chart identifier. 0 means the current chart.</li>
+        /// <li><b>object_name</b> :  [in] Name of the object.</li>
+        /// <li><b>prop_id</b> :  [in] ID of the object property. The value can be one of the values of the enumeration.</li>
+        /// <li><b>prop_modifier</b> :  [in] Modifier of the specified property. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</li>
+        /// <li><b>prop_value</b> :  [in] The value of the property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="chart_id">[in] Chart identifier. 0 means the current chart.</param>
-        /// <param name="object_name">[in] Name of the object.</param>
-        /// <param name="prop_id">[in] ID of the object property. The value can be one of the values of the enumeration.</param>
-        /// <param name="prop_modifier">[in] Modifier of the specified property. It denotes the number of the level in and in the graphical object Andrew's pitchfork. The numeration of levels starts from zero.</param>
-        /// <param name="prop_value">[in] The value of the property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectsetstring")]
         public void Handle_ObjectSetString_2_Default(HttpListenerContext context)
         {
@@ -9377,14 +10583,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: TextSetFont
-        /// Description: The function sets the font for displaying the text using drawing methods and returns the result of that operation. Arial font with the size -120 (12 pt) is used by default.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/textsetfont.html
+        /// <b>Function:</b> TextSetFont<br>
+        /// <b>Description:</b> The function sets the font for displaying the text using drawing methods and returns the result of that operation. Arial font with the size -120 (12 pt) is used by default.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/textsetfont.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] Font name in the system or the name of the resource containing the font or the path to font file on the disk.</li>
+        /// <li><b>size</b> :  [in] The font size that can be set using positive and negative values. In case of positive values, the size of a displayed text does not depend on the operating system's font size settings. In case of negative values, the value is set in tenths of a point and the text size depends on the operating system settings ("standard scale" or "large scale"). See the Note below for more information about the differences between the modes.</li>
+        /// <li><b>flags</b> :  [in] Combination of describing font style.</li>
+        /// <li><b>orientation</b> :  [in] Text's horizontal inclination to X axis, the unit of measurement is 0.1 degrees. It means that orientation=450 stands for inclination equal to 45 degrees.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] Font name in the system or the name of the resource containing the font or the path to font file on the disk.</param>
-        /// <param name="size">[in] The font size that can be set using positive and negative values. In case of positive values, the size of a displayed text does not depend on the operating system's font size settings. In case of negative values, the value is set in tenths of a point and the text size depends on the operating system settings ("standard scale" or "large scale"). See the Note below for more information about the differences between the modes.</param>
-        /// <param name="flags">[in] Combination of describing font style.</param>
-        /// <param name="orientation">[in] Text's horizontal inclination to X axis, the unit of measurement is 0.1 degrees. It means that orientation=450 stands for inclination equal to 45 degrees.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/textsetfont")]
         public void Handle_TextSetFont_1(HttpListenerContext context)
         {
@@ -9393,14 +10602,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: TextSetFont
-        /// Description: The function sets the font for displaying the text using drawing methods and returns the result of that operation. Arial font with the size -120 (12 pt) is used by default.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/textsetfont.html
+        /// <b>Function:</b> TextSetFont<br>
+        /// <b>Description:</b> The function sets the font for displaying the text using drawing methods and returns the result of that operation. Arial font with the size -120 (12 pt) is used by default.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/textsetfont.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>name</b> :  [in] Font name in the system or the name of the resource containing the font or the path to font file on the disk.</li>
+        /// <li><b>size</b> :  [in] The font size that can be set using positive and negative values. In case of positive values, the size of a displayed text does not depend on the operating system's font size settings. In case of negative values, the value is set in tenths of a point and the text size depends on the operating system settings ("standard scale" or "large scale"). See the Note below for more information about the differences between the modes.</li>
+        /// <li><b>flags</b> :  [in] Combination of describing font style.</li>
+        /// <li><b>orientation</b> :  [in] Text's horizontal inclination to X axis, the unit of measurement is 0.1 degrees. It means that orientation=450 stands for inclination equal to 45 degrees.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="name">[in] Font name in the system or the name of the resource containing the font or the path to font file on the disk.</param>
-        /// <param name="size">[in] The font size that can be set using positive and negative values. In case of positive values, the size of a displayed text does not depend on the operating system's font size settings. In case of negative values, the value is set in tenths of a point and the text size depends on the operating system settings ("standard scale" or "large scale"). See the Note below for more information about the differences between the modes.</param>
-        /// <param name="flags">[in] Combination of describing font style.</param>
-        /// <param name="orientation">[in] Text's horizontal inclination to X axis, the unit of measurement is 0.1 degrees. It means that orientation=450 stands for inclination equal to 45 degrees.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/textsetfont")]
         public void Handle_TextSetFont_1_Default(HttpListenerContext context)
         {
@@ -9431,11 +10643,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectDescription
-        /// Description: Returns the object description.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectdescription.html
+        /// <b>Function:</b> ObjectDescription<br>
+        /// <b>Description:</b> Returns the object description.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectdescription.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Object name.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Object name.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectdescription")]
         public void Handle_ObjectDescription_1(HttpListenerContext context)
         {
@@ -9444,11 +10659,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectDescription
-        /// Description: Returns the object description.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectdescription.html
+        /// <b>Function:</b> ObjectDescription<br>
+        /// <b>Description:</b> Returns the object description.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectdescription.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Object name.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Object name.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectdescription")]
         public void Handle_ObjectDescription_1_Default(HttpListenerContext context)
         {
@@ -9476,12 +10694,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectGet
-        /// Description: Returns the value of the specified object property.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectget.html
+        /// <b>Function:</b> ObjectGet<br>
+        /// <b>Description:</b> Returns the value of the specified object property.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectget.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Object name.</li>
+        /// <li><b>index</b> :  [in] Object property index. It can be any of the enumeration values.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Object name.</param>
-        /// <param name="index">[in] Object property index. It can be any of the enumeration values.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectget")]
         public void Handle_ObjectGet_1(HttpListenerContext context)
         {
@@ -9490,12 +10711,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectGet
-        /// Description: Returns the value of the specified object property.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectget.html
+        /// <b>Function:</b> ObjectGet<br>
+        /// <b>Description:</b> Returns the value of the specified object property.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectget.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Object name.</li>
+        /// <li><b>index</b> :  [in] Object property index. It can be any of the enumeration values.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Object name.</param>
-        /// <param name="index">[in] Object property index. It can be any of the enumeration values.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectget")]
         public void Handle_ObjectGet_1_Default(HttpListenerContext context)
         {
@@ -9524,12 +10748,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectGetFiboDescription
-        /// Description: Returns the level description of a Fibonacci object.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetfibodescription.html
+        /// <b>Function:</b> ObjectGetFiboDescription<br>
+        /// <b>Description:</b> Returns the level description of a Fibonacci object.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetfibodescription.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Fibonacci object name.</li>
+        /// <li><b>index</b> :  [in] Index of the Fibonacci level (0-31).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Fibonacci object name.</param>
-        /// <param name="index">[in] Index of the Fibonacci level (0-31).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectgetfibodescription")]
         public void Handle_ObjectGetFiboDescription_1(HttpListenerContext context)
         {
@@ -9538,12 +10765,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectGetFiboDescription
-        /// Description: Returns the level description of a Fibonacci object.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetfibodescription.html
+        /// <b>Function:</b> ObjectGetFiboDescription<br>
+        /// <b>Description:</b> Returns the level description of a Fibonacci object.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetfibodescription.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Fibonacci object name.</li>
+        /// <li><b>index</b> :  [in] Index of the Fibonacci level (0-31).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Fibonacci object name.</param>
-        /// <param name="index">[in] Index of the Fibonacci level (0-31).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectgetfibodescription")]
         public void Handle_ObjectGetFiboDescription_1_Default(HttpListenerContext context)
         {
@@ -9572,12 +10802,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectGetShiftByValue
-        /// Description: The function calculates and returns bar index (shift related to the current bar) for the given price.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetshiftbyvalue.html
+        /// <b>Function:</b> ObjectGetShiftByValue<br>
+        /// <b>Description:</b> The function calculates and returns bar index (shift related to the current bar) for the given price.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetshiftbyvalue.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Object name.</li>
+        /// <li><b>value</b> :  [in] Price value.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Object name.</param>
-        /// <param name="value">[in] Price value.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectgetshiftbyvalue")]
         public void Handle_ObjectGetShiftByValue_1(HttpListenerContext context)
         {
@@ -9586,12 +10819,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectGetShiftByValue
-        /// Description: The function calculates and returns bar index (shift related to the current bar) for the given price.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetshiftbyvalue.html
+        /// <b>Function:</b> ObjectGetShiftByValue<br>
+        /// <b>Description:</b> The function calculates and returns bar index (shift related to the current bar) for the given price.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetshiftbyvalue.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Object name.</li>
+        /// <li><b>value</b> :  [in] Price value.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Object name.</param>
-        /// <param name="value">[in] Price value.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectgetshiftbyvalue")]
         public void Handle_ObjectGetShiftByValue_1_Default(HttpListenerContext context)
         {
@@ -9620,12 +10856,15 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectGetValueByShift
-        /// Description: The function calculates and returns the price value for the specified bar (shift related to the current bar).
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetvaluebyshift.html
+        /// <b>Function:</b> ObjectGetValueByShift<br>
+        /// <b>Description:</b> The function calculates and returns the price value for the specified bar (shift related to the current bar).<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetvaluebyshift.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Object name.</li>
+        /// <li><b>shift</b> :  [in] Bar index.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Object name.</param>
-        /// <param name="shift">[in] Bar index.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectgetvaluebyshift")]
         public void Handle_ObjectGetValueByShift_1(HttpListenerContext context)
         {
@@ -9634,12 +10873,15 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectGetValueByShift
-        /// Description: The function calculates and returns the price value for the specified bar (shift related to the current bar).
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectgetvaluebyshift.html
+        /// <b>Function:</b> ObjectGetValueByShift<br>
+        /// <b>Description:</b> The function calculates and returns the price value for the specified bar (shift related to the current bar).<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectgetvaluebyshift.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Object name.</li>
+        /// <li><b>shift</b> :  [in] Bar index.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Object name.</param>
-        /// <param name="shift">[in] Bar index.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectgetvaluebyshift")]
         public void Handle_ObjectGetValueByShift_1_Default(HttpListenerContext context)
         {
@@ -9668,13 +10910,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectSet
-        /// Description: Changes the value of the specified object property.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectset.html
+        /// <b>Function:</b> ObjectSet<br>
+        /// <b>Description:</b> Changes the value of the specified object property.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectset.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Object name.</li>
+        /// <li><b>index</b> :  [in] Object property index. It can be any of enumeration values.</li>
+        /// <li><b>value</b> :  [in] New value of the given property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Object name.</param>
-        /// <param name="index">[in] Object property index. It can be any of enumeration values.</param>
-        /// <param name="value">[in] New value of the given property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectset")]
         public void Handle_ObjectSet_1(HttpListenerContext context)
         {
@@ -9683,13 +10928,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectSet
-        /// Description: Changes the value of the specified object property.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectset.html
+        /// <b>Function:</b> ObjectSet<br>
+        /// <b>Description:</b> Changes the value of the specified object property.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectset.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Object name.</li>
+        /// <li><b>index</b> :  [in] Object property index. It can be any of enumeration values.</li>
+        /// <li><b>value</b> :  [in] New value of the given property.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Object name.</param>
-        /// <param name="index">[in] Object property index. It can be any of enumeration values.</param>
-        /// <param name="value">[in] New value of the given property.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectset")]
         public void Handle_ObjectSet_1_Default(HttpListenerContext context)
         {
@@ -9719,13 +10967,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectSetFiboDescription
-        /// Description: The function sets a new description to a level of a Fibonacci object.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetfibodescription.html
+        /// <b>Function:</b> ObjectSetFiboDescription<br>
+        /// <b>Description:</b> The function sets a new description to a level of a Fibonacci object.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetfibodescription.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Object name.</li>
+        /// <li><b>index</b> :  [in] Index of the Fibonacci level (0-31).</li>
+        /// <li><b>text</b> :  [in] New description of the level.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Object name.</param>
-        /// <param name="index">[in] Index of the Fibonacci level (0-31).</param>
-        /// <param name="text">[in] New description of the level.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectsetfibodescription")]
         public void Handle_ObjectSetFiboDescription_1(HttpListenerContext context)
         {
@@ -9734,13 +10985,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectSetFiboDescription
-        /// Description: The function sets a new description to a level of a Fibonacci object.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsetfibodescription.html
+        /// <b>Function:</b> ObjectSetFiboDescription<br>
+        /// <b>Description:</b> The function sets a new description to a level of a Fibonacci object.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsetfibodescription.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Object name.</li>
+        /// <li><b>index</b> :  [in] Index of the Fibonacci level (0-31).</li>
+        /// <li><b>text</b> :  [in] New description of the level.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Object name.</param>
-        /// <param name="index">[in] Index of the Fibonacci level (0-31).</param>
-        /// <param name="text">[in] New description of the level.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectsetfibodescription")]
         public void Handle_ObjectSetFiboDescription_1_Default(HttpListenerContext context)
         {
@@ -9770,15 +11024,18 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectSetText
-        /// Description: The function c
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsettext.html
+        /// <b>Function:</b> ObjectSetText<br>
+        /// <b>Description:</b> The function c<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsettext.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Object name.</li>
+        /// <li><b>text</b> :  [in] A text describing the object.</li>
+        /// <li><b>font_size</b> :  [in] Font size in points.</li>
+        /// <li><b>font_name</b> :  [in] Font name.</li>
+        /// <li><b>text_color</b> :  [in] Font color.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Object name.</param>
-        /// <param name="text">[in] A text describing the object.</param>
-        /// <param name="font_size">[in] Font size in points.</param>
-        /// <param name="font_name">[in] Font name.</param>
-        /// <param name="text_color">[in] Font color.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objectsettext")]
         public void Handle_ObjectSetText_1(HttpListenerContext context)
         {
@@ -9787,15 +11044,18 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectSetText
-        /// Description: The function c
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objectsettext.html
+        /// <b>Function:</b> ObjectSetText<br>
+        /// <b>Description:</b> The function c<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objectsettext.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Object name.</li>
+        /// <li><b>text</b> :  [in] A text describing the object.</li>
+        /// <li><b>font_size</b> :  [in] Font size in points.</li>
+        /// <li><b>font_name</b> :  [in] Font name.</li>
+        /// <li><b>text_color</b> :  [in] Font color.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Object name.</param>
-        /// <param name="text">[in] A text describing the object.</param>
-        /// <param name="font_size">[in] Font size in points.</param>
-        /// <param name="font_name">[in] Font name.</param>
-        /// <param name="text_color">[in] Font color.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objectsettext")]
         public void Handle_ObjectSetText_1_Default(HttpListenerContext context)
         {
@@ -9827,11 +11087,14 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: ObjectType
-        /// Description: The function returns the object type value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objecttype.html
+        /// <b>Function:</b> ObjectType<br>
+        /// <b>Description:</b> The function returns the object type value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objecttype.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Object name.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Object name.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/objecttype")]
         public void Handle_ObjectType_1(HttpListenerContext context)
         {
@@ -9840,11 +11103,14 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: ObjectType
-        /// Description: The function returns the object type value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/objects/objecttype.html
+        /// <b>Function:</b> ObjectType<br>
+        /// <b>Description:</b> The function returns the object type value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/objects/objecttype.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>object_name</b> :  [in] Object name.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="object_name">[in] Object name.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/objecttype")]
         public void Handle_ObjectType_1_Default(HttpListenerContext context)
         {
@@ -9872,13 +11138,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iAC
-        /// Description: Calculates the Bill Williams' Accelerator/Decelerator oscillator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iac.html
+        /// <b>Function:</b> iAC<br>
+        /// <b>Description:</b> Calculates the Bill Williams' Accelerator/Decelerator oscillator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iac.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/iac")]
         public void Handle_iAC_1(HttpListenerContext context)
         {
@@ -9887,13 +11156,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iAC
-        /// Description: Calculates the Bill Williams' Accelerator/Decelerator oscillator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iac.html
+        /// <b>Function:</b> iAC<br>
+        /// <b>Description:</b> Calculates the Bill Williams' Accelerator/Decelerator oscillator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iac.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/iac")]
         public void Handle_iAC_1_Default(HttpListenerContext context)
         {
@@ -9923,13 +11195,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iAD
-        /// Description: Calculates the Accumulation/Distribution indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iad.html
+        /// <b>Function:</b> iAD<br>
+        /// <b>Description:</b> Calculates the Accumulation/Distribution indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iad.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/iad")]
         public void Handle_iAD_1(HttpListenerContext context)
         {
@@ -9938,13 +11213,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iAD
-        /// Description: Calculates the Accumulation/Distribution indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iad.html
+        /// <b>Function:</b> iAD<br>
+        /// <b>Description:</b> Calculates the Accumulation/Distribution indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iad.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/iad")]
         public void Handle_iAD_1_Default(HttpListenerContext context)
         {
@@ -9974,16 +11252,19 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iADX
-        /// Description: Calculates the Average Directional Movement Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iadx.html
+        /// <b>Function:</b> iADX<br>
+        /// <b>Description:</b> Calculates the Average Directional Movement Index indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iadx.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period for calculation.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>mode</b> :  [in] Indicator line index. It can be any of the enumeration value. (0 - MODE_MAIN, 1 - MODE_PLUSDI, 2 - MODE_MINUSDI).</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period for calculation.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="mode">[in] Indicator line index. It can be any of the enumeration value. (0 - MODE_MAIN, 1 - MODE_PLUSDI, 2 - MODE_MINUSDI).</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/iadx")]
         public void Handle_iADX_1(HttpListenerContext context)
         {
@@ -9992,16 +11273,19 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iADX
-        /// Description: Calculates the Average Directional Movement Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iadx.html
+        /// <b>Function:</b> iADX<br>
+        /// <b>Description:</b> Calculates the Average Directional Movement Index indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iadx.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period for calculation.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>mode</b> :  [in] Indicator line index. It can be any of the enumeration value. (0 - MODE_MAIN, 1 - MODE_PLUSDI, 2 - MODE_MINUSDI).</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period for calculation.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="mode">[in] Indicator line index. It can be any of the enumeration value. (0 - MODE_MAIN, 1 - MODE_PLUSDI, 2 - MODE_MINUSDI).</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/iadx")]
         public void Handle_iADX_1_Default(HttpListenerContext context)
         {
@@ -10034,22 +11318,25 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iAlligator
-        /// Description: Calculates the Alligator indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ialligator.html
+        /// <b>Function:</b> iAlligator<br>
+        /// <b>Description:</b> Calculates the Alligator indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ialligator.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>jaw_period</b> :  [in] Blue line averaging period (Alligator's Jaw).</li>
+        /// <li><b>jaw_shift</b> :  [in] Blue line shift relative to the chart.</li>
+        /// <li><b>teeth_period</b> :  [in] Red line averaging period (Alligator's Teeth).</li>
+        /// <li><b>teeth_shift</b> :  [in] Red line shift relative to the chart.</li>
+        /// <li><b>lips_period</b> :  [in] Green line averaging period (Alligator's Lips).</li>
+        /// <li><b>lips_shift</b> :  [in] Green line shift relative to the chart.</li>
+        /// <li><b>ma_method</b> :  [in] MA method. It can be any of Moving Average methods. It can be any of enumeration values.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>mode</b> :  [in] Data source, identifier of the . It can be any of the following values:</li>
+        /// <li><b>shift</b> :  MODE_GATORJAW - Gator Jaw (blue) balance line,MODE_GATORTEETH - Gator Teeth (red) balance line,MODE_GATORLIPS - Gator Lips (green) balance line.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="jaw_period">[in] Blue line averaging period (Alligator's Jaw).</param>
-        /// <param name="jaw_shift">[in] Blue line shift relative to the chart.</param>
-        /// <param name="teeth_period">[in] Red line averaging period (Alligator's Teeth).</param>
-        /// <param name="teeth_shift">[in] Red line shift relative to the chart.</param>
-        /// <param name="lips_period">[in] Green line averaging period (Alligator's Lips).</param>
-        /// <param name="lips_shift">[in] Green line shift relative to the chart.</param>
-        /// <param name="ma_method">[in] MA method. It can be any of Moving Average methods. It can be any of enumeration values.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="mode">[in] Data source, identifier of the . It can be any of the following values:</param>
-        /// <param name="shift">MODE_GATORJAW - Gator Jaw (blue) balance line,MODE_GATORTEETH - Gator Teeth (red) balance line,MODE_GATORLIPS - Gator Lips (green) balance line.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ialligator")]
         public void Handle_iAlligator_1(HttpListenerContext context)
         {
@@ -10058,22 +11345,25 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iAlligator
-        /// Description: Calculates the Alligator indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ialligator.html
+        /// <b>Function:</b> iAlligator<br>
+        /// <b>Description:</b> Calculates the Alligator indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ialligator.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>jaw_period</b> :  [in] Blue line averaging period (Alligator's Jaw).</li>
+        /// <li><b>jaw_shift</b> :  [in] Blue line shift relative to the chart.</li>
+        /// <li><b>teeth_period</b> :  [in] Red line averaging period (Alligator's Teeth).</li>
+        /// <li><b>teeth_shift</b> :  [in] Red line shift relative to the chart.</li>
+        /// <li><b>lips_period</b> :  [in] Green line averaging period (Alligator's Lips).</li>
+        /// <li><b>lips_shift</b> :  [in] Green line shift relative to the chart.</li>
+        /// <li><b>ma_method</b> :  [in] MA method. It can be any of Moving Average methods. It can be any of enumeration values.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>mode</b> :  [in] Data source, identifier of the . It can be any of the following values:</li>
+        /// <li><b>shift</b> :  MODE_GATORJAW - Gator Jaw (blue) balance line,MODE_GATORTEETH - Gator Teeth (red) balance line,MODE_GATORLIPS - Gator Lips (green) balance line.</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="jaw_period">[in] Blue line averaging period (Alligator's Jaw).</param>
-        /// <param name="jaw_shift">[in] Blue line shift relative to the chart.</param>
-        /// <param name="teeth_period">[in] Red line averaging period (Alligator's Teeth).</param>
-        /// <param name="teeth_shift">[in] Red line shift relative to the chart.</param>
-        /// <param name="lips_period">[in] Green line averaging period (Alligator's Lips).</param>
-        /// <param name="lips_shift">[in] Green line shift relative to the chart.</param>
-        /// <param name="ma_method">[in] MA method. It can be any of Moving Average methods. It can be any of enumeration values.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="mode">[in] Data source, identifier of the . It can be any of the following values:</param>
-        /// <param name="shift">MODE_GATORJAW - Gator Jaw (blue) balance line,MODE_GATORTEETH - Gator Teeth (red) balance line,MODE_GATORLIPS - Gator Lips (green) balance line.</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ialligator")]
         public void Handle_iAlligator_1_Default(HttpListenerContext context)
         {
@@ -10112,13 +11402,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iAO
-        /// Description: Calculates the Awesome oscillator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iao.html
+        /// <b>Function:</b> iAO<br>
+        /// <b>Description:</b> Calculates the Awesome oscillator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iao.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/iao")]
         public void Handle_iAO_1(HttpListenerContext context)
         {
@@ -10127,13 +11420,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iAO
-        /// Description: Calculates the Awesome oscillator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iao.html
+        /// <b>Function:</b> iAO<br>
+        /// <b>Description:</b> Calculates the Awesome oscillator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iao.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/iao")]
         public void Handle_iAO_1_Default(HttpListenerContext context)
         {
@@ -10163,14 +11459,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iATR
-        /// Description: Calculates the Average True Range indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iatr.html
+        /// <b>Function:</b> iATR<br>
+        /// <b>Description:</b> Calculates the Average True Range indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iatr.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/iatr")]
         public void Handle_iATR_1(HttpListenerContext context)
         {
@@ -10179,14 +11478,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iATR
-        /// Description: Calculates the Average True Range indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iatr.html
+        /// <b>Function:</b> iATR<br>
+        /// <b>Description:</b> Calculates the Average True Range indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iatr.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/iatr")]
         public void Handle_iATR_1_Default(HttpListenerContext context)
         {
@@ -10217,15 +11519,18 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iBearsPower
-        /// Description: Calculates the Bears Power indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ibearspower.html
+        /// <b>Function:</b> iBearsPower<br>
+        /// <b>Description:</b> Calculates the Bears Power indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ibearspower.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ibearspower")]
         public void Handle_iBearsPower_1(HttpListenerContext context)
         {
@@ -10234,15 +11539,18 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iBearsPower
-        /// Description: Calculates the Bears Power indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ibearspower.html
+        /// <b>Function:</b> iBearsPower<br>
+        /// <b>Description:</b> Calculates the Bears Power indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ibearspower.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ibearspower")]
         public void Handle_iBearsPower_1_Default(HttpListenerContext context)
         {
@@ -10274,18 +11582,21 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iBands
-        /// Description: Calculates the Bollinger Bands indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ibands.html
+        /// <b>Function:</b> iBands<br>
+        /// <b>Description:</b> Calculates the Bollinger Bands indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ibands.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period to calculate the main line.</li>
+        /// <li><b>deviation</b> :  [in] Number of standard deviations from the main line.</li>
+        /// <li><b>bands_shift</b> :  [in] The indicator shift relative to the chart.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>mode</b> :  [in] Indicator line index. It can be any of the enumeration value (0 - MODE_MAIN, 1 - MODE_UPPER, 2 - MODE_LOWER).</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period to calculate the main line.</param>
-        /// <param name="deviation">[in] Number of standard deviations from the main line.</param>
-        /// <param name="bands_shift">[in] The indicator shift relative to the chart.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="mode">[in] Indicator line index. It can be any of the enumeration value (0 - MODE_MAIN, 1 - MODE_UPPER, 2 - MODE_LOWER).</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ibands")]
         public void Handle_iBands_1(HttpListenerContext context)
         {
@@ -10294,18 +11605,21 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iBands
-        /// Description: Calculates the Bollinger Bands indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ibands.html
+        /// <b>Function:</b> iBands<br>
+        /// <b>Description:</b> Calculates the Bollinger Bands indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ibands.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period to calculate the main line.</li>
+        /// <li><b>deviation</b> :  [in] Number of standard deviations from the main line.</li>
+        /// <li><b>bands_shift</b> :  [in] The indicator shift relative to the chart.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>mode</b> :  [in] Indicator line index. It can be any of the enumeration value (0 - MODE_MAIN, 1 - MODE_UPPER, 2 - MODE_LOWER).</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period to calculate the main line.</param>
-        /// <param name="deviation">[in] Number of standard deviations from the main line.</param>
-        /// <param name="bands_shift">[in] The indicator shift relative to the chart.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="mode">[in] Indicator line index. It can be any of the enumeration value (0 - MODE_MAIN, 1 - MODE_UPPER, 2 - MODE_LOWER).</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ibands")]
         public void Handle_iBands_1_Default(HttpListenerContext context)
         {
@@ -10340,15 +11654,18 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iBullsPower
-        /// Description: Calculates the Bulls Power indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ibullspower.html
+        /// <b>Function:</b> iBullsPower<br>
+        /// <b>Description:</b> Calculates the Bulls Power indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ibullspower.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period for calculation.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period for calculation.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ibullspower")]
         public void Handle_iBullsPower_1(HttpListenerContext context)
         {
@@ -10357,15 +11674,18 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iBullsPower
-        /// Description: Calculates the Bulls Power indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ibullspower.html
+        /// <b>Function:</b> iBullsPower<br>
+        /// <b>Description:</b> Calculates the Bulls Power indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ibullspower.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period for calculation.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period for calculation.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ibullspower")]
         public void Handle_iBullsPower_1_Default(HttpListenerContext context)
         {
@@ -10397,15 +11717,18 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iCCI
-        /// Description: Calculates the Commodity Channel Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/icci.html
+        /// <b>Function:</b> iCCI<br>
+        /// <b>Description:</b> Calculates the Commodity Channel Index indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/icci.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period for calculation.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period for calculation.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/icci")]
         public void Handle_iCCI_1(HttpListenerContext context)
         {
@@ -10414,15 +11737,18 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iCCI
-        /// Description: Calculates the Commodity Channel Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/icci.html
+        /// <b>Function:</b> iCCI<br>
+        /// <b>Description:</b> Calculates the Commodity Channel Index indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/icci.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period for calculation.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period for calculation.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/icci")]
         public void Handle_iCCI_1_Default(HttpListenerContext context)
         {
@@ -10454,14 +11780,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iDeMarker
-        /// Description: Calculates the DeMarker indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/idemarker.html
+        /// <b>Function:</b> iDeMarker<br>
+        /// <b>Description:</b> Calculates the DeMarker indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/idemarker.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period for calculation.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period for calculation.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/idemarker")]
         public void Handle_iDeMarker_1(HttpListenerContext context)
         {
@@ -10470,14 +11799,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iDeMarker
-        /// Description: Calculates the DeMarker indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/idemarker.html
+        /// <b>Function:</b> iDeMarker<br>
+        /// <b>Description:</b> Calculates the DeMarker indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/idemarker.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period for calculation.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period for calculation.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/idemarker")]
         public void Handle_iDeMarker_1_Default(HttpListenerContext context)
         {
@@ -10508,19 +11840,22 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iEnvelopes
-        /// Description: Calculates the Envelopes indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ienvelopes.html
+        /// <b>Function:</b> iEnvelopes<br>
+        /// <b>Description:</b> Calculates the Envelopes indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ienvelopes.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>ma_period</b> :  [in] Averaging period for calculation of the main line.</li>
+        /// <li><b>ma_method</b> :  [in] Moving Average method. It can be any of enumeration values.</li>
+        /// <li><b>ma_shift</b> :  [in] MA shift. Indicator line offset relate to the chart by timeframe.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>deviation</b> :  [in] Percent deviation from the main line.</li>
+        /// <li><b>mode</b> :  [in] Indicator line index. It can be any of enumeration value (0 - MODE_MAIN, 1 - MODE_UPPER, 2 - MODE_LOWER).</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="ma_period">[in] Averaging period for calculation of the main line.</param>
-        /// <param name="ma_method">[in] Moving Average method. It can be any of enumeration values.</param>
-        /// <param name="ma_shift">[in] MA shift. Indicator line offset relate to the chart by timeframe.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="deviation">[in] Percent deviation from the main line.</param>
-        /// <param name="mode">[in] Indicator line index. It can be any of enumeration value (0 - MODE_MAIN, 1 - MODE_UPPER, 2 - MODE_LOWER).</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ienvelopes")]
         public void Handle_iEnvelopes_1(HttpListenerContext context)
         {
@@ -10529,19 +11864,22 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iEnvelopes
-        /// Description: Calculates the Envelopes indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ienvelopes.html
+        /// <b>Function:</b> iEnvelopes<br>
+        /// <b>Description:</b> Calculates the Envelopes indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ienvelopes.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>ma_period</b> :  [in] Averaging period for calculation of the main line.</li>
+        /// <li><b>ma_method</b> :  [in] Moving Average method. It can be any of enumeration values.</li>
+        /// <li><b>ma_shift</b> :  [in] MA shift. Indicator line offset relate to the chart by timeframe.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>deviation</b> :  [in] Percent deviation from the main line.</li>
+        /// <li><b>mode</b> :  [in] Indicator line index. It can be any of enumeration value (0 - MODE_MAIN, 1 - MODE_UPPER, 2 - MODE_LOWER).</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="ma_period">[in] Averaging period for calculation of the main line.</param>
-        /// <param name="ma_method">[in] Moving Average method. It can be any of enumeration values.</param>
-        /// <param name="ma_shift">[in] MA shift. Indicator line offset relate to the chart by timeframe.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="deviation">[in] Percent deviation from the main line.</param>
-        /// <param name="mode">[in] Indicator line index. It can be any of enumeration value (0 - MODE_MAIN, 1 - MODE_UPPER, 2 - MODE_LOWER).</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ienvelopes")]
         public void Handle_iEnvelopes_1_Default(HttpListenerContext context)
         {
@@ -10577,16 +11915,19 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iForce
-        /// Description: Calculates the Force Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iforce.html
+        /// <b>Function:</b> iForce<br>
+        /// <b>Description:</b> Calculates the Force Index indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iforce.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period for calculation.</li>
+        /// <li><b>ma_method</b> :  [in] Moving Average method. It can be any of enumeration values.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period for calculation.</param>
-        /// <param name="ma_method">[in] Moving Average method. It can be any of enumeration values.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/iforce")]
         public void Handle_iForce_1(HttpListenerContext context)
         {
@@ -10595,16 +11936,19 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iForce
-        /// Description: Calculates the Force Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iforce.html
+        /// <b>Function:</b> iForce<br>
+        /// <b>Description:</b> Calculates the Force Index indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iforce.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period for calculation.</li>
+        /// <li><b>ma_method</b> :  [in] Moving Average method. It can be any of enumeration values.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period for calculation.</param>
-        /// <param name="ma_method">[in] Moving Average method. It can be any of enumeration values.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/iforce")]
         public void Handle_iForce_1_Default(HttpListenerContext context)
         {
@@ -10637,14 +11981,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iFractals
-        /// Description: Calculates the Fractals indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ifractals.html
+        /// <b>Function:</b> iFractals<br>
+        /// <b>Description:</b> Calculates the Fractals indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ifractals.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>mode</b> :  [in] Indicator line index. It can be any of the enumeration value.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="mode">[in] Indicator line index. It can be any of the enumeration value.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ifractals")]
         public void Handle_iFractals_1(HttpListenerContext context)
         {
@@ -10653,14 +12000,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iFractals
-        /// Description: Calculates the Fractals indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ifractals.html
+        /// <b>Function:</b> iFractals<br>
+        /// <b>Description:</b> Calculates the Fractals indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ifractals.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>mode</b> :  [in] Indicator line index. It can be any of the enumeration value.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="mode">[in] Indicator line index. It can be any of the enumeration value.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ifractals")]
         public void Handle_iFractals_1_Default(HttpListenerContext context)
         {
@@ -10691,22 +12041,25 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iGator
-        /// Description: Calculates the Gator oscillator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/igator.html
+        /// <b>Function:</b> iGator<br>
+        /// <b>Description:</b> Calculates the Gator oscillator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/igator.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>jaw_period</b> :  [in] Blue line averaging period (Alligator's Jaw).</li>
+        /// <li><b>jaw_shift</b> :  [in] Blue line shift relative to the chart.</li>
+        /// <li><b>teeth_period</b> :  [in] Red line averaging period (Alligator's Teeth).</li>
+        /// <li><b>teeth_shift</b> :  [in] Red line shift relative to the chart.</li>
+        /// <li><b>lips_period</b> :  [in] Green line averaging period (Alligator's Lips).</li>
+        /// <li><b>lips_shift</b> :  [in] Green line shift relative to the chart.</li>
+        /// <li><b>ma_method</b> :  [in] MA method. It can be any of enumeration value.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>mode</b> :  [in] Indicator line index. It can be any of enumeration value.</li>
+        /// <li><b>shift</b> :  MODE_GATORJAW - blue line (Jaw line),MODE_GATORTEETH - red line (Teeth line),MODE_GATORLIPS - green line (Lips line).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="jaw_period">[in] Blue line averaging period (Alligator's Jaw).</param>
-        /// <param name="jaw_shift">[in] Blue line shift relative to the chart.</param>
-        /// <param name="teeth_period">[in] Red line averaging period (Alligator's Teeth).</param>
-        /// <param name="teeth_shift">[in] Red line shift relative to the chart.</param>
-        /// <param name="lips_period">[in] Green line averaging period (Alligator's Lips).</param>
-        /// <param name="lips_shift">[in] Green line shift relative to the chart.</param>
-        /// <param name="ma_method">[in] MA method. It can be any of enumeration value.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="mode">[in] Indicator line index. It can be any of enumeration value.</param>
-        /// <param name="shift">MODE_GATORJAW - blue line (Jaw line),MODE_GATORTEETH - red line (Teeth line),MODE_GATORLIPS - green line (Lips line).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/igator")]
         public void Handle_iGator_1(HttpListenerContext context)
         {
@@ -10715,22 +12068,25 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iGator
-        /// Description: Calculates the Gator oscillator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/igator.html
+        /// <b>Function:</b> iGator<br>
+        /// <b>Description:</b> Calculates the Gator oscillator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/igator.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>jaw_period</b> :  [in] Blue line averaging period (Alligator's Jaw).</li>
+        /// <li><b>jaw_shift</b> :  [in] Blue line shift relative to the chart.</li>
+        /// <li><b>teeth_period</b> :  [in] Red line averaging period (Alligator's Teeth).</li>
+        /// <li><b>teeth_shift</b> :  [in] Red line shift relative to the chart.</li>
+        /// <li><b>lips_period</b> :  [in] Green line averaging period (Alligator's Lips).</li>
+        /// <li><b>lips_shift</b> :  [in] Green line shift relative to the chart.</li>
+        /// <li><b>ma_method</b> :  [in] MA method. It can be any of enumeration value.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>mode</b> :  [in] Indicator line index. It can be any of enumeration value.</li>
+        /// <li><b>shift</b> :  MODE_GATORJAW - blue line (Jaw line),MODE_GATORTEETH - red line (Teeth line),MODE_GATORLIPS - green line (Lips line).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="jaw_period">[in] Blue line averaging period (Alligator's Jaw).</param>
-        /// <param name="jaw_shift">[in] Blue line shift relative to the chart.</param>
-        /// <param name="teeth_period">[in] Red line averaging period (Alligator's Teeth).</param>
-        /// <param name="teeth_shift">[in] Red line shift relative to the chart.</param>
-        /// <param name="lips_period">[in] Green line averaging period (Alligator's Lips).</param>
-        /// <param name="lips_shift">[in] Green line shift relative to the chart.</param>
-        /// <param name="ma_method">[in] MA method. It can be any of enumeration value.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="mode">[in] Indicator line index. It can be any of enumeration value.</param>
-        /// <param name="shift">MODE_GATORJAW - blue line (Jaw line),MODE_GATORTEETH - red line (Teeth line),MODE_GATORLIPS - green line (Lips line).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/igator")]
         public void Handle_iGator_1_Default(HttpListenerContext context)
         {
@@ -10769,17 +12125,20 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iIchimoku
-        /// Description: Calculates the Ichimoku Kinko Hyo indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iichimoku.html
+        /// <b>Function:</b> iIchimoku<br>
+        /// <b>Description:</b> Calculates the Ichimoku Kinko Hyo indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iichimoku.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>tenkan_sen</b> :  [in] Tenkan Sen averaging period.</li>
+        /// <li><b>kijun_sen</b> :  [in] Kijun Sen averaging period.</li>
+        /// <li><b>senkou_span_b</b> :  [in] Senkou SpanB averaging period.</li>
+        /// <li><b>mode</b> :  [in] Source of data. It can be one of the enumeration (1 - MODE_TENKANSEN, 2 - MODE_KIJUNSEN, 3 - MODE_SENKOUSPANA, 4 - MODE_SENKOUSPANB, 5 - MODE_CHIKOUSPAN).</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="tenkan_sen">[in] Tenkan Sen averaging period.</param>
-        /// <param name="kijun_sen">[in] Kijun Sen averaging period.</param>
-        /// <param name="senkou_span_b">[in] Senkou SpanB averaging period.</param>
-        /// <param name="mode">[in] Source of data. It can be one of the enumeration (1 - MODE_TENKANSEN, 2 - MODE_KIJUNSEN, 3 - MODE_SENKOUSPANA, 4 - MODE_SENKOUSPANB, 5 - MODE_CHIKOUSPAN).</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/iichimoku")]
         public void Handle_iIchimoku_1(HttpListenerContext context)
         {
@@ -10788,17 +12147,20 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iIchimoku
-        /// Description: Calculates the Ichimoku Kinko Hyo indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iichimoku.html
+        /// <b>Function:</b> iIchimoku<br>
+        /// <b>Description:</b> Calculates the Ichimoku Kinko Hyo indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iichimoku.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>tenkan_sen</b> :  [in] Tenkan Sen averaging period.</li>
+        /// <li><b>kijun_sen</b> :  [in] Kijun Sen averaging period.</li>
+        /// <li><b>senkou_span_b</b> :  [in] Senkou SpanB averaging period.</li>
+        /// <li><b>mode</b> :  [in] Source of data. It can be one of the enumeration (1 - MODE_TENKANSEN, 2 - MODE_KIJUNSEN, 3 - MODE_SENKOUSPANA, 4 - MODE_SENKOUSPANB, 5 - MODE_CHIKOUSPAN).</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="tenkan_sen">[in] Tenkan Sen averaging period.</param>
-        /// <param name="kijun_sen">[in] Kijun Sen averaging period.</param>
-        /// <param name="senkou_span_b">[in] Senkou SpanB averaging period.</param>
-        /// <param name="mode">[in] Source of data. It can be one of the enumeration (1 - MODE_TENKANSEN, 2 - MODE_KIJUNSEN, 3 - MODE_SENKOUSPANA, 4 - MODE_SENKOUSPANB, 5 - MODE_CHIKOUSPAN).</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/iichimoku")]
         public void Handle_iIchimoku_1_Default(HttpListenerContext context)
         {
@@ -10832,13 +12194,16 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iBWMFI
-        /// Description: Calculates the Market Facilitation Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ibwmfi.html
+        /// <b>Function:</b> iBWMFI<br>
+        /// <b>Description:</b> Calculates the Market Facilitation Index indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ibwmfi.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ibwmfi")]
         public void Handle_iBWMFI_1(HttpListenerContext context)
         {
@@ -10847,13 +12212,16 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iBWMFI
-        /// Description: Calculates the Market Facilitation Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ibwmfi.html
+        /// <b>Function:</b> iBWMFI<br>
+        /// <b>Description:</b> Calculates the Market Facilitation Index indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ibwmfi.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ibwmfi")]
         public void Handle_iBWMFI_1_Default(HttpListenerContext context)
         {
@@ -10883,15 +12251,18 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iMomentum
-        /// Description: Calculates the Momentum indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/imomentum.html
+        /// <b>Function:</b> iMomentum<br>
+        /// <b>Description:</b> Calculates the Momentum indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/imomentum.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period (amount of bars) for calculation of price changes.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period (amount of bars) for calculation of price changes.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/imomentum")]
         public void Handle_iMomentum_1(HttpListenerContext context)
         {
@@ -10900,15 +12271,18 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iMomentum
-        /// Description: Calculates the Momentum indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/imomentum.html
+        /// <b>Function:</b> iMomentum<br>
+        /// <b>Description:</b> Calculates the Momentum indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/imomentum.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period (amount of bars) for calculation of price changes.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period (amount of bars) for calculation of price changes.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/imomentum")]
         public void Handle_iMomentum_1_Default(HttpListenerContext context)
         {
@@ -10940,14 +12314,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iMFI
-        /// Description: Calculates the Money Flow Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/imfi.html
+        /// <b>Function:</b> iMFI<br>
+        /// <b>Description:</b> Calculates the Money Flow Index indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/imfi.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Period (amount of bars) for calculation of the indicator.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Period (amount of bars) for calculation of the indicator.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/imfi")]
         public void Handle_iMFI_1(HttpListenerContext context)
         {
@@ -10956,14 +12333,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iMFI
-        /// Description: Calculates the Money Flow Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/imfi.html
+        /// <b>Function:</b> iMFI<br>
+        /// <b>Description:</b> Calculates the Money Flow Index indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/imfi.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Period (amount of bars) for calculation of the indicator.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Period (amount of bars) for calculation of the indicator.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/imfi")]
         public void Handle_iMFI_1_Default(HttpListenerContext context)
         {
@@ -10994,17 +12374,20 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iMA
-        /// Description: Calculates the Moving Average indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ima.html
+        /// <b>Function:</b> iMA<br>
+        /// <b>Description:</b> Calculates the Moving Average indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ima.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>ma_period</b> :  [in] Averaging period for calculation.</li>
+        /// <li><b>ma_shift</b> :  [in] MA shift. Indicators line offset relate to the chart by timeframe.</li>
+        /// <li><b>ma_method</b> :  [in] Moving Average method. It can be any of enumeration values.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="ma_period">[in] Averaging period for calculation.</param>
-        /// <param name="ma_shift">[in] MA shift. Indicators line offset relate to the chart by timeframe.</param>
-        /// <param name="ma_method">[in] Moving Average method. It can be any of enumeration values.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/ima")]
         public void Handle_iMA_1(HttpListenerContext context)
         {
@@ -11013,17 +12396,20 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iMA
-        /// Description: Calculates the Moving Average indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/ima.html
+        /// <b>Function:</b> iMA<br>
+        /// <b>Description:</b> Calculates the Moving Average indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/ima.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>ma_period</b> :  [in] Averaging period for calculation.</li>
+        /// <li><b>ma_shift</b> :  [in] MA shift. Indicators line offset relate to the chart by timeframe.</li>
+        /// <li><b>ma_method</b> :  [in] Moving Average method. It can be any of enumeration values.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="ma_period">[in] Averaging period for calculation.</param>
-        /// <param name="ma_shift">[in] MA shift. Indicators line offset relate to the chart by timeframe.</param>
-        /// <param name="ma_method">[in] Moving Average method. It can be any of enumeration values.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/ima")]
         public void Handle_iMA_1_Default(HttpListenerContext context)
         {
@@ -11057,17 +12443,20 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iOsMA
-        /// Description: iOsMA
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iosma.html
+        /// <b>Function:</b> iOsMA<br>
+        /// <b>Description:</b> iOsMA<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iosma.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>fast_ema_period</b> :  [in] Fast EMA averaging period.</li>
+        /// <li><b>slow_ema_period</b> :  [in] Slow EMA averaging period.</li>
+        /// <li><b>signal_period</b> :  [in] Signal line averaging period.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="fast_ema_period">[in] Fast EMA averaging period.</param>
-        /// <param name="slow_ema_period">[in] Slow EMA averaging period.</param>
-        /// <param name="signal_period">[in] Signal line averaging period.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/iosma")]
         public void Handle_iOsMA_1(HttpListenerContext context)
         {
@@ -11076,17 +12465,20 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iOsMA
-        /// Description: iOsMA
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iosma.html
+        /// <b>Function:</b> iOsMA<br>
+        /// <b>Description:</b> iOsMA<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iosma.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>fast_ema_period</b> :  [in] Fast EMA averaging period.</li>
+        /// <li><b>slow_ema_period</b> :  [in] Slow EMA averaging period.</li>
+        /// <li><b>signal_period</b> :  [in] Signal line averaging period.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="fast_ema_period">[in] Fast EMA averaging period.</param>
-        /// <param name="slow_ema_period">[in] Slow EMA averaging period.</param>
-        /// <param name="signal_period">[in] Signal line averaging period.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/iosma")]
         public void Handle_iOsMA_1_Default(HttpListenerContext context)
         {
@@ -11120,18 +12512,21 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iMACD
-        /// Description: Calculates the Moving Averages Convergence/Divergence indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/imacd.html
+        /// <b>Function:</b> iMACD<br>
+        /// <b>Description:</b> Calculates the Moving Averages Convergence/Divergence indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/imacd.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>fast_ema_period</b> :  [in] Fast EMA averaging period.</li>
+        /// <li><b>slow_ema_period</b> :  [in] Slow EMA averaging period.</li>
+        /// <li><b>signal_period</b> :  [in] Signal line averaging period.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>mode</b> :  [in] Indicator line index. It can be one of the enumeration values (0-MODE_MAIN, 1-MODE_SIGNAL).</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="fast_ema_period">[in] Fast EMA averaging period.</param>
-        /// <param name="slow_ema_period">[in] Slow EMA averaging period.</param>
-        /// <param name="signal_period">[in] Signal line averaging period.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="mode">[in] Indicator line index. It can be one of the enumeration values (0-MODE_MAIN, 1-MODE_SIGNAL).</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/imacd")]
         public void Handle_iMACD_1(HttpListenerContext context)
         {
@@ -11140,18 +12535,21 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iMACD
-        /// Description: Calculates the Moving Averages Convergence/Divergence indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/imacd.html
+        /// <b>Function:</b> iMACD<br>
+        /// <b>Description:</b> Calculates the Moving Averages Convergence/Divergence indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/imacd.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>fast_ema_period</b> :  [in] Fast EMA averaging period.</li>
+        /// <li><b>slow_ema_period</b> :  [in] Slow EMA averaging period.</li>
+        /// <li><b>signal_period</b> :  [in] Signal line averaging period.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>mode</b> :  [in] Indicator line index. It can be one of the enumeration values (0-MODE_MAIN, 1-MODE_SIGNAL).</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="fast_ema_period">[in] Fast EMA averaging period.</param>
-        /// <param name="slow_ema_period">[in] Slow EMA averaging period.</param>
-        /// <param name="signal_period">[in] Signal line averaging period.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="mode">[in] Indicator line index. It can be one of the enumeration values (0-MODE_MAIN, 1-MODE_SIGNAL).</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/imacd")]
         public void Handle_iMACD_1_Default(HttpListenerContext context)
         {
@@ -11186,14 +12584,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iOBV
-        /// Description: Calculates the On Balance Volume indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iobv.html
+        /// <b>Function:</b> iOBV<br>
+        /// <b>Description:</b> Calculates the On Balance Volume indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iobv.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/iobv")]
         public void Handle_iOBV_1(HttpListenerContext context)
         {
@@ -11202,14 +12603,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iOBV
-        /// Description: Calculates the On Balance Volume indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iobv.html
+        /// <b>Function:</b> iOBV<br>
+        /// <b>Description:</b> Calculates the On Balance Volume indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iobv.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/iobv")]
         public void Handle_iOBV_1_Default(HttpListenerContext context)
         {
@@ -11240,15 +12644,18 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iSAR
-        /// Description: Calculates the Parabolic Stop and Reverse system indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/isar.html
+        /// <b>Function:</b> iSAR<br>
+        /// <b>Description:</b> Calculates the Parabolic Stop and Reverse system indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/isar.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>step</b> :  [in] The step of price increment, usually 0.02.</li>
+        /// <li><b>maximum</b> :  [in] The maximum step, usually 0.2.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="step">[in] The step of price increment, usually 0.02.</param>
-        /// <param name="maximum">[in] The maximum step, usually 0.2.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/isar")]
         public void Handle_iSAR_1(HttpListenerContext context)
         {
@@ -11257,15 +12664,18 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iSAR
-        /// Description: Calculates the Parabolic Stop and Reverse system indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/isar.html
+        /// <b>Function:</b> iSAR<br>
+        /// <b>Description:</b> Calculates the Parabolic Stop and Reverse system indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/isar.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>step</b> :  [in] The step of price increment, usually 0.02.</li>
+        /// <li><b>maximum</b> :  [in] The maximum step, usually 0.2.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="step">[in] The step of price increment, usually 0.02.</param>
-        /// <param name="maximum">[in] The maximum step, usually 0.2.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/isar")]
         public void Handle_iSAR_1_Default(HttpListenerContext context)
         {
@@ -11297,15 +12707,18 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iRSI
-        /// Description: Calculates the Relative Strength Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/irsi.html
+        /// <b>Function:</b> iRSI<br>
+        /// <b>Description:</b> Calculates the Relative Strength Index indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/irsi.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period for calculation.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period for calculation.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/irsi")]
         public void Handle_iRSI_1(HttpListenerContext context)
         {
@@ -11314,15 +12727,18 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iRSI
-        /// Description: Calculates the Relative Strength Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/irsi.html
+        /// <b>Function:</b> iRSI<br>
+        /// <b>Description:</b> Calculates the Relative Strength Index indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/irsi.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period for calculation.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period for calculation.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/irsi")]
         public void Handle_iRSI_1_Default(HttpListenerContext context)
         {
@@ -11354,15 +12770,18 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iRVI
-        /// Description: Calculates the Relative Vigor Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/irvi.html
+        /// <b>Function:</b> iRVI<br>
+        /// <b>Description:</b> Calculates the Relative Vigor Index indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/irvi.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period for calculation.</li>
+        /// <li><b>mode</b> :  [in] Indicator line index. It can be any of enumeration value.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period for calculation.</param>
-        /// <param name="mode">[in] Indicator line index. It can be any of enumeration value.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/irvi")]
         public void Handle_iRVI_1(HttpListenerContext context)
         {
@@ -11371,15 +12790,18 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iRVI
-        /// Description: Calculates the Relative Vigor Index indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/irvi.html
+        /// <b>Function:</b> iRVI<br>
+        /// <b>Description:</b> Calculates the Relative Vigor Index indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/irvi.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period for calculation.</li>
+        /// <li><b>mode</b> :  [in] Indicator line index. It can be any of enumeration value.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period for calculation.</param>
-        /// <param name="mode">[in] Indicator line index. It can be any of enumeration value.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/irvi")]
         public void Handle_iRVI_1_Default(HttpListenerContext context)
         {
@@ -11411,17 +12833,20 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iStdDev
-        /// Description: Calculates the Standard Deviation indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/istddev.html
+        /// <b>Function:</b> iStdDev<br>
+        /// <b>Description:</b> Calculates the Standard Deviation indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/istddev.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>ma_period</b> :  [in] Moving Average period.</li>
+        /// <li><b>ma_shift</b> :  [in] Moving Average shift.</li>
+        /// <li><b>ma_method</b> :  [in] Moving Average method. It can be any of enumeration values.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="ma_period">[in] Moving Average period.</param>
-        /// <param name="ma_shift">[in] Moving Average shift.</param>
-        /// <param name="ma_method">[in] Moving Average method. It can be any of enumeration values.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/istddev")]
         public void Handle_iStdDev_1(HttpListenerContext context)
         {
@@ -11430,17 +12855,20 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iStdDev
-        /// Description: Calculates the Standard Deviation indicator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/istddev.html
+        /// <b>Function:</b> iStdDev<br>
+        /// <b>Description:</b> Calculates the Standard Deviation indicator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/istddev.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>ma_period</b> :  [in] Moving Average period.</li>
+        /// <li><b>ma_shift</b> :  [in] Moving Average shift.</li>
+        /// <li><b>ma_method</b> :  [in] Moving Average method. It can be any of enumeration values.</li>
+        /// <li><b>applied_price</b> :  [in] Applied price. It can be any of enumeration values.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="ma_period">[in] Moving Average period.</param>
-        /// <param name="ma_shift">[in] Moving Average shift.</param>
-        /// <param name="ma_method">[in] Moving Average method. It can be any of enumeration values.</param>
-        /// <param name="applied_price">[in] Applied price. It can be any of enumeration values.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/istddev")]
         public void Handle_iStdDev_1_Default(HttpListenerContext context)
         {
@@ -11474,19 +12902,22 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iStochastic
-        /// Description: Calculates the Stochastic Oscillator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/istochastic.html
+        /// <b>Function:</b> iStochastic<br>
+        /// <b>Description:</b> Calculates the Stochastic Oscillator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/istochastic.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>Kperiod</b> :  [in] Period of the %K line.</li>
+        /// <li><b>Dperiod</b> :  [in] Period of the %D line.</li>
+        /// <li><b>slowing</b> :  [in] Slowing value.</li>
+        /// <li><b>method</b> :  [in] Moving Average method. It can be any of enumeration values.</li>
+        /// <li><b>price_field</b> :  [in] Price field parameter. Can be one of this values: 0 - Low/High or 1 - Close/Close.</li>
+        /// <li><b>mode</b> :  [in] Indicator line index. It can be any of the enumeration value (0 - MODE_MAIN, 1 - MODE_SIGNAL).</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="Kperiod">[in] Period of the %K line.</param>
-        /// <param name="Dperiod">[in] Period of the %D line.</param>
-        /// <param name="slowing">[in] Slowing value.</param>
-        /// <param name="method">[in] Moving Average method. It can be any of enumeration values.</param>
-        /// <param name="price_field">[in] Price field parameter. Can be one of this values: 0 - Low/High or 1 - Close/Close.</param>
-        /// <param name="mode">[in] Indicator line index. It can be any of the enumeration value (0 - MODE_MAIN, 1 - MODE_SIGNAL).</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/istochastic")]
         public void Handle_iStochastic_1(HttpListenerContext context)
         {
@@ -11495,19 +12926,22 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iStochastic
-        /// Description: Calculates the Stochastic Oscillator and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/istochastic.html
+        /// <b>Function:</b> iStochastic<br>
+        /// <b>Description:</b> Calculates the Stochastic Oscillator and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/istochastic.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>Kperiod</b> :  [in] Period of the %K line.</li>
+        /// <li><b>Dperiod</b> :  [in] Period of the %D line.</li>
+        /// <li><b>slowing</b> :  [in] Slowing value.</li>
+        /// <li><b>method</b> :  [in] Moving Average method. It can be any of enumeration values.</li>
+        /// <li><b>price_field</b> :  [in] Price field parameter. Can be one of this values: 0 - Low/High or 1 - Close/Close.</li>
+        /// <li><b>mode</b> :  [in] Indicator line index. It can be any of the enumeration value (0 - MODE_MAIN, 1 - MODE_SIGNAL).</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="Kperiod">[in] Period of the %K line.</param>
-        /// <param name="Dperiod">[in] Period of the %D line.</param>
-        /// <param name="slowing">[in] Slowing value.</param>
-        /// <param name="method">[in] Moving Average method. It can be any of enumeration values.</param>
-        /// <param name="price_field">[in] Price field parameter. Can be one of this values: 0 - Low/High or 1 - Close/Close.</param>
-        /// <param name="mode">[in] Indicator line index. It can be any of the enumeration value (0 - MODE_MAIN, 1 - MODE_SIGNAL).</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/istochastic")]
         public void Handle_iStochastic_1_Default(HttpListenerContext context)
         {
@@ -11543,14 +12977,17 @@ namespace MQL4CSharp.Base.REST
             return result;
         }
         /// <summary>
-        /// Function: iWPR
-        /// Description: Calculates the Larry Williams' Percent Range and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iwpr.html
+        /// <b>Function:</b> iWPR<br>
+        /// <b>Description:</b> Calculates the Larry Williams' Percent Range and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iwpr.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period for calculation.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period for calculation.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/[0-9]+/iwpr")]
         public void Handle_iWPR_1(HttpListenerContext context)
         {
@@ -11559,14 +12996,17 @@ namespace MQL4CSharp.Base.REST
         }
 
         /// <summary>
-        /// Function: iWPR
-        /// Description: Calculates the Larry Williams' Percent Range and returns its value.
-        /// URL: http://mm.l/mql4/docs.mql4.com/indicators/iwpr.html
+        /// <b>Function:</b> iWPR<br>
+        /// <b>Description:</b> Calculates the Larry Williams' Percent Range and returns its value.<br>
+        /// <b>URL:</b> http://mm.l/mql4/docs.mql4.com/indicators/iwpr.html<br>
+        /// <b>JSON Input Parameters:</b><br>
+        /// <ul>
+        /// <li><b>symbol</b> :  [in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</li>
+        /// <li><b>timeframe</b> :  [in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</li>
+        /// <li><b>period</b> :  [in] Averaging period for calculation.</li>
+        /// <li><b>shift</b> :  [in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</li>
+        /// </ul>
         /// </summary>
-        /// <param name="symbol">[in] Symbol name on the data of which the indicator will be calculated. means the current symbol.</param>
-        /// <param name="timeframe">[in] Timeframe. It can be any of enumeration values. 0 means the current chart timeframe.</param>
-        /// <param name="period">[in] Averaging period for calculation.</param>
-        /// <param name="shift">[in] Index of the value taken from the indicator buffer (shift relative to the current bar the given amount of periods ago).</param>
         [RESTRoute(Method = HttpMethod.POST, PathInfo = @"^/iwpr")]
         public void Handle_iWPR_1_Default(HttpListenerContext context)
         {

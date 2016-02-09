@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['darkblue',['DarkBlue',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa877716336e4eb22ac67faaa9c2b86635',1,'MQL4CSharp::Base::Enums']]],
+  ['darkgoldenrod',['DarkGoldenrod',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa2190310747b035ccb7fe46d8ab89ec9c',1,'MQL4CSharp::Base::Enums']]],
+  ['darkgray',['DarkGray',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa91e93fc984985226ad4d319a4e4134ab',1,'MQL4CSharp::Base::Enums']]],
+  ['darkgreen',['DarkGreen',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aaf780aab6295a2f368ac69a514f8b4605',1,'MQL4CSharp::Base::Enums']]],
+  ['darkkhaki',['DarkKhaki',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aaa1888e57a92cfb0de291b764956a508d',1,'MQL4CSharp::Base::Enums']]],
+  ['darkolivegreen',['DarkOliveGreen',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aac311effb29c1975815321e8998055e4f',1,'MQL4CSharp::Base::Enums']]],
+  ['darkorange',['DarkOrange',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa0199f373639f4b589a135cf877981572',1,'MQL4CSharp::Base::Enums']]],
+  ['darkorchid',['DarkOrchid',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aadae0e8d1972cd6a240aeda08fd8ffbc1',1,'MQL4CSharp::Base::Enums']]],
+  ['darksalmon',['DarkSalmon',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa50d629d3f507f0f1ca62218f1fed6bce',1,'MQL4CSharp::Base::Enums']]],
+  ['darkseagreen',['DarkSeaGreen',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa55810c02e7b2d8ea01b7c711baa5bef3',1,'MQL4CSharp::Base::Enums']]],
+  ['darkslateblue',['DarkSlateBlue',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa05cd4ec9cffbff99024c6b320fd42ddf',1,'MQL4CSharp::Base::Enums']]],
+  ['darkslategray',['DarkSlateGray',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aadae7d3634d5535b714d1622ffcd24a8c',1,'MQL4CSharp::Base::Enums']]],
+  ['darkturquoise',['DarkTurquoise',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa487636cd224cb1ace6e49fc51d4ef8dc',1,'MQL4CSharp::Base::Enums']]],
+  ['darkviolet',['DarkViolet',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aafb49b4fcac3fd7164a4419a7f1db7c38',1,'MQL4CSharp::Base::Enums']]],
+  ['deeppink',['DeepPink',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aab4fe342f44f5359f9ee0a3a4319e239f',1,'MQL4CSharp::Base::Enums']]],
+  ['deepskyblue',['DeepSkyBlue',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa13fc0b1c9f0187ed4eb2f99508626207',1,'MQL4CSharp::Base::Enums']]],
+  ['digits_5f1',['Digits_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439abe24969da91a338fadea743efb6b1647',1,'MQL4CSharp::Base::Enums']]],
+  ['dimgray',['DimGray',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa9d024493843d7e31bee420476aaafb9a',1,'MQL4CSharp::Base::Enums']]],
+  ['dodgerblue',['DodgerBlue',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa14c99de4b8f6ed71efd50e28fab3eeca',1,'MQL4CSharp::Base::Enums']]]
+];

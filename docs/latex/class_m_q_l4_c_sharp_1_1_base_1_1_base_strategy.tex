@@ -1,0 +1,395 @@
+\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy}{}\section{M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy Class Reference}
+\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy}\index{M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy}}
+Inheritance diagram for M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a231c5dc25ae1d5d7a5b2fce5d13b6955}{Base\+Strategy} (Int64 \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_expert_a98b5a835bb18c023f5160275efa74619}{ix})
+\item 
+\hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ad9298fbf10f61ebfaa4987c578dcc899}{Base\+Strategy} (int \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_expert_a98b5a835bb18c023f5160275efa74619}{ix}, \hyperlink{namespace_m_q_l4_c_sharp_1_1_base_1_1_enums_a838810aaa87c63c12737408dba8c0b35}{T\+I\+M\+E\+F\+R\+A\+ME} timeframe, List$<$ String $>$ symbol\+List, bool eval\+Once\+Per\+Candle=true, bool close\+On\+Opposing\+Signal=true)
+\item 
+\hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ad0016de1a9107f388312283fe993950d}{Base\+Strategy} (int \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_expert_a98b5a835bb18c023f5160275efa74619}{ix}, \hyperlink{namespace_m_q_l4_c_sharp_1_1_base_1_1_enums_a838810aaa87c63c12737408dba8c0b35}{T\+I\+M\+E\+F\+R\+A\+ME} timeframe, String symbol, bool eval\+Once\+Per\+Candle=true, bool close\+On\+Opposing\+Signal=true)
+\item 
+override void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a14e5e1120a81bbe371061169ccc22464}{On\+Tick} ()
+\item 
+\hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_common_1_1_strategy_meta_data}{Strategy\+Meta\+Data} \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a977a76cf7c9197b663fa1e60da89f0db}{get\+Strategy\+Meta\+Data\+Map} (String symbol, \hyperlink{namespace_m_q_l4_c_sharp_1_1_base_1_1_enums_a838810aaa87c63c12737408dba8c0b35}{T\+I\+M\+E\+F\+R\+A\+ME} timeframe)
+\item 
+Date\+Time \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a797f31ba4627dc8db8b529dd3be2a00a}{get\+Market\+Date\+Time} (String symbol)
+\item 
+Local\+Date \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a271e3cda998662502d7f58f8c2d64b5a}{get\+Market\+Local\+Date} (String symbol)
+\item 
+double \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a7c451eb421296e526fe59c842e3ec47e}{i\+Candle\+Body\+High} (String symbol, \hyperlink{namespace_m_q_l4_c_sharp_1_1_base_1_1_enums_a838810aaa87c63c12737408dba8c0b35}{T\+I\+M\+E\+F\+R\+A\+ME} timeframe, int shift)
+\item 
+double \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ac0a227fa222038dc953246b17b9dbc65}{i\+Candle\+Body\+Low} (String symbol, \hyperlink{namespace_m_q_l4_c_sharp_1_1_base_1_1_enums_a838810aaa87c63c12737408dba8c0b35}{T\+I\+M\+E\+F\+R\+A\+ME} timeframe, int shift)
+\item 
+void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ab4d95f5d8cdab06dc8bf2023675e429f}{log\+Info\+Once} (I\+Log logger, String symbol, Date\+Time date, \hyperlink{namespace_m_q_l4_c_sharp_1_1_base_1_1_enums_a8bd45b58389fa72ba1d4e8a192f17510}{Direction} direction, String action, String message)
+\item 
+Key\+Value\+Pair$<$ Double, Double $>$ \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ac9c57da9e1d147cbdef1547e48eb91fe}{get\+High\+Low\+Pair\+In\+Range} (String symbol, \hyperlink{namespace_m_q_l4_c_sharp_1_1_base_1_1_enums_a838810aaa87c63c12737408dba8c0b35}{T\+I\+M\+E\+F\+R\+A\+ME} timeframe, Date\+Time from, Date\+Time to)
+\item 
+void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a644f5454de00a7ba3f600c6eb0ed5739}{close\+Out\+This\+Order} (String symbol)
+\item 
+double \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a19f006fb25ac295b50bca5ef014b276d}{pip\+To\+Point} (String symbol)
+\item 
+void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_aac94c29f727bfcf220886d078cb8e60f}{execute\+Trade} (String symbol, \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_common_1_1_signal_result}{Signal\+Result} signal)
+\item 
+override void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a45bd0bb490031efc31e17eda1a8be6ed}{On\+Timer} ()
+\item 
+override void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a91aad10a8f6039ab88fc8c1a74ad5508}{On\+Init} ()
+\item 
+override void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ac18e3ca1d229a830d44acde9da60e730}{On\+Deinit} ()
+\item 
+abstract void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_aa2311f1094250b8282bb4de4ffd0a737}{init} ()
+\item 
+abstract void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a9ab6a2f7e5af2ce3c15664f7b23fbc65}{destroy} ()
+\item 
+abstract \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_common_1_1_signal_result}{Signal\+Result} \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_af1ae8df8ec0ddcfe3591bd0732292fa8}{evaluate} (String symbol)
+\item 
+abstract double \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a07afe70451e9c621559d93fa4602f33c}{get\+Stop\+Loss} (String symbol, \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_common_1_1_signal_result}{Signal\+Result} signal)
+\item 
+abstract double \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a8cb8687f300bd870d131d53900f3ea24}{get\+Take\+Profit} (String symbol, \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_common_1_1_signal_result}{Signal\+Result} signal)
+\item 
+abstract double \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a41c8b3a093997e0af2a7a1a764dd475a}{get\+Entry\+Price} (String symbol, \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_common_1_1_signal_result}{Signal\+Result} signal)
+\item 
+abstract Date\+Time \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ae4f77b309c6242fc7f2efcb424a17b80}{get\+Expiry} (String symbol, \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_common_1_1_signal_result}{Signal\+Result} signal)
+\item 
+abstract double \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_aa64dd53a278828184cea8f2e000f53fa}{get\+Lot\+Size} (String symbol, double stop\+Distance)
+\item 
+abstract int \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a532a3b226a1b893aada36ec57841cd06}{get\+Magic\+Number} (String symbol)
+\item 
+abstract String \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a6e49d63f7b64ea9261226a703fa76603}{get\+Comment} (String symbol)
+\item 
+abstract bool \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a5dcc52590eea6c66f4b0f415b8eafd78}{is\+Asleep} (String symbol)
+\item 
+abstract bool \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_aa0d9417bcd5c803b3c0f7eedab424547}{filter} (String symbol)
+\item 
+abstract void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a3aae13e14ff761dad339a190357258db}{on\+New\+Date} (String symbol, \hyperlink{namespace_m_q_l4_c_sharp_1_1_base_1_1_enums_a838810aaa87c63c12737408dba8c0b35}{T\+I\+M\+E\+F\+R\+A\+ME} timeframe)
+\item 
+abstract void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ac8137eeb3d34a9132296e8dd3db829bc}{on\+New\+Candle} (String symbol, \hyperlink{namespace_m_q_l4_c_sharp_1_1_base_1_1_enums_a838810aaa87c63c12737408dba8c0b35}{T\+I\+M\+E\+F\+R\+A\+ME} timeframe)
+\item 
+double \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_aa6ed93ca58ea40343adebb27c5ccc86a}{get\+Stop\+Entry} (String symbol, \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_common_1_1_signal_result}{Signal\+Result} signal)
+\item 
+abstract void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_af5a387f1705cdbabf5b161870b8f05a8}{manage\+Open\+Trades} (String symbol, int ticket)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static readonly I\+Log \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a92846a7a1198a9df13623f09fd2b11a1}{L\+OG} = Log\+Manager.\+Get\+Logger(typeof(\hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy}{Base\+Strategy}))
+\item 
+static Date\+Time\+Zone \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a872117807344958deef2c5ff301029f3}{D\+A\+T\+E\+\_\+\+TZ} = Date\+Time\+Zone.\+For\+Offset(Offset.\+Zero)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!Base\+Strategy@{Base\+Strategy}}
+\index{Base\+Strategy@{Base\+Strategy}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{Base\+Strategy(\+Int64 ix)}{BaseStrategy(Int64 ix)}}]{\setlength{\rightskip}{0pt plus 5cm}M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+Base\+Strategy (
+\begin{DoxyParamCaption}
+\item[{Int64}]{ix}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a231c5dc25ae1d5d7a5b2fce5d13b6955}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a231c5dc25ae1d5d7a5b2fce5d13b6955}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!Base\+Strategy@{Base\+Strategy}}
+\index{Base\+Strategy@{Base\+Strategy}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{Base\+Strategy(int ix, T\+I\+M\+E\+F\+R\+A\+M\+E timeframe, List$<$ String $>$ symbol\+List, bool eval\+Once\+Per\+Candle=true, bool close\+On\+Opposing\+Signal=true)}{BaseStrategy(int ix, TIMEFRAME timeframe, List< String > symbolList, bool evalOncePerCandle=true, bool closeOnOpposingSignal=true)}}]{\setlength{\rightskip}{0pt plus 5cm}M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+Base\+Strategy (
+\begin{DoxyParamCaption}
+\item[{int}]{ix, }
+\item[{{\bf T\+I\+M\+E\+F\+R\+A\+ME}}]{timeframe, }
+\item[{List$<$ String $>$}]{symbol\+List, }
+\item[{bool}]{eval\+Once\+Per\+Candle = {\ttfamily true}, }
+\item[{bool}]{close\+On\+Opposing\+Signal = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ad9298fbf10f61ebfaa4987c578dcc899}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ad9298fbf10f61ebfaa4987c578dcc899}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!Base\+Strategy@{Base\+Strategy}}
+\index{Base\+Strategy@{Base\+Strategy}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{Base\+Strategy(int ix, T\+I\+M\+E\+F\+R\+A\+M\+E timeframe, String symbol, bool eval\+Once\+Per\+Candle=true, bool close\+On\+Opposing\+Signal=true)}{BaseStrategy(int ix, TIMEFRAME timeframe, String symbol, bool evalOncePerCandle=true, bool closeOnOpposingSignal=true)}}]{\setlength{\rightskip}{0pt plus 5cm}M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+Base\+Strategy (
+\begin{DoxyParamCaption}
+\item[{int}]{ix, }
+\item[{{\bf T\+I\+M\+E\+F\+R\+A\+ME}}]{timeframe, }
+\item[{String}]{symbol, }
+\item[{bool}]{eval\+Once\+Per\+Candle = {\ttfamily true}, }
+\item[{bool}]{close\+On\+Opposing\+Signal = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ad0016de1a9107f388312283fe993950d}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ad0016de1a9107f388312283fe993950d}
+
+
+\subsection{Member Function Documentation}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!close\+Out\+This\+Order@{close\+Out\+This\+Order}}
+\index{close\+Out\+This\+Order@{close\+Out\+This\+Order}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{close\+Out\+This\+Order(\+String symbol)}{closeOutThisOrder(String symbol)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+close\+Out\+This\+Order (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a644f5454de00a7ba3f600c6eb0ed5739}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a644f5454de00a7ba3f600c6eb0ed5739}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!destroy@{destroy}}
+\index{destroy@{destroy}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{destroy()}{destroy()}}]{\setlength{\rightskip}{0pt plus 5cm}abstract void M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+destroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a9ab6a2f7e5af2ce3c15664f7b23fbc65}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a9ab6a2f7e5af2ce3c15664f7b23fbc65}
+
+
+Implemented in \hyperlink{class_m_q_l4_c_sharp_1_1_user_defined_1_1_strategy_1_1_ma_cross_strategy_aaffd8074c2a2ac779dba660fa93ac98a}{M\+Q\+L4\+C\+Sharp.\+User\+Defined.\+Strategy.\+Ma\+Cross\+Strategy}.
+
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{evaluate(\+String symbol)}{evaluate(String symbol)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract {\bf Signal\+Result} M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+evaluate (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_af1ae8df8ec0ddcfe3591bd0732292fa8}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_af1ae8df8ec0ddcfe3591bd0732292fa8}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!execute\+Trade@{execute\+Trade}}
+\index{execute\+Trade@{execute\+Trade}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{execute\+Trade(\+String symbol, Signal\+Result signal)}{executeTrade(String symbol, SignalResult signal)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+execute\+Trade (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol, }
+\item[{{\bf Signal\+Result}}]{signal}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_aac94c29f727bfcf220886d078cb8e60f}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_aac94c29f727bfcf220886d078cb8e60f}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!filter@{filter}}
+\index{filter@{filter}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{filter(\+String symbol)}{filter(String symbol)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract bool M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+filter (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_aa0d9417bcd5c803b3c0f7eedab424547}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_aa0d9417bcd5c803b3c0f7eedab424547}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!get\+Comment@{get\+Comment}}
+\index{get\+Comment@{get\+Comment}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{get\+Comment(\+String symbol)}{getComment(String symbol)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract String M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+get\+Comment (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a6e49d63f7b64ea9261226a703fa76603}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a6e49d63f7b64ea9261226a703fa76603}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!get\+Entry\+Price@{get\+Entry\+Price}}
+\index{get\+Entry\+Price@{get\+Entry\+Price}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{get\+Entry\+Price(\+String symbol, Signal\+Result signal)}{getEntryPrice(String symbol, SignalResult signal)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract double M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+get\+Entry\+Price (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol, }
+\item[{{\bf Signal\+Result}}]{signal}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a41c8b3a093997e0af2a7a1a764dd475a}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a41c8b3a093997e0af2a7a1a764dd475a}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!get\+Expiry@{get\+Expiry}}
+\index{get\+Expiry@{get\+Expiry}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{get\+Expiry(\+String symbol, Signal\+Result signal)}{getExpiry(String symbol, SignalResult signal)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract Date\+Time M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+get\+Expiry (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol, }
+\item[{{\bf Signal\+Result}}]{signal}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ae4f77b309c6242fc7f2efcb424a17b80}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ae4f77b309c6242fc7f2efcb424a17b80}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!get\+High\+Low\+Pair\+In\+Range@{get\+High\+Low\+Pair\+In\+Range}}
+\index{get\+High\+Low\+Pair\+In\+Range@{get\+High\+Low\+Pair\+In\+Range}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{get\+High\+Low\+Pair\+In\+Range(\+String symbol, T\+I\+M\+E\+F\+R\+A\+M\+E timeframe, Date\+Time from, Date\+Time to)}{getHighLowPairInRange(String symbol, TIMEFRAME timeframe, DateTime from, DateTime to)}}]{\setlength{\rightskip}{0pt plus 5cm}Key\+Value\+Pair$<$Double, Double$>$ M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+get\+High\+Low\+Pair\+In\+Range (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol, }
+\item[{{\bf T\+I\+M\+E\+F\+R\+A\+ME}}]{timeframe, }
+\item[{Date\+Time}]{from, }
+\item[{Date\+Time}]{to}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ac9c57da9e1d147cbdef1547e48eb91fe}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ac9c57da9e1d147cbdef1547e48eb91fe}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!get\+Lot\+Size@{get\+Lot\+Size}}
+\index{get\+Lot\+Size@{get\+Lot\+Size}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{get\+Lot\+Size(\+String symbol, double stop\+Distance)}{getLotSize(String symbol, double stopDistance)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract double M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+get\+Lot\+Size (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol, }
+\item[{double}]{stop\+Distance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_aa64dd53a278828184cea8f2e000f53fa}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_aa64dd53a278828184cea8f2e000f53fa}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!get\+Magic\+Number@{get\+Magic\+Number}}
+\index{get\+Magic\+Number@{get\+Magic\+Number}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{get\+Magic\+Number(\+String symbol)}{getMagicNumber(String symbol)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract int M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+get\+Magic\+Number (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a532a3b226a1b893aada36ec57841cd06}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a532a3b226a1b893aada36ec57841cd06}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!get\+Market\+Date\+Time@{get\+Market\+Date\+Time}}
+\index{get\+Market\+Date\+Time@{get\+Market\+Date\+Time}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{get\+Market\+Date\+Time(\+String symbol)}{getMarketDateTime(String symbol)}}]{\setlength{\rightskip}{0pt plus 5cm}Date\+Time M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+get\+Market\+Date\+Time (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a797f31ba4627dc8db8b529dd3be2a00a}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a797f31ba4627dc8db8b529dd3be2a00a}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!get\+Market\+Local\+Date@{get\+Market\+Local\+Date}}
+\index{get\+Market\+Local\+Date@{get\+Market\+Local\+Date}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{get\+Market\+Local\+Date(\+String symbol)}{getMarketLocalDate(String symbol)}}]{\setlength{\rightskip}{0pt plus 5cm}Local\+Date M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+get\+Market\+Local\+Date (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a271e3cda998662502d7f58f8c2d64b5a}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a271e3cda998662502d7f58f8c2d64b5a}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!get\+Stop\+Entry@{get\+Stop\+Entry}}
+\index{get\+Stop\+Entry@{get\+Stop\+Entry}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{get\+Stop\+Entry(\+String symbol, Signal\+Result signal)}{getStopEntry(String symbol, SignalResult signal)}}]{\setlength{\rightskip}{0pt plus 5cm}double M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+get\+Stop\+Entry (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol, }
+\item[{{\bf Signal\+Result}}]{signal}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_aa6ed93ca58ea40343adebb27c5ccc86a}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_aa6ed93ca58ea40343adebb27c5ccc86a}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!get\+Stop\+Loss@{get\+Stop\+Loss}}
+\index{get\+Stop\+Loss@{get\+Stop\+Loss}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{get\+Stop\+Loss(\+String symbol, Signal\+Result signal)}{getStopLoss(String symbol, SignalResult signal)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract double M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+get\+Stop\+Loss (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol, }
+\item[{{\bf Signal\+Result}}]{signal}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a07afe70451e9c621559d93fa4602f33c}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a07afe70451e9c621559d93fa4602f33c}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!get\+Strategy\+Meta\+Data\+Map@{get\+Strategy\+Meta\+Data\+Map}}
+\index{get\+Strategy\+Meta\+Data\+Map@{get\+Strategy\+Meta\+Data\+Map}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{get\+Strategy\+Meta\+Data\+Map(\+String symbol, T\+I\+M\+E\+F\+R\+A\+M\+E timeframe)}{getStrategyMetaDataMap(String symbol, TIMEFRAME timeframe)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Strategy\+Meta\+Data} M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+get\+Strategy\+Meta\+Data\+Map (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol, }
+\item[{{\bf T\+I\+M\+E\+F\+R\+A\+ME}}]{timeframe}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a977a76cf7c9197b663fa1e60da89f0db}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a977a76cf7c9197b663fa1e60da89f0db}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!get\+Take\+Profit@{get\+Take\+Profit}}
+\index{get\+Take\+Profit@{get\+Take\+Profit}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{get\+Take\+Profit(\+String symbol, Signal\+Result signal)}{getTakeProfit(String symbol, SignalResult signal)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract double M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+get\+Take\+Profit (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol, }
+\item[{{\bf Signal\+Result}}]{signal}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a8cb8687f300bd870d131d53900f3ea24}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a8cb8687f300bd870d131d53900f3ea24}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!i\+Candle\+Body\+High@{i\+Candle\+Body\+High}}
+\index{i\+Candle\+Body\+High@{i\+Candle\+Body\+High}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{i\+Candle\+Body\+High(\+String symbol, T\+I\+M\+E\+F\+R\+A\+M\+E timeframe, int shift)}{iCandleBodyHigh(String symbol, TIMEFRAME timeframe, int shift)}}]{\setlength{\rightskip}{0pt plus 5cm}double M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+i\+Candle\+Body\+High (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol, }
+\item[{{\bf T\+I\+M\+E\+F\+R\+A\+ME}}]{timeframe, }
+\item[{int}]{shift}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a7c451eb421296e526fe59c842e3ec47e}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a7c451eb421296e526fe59c842e3ec47e}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!i\+Candle\+Body\+Low@{i\+Candle\+Body\+Low}}
+\index{i\+Candle\+Body\+Low@{i\+Candle\+Body\+Low}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{i\+Candle\+Body\+Low(\+String symbol, T\+I\+M\+E\+F\+R\+A\+M\+E timeframe, int shift)}{iCandleBodyLow(String symbol, TIMEFRAME timeframe, int shift)}}]{\setlength{\rightskip}{0pt plus 5cm}double M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+i\+Candle\+Body\+Low (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol, }
+\item[{{\bf T\+I\+M\+E\+F\+R\+A\+ME}}]{timeframe, }
+\item[{int}]{shift}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ac0a227fa222038dc953246b17b9dbc65}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ac0a227fa222038dc953246b17b9dbc65}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!init@{init}}
+\index{init@{init}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{init()}{init()}}]{\setlength{\rightskip}{0pt plus 5cm}abstract void M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_aa2311f1094250b8282bb4de4ffd0a737}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_aa2311f1094250b8282bb4de4ffd0a737}
+
+
+Implemented in \hyperlink{class_m_q_l4_c_sharp_1_1_user_defined_1_1_strategy_1_1_ma_cross_strategy_a76a9c2deb711a2a3a138e7c4018ac866}{M\+Q\+L4\+C\+Sharp.\+User\+Defined.\+Strategy.\+Ma\+Cross\+Strategy}.
+
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!is\+Asleep@{is\+Asleep}}
+\index{is\+Asleep@{is\+Asleep}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{is\+Asleep(\+String symbol)}{isAsleep(String symbol)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract bool M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+is\+Asleep (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a5dcc52590eea6c66f4b0f415b8eafd78}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a5dcc52590eea6c66f4b0f415b8eafd78}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!log\+Info\+Once@{log\+Info\+Once}}
+\index{log\+Info\+Once@{log\+Info\+Once}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{log\+Info\+Once(\+I\+Log logger, String symbol, Date\+Time date, Direction direction, String action, String message)}{logInfoOnce(ILog logger, String symbol, DateTime date, Direction direction, String action, String message)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+log\+Info\+Once (
+\begin{DoxyParamCaption}
+\item[{I\+Log}]{logger, }
+\item[{String}]{symbol, }
+\item[{Date\+Time}]{date, }
+\item[{{\bf Direction}}]{direction, }
+\item[{String}]{action, }
+\item[{String}]{message}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ab4d95f5d8cdab06dc8bf2023675e429f}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ab4d95f5d8cdab06dc8bf2023675e429f}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!manage\+Open\+Trades@{manage\+Open\+Trades}}
+\index{manage\+Open\+Trades@{manage\+Open\+Trades}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{manage\+Open\+Trades(\+String symbol, int ticket)}{manageOpenTrades(String symbol, int ticket)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract void M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+manage\+Open\+Trades (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol, }
+\item[{int}]{ticket}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_af5a387f1705cdbabf5b161870b8f05a8}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_af5a387f1705cdbabf5b161870b8f05a8}
+
+
+Implemented in \hyperlink{class_m_q_l4_c_sharp_1_1_user_defined_1_1_strategy_1_1_ma_cross_strategy_ae511e9a70d297cd5e4279ca036dd0a46}{M\+Q\+L4\+C\+Sharp.\+User\+Defined.\+Strategy.\+Ma\+Cross\+Strategy}.
+
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!On\+Deinit@{On\+Deinit}}
+\index{On\+Deinit@{On\+Deinit}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{On\+Deinit()}{OnDeinit()}}]{\setlength{\rightskip}{0pt plus 5cm}override void M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+On\+Deinit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ac18e3ca1d229a830d44acde9da60e730}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ac18e3ca1d229a830d44acde9da60e730}
+
+
+Implements \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_expert_ade810aec8dce22f26f5076564258979b}{M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Expert}.
+
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!On\+Init@{On\+Init}}
+\index{On\+Init@{On\+Init}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{On\+Init()}{OnInit()}}]{\setlength{\rightskip}{0pt plus 5cm}override void M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+On\+Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a91aad10a8f6039ab88fc8c1a74ad5508}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a91aad10a8f6039ab88fc8c1a74ad5508}
+
+
+Implements \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_expert_a12a41e3d72e84b8c7d8f557b68ddb499}{M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Expert}.
+
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!on\+New\+Candle@{on\+New\+Candle}}
+\index{on\+New\+Candle@{on\+New\+Candle}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{on\+New\+Candle(\+String symbol, T\+I\+M\+E\+F\+R\+A\+M\+E timeframe)}{onNewCandle(String symbol, TIMEFRAME timeframe)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract void M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+on\+New\+Candle (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol, }
+\item[{{\bf T\+I\+M\+E\+F\+R\+A\+ME}}]{timeframe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ac8137eeb3d34a9132296e8dd3db829bc}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_ac8137eeb3d34a9132296e8dd3db829bc}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!on\+New\+Date@{on\+New\+Date}}
+\index{on\+New\+Date@{on\+New\+Date}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{on\+New\+Date(\+String symbol, T\+I\+M\+E\+F\+R\+A\+M\+E timeframe)}{onNewDate(String symbol, TIMEFRAME timeframe)}}]{\setlength{\rightskip}{0pt plus 5cm}abstract void M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+on\+New\+Date (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol, }
+\item[{{\bf T\+I\+M\+E\+F\+R\+A\+ME}}]{timeframe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a3aae13e14ff761dad339a190357258db}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a3aae13e14ff761dad339a190357258db}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!On\+Tick@{On\+Tick}}
+\index{On\+Tick@{On\+Tick}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{On\+Tick()}{OnTick()}}]{\setlength{\rightskip}{0pt plus 5cm}override void M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+On\+Tick (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a14e5e1120a81bbe371061169ccc22464}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a14e5e1120a81bbe371061169ccc22464}
+
+
+Implements \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_expert_a98020af67b64773a7e9fae1674e9abca}{M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Expert}.
+
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!On\+Timer@{On\+Timer}}
+\index{On\+Timer@{On\+Timer}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{On\+Timer()}{OnTimer()}}]{\setlength{\rightskip}{0pt plus 5cm}override void M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+On\+Timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a45bd0bb490031efc31e17eda1a8be6ed}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a45bd0bb490031efc31e17eda1a8be6ed}
+
+
+Implements \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_expert_abbb203face0fb19cb1715b5f7cf6473d}{M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Expert}.
+
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!pip\+To\+Point@{pip\+To\+Point}}
+\index{pip\+To\+Point@{pip\+To\+Point}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{pip\+To\+Point(\+String symbol)}{pipToPoint(String symbol)}}]{\setlength{\rightskip}{0pt plus 5cm}double M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+pip\+To\+Point (
+\begin{DoxyParamCaption}
+\item[{String}]{symbol}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a19f006fb25ac295b50bca5ef014b276d}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a19f006fb25ac295b50bca5ef014b276d}
+
+
+\subsection{Member Data Documentation}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!D\+A\+T\+E\+\_\+\+TZ@{D\+A\+T\+E\+\_\+\+TZ}}
+\index{D\+A\+T\+E\+\_\+\+TZ@{D\+A\+T\+E\+\_\+\+TZ}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{D\+A\+T\+E\+\_\+\+TZ}{DATE_TZ}}]{\setlength{\rightskip}{0pt plus 5cm}Date\+Time\+Zone M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+D\+A\+T\+E\+\_\+\+TZ = Date\+Time\+Zone.\+For\+Offset(Offset.\+Zero)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a872117807344958deef2c5ff301029f3}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a872117807344958deef2c5ff301029f3}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}!L\+OG@{L\+OG}}
+\index{L\+OG@{L\+OG}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+Base\+Strategy}}
+\subsubsection[{\texorpdfstring{L\+OG}{LOG}}]{\setlength{\rightskip}{0pt plus 5cm}readonly I\+Log M\+Q\+L4\+C\+Sharp.\+Base.\+Base\+Strategy.\+L\+OG = Log\+Manager.\+Get\+Logger(typeof({\bf Base\+Strategy}))\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a92846a7a1198a9df13623f09fd2b11a1}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_base_strategy_a92846a7a1198a9df13623f09fd2b11a1}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Base/\+Common/\hyperlink{_base_strategy_8cs}{Base\+Strategy.\+cs}\end{DoxyCompactItemize}

@@ -1,0 +1,237 @@
+\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager}{}\section{M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager Class Reference}
+\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager}\index{M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a6280b2a0fb6c1897d12faab2b12416c5}{M\+Q\+L\+Command\+Manager} (Int64 ix)
+\item 
+int \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_aef6778bb3a8b40c5fb897c16a52ed565}{Exec\+Command} (\hyperlink{namespace_m_q_l4_c_sharp_1_1_base_1_1_enums_a86fc232b6f9a036bf9bff2c97fa38439}{M\+Q\+L\+Command} command, List$<$ Object $>$ parameters)
+\item 
+bool \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_ab9bedebb1535b410b9711bf2025fc889}{Is\+Command\+Running} (int id)
+\item 
+Object \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_ab636e18279f9d5348f8d4961a84d9c25}{Get\+Command\+Result} (int id)
+\item 
+String \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a0c60b37d7e9a018003abe888acef1e26}{get\+Command\+Params} (int id)
+\item 
+void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a4eb0770edf84c81bbb5d9ee7d5000cae}{throw\+Exception\+If\+Error\+Response} (int id)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager}{M\+Q\+L\+Command\+Manager} \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_aa454d69a382b4d9b692fa059da8ac564}{get\+Instance} (Int64 ix)
+\item 
+static int \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_ae6f9740a6693662e6fb0c8b994dac54b}{Is\+Command\+Waiting} (Int64 ix)
+\item 
+static int \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a648460691fc7fe8e0860f73e0eac9d0f}{Get\+Command\+Id} (Int64 ix, int id)
+\item 
+static void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a9a3a519a087e100859067b57828771b8}{Get\+Command\+Name} (Int64 ix, int id, \mbox{[}In, Out, Marshal\+As(Unmanaged\+Type.\+L\+P\+W\+Str)\mbox{]} String\+Builder command\+Name)
+\item 
+static void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a5e2c5fa6ffd6051251a2149f577a2557}{Get\+Command\+Params} (Int64 ix, int id, \mbox{[}In, Out, Marshal\+As(Unmanaged\+Type.\+L\+P\+W\+Str)\mbox{]} String\+Builder command\+Params)
+\item 
+static void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a5a566e737547a9532328200e052eac70}{Set\+Bool\+Command\+Response} (Int64 ix, int id, bool response, int error)
+\item 
+static void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a2e4c4fb7a8857bec2989f215aebfcee2}{Set\+Double\+Command\+Response} (Int64 ix, int id, double response, int error)
+\item 
+static void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a24ab964fef06dfacf50a45569d072371}{Set\+Int\+Command\+Response} (Int64 ix, int id, int response, int error)
+\item 
+static void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_ad2c1c396dd566f24fca374c8c2f23db6}{Set\+String\+Command\+Response} (Int64 ix, int id, \mbox{[}Marshal\+As(Unmanaged\+Type.\+L\+P\+W\+Str)\mbox{]} string response, int error)
+\item 
+static void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_aca897e36435fc3ad5acd9f0faa510def}{Set\+Void\+Command\+Response} (Int64 ix, int id, int error)
+\item 
+static void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a2168ee22b83d3aeb85f4148184f7409d}{Set\+Long\+Command\+Response} (Int64 ix, int id, long response, int error)
+\item 
+static void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_aceb629d505bba933234eef6c3e183783}{Set\+Date\+Time\+Command\+Response} (Int64 ix, int id, Int64 response, int error)
+\item 
+static void \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a25ab742f743f94d3fba0d52de0e4b842}{Set\+Enum\+Command\+Response} (Int64 ix, int id, int response, int error)
+\item 
+static bool \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a5f1fb52f45d5bc5d5410b3a28541630d}{Command\+Lock} (Int64 ix)
+\item 
+static bool \hyperlink{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a6fc347a1fb08fd1e7bba86cbdb4ccfc6}{Command\+Un\+Lock} (Int64 ix)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!M\+Q\+L\+Command\+Manager@{M\+Q\+L\+Command\+Manager}}
+\index{M\+Q\+L\+Command\+Manager@{M\+Q\+L\+Command\+Manager}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{M\+Q\+L\+Command\+Manager(\+Int64 ix)}{MQLCommandManager(Int64 ix)}}]{\setlength{\rightskip}{0pt plus 5cm}M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+M\+Q\+L\+Command\+Manager (
+\begin{DoxyParamCaption}
+\item[{Int64}]{ix}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a6280b2a0fb6c1897d12faab2b12416c5}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a6280b2a0fb6c1897d12faab2b12416c5}
+
+
+\subsection{Member Function Documentation}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!Command\+Lock@{Command\+Lock}}
+\index{Command\+Lock@{Command\+Lock}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{Command\+Lock(\+Int64 ix)}{CommandLock(Int64 ix)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+Command\+Lock (
+\begin{DoxyParamCaption}
+\item[{Int64}]{ix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a5f1fb52f45d5bc5d5410b3a28541630d}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a5f1fb52f45d5bc5d5410b3a28541630d}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!Command\+Un\+Lock@{Command\+Un\+Lock}}
+\index{Command\+Un\+Lock@{Command\+Un\+Lock}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{Command\+Un\+Lock(\+Int64 ix)}{CommandUnLock(Int64 ix)}}]{\setlength{\rightskip}{0pt plus 5cm}static bool M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+Command\+Un\+Lock (
+\begin{DoxyParamCaption}
+\item[{Int64}]{ix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a6fc347a1fb08fd1e7bba86cbdb4ccfc6}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a6fc347a1fb08fd1e7bba86cbdb4ccfc6}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!Exec\+Command@{Exec\+Command}}
+\index{Exec\+Command@{Exec\+Command}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{Exec\+Command(\+M\+Q\+L\+Command command, List$<$ Object $>$ parameters)}{ExecCommand(MQLCommand command, List< Object > parameters)}}]{\setlength{\rightskip}{0pt plus 5cm}int M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+Exec\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+Q\+L\+Command}}]{command, }
+\item[{List$<$ Object $>$}]{parameters}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_aef6778bb3a8b40c5fb897c16a52ed565}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_aef6778bb3a8b40c5fb897c16a52ed565}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!Get\+Command\+Id@{Get\+Command\+Id}}
+\index{Get\+Command\+Id@{Get\+Command\+Id}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{Get\+Command\+Id(\+Int64 ix, int id)}{GetCommandId(Int64 ix, int id)}}]{\setlength{\rightskip}{0pt plus 5cm}static int M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+Get\+Command\+Id (
+\begin{DoxyParamCaption}
+\item[{Int64}]{ix, }
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a648460691fc7fe8e0860f73e0eac9d0f}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a648460691fc7fe8e0860f73e0eac9d0f}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!Get\+Command\+Name@{Get\+Command\+Name}}
+\index{Get\+Command\+Name@{Get\+Command\+Name}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{Get\+Command\+Name(\+Int64 ix, int id, [In, Out, Marshal\+As(\+Unmanaged\+Type.\+L\+P\+W\+Str)] String\+Builder command\+Name)}{GetCommandName(Int64 ix, int id, [In, Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder commandName)}}]{\setlength{\rightskip}{0pt plus 5cm}static void M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+Get\+Command\+Name (
+\begin{DoxyParamCaption}
+\item[{Int64}]{ix, }
+\item[{int}]{id, }
+\item[{\mbox{[}\+In, Out, Marshal\+As(\+Unmanaged\+Type.\+L\+P\+W\+Str)\mbox{]} String\+Builder}]{command\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a9a3a519a087e100859067b57828771b8}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a9a3a519a087e100859067b57828771b8}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!get\+Command\+Params@{get\+Command\+Params}}
+\index{get\+Command\+Params@{get\+Command\+Params}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{get\+Command\+Params(int id)}{getCommandParams(int id)}}]{\setlength{\rightskip}{0pt plus 5cm}String M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+get\+Command\+Params (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a0c60b37d7e9a018003abe888acef1e26}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a0c60b37d7e9a018003abe888acef1e26}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!Get\+Command\+Params@{Get\+Command\+Params}}
+\index{Get\+Command\+Params@{Get\+Command\+Params}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{Get\+Command\+Params(\+Int64 ix, int id, [In, Out, Marshal\+As(\+Unmanaged\+Type.\+L\+P\+W\+Str)] String\+Builder command\+Params)}{GetCommandParams(Int64 ix, int id, [In, Out, MarshalAs(UnmanagedType.LPWStr)] StringBuilder commandParams)}}]{\setlength{\rightskip}{0pt plus 5cm}static void M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+Get\+Command\+Params (
+\begin{DoxyParamCaption}
+\item[{Int64}]{ix, }
+\item[{int}]{id, }
+\item[{\mbox{[}\+In, Out, Marshal\+As(\+Unmanaged\+Type.\+L\+P\+W\+Str)\mbox{]} String\+Builder}]{command\+Params}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a5e2c5fa6ffd6051251a2149f577a2557}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a5e2c5fa6ffd6051251a2149f577a2557}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!Get\+Command\+Result@{Get\+Command\+Result}}
+\index{Get\+Command\+Result@{Get\+Command\+Result}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{Get\+Command\+Result(int id)}{GetCommandResult(int id)}}]{\setlength{\rightskip}{0pt plus 5cm}Object M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+Get\+Command\+Result (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_ab636e18279f9d5348f8d4961a84d9c25}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_ab636e18279f9d5348f8d4961a84d9c25}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{get\+Instance(\+Int64 ix)}{getInstance(Int64 ix)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf M\+Q\+L\+Command\+Manager} M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+get\+Instance (
+\begin{DoxyParamCaption}
+\item[{Int64}]{ix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_aa454d69a382b4d9b692fa059da8ac564}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_aa454d69a382b4d9b692fa059da8ac564}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!Is\+Command\+Running@{Is\+Command\+Running}}
+\index{Is\+Command\+Running@{Is\+Command\+Running}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{Is\+Command\+Running(int id)}{IsCommandRunning(int id)}}]{\setlength{\rightskip}{0pt plus 5cm}bool M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+Is\+Command\+Running (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_ab9bedebb1535b410b9711bf2025fc889}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_ab9bedebb1535b410b9711bf2025fc889}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!Is\+Command\+Waiting@{Is\+Command\+Waiting}}
+\index{Is\+Command\+Waiting@{Is\+Command\+Waiting}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{Is\+Command\+Waiting(\+Int64 ix)}{IsCommandWaiting(Int64 ix)}}]{\setlength{\rightskip}{0pt plus 5cm}static int M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+Is\+Command\+Waiting (
+\begin{DoxyParamCaption}
+\item[{Int64}]{ix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_ae6f9740a6693662e6fb0c8b994dac54b}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_ae6f9740a6693662e6fb0c8b994dac54b}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!Set\+Bool\+Command\+Response@{Set\+Bool\+Command\+Response}}
+\index{Set\+Bool\+Command\+Response@{Set\+Bool\+Command\+Response}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{Set\+Bool\+Command\+Response(\+Int64 ix, int id, bool response, int error)}{SetBoolCommandResponse(Int64 ix, int id, bool response, int error)}}]{\setlength{\rightskip}{0pt plus 5cm}static void M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+Set\+Bool\+Command\+Response (
+\begin{DoxyParamCaption}
+\item[{Int64}]{ix, }
+\item[{int}]{id, }
+\item[{bool}]{response, }
+\item[{int}]{error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a5a566e737547a9532328200e052eac70}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a5a566e737547a9532328200e052eac70}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!Set\+Date\+Time\+Command\+Response@{Set\+Date\+Time\+Command\+Response}}
+\index{Set\+Date\+Time\+Command\+Response@{Set\+Date\+Time\+Command\+Response}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{Set\+Date\+Time\+Command\+Response(\+Int64 ix, int id, Int64 response, int error)}{SetDateTimeCommandResponse(Int64 ix, int id, Int64 response, int error)}}]{\setlength{\rightskip}{0pt plus 5cm}static void M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+Set\+Date\+Time\+Command\+Response (
+\begin{DoxyParamCaption}
+\item[{Int64}]{ix, }
+\item[{int}]{id, }
+\item[{Int64}]{response, }
+\item[{int}]{error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_aceb629d505bba933234eef6c3e183783}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_aceb629d505bba933234eef6c3e183783}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!Set\+Double\+Command\+Response@{Set\+Double\+Command\+Response}}
+\index{Set\+Double\+Command\+Response@{Set\+Double\+Command\+Response}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{Set\+Double\+Command\+Response(\+Int64 ix, int id, double response, int error)}{SetDoubleCommandResponse(Int64 ix, int id, double response, int error)}}]{\setlength{\rightskip}{0pt plus 5cm}static void M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+Set\+Double\+Command\+Response (
+\begin{DoxyParamCaption}
+\item[{Int64}]{ix, }
+\item[{int}]{id, }
+\item[{double}]{response, }
+\item[{int}]{error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a2e4c4fb7a8857bec2989f215aebfcee2}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a2e4c4fb7a8857bec2989f215aebfcee2}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!Set\+Enum\+Command\+Response@{Set\+Enum\+Command\+Response}}
+\index{Set\+Enum\+Command\+Response@{Set\+Enum\+Command\+Response}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{Set\+Enum\+Command\+Response(\+Int64 ix, int id, int response, int error)}{SetEnumCommandResponse(Int64 ix, int id, int response, int error)}}]{\setlength{\rightskip}{0pt plus 5cm}static void M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+Set\+Enum\+Command\+Response (
+\begin{DoxyParamCaption}
+\item[{Int64}]{ix, }
+\item[{int}]{id, }
+\item[{int}]{response, }
+\item[{int}]{error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a25ab742f743f94d3fba0d52de0e4b842}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a25ab742f743f94d3fba0d52de0e4b842}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!Set\+Int\+Command\+Response@{Set\+Int\+Command\+Response}}
+\index{Set\+Int\+Command\+Response@{Set\+Int\+Command\+Response}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{Set\+Int\+Command\+Response(\+Int64 ix, int id, int response, int error)}{SetIntCommandResponse(Int64 ix, int id, int response, int error)}}]{\setlength{\rightskip}{0pt plus 5cm}static void M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+Set\+Int\+Command\+Response (
+\begin{DoxyParamCaption}
+\item[{Int64}]{ix, }
+\item[{int}]{id, }
+\item[{int}]{response, }
+\item[{int}]{error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a24ab964fef06dfacf50a45569d072371}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a24ab964fef06dfacf50a45569d072371}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!Set\+Long\+Command\+Response@{Set\+Long\+Command\+Response}}
+\index{Set\+Long\+Command\+Response@{Set\+Long\+Command\+Response}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{Set\+Long\+Command\+Response(\+Int64 ix, int id, long response, int error)}{SetLongCommandResponse(Int64 ix, int id, long response, int error)}}]{\setlength{\rightskip}{0pt plus 5cm}static void M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+Set\+Long\+Command\+Response (
+\begin{DoxyParamCaption}
+\item[{Int64}]{ix, }
+\item[{int}]{id, }
+\item[{long}]{response, }
+\item[{int}]{error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a2168ee22b83d3aeb85f4148184f7409d}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a2168ee22b83d3aeb85f4148184f7409d}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!Set\+String\+Command\+Response@{Set\+String\+Command\+Response}}
+\index{Set\+String\+Command\+Response@{Set\+String\+Command\+Response}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{Set\+String\+Command\+Response(\+Int64 ix, int id, [Marshal\+As(\+Unmanaged\+Type.\+L\+P\+W\+Str)] string response, int error)}{SetStringCommandResponse(Int64 ix, int id, [MarshalAs(UnmanagedType.LPWStr)] string response, int error)}}]{\setlength{\rightskip}{0pt plus 5cm}static void M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+Set\+String\+Command\+Response (
+\begin{DoxyParamCaption}
+\item[{Int64}]{ix, }
+\item[{int}]{id, }
+\item[{\mbox{[}\+Marshal\+As(\+Unmanaged\+Type.\+L\+P\+W\+Str)\mbox{]} string}]{response, }
+\item[{int}]{error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_ad2c1c396dd566f24fca374c8c2f23db6}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_ad2c1c396dd566f24fca374c8c2f23db6}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!Set\+Void\+Command\+Response@{Set\+Void\+Command\+Response}}
+\index{Set\+Void\+Command\+Response@{Set\+Void\+Command\+Response}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{Set\+Void\+Command\+Response(\+Int64 ix, int id, int error)}{SetVoidCommandResponse(Int64 ix, int id, int error)}}]{\setlength{\rightskip}{0pt plus 5cm}static void M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+Set\+Void\+Command\+Response (
+\begin{DoxyParamCaption}
+\item[{Int64}]{ix, }
+\item[{int}]{id, }
+\item[{int}]{error}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_aca897e36435fc3ad5acd9f0faa510def}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_aca897e36435fc3ad5acd9f0faa510def}
+\index{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}!throw\+Exception\+If\+Error\+Response@{throw\+Exception\+If\+Error\+Response}}
+\index{throw\+Exception\+If\+Error\+Response@{throw\+Exception\+If\+Error\+Response}!M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager@{M\+Q\+L4\+C\+Sharp\+::\+Base\+::\+M\+Q\+L\+::\+M\+Q\+L\+Command\+Manager}}
+\subsubsection[{\texorpdfstring{throw\+Exception\+If\+Error\+Response(int id)}{throwExceptionIfErrorResponse(int id)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+Q\+L4\+C\+Sharp.\+Base.\+M\+Q\+L.\+M\+Q\+L\+Command\+Manager.\+throw\+Exception\+If\+Error\+Response (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a4eb0770edf84c81bbb5d9ee7d5000cae}{}\label{class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_manager_a4eb0770edf84c81bbb5d9ee7d5000cae}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Base/\+M\+Q\+L/\hyperlink{_m_q_l_command_manager_8cs}{M\+Q\+L\+Command\+Manager.\+cs}\end{DoxyCompactItemize}

@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['rateinfo',['RateInfo',['../struct_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_expert_1_1_rate_info.html',1,'MQL4CSharp::Base::MQL::MQLExpert']]],
+  ['real',['real',['../struct_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_expert_1_1_rate_info.html#ab94a352b667fd71f11f7d53096ba3f76',1,'MQL4CSharp::Base::MQL::MQLExpert::RateInfo']]],
+  ['recursivestackoverflowexception',['RecursiveStackOverflowException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_recursive_stack_overflow_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['recursivestackoverflowexception',['RecursiveStackOverflowException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_recursive_stack_overflow_exception.html#ad13f3f1e5900e0c9ae779254a5977a0a',1,'MQL4CSharp::Base::Exceptions::RecursiveStackOverflowException']]],
+  ['red',['Red',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aaee38e4d5dd68c4e440825018d549cb47',1,'MQL4CSharp::Base::Enums']]],
+  ['refreshrates',['RefreshRates',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_base.html#a5b75c924fcfb8d7d02e01d56bcee605e',1,'MQL4CSharp::Base::MQLBase']]],
+  ['refreshrates_5f1',['RefreshRates_1',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a86fc232b6f9a036bf9bff2c97fa38439aa2ae02b9bab4e57e7fd22b0d77d3932a',1,'MQL4CSharp::Base::Enums']]],
+  ['remainderfromzerodivideexception',['RemainderFromZeroDivideException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_remainder_from_zero_divide_exception.html#a1d4fab672b8b6936007ce6fcf7463b17',1,'MQL4CSharp::Base::Exceptions::RemainderFromZeroDivideException']]],
+  ['remainderfromzerodivideexception',['RemainderFromZeroDivideException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_remainder_from_zero_divide_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['requoteexception',['RequoteException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_requote_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['requoteexception',['RequoteException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_requote_exception.html#ace9833da1081ff0e54b07f67879c9102',1,'MQL4CSharp::Base::Exceptions::RequoteException']]],
+  ['resourceduplicatedexception',['ResourceDuplicatedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_resource_duplicated_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['resourceduplicatedexception',['ResourceDuplicatedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_resource_duplicated_exception.html#a4615ce220fe9e83d7e0a174e81464716',1,'MQL4CSharp::Base::Exceptions::ResourceDuplicatedException']]],
+  ['resourcenotfoundexception',['ResourceNotFoundException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_resource_not_found_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['resourcenotfoundexception',['ResourceNotFoundException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_resource_not_found_exception.html#a3e3576056f0db4b3e937b2d922f04549',1,'MQL4CSharp::Base::Exceptions::ResourceNotFoundException']]],
+  ['resourcenotsupportedexception',['ResourceNotSupportedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_resource_not_supported_exception.html',1,'MQL4CSharp::Base::Exceptions']]],
+  ['resourcenotsupportedexception',['ResourceNotSupportedException',['../class_m_q_l4_c_sharp_1_1_base_1_1_exceptions_1_1_resource_not_supported_exception.html#ac36d055938d0a9a68827012ddee27e29',1,'MQL4CSharp::Base::Exceptions::ResourceNotSupportedException']]],
+  ['response',['Response',['../class_m_q_l4_c_sharp_1_1_base_1_1_m_q_l_1_1_m_q_l_command_request.html#ae3f556839c2657587b3f63b65cae2477',1,'MQL4CSharp::Base::MQL::MQLCommandRequest']]],
+  ['rosybrown',['RosyBrown',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa36b966a66d6bd385bc65c4ea063c841c',1,'MQL4CSharp::Base::Enums']]],
+  ['royalblue',['RoyalBlue',['../namespace_m_q_l4_c_sharp_1_1_base_1_1_enums.html#a79b99235c71c70f2f5207aac2ff24f1aa3c6a0f673ebc53ef5e2912c59330c802',1,'MQL4CSharp::Base::Enums']]]
+];

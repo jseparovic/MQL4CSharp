@@ -1,0 +1,841 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: ClassName
+%%Creator: Doxygen
+%%CreationDate: Time
+%%For: 
+%Magnification: 1.00
+%%Orientation: Portrait
+%%BoundingBox: 0 0 500 3802.816901
+%%Pages: 0
+%%BeginSetup
+%%EndSetup
+%%EndComments
+
+% ----- variables -----
+
+/boxwidth 0 def
+/boxheight 40 def
+/fontheight 24 def
+/marginwidth 10 def
+/distx 20 def
+/disty 40 def
+/boundaspect 0.131481 def  % aspect ratio of the BoundingBox (width/height)
+/boundx 500 def
+/boundy boundx boundaspect div def
+/xspacing 0 def
+/yspacing 0 def
+/rows 162 def
+/cols 2 def
+/scalefactor 0 def
+/boxfont /Times-Roman findfont fontheight scalefont def
+
+% ----- procedures -----
+
+/dotted { [1 4] 0 setdash } def
+/dashed { [5] 0 setdash } def
+/solid  { [] 0 setdash } def
+
+/max % result = MAX(arg1,arg2)
+{
+  /a exch def
+  /b exch def
+  a b gt {a} {b} ifelse
+} def
+
+/xoffset % result = MAX(0,(scalefactor-(boxwidth*cols+distx*(cols-1)))/2)
+{
+  0 scalefactor boxwidth cols mul distx cols 1 sub mul add sub 2 div max
+} def
+
+/cw % boxwidth = MAX(boxwidth, stringwidth(arg1))
+{
+  /str exch def
+  /boxwidth boxwidth str stringwidth pop max def
+} def
+
+/box % draws a box with text `arg1' at grid pos (arg2,arg3)
+{ gsave
+  2 setlinewidth
+  newpath
+  exch xspacing mul xoffset add
+  exch yspacing mul
+  moveto
+  boxwidth 0 rlineto 
+  0 boxheight rlineto 
+  boxwidth neg 0 rlineto 
+  0 boxheight neg rlineto 
+  closepath
+  dup stringwidth pop neg boxwidth add 2 div
+  boxheight fontheight 2 div sub 2 div
+  rmoveto show stroke
+  grestore
+} def  
+
+/mark
+{ newpath
+  exch xspacing mul xoffset add boxwidth add
+  exch yspacing mul
+  moveto
+  0 boxheight 4 div rlineto
+  boxheight neg 4 div boxheight neg 4 div rlineto
+  closepath
+  eofill
+  stroke
+} def
+
+/arrow
+{ newpath
+  moveto
+  3 -8 rlineto
+  -6 0 rlineto
+  3 8 rlineto
+  closepath
+  eofill
+  stroke
+} def
+
+/out % draws an output connector for the block at (arg1,arg2)
+{
+  newpath
+  exch xspacing mul xoffset add boxwidth 2 div add
+  exch yspacing mul boxheight add
+  /y exch def
+  /x exch def
+  x y moveto
+  0 disty 2 div rlineto 
+  stroke
+  1 eq { x y disty 2 div add arrow } if
+} def
+
+/in % draws an input connector for the block at (arg1,arg2)
+{
+  newpath
+  exch xspacing mul xoffset add boxwidth 2 div add
+  exch yspacing mul disty 2 div sub
+  /y exch def
+  /x exch def
+  x y moveto
+  0 disty 2 div rlineto
+  stroke
+  1 eq { x y disty 2 div add arrow } if
+} def
+
+/hedge
+{
+  exch xspacing mul xoffset add boxwidth 2 div add
+  exch yspacing mul boxheight 2 div sub
+  /y exch def
+  /x exch def
+  newpath
+  x y moveto
+  boxwidth 2 div distx add 0 rlineto
+  stroke
+  1 eq
+  { newpath x boxwidth 2 div distx add add y moveto
+    -8 3 rlineto
+    0 -6 rlineto
+    8 3 rlineto
+    closepath
+    eofill
+    stroke
+  } if
+} def
+
+/vedge
+{
+  /ye exch def
+  /ys exch def
+  /xs exch def
+  newpath
+  xs xspacing mul xoffset add boxwidth 2 div add dup
+  ys yspacing mul boxheight 2 div sub
+  moveto
+  ye yspacing mul boxheight 2 div sub
+  lineto
+  stroke
+} def
+
+/conn % connections the blocks from col `arg1' to `arg2' of row `arg3'
+{
+  /ys exch def
+  /xe exch def
+  /xs exch def
+  newpath
+  xs xspacing mul xoffset add boxwidth 2 div add
+  ys yspacing mul disty 2 div sub
+  moveto
+  xspacing xe xs sub mul 0
+  rlineto
+  stroke
+} def
+
+% ----- main ------
+
+boxfont setfont
+1 boundaspect scale
+(MQL4CSharp.Base.Exceptions.MQLExceptions) cw
+(Exception) cw
+(MQL4CSharp.Base.Exceptions.AccountDisabledException) cw
+(MQL4CSharp.Base.Exceptions.ArrayAsParameterExpectedException) cw
+(MQL4CSharp.Base.Exceptions.ArrayIndexOutOfRangeException) cw
+(MQL4CSharp.Base.Exceptions.ArrayInvalidException) cw
+(MQL4CSharp.Base.Exceptions.BrokerBusyException) cw
+(MQL4CSharp.Base.Exceptions.CannotCallFunctionException) cw
+(MQL4CSharp.Base.Exceptions.CannotLoadLibraryException) cw
+(MQL4CSharp.Base.Exceptions.CannotOpenFileException) cw
+(MQL4CSharp.Base.Exceptions.ChartindicatorNotFoundException) cw
+(MQL4CSharp.Base.Exceptions.ChartNoreplyException) cw
+(MQL4CSharp.Base.Exceptions.ChartNotFoundException) cw
+(MQL4CSharp.Base.Exceptions.ChartPropInvalidException) cw
+(MQL4CSharp.Base.Exceptions.ChartwindowNotFoundException) cw
+(MQL4CSharp.Base.Exceptions.CommonErrorException) cw
+(MQL4CSharp.Base.Exceptions.CustomIndicatorErrorException) cw
+(MQL4CSharp.Base.Exceptions.DllCallsNotAllowedException) cw
+(MQL4CSharp.Base.Exceptions.DllfuncCriticalerrorException) cw
+(MQL4CSharp.Base.Exceptions.DoubleParameterExpectedException) cw
+(MQL4CSharp.Base.Exceptions.EndOfFileException) cw
+(MQL4CSharp.Base.Exceptions.ExternalCallsNotAllowedException) cw
+(MQL4CSharp.Base.Exceptions.FileArrayresizeErrorException) cw
+(MQL4CSharp.Base.Exceptions.FileBinStringsizeException) cw
+(MQL4CSharp.Base.Exceptions.FileBufferAllocationErrorException) cw
+(MQL4CSharp.Base.Exceptions.FileCannotCleanDirectoryException) cw
+(MQL4CSharp.Base.Exceptions.FileCannotDeleteDirectoryException) cw
+(MQL4CSharp.Base.Exceptions.FileCannotDeleteException) cw
+(MQL4CSharp.Base.Exceptions.FileCannotOpenException) cw
+(MQL4CSharp.Base.Exceptions.FileCannotRewriteException) cw
+(MQL4CSharp.Base.Exceptions.FileDirectoryNotExistException) cw
+(MQL4CSharp.Base.Exceptions.FileIncompatibleException) cw
+(MQL4CSharp.Base.Exceptions.FileInvalidHandleException) cw
+(MQL4CSharp.Base.Exceptions.FileIsDirectoryException) cw
+(MQL4CSharp.Base.Exceptions.FileNotBinException) cw
+(MQL4CSharp.Base.Exceptions.FileNotCsvException) cw
+(MQL4CSharp.Base.Exceptions.FileNotDirectoryException) cw
+(MQL4CSharp.Base.Exceptions.FileNotExistException) cw
+(MQL4CSharp.Base.Exceptions.FileNotToreadException) cw
+(MQL4CSharp.Base.Exceptions.FileNotTowriteException) cw
+(MQL4CSharp.Base.Exceptions.FileNotTxtException) cw
+(MQL4CSharp.Base.Exceptions.FileNotTxtorcsvException) cw
+(MQL4CSharp.Base.Exceptions.FileReadErrorException) cw
+(MQL4CSharp.Base.Exceptions.FileStringresizeErrorException) cw
+(MQL4CSharp.Base.Exceptions.FileStructWithObjectsException) cw
+(MQL4CSharp.Base.Exceptions.FileTooLongFilenameException) cw
+(MQL4CSharp.Base.Exceptions.FileTooManyOpenedException) cw
+(MQL4CSharp.Base.Exceptions.FileWriteErrorException) cw
+(MQL4CSharp.Base.Exceptions.FileWrongDirectorynameException) cw
+(MQL4CSharp.Base.Exceptions.FileWrongFilenameException) cw
+(MQL4CSharp.Base.Exceptions.FileWrongHandleException) cw
+(MQL4CSharp.Base.Exceptions.FormatTooManyFormattersException) cw
+(MQL4CSharp.Base.Exceptions.FormatTooManyParametersException) cw
+(MQL4CSharp.Base.Exceptions.FtpChangedirException) cw
+(MQL4CSharp.Base.Exceptions.FtpClosedException) cw
+(MQL4CSharp.Base.Exceptions.FtpConnectFailedException) cw
+(MQL4CSharp.Base.Exceptions.FtpErrorException) cw
+(MQL4CSharp.Base.Exceptions.FtpFileErrorException) cw
+(MQL4CSharp.Base.Exceptions.FtpNologinException) cw
+(MQL4CSharp.Base.Exceptions.FtpNoserverException) cw
+(MQL4CSharp.Base.Exceptions.FuncNotAllowedInTestingException) cw
+(MQL4CSharp.Base.Exceptions.FunctionNotConfirmedException) cw
+(MQL4CSharp.Base.Exceptions.GlobalVariableNotFoundException) cw
+(MQL4CSharp.Base.Exceptions.GlobalVariablesProcessingException) cw
+(MQL4CSharp.Base.Exceptions.HistoryWillUpdatedException) cw
+(MQL4CSharp.Base.Exceptions.IncompatibleArraysException) cw
+(MQL4CSharp.Base.Exceptions.IncompatibleFileaccessException) cw
+(MQL4CSharp.Base.Exceptions.IncorrectSeriesarrayUsingException) cw
+(MQL4CSharp.Base.Exceptions.IndicatorCannotInitException) cw
+(MQL4CSharp.Base.Exceptions.IndicatorCannotLoadException) cw
+(MQL4CSharp.Base.Exceptions.IntegerParameterExpectedException) cw
+(MQL4CSharp.Base.Exceptions.InternalErrorException) cw
+(MQL4CSharp.Base.Exceptions.InvalidAccountException) cw
+(MQL4CSharp.Base.Exceptions.InvalidFunctionParamscntException) cw
+(MQL4CSharp.Base.Exceptions.InvalidFunctionParamvalueException) cw
+(MQL4CSharp.Base.Exceptions.InvalidPointerException) cw
+(MQL4CSharp.Base.Exceptions.InvalidPriceException) cw
+(MQL4CSharp.Base.Exceptions.InvalidPriceParamException) cw
+(MQL4CSharp.Base.Exceptions.InvalidStopsException) cw
+(MQL4CSharp.Base.Exceptions.InvalidTicketException) cw
+(MQL4CSharp.Base.Exceptions.InvalidTradeParametersException) cw
+(MQL4CSharp.Base.Exceptions.InvalidTradeVolumeException) cw
+(MQL4CSharp.Base.Exceptions.LongPositionsOnlyAllowedException) cw
+(MQL4CSharp.Base.Exceptions.LongsNotAllowedException) cw
+(MQL4CSharp.Base.Exceptions.MalfunctionalTradeException) cw
+(MQL4CSharp.Base.Exceptions.MarketClosedException) cw
+(MQL4CSharp.Base.Exceptions.NoConnectionException) cw
+(MQL4CSharp.Base.Exceptions.NoHistoryDataException) cw
+(MQL4CSharp.Base.Exceptions.NoMemoryForArraystringException) cw
+(MQL4CSharp.Base.Exceptions.NoMemoryForCallStackException) cw
+(MQL4CSharp.Base.Exceptions.NoMemoryForHistoryException) cw
+(MQL4CSharp.Base.Exceptions.NoMemoryForIndicatorException) cw
+(MQL4CSharp.Base.Exceptions.NoMemoryForParamStringException) cw
+(MQL4CSharp.Base.Exceptions.NoMemoryForReturnedStrException) cw
+(MQL4CSharp.Base.Exceptions.NoMemoryForTempStringException) cw
+(MQL4CSharp.Base.Exceptions.NoMqlerrorException) cw
+(MQL4CSharp.Base.Exceptions.NoObjectNameException) cw
+(MQL4CSharp.Base.Exceptions.NoOrderSelectedException) cw
+(MQL4CSharp.Base.Exceptions.NoResultException) cw
+(MQL4CSharp.Base.Exceptions.NoSpecifiedSubwindowException) cw
+(MQL4CSharp.Base.Exceptions.NotEnoughMoneyException) cw
+(MQL4CSharp.Base.Exceptions.NotEnoughRightsException) cw
+(MQL4CSharp.Base.Exceptions.NotEnoughStackForParamException) cw
+(MQL4CSharp.Base.Exceptions.NotificationErrorException) cw
+(MQL4CSharp.Base.Exceptions.NotificationParameterException) cw
+(MQL4CSharp.Base.Exceptions.NotificationSettingsException) cw
+(MQL4CSharp.Base.Exceptions.NotificationTooFrequentException) cw
+(MQL4CSharp.Base.Exceptions.NotInitializedArrayException) cw
+(MQL4CSharp.Base.Exceptions.NotInitializedArraystringException) cw
+(MQL4CSharp.Base.Exceptions.NotInitializedStringException) cw
+(MQL4CSharp.Base.Exceptions.ObjectAlreadyExistsException) cw
+(MQL4CSharp.Base.Exceptions.ObjectCoordinatesErrorException) cw
+(MQL4CSharp.Base.Exceptions.ObjectDoesNotExistException) cw
+(MQL4CSharp.Base.Exceptions.OffQuotesException) cw
+(MQL4CSharp.Base.Exceptions.OldVersionException) cw
+(MQL4CSharp.Base.Exceptions.OrderLockedException) cw
+(MQL4CSharp.Base.Exceptions.OutOfMemoryException) cw
+(MQL4CSharp.Base.Exceptions.PriceChangedException) cw
+(MQL4CSharp.Base.Exceptions.RecursiveStackOverflowException) cw
+(MQL4CSharp.Base.Exceptions.RemainderFromZeroDivideException) cw
+(MQL4CSharp.Base.Exceptions.RequoteException) cw
+(MQL4CSharp.Base.Exceptions.ResourceDuplicatedException) cw
+(MQL4CSharp.Base.Exceptions.ResourceNotFoundException) cw
+(MQL4CSharp.Base.Exceptions.ResourceNotSupportedException) cw
+(MQL4CSharp.Base.Exceptions.SendMailErrorException) cw
+(MQL4CSharp.Base.Exceptions.ServerBusyException) cw
+(MQL4CSharp.Base.Exceptions.ShortsNotAllowedExceptionException) cw
+(MQL4CSharp.Base.Exceptions.SomeArrayErrorException) cw
+(MQL4CSharp.Base.Exceptions.SomeFileErrorException) cw
+(MQL4CSharp.Base.Exceptions.SomeObjectErrorException) cw
+(MQL4CSharp.Base.Exceptions.StringFunctionInternalException) cw
+(MQL4CSharp.Base.Exceptions.StringParameterExpectedException) cw
+(MQL4CSharp.Base.Exceptions.SymbolSelectException) cw
+(MQL4CSharp.Base.Exceptions.SystemBusyException) cw
+(MQL4CSharp.Base.Exceptions.TooFrequentRequestsException) cw
+(MQL4CSharp.Base.Exceptions.TooLongStringException) cw
+(MQL4CSharp.Base.Exceptions.TooManyOpenedFilesException) cw
+(MQL4CSharp.Base.Exceptions.TooManyRequestsException) cw
+(MQL4CSharp.Base.Exceptions.TradeContextBusyException) cw
+(MQL4CSharp.Base.Exceptions.TradeDisabledException) cw
+(MQL4CSharp.Base.Exceptions.TradeErrorException) cw
+(MQL4CSharp.Base.Exceptions.TradeExpertDisabledByServerException) cw
+(MQL4CSharp.Base.Exceptions.TradeExpirationDeniedException) cw
+(MQL4CSharp.Base.Exceptions.TradeHedgeProhibitedException) cw
+(MQL4CSharp.Base.Exceptions.TradeModifyDeniedException) cw
+(MQL4CSharp.Base.Exceptions.TradeNotAllowedException) cw
+(MQL4CSharp.Base.Exceptions.TradeProhibitedByFifoException) cw
+(MQL4CSharp.Base.Exceptions.TradeTimeoutException) cw
+(MQL4CSharp.Base.Exceptions.TradeTooManyOrdersException) cw
+(MQL4CSharp.Base.Exceptions.UnknownCommandException) cw
+(MQL4CSharp.Base.Exceptions.UnknownObjectPropertyException) cw
+(MQL4CSharp.Base.Exceptions.UnknownObjectTypeException) cw
+(MQL4CSharp.Base.Exceptions.UnknownSymbolException) cw
+(MQL4CSharp.Base.Exceptions.UserErrorFirstException) cw
+(MQL4CSharp.Base.Exceptions.WebrequestConnectFailedException) cw
+(MQL4CSharp.Base.Exceptions.WebrequestInvalidAddressException) cw
+(MQL4CSharp.Base.Exceptions.WebrequestRequestFailedException) cw
+(MQL4CSharp.Base.Exceptions.WebrequestTimeoutException) cw
+(MQL4CSharp.Base.Exceptions.WrongFileNameException) cw
+(MQL4CSharp.Base.Exceptions.WrongFunctionPointerException) cw
+(MQL4CSharp.Base.Exceptions.WrongJumpException) cw
+(MQL4CSharp.Base.Exceptions.ZeroDivideException) cw
+/boxwidth boxwidth marginwidth 2 mul add def
+/xspacing boxwidth distx add def
+/yspacing boxheight disty add def
+/scalefactor 
+  boxwidth cols mul distx cols 1 sub mul add
+  boxheight rows mul disty rows 1 sub mul add boundaspect mul 
+  max def
+boundx scalefactor div boundy scalefactor div scale
+
+% ----- classes -----
+
+ (MQL4CSharp.Base.Exceptions.MQLExceptions) 0.000000 160.000000 box
+ (Exception) 0.000000 161.000000 box
+ (MQL4CSharp.Base.Exceptions.AccountDisabledException) 1.000000 159.000000 box
+ (MQL4CSharp.Base.Exceptions.ArrayAsParameterExpectedException) 1.000000 158.000000 box
+ (MQL4CSharp.Base.Exceptions.ArrayIndexOutOfRangeException) 1.000000 157.000000 box
+ (MQL4CSharp.Base.Exceptions.ArrayInvalidException) 1.000000 156.000000 box
+ (MQL4CSharp.Base.Exceptions.BrokerBusyException) 1.000000 155.000000 box
+ (MQL4CSharp.Base.Exceptions.CannotCallFunctionException) 1.000000 154.000000 box
+ (MQL4CSharp.Base.Exceptions.CannotLoadLibraryException) 1.000000 153.000000 box
+ (MQL4CSharp.Base.Exceptions.CannotOpenFileException) 1.000000 152.000000 box
+ (MQL4CSharp.Base.Exceptions.ChartindicatorNotFoundException) 1.000000 151.000000 box
+ (MQL4CSharp.Base.Exceptions.ChartNoreplyException) 1.000000 150.000000 box
+ (MQL4CSharp.Base.Exceptions.ChartNotFoundException) 1.000000 149.000000 box
+ (MQL4CSharp.Base.Exceptions.ChartPropInvalidException) 1.000000 148.000000 box
+ (MQL4CSharp.Base.Exceptions.ChartwindowNotFoundException) 1.000000 147.000000 box
+ (MQL4CSharp.Base.Exceptions.CommonErrorException) 1.000000 146.000000 box
+ (MQL4CSharp.Base.Exceptions.CustomIndicatorErrorException) 1.000000 145.000000 box
+ (MQL4CSharp.Base.Exceptions.DllCallsNotAllowedException) 1.000000 144.000000 box
+ (MQL4CSharp.Base.Exceptions.DllfuncCriticalerrorException) 1.000000 143.000000 box
+ (MQL4CSharp.Base.Exceptions.DoubleParameterExpectedException) 1.000000 142.000000 box
+ (MQL4CSharp.Base.Exceptions.EndOfFileException) 1.000000 141.000000 box
+ (MQL4CSharp.Base.Exceptions.ExternalCallsNotAllowedException) 1.000000 140.000000 box
+ (MQL4CSharp.Base.Exceptions.FileArrayresizeErrorException) 1.000000 139.000000 box
+ (MQL4CSharp.Base.Exceptions.FileBinStringsizeException) 1.000000 138.000000 box
+ (MQL4CSharp.Base.Exceptions.FileBufferAllocationErrorException) 1.000000 137.000000 box
+ (MQL4CSharp.Base.Exceptions.FileCannotCleanDirectoryException) 1.000000 136.000000 box
+ (MQL4CSharp.Base.Exceptions.FileCannotDeleteDirectoryException) 1.000000 135.000000 box
+ (MQL4CSharp.Base.Exceptions.FileCannotDeleteException) 1.000000 134.000000 box
+ (MQL4CSharp.Base.Exceptions.FileCannotOpenException) 1.000000 133.000000 box
+ (MQL4CSharp.Base.Exceptions.FileCannotRewriteException) 1.000000 132.000000 box
+ (MQL4CSharp.Base.Exceptions.FileDirectoryNotExistException) 1.000000 131.000000 box
+ (MQL4CSharp.Base.Exceptions.FileIncompatibleException) 1.000000 130.000000 box
+ (MQL4CSharp.Base.Exceptions.FileInvalidHandleException) 1.000000 129.000000 box
+ (MQL4CSharp.Base.Exceptions.FileIsDirectoryException) 1.000000 128.000000 box
+ (MQL4CSharp.Base.Exceptions.FileNotBinException) 1.000000 127.000000 box
+ (MQL4CSharp.Base.Exceptions.FileNotCsvException) 1.000000 126.000000 box
+ (MQL4CSharp.Base.Exceptions.FileNotDirectoryException) 1.000000 125.000000 box
+ (MQL4CSharp.Base.Exceptions.FileNotExistException) 1.000000 124.000000 box
+ (MQL4CSharp.Base.Exceptions.FileNotToreadException) 1.000000 123.000000 box
+ (MQL4CSharp.Base.Exceptions.FileNotTowriteException) 1.000000 122.000000 box
+ (MQL4CSharp.Base.Exceptions.FileNotTxtException) 1.000000 121.000000 box
+ (MQL4CSharp.Base.Exceptions.FileNotTxtorcsvException) 1.000000 120.000000 box
+ (MQL4CSharp.Base.Exceptions.FileReadErrorException) 1.000000 119.000000 box
+ (MQL4CSharp.Base.Exceptions.FileStringresizeErrorException) 1.000000 118.000000 box
+ (MQL4CSharp.Base.Exceptions.FileStructWithObjectsException) 1.000000 117.000000 box
+ (MQL4CSharp.Base.Exceptions.FileTooLongFilenameException) 1.000000 116.000000 box
+ (MQL4CSharp.Base.Exceptions.FileTooManyOpenedException) 1.000000 115.000000 box
+ (MQL4CSharp.Base.Exceptions.FileWriteErrorException) 1.000000 114.000000 box
+ (MQL4CSharp.Base.Exceptions.FileWrongDirectorynameException) 1.000000 113.000000 box
+ (MQL4CSharp.Base.Exceptions.FileWrongFilenameException) 1.000000 112.000000 box
+ (MQL4CSharp.Base.Exceptions.FileWrongHandleException) 1.000000 111.000000 box
+ (MQL4CSharp.Base.Exceptions.FormatTooManyFormattersException) 1.000000 110.000000 box
+ (MQL4CSharp.Base.Exceptions.FormatTooManyParametersException) 1.000000 109.000000 box
+ (MQL4CSharp.Base.Exceptions.FtpChangedirException) 1.000000 108.000000 box
+ (MQL4CSharp.Base.Exceptions.FtpClosedException) 1.000000 107.000000 box
+ (MQL4CSharp.Base.Exceptions.FtpConnectFailedException) 1.000000 106.000000 box
+ (MQL4CSharp.Base.Exceptions.FtpErrorException) 1.000000 105.000000 box
+ (MQL4CSharp.Base.Exceptions.FtpFileErrorException) 1.000000 104.000000 box
+ (MQL4CSharp.Base.Exceptions.FtpNologinException) 1.000000 103.000000 box
+ (MQL4CSharp.Base.Exceptions.FtpNoserverException) 1.000000 102.000000 box
+ (MQL4CSharp.Base.Exceptions.FuncNotAllowedInTestingException) 1.000000 101.000000 box
+ (MQL4CSharp.Base.Exceptions.FunctionNotConfirmedException) 1.000000 100.000000 box
+ (MQL4CSharp.Base.Exceptions.GlobalVariableNotFoundException) 1.000000 99.000000 box
+ (MQL4CSharp.Base.Exceptions.GlobalVariablesProcessingException) 1.000000 98.000000 box
+ (MQL4CSharp.Base.Exceptions.HistoryWillUpdatedException) 1.000000 97.000000 box
+ (MQL4CSharp.Base.Exceptions.IncompatibleArraysException) 1.000000 96.000000 box
+ (MQL4CSharp.Base.Exceptions.IncompatibleFileaccessException) 1.000000 95.000000 box
+ (MQL4CSharp.Base.Exceptions.IncorrectSeriesarrayUsingException) 1.000000 94.000000 box
+ (MQL4CSharp.Base.Exceptions.IndicatorCannotInitException) 1.000000 93.000000 box
+ (MQL4CSharp.Base.Exceptions.IndicatorCannotLoadException) 1.000000 92.000000 box
+ (MQL4CSharp.Base.Exceptions.IntegerParameterExpectedException) 1.000000 91.000000 box
+ (MQL4CSharp.Base.Exceptions.InternalErrorException) 1.000000 90.000000 box
+ (MQL4CSharp.Base.Exceptions.InvalidAccountException) 1.000000 89.000000 box
+ (MQL4CSharp.Base.Exceptions.InvalidFunctionParamscntException) 1.000000 88.000000 box
+ (MQL4CSharp.Base.Exceptions.InvalidFunctionParamvalueException) 1.000000 87.000000 box
+ (MQL4CSharp.Base.Exceptions.InvalidPointerException) 1.000000 86.000000 box
+ (MQL4CSharp.Base.Exceptions.InvalidPriceException) 1.000000 85.000000 box
+ (MQL4CSharp.Base.Exceptions.InvalidPriceParamException) 1.000000 84.000000 box
+ (MQL4CSharp.Base.Exceptions.InvalidStopsException) 1.000000 83.000000 box
+ (MQL4CSharp.Base.Exceptions.InvalidTicketException) 1.000000 82.000000 box
+ (MQL4CSharp.Base.Exceptions.InvalidTradeParametersException) 1.000000 81.000000 box
+ (MQL4CSharp.Base.Exceptions.InvalidTradeVolumeException) 1.000000 80.000000 box
+ (MQL4CSharp.Base.Exceptions.LongPositionsOnlyAllowedException) 1.000000 79.000000 box
+ (MQL4CSharp.Base.Exceptions.LongsNotAllowedException) 1.000000 78.000000 box
+ (MQL4CSharp.Base.Exceptions.MalfunctionalTradeException) 1.000000 77.000000 box
+ (MQL4CSharp.Base.Exceptions.MarketClosedException) 1.000000 76.000000 box
+ (MQL4CSharp.Base.Exceptions.NoConnectionException) 1.000000 75.000000 box
+ (MQL4CSharp.Base.Exceptions.NoHistoryDataException) 1.000000 74.000000 box
+ (MQL4CSharp.Base.Exceptions.NoMemoryForArraystringException) 1.000000 73.000000 box
+ (MQL4CSharp.Base.Exceptions.NoMemoryForCallStackException) 1.000000 72.000000 box
+ (MQL4CSharp.Base.Exceptions.NoMemoryForHistoryException) 1.000000 71.000000 box
+ (MQL4CSharp.Base.Exceptions.NoMemoryForIndicatorException) 1.000000 70.000000 box
+ (MQL4CSharp.Base.Exceptions.NoMemoryForParamStringException) 1.000000 69.000000 box
+ (MQL4CSharp.Base.Exceptions.NoMemoryForReturnedStrException) 1.000000 68.000000 box
+ (MQL4CSharp.Base.Exceptions.NoMemoryForTempStringException) 1.000000 67.000000 box
+ (MQL4CSharp.Base.Exceptions.NoMqlerrorException) 1.000000 66.000000 box
+ (MQL4CSharp.Base.Exceptions.NoObjectNameException) 1.000000 65.000000 box
+ (MQL4CSharp.Base.Exceptions.NoOrderSelectedException) 1.000000 64.000000 box
+ (MQL4CSharp.Base.Exceptions.NoResultException) 1.000000 63.000000 box
+ (MQL4CSharp.Base.Exceptions.NoSpecifiedSubwindowException) 1.000000 62.000000 box
+ (MQL4CSharp.Base.Exceptions.NotEnoughMoneyException) 1.000000 61.000000 box
+ (MQL4CSharp.Base.Exceptions.NotEnoughRightsException) 1.000000 60.000000 box
+ (MQL4CSharp.Base.Exceptions.NotEnoughStackForParamException) 1.000000 59.000000 box
+ (MQL4CSharp.Base.Exceptions.NotificationErrorException) 1.000000 58.000000 box
+ (MQL4CSharp.Base.Exceptions.NotificationParameterException) 1.000000 57.000000 box
+ (MQL4CSharp.Base.Exceptions.NotificationSettingsException) 1.000000 56.000000 box
+ (MQL4CSharp.Base.Exceptions.NotificationTooFrequentException) 1.000000 55.000000 box
+ (MQL4CSharp.Base.Exceptions.NotInitializedArrayException) 1.000000 54.000000 box
+ (MQL4CSharp.Base.Exceptions.NotInitializedArraystringException) 1.000000 53.000000 box
+ (MQL4CSharp.Base.Exceptions.NotInitializedStringException) 1.000000 52.000000 box
+ (MQL4CSharp.Base.Exceptions.ObjectAlreadyExistsException) 1.000000 51.000000 box
+ (MQL4CSharp.Base.Exceptions.ObjectCoordinatesErrorException) 1.000000 50.000000 box
+ (MQL4CSharp.Base.Exceptions.ObjectDoesNotExistException) 1.000000 49.000000 box
+ (MQL4CSharp.Base.Exceptions.OffQuotesException) 1.000000 48.000000 box
+ (MQL4CSharp.Base.Exceptions.OldVersionException) 1.000000 47.000000 box
+ (MQL4CSharp.Base.Exceptions.OrderLockedException) 1.000000 46.000000 box
+ (MQL4CSharp.Base.Exceptions.OutOfMemoryException) 1.000000 45.000000 box
+ (MQL4CSharp.Base.Exceptions.PriceChangedException) 1.000000 44.000000 box
+ (MQL4CSharp.Base.Exceptions.RecursiveStackOverflowException) 1.000000 43.000000 box
+ (MQL4CSharp.Base.Exceptions.RemainderFromZeroDivideException) 1.000000 42.000000 box
+ (MQL4CSharp.Base.Exceptions.RequoteException) 1.000000 41.000000 box
+ (MQL4CSharp.Base.Exceptions.ResourceDuplicatedException) 1.000000 40.000000 box
+ (MQL4CSharp.Base.Exceptions.ResourceNotFoundException) 1.000000 39.000000 box
+ (MQL4CSharp.Base.Exceptions.ResourceNotSupportedException) 1.000000 38.000000 box
+ (MQL4CSharp.Base.Exceptions.SendMailErrorException) 1.000000 37.000000 box
+ (MQL4CSharp.Base.Exceptions.ServerBusyException) 1.000000 36.000000 box
+ (MQL4CSharp.Base.Exceptions.ShortsNotAllowedExceptionException) 1.000000 35.000000 box
+ (MQL4CSharp.Base.Exceptions.SomeArrayErrorException) 1.000000 34.000000 box
+ (MQL4CSharp.Base.Exceptions.SomeFileErrorException) 1.000000 33.000000 box
+ (MQL4CSharp.Base.Exceptions.SomeObjectErrorException) 1.000000 32.000000 box
+ (MQL4CSharp.Base.Exceptions.StringFunctionInternalException) 1.000000 31.000000 box
+ (MQL4CSharp.Base.Exceptions.StringParameterExpectedException) 1.000000 30.000000 box
+ (MQL4CSharp.Base.Exceptions.SymbolSelectException) 1.000000 29.000000 box
+ (MQL4CSharp.Base.Exceptions.SystemBusyException) 1.000000 28.000000 box
+ (MQL4CSharp.Base.Exceptions.TooFrequentRequestsException) 1.000000 27.000000 box
+ (MQL4CSharp.Base.Exceptions.TooLongStringException) 1.000000 26.000000 box
+ (MQL4CSharp.Base.Exceptions.TooManyOpenedFilesException) 1.000000 25.000000 box
+ (MQL4CSharp.Base.Exceptions.TooManyRequestsException) 1.000000 24.000000 box
+ (MQL4CSharp.Base.Exceptions.TradeContextBusyException) 1.000000 23.000000 box
+ (MQL4CSharp.Base.Exceptions.TradeDisabledException) 1.000000 22.000000 box
+ (MQL4CSharp.Base.Exceptions.TradeErrorException) 1.000000 21.000000 box
+ (MQL4CSharp.Base.Exceptions.TradeExpertDisabledByServerException) 1.000000 20.000000 box
+ (MQL4CSharp.Base.Exceptions.TradeExpirationDeniedException) 1.000000 19.000000 box
+ (MQL4CSharp.Base.Exceptions.TradeHedgeProhibitedException) 1.000000 18.000000 box
+ (MQL4CSharp.Base.Exceptions.TradeModifyDeniedException) 1.000000 17.000000 box
+ (MQL4CSharp.Base.Exceptions.TradeNotAllowedException) 1.000000 16.000000 box
+ (MQL4CSharp.Base.Exceptions.TradeProhibitedByFifoException) 1.000000 15.000000 box
+ (MQL4CSharp.Base.Exceptions.TradeTimeoutException) 1.000000 14.000000 box
+ (MQL4CSharp.Base.Exceptions.TradeTooManyOrdersException) 1.000000 13.000000 box
+ (MQL4CSharp.Base.Exceptions.UnknownCommandException) 1.000000 12.000000 box
+ (MQL4CSharp.Base.Exceptions.UnknownObjectPropertyException) 1.000000 11.000000 box
+ (MQL4CSharp.Base.Exceptions.UnknownObjectTypeException) 1.000000 10.000000 box
+ (MQL4CSharp.Base.Exceptions.UnknownSymbolException) 1.000000 9.000000 box
+ (MQL4CSharp.Base.Exceptions.UserErrorFirstException) 1.000000 8.000000 box
+ (MQL4CSharp.Base.Exceptions.WebrequestConnectFailedException) 1.000000 7.000000 box
+ (MQL4CSharp.Base.Exceptions.WebrequestInvalidAddressException) 1.000000 6.000000 box
+ (MQL4CSharp.Base.Exceptions.WebrequestRequestFailedException) 1.000000 5.000000 box
+ (MQL4CSharp.Base.Exceptions.WebrequestTimeoutException) 1.000000 4.000000 box
+ (MQL4CSharp.Base.Exceptions.WrongFileNameException) 1.000000 3.000000 box
+ (MQL4CSharp.Base.Exceptions.WrongFunctionPointerException) 1.000000 2.000000 box
+ (MQL4CSharp.Base.Exceptions.WrongJumpException) 1.000000 1.000000 box
+ (MQL4CSharp.Base.Exceptions.ZeroDivideException) 1.000000 0.000000 box
+
+% ----- relations -----
+
+solid
+0 0.000000 160.000000 out
+solid
+1 0.000000 161.000000 in
+solid
+1 0.000000 159.250000 out
+solid
+0 0.000000 159.500000 hedge
+solid
+0 0.000000 158.500000 hedge
+solid
+0 0.000000 157.500000 hedge
+solid
+0 0.000000 156.500000 hedge
+solid
+0 0.000000 155.500000 hedge
+solid
+0 0.000000 154.500000 hedge
+solid
+0 0.000000 153.500000 hedge
+solid
+0 0.000000 152.500000 hedge
+solid
+0 0.000000 151.500000 hedge
+solid
+0 0.000000 150.500000 hedge
+solid
+0 0.000000 149.500000 hedge
+solid
+0 0.000000 148.500000 hedge
+solid
+0 0.000000 147.500000 hedge
+solid
+0 0.000000 146.500000 hedge
+solid
+0 0.000000 145.500000 hedge
+solid
+0 0.000000 144.500000 hedge
+solid
+0 0.000000 143.500000 hedge
+solid
+0 0.000000 142.500000 hedge
+solid
+0 0.000000 141.500000 hedge
+solid
+0 0.000000 140.500000 hedge
+solid
+0 0.000000 139.500000 hedge
+solid
+0 0.000000 138.500000 hedge
+solid
+0 0.000000 137.500000 hedge
+solid
+0 0.000000 136.500000 hedge
+solid
+0 0.000000 135.500000 hedge
+solid
+0 0.000000 134.500000 hedge
+solid
+0 0.000000 133.500000 hedge
+solid
+0 0.000000 132.500000 hedge
+solid
+0 0.000000 131.500000 hedge
+solid
+0 0.000000 130.500000 hedge
+solid
+0 0.000000 129.500000 hedge
+solid
+0 0.000000 128.500000 hedge
+solid
+0 0.000000 127.500000 hedge
+solid
+0 0.000000 126.500000 hedge
+solid
+0 0.000000 125.500000 hedge
+solid
+0 0.000000 124.500000 hedge
+solid
+0 0.000000 123.500000 hedge
+solid
+0 0.000000 122.500000 hedge
+solid
+0 0.000000 121.500000 hedge
+solid
+0 0.000000 120.500000 hedge
+solid
+0 0.000000 119.500000 hedge
+solid
+0 0.000000 118.500000 hedge
+solid
+0 0.000000 117.500000 hedge
+solid
+0 0.000000 116.500000 hedge
+solid
+0 0.000000 115.500000 hedge
+solid
+0 0.000000 114.500000 hedge
+solid
+0 0.000000 113.500000 hedge
+solid
+0 0.000000 112.500000 hedge
+solid
+0 0.000000 111.500000 hedge
+solid
+0 0.000000 110.500000 hedge
+solid
+0 0.000000 109.500000 hedge
+solid
+0 0.000000 108.500000 hedge
+solid
+0 0.000000 107.500000 hedge
+solid
+0 0.000000 106.500000 hedge
+solid
+0 0.000000 105.500000 hedge
+solid
+0 0.000000 104.500000 hedge
+solid
+0 0.000000 103.500000 hedge
+solid
+0 0.000000 102.500000 hedge
+solid
+0 0.000000 101.500000 hedge
+solid
+0 0.000000 100.500000 hedge
+solid
+0 0.000000 99.500000 hedge
+solid
+0 0.000000 98.500000 hedge
+solid
+0 0.000000 97.500000 hedge
+solid
+0 0.000000 96.500000 hedge
+solid
+0 0.000000 95.500000 hedge
+solid
+0 0.000000 94.500000 hedge
+solid
+0 0.000000 93.500000 hedge
+solid
+0 0.000000 92.500000 hedge
+solid
+0 0.000000 91.500000 hedge
+solid
+0 0.000000 90.500000 hedge
+solid
+0 0.000000 89.500000 hedge
+solid
+0 0.000000 88.500000 hedge
+solid
+0 0.000000 87.500000 hedge
+solid
+0 0.000000 86.500000 hedge
+solid
+0 0.000000 85.500000 hedge
+solid
+0 0.000000 84.500000 hedge
+solid
+0 0.000000 83.500000 hedge
+solid
+0 0.000000 82.500000 hedge
+solid
+0 0.000000 81.500000 hedge
+solid
+0 0.000000 80.500000 hedge
+solid
+0 0.000000 79.500000 hedge
+solid
+0 0.000000 78.500000 hedge
+solid
+0 0.000000 77.500000 hedge
+solid
+0 0.000000 76.500000 hedge
+solid
+0 0.000000 75.500000 hedge
+solid
+0 0.000000 74.500000 hedge
+solid
+0 0.000000 73.500000 hedge
+solid
+0 0.000000 72.500000 hedge
+solid
+0 0.000000 71.500000 hedge
+solid
+0 0.000000 70.500000 hedge
+solid
+0 0.000000 69.500000 hedge
+solid
+0 0.000000 68.500000 hedge
+solid
+0 0.000000 67.500000 hedge
+solid
+0 0.000000 66.500000 hedge
+solid
+0 0.000000 65.500000 hedge
+solid
+0 0.000000 64.500000 hedge
+solid
+0 0.000000 63.500000 hedge
+solid
+0 0.000000 62.500000 hedge
+solid
+0 0.000000 61.500000 hedge
+solid
+0 0.000000 60.500000 hedge
+solid
+0 0.000000 59.500000 hedge
+solid
+0 0.000000 58.500000 hedge
+solid
+0 0.000000 57.500000 hedge
+solid
+0 0.000000 56.500000 hedge
+solid
+0 0.000000 55.500000 hedge
+solid
+0 0.000000 54.500000 hedge
+solid
+0 0.000000 53.500000 hedge
+solid
+0 0.000000 52.500000 hedge
+solid
+0 0.000000 51.500000 hedge
+solid
+0 0.000000 50.500000 hedge
+solid
+0 0.000000 49.500000 hedge
+solid
+0 0.000000 48.500000 hedge
+solid
+0 0.000000 47.500000 hedge
+solid
+0 0.000000 46.500000 hedge
+solid
+0 0.000000 45.500000 hedge
+solid
+0 0.000000 44.500000 hedge
+solid
+0 0.000000 43.500000 hedge
+solid
+0 0.000000 42.500000 hedge
+solid
+0 0.000000 41.500000 hedge
+solid
+0 0.000000 40.500000 hedge
+solid
+0 0.000000 39.500000 hedge
+solid
+0 0.000000 38.500000 hedge
+solid
+0 0.000000 37.500000 hedge
+solid
+0 0.000000 36.500000 hedge
+solid
+0 0.000000 35.500000 hedge
+solid
+0 0.000000 34.500000 hedge
+solid
+0 0.000000 33.500000 hedge
+solid
+0 0.000000 32.500000 hedge
+solid
+0 0.000000 31.500000 hedge
+solid
+0 0.000000 30.500000 hedge
+solid
+0 0.000000 29.500000 hedge
+solid
+0 0.000000 28.500000 hedge
+solid
+0 0.000000 27.500000 hedge
+solid
+0 0.000000 26.500000 hedge
+solid
+0 0.000000 25.500000 hedge
+solid
+0 0.000000 24.500000 hedge
+solid
+0 0.000000 23.500000 hedge
+solid
+0 0.000000 22.500000 hedge
+solid
+0 0.000000 21.500000 hedge
+solid
+0 0.000000 20.500000 hedge
+solid
+0 0.000000 19.500000 hedge
+solid
+0 0.000000 18.500000 hedge
+solid
+0 0.000000 17.500000 hedge
+solid
+0 0.000000 16.500000 hedge
+solid
+0 0.000000 15.500000 hedge
+solid
+0 0.000000 14.500000 hedge
+solid
+0 0.000000 13.500000 hedge
+solid
+0 0.000000 12.500000 hedge
+solid
+0 0.000000 11.500000 hedge
+solid
+0 0.000000 10.500000 hedge
+solid
+0 0.000000 9.500000 hedge
+solid
+0 0.000000 8.500000 hedge
+solid
+0 0.000000 7.500000 hedge
+solid
+0 0.000000 6.500000 hedge
+solid
+0 0.000000 5.500000 hedge
+solid
+0 0.000000 4.500000 hedge
+solid
+0 0.000000 3.500000 hedge
+solid
+0 0.000000 2.500000 hedge
+solid
+0 0.000000 1.500000 hedge
+solid
+0 0.000000 0.500000 hedge
+solid
+0.000000 160.000000 0.500000 vedge
