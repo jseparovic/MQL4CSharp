@@ -179,7 +179,7 @@ namespace MQL4CSharp.Base.MQL
             }
             catch (Exception e)
             {
-                LOG.Error(e);
+                //LOG.Error(e);
                 return true;
             }
         }

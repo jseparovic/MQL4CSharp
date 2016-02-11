@@ -59,10 +59,10 @@ namespace MQL4CSharp.UserDefined.Input
                     String pair = parts[0];
                     String setup = parts[1];
                     String timeframe = parts[2];
-                    Decimal entry = Convert.ToDecimal(parts[3]);
-                    Decimal stop = Convert.ToDecimal(parts[4]);
-                    Decimal takeProfit1 = Convert.ToDecimal(parts[5]);
-                    Decimal takeProfit2 = Convert.ToDecimal(parts[6]);
+                    Double entry = Convert.ToDouble(parts[3]);
+                    Double stop = Convert.ToDouble(parts[4]);
+                    Double takeProfit1 = Convert.ToDouble(parts[5]);
+                    Double takeProfit2 = Convert.ToDouble(parts[6]);
                     Add(new CSVOrder(pair, setup, timeframe, entry, stop, takeProfit1, takeProfit2));
                 }
             }

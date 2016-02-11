@@ -116,6 +116,7 @@
     <Compile Include="UserDefined\Input\CSVOrder.cs" />
     <Compile Include="UserDefined\Input\CSVOrders.cs" />
     <Compile Include="UserDefined\RiskProfile\FixedLotsRiskProfile.cs" />
+    <Compile Include="UserDefined\RiskProfile\FixedDollarRiskProfile.cs" />
     <Compile Include="UserDefined\RiskProfile\PercentRiskProfile.cs" />
     <Compile Include="UserDefined\Signal\MACross.cs" />
     <Compile Include="UserDefined\StopLoss\ATRStopLoss.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="UserDefined\StopLoss\TrailingStopLoss.cs" />
     <Compile Include="UserDefined\Strategy\MaCrossStrategy.cs" />
     <Compile Include="Base\Common\BaseStrategy.cs" />
+    <Compile Include="UserDefined\Strategy\CSVOrderPlacer.cs" />
     <Compile Include="UserDefined\Strategy\MQLRESTStrategy.cs" />
     <Compile Include="UserDefined\TakeProfit\FixedPipTakeProfit.cs" />
     <Compile Include="Util\DateUtil.cs" />
