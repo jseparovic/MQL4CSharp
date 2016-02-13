@@ -472,13 +472,29 @@ namespace MQL4CSharp.Base
         public override void OnInit()
         {
             LOG.Debug("OnInit() called");
-            init();
+            try
+            {
+                init();
+            }
+            catch (Exception e)
+            {
+                LOG.Error(e);
+                throw;
+            }
         }
 
         public override void OnDeinit()
         {
             LOG.Debug("OnDeinit() called");
-            destroy();
+            try
+            {
+                destroy();
+            }
+            catch (Exception e)
+            {
+                LOG.Error(e);
+                throw;
+            }
         }
 
         public abstract void init();
