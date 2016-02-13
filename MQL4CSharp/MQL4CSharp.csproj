@@ -133,10 +133,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserDefined\Input\NewsReports.cs" />
     <Compile Include="UserDefined\Input\NewsReport.cs" />
-    <Compile Include="XCustom\DTFL.cs" />
-    <Compile Include="XCustom\ManipulationPoint.cs" />
-    <Compile Include="XCustom\ManipulationPoints.cs" />
-    <Compile Include="XCustom\StopRun.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Mql\mql4csharp.mq4" />

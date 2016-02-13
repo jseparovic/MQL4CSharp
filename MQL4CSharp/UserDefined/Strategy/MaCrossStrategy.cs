@@ -60,7 +60,8 @@ namespace MQL4CSharp.UserDefined.Strategy
             LOG.Info("AccountFreeMargin: " + AccountFreeMargin());
             LOG.Info("AccountName: " + AccountName());
             LOG.Info("AccountNumber: " + AccountNumber());
-            ObjectCreate(ChartID(), "test", OBJECT_TYPE.OBJ_TREND, 0, DateTime.Now.AddDays(-1), 1.0860, DateTime.Now.AddDays(+1), 1.086);
+            ObjectCreate(ChartID(), "test", OBJECT_TYPE.OBJ_TREND, 0, DateTime.Now.AddDays(-1), iHigh(Symbol(), (int)TIMEFRAME.PERIOD_D1, 1), DateTime.Now.AddDays(+1), 1.086);
+            LOG.Info("init() done: ");
         }
 
         public override void destroy()

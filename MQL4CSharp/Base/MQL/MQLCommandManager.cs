@@ -35,8 +35,6 @@ namespace MQL4CSharp.Base.MQL
 
         private Dictionary<int, MQLCommandRequest> commandRequests;
 
-        private static readonly object globalSyncLock = new object();
-
         private static long UNLOCKED = -1;
 
         private readonly object syncLock;
@@ -54,11 +52,11 @@ namespace MQL4CSharp.Base.MQL
             counter = 0;
             syncLock = new object();
             commandLock = UNLOCKED;
-
         }
 
         public int ExecCommand(MQLCommand command, List<Object> parameters)
         {
+            LOG.DebugFormat("ExecCommand: {0}", command.ToString());
             int id;
             lock (syncLock)
             {
@@ -68,17 +66,14 @@ namespace MQL4CSharp.Base.MQL
             return id;
         }
 
-        public bool IsCommandRunning(int id)
-        {
-            return commandRequests[id].CommandWaiting;
-        }
-
         public Object GetCommandResult(int id)
         {
             lock (syncLock)
             {
+                LOG.DebugFormat("GetCommandResult: {0}", id);
                 Object response = commandRequests[id].Response;
                 commandRequests.Remove(id);
+                LOG.DebugFormat("Response: {0}", response);
                 return response;
             }
         }
@@ -114,44 +109,59 @@ namespace MQL4CSharp.Base.MQL
 
         private void setCommandResponse(int id, object response, int errorCode)
         {
-            try
+            lock (syncLock)
             {
-                //LOG.Debug(String.Format("SetCommandResponse({0},{1},{2})", id, response, errorCode));
+                LOG.DebugFormat("SetCommandResponse({0},{1},{2})", id, response, errorCode);
                 commandRequests[id].Response = response;
                 commandRequests[id].Error = errorCode;
                 commandRequests[id].CommandWaiting = false;
-            }
-            catch (Exception e)
-            {
-                LOG.Error(e);
             }
         }
 
         public void throwExceptionIfErrorResponse(int id)
         {
-            if (commandRequests[id].Error > 0)
+            lock (syncLock)
             {
-                MQLExceptions.throwMQLException(commandRequests[id].Error, commandRequests[id].Command.ToString() 
-                                                    + "(" + getCommandParams(id) + ")");
+                LOG.DebugFormat("throwExceptionIfErrorResponse({0})", id, commandRequests[id].Error);
+                if (commandRequests[id].Error > 0)
+                {
+                    int error = commandRequests[id].Error;
+                    String command = commandRequests[id].Command.ToString();
+                    String parameters = getCommandParams(id);
+                    commandRequests.Remove(id);
+                    MQLExceptions.throwMQLException(error, String.Format("{0}({1})", command, parameters));
+                }
             }
         }
 
+        public bool IsCommandRunning(int id)
+        {
+            lock (syncLock)
+            {
+                //LOG.DebugFormat("IsCommandRunning: {0}={1}", id, commandRequests[id].CommandWaiting);
+                return commandRequests[id].CommandWaiting;
+            }
+        }
 
         [DllExport("IsCommandWaiting", CallingConvention = CallingConvention.StdCall)]
         public static int IsCommandWaiting(Int64 ix)
         {
+            //LOG.DebugFormat("IsCommandWaiting: {0}", ix);
             try
             {
                 lock (getInstance(ix).syncLock)
                 {
-                    foreach (KeyValuePair<int, MQLCommandRequest> commandRequest in getInstance(ix).commandRequests)
+                    foreach (KeyValuePair<int, MQLCommandRequest> pair in getInstance(ix).commandRequests)
                     {
-                        if (commandRequest.Value.CommandWaiting)
+                        //LOG.DebugFormat("IsCommandWaiting: commandRequest: {0}", pair.Value.ToString());
+                        if (pair.Value.CommandWaiting)
                         {
-                            return commandRequest.Key;
+                            //LOG.DebugFormat("IsCommandWaiting: commandRequest: returning: {0}", pair.Key);
+                            return pair.Key;
                         }
                     }
                 }
+                //LOG.DebugFormat("IsCommandWaiting: returning -1");
                 return -1;
             }
             catch (Exception e)
@@ -167,14 +177,17 @@ namespace MQL4CSharp.Base.MQL
         {
             try
             {
-                if (getInstance(ix).commandRequests[id].CommandWaiting)
+                lock (getInstance(ix).syncLock)
                 {
-                    return (int) getInstance(ix).commandRequests[id].Command;
-                }
-                else
-                {
-                    LOG.Error(Error.ERROR_NO_COMMAND.ToString());
-                    return -1;
+                    if (getInstance(ix).commandRequests[id].CommandWaiting)
+                    {
+                        return (int) getInstance(ix).commandRequests[id].Command;
+                    }
+                    else
+                    {
+                        LOG.Error(Error.ERROR_NO_COMMAND.ToString());
+                        return -1;
+                    }
                 }
             }
             catch (Exception e)
@@ -190,14 +203,17 @@ namespace MQL4CSharp.Base.MQL
         {
             try
             {
-                if (getInstance(ix).commandRequests[id].CommandWaiting)
+                lock (getInstance(ix).syncLock)
                 {
-                    commandName.Append(getInstance(ix).commandRequests[id].Command.ToString());
-                }
-                else
-                {
-                    LOG.Error(Error.ERROR_NO_COMMAND.ToString());
-                    commandName.Append(Error.ERROR_NO_COMMAND.ToString());
+                    if (getInstance(ix).commandRequests[id].CommandWaiting)
+                    {
+                        commandName.Append(getInstance(ix).commandRequests[id].Command.ToString());
+                    }
+                    else
+                    {
+                        LOG.Error(Error.ERROR_NO_COMMAND.ToString());
+                        commandName.Append(Error.ERROR_NO_COMMAND.ToString());
+                    }
                 }
             }
             catch (Exception e)
@@ -211,14 +227,17 @@ namespace MQL4CSharp.Base.MQL
         {
             try
             {
-                if (getInstance(ix).commandRequests[id].CommandWaiting)
+                lock (getInstance(ix).syncLock)
                 {
-                    commandParams.Append(getInstance(ix).getCommandParams(id));
-                }
-                else
-                {
-                    LOG.Error(Error.ERROR_NO_COMMAND.ToString());
-                    commandParams.Append(Error.ERROR_NO_COMMAND.ToString());
+                    if (getInstance(ix).commandRequests[id].CommandWaiting)
+                    {
+                        commandParams.Append(getInstance(ix).getCommandParams(id));
+                    }
+                    else
+                    {
+                        LOG.Error(Error.ERROR_NO_COMMAND.ToString());
+                        commandParams.Append(Error.ERROR_NO_COMMAND.ToString());
+                    }
                 }
             }
             catch (Exception e)

@@ -34,8 +34,12 @@ namespace MQL4CSharp.Base.MQL
         DateTime timer = DateTime.Now;
         SmartThreadPool threadPool;
         private string typeName;
-        private bool executingOnTick = false;
         private int baseStrategyIx;
+
+        private bool executingOnInit;
+        private bool executingOnTick;
+        private bool executingOnTimer;
+        private bool executingOnDeinit;
 
         public Int64 ix;
         MQLCommandManager commandManager;
@@ -43,6 +47,10 @@ namespace MQL4CSharp.Base.MQL
         public MQLExpert(Int64 ix) : base()
         {
             this.ix = ix;
+            this.executingOnInit = true;
+            this.executingOnTick = false;
+            this.executingOnTimer = false;
+            this.executingOnDeinit = false;
         }
 
         public MQLCommandManager getCommandManager()
@@ -77,27 +85,53 @@ namespace MQL4CSharp.Base.MQL
             return DLLObjectWrapper.getInstance().getMQLExpert(ix);
         }
 
-        static unsafe void OnInitThread(Int64 index, string CSharpFullTypeName)
+        static void OnInitThread(Int64 index, string CSharpFullTypeName)
         {
             DLLObjectWrapper.getInstance().initMQLExpert(index, CSharpFullTypeName);
-            getInstance(index).OnInit();
-            executingOnInitMap[index] = false;
+            try
+            {
+                getInstance(index).OnInit();
+            }
+            finally
+            {
+                getInstance(index).executingOnInit = false;
+            }
         }
 
         static void OnDeinitThread(Int64 ix)
         {
-            getInstance(ix).OnDeinit();
+            try
+            {
+                getInstance(ix).OnDeinit();
+            }
+            finally
+            {
+                getInstance(ix).executingOnDeinit = false;
+            }
         }
 
         static void OnTickThread(Int64 ix)
         {
-            getInstance(ix).OnTick();
-            getInstance(ix).executingOnTick = false;
+            try
+            {
+                getInstance(ix).OnTick();
+            }
+            finally
+            {
+                getInstance(ix).executingOnTick = false;
+            }
         }
 
         static void OnTimerThread(Int64 ix)
         {
-            getInstance(ix).OnTimer();
+            try
+            {
+                getInstance(ix).OnTimer();
+            }
+            finally
+            {
+                getInstance(ix).executingOnTimer = false;
+            }
         }
 
         private static SmartThreadPool getThreadPool(Int64 ix)
@@ -168,18 +202,48 @@ namespace MQL4CSharp.Base.MQL
             }
         }
 
-        static Dictionary<Int64, bool> executingOnInitMap = new Dictionary<long, bool>();
 
         [DllExport("IsExecutingOnInit", CallingConvention = CallingConvention.StdCall)]
         public static bool IsExecutingOnInit(Int64 ix)
         {
             try
             {
-                return executingOnInitMap[ix];
+                return getInstance(ix).executingOnInit;
             }
             catch (Exception e)
             {
-                //LOG.Error(e);
+                if (!e.Message.Equals("MQLExpert does not exist"))
+                {
+                    LOG.Error(e);
+                }
+                return true;
+            }
+        }
+
+        [DllExport("IsExecutingOnTimer", CallingConvention = CallingConvention.StdCall)]
+        public static bool IsExecutingOnTimer(Int64 ix)
+        {
+            try
+            {
+                return getInstance(ix).executingOnTimer;
+            }
+            catch (Exception e)
+            {
+                LOG.Error(e);
+                return true;
+            }
+        }
+
+        [DllExport("IsExecutingOnDenit", CallingConvention = CallingConvention.StdCall)]
+        public static bool IsExecutingOnDenit(Int64 ix)
+        {
+            try
+            {
+                return getInstance(ix).executingOnDeinit;
+            }
+            catch (Exception e)
+            {
+                LOG.Error(e);
                 return true;
             }
         }
@@ -188,14 +252,12 @@ namespace MQL4CSharp.Base.MQL
         [DllExport("ExecOnInit", CallingConvention = CallingConvention.StdCall)]
         public static void ExecOnInit(Int64 ix, [MarshalAs(UnmanagedType.LPWStr)] string CSharpFullTypeName)
         {
-            executingOnInitMap[ix] = true;
             LOG.Debug(String.Format("Initializing: {0}", CSharpFullTypeName));
             DLLObjectWrapper.getInstance().initMQLThreadPool(ix);
 
             try
             {
                 getThreadPool(ix).QueueWorkItem(OnInitThread, ix, CSharpFullTypeName);
-
             }
             catch (ArgumentNullException)
             {
@@ -231,6 +293,7 @@ namespace MQL4CSharp.Base.MQL
         [DllExport("ExecOnDeinit", CallingConvention = CallingConvention.StdCall)]
         public static void ExecOnDeinit(Int64 ix)
         {
+            getInstance(ix).executingOnDeinit = true;
             try
             {
                 getThreadPool(ix).QueueWorkItem(OnDeinitThread, ix);
@@ -258,6 +321,7 @@ namespace MQL4CSharp.Base.MQL
         [DllExport("ExecOnTimer", CallingConvention = CallingConvention.StdCall)]
         public static void ExecOnTimer(Int64 ix)
         {
+            getInstance(ix).executingOnTimer = true;
             try
             {
                 DateTime now = DateTime.Now;

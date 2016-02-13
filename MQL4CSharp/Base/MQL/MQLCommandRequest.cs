@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using log4net;
 using MQL4CSharp.Base.Enums;
 
 namespace MQL4CSharp.Base.MQL
 {
     public class MQLCommandRequest
     {
+        private static readonly ILog LOG = LogManager.GetLogger(typeof(MQLCommandRequest));
+
         private int id;
         private MQLCommand command;
         private List<Object> parameters;
@@ -18,6 +21,7 @@ namespace MQL4CSharp.Base.MQL
 
         public MQLCommandRequest(int id, MQLCommand command, List<object> parameters)
         {
+            LOG.DebugFormat("MQLCommandRequest: {0} {1}", id, command.ToString());
             this.id = id;
             this.command = command;
             this.parameters = parameters;
@@ -53,6 +57,11 @@ namespace MQL4CSharp.Base.MQL
         {
             get { return error; }
             set { error = value; }
+        }
+
+        public override string ToString()
+        {
+            return $"Command: {Command}, Parameters: {Parameters}, CommandWaiting: {CommandWaiting}, Response: {Response}, Error: {Error}";
         }
     }
 

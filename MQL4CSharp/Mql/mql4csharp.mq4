@@ -29,6 +29,8 @@ void ExecOnTick(long);
 void ExecOnTimer(long);
 bool IsExecutingOnInit(long);
 bool IsExecutingOnTick(long);
+bool IsExecutingOnTimer(long);
+bool IsExecutingOnDeinit(long);
 bool IsCommandManagerReady(long);
 int IsCommandWaiting(long);
 int GetCommandId(long, int);
@@ -49,13 +51,21 @@ bool CommandUnlock(long);
  
 int ratesSize;
 MqlRates rates[];
-long index;
+long chartID;
  
 input string CSharpFullTypeName = "MQL4CSharp.UserDefined.Strategy.MaCrossStrategy"; 
+
+int INFO = 3;
+int DEBUG = 4;
+int TRACE = 5;
+
+int LOGLEVEL = INFO;
  
 char DELIM = 29;
 
 int DEFAULT_CHART_ID = 0;
+
+int EVENT_TIMER_MILLIS = 1;
 
 void maintainRates(long ix)
 {
@@ -66,24 +76,48 @@ void maintainRates(long ix)
    }
 }
 
+void info(string m1, string m2 = "", string m3 = "", string m4 = "", string m5 = "", string m6 = "", string m7 = "", string m8 = "", string m9 = "", string m10 = "")
+{
+   if(LOGLEVEL >= INFO)
+   {
+      Print(StringTrimRight(StringFormat("[INFO] %s %s %s %s %s %s %s %s %s %s", m1,m2,m3,m4,m5,m6,m7,m8,m9,m10)));
+   }
+}
+
+void debug(string m1, string m2 = "", string m3 = "", string m4 = "", string m5 = "", string m6 = "", string m7 = "", string m8 = "", string m9 = "", string m10 = "")
+{
+   if(LOGLEVEL >= DEBUG)
+   {
+      Print(StringTrimRight(StringFormat("[DEBUG] %s %s %s %s %s %s %s %s %s %s", m1,m2,m3,m4,m5,m6,m7,m8,m9,m10)));
+   }
+}
+
+void trace(string m1, string m2 = "", string m3 = "", string m4 = "", string m5 = "", string m6 = "", string m7 = "", string m8 = "", string m9 = "", string m10 = "")
+{
+   if(LOGLEVEL >= TRACE)
+   {
+      Print(StringTrimRight(StringFormat("[TRACE] %s %s %s %s %s %s %s %s %s %s", m1,m2,m3,m4,m5,m6,m7,m8,m9,m10)));
+   }
+}
+
 bool executeCommands(long ix)
 {
-   //Print("IsCommandWaiting(): " + IsCommandWaiting(ix));
+   trace("IsCommandWaiting(): " + IsCommandWaiting(ix));
    int requestId;
    while((requestId = IsCommandWaiting(ix)) != -1)
    {
-      //Print("Executing Commands");
+      debug("Executing Commands");
       if(CommandLock(ix))
       {
-         //Print("Locked");
+         debug("Locked");
          int id = GetCommandId(ix, requestId);
          string name = "";
          string params = "";
          GetCommandName(ix, requestId, name);
          GetCommandParams(ix, requestId, params);
          
-         //Print("name: " +  name);
-         //Print("params: " +  params);
+         debug("name: " +  name);
+         debug("params: " +  params);
    
          // Parse the command
          string paramArray[];
@@ -99,57 +133,54 @@ bool executeCommands(long ix)
          {
             bool boolresult = executeBoolCommand(id, paramArray);
             error = GetLastError();
-            //Print ("command: " + name + ", params" + params + ", result: " + boolresult + ", error: " + error);
+            trace ("command: " + name + ", params" + params + ", result: " + boolresult + ", error: " + error);
             SetBoolCommandResponse(ix, requestId, boolresult, error);
          }
          else if(returnType == RETURN_TYPE_DOUBLE)
          {
             double doubleresult = executeDoubleCommand(id, paramArray);
             error = GetLastError();
-            //Print ("command: " + name + ", params" + params + ", result: " + doubleresult + ", error: " + error);
+            trace ("command: " + name + ", params" + params + ", result: " + doubleresult + ", error: " + error);
             SetDoubleCommandResponse(ix, requestId, doubleresult, error);
          }
          else if(returnType == RETURN_TYPE_INT)
          {
             int intresult = executeIntCommand(id, paramArray);
             error = GetLastError();
-            //if(StringCompare(name, "OrdersTotal") == 0)
-            //{
-            //   Print ("command: " + name + ", params" + params + ", result: " + intresult + ", error: " + error);
-            //}
+            trace ("command: " + name + ", params" + params + ", result: " + intresult + ", error: " + error);
             SetIntCommandResponse(ix, requestId, intresult, error);
          }
          else if(returnType == RETURN_TYPE_STRING)
          {
             string stringresult = executeStringCommand(id, paramArray);
             error = GetLastError();
-            //Print ("command: " + name + ", params" + params + ", result: " + stringresult + ", error: " + error);
+            trace ("command: " + name + ", params" + params + ", result: " + stringresult + ", error: " + error);
             SetStringCommandResponse(ix, requestId, stringresult, error);
          }
          else if(returnType == RETURN_TYPE_VOID)
          {
             executeVoidCommand(id, paramArray);
-            //Print ("command: " + name + ", params" + params + ", error: " + error);
+            trace ("command: " + name + ", params" + params + ", error: " + error);
             SetVoidCommandResponse(ix, requestId, GetLastError());
          }
          else if(returnType == RETURN_TYPE_LONG)
          {
             long longresult = executeLongCommand(id, paramArray);
             error = GetLastError();
-            //Print ("command: " + name + ", params" + params + ", result: " + longresult + ", error: " + error);
+            trace ("command: " + name + ", params" + params + ", result: " + longresult + ", error: " + error);
             SetLongCommandResponse(ix, requestId, longresult, error);
          }
          else if(returnType == RETURN_TYPE_DATETIME)
          {
             datetime datetimeresult = executeDateTimeCommand(id, paramArray);
             error = GetLastError();
-            //Print ("command: " + name + ", params" + params + ", result: " + datetimeresult + ", error: " + error);
+            trace ("command: " + name + ", params" + params + ", result: " + datetimeresult + ", error: " + error);
             SetDateTimeCommandResponse(ix, requestId, datetimeresult, error);
          }
       
-         //Print("Unlocking");
+         debug("Unlocking");
          CommandUnlock(ix);
-         //Print("Unlocked");
+         debug("Unlocked");
       }   
 
    }
@@ -160,73 +191,87 @@ bool executeCommands(long ix)
 
 int OnInit()
 {
-   EventSetMillisecondTimer(1);
+   EventSetMillisecondTimer(EVENT_TIMER_MILLIS);
 
    // Initialize log4net
-   Print("Initializing logging");
+   info("OnInit() Initializing logging");
    InitLogging();
    
    // Copy the rates array and pass it to the library
    ArrayCopyRates(rates, NULL, 0);
    ratesSize = ArraySize(rates);
-   index = ChartID();
-   Print("ExecOnInit: " + index + ", " + CSharpFullTypeName);
-   ExecOnInit(index, CSharpFullTypeName);
+   chartID = ChartID();
+   info("OnInit() ExecOnInit: ", chartID, ", ", CSharpFullTypeName);
+   ExecOnInit(chartID, CSharpFullTypeName);
    
-   Print("Waiting for Command Manager");
-   while(!IsCommandManagerReady(index))
+   info("OnInit() Waiting for Command Manager");
+   while(!IsCommandManagerReady(chartID))
    {
    
    }
    
-   Print("executeCommands");
-   while(IsExecutingOnInit(index))
+   info("OnInit() executeCommands on Init");
+   while(IsExecutingOnInit(chartID))
    {
-      executeCommands(index);
+      trace("OnInit() IsExecutingOnInit(chartID)");
+      executeCommands(chartID);
    }
    
    // execute default REST commands
+   info("OnInit() executeCommands REST");
    executeCommands(DEFAULT_CHART_ID);
    
-   Print("Initializing rates");
-   InitRates(index, rates, ratesSize);
+   info("OnInit() Initializing rates");
+   InitRates(chartID, rates, ratesSize);
 
-   Print("OnInit complete");
+   info("OnInit() OnInit complete");
    return(INIT_SUCCEEDED);
 }
  
 void OnDeinit(const int reason)
 {
    // Call the DLL onDeinit
-   ExecOnDeinit(index);
+   ExecOnDeinit(chartID);
+   
+   // execute commands that are waiting
+   while(IsExecutingOnDeinit(chartID))
+   {
+      executeCommands(chartID);
+   }
+   
+   // execute default REST commands
+   executeCommands(DEFAULT_CHART_ID);
 }
 
  
 void OnTick()
 {
    // Call the DLL onTick
-   ExecOnTick(index);
+   ExecOnTick(chartID);
 
    // execute commands that are waiting
-   while(IsExecutingOnTick(index))
+   while(IsExecutingOnTick(chartID))
    {
-      executeCommands(index);
+      executeCommands(chartID);
    }
 
    // execute default REST commands
    executeCommands(DEFAULT_CHART_ID);
       
    // Keep the rates array size up to date
-   maintainRates(index);
+   maintainRates(chartID);
 }
 
 
 void OnTimer()
 {
-   ExecOnTimer(index);
+   ExecOnTimer(chartID);
 
    // execute commands that are waiting
-   executeCommands(index);
+   while(IsExecutingOnTimer(chartID))
+   {
+      executeCommands(chartID);
+   }
    
    // execute default REST commands
    executeCommands(DEFAULT_CHART_ID);

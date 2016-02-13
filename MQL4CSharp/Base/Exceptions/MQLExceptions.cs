@@ -1,9 +1,12 @@
 ﻿using System;
+using log4net;
 
 namespace MQL4CSharp.Base.Exceptions
 {
     public class MQLExceptions : Exception
     {
+        private static readonly ILog LOG = LogManager.GetLogger(typeof(MQLExceptions));
+
         public MQLExceptions(string message) : base(message)
         {
 
@@ -11,6 +14,8 @@ namespace MQL4CSharp.Base.Exceptions
 
         public static void throwMQLException(int error, String functionCall)
         {
+            LOG.DebugFormat("throwMQLException({0},{1})", error, functionCall);
+
             if (error == 1)
             {
                 throw new NoResultException(functionCall);
