@@ -118,7 +118,7 @@ namespace MQL4CSharp.Base
                 }
                 catch (Exception ex)
                 {
-                    LOG.Error(null, ex);
+                    LOG.Error(ex);
                 }
             }
 
@@ -210,73 +210,82 @@ namespace MQL4CSharp.Base
 
         private bool checkCandle(String symbol, TIMEFRAME timeframe)
         {
-            bool newCandle = false;
-            StrategyMetaData strategyMetaData = getStrategyMetaDataMap(symbol, timeframe);
-            LocalDate localDate = getMarketLocalDate(symbol);
-
-            // new day detected
-            if (!localDate.Equals(strategyMetaData.getCurrentLocalDate()))
+            try
             {
-                strategyMetaData.setCurrentLocalDate(localDate);
+                bool newCandle = false;
+                StrategyMetaData strategyMetaData = getStrategyMetaDataMap(symbol, timeframe);
+                LocalDate localDate = getMarketLocalDate(symbol);
 
-                // Get todays high/low:
-                /*
-                todaysHigh = iHigh(symbol, (int)TIMEFRAME.PERIOD_D1, 0);
-                todaysLow = iLow(symbol, (int)TIMEFRAME.PERIOD_D1, 0);
-
-                strategyMetaData.setSignalStartDateTime(DateUtil.addDateAndTime(strategyMetaData.getCurrentLocalDate(), signalStartTime));
-
-                if (signalStopTime.Equals(LocalTime.Midnight))
+                // new day detected
+                if (!localDate.Equals(strategyMetaData.getCurrentLocalDate()))
                 {
-                    // If stop time midnight, set signal stop to following day
-                    strategyMetaData.setSignalStopDateTime(DateUtil.addDateAndTime(strategyMetaData.getCurrentLocalDate().PlusDays(1), signalStopTime));
+                    strategyMetaData.setCurrentLocalDate(localDate);
+
+                    // Get todays high/low:
+                    /*
+                    todaysHigh = iHigh(symbol, (int)TIMEFRAME.PERIOD_D1, 0);
+                    todaysLow = iLow(symbol, (int)TIMEFRAME.PERIOD_D1, 0);
+
+                    strategyMetaData.setSignalStartDateTime(DateUtil.addDateAndTime(strategyMetaData.getCurrentLocalDate(), signalStartTime));
+
+                    if (signalStopTime.Equals(LocalTime.Midnight))
+                    {
+                        // If stop time midnight, set signal stop to following day
+                        strategyMetaData.setSignalStopDateTime(DateUtil.addDateAndTime(strategyMetaData.getCurrentLocalDate().PlusDays(1), signalStopTime));
+                    }
+                    else
+                    {
+                        strategyMetaData.setSignalStopDateTime(DateUtil.addDateAndTime(strategyMetaData.getCurrentLocalDate(), signalStopTime));
+                    }
+                    */
+
+                    LOG.Info("New Day Detected: " + strategyMetaData.getCurrentLocalDate());
+                    //LOG.Debug("Market Time: " + getMarketTime(symbol));
+                    //LOG.Debug("Market DateTime: " + getMarketDateTime(symbol));
+                    //LOG.Debug("Local Date: " + localDate);
+                    //LOG.Debug("Signal Start: " + strategyMetaData.getSignalStartDateTime());
+                    //LOG.Debug("Signal Stop: " + strategyMetaData.getSignalStopDateTime());
+
+                    // Get yesterdays high/low:
+                    //yesterdaysHigh = iHigh(symbol, (int)TIMEFRAME.PERIOD_D1, 1);
+                    //yesterdaysLow = iLow(symbol, (int)TIMEFRAME.PERIOD_D1, 1);
+
+                    onNewDate(symbol, timeframe);
                 }
-                else
+
+                // new candle detected
+                DateTime newCurrentCandle = LocalDateTime.FromDateTime(iTime(symbol, (int)timeframe, 0)).ToDateTimeUnspecified();
+                if (!newCurrentCandle.Equals(strategyMetaData.getCurrentCandleDateTime()))
                 {
-                    strategyMetaData.setSignalStopDateTime(DateUtil.addDateAndTime(strategyMetaData.getCurrentLocalDate(), signalStopTime));
+                    strategyMetaData.setCurrentCandleDateTime(newCurrentCandle);
+
+                    // Get distance to first candle of the day
+                    int i = 0;
+                    DateTime epoch = new DateTime(0);
+                    for (DateTime itime = epoch; itime == epoch || (itime != epoch && itime > strategyMetaData.getCurrentLocalDate().AtMidnight().ToDateTimeUnspecified()); i++)
+                    {
+                        itime = iTime(symbol, (int)timeframe, i);
+                    }
+                    strategyMetaData.setCandleDistanceToDayStart(i);
+
+                    //LOG.Debug("New Candle Detected: " + newCurrentCandle + " : distance from day start: " + strategyMetaData.getCandleDistanceToDayStart());
+
+                    newCandle = true;
+                    onNewCandle(symbol, timeframe);
                 }
-                */
 
-                LOG.Info("New Day Detected: " + strategyMetaData.getCurrentLocalDate());
-                //LOG.Debug("Market Time: " + getMarketTime(symbol));
-                //LOG.Debug("Market DateTime: " + getMarketDateTime(symbol));
-                //LOG.Debug("Local Date: " + localDate);
-                //LOG.Debug("Signal Start: " + strategyMetaData.getSignalStartDateTime());
-                //LOG.Debug("Signal Stop: " + strategyMetaData.getSignalStopDateTime());
+                if (evalOncePerCandle && !newCandle)
+                {
+                    return false;
+                }
+                return true;
 
-                // Get yesterdays high/low:
-                //yesterdaysHigh = iHigh(symbol, (int)TIMEFRAME.PERIOD_D1, 1);
-                //yesterdaysLow = iLow(symbol, (int)TIMEFRAME.PERIOD_D1, 1);
-
-                onNewDate(symbol, timeframe);
             }
-
-            // new candle detected
-            DateTime newCurrentCandle = LocalDateTime.FromDateTime(iTime(symbol, (int)timeframe, 0)).ToDateTimeUnspecified();
-            if(!newCurrentCandle.Equals(strategyMetaData.getCurrentCandleDateTime()))
+            catch (Exception e)
             {
-                strategyMetaData.setCurrentCandleDateTime(newCurrentCandle);
-
-                // Get distance to first candle of the day
-                int i = 0;
-                DateTime epoch = new DateTime(0);
-                for (DateTime itime = epoch; itime == epoch || (itime != epoch && itime > strategyMetaData.getCurrentLocalDate().AtMidnight().ToDateTimeUnspecified()); i++)
-                {
-                    itime = iTime(symbol, (int)timeframe, i);
-                }
-                strategyMetaData.setCandleDistanceToDayStart(i);
-
-                //LOG.Debug("New Candle Detected: " + newCurrentCandle + " : distance from day start: " + strategyMetaData.getCandleDistanceToDayStart());
-
-                newCandle = true;
-                onNewCandle(symbol, timeframe);
+                LOG.Error(e);    
+                throw;
             }
-
-            if(evalOncePerCandle && !newCandle)
-            {
-                return false;
-            }
-            return true;
         }
 
         /*
@@ -308,14 +317,22 @@ namespace MQL4CSharp.Base
 
         public void closeOutThisOrder(String symbol)
         {
-            int slippage = 5;
-            if (OrderType() == (int)TRADE_OPERATION.OP_BUY)
+            try
             {
-                OrderClose(OrderTicket(), OrderLots(), this.MarketInfo(symbol, (int)MARKET_INFO.MODE_BID), slippage, COLOR.Red);
+                int slippage = 5;
+                if (OrderType() == (int)TRADE_OPERATION.OP_BUY)
+                {
+                    OrderClose(OrderTicket(), OrderLots(), this.MarketInfo(symbol, (int)MARKET_INFO.MODE_BID), slippage, COLOR.Red);
+                }
+                else if (OrderType() == (int)TRADE_OPERATION.OP_SELL)
+                {
+                    OrderClose(OrderTicket(), OrderLots(), this.MarketInfo(symbol, (int)MARKET_INFO.MODE_ASK), slippage, COLOR.Red);
+                }
             }
-            else if (OrderType() == (int)TRADE_OPERATION.OP_SELL)
+            catch (Exception e)
             {
-                OrderClose(OrderTicket(), OrderLots(), this.MarketInfo(symbol, (int)MARKET_INFO.MODE_ASK), slippage, COLOR.Red);
+                LOG.Error(e);                
+                throw;
             }
         }
 
@@ -335,132 +352,141 @@ namespace MQL4CSharp.Base
         // Method to execute the trade
         public void executeTrade(String symbol, SignalResult signal)
         {
-            TRADE_OPERATION op;
-            double price, lots;
-            int slippage = 5000;
-            double stoploss = this.getStopLoss(symbol, signal);
-            double takeprofit = this.getTakeProfit(symbol, signal);
-            String comment = this.getComment(symbol);
-            int magic = this.getMagicNumber(symbol);
-            DateTime expiration = this.getExpiry(symbol, signal);
-            COLOR arrowColor = COLOR.Aqua;
+            try
+            {
+                TRADE_OPERATION op;
+                double price, lots;
+                int slippage = 5000;
+                double stoploss = this.getStopLoss(symbol, signal);
+                double takeprofit = this.getTakeProfit(symbol, signal);
+                String comment = this.getComment(symbol);
+                int magic = this.getMagicNumber(symbol);
+                DateTime expiration = this.getExpiry(symbol, signal);
+                COLOR arrowColor = COLOR.Aqua;
 
-            double stopDistance;
+                double stopDistance;
 
-            DateTime lastBuyOpen, lastSellOpen;
-            bool openBuyOrder = false, openSellOrder = false, openBuyStopOrder = false, openSellStopOrder = false, openBuyLimitOrder = false, openSellLimitOrder = false;
+                DateTime lastBuyOpen, lastSellOpen;
+                bool openBuyOrder = false, openSellOrder = false, openBuyStopOrder = false, openSellStopOrder = false, openBuyLimitOrder = false, openSellLimitOrder = false;
 
-            if (signal.getSignal() == SignalResult.BUYMARKET)
-            {
-                op = TRADE_OPERATION.OP_BUY;
-            }
-            else if (signal.getSignal() == SignalResult.SELLMARKET)
-            {
-                op = TRADE_OPERATION.OP_SELL;
-            }
-            else if (signal.getSignal() == SignalResult.BUYSTOP)
-            {
-                op = TRADE_OPERATION.OP_BUYSTOP;
-            }
-            else if (signal.getSignal() == SignalResult.SELLSTOP)
-            {
-                op = TRADE_OPERATION.OP_SELLSTOP;
-            }
-            else if (signal.getSignal() == SignalResult.BUYLIMIT)
-            {
-                op = TRADE_OPERATION.OP_BUYLIMIT;
-            }
-            else if (signal.getSignal() == SignalResult.SELLLIMIT)
-            {
-                op = TRADE_OPERATION.OP_SELLLIMIT;
-            }
-            else
-            {
-                throw new Exception("Invalid Signal signal=" + signal);
-            }
-
-            //LOG.Debug("stopDistance: " + stopDistance);
-            //LOG.Debug("price: " + price);
-            //LOG.Debug("stoploss: " + stoploss);
-            //LOG.Debug("takeprofit: " + takeprofit);
-
-
-            // Check open trades on this symbol
-            for (int i = 0; i < OrdersTotal(); i++)
-            {
-                OrderSelect(i, (int)SELECTION_TYPE.SELECT_BY_POS, (int)SELECTION_POOL.MODE_TRADES);
-                if (OrderType() == (int)TRADE_OPERATION.OP_BUY && OrderSymbol().Equals(symbol) && OrderMagicNumber() == magic)
+                if (signal.getSignal() == SignalResult.BUYMARKET)
                 {
-                    lastBuyOpen = OrderOpenTime();
-                    openBuyOrder = true;
-                    if (closeOnOpposingSignal && signal.getSignal() < 0)
+                    op = TRADE_OPERATION.OP_BUY;
+                }
+                else if (signal.getSignal() == SignalResult.SELLMARKET)
+                {
+                    op = TRADE_OPERATION.OP_SELL;
+                }
+                else if (signal.getSignal() == SignalResult.BUYSTOP)
+                {
+                    op = TRADE_OPERATION.OP_BUYSTOP;
+                }
+                else if (signal.getSignal() == SignalResult.SELLSTOP)
+                {
+                    op = TRADE_OPERATION.OP_SELLSTOP;
+                }
+                else if (signal.getSignal() == SignalResult.BUYLIMIT)
+                {
+                    op = TRADE_OPERATION.OP_BUYLIMIT;
+                }
+                else if (signal.getSignal() == SignalResult.SELLLIMIT)
+                {
+                    op = TRADE_OPERATION.OP_SELLLIMIT;
+                }
+                else
+                {
+                    throw new Exception("Invalid Signal signal=" + signal);
+                }
+
+                //LOG.Debug("stopDistance: " + stopDistance);
+                //LOG.Debug("price: " + price);
+                //LOG.Debug("stoploss: " + stoploss);
+                //LOG.Debug("takeprofit: " + takeprofit);
+
+
+                // Check open trades on this symbol
+                for (int i = 0; i < OrdersTotal(); i++)
+                {
+                    OrderSelect(i, (int)SELECTION_TYPE.SELECT_BY_POS, (int)SELECTION_POOL.MODE_TRADES);
+                    if (OrderType() == (int)TRADE_OPERATION.OP_BUY && OrderSymbol().Equals(symbol) && OrderMagicNumber() == magic)
                     {
-                        closeOutThisOrder(symbol);
+                        lastBuyOpen = OrderOpenTime();
+                        openBuyOrder = true;
+                        if (closeOnOpposingSignal && signal.getSignal() < 0)
+                        {
+                            closeOutThisOrder(symbol);
+                        }
+                    }
+                    else if (OrderType() == (int)TRADE_OPERATION.OP_SELL && OrderSymbol().Equals(symbol) && OrderMagicNumber() == magic)
+                    {
+                        lastSellOpen = OrderOpenTime();
+                        openSellOrder = true;
+                        if (closeOnOpposingSignal && signal.getSignal() > 0)
+                        {
+                            closeOutThisOrder(symbol);
+                        }
+
+                    }
+                    else if (OrderType() == (int)TRADE_OPERATION.OP_BUYSTOP && OrderSymbol().Equals(symbol) && OrderMagicNumber() == magic)
+                    {
+                        openBuyStopOrder = true;
+                    }
+                    else if (OrderType() == (int)TRADE_OPERATION.OP_SELLSTOP && OrderSymbol().Equals(symbol) && OrderMagicNumber() == magic)
+                    {
+                        openSellStopOrder = true;
+                    }
+                    else if (OrderType() == (int)TRADE_OPERATION.OP_BUYLIMIT && OrderSymbol().Equals(symbol) && OrderMagicNumber() == magic)
+                    {
+                        openBuyLimitOrder = true;
+                    }
+                    else if (OrderType() == (int)TRADE_OPERATION.OP_SELLLIMIT && OrderSymbol().Equals(symbol) && OrderMagicNumber() == magic)
+                    {
+                        openSellLimitOrder = true;
                     }
                 }
-                else if (OrderType() == (int)TRADE_OPERATION.OP_SELL && OrderSymbol().Equals(symbol) && OrderMagicNumber() == magic)
-                {
-                    lastSellOpen = OrderOpenTime();
-                    openSellOrder = true;
-                    if (closeOnOpposingSignal && signal.getSignal() > 0)
-                    {
-                        closeOutThisOrder(symbol);
-                    }
 
-                }
-                else if (OrderType() == (int)TRADE_OPERATION.OP_BUYSTOP && OrderSymbol().Equals(symbol) && OrderMagicNumber() == magic)
+                // Calculate lots
+                double entryPrice = this.getEntryPrice(symbol, signal);
+
+                if (signal.getSignal() > 0)
                 {
-                    openBuyStopOrder = true;
+                    stopDistance = entryPrice - stoploss;
                 }
-                else if (OrderType() == (int)TRADE_OPERATION.OP_SELLSTOP && OrderSymbol().Equals(symbol) && OrderMagicNumber() == magic)
+                else
                 {
-                    openSellStopOrder = true;
+                    stopDistance = stoploss - entryPrice;
                 }
-                else if (OrderType() == (int)TRADE_OPERATION.OP_BUYLIMIT && OrderSymbol().Equals(symbol) && OrderMagicNumber() == magic)
+                lots = this.getLotSize(symbol, stopDistance);
+
+
+                if ((signal.getSignal() == SignalResult.BUYMARKET && !openBuyOrder) 
+                        || (signal.getSignal() == SignalResult.SELLMARKET && !openSellOrder)
+                        || (signal.getSignal() == SignalResult.BUYLIMIT && !openBuyLimitOrder && !openBuyOrder)
+                        || (signal.getSignal() == SignalResult.SELLLIMIT && !openSellLimitOrder && !openSellOrder)
+                        || (signal.getSignal() == SignalResult.BUYSTOP && !openBuyStopOrder && !openBuyOrder) 
+                        || (signal.getSignal() == SignalResult.SELLSTOP && !openSellStopOrder && !openSellOrder))
                 {
-                    openBuyLimitOrder = true;
+                    LOG.Info(String.Format("Executing Trade at " + DateUtil.FromUnixTime((long)MarketInfo(symbol, (int)MARKET_INFO.MODE_TIME)) +
+                                            "\n\tsymbol:\t{0}" +
+                                            "\n\top:\t\t{1}" +
+                                            "\n\tlots:\t\t{2}" +
+                                            "\n\tentryPrice:\t{3}" +
+                                            "\n\tslippage:\t{4}" +
+                                            "\n\tstoploss:\t{5}" +
+                                            "\n\ttakeprofit:\t{6}" +
+                                            "\n\tcomment:\t{7}" +
+                                            "\n\tmagic:\t\t{8}" +
+                                            "\n\texpiration:\t{9}" +
+                                            "\n\tarrowColor:\t{0}", symbol, (int) op, lots, entryPrice, slippage, stoploss, takeprofit, comment, magic, expiration, arrowColor));
+
+                    OrderSend(symbol, (int)op, lots, entryPrice, slippage, stoploss, takeprofit, comment, magic, expiration, arrowColor);
                 }
-                else if (OrderType() == (int)TRADE_OPERATION.OP_SELLLIMIT && OrderSymbol().Equals(symbol) && OrderMagicNumber() == magic)
-                {
-                    openSellLimitOrder = true;
-                }
+
             }
-
-            // Calculate lots
-            double entryPrice = this.getEntryPrice(symbol, signal);
-
-            if (signal.getSignal() > 0)
+            catch (Exception e)
             {
-                stopDistance = entryPrice - stoploss;
-            }
-            else
-            {
-                stopDistance = stoploss - entryPrice;
-            }
-            lots = this.getLotSize(symbol, stopDistance);
-
-
-            if ((signal.getSignal() == SignalResult.BUYMARKET && !openBuyOrder) 
-                    || (signal.getSignal() == SignalResult.SELLMARKET && !openSellOrder)
-                    || (signal.getSignal() == SignalResult.BUYLIMIT && !openBuyLimitOrder && !openBuyOrder)
-                    || (signal.getSignal() == SignalResult.SELLLIMIT && !openSellLimitOrder && !openSellOrder)
-                    || (signal.getSignal() == SignalResult.BUYSTOP && !openBuyStopOrder && !openBuyOrder) 
-                    || (signal.getSignal() == SignalResult.SELLSTOP && !openSellStopOrder && !openSellOrder))
-            {
-                LOG.Info(String.Format("Executing Trade at " + DateUtil.FromUnixTime((long)MarketInfo(symbol, (int)MARKET_INFO.MODE_TIME)) +
-                                        "\n\tsymbol:\t{0}" +
-                                        "\n\top:\t\t{1}" +
-                                        "\n\tlots:\t\t{2}" +
-                                        "\n\tentryPrice:\t{3}" +
-                                        "\n\tslippage:\t{4}" +
-                                        "\n\tstoploss:\t{5}" +
-                                        "\n\ttakeprofit:\t{6}" +
-                                        "\n\tcomment:\t{7}" +
-                                        "\n\tmagic:\t\t{8}" +
-                                        "\n\texpiration:\t{9}" +
-                                        "\n\tarrowColor:\t{0}", symbol, (int) op, lots, entryPrice, slippage, stoploss, takeprofit, comment, magic, expiration, arrowColor));
-
-                OrderSend(symbol, (int)op, lots, entryPrice, slippage, stoploss, takeprofit, comment, magic, expiration, arrowColor);
+                LOG.Error(e);
+                throw;
             }
         }
 
