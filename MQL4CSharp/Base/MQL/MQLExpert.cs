@@ -234,8 +234,8 @@ namespace MQL4CSharp.Base.MQL
             }
         }
 
-        [DllExport("IsExecutingOnDenit", CallingConvention = CallingConvention.StdCall)]
-        public static bool IsExecutingOnDenit(Int64 ix)
+        [DllExport("IsExecutingOnDeinit", CallingConvention = CallingConvention.StdCall)]
+        public static bool IsExecutingOnDeinit(Int64 ix)
         {
             try
             {
