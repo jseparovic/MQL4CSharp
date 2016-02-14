@@ -56,15 +56,17 @@ Both REST and Websocket implementations will be able to leveraged from Custom St
 
 ## Installation Notes:
 - Modify the build output path in MQL4CSharp properties in Visual Studio 2015 to match you metatrader terminal library directory (in mt4: file->open data folder)
-- You need to copy: log4net.dll. log4net.config SmartThreadPool.dll NodaTime.dll NodaTime.xml GrapevinePlus.dll Newtonsoft.Json.dll to you metatrader root directory where the terminal.exe resides.
+- You need to copy: all the dlls that the build creates to your metatrader root directory where the terminal.exe resides.
 - Grab the mq4 file from https://github.com/jseparovic/MQL4CSharp/blob/master/MQL4CSharp/Mql/mql4csharp.mq4
-- Grab the generated mqh files from https://github.com/jseparovic/MQL4CSharpGenerator/tree/master/out and put them in your mql/include dir
+- Grab the generated mqh files from https://github.com/jseparovic/MQL4CSharp/blob/master/MQL4CSharp/Mql/ and put them in your mql/include dir
 - C# logging to file as per log4net.config
  
 - If you just want to use the library or extend the BaseStrategy type: Nuget it: https://www.nuget.org/packages/MQL4CSharp/
 ```
 PM> Install-Package MQL4CSharp
 ```
+Check here for instructions how to quickly get up and running using nuget:
+https://github.com/jseparovic/MQL4CSharpWrapper
 
 ### Some Backtesting notes
 Backtesting now works by executing commands in the onTick() method (as well as onTimer()) as onTimer is not supported in Strategy Tester. The onTick method in MQL will now continue to process commands until it detects the IsExecutingOnTick() to be false, so that all commands are run within the same tick.
