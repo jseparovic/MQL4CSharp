@@ -7,6 +7,7 @@ using log4net;
 using MQL4CSharp.Base.Enums;
 using MQL4CSharp.Base.MQL;
 using Newtonsoft.Json.Linq;
+using MQL4CSharp.Base.Exceptions;
 
 namespace MQL4CSharp.Base.REST
 {
@@ -15,6 +16,8 @@ namespace MQL4CSharp.Base.REST
         private static readonly ILog LOG = LogManager.GetLogger(typeof(MQLRESTResource));
 
         int DEFAULT_CHART_ID = 0;
+
+        private String PARSE_ERROR = "JSON Parse Error. Check the input format";
 
         /// <summary>
         /// <b>Function:</b> Alert<br>
@@ -51,20 +54,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["argument"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.Alert_1, parameters); // MQLCommand ENUM = 1
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = "";
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = "";
+
             return result;
         }
         /// <summary>
@@ -102,20 +112,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["argument"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.Comment_1, parameters); // MQLCommand ENUM = 2
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = "";
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = "";
+
             return result;
         }
         /// <summary>
@@ -155,21 +172,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["filename"]);
             parameters.Add(payload["ftp_path"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SendFTP_1, parameters); // MQLCommand ENUM = 3
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -207,20 +231,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["text"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SendNotification_1, parameters); // MQLCommand ENUM = 4
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -260,21 +291,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["subject"]);
             parameters.Add(payload["some_text"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SendMail_1, parameters); // MQLCommand ENUM = 5
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -312,20 +350,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountInfoDouble_1, parameters); // MQLCommand ENUM = 6
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -363,20 +408,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountInfoInteger_1, parameters); // MQLCommand ENUM = 7
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt64(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt64(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -414,20 +466,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountInfoString_1, parameters); // MQLCommand ENUM = 8
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -463,19 +522,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountBalance_1, parameters); // MQLCommand ENUM = 9
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -511,19 +577,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountCredit_1, parameters); // MQLCommand ENUM = 10
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -559,19 +632,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountCompany_1, parameters); // MQLCommand ENUM = 11
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -607,19 +687,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountCurrency_1, parameters); // MQLCommand ENUM = 12
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -655,19 +742,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountEquity_1, parameters); // MQLCommand ENUM = 13
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -703,19 +797,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountFreeMargin_1, parameters); // MQLCommand ENUM = 14
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -757,22 +858,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["cmd"]);
             parameters.Add(payload["volume"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountFreeMarginCheck_1, parameters); // MQLCommand ENUM = 15
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -808,19 +916,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountFreeMarginMode_1, parameters); // MQLCommand ENUM = 16
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -856,19 +971,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountLeverage_1, parameters); // MQLCommand ENUM = 17
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -904,19 +1026,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountMargin_1, parameters); // MQLCommand ENUM = 18
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -952,19 +1081,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountName_1, parameters); // MQLCommand ENUM = 19
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -1000,19 +1136,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountNumber_1, parameters); // MQLCommand ENUM = 20
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -1048,19 +1191,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountProfit_1, parameters); // MQLCommand ENUM = 21
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -1096,19 +1246,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountServer_1, parameters); // MQLCommand ENUM = 22
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -1144,19 +1301,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountStopoutLevel_1, parameters); // MQLCommand ENUM = 23
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -1192,19 +1356,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountStopoutMode_1, parameters); // MQLCommand ENUM = 24
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -1240,19 +1411,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.GetLastError_1, parameters); // MQLCommand ENUM = 25
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -1288,19 +1466,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsStopped_1, parameters); // MQLCommand ENUM = 26
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -1336,19 +1521,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.UninitializeReason_1, parameters); // MQLCommand ENUM = 27
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -1386,20 +1578,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.MQLInfoInteger_1, parameters); // MQLCommand ENUM = 28
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -1437,20 +1636,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.MQLInfoString_1, parameters); // MQLCommand ENUM = 29
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -1490,21 +1696,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             parameters.Add(payload["property_value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.MQLSetInteger_1, parameters); // MQLCommand ENUM = 30
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = "";
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = "";
+
             return result;
         }
         /// <summary>
@@ -1542,20 +1755,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.TerminalInfoInteger_1, parameters); // MQLCommand ENUM = 31
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -1593,20 +1813,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.TerminalInfoDouble_1, parameters); // MQLCommand ENUM = 32
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -1644,20 +1871,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.TerminalInfoString_1, parameters); // MQLCommand ENUM = 33
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -1693,19 +1927,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.Symbol_1, parameters); // MQLCommand ENUM = 34
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -1741,19 +1982,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.Period_1, parameters); // MQLCommand ENUM = 35
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -1789,19 +2037,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.Digits_1, parameters); // MQLCommand ENUM = 36
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -1837,19 +2092,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.Point_1, parameters); // MQLCommand ENUM = 37
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -1885,19 +2147,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsConnected_1, parameters); // MQLCommand ENUM = 38
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -1933,19 +2202,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsDemo_1, parameters); // MQLCommand ENUM = 39
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -1981,19 +2257,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsDllsAllowed_1, parameters); // MQLCommand ENUM = 40
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -2029,19 +2312,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsExpertEnabled_1, parameters); // MQLCommand ENUM = 41
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -2077,19 +2367,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsLibrariesAllowed_1, parameters); // MQLCommand ENUM = 42
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -2125,19 +2422,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsOptimization_1, parameters); // MQLCommand ENUM = 43
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -2173,19 +2477,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsTesting_1, parameters); // MQLCommand ENUM = 44
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -2221,19 +2532,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsTradeAllowed_1, parameters); // MQLCommand ENUM = 45
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -2273,21 +2591,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["tested_time"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsTradeAllowed_2, parameters); // MQLCommand ENUM = 45
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -2323,19 +2648,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsTradeContextBusy_1, parameters); // MQLCommand ENUM = 46
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -2371,19 +2703,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsVisualMode_1, parameters); // MQLCommand ENUM = 47
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -2419,19 +2758,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.TerminalCompany_1, parameters); // MQLCommand ENUM = 48
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -2467,19 +2813,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.TerminalName_1, parameters); // MQLCommand ENUM = 49
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -2515,19 +2868,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.TerminalPath_1, parameters); // MQLCommand ENUM = 50
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -2567,21 +2927,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["type"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.MarketInfo_1, parameters); // MQLCommand ENUM = 51
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -2619,20 +2986,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["selected"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SymbolsTotal_1, parameters); // MQLCommand ENUM = 52
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -2672,21 +3046,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["pos"]);
             parameters.Add(payload["selected"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SymbolName_1, parameters); // MQLCommand ENUM = 53
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -2726,21 +3107,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             parameters.Add(payload["select"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SymbolSelect_1, parameters); // MQLCommand ENUM = 54
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -2776,19 +3164,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.RefreshRates_1, parameters); // MQLCommand ENUM = 55
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -2828,21 +3223,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol_name"]);
             parameters.Add(payload["timeframe"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.Bars_1, parameters); // MQLCommand ENUM = 56
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -2886,6 +3288,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol_name"]);
             parameters.Add(payload["timeframe"]);
@@ -2893,16 +3302,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["stop_time"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.Bars_2, parameters); // MQLCommand ENUM = 56
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -2942,21 +3351,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iBars_1, parameters); // MQLCommand ENUM = 57
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -3000,6 +3416,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -3007,16 +3430,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["exact"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iBarShift_1, parameters); // MQLCommand ENUM = 58
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -3058,22 +3481,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iClose_1, parameters); // MQLCommand ENUM = 59
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -3115,22 +3545,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iHigh_1, parameters); // MQLCommand ENUM = 60
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -3176,6 +3613,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -3184,16 +3628,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["start"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iHighest_1, parameters); // MQLCommand ENUM = 61
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -3235,22 +3679,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iLow_1, parameters); // MQLCommand ENUM = 62
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -3296,6 +3747,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -3304,16 +3762,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["start"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iLowest_1, parameters); // MQLCommand ENUM = 63
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -3355,22 +3813,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iOpen_1, parameters); // MQLCommand ENUM = 64
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -3412,22 +3877,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iTime_1, parameters); // MQLCommand ENUM = 65
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (DateTime)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (DateTime)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -3469,22 +3941,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iVolume_1, parameters); // MQLCommand ENUM = 66
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt64(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt64(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -3524,21 +4003,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["filename"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartApplyTemplate_1, parameters); // MQLCommand ENUM = 67
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -3578,21 +4064,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["filename"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartSaveTemplate_1, parameters); // MQLCommand ENUM = 68
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -3632,21 +4125,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["indicator_shortname"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartWindowFind_1, parameters); // MQLCommand ENUM = 69
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -3682,19 +4182,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartWindowFind_2, parameters); // MQLCommand ENUM = 69
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -3734,21 +4241,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["period"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartOpen_1, parameters); // MQLCommand ENUM = 70
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt64(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt64(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -3784,19 +4298,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartFirst_1, parameters); // MQLCommand ENUM = 71
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt64(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt64(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -3834,20 +4355,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartNext_1, parameters); // MQLCommand ENUM = 72
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt64(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt64(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -3885,20 +4413,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartClose_1, parameters); // MQLCommand ENUM = 73
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -3936,20 +4471,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartSymbol_1, parameters); // MQLCommand ENUM = 74
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -3987,20 +4529,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartRedraw_1, parameters); // MQLCommand ENUM = 75
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = "";
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = "";
+
             return result;
         }
         /// <summary>
@@ -4042,22 +4591,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["prop_id"]);
             parameters.Add(payload["value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartSetDouble_1, parameters); // MQLCommand ENUM = 76
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -4099,22 +4655,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["prop_id"]);
             parameters.Add(payload["value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartSetInteger_1, parameters); // MQLCommand ENUM = 77
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -4158,6 +4721,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["property_id"]);
@@ -4165,16 +4735,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartSetInteger_2, parameters); // MQLCommand ENUM = 77
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -4216,22 +4786,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["prop_id"]);
             parameters.Add(payload["str_value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartSetString_1, parameters); // MQLCommand ENUM = 78
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -4273,22 +4850,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["position"]);
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartNavigate_1, parameters); // MQLCommand ENUM = 79
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -4324,19 +4908,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartID_1, parameters); // MQLCommand ENUM = 80
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt64(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt64(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -4378,22 +4969,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["sub_window"]);
             parameters.Add(payload["indicator_shortname"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartIndicatorDelete_1, parameters); // MQLCommand ENUM = 81
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -4435,22 +5033,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["sub_window"]);
             parameters.Add(payload["index"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartIndicatorName_1, parameters); // MQLCommand ENUM = 82
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -4490,21 +5095,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["sub_window"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartIndicatorsTotal_1, parameters); // MQLCommand ENUM = 83
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -4540,19 +5152,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartWindowOnDropped_1, parameters); // MQLCommand ENUM = 84
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -4588,19 +5207,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartPriceOnDropped_1, parameters); // MQLCommand ENUM = 85
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -4636,19 +5262,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartTimeOnDropped_1, parameters); // MQLCommand ENUM = 86
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (DateTime)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (DateTime)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -4684,19 +5317,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartXOnDropped_1, parameters); // MQLCommand ENUM = 87
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -4732,19 +5372,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartYOnDropped_1, parameters); // MQLCommand ENUM = 88
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -4786,22 +5433,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["period"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartSetSymbolPeriod_1, parameters); // MQLCommand ENUM = 89
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -4847,6 +5501,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["filename"]);
@@ -4855,16 +5516,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["align_mode"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartScreenShot_1, parameters); // MQLCommand ENUM = 90
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -4900,19 +5561,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowBarsPerChart_1, parameters); // MQLCommand ENUM = 91
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -4948,19 +5616,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowExpertName_1, parameters); // MQLCommand ENUM = 92
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -4998,20 +5673,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowFind_1, parameters); // MQLCommand ENUM = 93
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -5047,19 +5729,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowFirstVisibleBar_1, parameters); // MQLCommand ENUM = 94
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -5099,21 +5788,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowHandle_1, parameters); // MQLCommand ENUM = 95
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -5151,20 +5847,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowIsVisible_1, parameters); // MQLCommand ENUM = 96
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -5200,19 +5903,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowOnDropped_1, parameters); // MQLCommand ENUM = 97
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -5250,20 +5960,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowPriceMax_1, parameters); // MQLCommand ENUM = 98
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -5301,20 +6018,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowPriceMin_1, parameters); // MQLCommand ENUM = 99
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -5350,19 +6074,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowPriceOnDropped_1, parameters); // MQLCommand ENUM = 100
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -5398,19 +6129,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowRedraw_1, parameters); // MQLCommand ENUM = 101
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = "";
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = "";
+
             return result;
         }
         /// <summary>
@@ -5458,6 +6196,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["filename"]);
             parameters.Add(payload["size_x"]);
@@ -5467,16 +6212,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["chart_mode"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowScreenShot_1, parameters); // MQLCommand ENUM = 102
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -5512,19 +6257,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowTimeOnDropped_1, parameters); // MQLCommand ENUM = 103
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (DateTime)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (DateTime)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -5560,19 +6312,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowsTotal_1, parameters); // MQLCommand ENUM = 104
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -5608,19 +6367,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowXOnDropped_1, parameters); // MQLCommand ENUM = 105
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -5656,19 +6422,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowYOnDropped_1, parameters); // MQLCommand ENUM = 106
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -5714,6 +6487,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["ticket"]);
             parameters.Add(payload["lots"]);
@@ -5722,16 +6502,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["arrow_color"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderClose_1, parameters); // MQLCommand ENUM = 107
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -5773,22 +6553,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["ticket"]);
             parameters.Add(payload["opposite"]);
             parameters.Add(payload["arrow_color"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderCloseBy_1, parameters); // MQLCommand ENUM = 108
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -5824,19 +6611,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderClosePrice_1, parameters); // MQLCommand ENUM = 109
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -5872,19 +6666,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderCloseTime_1, parameters); // MQLCommand ENUM = 110
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (DateTime)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (DateTime)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -5920,19 +6721,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderComment_1, parameters); // MQLCommand ENUM = 111
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -5968,19 +6776,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderCommission_1, parameters); // MQLCommand ENUM = 112
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -6020,21 +6835,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["ticket"]);
             parameters.Add(payload["arrow_color"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderDelete_1, parameters); // MQLCommand ENUM = 113
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -6070,19 +6892,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderExpiration_1, parameters); // MQLCommand ENUM = 114
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (DateTime)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (DateTime)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -6118,19 +6947,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderLots_1, parameters); // MQLCommand ENUM = 115
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -6166,19 +7002,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderMagicNumber_1, parameters); // MQLCommand ENUM = 116
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -6226,6 +7069,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["ticket"]);
             parameters.Add(payload["price"]);
@@ -6235,16 +7085,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["arrow_color"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderModify_1, parameters); // MQLCommand ENUM = 117
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -6280,19 +7130,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderOpenPrice_1, parameters); // MQLCommand ENUM = 118
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -6328,19 +7185,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderOpenTime_1, parameters); // MQLCommand ENUM = 119
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (DateTime)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (DateTime)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -6376,19 +7240,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderPrint_1, parameters); // MQLCommand ENUM = 120
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = "";
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = "";
+
             return result;
         }
         /// <summary>
@@ -6424,19 +7295,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderProfit_1, parameters); // MQLCommand ENUM = 121
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -6478,22 +7356,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             parameters.Add(payload["select"]);
             parameters.Add(payload["pool"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderSelect_1, parameters); // MQLCommand ENUM = 122
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -6551,6 +7436,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["cmd"]);
@@ -6565,16 +7457,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["arrow_color"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderSend_1, parameters); // MQLCommand ENUM = 123
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -6610,19 +7502,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrdersHistoryTotal_1, parameters); // MQLCommand ENUM = 124
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -6658,19 +7557,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderStopLoss_1, parameters); // MQLCommand ENUM = 125
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -6706,19 +7612,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrdersTotal_1, parameters); // MQLCommand ENUM = 126
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -6754,19 +7667,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderSwap_1, parameters); // MQLCommand ENUM = 127
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -6802,19 +7722,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderSymbol_1, parameters); // MQLCommand ENUM = 128
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -6850,19 +7777,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderTakeProfit_1, parameters); // MQLCommand ENUM = 129
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -6898,19 +7832,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderTicket_1, parameters); // MQLCommand ENUM = 130
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -6946,19 +7887,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderType_1, parameters); // MQLCommand ENUM = 131
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -6996,20 +7944,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalBaseGetDouble_1, parameters); // MQLCommand ENUM = 132
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -7047,20 +8002,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalBaseGetInteger_1, parameters); // MQLCommand ENUM = 133
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt64(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt64(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -7098,20 +8060,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalBaseGetString_1, parameters); // MQLCommand ENUM = 134
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -7149,20 +8118,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalBaseSelect_1, parameters); // MQLCommand ENUM = 135
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -7198,19 +8174,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalBaseTotal_1, parameters); // MQLCommand ENUM = 136
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -7248,20 +8231,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalInfoGetDouble_1, parameters); // MQLCommand ENUM = 137
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -7299,20 +8289,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalInfoGetInteger_1, parameters); // MQLCommand ENUM = 138
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt64(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt64(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -7350,20 +8347,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalInfoGetString_1, parameters); // MQLCommand ENUM = 139
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -7403,21 +8407,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             parameters.Add(payload["value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalInfoSetDouble_1, parameters); // MQLCommand ENUM = 140
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -7457,21 +8468,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             parameters.Add(payload["value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalInfoSetInteger_1, parameters); // MQLCommand ENUM = 141
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -7509,20 +8527,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["signal_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalSubscribe_1, parameters); // MQLCommand ENUM = 142
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -7558,19 +8583,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalUnsubscribe_1, parameters); // MQLCommand ENUM = 143
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -7608,20 +8640,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariableCheck_1, parameters); // MQLCommand ENUM = 144
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -7659,20 +8698,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariableTime_1, parameters); // MQLCommand ENUM = 145
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (DateTime)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (DateTime)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -7710,20 +8756,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariableDel_1, parameters); // MQLCommand ENUM = 146
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -7761,20 +8814,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariableGet_1, parameters); // MQLCommand ENUM = 147
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -7812,20 +8872,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariableName_1, parameters); // MQLCommand ENUM = 148
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -7865,21 +8932,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             parameters.Add(payload["value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariableSet_1, parameters); // MQLCommand ENUM = 149
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (DateTime)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (DateTime)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -7915,19 +8989,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariablesFlush_1, parameters); // MQLCommand ENUM = 150
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = "";
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = "";
+
             return result;
         }
         /// <summary>
@@ -7965,20 +9046,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariableTemp_1, parameters); // MQLCommand ENUM = 151
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -8020,22 +9108,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             parameters.Add(payload["value"]);
             parameters.Add(payload["check_value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariableSetOnCondition_1, parameters); // MQLCommand ENUM = 152
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -8075,21 +9170,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["prefix_name"]);
             parameters.Add(payload["limit_data"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariablesDeleteAll_1, parameters); // MQLCommand ENUM = 153
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -8125,19 +9227,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariablesTotal_1, parameters); // MQLCommand ENUM = 154
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -8175,20 +9284,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["hide"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.HideTestIndicators_1, parameters); // MQLCommand ENUM = 155
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = "";
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = "";
+
             return result;
         }
         /// <summary>
@@ -8228,21 +9344,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["prop_id"]);
             parameters.Add(payload["prop_value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.IndicatorSetDouble_1, parameters); // MQLCommand ENUM = 156
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -8284,22 +9407,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["prop_id"]);
             parameters.Add(payload["prop_modifier"]);
             parameters.Add(payload["prop_value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.IndicatorSetDouble_2, parameters); // MQLCommand ENUM = 156
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -8339,21 +9469,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["prop_id"]);
             parameters.Add(payload["prop_value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.IndicatorSetInteger_1, parameters); // MQLCommand ENUM = 157
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -8395,22 +9532,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["prop_id"]);
             parameters.Add(payload["prop_modifier"]);
             parameters.Add(payload["prop_value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.IndicatorSetInteger_2, parameters); // MQLCommand ENUM = 157
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -8450,21 +9594,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["prop_id"]);
             parameters.Add(payload["prop_value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.IndicatorSetString_1, parameters); // MQLCommand ENUM = 158
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -8506,22 +9657,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["prop_id"]);
             parameters.Add(payload["prop_modifier"]);
             parameters.Add(payload["prop_value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.IndicatorSetString_2, parameters); // MQLCommand ENUM = 158
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -8559,20 +9717,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["count"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.IndicatorBuffers_1, parameters); // MQLCommand ENUM = 159
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -8608,19 +9773,26 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IndicatorCounted_1, parameters); // MQLCommand ENUM = 160
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -8658,20 +9830,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["digits"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.IndicatorDigits_1, parameters); // MQLCommand ENUM = 161
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = "";
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = "";
+
             return result;
         }
         /// <summary>
@@ -8709,20 +9888,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.IndicatorShortName_1, parameters); // MQLCommand ENUM = 162
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = "";
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = "";
+
             return result;
         }
         /// <summary>
@@ -8762,21 +9948,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             parameters.Add(payload["code"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SetIndexArrow_1, parameters); // MQLCommand ENUM = 163
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = "";
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = "";
+
             return result;
         }
         /// <summary>
@@ -8816,21 +10009,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             parameters.Add(payload["begin"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SetIndexDrawBegin_1, parameters); // MQLCommand ENUM = 164
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = "";
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = "";
+
             return result;
         }
         /// <summary>
@@ -8870,21 +10070,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             parameters.Add(payload["value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SetIndexEmptyValue_1, parameters); // MQLCommand ENUM = 165
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = "";
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = "";
+
             return result;
         }
         /// <summary>
@@ -8924,21 +10131,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             parameters.Add(payload["text"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SetIndexLabel_1, parameters); // MQLCommand ENUM = 166
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = "";
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = "";
+
             return result;
         }
         /// <summary>
@@ -8978,21 +10192,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SetIndexShift_1, parameters); // MQLCommand ENUM = 167
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = "";
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = "";
+
             return result;
         }
         /// <summary>
@@ -9038,6 +10259,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             parameters.Add(payload["type"]);
@@ -9046,16 +10274,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["clr"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SetIndexStyle_1, parameters); // MQLCommand ENUM = 168
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = "";
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = "";
+
             return result;
         }
         /// <summary>
@@ -9097,22 +10325,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["draw_style"]);
             parameters.Add(payload["line_width"]);
             parameters.Add(payload["clr"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SetLevelStyle_1, parameters); // MQLCommand ENUM = 169
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = "";
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = "";
+
             return result;
         }
         /// <summary>
@@ -9152,21 +10387,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["level"]);
             parameters.Add(payload["value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SetLevelValue_1, parameters); // MQLCommand ENUM = 170
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = "";
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = "";
+
             return result;
         }
         /// <summary>
@@ -9218,6 +10460,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -9229,16 +10478,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["priceN"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectCreate_1, parameters); // MQLCommand ENUM = 171
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -9292,6 +10541,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["object_type"]);
@@ -9304,16 +10560,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["price3"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectCreate_2, parameters); // MQLCommand ENUM = 171
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -9351,20 +10607,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_index"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectName_1, parameters); // MQLCommand ENUM = 172
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -9404,21 +10667,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectDelete_1, parameters); // MQLCommand ENUM = 173
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -9456,20 +10726,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectDelete_2, parameters); // MQLCommand ENUM = 173
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -9511,22 +10788,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["sub_window"]);
             parameters.Add(payload["object_type"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectsDeleteAll_1, parameters); // MQLCommand ENUM = 174
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -9566,21 +10850,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["sub_window"]);
             parameters.Add(payload["object_type"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectsDeleteAll_2, parameters); // MQLCommand ENUM = 174
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -9624,6 +10915,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["prefix"]);
@@ -9631,16 +10929,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["object_type"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectsDeleteAll_3, parameters); // MQLCommand ENUM = 174
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -9680,21 +10978,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectFind_1, parameters); // MQLCommand ENUM = 175
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -9732,20 +11037,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectFind_2, parameters); // MQLCommand ENUM = 175
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -9787,22 +11099,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["value"]);
             parameters.Add(payload["line_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectGetTimeByValue_1, parameters); // MQLCommand ENUM = 176
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (DateTime)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (DateTime)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -9846,6 +11165,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -9853,16 +11179,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["line_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectGetValueByTime_1, parameters); // MQLCommand ENUM = 177
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -9906,6 +11232,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["point_index"]);
@@ -9913,16 +11246,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["price"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectMove_1, parameters); // MQLCommand ENUM = 178
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -9964,22 +11297,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["sub_window"]);
             parameters.Add(payload["type"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectsTotal_1, parameters); // MQLCommand ENUM = 179
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -10017,20 +11357,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["type"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectsTotal_2, parameters); // MQLCommand ENUM = 179
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -10074,6 +11421,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -10081,16 +11435,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["prop_modifier"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectGetDouble_1, parameters); // MQLCommand ENUM = 180
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -10134,6 +11488,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -10141,16 +11502,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["prop_modifier"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectGetInteger_1, parameters); // MQLCommand ENUM = 181
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt64(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt64(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -10194,6 +11555,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -10201,16 +11569,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["prop_modifier"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectGetString_1, parameters); // MQLCommand ENUM = 182
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -10254,6 +11622,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -10261,16 +11636,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["prop_value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectSetDouble_1, parameters); // MQLCommand ENUM = 183
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -10316,6 +11691,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -10324,16 +11706,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["prop_value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectSetDouble_2, parameters); // MQLCommand ENUM = 183
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -10377,6 +11759,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -10384,16 +11773,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["prop_value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectSetInteger_1, parameters); // MQLCommand ENUM = 184
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -10439,6 +11828,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -10447,16 +11843,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["prop_value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectSetInteger_2, parameters); // MQLCommand ENUM = 184
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -10500,6 +11896,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -10507,16 +11910,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["prop_value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectSetString_1, parameters); // MQLCommand ENUM = 185
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -10562,6 +11965,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -10570,16 +11980,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["prop_value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectSetString_2, parameters); // MQLCommand ENUM = 185
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -10623,6 +12033,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             parameters.Add(payload["size"]);
@@ -10630,16 +12047,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["orientation"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.TextSetFont_1, parameters); // MQLCommand ENUM = 186
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -10677,20 +12094,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectDescription_1, parameters); // MQLCommand ENUM = 187
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -10730,21 +12154,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["index"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectGet_1, parameters); // MQLCommand ENUM = 188
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -10784,21 +12215,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["index"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectGetFiboDescription_1, parameters); // MQLCommand ENUM = 189
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (string)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (string)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -10838,21 +12276,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectGetShiftByValue_1, parameters); // MQLCommand ENUM = 190
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -10892,21 +12337,28 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectGetValueByShift_1, parameters); // MQLCommand ENUM = 191
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -10948,22 +12400,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["index"]);
             parameters.Add(payload["value"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectSet_1, parameters); // MQLCommand ENUM = 192
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -11005,22 +12464,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["index"]);
             parameters.Add(payload["text"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectSetFiboDescription_1, parameters); // MQLCommand ENUM = 193
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -11066,6 +12532,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["text"]);
@@ -11074,16 +12547,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["text_color"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectSetText_1, parameters); // MQLCommand ENUM = 194
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = (bool)mqlCommandManager.GetCommandResult(id);
+
             return result;
         }
         /// <summary>
@@ -11121,20 +12594,27 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectType_1, parameters); // MQLCommand ENUM = 195
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToInt32(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -11176,22 +12656,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iAC_1, parameters); // MQLCommand ENUM = 196
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -11233,22 +12720,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iAD_1, parameters); // MQLCommand ENUM = 197
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -11296,6 +12790,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -11305,16 +12806,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iADX_1, parameters); // MQLCommand ENUM = 198
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -11374,6 +12875,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -11389,16 +12897,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iAlligator_1, parameters); // MQLCommand ENUM = 199
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -11440,22 +12948,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iAO_1, parameters); // MQLCommand ENUM = 200
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -11499,6 +13014,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -11506,16 +13028,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iATR_1, parameters); // MQLCommand ENUM = 201
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -11561,6 +13083,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -11569,16 +13098,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iBearsPower_1, parameters); // MQLCommand ENUM = 202
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -11630,6 +13159,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -11641,16 +13177,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iBands_1, parameters); // MQLCommand ENUM = 203
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -11696,6 +13232,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -11704,16 +13247,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iBullsPower_1, parameters); // MQLCommand ENUM = 204
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -11759,6 +13302,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -11767,16 +13317,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iCCI_1, parameters); // MQLCommand ENUM = 205
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -11820,6 +13370,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -11827,16 +13384,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iDeMarker_1, parameters); // MQLCommand ENUM = 206
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -11890,6 +13447,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -11902,16 +13466,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iEnvelopes_1, parameters); // MQLCommand ENUM = 207
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -11959,6 +13523,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -11968,16 +13539,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iForce_1, parameters); // MQLCommand ENUM = 208
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -12021,6 +13592,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -12028,16 +13606,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iFractals_1, parameters); // MQLCommand ENUM = 209
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -12097,6 +13675,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -12112,16 +13697,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iGator_1, parameters); // MQLCommand ENUM = 210
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -12171,6 +13756,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -12181,16 +13773,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iIchimoku_1, parameters); // MQLCommand ENUM = 211
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -12232,22 +13824,29 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iBWMFI_1, parameters); // MQLCommand ENUM = 212
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -12293,6 +13892,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -12301,16 +13907,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iMomentum_1, parameters); // MQLCommand ENUM = 213
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -12354,6 +13960,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -12361,16 +13974,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iMFI_1, parameters); // MQLCommand ENUM = 214
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -12420,6 +14033,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -12430,16 +14050,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iMA_1, parameters); // MQLCommand ENUM = 215
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -12489,6 +14109,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -12499,16 +14126,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iOsMA_1, parameters); // MQLCommand ENUM = 216
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -12560,6 +14187,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -12571,16 +14205,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iMACD_1, parameters); // MQLCommand ENUM = 217
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -12624,6 +14258,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -12631,16 +14272,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iOBV_1, parameters); // MQLCommand ENUM = 218
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -12686,6 +14327,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -12694,16 +14342,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iSAR_1, parameters); // MQLCommand ENUM = 219
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -12749,6 +14397,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -12757,16 +14412,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iRSI_1, parameters); // MQLCommand ENUM = 220
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -12812,6 +14467,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -12820,16 +14482,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iRVI_1, parameters); // MQLCommand ENUM = 221
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -12879,6 +14541,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -12889,16 +14558,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iStdDev_1, parameters); // MQLCommand ENUM = 222
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -12952,6 +14621,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -12964,16 +14640,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iStochastic_1, parameters); // MQLCommand ENUM = 223
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
         /// <summary>
@@ -13017,6 +14693,13 @@ namespace MQL4CSharp.Base.REST
         {
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
+            JObject result = new JObject();
+            if (payload == null)
+            {
+                result["result"] = PARSE_ERROR;
+                return result;
+            }
+
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -13024,16 +14707,16 @@ namespace MQL4CSharp.Base.REST
             parameters.Add(payload["shift"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.iWPR_1, parameters); // MQLCommand ENUM = 224
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
-            JObject result = new JObject();
             try
             {
                 mqlCommandManager.throwExceptionIfErrorResponse(id);
+                result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
             }
             catch (Exception e)
             {
-                result["error"] = e.ToString();
+                result["error"] = MQLExceptions.convertRESTException(e.ToString());
             }
-            result["result"] = Convert.ToDecimal(mqlCommandManager.GetCommandResult(id));
+
             return result;
         }
     }

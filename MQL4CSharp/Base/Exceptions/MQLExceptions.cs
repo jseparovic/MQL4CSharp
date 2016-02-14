@@ -1,5 +1,6 @@
 ﻿using System;
 using log4net;
+using Newtonsoft.Json.Linq;
 
 namespace MQL4CSharp.Base.Exceptions
 {
@@ -10,6 +11,11 @@ namespace MQL4CSharp.Base.Exceptions
         public MQLExceptions(string message) : base(message)
         {
 
+        }
+
+        public static String convertRESTException(string message)
+        {
+            return message;
         }
 
         public static void throwMQLException(int error, String functionCall)
