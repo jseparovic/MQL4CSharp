@@ -60,7 +60,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["argument"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.Alert_1, parameters); // MQLCommand ENUM = 1
@@ -118,7 +117,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["argument"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.Comment_1, parameters); // MQLCommand ENUM = 2
@@ -178,7 +176,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["filename"]);
             parameters.Add(payload["ftp_path"]);
@@ -237,7 +234,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["text"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SendNotification_1, parameters); // MQLCommand ENUM = 4
@@ -297,7 +293,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["subject"]);
             parameters.Add(payload["some_text"]);
@@ -356,7 +351,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountInfoDouble_1, parameters); // MQLCommand ENUM = 6
@@ -414,7 +408,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountInfoInteger_1, parameters); // MQLCommand ENUM = 7
@@ -472,7 +465,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountInfoString_1, parameters); // MQLCommand ENUM = 8
@@ -523,12 +515,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountBalance_1, parameters); // MQLCommand ENUM = 9
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -578,12 +564,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountCredit_1, parameters); // MQLCommand ENUM = 10
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -633,12 +613,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountCompany_1, parameters); // MQLCommand ENUM = 11
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -688,12 +662,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountCurrency_1, parameters); // MQLCommand ENUM = 12
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -743,12 +711,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountEquity_1, parameters); // MQLCommand ENUM = 13
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -798,12 +760,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountFreeMargin_1, parameters); // MQLCommand ENUM = 14
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -864,7 +820,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["cmd"]);
@@ -917,12 +872,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountFreeMarginMode_1, parameters); // MQLCommand ENUM = 16
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -972,12 +921,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountLeverage_1, parameters); // MQLCommand ENUM = 17
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -1027,12 +970,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountMargin_1, parameters); // MQLCommand ENUM = 18
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -1082,12 +1019,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountName_1, parameters); // MQLCommand ENUM = 19
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -1137,12 +1068,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountNumber_1, parameters); // MQLCommand ENUM = 20
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -1192,12 +1117,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountProfit_1, parameters); // MQLCommand ENUM = 21
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -1247,12 +1166,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountServer_1, parameters); // MQLCommand ENUM = 22
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -1302,12 +1215,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountStopoutLevel_1, parameters); // MQLCommand ENUM = 23
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -1357,12 +1264,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.AccountStopoutMode_1, parameters); // MQLCommand ENUM = 24
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -1412,12 +1313,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.GetLastError_1, parameters); // MQLCommand ENUM = 25
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -1467,12 +1362,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsStopped_1, parameters); // MQLCommand ENUM = 26
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -1522,12 +1411,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.UninitializeReason_1, parameters); // MQLCommand ENUM = 27
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -1584,7 +1467,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.MQLInfoInteger_1, parameters); // MQLCommand ENUM = 28
@@ -1642,7 +1524,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.MQLInfoString_1, parameters); // MQLCommand ENUM = 29
@@ -1702,7 +1583,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             parameters.Add(payload["property_value"]);
@@ -1761,7 +1641,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.TerminalInfoInteger_1, parameters); // MQLCommand ENUM = 31
@@ -1819,7 +1698,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.TerminalInfoDouble_1, parameters); // MQLCommand ENUM = 32
@@ -1877,7 +1755,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.TerminalInfoString_1, parameters); // MQLCommand ENUM = 33
@@ -1928,12 +1805,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.Symbol_1, parameters); // MQLCommand ENUM = 34
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -1983,12 +1854,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.Period_1, parameters); // MQLCommand ENUM = 35
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -2038,12 +1903,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.Digits_1, parameters); // MQLCommand ENUM = 36
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -2093,12 +1952,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.Point_1, parameters); // MQLCommand ENUM = 37
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -2148,12 +2001,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsConnected_1, parameters); // MQLCommand ENUM = 38
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -2203,12 +2050,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsDemo_1, parameters); // MQLCommand ENUM = 39
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -2258,12 +2099,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsDllsAllowed_1, parameters); // MQLCommand ENUM = 40
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -2313,12 +2148,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsExpertEnabled_1, parameters); // MQLCommand ENUM = 41
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -2368,12 +2197,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsLibrariesAllowed_1, parameters); // MQLCommand ENUM = 42
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -2423,12 +2246,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsOptimization_1, parameters); // MQLCommand ENUM = 43
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -2478,12 +2295,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsTesting_1, parameters); // MQLCommand ENUM = 44
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -2533,12 +2344,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsTradeAllowed_1, parameters); // MQLCommand ENUM = 45
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -2597,7 +2402,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["tested_time"]);
@@ -2649,12 +2453,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsTradeContextBusy_1, parameters); // MQLCommand ENUM = 46
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -2704,12 +2502,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IsVisualMode_1, parameters); // MQLCommand ENUM = 47
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -2759,12 +2551,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.TerminalCompany_1, parameters); // MQLCommand ENUM = 48
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -2814,12 +2600,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.TerminalName_1, parameters); // MQLCommand ENUM = 49
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -2869,12 +2649,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.TerminalPath_1, parameters); // MQLCommand ENUM = 50
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -2933,7 +2707,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["type"]);
@@ -2992,7 +2765,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["selected"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SymbolsTotal_1, parameters); // MQLCommand ENUM = 52
@@ -3052,7 +2824,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["pos"]);
             parameters.Add(payload["selected"]);
@@ -3113,7 +2884,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             parameters.Add(payload["select"]);
@@ -3165,12 +2935,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.RefreshRates_1, parameters); // MQLCommand ENUM = 55
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -3229,7 +2993,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol_name"]);
             parameters.Add(payload["timeframe"]);
@@ -3294,7 +3057,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol_name"]);
             parameters.Add(payload["timeframe"]);
@@ -3357,7 +3119,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -3422,7 +3183,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -3487,7 +3247,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -3551,7 +3310,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -3619,7 +3377,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -3685,7 +3442,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -3753,7 +3509,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -3819,7 +3574,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -3883,7 +3637,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -3947,7 +3700,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -4009,7 +3761,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["filename"]);
@@ -4070,7 +3821,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["filename"]);
@@ -4131,7 +3881,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["indicator_shortname"]);
@@ -4183,12 +3932,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartWindowFind_2, parameters); // MQLCommand ENUM = 69
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -4247,7 +3990,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["period"]);
@@ -4299,12 +4041,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartFirst_1, parameters); // MQLCommand ENUM = 71
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -4361,7 +4097,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartNext_1, parameters); // MQLCommand ENUM = 72
@@ -4419,7 +4154,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartClose_1, parameters); // MQLCommand ENUM = 73
@@ -4477,7 +4211,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartSymbol_1, parameters); // MQLCommand ENUM = 74
@@ -4535,7 +4268,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartRedraw_1, parameters); // MQLCommand ENUM = 75
@@ -4597,7 +4329,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["prop_id"]);
@@ -4661,7 +4392,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["prop_id"]);
@@ -4727,7 +4457,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["property_id"]);
@@ -4792,7 +4521,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["prop_id"]);
@@ -4856,7 +4584,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["position"]);
@@ -4909,12 +4636,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartID_1, parameters); // MQLCommand ENUM = 80
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -4975,7 +4696,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["sub_window"]);
@@ -5039,7 +4759,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["sub_window"]);
@@ -5101,7 +4820,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["sub_window"]);
@@ -5153,12 +4871,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartWindowOnDropped_1, parameters); // MQLCommand ENUM = 84
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -5208,12 +4920,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartPriceOnDropped_1, parameters); // MQLCommand ENUM = 85
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -5263,12 +4969,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartTimeOnDropped_1, parameters); // MQLCommand ENUM = 86
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -5318,12 +5018,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartXOnDropped_1, parameters); // MQLCommand ENUM = 87
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -5373,12 +5067,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.ChartYOnDropped_1, parameters); // MQLCommand ENUM = 88
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -5439,7 +5127,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["symbol"]);
@@ -5507,7 +5194,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["filename"]);
@@ -5562,12 +5248,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowBarsPerChart_1, parameters); // MQLCommand ENUM = 91
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -5617,12 +5297,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowExpertName_1, parameters); // MQLCommand ENUM = 92
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -5679,7 +5353,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowFind_1, parameters); // MQLCommand ENUM = 93
@@ -5730,12 +5403,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowFirstVisibleBar_1, parameters); // MQLCommand ENUM = 94
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -5794,7 +5461,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -5853,7 +5519,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowIsVisible_1, parameters); // MQLCommand ENUM = 96
@@ -5904,12 +5569,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowOnDropped_1, parameters); // MQLCommand ENUM = 97
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -5966,7 +5625,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowPriceMax_1, parameters); // MQLCommand ENUM = 98
@@ -6024,7 +5682,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowPriceMin_1, parameters); // MQLCommand ENUM = 99
@@ -6075,12 +5732,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowPriceOnDropped_1, parameters); // MQLCommand ENUM = 100
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -6130,12 +5781,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowRedraw_1, parameters); // MQLCommand ENUM = 101
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -6202,7 +5847,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["filename"]);
             parameters.Add(payload["size_x"]);
@@ -6258,12 +5902,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowTimeOnDropped_1, parameters); // MQLCommand ENUM = 103
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -6313,12 +5951,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowsTotal_1, parameters); // MQLCommand ENUM = 104
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -6368,12 +6000,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowXOnDropped_1, parameters); // MQLCommand ENUM = 105
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -6423,12 +6049,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.WindowYOnDropped_1, parameters); // MQLCommand ENUM = 106
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -6493,7 +6113,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["ticket"]);
             parameters.Add(payload["lots"]);
@@ -6559,7 +6178,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["ticket"]);
             parameters.Add(payload["opposite"]);
@@ -6612,12 +6230,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderClosePrice_1, parameters); // MQLCommand ENUM = 109
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -6667,12 +6279,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderCloseTime_1, parameters); // MQLCommand ENUM = 110
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -6722,12 +6328,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderComment_1, parameters); // MQLCommand ENUM = 111
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -6777,12 +6377,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderCommission_1, parameters); // MQLCommand ENUM = 112
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -6841,7 +6435,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["ticket"]);
             parameters.Add(payload["arrow_color"]);
@@ -6893,12 +6486,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderExpiration_1, parameters); // MQLCommand ENUM = 114
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -6948,12 +6535,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderLots_1, parameters); // MQLCommand ENUM = 115
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -7003,12 +6584,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderMagicNumber_1, parameters); // MQLCommand ENUM = 116
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -7075,7 +6650,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["ticket"]);
             parameters.Add(payload["price"]);
@@ -7131,12 +6705,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderOpenPrice_1, parameters); // MQLCommand ENUM = 118
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -7186,12 +6754,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderOpenTime_1, parameters); // MQLCommand ENUM = 119
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -7241,12 +6803,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderPrint_1, parameters); // MQLCommand ENUM = 120
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -7296,12 +6852,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderProfit_1, parameters); // MQLCommand ENUM = 121
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -7362,7 +6912,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             parameters.Add(payload["select"]);
@@ -7442,7 +6991,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["cmd"]);
@@ -7503,12 +7051,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrdersHistoryTotal_1, parameters); // MQLCommand ENUM = 124
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -7558,12 +7100,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderStopLoss_1, parameters); // MQLCommand ENUM = 125
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -7613,12 +7149,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrdersTotal_1, parameters); // MQLCommand ENUM = 126
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -7668,12 +7198,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderSwap_1, parameters); // MQLCommand ENUM = 127
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -7723,12 +7247,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderSymbol_1, parameters); // MQLCommand ENUM = 128
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -7778,12 +7296,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderTakeProfit_1, parameters); // MQLCommand ENUM = 129
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -7833,12 +7345,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderTicket_1, parameters); // MQLCommand ENUM = 130
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -7888,12 +7394,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.OrderType_1, parameters); // MQLCommand ENUM = 131
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -7950,7 +7450,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalBaseGetDouble_1, parameters); // MQLCommand ENUM = 132
@@ -8008,7 +7507,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalBaseGetInteger_1, parameters); // MQLCommand ENUM = 133
@@ -8066,7 +7564,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalBaseGetString_1, parameters); // MQLCommand ENUM = 134
@@ -8124,7 +7621,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalBaseSelect_1, parameters); // MQLCommand ENUM = 135
@@ -8175,12 +7671,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalBaseTotal_1, parameters); // MQLCommand ENUM = 136
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -8237,7 +7727,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalInfoGetDouble_1, parameters); // MQLCommand ENUM = 137
@@ -8295,7 +7784,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalInfoGetInteger_1, parameters); // MQLCommand ENUM = 138
@@ -8353,7 +7841,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalInfoGetString_1, parameters); // MQLCommand ENUM = 139
@@ -8413,7 +7900,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             parameters.Add(payload["value"]);
@@ -8474,7 +7960,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["property_id"]);
             parameters.Add(payload["value"]);
@@ -8533,7 +8018,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["signal_id"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalSubscribe_1, parameters); // MQLCommand ENUM = 142
@@ -8584,12 +8068,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.SignalUnsubscribe_1, parameters); // MQLCommand ENUM = 143
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -8646,7 +8124,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariableCheck_1, parameters); // MQLCommand ENUM = 144
@@ -8704,7 +8181,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariableTime_1, parameters); // MQLCommand ENUM = 145
@@ -8762,7 +8238,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariableDel_1, parameters); // MQLCommand ENUM = 146
@@ -8820,7 +8295,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariableGet_1, parameters); // MQLCommand ENUM = 147
@@ -8878,7 +8352,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariableName_1, parameters); // MQLCommand ENUM = 148
@@ -8938,7 +8411,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             parameters.Add(payload["value"]);
@@ -8990,12 +8462,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariablesFlush_1, parameters); // MQLCommand ENUM = 150
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -9052,7 +8518,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariableTemp_1, parameters); // MQLCommand ENUM = 151
@@ -9114,7 +8579,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             parameters.Add(payload["value"]);
@@ -9176,7 +8640,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["prefix_name"]);
             parameters.Add(payload["limit_data"]);
@@ -9228,12 +8691,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.GlobalVariablesTotal_1, parameters); // MQLCommand ENUM = 154
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -9290,7 +8747,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["hide"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.HideTestIndicators_1, parameters); // MQLCommand ENUM = 155
@@ -9350,7 +8806,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["prop_id"]);
             parameters.Add(payload["prop_value"]);
@@ -9413,7 +8868,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["prop_id"]);
             parameters.Add(payload["prop_modifier"]);
@@ -9475,7 +8929,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["prop_id"]);
             parameters.Add(payload["prop_value"]);
@@ -9538,7 +8991,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["prop_id"]);
             parameters.Add(payload["prop_modifier"]);
@@ -9600,7 +9052,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["prop_id"]);
             parameters.Add(payload["prop_value"]);
@@ -9663,7 +9114,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["prop_id"]);
             parameters.Add(payload["prop_modifier"]);
@@ -9723,7 +9173,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["count"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.IndicatorBuffers_1, parameters); // MQLCommand ENUM = 159
@@ -9774,12 +9223,6 @@ namespace MQL4CSharp.Base.REST
             MQLCommandManager mqlCommandManager = DLLObjectWrapper.getInstance().getMQLCommandManager(chartId);
             JObject payload = this.GetJsonPayload(context.Request);
             JObject result = new JObject();
-            if (payload == null)
-            {
-                result["result"] = PARSE_ERROR;
-                return result;
-            }
-
             List<Object> parameters = new List<Object>();
             int id = mqlCommandManager.ExecCommand(MQLCommand.IndicatorCounted_1, parameters); // MQLCommand ENUM = 160
             while (mqlCommandManager.IsCommandRunning(id)) ; // block while command is running
@@ -9836,7 +9279,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["digits"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.IndicatorDigits_1, parameters); // MQLCommand ENUM = 161
@@ -9894,7 +9336,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.IndicatorShortName_1, parameters); // MQLCommand ENUM = 162
@@ -9954,7 +9395,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             parameters.Add(payload["code"]);
@@ -10015,7 +9455,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             parameters.Add(payload["begin"]);
@@ -10076,7 +9515,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             parameters.Add(payload["value"]);
@@ -10137,7 +9575,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             parameters.Add(payload["text"]);
@@ -10198,7 +9635,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             parameters.Add(payload["shift"]);
@@ -10265,7 +9701,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["index"]);
             parameters.Add(payload["type"]);
@@ -10331,7 +9766,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["draw_style"]);
             parameters.Add(payload["line_width"]);
@@ -10393,7 +9827,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["level"]);
             parameters.Add(payload["value"]);
@@ -10466,7 +9899,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -10547,7 +9979,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["object_type"]);
@@ -10613,7 +10044,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_index"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectName_1, parameters); // MQLCommand ENUM = 172
@@ -10673,7 +10103,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -10732,7 +10161,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectDelete_2, parameters); // MQLCommand ENUM = 173
@@ -10794,7 +10222,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["sub_window"]);
@@ -10856,7 +10283,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["sub_window"]);
             parameters.Add(payload["object_type"]);
@@ -10921,7 +10347,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["prefix"]);
@@ -10984,7 +10409,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -11043,7 +10467,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectFind_2, parameters); // MQLCommand ENUM = 175
@@ -11105,7 +10528,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["value"]);
@@ -11171,7 +10593,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -11238,7 +10659,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["point_index"]);
@@ -11303,7 +10723,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["sub_window"]);
@@ -11363,7 +10782,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["type"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectsTotal_2, parameters); // MQLCommand ENUM = 179
@@ -11427,7 +10845,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -11494,7 +10911,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -11561,7 +10977,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -11628,7 +11043,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -11697,7 +11111,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -11765,7 +11178,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -11834,7 +11246,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -11902,7 +11313,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -11971,7 +11381,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["chart_id"]);
             parameters.Add(payload["object_name"]);
@@ -12039,7 +11448,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["name"]);
             parameters.Add(payload["size"]);
@@ -12100,7 +11508,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectDescription_1, parameters); // MQLCommand ENUM = 187
@@ -12160,7 +11567,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["index"]);
@@ -12221,7 +11627,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["index"]);
@@ -12282,7 +11687,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["value"]);
@@ -12343,7 +11747,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["shift"]);
@@ -12406,7 +11809,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["index"]);
@@ -12470,7 +11872,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["index"]);
@@ -12538,7 +11939,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             parameters.Add(payload["text"]);
@@ -12600,7 +12000,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["object_name"]);
             int id = mqlCommandManager.ExecCommand(MQLCommand.ObjectType_1, parameters); // MQLCommand ENUM = 195
@@ -12662,7 +12061,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -12726,7 +12124,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -12796,7 +12193,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -12881,7 +12277,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -12954,7 +12349,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -13020,7 +12414,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -13089,7 +12482,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -13165,7 +12557,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -13238,7 +12629,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -13308,7 +12698,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -13376,7 +12765,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -13453,7 +12841,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -13529,7 +12916,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -13598,7 +12984,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -13681,7 +13066,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -13762,7 +13146,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -13830,7 +13213,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -13898,7 +13280,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -13966,7 +13347,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -14039,7 +13419,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -14115,7 +13494,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -14193,7 +13571,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -14264,7 +13641,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -14333,7 +13709,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -14403,7 +13778,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -14473,7 +13847,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -14547,7 +13920,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -14627,7 +13999,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);
@@ -14699,7 +14070,6 @@ namespace MQL4CSharp.Base.REST
                 result["result"] = PARSE_ERROR;
                 return result;
             }
-
             List<Object> parameters = new List<Object>();
             parameters.Add(payload["symbol"]);
             parameters.Add(payload["timeframe"]);

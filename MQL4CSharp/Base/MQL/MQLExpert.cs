@@ -15,11 +15,8 @@ limitations under the License.
 */
 
 using System;
-using System.Collections.Generic;
 using RGiesecke.DllExport;
 using System.Runtime.InteropServices;
-using System.Xml;
-using System.Xml.XPath;
 using Amib.Threading;
 using log4net;
 using mqlsharp.Util;
@@ -85,9 +82,9 @@ namespace MQL4CSharp.Base.MQL
             return DLLObjectWrapper.getInstance().getMQLExpert(ix);
         }
 
-        static void OnInitThread(Int64 index, string CSharpFullTypeName)
+        static void OnInitThread(Int64 index, Type type)
         {
-            DLLObjectWrapper.getInstance().initMQLExpert(index, CSharpFullTypeName);
+            DLLObjectWrapper.getInstance().initMQLExpert(index, type);
             try
             {
                 getInstance(index).OnInit();
@@ -139,20 +136,6 @@ namespace MQL4CSharp.Base.MQL
             return DLLObjectWrapper.getInstance().getMQLThreadPool(ix);
         }
 
-        [DllExport("SetRatesSize", CallingConvention = CallingConvention.StdCall)]
-        public static void SetRatesSize(Int64 ix, int arr_size)
-        {
-            try
-            {
-                getInstance(ix).rateInfoSize = arr_size;
-            }
-            catch (Exception e)
-            {
-                LOG.Error(e);
-            }
-
-        }
-
         int convIndex(int i)
         {
             return rateInfoSize - 1 - i;
@@ -187,7 +170,21 @@ namespace MQL4CSharp.Base.MQL
         {
             return rateInfo[convIndex(i)].close;
         }
-        
+
+        [DllExport("SetRatesSize", CallingConvention = CallingConvention.StdCall)]
+        public static void SetRatesSize(Int64 ix, int arr_size)
+        {
+            try
+            {
+                getInstance(ix).rateInfoSize = arr_size;
+            }
+            catch (Exception e)
+            {
+                LOG.Error(e);
+            }
+
+        }
+
         [DllExport("IsExecutingOnTick", CallingConvention = CallingConvention.StdCall)]
         public static bool IsExecutingOnTick(Int64 ix)
         {
@@ -252,22 +249,28 @@ namespace MQL4CSharp.Base.MQL
         [DllExport("ExecOnInit", CallingConvention = CallingConvention.StdCall)]
         public static void ExecOnInit(Int64 ix, [MarshalAs(UnmanagedType.LPWStr)] string CSharpFullTypeName)
         {
-            LOG.Debug(String.Format("Initializing: {0}", CSharpFullTypeName));
+            ExecOnInit(ix, Type.GetType(CSharpFullTypeName));
+        }
+
+        public static void ExecOnInit(Int64 ix, Type type)
+        {
+            LOG.Debug(String.Format("Initializing: {0}", type.ToString()));
             DLLObjectWrapper.getInstance().initMQLThreadPool(ix);
 
             try
             {
-                getThreadPool(ix).QueueWorkItem(OnInitThread, ix, CSharpFullTypeName);
+                getThreadPool(ix).QueueWorkItem(OnInitThread, ix, type);
             }
             catch (ArgumentNullException)
             {
-                LOG.Error(String.Format("Strategy Class {0} not found", CSharpFullTypeName));
+                LOG.Error(String.Format("Strategy Class {0} not found", type.ToString()));
             }
             catch (Exception e)
             {
                 LOG.Error(e);
             }
         }
+
 
         [DllExport("InitRates", CallingConvention = CallingConvention.StdCall)]
         public unsafe static void InitRates(Int64 ix, RateInfo* arr, int arr_size)

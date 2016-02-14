@@ -143,14 +143,14 @@ namespace MQL4CSharp.Base.MQL
             }
         }
 
-        public void initMQLExpert(Int64 ix, String typeName)
+        public void initMQLExpert(Int64 ix, Type type)
         {
             lock (mqlExpertsLock)
             {
                 try
                 {
                     mqlCommandManagers[ix] = new MQLCommandManager(ix);
-                    mqlExperts[ix] = (MQLExpert)Activator.CreateInstance(Type.GetType(typeName), ix);
+                    mqlExperts[ix] = (MQLExpert)Activator.CreateInstance(type, ix);
                 }
                 catch (Exception e)
                 {
