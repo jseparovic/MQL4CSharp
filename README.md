@@ -1,6 +1,8 @@
 # MQL4CSharp
 ##C# Library for Metatrader 4
 
+For the Java version (using JNI) go here https://github.com/jseparovic/MQL4Java
+
 This library is currently a work in progress. 
 It demonstrates a framework for calling MQL4 commands from within a C# class.
 
