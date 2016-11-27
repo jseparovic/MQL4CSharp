@@ -24,6 +24,7 @@ using log4net;
 using mqlsharp.Util;
 using MQL4CSharp.Base.Enums;
 using MQL4CSharp.Base.Exceptions;
+using System.Globalization;
 
 namespace MQL4CSharp.Base.MQL
 {
@@ -87,7 +88,6 @@ namespace MQL4CSharp.Base.MQL
         {
             StringBuilder commandParams = new StringBuilder();
 
-            string returnCommand = "";
             foreach (Object p in commandRequests[id].Parameters)
             {
                 Object param = p;
@@ -95,6 +95,11 @@ namespace MQL4CSharp.Base.MQL
                 {
                     // Convert DateTime to MT4 String
                     param = DateUtil.ToMT4TimeString((DateTime)p);
+                }
+                else if (param is double)
+                {
+                    // Make sure we use a dot as decimal character
+                    param = ((double)p).ToString(CultureInfo.InvariantCulture);
                 }
 
                 if (!commandParams.ToString().Equals(""))
