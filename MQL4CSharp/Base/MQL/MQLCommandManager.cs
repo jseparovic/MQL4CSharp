@@ -25,6 +25,7 @@ using mqlsharp.Util;
 using MQL4CSharp.Base.Enums;
 using MQL4CSharp.Base.Exceptions;
 using System.Globalization;
+using System.Threading.Tasks;
 
 namespace MQL4CSharp.Base.MQL
 {
@@ -55,14 +56,15 @@ namespace MQL4CSharp.Base.MQL
             commandLock = UNLOCKED;
         }
 
-        public int ExecCommand(MQLCommand command, List<Object> parameters)
+        
+        public int ExecCommand(MQLCommand command, List<Object> parameters, TaskCompletionSource<Object> taskCompletionSource = null)
         {
             LOG.DebugFormat("ExecCommand: {0}", command.ToString());
             int id;
             lock (syncLock)
             {
                 id = counter++;
-                commandRequests[id] = new MQLCommandRequest(id, command, parameters);
+                commandRequests[id] = new MQLCommandRequest(id, command, parameters, taskCompletionSource);
             }
             return id;
         }
@@ -72,7 +74,12 @@ namespace MQL4CSharp.Base.MQL
             lock (syncLock)
             {
                 LOG.DebugFormat("GetCommandResult: {0}", id);
-                Object response = commandRequests[id].Response;
+                var req = commandRequests[id];
+                Object response = req.Response;
+                if (req.TaskCompletionSource != null && req.TaskCompletionSource.Task.IsCompleted)
+                {
+                    response = req.TaskCompletionSource.Task.Result;
+                }
                 commandRequests.Remove(id);
                 LOG.DebugFormat("Response: {0}", response);
                 return response;
@@ -117,9 +124,7 @@ namespace MQL4CSharp.Base.MQL
             lock (syncLock)
             {
                 LOG.DebugFormat("SetCommandResponse({0},{1},{2})", id, response, errorCode);
-                commandRequests[id].Response = response;
-                commandRequests[id].Error = errorCode;
-                commandRequests[id].CommandWaiting = false;
+                commandRequests[id].Done(response, errorCode);
             }
         }
 
