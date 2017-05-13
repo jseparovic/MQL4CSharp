@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using log4net;
 using MQL4CSharp.Base.Enums;
@@ -12,56 +10,36 @@ namespace MQL4CSharp.Base.MQL
     {
         private static readonly ILog LOG = LogManager.GetLogger(typeof(MQLCommandRequest));
 
-        private int id;
-        private MQLCommand command;
-        private List<Object> parameters;
-        private Boolean commandWaiting;
-        private Object response;
-        private int error;
-
-        public MQLCommandRequest(int id, MQLCommand command, List<object> parameters)
+        public MQLCommandRequest(int id, MQLCommand command, List<object> parameters, TaskCompletionSource<Object> taskCompletionSource = null)
         {
             LOG.DebugFormat("MQLCommandRequest: {0} {1}", id, command.ToString());
-            this.id = id;
-            this.command = command;
-            this.parameters = parameters;
-            this.error = 0;
-            this.commandWaiting = true;
+            ID = id;
+            Command = command;
+            Parameters = parameters;
+            Error = 0;
+            CommandWaiting = true;
+            TaskCompletionSource = taskCompletionSource;
         }
 
-        public MQLCommand Command
-        {
-            get { return command; }
-            set { command = value; }
-        }
-
-        public List<object> Parameters
-        {
-            get { return parameters; }
-            set { parameters = value; }
-        }
-
-        public bool CommandWaiting
-        {
-            get { return commandWaiting; }
-            set { commandWaiting = value; }
-        }
-
-        public object Response
-        {
-            get { return response; }
-            set { response = value; }
-        }
-
-        public int Error
-        {
-            get { return error; }
-            set { error = value; }
-        }
+        public int ID { get; private set; }
+        public TaskCompletionSource<Object> TaskCompletionSource { get; private set; }
+        public MQLCommand Command { get; private set; }
+        public List<object> Parameters { get; private set; }
+        public bool CommandWaiting { get; private set; }
+        public object Response { get; private set; }
+        public int Error { get; private set; }
 
         public override string ToString()
         {
             return $"Command: {Command}, Parameters: {Parameters}, CommandWaiting: {CommandWaiting}, Response: {Response}, Error: {Error}";
+        }
+
+        internal void Done(object response, int errorCode)
+        {
+            Response = response;
+            Error = errorCode;
+            CommandWaiting = false;
+            TaskCompletionSource?.SetResult(response);
         }
     }
 
