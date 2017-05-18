@@ -1,4 +1,4 @@
-﻿
+
 
 
 bool executeBoolCommand(int id, string params[])
@@ -36,7 +36,7 @@ bool executeBoolCommand(int id, string params[])
       case 48:
          return IsVisualMode();
       case 55:
-         return SymbolSelect(params[0], (bool)params[1]);
+         return SymbolSelect(params[0], StringCompare(params[1],"true",false)==0);
       case 56:
          return RefreshRates();
       case 69:
@@ -296,7 +296,7 @@ int executeIntCommand(int id, string params[])
       case 36:
          return Digits();
       case 53:
-         return SymbolsTotal((bool)params[0]);
+         return SymbolsTotal(StringCompare(params[0],"true",false)==0);
       case 57:
          return Bars(params[0], CONVERT_ENUM_TIMEFRAMES(params[1]));
       case 58:
@@ -304,7 +304,7 @@ int executeIntCommand(int id, string params[])
       case 59:
          return iBars(params[0], StrToInteger(params[1]));
       case 60:
-         return iBarShift(params[0], StrToInteger(params[1]), StringToTime(params[2]), (bool)params[3]);
+         return iBarShift(params[0], StrToInteger(params[1]), StringToTime(params[2]), StringCompare(params[3],"true",false)==0);
       case 63:
          return iHighest(params[0], StrToInteger(params[1]), StrToInteger(params[2]), StrToInteger(params[3]), StrToInteger(params[4]));
       case 65:
@@ -411,7 +411,7 @@ string executeStringCommand(int id, string params[])
       case 51:
          return TerminalPath();
       case 54:
-         return SymbolName(StrToInteger(params[0]), (bool)params[1]);
+         return SymbolName(StrToInteger(params[0]), StringCompare(params[1],"true",false)==0);
       case 77:
          return ChartSymbol(StringToInteger(params[0]));
       case 86:
@@ -458,7 +458,7 @@ void executeVoidCommand(int id, string params[])
       case 154:
           GlobalVariablesFlush();
       case 159:
-          HideTestIndicators((bool)params[0]);
+          HideTestIndicators(StringCompare(params[0],"true",false)==0);
       case 168:
           IndicatorDigits(StrToInteger(params[0]));
       case 169:
@@ -531,4 +531,3 @@ datetime executeDateTimeCommand(int id, string params[])
          return ObjectGetTimeByValue(params[0], StringToDouble(params[1]), StrToInteger(params[2]));
    }
 }
-
