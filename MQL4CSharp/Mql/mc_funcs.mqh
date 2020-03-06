@@ -445,40 +445,58 @@ void executeVoidCommand(int id, string params[])
    {
       case 1:
           Alert(params[0]);
+          break;
       case 2:
           Comment(params[0]);
+          break;
       case 30:
           MQLSetInteger(StrToInteger(params[0]), StrToInteger(params[1]));
+          break;
       case 78:
           ChartRedraw(StringToInteger(params[0]));
+          break;
       case 105:
           WindowRedraw();
+          break;
       case 124:
           OrderPrint();
+          break;
       case 154:
           GlobalVariablesFlush();
+          break;
       case 159:
           HideTestIndicators(StringCompare(params[0],"true",false)==0);
+          break;
       case 168:
           IndicatorDigits(StrToInteger(params[0]));
+          break;
       case 169:
           IndicatorShortName(params[0]);
+          break;
       case 170:
           SetIndexArrow(StrToInteger(params[0]), StrToInteger(params[1]));
+          break;
       case 171:
           SetIndexDrawBegin(StrToInteger(params[0]), StrToInteger(params[1]));
+          break;
       case 172:
           SetIndexEmptyValue(StrToInteger(params[0]), StringToDouble(params[1]));
+          break;
       case 173:
           SetIndexLabel(StrToInteger(params[0]), params[1]);
+          break;
       case 174:
           SetIndexShift(StrToInteger(params[0]), StrToInteger(params[1]));
+          break;
       case 175:
           SetIndexStyle(StrToInteger(params[0]), StrToInteger(params[1]), StrToInteger(params[2]), StrToInteger(params[3]), CONVERT_COLOR(params[4]));
+          break;
       case 176:
           SetLevelStyle(StrToInteger(params[0]), StrToInteger(params[1]), CONVERT_COLOR(params[2]));
+          break;
       case 177:
           SetLevelValue(StrToInteger(params[0]), StringToDouble(params[1]));
+          break;
    }
 }
 
